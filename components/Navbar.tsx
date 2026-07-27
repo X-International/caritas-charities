@@ -29,7 +29,7 @@ export default function Navbar() {
   return (
     <header className="w-full bg-white sticky top-0 z-50 shadow-sm border-b border-gray-100">
       {/* Top Utility Bar */}
-      <div className="bg-[#1a1a1a] text-gray-300 text-xs py-1 px-4 sm:px-8">
+      <div className="bg-[#1a1a1a] text-gray-300 text-xs py-2 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-2 text-gray-300 text-xs min-w-0 flex-1">
             <strong className="text-white font-bold shrink-0">Part of Caritas Kampala</strong>
