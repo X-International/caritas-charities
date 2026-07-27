@@ -32,7 +32,7 @@ export default function Navbar() {
       <div className="bg-[#1a1a1a] text-gray-300 text-xs py-1 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-2 text-gray-300 text-xs min-w-0 flex-1">
-            <strong className="text-white font-bold shrink-0">Part of Caritas Kampala</strong>
+            <strong className="text-white font-bold shrink-0">Caritas Kampala</strong>
             <span className="text-gray-600 shrink-0">|</span>
             <a
               href="https://www.caritaskampala.org/"
@@ -227,9 +227,9 @@ export default function Navbar() {
                 </svg>
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="text-lg sm:text-xl font-bold text-red-700 font-serif leading-tight">Share This</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-red-700 font-serif leading-tight">Help Us Reach More Hearts</h3>
                 <p className="text-xs sm:text-sm text-gray-700 mt-1 leading-normal font-sans">
-                  Someone else might be moved to help too. Share this with them.
+                  Every share extends our message of hope, love, and compassion. Invite others to join our mission.
                 </p>
               </div>
             </div>
