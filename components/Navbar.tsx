@@ -29,23 +29,23 @@ const navLinks: NavLink[] = [
         {
           name: "Our Story & Values",
           href: "/about-us/our-story",
-          desc: "Our history, Catholic social teaching, and mission.",
+          desc: "Our story, mission, and the values that guide everything we do.",
         },
         {
           name: "Our Team",
           href: "/about-us/our-team",
-          desc: "Meet the dedicated staff and leadership serving Kampala.",
+          desc: "The people leading and carrying out this work every day.",
         },
         {
           name: "Chaconet Partners",
           href: "/about-us/chaconet-partners",
-          desc: "Collaborating with local and international partner bodies.",
+          desc: "Working together with charity homes and partners across the Archdiocese.",
         },
       ],
       card: {
         title: "About Us",
         description:
-          "The Charities Department is one of Caritas Kampala's core departments, serving the Archdiocese of Kampala through compassion, dignity, and practical support.",
+          "The Charities Department is one of Caritas Kampala's core departments, serving the Archdiocese of Kampala through compassion, dignity, and practical support for those who need it most.",
         image: "/images/menu/Caritas_Kampala_92.jpg",
         cta: { label: "Read Our Story", href: "/about-us" },
       },
@@ -61,28 +61,28 @@ const navLinks: NavLink[] = [
         {
           name: "News & Updates",
           href: "/resources/news",
-          desc: "Latest field stories, press releases, and announcements.",
+          desc: "The latest updates and stories from our work.",
         },
         {
           name: "Gallery",
           href: "/resources/gallery",
-          desc: "Photos and videos from our projects and community outreach.",
+          desc: "Photos and videos from our programmes and community work.",
         },
         {
           name: "Annual Reports",
           href: "/resources/annual-reports",
-          desc: "Financial transparency and comprehensive impact reports.",
+          desc: "Reports on our work — coming soon.",
         },
         {
           name: "FAQs",
           href: "/resources/faqs",
-          desc: "Answers to common questions about our programs and support.",
+          desc: "Answers to common questions",
         },
       ],
       card: {
         title: "Resources",
         description:
-          "Explore our latest news, photo gallery, annual reports, and frequently asked questions to stay connected with our work across the Archdiocese.",
+          "Photos, videos, and the latest updates from our work across the Archdiocese of Kampala.",
         image: "/images/menu/Caritas_Kampala_87.jpg",
         cta: { label: "Browse Resources", href: "/resources" },
       },
@@ -359,18 +359,15 @@ export default function Navbar() {
                     </div>
 
                     {/* Right — featured card */}
-                    <div className="group/card bg-[#be0f2e] p-5 flex flex-col justify-between">
+                    <div className="bg-[#be0f2e] p-5 flex flex-col justify-between">
                       <div>
-                        {/* Card image with zoom effect & badge */}
-                        <div className="relative w-full h-28 rounded-xl overflow-hidden mb-3.5 border border-white/10 shadow-xs">
+                        {/* Card image */}
+                        <div className="w-full h-28 rounded-xl overflow-hidden mb-3.5 border border-white/10 shadow-xs">
                           <img
                             src={link.megaMenu.card.image}
                             alt={`${link.megaMenu.card.title} photo`}
-                            className="w-full h-full object-cover transition-transform duration-300 group-hover/card:scale-105"
+                            className="w-full h-full object-cover"
                           />
-                          <span className="absolute top-2 left-2 bg-black/50 backdrop-blur-xs text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
-                            FEATURED
-                          </span>
                         </div>
 
                         <h3 className="text-white font-bold text-sm leading-snug mb-1.5">
@@ -461,7 +458,7 @@ export default function Navbar() {
                   </button>
 
                   {openMobileSubmenu === link.name && (
-                    <div className="py-2 pl-4 space-y-1 border-b border-gray-100">
+                    <div className="py-2 pl-4 space-y-1.5 border-b border-gray-100">
                       {link.megaMenu.links.map((sub) => {
                         const isActive = pathname === sub.href;
                         return (
@@ -469,14 +466,23 @@ export default function Navbar() {
                             key={sub.name}
                             href={sub.href}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className={`flex items-center justify-between text-sm py-2 px-2.5 rounded-lg transition-colors ${
+                            className={`flex items-start justify-between text-sm py-2 px-2.5 rounded-lg transition-colors ${
                               isActive
-                                ? "bg-[#b10017] text-white font-medium"
+                                ? "bg-[#b10017] text-white"
                                 : "text-gray-700 hover:text-[#be0f2e]"
                             }`}
                           >
-                            <span>{sub.name}</span>
-                            <svg className="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <div className="flex flex-col">
+                              <span className="font-medium text-xs uppercase tracking-wide">{sub.name}</span>
+                              {sub.desc && (
+                                <span className={`text-[11px] font-normal leading-tight mt-0.5 ${
+                                  isActive ? "text-red-100" : "text-gray-500"
+                                }`}>
+                                  {sub.desc}
+                                </span>
+                              )}
+                            </div>
+                            <svg className="w-3.5 h-3.5 opacity-60 mt-0.5 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                             </svg>
                           </Link>
