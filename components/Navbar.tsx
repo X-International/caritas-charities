@@ -478,23 +478,14 @@ export default function Navbar() {
                             key={sub.name}
                             href={sub.href}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className={`flex items-start justify-between text-sm py-2 px-2.5 rounded-lg transition-colors ${
+                            className={`flex items-center justify-between text-xs py-2.5 px-3 rounded-lg transition-colors ${
                               isActive
-                                ? "bg-[#b10017] text-white"
+                                ? "bg-[#b10017] text-white font-medium"
                                 : "text-gray-700 hover:text-[#be0f2e]"
                             }`}
                           >
-                            <div className="flex flex-col">
-                              <span className="font-medium text-xs uppercase tracking-wide">{sub.name}</span>
-                              {sub.desc && (
-                                <span className={`text-[11px] font-normal leading-tight mt-0.5 ${
-                                  isActive ? "text-red-100" : "text-gray-500"
-                                }`}>
-                                  {sub.desc}
-                                </span>
-                              )}
-                            </div>
-                            <svg className="w-3.5 h-3.5 opacity-60 mt-0.5 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <span className="font-medium uppercase tracking-wide">{sub.name}</span>
+                            <svg className="w-3.5 h-3.5 opacity-60 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                             </svg>
                           </Link>
