@@ -113,36 +113,25 @@ export default function Navbar() {
       </div>
 
       {/* Main Navbar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-[14px] sm:py-4 flex items-center justify-between">
         {/* Brand Logo */}
-        <Link href="/" className="flex items-center space-x-3 group">
-          <div className="w-10 h-10 bg-[#be0f2e] rounded-full flex items-center justify-center text-white shadow-sm transition-transform group-hover:scale-105">
-            {/* Caritas Flame Cross Emblem SVG */}
-            <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
-              <path d="M12 2L10 8H14L12 2Z" />
-              <path d="M12 22L14 16H10L12 22Z" />
-              <path d="M2 12L8 10V14L2 12Z" />
-              <path d="M22 12L16 14V10L22 12Z" />
-              <circle cx="12" cy="12" r="3" />
-            </svg>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-2xl font-extrabold tracking-tight text-[#be0f2e] font-serif leading-none">
-              Caritas
-            </span>
-            <span className="text-[9px] uppercase tracking-widest font-semibold text-gray-600">
-              Internationalis
-            </span>
+        <Link href="/" className="flex items-center shrink-0">
+          <div className="relative h-15 sm:h-18 w-auto">
+            <img
+              src="/images/logos/Caritas_Kampala_logo.jpg"
+              alt="Caritas Kampala Logo"
+              className="h-15 sm:h-18 w-auto object-contain"
+            />
           </div>
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center space-x-7">
+        <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-[13px] font-semibold text-gray-800 hover:text-[#be0f2e] tracking-wide transition-colors uppercase"
+              className="text-[13px] font-medium text-gray-800 hover:text-[#be0f2e] tracking-wide transition-colors uppercase whitespace-nowrap"
             >
               {link.name}
             </Link>
@@ -150,10 +139,10 @@ export default function Navbar() {
         </nav>
 
         {/* Donate CTA & Mobile Toggle */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 shrink-0">
           <Link
             href="#donate"
-            className="bg-[#be0f2e] hover:bg-[#8e0a20] text-white text-xs font-bold px-6 py-2.5 rounded-full tracking-wider uppercase shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5"
+            className="bg-[#be0f2e] text-white hover:bg-white hover:text-[#be0f2e] border-2 border-[#be0f2e] text-xs sm:text-sm font-semibold px-7 py-3 rounded-full tracking-wider uppercase transition-colors duration-200 inline-block text-center shadow-sm cursor-pointer"
           >
             DONATE
           </Link>
@@ -161,7 +150,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden text-gray-800 hover:text-[#be0f2e] focus:outline-none p-1"
+            className="lg:hidden text-gray-800 hover:text-[#be0f2e] focus:outline-none p-1.5 rounded-md hover:bg-gray-100 transition-colors"
             aria-label="Toggle navigation menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -183,16 +172,16 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block text-sm font-bold text-gray-800 hover:text-[#be0f2e] py-1.5 uppercase border-b border-gray-100"
+              className="block text-sm font-medium text-gray-800 hover:text-[#be0f2e] py-2 uppercase border-b border-gray-100 transition-colors"
             >
               {link.name}
             </Link>
           ))}
-          <div className="pt-2">
+          <div className="pt-3">
             <Link
               href="#donate"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block w-full text-center bg-[#be0f2e] text-white font-bold py-2.5 rounded-full text-xs uppercase tracking-wider shadow"
+              className="block w-full text-center bg-[#be0f2e] text-white hover:bg-white hover:text-[#be0f2e] border-2 border-[#be0f2e] font-semibold py-3 rounded-full text-sm uppercase tracking-wider transition-colors duration-200 shadow-sm"
             >
               DONATE NOW
             </Link>
