@@ -121,7 +121,7 @@ export default function Navbar() {
       </div>
 
       {/* Main Navbar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-[14px] sm:py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-[10px] sm:py-[12px] flex items-center justify-between">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center shrink-0 rounded-xs focus-visible:outline-2 focus-visible:outline-[#be0f2e] focus-visible:outline-offset-4" aria-label="Caritas Kampala Homepage">
           <div className="relative h-16 sm:h-20 w-auto">
