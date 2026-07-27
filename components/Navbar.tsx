@@ -6,7 +6,16 @@ import Link from "next/link";
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState("EN");
+  const [isShareModalOpen, setIsShareModalOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const shareUrl = typeof window !== "undefined" ? window.location.origin : "https://www.caritaskampala.org/";
+
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(shareUrl);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const navLinks = [
     { name: "ABOUT US", href: "/about-us" },
@@ -22,44 +31,52 @@ export default function Navbar() {
       {/* Top Utility Bar */}
       <div className="bg-[#1a1a1a] text-gray-300 text-xs py-1 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-4">
-            <span className="hidden sm:inline text-gray-400">Caritas Internationalis Confederation</span>
+          <div className="flex items-center space-x-2 text-gray-300">
+            <strong className="text-white font-bold">Part of Caritas Kampala</strong>
+            <span className="text-gray-600">|</span>
+            <a
+              href="https://www.caritaskampala.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors flex items-center underline underline-offset-2 decoration-gray-600 hover:decoration-white"
+            >
+              Visit Main Website <span className="ml-1 text-[10px]">→</span>
+            </a>
           </div>
-          <div className="flex items-center space-x-6">
-            {/* Language Switcher */}
-            <div className="flex items-center space-x-2">
-              <span className="text-gray-400">Lang:</span>
-              {["EN", "FR", "ES"].map((lang) => (
-                <button
-                  key={lang}
-                  onClick={() => setCurrentLang(lang)}
-                  className={`px-1 rounded transition-colors ${
-                    currentLang === lang ? "text-white font-bold underline" : "hover:text-white"
-                  }`}
-                >
-                  {lang}
-                </button>
-              ))}
-            </div>
+          <div className="flex items-center space-x-5">
+            {/* Share Button */}
+            <button
+              onClick={() => setIsShareModalOpen(true)}
+              className="flex items-center space-x-1.5 hover:text-white text-gray-300 transition-colors cursor-pointer focus:outline-none"
+              aria-label="Share"
+            >
+              <span className="inline-flex items-center justify-center bg-[#d3d1c5] text-[#161616] rounded-[3px] w-[15px] h-[15px] shrink-0">
+                <svg className="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z" />
+                </svg>
+              </span>
+              <span className="text-[10px] tracking-widest font-semibold uppercase font-sans">SHARE</span>
+            </button>
             
             {/* Search Icon / Toggle */}
             <div className="relative">
               <button
                 onClick={() => setIsSearchOpen(!isSearchOpen)}
-                className="flex items-center space-x-1 hover:text-white transition-colors"
+                className="flex items-center space-x-1 hover:text-white transition-colors focus:outline-none cursor-pointer"
                 aria-label="Search"
               >
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
                 <span className="hidden md:inline">Search</span>
               </button>
               {isSearchOpen && (
-                <div className="absolute right-0 top-full mt-2 w-64 bg-white text-gray-900 shadow-xl rounded-md p-2 z-50 border border-gray-200">
+                <div className="absolute right-0 top-full mt-2 w-64 bg-white text-gray-900 shadow-xl rounded-md p-2 z-50 border border-gray-200 animate-in fade-in slide-in-from-top-1 duration-150">
                   <input
                     type="text"
-                    placeholder="Search Caritas.org..."
+                    placeholder="Search"
                     className="w-full text-xs px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-[#be0f2e]"
+                    autoFocus
                   />
                 </div>
               )}
@@ -152,6 +169,108 @@ export default function Navbar() {
             >
               DONATE NOW
             </Link>
+          </div>
+        </div>
+      )}
+
+      {/* Share Modal Overlay */}
+      {isShareModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-xs transition-opacity duration-300">
+          {/* Backdrop Click */}
+          <div className="absolute inset-0 cursor-default" onClick={() => setIsShareModalOpen(false)}></div>
+          
+          {/* Modal Container */}
+          <div className="relative bg-white rounded-2xl p-6 sm:p-8 max-w-md w-full mx-4 shadow-2xl z-10 border border-gray-100 animate-in fade-in zoom-in-95 duration-200">
+            {/* Close Button */}
+            <button
+              onClick={() => setIsShareModalOpen(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors focus:outline-none p-1.5 rounded-full hover:bg-gray-100 cursor-pointer"
+              aria-label="Close modal"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Content Row */}
+            <div className="flex items-start space-x-4">
+              <div className="w-14 h-14 bg-[#be0f2e] text-white rounded-full flex items-center justify-center shrink-0 shadow-md">
+                <svg className="w-7 h-7 fill-current" viewBox="0 0 24 24">
+                  <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z" />
+                </svg>
+              </div>
+              <div className="flex-1 min-w-0">
+                <h3 className="text-xl font-bold text-red-700 font-serif leading-tight">Share</h3>
+                <p className="text-sm text-gray-700 mt-1 leading-normal font-sans">
+                  Join the conversation and help us raise awareness
+                </p>
+              </div>
+            </div>
+
+            {/* Social Buttons */}
+            <div className="flex justify-center items-center space-x-4 mt-8">
+              {/* Facebook */}
+              <a
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 rounded-full bg-[#3b5998] hover:bg-[#2d4373] text-white flex items-center justify-center shadow-md transition-all hover:scale-110 duration-200 cursor-pointer"
+                aria-label="Share on Facebook"
+              >
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M9 8H7v3h2v9h3v-9h3l.5-3H12V6c0-.88.39-1 1-1h2V2h-3c-2.4 0-4 1.2-4 3v3z" />
+                </svg>
+              </a>
+
+              {/* X */}
+              <a
+                href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=Support%20Caritas%20Kampala%20in%20ending%20poverty%20and%20restoring%20dignity`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 rounded-full bg-black hover:bg-gray-900 text-white flex items-center justify-center shadow-md transition-all hover:scale-110 duration-200 cursor-pointer"
+                aria-label="Share on X"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+              </a>
+
+              {/* Instagram / Copy Link */}
+              <button
+                onClick={handleCopyLink}
+                className={`w-11 h-11 rounded-full flex items-center justify-center shadow-md transition-all hover:scale-110 duration-200 text-white cursor-pointer ${
+                  copied ? "bg-green-600 hover:bg-green-700" : "bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] hover:opacity-95"
+                }`}
+                aria-label="Copy site link"
+              >
+                {copied ? (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                  </svg>
+                ) : (
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                  </svg>
+                )}
+              </button>
+
+              {/* Email */}
+              <a
+                href={`mailto:?subject=Support%20Caritas%20Kampala&body=Check%20out%20Caritas%20Kampala%27s%20work%20to%20end%20poverty%20and%20restore%20dignity:%20${encodeURIComponent(shareUrl)}`}
+                className="w-11 h-11 rounded-full bg-[#ea4335] hover:bg-[#d63022] text-white flex items-center justify-center shadow-md transition-all hover:scale-110 duration-200 cursor-pointer"
+                aria-label="Share via Email"
+              >
+                <svg className="w-5.5 h-5.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+              </a>
+            </div>
+
+            {copied && (
+              <p className="text-center text-xs text-green-600 font-semibold mt-4 animate-fade-in">
+                Link copied to clipboard!
+              </p>
+            )}
           </div>
         </div>
       )}
