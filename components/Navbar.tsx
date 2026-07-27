@@ -18,12 +18,12 @@ export default function Navbar() {
   };
 
   const navLinks = [
+    { name: "HOME", href: "/" },
     { name: "ABOUT US", href: "/about-us" },
-    { name: "WHAT WE DO", href: "/what-we-do" },
-    { name: "OUR WORK", href: "/our-work" },
-    { name: "WHERE WE ARE", href: "/where-we-are" },
+    { name: "OUR PROGRAMMES", href: "/our-programmes" },
+    { name: "STORIES OF CHANGE", href: "/stories-of-change" },
     { name: "RESOURCES", href: "/resources" },
-    { name: "SUPPORT US", href: "/support-us" },
+    { name: "CONTACT US", href: "/contact-us" },
   ];
 
   return (
