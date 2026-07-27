@@ -240,7 +240,7 @@ export default function Navbar() {
               <a
                 href="#"
                 onClick={(e) => e.preventDefault()}
-                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#3b5998] hover:bg-[#2d4373] text-white flex items-center justify-center shadow-md hover:scale-105 active:scale-95 transition-transform duration-200 ease-in-out cursor-pointer"
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#3b5998] hover:bg-[#2d4373] text-white flex items-center justify-center shadow-md transition-colors duration-200 cursor-pointer"
                 aria-label="Share on Facebook"
               >
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -252,7 +252,7 @@ export default function Navbar() {
               <a
                 href="#"
                 onClick={(e) => e.preventDefault()}
-                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black hover:bg-[#1a1a1a] text-white flex items-center justify-center shadow-md hover:scale-105 active:scale-95 transition-transform duration-200 ease-in-out cursor-pointer"
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black hover:bg-[#333333] text-white flex items-center justify-center shadow-md transition-colors duration-200 cursor-pointer"
                 aria-label="Share on X"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -263,10 +263,10 @@ export default function Navbar() {
               {/* Instagram / Copy Link */}
               <button
                 onClick={handleCopyLink}
-                className={`w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center shadow-md active:scale-95 hover:scale-105 transition-transform duration-200 ease-in-out text-white cursor-pointer ${
+                className={`w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center shadow-md transition-colors duration-200 text-white cursor-pointer ${
                   copied 
                     ? "bg-green-600 hover:bg-green-700" 
-                    : "bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] hover:opacity-95"
+                    : "bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] hover:opacity-80"
                 }`}
                 aria-label="Copy site link"
               >
@@ -285,7 +285,7 @@ export default function Navbar() {
               <a
                 href="#"
                 onClick={(e) => e.preventDefault()}
-                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#ea4335] hover:bg-[#d63022] text-white flex items-center justify-center shadow-md hover:scale-105 active:scale-95 transition-transform duration-200 ease-in-out cursor-pointer"
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#ea4335] hover:bg-[#d63022] text-white flex items-center justify-center shadow-md transition-colors duration-200 cursor-pointer"
                 aria-label="Share via Email"
               >
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
