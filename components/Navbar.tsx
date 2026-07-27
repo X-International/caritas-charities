@@ -2,9 +2,10 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 /* ─── Types ─────────────────────────────────────────────── */
-type SubLink = { name: string; href: string };
+type SubLink = { name: string; href: string; desc?: string };
 type MegaMenuCard = {
   title: string;
   description: string;
@@ -25,14 +26,26 @@ const navLinks: NavLink[] = [
     href: "/about-us",
     megaMenu: {
       links: [
-        { name: "Our Story & Values", href: "/about-us/our-story" },
-        { name: "Our Team",           href: "/about-us/our-team" },
-        { name: "Chaconet Partners",  href: "/about-us/chaconet-partners" },
+        {
+          name: "Our Story & Values",
+          href: "/about-us/our-story",
+          desc: "Our history, Catholic social teaching, and mission.",
+        },
+        {
+          name: "Our Team",
+          href: "/about-us/our-team",
+          desc: "Meet the dedicated staff and leadership serving Kampala.",
+        },
+        {
+          name: "Chaconet Partners",
+          href: "/about-us/chaconet-partners",
+          desc: "Collaborating with local and international partner bodies.",
+        },
       ],
       card: {
         title: "About Us",
         description:
-          "The Charities Department is one of Caritas Kampala's core departments, serving the Archdiocese of Kampala through compassion, dignity, and practical support for those who need it most.",
+          "The Charities Department is one of Caritas Kampala's core departments, serving the Archdiocese of Kampala through compassion, dignity, and practical support.",
         image: "/images/menu/Caritas_Kampala_92.jpg",
         cta: { label: "Read Our Story", href: "/about-us" },
       },
@@ -45,10 +58,26 @@ const navLinks: NavLink[] = [
     href: "/resources",
     megaMenu: {
       links: [
-        { name: "News & Updates",  href: "/resources/news" },
-        { name: "Gallery",         href: "/resources/gallery" },
-        { name: "Annual Reports",  href: "/resources/annual-reports" },
-        { name: "FAQs",            href: "/resources/faqs" },
+        {
+          name: "News & Updates",
+          href: "/resources/news",
+          desc: "Latest field stories, press releases, and announcements.",
+        },
+        {
+          name: "Gallery",
+          href: "/resources/gallery",
+          desc: "Photos and videos from our projects and community outreach.",
+        },
+        {
+          name: "Annual Reports",
+          href: "/resources/annual-reports",
+          desc: "Financial transparency and comprehensive impact reports.",
+        },
+        {
+          name: "FAQs",
+          href: "/resources/faqs",
+          desc: "Answers to common questions about our programs and support.",
+        },
       ],
       card: {
         title: "Resources",
@@ -64,6 +93,7 @@ const navLinks: NavLink[] = [
 
 /* ─── Component ──────────────────────────────────────────── */
 export default function Navbar() {
+  const pathname = usePathname();
   const [isMobileMenuOpen,  setIsMobileMenuOpen]  = useState(false);
   const [isSearchOpen,      setIsSearchOpen]      = useState(false);
   const [isShareModalOpen,  setIsShareModalOpen]  = useState(false);
@@ -258,35 +288,68 @@ export default function Navbar() {
               {/* ── Mega-menu flyout ─────────────────── */}
               {link.megaMenu && openMegaMenu === link.name && (
                 <div
-                  className="absolute top-[calc(100%+14px)] left-1/2 -translate-x-1/2 w-[580px] xl:w-[640px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-150"
+                  className="absolute top-[calc(100%+14px)] left-1/2 -translate-x-1/2 w-[600px] xl:w-[680px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-150"
                   onMouseEnter={cancelClose}
                   onMouseLeave={scheduleClose}
                   role="region"
                   aria-label={`${link.name} submenu`}
                 >
-                  <div className="grid grid-cols-[1fr_220px]">
+                  <div className="grid grid-cols-[1fr_230px]">
                     {/* Left — links */}
                     <div className="p-6">
-                      <p className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.12em] mb-4">
+                      <p className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.12em] mb-3">
                         {link.name}
                       </p>
-                      <ul className="space-y-0.5">
-                        {link.megaMenu.links.map((sub) => (
-                          <li key={sub.name}>
-                            <Link
-                              href={sub.href}
-                              onClick={() => setOpenMegaMenu(null)}
-                              className="flex items-center px-3 py-2.5 rounded-lg text-[13px] font-medium text-gray-700 uppercase tracking-wide hover:text-white hover:bg-[#b10017] transition-colors duration-150"
-                            >
-                              {sub.name}
-                            </Link>
-                          </li>
-                        ))}
+                      <ul className="space-y-1">
+                        {link.megaMenu.links.map((sub) => {
+                          const isActive = pathname === sub.href;
+                          return (
+                            <li key={sub.name}>
+                              <Link
+                                href={sub.href}
+                                onClick={() => setOpenMegaMenu(null)}
+                                className={`group flex items-start justify-between px-3.5 py-2.5 rounded-xl transition-all duration-150 ${
+                                  isActive
+                                    ? "bg-[#b10017] text-white shadow-xs"
+                                    : "hover:bg-[#b10017] text-gray-800 hover:text-white"
+                                }`}
+                              >
+                                <div className="flex flex-col">
+                                  <span className={`text-[13px] font-medium uppercase tracking-wide transition-colors ${
+                                    isActive ? "text-white" : "text-gray-800 group-hover:text-white"
+                                  }`}>
+                                    {sub.name}
+                                  </span>
+                                  {sub.desc && (
+                                    <span className={`text-[11px] mt-0.5 normal-case font-normal leading-tight transition-colors ${
+                                      isActive ? "text-red-100" : "text-gray-500 group-hover:text-red-100"
+                                    }`}>
+                                      {sub.desc}
+                                    </span>
+                                  )}
+                                </div>
+                                <svg
+                                  className={`w-3.5 h-3.5 mt-0.5 transition-all duration-150 shrink-0 ${
+                                    isActive
+                                      ? "text-white opacity-100 translate-x-0"
+                                      : "opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 text-white"
+                                  }`}
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                  aria-hidden="true"
+                                >
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                                </svg>
+                              </Link>
+                            </li>
+                          );
+                        })}
                       </ul>
                       <Link
                         href={link.href}
                         onClick={() => setOpenMegaMenu(null)}
-                        className="inline-flex items-center gap-1.5 mt-5 ml-3 text-xs font-semibold text-[#be0f2e] hover:underline underline-offset-2 transition-colors uppercase tracking-wide"
+                        className="inline-flex items-center gap-1.5 mt-4 ml-3.5 text-xs font-semibold text-[#be0f2e] hover:underline underline-offset-2 transition-colors uppercase tracking-wide"
                       >
                         View all {link.name}
                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -296,29 +359,35 @@ export default function Navbar() {
                     </div>
 
                     {/* Right — featured card */}
-                    <div className="bg-[#be0f2e] p-5 flex flex-col">
-                      {/* Card image */}
-                      <div className="w-full h-28 rounded-xl overflow-hidden mb-4">
-                        <img
-                          src={link.megaMenu.card.image}
-                          alt={`${link.megaMenu.card.title} photo`}
-                          className="w-full h-full object-cover"
-                        />
+                    <div className="group/card bg-[#be0f2e] p-5 flex flex-col justify-between">
+                      <div>
+                        {/* Card image with zoom effect & badge */}
+                        <div className="relative w-full h-28 rounded-xl overflow-hidden mb-3.5 border border-white/10 shadow-xs">
+                          <img
+                            src={link.megaMenu.card.image}
+                            alt={`${link.megaMenu.card.title} photo`}
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover/card:scale-105"
+                          />
+                          <span className="absolute top-2 left-2 bg-black/50 backdrop-blur-xs text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
+                            FEATURED
+                          </span>
+                        </div>
+
+                        <h3 className="text-white font-bold text-sm leading-snug mb-1.5">
+                          {link.megaMenu.card.title}
+                        </h3>
+                        <p className="text-red-100 text-xs leading-relaxed">
+                          {link.megaMenu.card.description}
+                        </p>
                       </div>
 
-                      <h3 className="text-white font-bold text-sm leading-snug mb-2">
-                        {link.megaMenu.card.title}
-                      </h3>
-                      <p className="text-red-100 text-xs leading-relaxed flex-1">
-                        {link.megaMenu.card.description}
-                      </p>
                       <Link
                         href={link.megaMenu.card.cta.href}
                         onClick={() => setOpenMegaMenu(null)}
-                        className="inline-flex items-center gap-1.5 mt-4 bg-white text-[#be0f2e] font-bold text-xs px-4 py-2 rounded-full hover:bg-red-50 transition-colors duration-150 w-fit"
+                        className="inline-flex items-center gap-1.5 mt-4 bg-white text-[#be0f2e] font-bold text-xs px-4 py-2 rounded-full hover:bg-red-50 transition-colors duration-150 w-fit shadow-xs"
                       >
                         {link.megaMenu.card.cta.label}
-                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <svg className="w-3 h-3 transition-transform duration-200 group-hover/card:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                         </svg>
                       </Link>
@@ -392,22 +461,31 @@ export default function Navbar() {
                   </button>
 
                   {openMobileSubmenu === link.name && (
-                    <div className="py-2 pl-4 space-y-0.5 border-b border-gray-100">
-                      {link.megaMenu.links.map((sub) => (
-                        <Link
-                          key={sub.name}
-                          href={sub.href}
-                          onClick={() => setIsMobileMenuOpen(false)}
-                          className="flex items-center gap-2.5 text-sm text-gray-600 hover:text-[#be0f2e] py-2 transition-colors"
-                        >
-                          <span className="w-1 h-1 rounded-full bg-gray-300 shrink-0" aria-hidden="true" />
-                          {sub.name}
-                        </Link>
-                      ))}
+                    <div className="py-2 pl-4 space-y-1 border-b border-gray-100">
+                      {link.megaMenu.links.map((sub) => {
+                        const isActive = pathname === sub.href;
+                        return (
+                          <Link
+                            key={sub.name}
+                            href={sub.href}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className={`flex items-center justify-between text-sm py-2 px-2.5 rounded-lg transition-colors ${
+                              isActive
+                                ? "bg-[#b10017] text-white font-medium"
+                                : "text-gray-700 hover:text-[#be0f2e]"
+                            }`}
+                          >
+                            <span>{sub.name}</span>
+                            <svg className="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Link>
+                        );
+                      })}
                       <Link
                         href={link.href}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="inline-flex items-center gap-1 mt-1.5 ml-3.5 text-xs font-semibold text-[#be0f2e] hover:underline underline-offset-2"
+                        className="inline-flex items-center gap-1 mt-1.5 ml-2.5 text-xs font-semibold text-[#be0f2e] hover:underline underline-offset-2 uppercase tracking-wide"
                       >
                         View all {link.name}
                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
