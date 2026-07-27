@@ -32,7 +32,7 @@ export default function Navbar() {
       <div className="bg-[#1a1a1a] text-gray-300 text-xs py-1 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-2 text-gray-300 text-xs min-w-0 flex-1">
-            <strong className="text-white font-bold shrink-0">Caritas Kampala</strong>
+            <strong className="text-white font-bold shrink-0">Part of Caritas Kampala</strong>
             <span className="text-gray-600 shrink-0">|</span>
             <a
               href="https://www.caritaskampala.org/"
