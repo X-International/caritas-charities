@@ -87,12 +87,23 @@ export default function Navbar() {
                   
                   {/* Dropdown Card - Fully responsive mobile-first width */}
                   <div className="absolute right-[-8px] sm:right-0 top-full mt-2 w-[280px] sm:w-72 bg-white text-gray-900 shadow-xl rounded-md p-2 z-50 border border-gray-200 animate-in fade-in slide-in-from-top-1 duration-150">
-                    <input
-                      type="text"
-                      placeholder="Search"
-                      className="w-full text-xs px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-[#be0f2e]"
-                      autoFocus
-                    />
+                    <div className="relative flex items-center">
+                      <input
+                        type="text"
+                        placeholder="Search"
+                        className="w-full text-xs pl-3 pr-7 py-2 border border-gray-300 rounded focus:outline-none focus:border-[#be0f2e]"
+                        autoFocus
+                      />
+                      <button
+                        onClick={() => setIsSearchOpen(false)}
+                        className="absolute right-2 text-gray-400 hover:text-gray-600 focus:outline-none cursor-pointer p-0.5"
+                        aria-label="Clear Search"
+                      >
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                    </div>
                   </div>
                 </>
               )}
