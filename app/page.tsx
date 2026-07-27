@@ -1,13 +1,25 @@
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Caritas Kampala Charities Department",
-};
+import Navbar from "@/components/Navbar";
+import HeroSlider from "@/components/HeroSlider";
+import CurrentCrises from "@/components/CurrentCrises";
+import LatestUpdates from "@/components/LatestUpdates";
+import HumanitarianAppeal from "@/components/HumanitarianAppeal";
+import SpotlightSection from "@/components/SpotlightSection";
+import WhereWeAre from "@/components/WhereWeAre";
+import Footer from "@/components/Footer";
 
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <h1 className="text-4xl font-bold">Hello World</h1>
-    </main>
+    <div className="min-h-screen flex flex-col bg-white">
+      <Navbar />
+      <main className="flex-1 space-y-4">
+        <HeroSlider />
+        <CurrentCrises />
+        <LatestUpdates />
+        <HumanitarianAppeal />
+        <SpotlightSection />
+        <WhereWeAre />
+      </main>
+      <Footer />
+    </div>
   );
 }
