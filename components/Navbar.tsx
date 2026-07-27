@@ -31,16 +31,26 @@ export default function Navbar() {
       {/* Top Utility Bar */}
       <div className="bg-[#1a1a1a] text-gray-300 text-xs py-1 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-2 text-gray-300">
-            <strong className="text-white font-bold">Part of Caritas Kampala</strong>
-            <span className="text-gray-600">|</span>
+          <div className="flex items-center space-x-2 text-gray-300 text-xs min-w-0 flex-1">
+            <strong className="text-white font-bold shrink-0">Part of Caritas Kampala</strong>
+            <span className="text-gray-600 shrink-0">|</span>
             <a
               href="https://www.caritaskampala.org/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors flex items-center underline underline-offset-2 decoration-gray-600 hover:decoration-white"
+              className="group text-gray-400 hover:text-white transition-colors flex items-center shrink-0 no-underline"
             >
-              Visit Main Website <span className="ml-1 text-[10px]">→</span>
+              <span className="group-hover:underline underline-offset-2 decoration-gray-600 group-hover:decoration-white">
+                Main Website
+              </span>
+              <svg 
+                className="w-3 h-3 ml-1 shrink-0 text-gray-500 group-hover:text-white inline-block no-underline select-none align-middle transition-colors" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
             </a>
           </div>
           <div className="flex items-center space-x-5">
@@ -62,23 +72,29 @@ export default function Navbar() {
             <div className="relative">
               <button
                 onClick={() => setIsSearchOpen(!isSearchOpen)}
-                className="flex items-center space-x-1 hover:text-white transition-colors focus:outline-none cursor-pointer"
+                className="flex items-center space-x-1 hover:text-white text-gray-300 transition-colors focus:outline-none cursor-pointer"
                 aria-label="Search"
               >
                 <svg className="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
-                <span className="hidden md:inline">Search</span>
+                <span className="hidden md:inline text-[10px] sm:text-xs font-semibold font-sans">Search</span>
               </button>
               {isSearchOpen && (
-                <div className="absolute right-0 top-full mt-2 w-64 bg-white text-gray-900 shadow-xl rounded-md p-2 z-50 border border-gray-200 animate-in fade-in slide-in-from-top-1 duration-150">
-                  <input
-                    type="text"
-                    placeholder="Search"
-                    className="w-full text-xs px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-[#be0f2e]"
-                    autoFocus
-                  />
-                </div>
+                <>
+                  {/* Invisible Backdrop overlay to dismiss search when clicking outside */}
+                  <div className="fixed inset-0 z-40 cursor-default" onClick={() => setIsSearchOpen(false)}></div>
+                  
+                  {/* Dropdown Card - Fully responsive mobile-first width */}
+                  <div className="absolute right-[-8px] sm:right-0 top-full mt-2 w-[280px] sm:w-72 bg-white text-gray-900 shadow-xl rounded-md p-2 z-50 border border-gray-200 animate-in fade-in slide-in-from-top-1 duration-150">
+                    <input
+                      type="text"
+                      placeholder="Search"
+                      className="w-full text-xs px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-[#be0f2e]"
+                      autoFocus
+                    />
+                  </div>
+                </>
               )}
             </div>
           </div>
@@ -179,8 +195,8 @@ export default function Navbar() {
           {/* Backdrop Click */}
           <div className="absolute inset-0 cursor-default" onClick={() => setIsShareModalOpen(false)}></div>
           
-          {/* Modal Container */}
-          <div className="relative bg-white rounded-2xl p-6 sm:p-8 max-w-md w-full mx-4 shadow-2xl z-10 border border-gray-100 animate-in fade-in zoom-in-95 duration-200">
+          {/* Modal Container - Mobile-first width and fully responsive */}
+          <div className="relative bg-white rounded-2xl p-6 sm:p-8 max-w-sm sm:max-w-md w-[calc(100%-2rem)] mx-4 shadow-2xl z-10 border border-gray-100 animate-in fade-in zoom-in-95 duration-200">
             {/* Close Button */}
             <button
               onClick={() => setIsShareModalOpen(false)}
@@ -194,15 +210,15 @@ export default function Navbar() {
 
             {/* Content Row */}
             <div className="flex items-start space-x-4">
-              <div className="w-14 h-14 bg-[#be0f2e] text-white rounded-full flex items-center justify-center shrink-0 shadow-md">
-                <svg className="w-7 h-7 fill-current" viewBox="0 0 24 24">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#be0f2e] text-white rounded-full flex items-center justify-center shrink-0 shadow-md">
+                <svg className="w-6 h-6 sm:w-7 sm:h-7 fill-current" viewBox="0 0 24 24">
                   <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z" />
                 </svg>
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="text-xl font-bold text-red-700 font-serif leading-tight">Share</h3>
-                <p className="text-sm text-gray-700 mt-1 leading-normal font-sans">
-                  Join the conversation and help us raise awareness
+                <h3 className="text-lg sm:text-xl font-bold text-red-700 font-serif leading-tight">Share This</h3>
+                <p className="text-xs sm:text-sm text-gray-700 mt-1 leading-normal font-sans">
+                  Someone else might be moved to help too. Share this with them.
                 </p>
               </div>
             </div>
@@ -211,10 +227,9 @@ export default function Navbar() {
             <div className="flex justify-center items-center space-x-4 mt-8">
               {/* Facebook */}
               <a
-                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full bg-[#3b5998] hover:bg-[#2d4373] text-white flex items-center justify-center shadow-md transition-all hover:scale-110 duration-200 cursor-pointer"
+                href="#"
+                onClick={(e) => e.preventDefault()}
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#3b5998] hover:bg-[#2d4373] text-white flex items-center justify-center shadow-md hover:scale-105 active:scale-95 transition-transform duration-200 ease-in-out cursor-pointer"
                 aria-label="Share on Facebook"
               >
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -224,10 +239,9 @@ export default function Navbar() {
 
               {/* X */}
               <a
-                href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=Support%20Caritas%20Kampala%20in%20ending%20poverty%20and%20restoring%20dignity`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full bg-black hover:bg-gray-900 text-white flex items-center justify-center shadow-md transition-all hover:scale-110 duration-200 cursor-pointer"
+                href="#"
+                onClick={(e) => e.preventDefault()}
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black hover:bg-[#1a1a1a] text-white flex items-center justify-center shadow-md hover:scale-105 active:scale-95 transition-transform duration-200 ease-in-out cursor-pointer"
                 aria-label="Share on X"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -238,8 +252,10 @@ export default function Navbar() {
               {/* Instagram / Copy Link */}
               <button
                 onClick={handleCopyLink}
-                className={`w-11 h-11 rounded-full flex items-center justify-center shadow-md transition-all hover:scale-110 duration-200 text-white cursor-pointer ${
-                  copied ? "bg-green-600 hover:bg-green-700" : "bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] hover:opacity-95"
+                className={`w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center shadow-md active:scale-95 hover:scale-105 transition-transform duration-200 ease-in-out text-white cursor-pointer ${
+                  copied 
+                    ? "bg-green-600 hover:bg-green-700" 
+                    : "bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] hover:opacity-95"
                 }`}
                 aria-label="Copy site link"
               >
@@ -256,11 +272,12 @@ export default function Navbar() {
 
               {/* Email */}
               <a
-                href={`mailto:?subject=Support%20Caritas%20Kampala&body=Check%20out%20Caritas%20Kampala%27s%20work%20to%20end%20poverty%20and%20restore%20dignity:%20${encodeURIComponent(shareUrl)}`}
-                className="w-11 h-11 rounded-full bg-[#ea4335] hover:bg-[#d63022] text-white flex items-center justify-center shadow-md transition-all hover:scale-110 duration-200 cursor-pointer"
+                href="#"
+                onClick={(e) => e.preventDefault()}
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#ea4335] hover:bg-[#d63022] text-white flex items-center justify-center shadow-md hover:scale-105 active:scale-95 transition-transform duration-200 ease-in-out cursor-pointer"
                 aria-label="Share via Email"
               >
-                <svg className="w-5.5 h-5.5 fill-current" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                   <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                 </svg>
               </a>
