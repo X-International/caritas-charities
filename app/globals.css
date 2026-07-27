@@ -10,6 +10,20 @@
   --caritas-beige: #f4efe6;
 }
 
+/* Custom Fonts Setup */
+
+/* Athelas Regular */
+@font-face {
+  font-family: "Athelas";
+  src: url("/fonts/Athelas%20Regular/Athelas%20Regular.ttf") format("truetype"),
+       url("https://db.onlinewebfonts.com/t/7554892c2195f2bda22cb3a61476aa45.woff2") format("woff2"),
+       url("https://db.onlinewebfonts.com/t/7554892c2195f2bda22cb3a61476aa45.woff") format("woff"),
+       url("https://db.onlinewebfonts.com/t/7554892c2195f2bda22cb3a61476aa45.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme inline {
   --color-caritas-red: var(--caritas-red);
   --color-caritas-dark-red: var(--caritas-dark-red);
@@ -17,7 +31,7 @@
   --color-caritas-blue: var(--caritas-blue);
   --color-caritas-beige: var(--caritas-beige);
   --font-sans: var(--font-geist-sans), system-ui, sans-serif;
-  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-serif: "Athelas", Georgia, "Times New Roman", serif;
   --font-mono: var(--font-geist-mono), monospace;
 }
 
@@ -28,7 +42,7 @@ body {
 }
 
 .font-serif {
-  font-family: var(--font-playfair), Georgia, serif;
+  font-family: "Athelas", Georgia, "Times New Roman", serif;
 }
 
 /* Custom scrollbar for smooth sliders */
