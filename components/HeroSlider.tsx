@@ -15,33 +15,30 @@ interface Slide {
 const slides: Slide[] = [
   {
     id: 1,
-    title: "Bangladesh Flood Emergency",
+    title: "Standing With the Families Who Need Us Most",
     subtitle:
-      "Caritas responds with life-saving support, food, clean water, and shelter for affected communities.",
-    buttonText: "READ MORE",
-    buttonLink: "#bangladesh-flood",
-    image:
-      "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1920&auto=format&fit=crop",
+      "Reaching households across the Archdiocese with compassion, dignity, and the kind of support that lasts.",
+    buttonText: "DONATE NOW",
+    buttonLink: "#donate",
+    image: "/images/Main Slider/Caritas_Kampala_87.jpg",
   },
   {
     id: 2,
-    title: "Sudan Crisis Emergency Response",
+    title: "Real Support, Reaching Real Families",
     subtitle:
-      "Providing urgent medical supplies, clean drinking water, and safe shelter to displaced families in Sudan.",
-    buttonText: "DONATE NOW",
-    buttonLink: "#sudan-crisis",
-    image:
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1920&auto=format&fit=crop",
+      "From emergency response to support for the elderly and vulnerable families, our work reaches across the Archdiocese of Kampala.",
+    buttonText: "SEE WHAT WE DO",
+    buttonLink: "/what-we-do",
+    image: "/images/Main Slider/Caritas_Kampala_91.jpg",
   },
   {
     id: 3,
-    title: "Gaza Relief & Humanitarian Action",
+    title: "You Don't Have to Do It Alone",
     subtitle:
-      "Caritas teams on the ground delivering food baskets, hygiene kits, and emergency trauma care.",
-    buttonText: "SUPPORT OUR APPEAL",
-    buttonLink: "#gaza-appeal",
-    image:
-      "https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=1920&auto=format&fit=crop",
+      "Join a network of charity homes and communities across the Archdiocese working together for those who need it most.",
+    buttonText: "GET INVOLVED",
+    buttonLink: "/support-us",
+    image: "/images/Main Slider/Caritas_Kampala_92.jpg",
   },
 ];
 
@@ -145,7 +142,7 @@ export default function HeroSlider() {
               alt=""
               fill
               priority={index === 0}
-              className="object-cover object-center transform scale-105 transition-transform duration-10000"
+              className="object-cover object-top transform scale-105 transition-transform duration-10000"
             />
             {/* Dark Overlay Vignette for Contrast */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/30" />
