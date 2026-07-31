@@ -92,7 +92,7 @@ export default function SpotlightSection() {
             <div className="pt-2">
               <a
                 href="#read-story"
-                className="inline-block bg-white text-[#006b5d] hover:bg-teal-50 text-xs sm:text-sm font-bold px-8 py-3.5 rounded-full tracking-wider uppercase shadow-md transition-all transform hover:scale-105"
+                className="inline-block bg-white text-[#006b5d] hover:bg-teal-50 text-xs sm:text-sm font-bold px-8 py-3.5 rounded-full tracking-wider uppercase transition-all transform hover:scale-105"
               >
                 READ STORY
               </a>

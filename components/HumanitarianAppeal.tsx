@@ -29,7 +29,7 @@ export default function HumanitarianAppeal() {
             <div className="pt-2">
               <a
                 href="#explore-humanitarian"
-                className="inline-block bg-white text-[#be0f2e] hover:bg-red-50 text-xs sm:text-sm font-bold px-8 py-3.5 rounded-full tracking-wider uppercase shadow-lg transition-all transform hover:scale-105"
+                className="inline-block bg-white text-[#be0f2e] hover:bg-red-50 text-xs sm:text-sm font-bold px-8 py-3.5 rounded-full tracking-wider uppercase transition-all transform hover:scale-105"
               >
                 EXPLORE HUMANITARIAN
               </a>
