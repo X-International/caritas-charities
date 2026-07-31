@@ -90,7 +90,7 @@ export default function HeroSlider() {
   };
 
   return (
-    <div className="w-full max-w-[1440px] mx-auto px-2 sm:px-3 lg:px-4 py-0 sm:py-3">
+    <div className="w-full max-w-[1440px] mx-auto px-2 sm:px-3 lg:px-4 pt-0 pb-0 sm:pb-3">
       <section
         aria-label="Featured Emergency Appeals and Humanitarian Initiatives"
         onTouchStart={handleTouchStart}
