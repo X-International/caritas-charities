@@ -122,7 +122,7 @@ export default function HeroSlider() {
               />
 
               {/* Perfectly Balanced Overlay for Bright Image + Crisp Text */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/45 to-black/25" aria-hidden="true" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/55 to-black/35" aria-hidden="true" />
             </div>
           );
         })}
