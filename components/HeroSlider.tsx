@@ -121,10 +121,8 @@ export default function HeroSlider() {
                 className="object-cover object-top transform scale-105 transition-transform duration-10000"
               />
 
-              {/* Multi-Layer Dark Overlay for 100% Contrast over Any Photo */}
-              <div className="absolute inset-0 bg-black/35" aria-hidden="true" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/40" aria-hidden="true" />
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-black/50 via-transparent to-transparent" aria-hidden="true" />
+              {/* Softened Overlay for Bright Image + Crisp Text */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/35 to-black/15" aria-hidden="true" />
             </div>
           );
         })}
@@ -146,7 +144,7 @@ export default function HeroSlider() {
               <a
                 href={slides[currentIndex].buttonLink}
                 onClick={(e) => e.preventDefault()}
-                className="inline-block bg-[#be0f2e] text-white hover:bg-white hover:text-[#be0f2e] border-2 border-[#be0f2e] text-xs sm:text-sm font-bold px-8 py-3.5 rounded-full tracking-wider uppercase transition-all duration-200 shadow-2xl cursor-pointer hover:scale-105 active:scale-95 focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+                className="inline-block bg-[#be0f2e] text-white hover:bg-white hover:text-[#be0f2e] border-2 border-[#be0f2e] text-xs sm:text-sm font-semibold px-8 py-3.5 rounded-full tracking-wider uppercase transition-colors duration-200 shadow-xl cursor-pointer focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
               >
                 {slides[currentIndex].buttonText}
               </a>
