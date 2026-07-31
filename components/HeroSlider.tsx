@@ -65,23 +65,6 @@ export default function HeroSlider() {
     return () => clearInterval(timer);
   }, [isPaused, nextSlide]);
 
-  /* Keyboard Navigation */
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "ArrowRight") {
-      e.preventDefault();
-      nextSlide();
-    } else if (e.key === "ArrowLeft") {
-      e.preventDefault();
-      prevSlide();
-    } else if (e.key === "Home") {
-      e.preventDefault();
-      setCurrentIndex(0);
-    } else if (e.key === "End") {
-      e.preventDefault();
-      setCurrentIndex(slides.length - 1);
-    }
-  };
-
   /* Touch / Swipe Navigation */
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
@@ -108,15 +91,7 @@ export default function HeroSlider() {
 
   return (
     <section
-      role="region"
-      aria-roledescription="carousel"
       aria-label="Featured Emergency Appeals and Humanitarian Initiatives"
-      tabIndex={0}
-      onKeyDown={handleKeyDown}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      onFocus={() => setIsPaused(true)}
-      onBlur={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
