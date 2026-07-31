@@ -90,13 +90,13 @@ export default function HeroSlider() {
   };
 
   return (
-    <div className="w-full max-w-[1440px] mx-auto px-0 sm:px-4 md:px-6 py-0 sm:py-4">
+    <div className="w-full max-w-[1440px] mx-auto px-2 sm:px-3 lg:px-4 py-0 sm:py-3">
       <section
         aria-label="Featured Emergency Appeals and Humanitarian Initiatives"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
-        className="relative w-full h-[540px] sm:h-[600px] lg:h-[650px] overflow-hidden bg-black text-white sm:rounded-3xl shadow-2xl focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-[-4px]"
+        className="relative w-full h-[540px] sm:h-[600px] lg:h-[650px] overflow-hidden bg-black text-white rounded-2xl sm:rounded-3xl shadow-2xl focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-[-4px]"
       >
         {/* Background Image Carousel */}
         {slides.map((slide, index) => {
@@ -121,8 +121,8 @@ export default function HeroSlider() {
                 className="object-cover object-top transform scale-105 transition-transform duration-10000"
               />
 
-              {/* Softened Overlay for Bright Image + Crisp Text */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/35 to-black/15" aria-hidden="true" />
+              {/* Perfectly Balanced Overlay for Bright Image + Crisp Text */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/45 to-black/25" aria-hidden="true" />
             </div>
           );
         })}
