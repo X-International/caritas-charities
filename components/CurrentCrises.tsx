@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export default function CurrentCrises() {
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-8 py-10">
-      {/* Outer Crimson Card Container */}
-      <div className="bg-[#be0f2e] text-white rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl relative overflow-hidden">
+    <section className="w-full bg-[#be0f2e] text-white py-12 lg:py-16 shadow-lg relative overflow-hidden">
+      {/* Centered content container aligning with page grid */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* Header */}
         <div className="max-w-3xl mb-8 space-y-3">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif tracking-tight">
@@ -17,18 +17,18 @@ export default function CurrentCrises() {
           </p>
         </div>
 
-        {/* Inner Crisis Featured Card Container */}
-        <div className="bg-white text-gray-900 rounded-2xl p-6 sm:p-8 shadow-lg">
+        {/* Inner Crisis Featured Card Container - rounded corners removed */}
+        <div className="bg-white text-gray-900 p-6 sm:p-8 shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Left Image */}
-            <div className="lg:col-span-6 relative h-64 sm:h-80 lg:h-96 rounded-xl overflow-hidden shadow-inner">
+            {/* Left Image - rounded corners removed, hover scaling removed */}
+            <div className="lg:col-span-6 relative h-64 sm:h-80 lg:h-[380px] overflow-hidden shadow-inner">
               <Image
                 src="/images/current appeal/Caritas_Kampala_Current_Appeal.jpg"
                 alt="Famine in Karamoja"
                 fill
-                className="object-cover transition-transform duration-700 hover:scale-105"
+                className="object-cover"
               />
-              <span className="absolute top-4 left-4 bg-[#be0f2e] text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full shadow">
+              <span className="absolute top-4 left-4 bg-[#be0f2e] text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1 shadow">
                 KOTIDO & MOROTO, KARAMOJA
               </span>
             </div>
@@ -44,7 +44,7 @@ export default function CurrentCrises() {
               <div className="pt-2">
                 <a
                   href="#how-to-help"
-                  className="inline-block bg-[#be0f2e] hover:bg-[#8e0a20] text-white text-xs font-bold px-7 py-3 rounded-full tracking-wider uppercase shadow-md transition-transform transform hover:-translate-y-0.5"
+                  className="inline-block bg-[#be0f2e] text-white hover:bg-white hover:text-[#be0f2e] border-2 border-[#be0f2e] text-xs font-bold px-7 py-3 rounded-full tracking-wider uppercase transition-colors duration-200 shadow-md cursor-pointer focus-visible:outline-2 focus-visible:outline-[#be0f2e] focus-visible:outline-offset-2"
                 >
                   See How to Help
                 </a>
