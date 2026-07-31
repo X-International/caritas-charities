@@ -15,29 +15,29 @@ interface Slide {
 const slides: Slide[] = [
   {
     id: 1,
-    title: "Standing With the Families Who Need Us Most",
+    title: "Standing With Those in Need",
     subtitle:
-      "Reaching households across the Archdiocese with compassion, dignity, and the kind of support that lasts.",
-    buttonText: "DONATE NOW",
-    buttonLink: "#donate",
+      "Reaching households across the Archdiocese with compassion, dignity, and support that truly lasts.",
+    buttonText: "Donate Now",
+    buttonLink: "#",
     image: "/images/Main Slider/Caritas_Kampala_87.jpg",
   },
   {
     id: 2,
-    title: "Real Support, Reaching Real Families",
+    title: "Real Support, Real Families",
     subtitle:
-      "From emergency response to support for the elderly and vulnerable families, our work reaches across the Archdiocese of Kampala.",
-    buttonText: "SEE WHAT WE DO",
-    buttonLink: "/what-we-do",
+      "From emergency response to support for the elderly and vulnerable families, our work reaches across the Archdiocese.",
+    buttonText: "See What We Do",
+    buttonLink: "#",
     image: "/images/Main Slider/Caritas_Kampala_91.jpg",
   },
   {
     id: 3,
-    title: "You Don't Have to Do It Alone",
+    title: "Stronger as One Family",
     subtitle:
-      "Join a network of charity homes and communities across the Archdiocese working together for those who need it most.",
-    buttonText: "GET INVOLVED",
-    buttonLink: "/support-us",
+      "Part of a network of charity homes across the Archdiocese, working together for those who need it most.",
+    buttonText: "Get Involved",
+    buttonLink: "#",
     image: "/images/Main Slider/Caritas_Kampala_92.jpg",
   },
 ];
@@ -128,7 +128,7 @@ export default function HeroSlider() {
       {/* Content Container */}
       <div className="relative z-20 max-w-7xl mx-auto h-full px-6 sm:px-12 flex flex-col justify-center items-center text-center">
         <div key={currentIndex} className="max-w-3xl space-y-5 animate-in fade-in zoom-in-95 duration-300">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold font-serif leading-tight drop-shadow-md">
+          <h1 className="text-[35px] sm:text-[47px] md:text-[59px] font-extrabold font-serif leading-tight drop-shadow-md">
             {slides[currentIndex].title}
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-gray-200 font-light max-w-2xl mx-auto leading-relaxed">
@@ -137,6 +137,7 @@ export default function HeroSlider() {
           <div className="pt-3">
             <a
               href={slides[currentIndex].buttonLink}
+              onClick={(e) => e.preventDefault()}
               className="inline-block bg-[#be0f2e] text-white hover:bg-white hover:text-[#be0f2e] border-2 border-[#be0f2e] text-xs sm:text-sm font-semibold px-8 py-3.5 rounded-full tracking-wider uppercase transition-colors duration-200 shadow-xl cursor-pointer focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               {slides[currentIndex].buttonText}
