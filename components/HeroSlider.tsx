@@ -17,16 +17,16 @@ const slides: Slide[] = [
     id: 1,
     title: "Standing With Those in Need",
     subtitle:
-      "Reaching households across the Archdiocese with compassion, dignity, and support that truly lasts.",
+      "Serving vulnerable children, families, and communities across the Archdiocese of Kampala with compassion, dignity, and lasting hope.",
     buttonText: "Donate Now",
     buttonLink: "#",
     image: "/images/Main Slider/Caritas_Kampala_87.jpg",
   },
   {
     id: 2,
-    title: "Real Support, Real Families",
+    title: "Transforming Lives Together",
     subtitle:
-      "From emergency response to support for the elderly and vulnerable families, our work reaches across the Archdiocese.",
+      "From emergency response to long-term community development, we empower people to build brighter futures.",
     buttonText: "See What We Do",
     buttonLink: "#",
     image: "/images/Main Slider/Caritas_Kampala_91.jpg",
