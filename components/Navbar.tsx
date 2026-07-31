@@ -254,8 +254,8 @@ export default function Navbar() {
       >
         {/* ── Top Utility Bar ─────────────────────────────── */}
         <div className="bg-[#141414] text-gray-200 text-xs py-2 px-4 sm:px-8 border-b border-white/5">
-          <div className="max-w-7xl mx-auto flex justify-between items-center">
-            <div className="flex items-center space-x-2 text-xs min-w-0 flex-1">
+          <div className="max-w-7xl mx-auto flex justify-center lg:justify-between items-center">
+            <div className="flex items-center space-x-2 text-xs min-w-0 lg:flex-1">
               <strong className="text-white font-bold shrink-0 font-sans tracking-wide">
                 Part of Caritas Kampala
               </strong>
