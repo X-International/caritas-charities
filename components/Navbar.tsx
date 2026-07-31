@@ -47,7 +47,7 @@ const navLinks: NavLink[] = [
         title: "About Us",
         description:
           "The Charities Department is one of Caritas Kampala's core departments, serving the Archdiocese of Kampala through compassion, dignity, and practical support for those who need it most.",
-        image: "/images/menu/Caritas_Kampala_92.jpg",
+        image: "/images/Main Slider/Caritas_Kampala_18.jpg",
         cta: { label: "Read Our Story", href: "/about-us" },
       },
     },
@@ -84,7 +84,7 @@ const navLinks: NavLink[] = [
         title: "Resources",
         description:
           "Photos, videos, and the latest updates from our work across the Archdiocese of Kampala.",
-        image: "/images/menu/Caritas_Kampala_87.jpg",
+        image: "/images/Main Slider/Caritas_Kampala_90.jpg",
         cta: { label: "Browse Resources", href: "/resources" },
       },
     },
