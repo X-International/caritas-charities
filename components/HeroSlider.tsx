@@ -90,122 +90,131 @@ export default function HeroSlider() {
   };
 
   return (
-    <section
-      aria-label="Featured Emergency Appeals and Humanitarian Initiatives"
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-      className="relative w-full h-[540px] sm:h-[600px] lg:h-[650px] overflow-hidden bg-black text-white focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-[-4px]"
-    >
-      {/* Background Image Carousel */}
-      {slides.map((slide, index) => {
-        const isCurrent = index === currentIndex;
-        return (
-          <div
-            key={slide.id}
-            role="group"
-            aria-roledescription="slide"
-            aria-label={`Slide ${index + 1} of ${slides.length}: ${slide.title}`}
-            aria-hidden={!isCurrent}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              isCurrent ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-            }`}
-          >
-            {/* Background Image */}
-            <Image
-              src={slide.image}
-              alt=""
-              fill
-              priority={index === 0}
-              className="object-cover object-top transform scale-105 transition-transform duration-10000"
-            />
-            {/* Dark Overlay Vignette for Contrast */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/30" />
-          </div>
-        );
-      })}
-
-      {/* Content Container */}
-      <div className="relative z-20 max-w-7xl mx-auto h-full px-6 sm:px-12 flex flex-col justify-center items-center text-center">
-        <div key={currentIndex} className="max-w-3xl space-y-5 animate-in fade-in zoom-in-95 duration-300">
-          <h1 className="text-[35px] sm:text-[47px] md:text-[59px] font-extrabold font-serif leading-tight drop-shadow-md">
-            {slides[currentIndex].title}
-          </h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-200 font-light max-w-2xl mx-auto leading-relaxed">
-            {slides[currentIndex].subtitle}
-          </p>
-          <div className="pt-3">
-            <a
-              href={slides[currentIndex].buttonLink}
-              onClick={(e) => e.preventDefault()}
-              className="inline-block bg-[#be0f2e] text-white hover:bg-white hover:text-[#be0f2e] border-2 border-[#be0f2e] text-xs sm:text-sm font-semibold px-8 py-3.5 rounded-full tracking-wider uppercase transition-colors duration-200 shadow-xl cursor-pointer focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+    <div className="w-full max-w-[1440px] mx-auto px-0 sm:px-4 md:px-6 py-0 sm:py-4">
+      <section
+        aria-label="Featured Emergency Appeals and Humanitarian Initiatives"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        className="relative w-full h-[540px] sm:h-[600px] lg:h-[650px] overflow-hidden bg-black text-white sm:rounded-3xl shadow-2xl focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-[-4px]"
+      >
+        {/* Background Image Carousel */}
+        {slides.map((slide, index) => {
+          const isCurrent = index === currentIndex;
+          return (
+            <div
+              key={slide.id}
+              role="group"
+              aria-roledescription="slide"
+              aria-label={`Slide ${index + 1} of ${slides.length}: ${slide.title}`}
+              aria-hidden={!isCurrent}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                isCurrent ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+              }`}
             >
-              {slides[currentIndex].buttonText}
-            </a>
+              {/* Background Image */}
+              <Image
+                src={slide.image}
+                alt=""
+                fill
+                priority={index === 0}
+                className="object-cover object-top transform scale-105 transition-transform duration-10000"
+              />
+
+              {/* Multi-Layer Dark Overlay for 100% Contrast over Any Photo */}
+              <div className="absolute inset-0 bg-black/35" aria-hidden="true" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/40" aria-hidden="true" />
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-black/50 via-transparent to-transparent" aria-hidden="true" />
+            </div>
+          );
+        })}
+
+        {/* Content Container */}
+        <div className="relative z-20 max-w-7xl mx-auto h-full px-6 sm:px-12 flex flex-col justify-center items-center text-center">
+          <div key={currentIndex} className="max-w-3xl space-y-5 animate-in fade-in zoom-in-95 duration-300">
+            {/* Title — font-serif kept, size 35/47/59, heavy drop-shadow */}
+            <h1 className="text-[35px] sm:text-[47px] md:text-[59px] font-extrabold font-serif leading-[1.15] text-white tracking-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]">
+              {slides[currentIndex].title}
+            </h1>
+
+            {/* Subtitle — font-medium text-white/95 for crisp readability over any background */}
+            <p className="text-base sm:text-lg md:text-xl text-white/95 font-medium max-w-2xl mx-auto leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+              {slides[currentIndex].subtitle}
+            </p>
+
+            <div className="pt-3">
+              <a
+                href={slides[currentIndex].buttonLink}
+                onClick={(e) => e.preventDefault()}
+                className="inline-block bg-[#be0f2e] text-white hover:bg-white hover:text-[#be0f2e] border-2 border-[#be0f2e] text-xs sm:text-sm font-bold px-8 py-3.5 rounded-full tracking-wider uppercase transition-all duration-200 shadow-2xl cursor-pointer hover:scale-105 active:scale-95 focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+              >
+                {slides[currentIndex].buttonText}
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Navigation Arrows */}
-      <button
-        onClick={prevSlide}
-        aria-label="Previous Slide"
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/40 hover:bg-[#be0f2e] focus-visible:bg-[#be0f2e] focus-visible:outline-2 focus-visible:outline-white text-white flex items-center justify-center transition-all backdrop-blur-sm cursor-pointer"
-      >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-
-      <button
-        onClick={nextSlide}
-        aria-label="Next Slide"
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/40 hover:bg-[#be0f2e] focus-visible:bg-[#be0f2e] focus-visible:outline-2 focus-visible:outline-white text-white flex items-center justify-center transition-all backdrop-blur-sm cursor-pointer"
-      >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
-
-      {/* Pagination & Auto-play Pause Control Row */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center space-x-3 bg-black/40 backdrop-blur-xs px-4 py-2 rounded-full border border-white/10">
-        {/* Pause/Play Toggle Button */}
+        {/* Navigation Arrows */}
         <button
-          onClick={() => setIsPaused(!isPaused)}
-          aria-label={isPaused ? "Play slide animation" : "Pause slide animation"}
-          className="text-white hover:text-[#be0f2e] focus-visible:outline-2 focus-visible:outline-white rounded cursor-pointer p-0.5"
+          onClick={prevSlide}
+          aria-label="Previous Slide"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-[#be0f2e] focus-visible:bg-[#be0f2e] focus-visible:outline-2 focus-visible:outline-white text-white flex items-center justify-center transition-all backdrop-blur-md border border-white/10 shadow-lg cursor-pointer"
         >
-          {isPaused ? (
-            <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M8 5v14l11-7z" />
-            </svg>
-          ) : (
-            <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-            </svg>
-          )}
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+          </svg>
         </button>
 
-        <span className="w-px h-3 bg-white/30" aria-hidden="true" />
+        <button
+          onClick={nextSlide}
+          aria-label="Next Slide"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-[#be0f2e] focus-visible:bg-[#be0f2e] focus-visible:outline-2 focus-visible:outline-white text-white flex items-center justify-center transition-all backdrop-blur-md border border-white/10 shadow-lg cursor-pointer"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
 
-        {/* Slide Indicator Dots */}
-        <div className="flex items-center space-x-2" role="tablist" aria-label="Slide Selection">
-          {slides.map((slide, index) => (
-            <button
-              key={slide.id}
-              onClick={() => setCurrentIndex(index)}
-              role="tab"
-              aria-selected={index === currentIndex}
-              aria-label={`Go to slide ${index + 1}: ${slide.title}`}
-              className={`h-2.5 rounded-full transition-all cursor-pointer focus-visible:outline-2 focus-visible:outline-white ${
-                index === currentIndex
-                  ? "w-8 bg-[#be0f2e]"
-                  : "w-2.5 bg-white/60 hover:bg-white"
-              }`}
-            />
-          ))}
+        {/* Pagination & Auto-play Pause Control Row */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center space-x-3 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full border border-white/15 shadow-xl">
+          {/* Pause/Play Toggle Button */}
+          <button
+            onClick={() => setIsPaused(!isPaused)}
+            aria-label={isPaused ? "Play slide animation" : "Pause slide animation"}
+            className="text-white hover:text-[#be0f2e] focus-visible:outline-2 focus-visible:outline-white rounded cursor-pointer p-0.5"
+          >
+            {isPaused ? (
+              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            ) : (
+              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+              </svg>
+            )}
+          </button>
+
+          <span className="w-px h-3 bg-white/30" aria-hidden="true" />
+
+          {/* Slide Indicator Dots */}
+          <div className="flex items-center space-x-2" role="tablist" aria-label="Slide Selection">
+            {slides.map((slide, index) => (
+              <button
+                key={slide.id}
+                onClick={() => setCurrentIndex(index)}
+                role="tab"
+                aria-selected={index === currentIndex}
+                aria-label={`Go to slide ${index + 1}: ${slide.title}`}
+                className={`h-2.5 rounded-full transition-all cursor-pointer focus-visible:outline-2 focus-visible:outline-white ${
+                  index === currentIndex
+                    ? "w-8 bg-[#be0f2e]"
+                    : "w-2.5 bg-white/60 hover:bg-white"
+                }`}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
