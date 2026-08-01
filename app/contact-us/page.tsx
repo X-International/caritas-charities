@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -15,29 +16,60 @@ export default function ContactUsPage() {
       <Navbar />
 
       <main id="main-content" className="flex-1">
-        {/* Hero Banner */}
-        <section className="bg-[#b10017] text-white py-14 sm:py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-            <nav aria-label="Breadcrumb" className="text-xs uppercase tracking-wider font-semibold text-red-200">
-              <ol className="flex items-center space-x-2">
-                <li>
-                  <Link href="/" className="hover:underline text-white">HOME</Link>
-                </li>
-                <li>/</li>
-                <li aria-current="page" className="text-red-200">CONTACT US</li>
-              </ol>
-            </nav>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif tracking-tight">
-              Contact Us
-            </h1>
-            <p className="text-base sm:text-lg text-red-100 max-w-2xl font-light leading-relaxed">
-              Our team is ready to assist you with donation drop-offs, partnerships, and general enquiries.
-            </p>
-          </div>
-        </section>
+        {/* Breadcrumb Container - Matches Navbar Padding */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-6 sm:py-10 lg:py-12">
+          <nav aria-label="Breadcrumb" className="mb-6">
+            <ol className="flex items-center space-x-2 text-xs uppercase tracking-wider font-semibold">
+              <li>
+                <Link href="/" className="text-[#b10017] hover:underline">
+                  HOME
+                </Link>
+              </li>
+              <li className="text-gray-400">/</li>
+              <li className="text-gray-600" aria-current="page">
+                CONTACT US
+              </li>
+            </ol>
+          </nav>
+        </div>
 
-        {/* Contact Info & Directions */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        {/* Full-width Two-Column Hero Header */}
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 mb-8 sm:mb-12">
+          {/* Left Column: Image */}
+          <div className="order-1 lg:order-1 relative h-[300px] sm:h-[400px] md:h-[480px] lg:h-[500px] rounded-r-2xl sm:rounded-r-[32px] overflow-hidden">
+            <Image
+              src="/images/Event 01/Caritas_Kampala_72.jpg"
+              alt="Caritas Kampala community outreach"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
+
+          {/* Right Column: Red Content Panel */}
+          <div className="order-2 lg:order-2 relative h-[300px] sm:h-[400px] md:h-[480px] lg:h-[500px] bg-[#b10017] text-white rounded-l-2xl sm:rounded-l-[32px] overflow-hidden flex flex-col justify-center px-8 sm:px-12 md:px-16 lg:px-24">
+            <div className="max-w-lg">
+              <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-white/90 mb-4 sm:mb-5">
+                GET IN TOUCH WITH OUR TEAM
+              </p>
+              <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-serif font-bold text-white tracking-tight mb-6 sm:mb-8">
+                CONTACT US
+              </h1>
+              <p className="text-xl sm:text-2xl lg:text-[26px] font-serif text-white leading-snug mb-4 sm:mb-6">
+                &ldquo;Our team is ready to assist you with donation drop-offs, partnerships, and general enquiries.&rdquo;
+              </p>
+              <p className="text-sm sm:text-base text-white/90 font-sans">
+                Caritas Kampala Charities Department
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Main Container for the rest of the page */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Contact Info & Directions */}
+          <section className="py-12 sm:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
             {/* Direct Lines */}
             <div className="lg:col-span-6 space-y-6">
@@ -88,7 +120,8 @@ export default function ContactUsPage() {
               </form>
             </div>
           </div>
-        </section>
+          </section>
+        </div>
       </main>
 
       {/* Google Map Roadmap View */}
