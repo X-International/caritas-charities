@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function ContactHero() {
   return (
-    <div className="contact-hero w-full grid grid-cols-1 mb-8 sm:mb-12 lg:relative lg:h-[500px] lg:overflow-hidden">
+    <div className="contact-hero w-full grid grid-cols-1 mb-8 sm:mb-12 relative overflow-hidden lg:h-[500px]">
       {/* Left Column: Image */}
       <div className="contact-hero-image order-1 relative h-[300px] sm:h-[400px] md:h-[480px] lg:h-full rounded-t-2xl sm:rounded-t-[32px] lg:rounded-none lg:rounded-r-[32px] overflow-hidden lg:absolute lg:inset-y-0 lg:left-0 lg:w-[calc(50%-0.5rem)]">
         <Image
