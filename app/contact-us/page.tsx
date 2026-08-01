@@ -99,24 +99,104 @@ export default function ContactUsPage() {
             </div>
 
             {/* Quick Form */}
-            <div className="lg:col-span-6 bg-white p-6 sm:p-8 rounded-2xl border border-gray-200 shadow-xs space-y-4">
-              <h2 className="text-2xl font-serif font-bold text-[#b10017]">Send Us a Message</h2>
-              <form className="space-y-4">
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Your Name</label>
-                  <input type="text" placeholder="John Doe" required className="w-full px-4 py-3 rounded-xl border border-gray-300 text-sm focus:outline-none focus:border-[#b10017]" />
+            <div className="lg:col-span-6 bg-white p-6 sm:p-8 md:p-10 rounded-3xl border border-gray-200 space-y-6">
+              <div>
+                <h2 className="text-2xl font-serif font-bold text-[#b10017]">Send Us a Message</h2>
+                <p className="text-sm text-gray-600 mt-2">Fill out the form below and we&apos;ll get back to you as soon as possible.</p>
+              </div>
+              <form className="space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <label htmlFor="name" className="block text-[11px] font-bold uppercase tracking-wider text-gray-700 mb-1.5">
+                      Name <span className="text-[#b10017]">*</span>
+                    </label>
+                    <input 
+                      type="text" 
+                      id="name"
+                      name="name"
+                      placeholder="e.g. Maria Namuli" 
+                      required 
+                      aria-required="true"
+                      className="w-full px-4 py-3.5 rounded-xl border border-gray-300 text-sm focus:outline-none focus:border-[#b10017] transition-colors" 
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-[11px] font-bold uppercase tracking-wider text-gray-700 mb-1.5">
+                      Email Address <span className="text-[#b10017]">*</span>
+                    </label>
+                    <input 
+                      type="email" 
+                      id="email"
+                      name="email"
+                      placeholder="e.g. jane@example.com" 
+                      required 
+                      aria-required="true"
+                      className="w-full px-4 py-3.5 rounded-xl border border-gray-300 text-sm focus:outline-none focus:border-[#b10017] transition-colors" 
+                    />
+                  </div>
                 </div>
+
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Email Address</label>
-                  <input type="email" placeholder="john@example.com" required className="w-full px-4 py-3 rounded-xl border border-gray-300 text-sm focus:outline-none focus:border-[#b10017]" />
+                  <label htmlFor="phone" className="block text-[11px] font-bold uppercase tracking-wider text-gray-700 mb-1.5">
+                    PHONE NUMBER (optional)
+                  </label>
+                  <input 
+                    type="tel" 
+                    id="phone"
+                    name="phone"
+                    placeholder="e.g. +256 700 000 000" 
+                    className="w-full px-4 py-3.5 rounded-xl border border-gray-300 text-sm focus:outline-none focus:border-[#b10017] transition-colors" 
+                  />
                 </div>
+                
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Message</label>
-                  <textarea rows={4} placeholder="How can we help you?" required className="w-full px-4 py-3 rounded-xl border border-gray-300 text-sm focus:outline-none focus:border-[#b10017]"></textarea>
+                  <label htmlFor="subject" className="block text-[11px] font-bold uppercase tracking-wider text-gray-700 mb-1.5">
+                    Subject <span className="text-[#b10017]">*</span>
+                  </label>
+                  <select 
+                    id="subject"
+                    name="subject"
+                    required
+                    defaultValue=""
+                    aria-required="true"
+                    className="w-full px-4 py-3.5 rounded-xl border border-gray-300 text-sm focus:outline-none focus:border-[#b10017] transition-colors bg-white appearance-none"
+                    style={{ backgroundImage: 'url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%239CA3AF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 1rem top 50%', backgroundSize: '0.65rem auto' }}
+                  >
+                    <option value="" disabled>Select a subject...</option>
+                    <option value="general">General Enquiry</option>
+                    <option value="donations">Donations &amp; Giving</option>
+                    <option value="partnerships">Partnerships</option>
+                    <option value="media">Media &amp; Press</option>
+                    <option value="other">Something Else</option>
+                  </select>
                 </div>
-                <button type="submit" className="w-full bg-[#b10017] text-white font-bold py-3.5 rounded-full uppercase tracking-wider text-xs hover:bg-red-900 transition-colors">
-                  SEND MESSAGE
-                </button>
+
+                <div>
+                  <label htmlFor="message" className="block text-[11px] font-bold uppercase tracking-wider text-gray-700 mb-1.5">
+                    Message <span className="text-[#b10017]">*</span>
+                  </label>
+                  <textarea 
+                    id="message"
+                    name="message"
+                    rows={5} 
+                    placeholder="How can we help you?" 
+                    required 
+                    aria-required="true"
+                    className="w-full px-4 py-3.5 rounded-xl border border-gray-300 text-sm focus:outline-none focus:border-[#b10017] transition-colors resize-y"
+                  ></textarea>
+                </div>
+                
+                <div className="pt-2 space-y-3">
+                  <button 
+                    type="submit" 
+                    className="w-full sm:w-auto px-8 bg-[#b10017] text-white font-bold py-3.5 rounded-full uppercase tracking-wider text-xs hover:bg-white hover:text-[#b10017] border-2 border-[#b10017] transition-all duration-200 shadow-sm"
+                  >
+                    SEND MESSAGE
+                  </button>
+                  <p className="text-[11px] text-gray-500 font-sans">
+                    By submitting this form, you agree to be contacted about your enquiry.
+                  </p>
+                </div>
               </form>
             </div>
           </div>
