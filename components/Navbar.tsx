@@ -675,7 +675,7 @@ export default function Navbar() {
           {/* Donate CTA + Mobile toggle */}
           <div className="flex items-center space-x-3 shrink-0">
             <Link
-              href="#donate"
+              href="/donate"
               className="hidden sm:inline-block bg-[#b10017] text-white hover:bg-white hover:text-[#b10017] focus-visible:bg-white focus-visible:text-[#b10017] focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-2 border-2 border-[#b10017] text-xs xl:text-sm font-bold px-5 py-2.5 xl:px-7 xl:py-3 rounded-full tracking-wider uppercase transition-all duration-200 text-center shadow-xs cursor-pointer"
               aria-label="Donate to Caritas Kampala"
             >
@@ -926,7 +926,7 @@ export default function Navbar() {
                 {/* Mobile Donate Button */}
                 <div className="pt-4 pb-2">
                   <Link
-                    href="#donate"
+                    href="/donate"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="block w-full text-center bg-[#b10017] text-white hover:bg-white hover:text-[#b10017] border-2 border-[#b10017] font-bold py-3.5 rounded-full text-sm uppercase tracking-wider transition-all duration-200 shadow-sm"
                     aria-label="Donate to Caritas Kampala"
