@@ -151,6 +151,61 @@ body {
   }
 }
 
+/* Appeal page hero — layered stagger reveal on load */
+
+@keyframes appeal-hero-gradient-fade {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appeal-hero-badge-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes appeal-hero-caption-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.appeal-hero-media {
+  will-change: transform;
+  backface-visibility: hidden;
+  animation: contact-hero-image-reveal var(--motion-image-duration) var(--motion-ease-reveal) 0ms both;
+}
+
+.appeal-hero-gradient {
+  animation: appeal-hero-gradient-fade 1000ms var(--motion-ease-reveal) 0ms both;
+}
+
+.appeal-hero-badge {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation: appeal-hero-badge-enter 600ms var(--motion-ease-reveal) 300ms both;
+}
+
+.appeal-hero-caption {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation: appeal-hero-caption-enter 700ms var(--motion-ease-reveal) 500ms both;
+}
+
 /* Appeal callout banner animations */
 
 @media (max-width: 1023px) {
@@ -257,6 +312,15 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .appeal-hero-media,
+  .appeal-hero-gradient,
+  .appeal-hero-badge,
+  .appeal-hero-caption {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
   @media (max-width: 1023px) {
     .contact-hero-panel {
       animation: none;

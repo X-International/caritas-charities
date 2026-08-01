@@ -1,8 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AppealCalloutBanner from "@/components/AppealCalloutBanner";
+import AppealPageHero from "@/components/AppealPageHero";
 
 export const metadata = {
   title: "Emergency Appeal for Kotido and Moroto | Caritas Kampala",
@@ -33,28 +33,7 @@ export default function CurrentAppealPage() {
             </ol>
           </nav>
 
-          {/* Top Hero Image Header with Tag Badge */}
-          <div className="relative w-full h-[280px] sm:h-[420px] md:h-[480px] lg:h-[540px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl mb-8 sm:mb-12">
-            <Image
-              src="/images/current appeal/Caritas_Kampala_Current_Appeal_details.jpg"
-              alt="Emergency Appeal for Kotido and Moroto"
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
-            <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-10">
-              <span className="inline-block bg-[#b10017] text-white text-[10px] sm:text-[11px] font-extrabold uppercase tracking-widest px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-lg border border-white/20">
-                KOTIDO &amp; MOROTO, KARAMOJA
-              </span>
-            </div>
-            <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-white text-[11px] sm:text-sm font-light">
-              <p className="bg-black/40 backdrop-blur-md px-3.5 py-2 rounded-lg inline-block text-white/95 leading-relaxed">
-                The famine in Kotido and Moroto has left many families struggling to meet their most basic needs.
-              </p>
-            </div>
-          </div>
+          <AppealPageHero />
 
           {/* Main Two-Column Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 mb-16 sm:mb-20 items-start">
