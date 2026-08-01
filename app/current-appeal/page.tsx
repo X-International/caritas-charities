@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AppealCalloutBanner from "@/components/AppealCalloutBanner";
 
 export const metadata = {
   title: "Emergency Appeal for Kotido and Moroto | Caritas Kampala",
@@ -252,38 +253,7 @@ export default function CurrentAppealPage() {
             </div>
           </div>
 
-          {/* Lower Featured Callout Banner - Drop shadows removed & Ghost Button hover applied */}
-          <div className="relative pt-8 sm:pt-10 pb-10 sm:pb-16">
-            <div className="relative grid grid-cols-1 lg:grid-cols-12 items-center gap-6 lg:gap-0">
-              {/* Overlapping Crimson Callout Box - shadow removed */}
-              <div className="lg:col-span-5 z-20 lg:-mr-12">
-                <div className="bg-[#b10017] text-white p-7 sm:p-10 lg:p-12 rounded-2xl sm:rounded-3xl space-y-5 sm:space-y-6">
-                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold font-serif leading-snug">
-                    Each year, Caritas Kampala supports thousands of vulnerable families through food security, emergency relief, and community resilience programmes.
-                  </h2>
-                  <div>
-                    <Link
-                      href="/contact-us"
-                      className="inline-block bg-white text-[#b10017] hover:bg-transparent hover:text-white border-2 border-white text-xs font-bold px-7 py-3.5 rounded-full tracking-wider uppercase transition-all duration-200"
-                    >
-                      Contact Us to Contribute
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
-              {/* Background Image - shadow removed */}
-              <div className="lg:col-span-7 relative h-[300px] sm:h-[400px] lg:h-[460px] rounded-2xl sm:rounded-3xl overflow-hidden">
-                <Image
-                  src="/images/Charities/Caritas_Kampala_83.jpg"
-                  alt="Caritas Kampala field team supporting community development"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 58vw"
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
+          <AppealCalloutBanner />
         </div>
       </main>
 

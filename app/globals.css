@@ -8,6 +8,10 @@
   --caritas-teal: #006b5d;
   --caritas-blue: #38a3ca;
   --caritas-beige: #f4efe6;
+  --motion-reveal-duration: 1200ms;
+  --motion-reveal-delay: 100ms;
+  --motion-image-duration: 1400ms;
+  --motion-ease-reveal: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* Custom Fonts Setup */
@@ -147,6 +151,83 @@ body {
   }
 }
 
+/* Appeal callout banner animations */
+
+@media (max-width: 1023px) {
+  @keyframes appeal-callout-panel-slide-mobile {
+    from {
+      transform: translate3d(0, calc(320px + 1.5rem), 0);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .appeal-callout-panel {
+    position: relative;
+    z-index: 10;
+    will-change: transform;
+    backface-visibility: hidden;
+    animation: appeal-callout-panel-slide-mobile var(--motion-reveal-duration) var(--motion-ease-reveal) var(--motion-reveal-delay) both;
+  }
+
+  @media (min-width: 640px) {
+    @keyframes appeal-callout-panel-slide-mobile {
+      from {
+        transform: translate3d(0, calc(420px + 1.5rem), 0);
+      }
+      to {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+
+  .appeal-callout-panel-content {
+    animation: contact-hero-content-fade var(--motion-reveal-duration) var(--motion-ease-reveal) var(--motion-reveal-delay) both;
+  }
+
+  .appeal-callout-panel-cta {
+    animation: contact-hero-content-fade 800ms var(--motion-ease-reveal) 300ms both;
+  }
+
+  .appeal-callout-image-media {
+    will-change: transform;
+    backface-visibility: hidden;
+    animation: contact-hero-image-reveal var(--motion-image-duration) var(--motion-ease-reveal) var(--motion-reveal-delay) both;
+  }
+}
+
+@media (min-width: 1024px) {
+  @keyframes appeal-callout-panel-slide-desktop {
+    from {
+      transform: translate3d(calc(58.333% - 3rem), 0, 0);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .appeal-callout-panel {
+    will-change: transform;
+    backface-visibility: hidden;
+    animation: appeal-callout-panel-slide-desktop var(--motion-reveal-duration) var(--motion-ease-reveal) var(--motion-reveal-delay) both;
+  }
+
+  .appeal-callout-panel-content {
+    animation: contact-hero-content-fade var(--motion-reveal-duration) var(--motion-ease-reveal) var(--motion-reveal-delay) both;
+  }
+
+  .appeal-callout-panel-cta {
+    animation: contact-hero-content-fade 800ms var(--motion-ease-reveal) 300ms both;
+  }
+
+  .appeal-callout-image-media {
+    will-change: transform;
+    backface-visibility: hidden;
+    animation: contact-hero-image-reveal var(--motion-image-duration) var(--motion-ease-reveal) var(--motion-reveal-delay) both;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   @media (max-width: 1023px) {
     .contact-hero-panel {
@@ -156,6 +237,19 @@ body {
 
     .contact-hero-panel-content,
     .contact-hero-image-media {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+
+    .appeal-callout-panel {
+      animation: none;
+      transform: none;
+    }
+
+    .appeal-callout-panel-content,
+    .appeal-callout-panel-cta,
+    .appeal-callout-image-media {
       animation: none;
       opacity: 1;
       transform: none;
@@ -170,6 +264,19 @@ body {
 
     .contact-hero-panel-content,
     .contact-hero-image-media {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+
+    .appeal-callout-panel {
+      animation: none;
+      transform: none;
+    }
+
+    .appeal-callout-panel-content,
+    .appeal-callout-panel-cta,
+    .appeal-callout-image-media {
       animation: none;
       opacity: 1;
       transform: none;
