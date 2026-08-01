@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 
 const API_KEY = "AIzaSyByUtXEZAoEcliwaUDu_ETmV73nl2QzZ20";
-const MAP_LAT = 0.30181680920712806;
-const MAP_LNG = 32.593244809970635;
+const MAP_LAT = 0.299230886593831;
+const MAP_LNG = 32.593433862503;
 const MARKER_PATH = "/maps/Caritas_Kampala_Pin.png";
 const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${MAP_LAT},${MAP_LNG}`;
 
