@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import GoogleMap from "@/components/GoogleMap";
 
 export const metadata = {
   title: "Contact Us | Caritas Kampala",
@@ -89,6 +90,14 @@ export default function ContactUsPage() {
           </div>
         </section>
       </main>
+
+      {/* Google Map Roadmap View */}
+      <section
+        aria-label="Caritas Kampala Office Location Map"
+        className="rounded-3xl mx-4 my-4 sm:mx-6 sm:my-6 lg:mx-8 lg:my-8 overflow-hidden bg-gray-100 shadow-lg shadow-gray-200/80 h-56 sm:h-72 lg:h-80"
+      >
+        <GoogleMap />
+      </section>
 
       <Footer />
     </div>
