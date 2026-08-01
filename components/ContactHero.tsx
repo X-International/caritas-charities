@@ -2,28 +2,22 @@ import Image from "next/image";
 
 export default function ContactHero() {
   return (
-    <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-4 mb-8 sm:mb-12 lg:relative">
+    <div className="contact-hero w-full grid grid-cols-1 mb-8 sm:mb-12 lg:relative lg:h-[500px] lg:overflow-hidden">
       {/* Left Column: Image */}
-      <div className="order-1 lg:order-1 relative h-[300px] sm:h-[400px] md:h-[480px] lg:h-[500px] rounded-t-2xl sm:rounded-t-[32px] lg:rounded-none lg:rounded-r-[32px] overflow-hidden">
+      <div className="contact-hero-image order-1 relative h-[300px] sm:h-[400px] md:h-[480px] lg:h-full rounded-t-2xl sm:rounded-t-[32px] lg:rounded-none lg:rounded-r-[32px] overflow-hidden lg:absolute lg:inset-y-0 lg:left-0 lg:w-[calc(50%-0.5rem)]">
         <Image
           src="/images/Event 01/Caritas_Kampala_72.jpg"
           alt="Caritas Kampala community outreach"
           fill
           priority
           sizes="(max-width: 1024px) 100vw, 50vw"
-          className="object-cover"
+          className="contact-hero-image-media object-cover"
         />
       </div>
 
-      {/* Spacer keeps grid height on large screens while the panel animates absolutely */}
-      <div
-        className="hidden lg:block lg:order-2 h-[500px]"
-        aria-hidden="true"
-      />
-
       {/* Right Column: Red Content Panel */}
-      <div className="contact-hero-panel order-2 relative h-[300px] sm:h-[400px] md:h-[480px] lg:h-[500px] bg-[#b10017] text-white rounded-b-2xl sm:rounded-b-[32px] lg:rounded-none overflow-hidden flex flex-col justify-center px-8 sm:px-12 md:px-16 lg:px-24">
-        <div className="max-w-lg">
+      <div className="contact-hero-panel order-2 relative h-[300px] sm:h-[400px] md:h-[480px] lg:h-full bg-[#b10017] text-white rounded-b-2xl sm:rounded-b-[32px] lg:rounded-none lg:rounded-l-[32px] overflow-hidden flex flex-col justify-center px-8 sm:px-12 md:px-16 lg:px-24">
+        <div className="contact-hero-panel-content max-w-lg">
           <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-white/90 mb-4 sm:mb-5">
             WE&apos;D LIKE TO HEAR FROM YOU
           </p>
