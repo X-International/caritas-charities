@@ -168,7 +168,7 @@ body {
     z-index: 10;
     will-change: transform;
     backface-visibility: hidden;
-    animation: appeal-callout-panel-slide-mobile var(--motion-reveal-duration) var(--motion-ease-reveal) var(--motion-reveal-delay) both;
+    transform: translate3d(0, calc(320px + 1.5rem), 0);
   }
 
   @media (min-width: 640px) {
@@ -180,19 +180,35 @@ body {
         transform: translate3d(0, 0, 0);
       }
     }
+
+    .appeal-callout-panel {
+      transform: translate3d(0, calc(420px + 1.5rem), 0);
+    }
   }
 
   .appeal-callout-panel-content {
-    animation: contact-hero-content-fade var(--motion-reveal-duration) var(--motion-ease-reveal) var(--motion-reveal-delay) both;
-  }
-
-  .appeal-callout-panel-cta {
-    animation: contact-hero-content-fade 800ms var(--motion-ease-reveal) 300ms both;
+    opacity: 0.88;
   }
 
   .appeal-callout-image-media {
     will-change: transform;
     backface-visibility: hidden;
+    transform: scale3d(1.08, 1.08, 1);
+  }
+
+  .appeal-callout--visible .appeal-callout-panel {
+    animation: appeal-callout-panel-slide-mobile var(--motion-reveal-duration) var(--motion-ease-reveal) var(--motion-reveal-delay) both;
+  }
+
+  .appeal-callout--visible .appeal-callout-panel-content {
+    animation: contact-hero-content-fade var(--motion-reveal-duration) var(--motion-ease-reveal) var(--motion-reveal-delay) both;
+  }
+
+  .appeal-callout--visible .appeal-callout-panel-cta {
+    animation: contact-hero-content-fade 800ms var(--motion-ease-reveal) 300ms both;
+  }
+
+  .appeal-callout--visible .appeal-callout-image-media {
     animation: contact-hero-image-reveal var(--motion-image-duration) var(--motion-ease-reveal) var(--motion-reveal-delay) both;
   }
 }
@@ -210,20 +226,32 @@ body {
   .appeal-callout-panel {
     will-change: transform;
     backface-visibility: hidden;
-    animation: appeal-callout-panel-slide-desktop var(--motion-reveal-duration) var(--motion-ease-reveal) var(--motion-reveal-delay) both;
+    transform: translate3d(calc(58.333% - 3rem), 0, 0);
   }
 
   .appeal-callout-panel-content {
-    animation: contact-hero-content-fade var(--motion-reveal-duration) var(--motion-ease-reveal) var(--motion-reveal-delay) both;
-  }
-
-  .appeal-callout-panel-cta {
-    animation: contact-hero-content-fade 800ms var(--motion-ease-reveal) 300ms both;
+    opacity: 0.88;
   }
 
   .appeal-callout-image-media {
     will-change: transform;
     backface-visibility: hidden;
+    transform: scale3d(1.08, 1.08, 1);
+  }
+
+  .appeal-callout--visible .appeal-callout-panel {
+    animation: appeal-callout-panel-slide-desktop var(--motion-reveal-duration) var(--motion-ease-reveal) var(--motion-reveal-delay) both;
+  }
+
+  .appeal-callout--visible .appeal-callout-panel-content {
+    animation: contact-hero-content-fade var(--motion-reveal-duration) var(--motion-ease-reveal) var(--motion-reveal-delay) both;
+  }
+
+  .appeal-callout--visible .appeal-callout-panel-cta {
+    animation: contact-hero-content-fade 800ms var(--motion-ease-reveal) 300ms both;
+  }
+
+  .appeal-callout--visible .appeal-callout-image-media {
     animation: contact-hero-image-reveal var(--motion-image-duration) var(--motion-ease-reveal) var(--motion-reveal-delay) both;
   }
 }
@@ -245,6 +273,7 @@ body {
     .appeal-callout-panel {
       animation: none;
       transform: none;
+      opacity: 1;
     }
 
     .appeal-callout-panel-content,
@@ -272,6 +301,7 @@ body {
     .appeal-callout-panel {
       animation: none;
       transform: none;
+      opacity: 1;
     }
 
     .appeal-callout-panel-content,

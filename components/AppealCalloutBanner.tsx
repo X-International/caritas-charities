@@ -1,10 +1,48 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 export default function AppealCalloutBanner() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (prefersReducedMotion) {
+      setIsVisible(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -5% 0px" }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="relative pt-8 sm:pt-10 pb-10 sm:pb-16">
-      <div className="appeal-callout relative overflow-hidden grid grid-cols-1 gap-6 lg:block lg:h-[500px]">
+    <div ref={sectionRef} className="relative pt-8 sm:pt-10 pb-10 sm:pb-16">
+      <div
+        className={`appeal-callout relative overflow-hidden grid grid-cols-1 gap-6 lg:block lg:h-[500px]${
+          isVisible ? " appeal-callout--visible" : ""
+        }`}
+      >
         {/* Red callout panel — full-width animation wrapper on desktop */}
         <div className="appeal-callout-panel z-20 lg:absolute lg:inset-0 lg:flex lg:items-center">
           <div className="appeal-callout-panel-inner bg-[#b10017] text-white p-7 sm:p-10 lg:p-12 rounded-2xl sm:rounded-3xl space-y-5 sm:space-y-6 lg:w-[41.667%]">
