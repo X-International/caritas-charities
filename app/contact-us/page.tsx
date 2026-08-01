@@ -51,16 +51,16 @@ export default function ContactUsPage() {
           <div className="order-2 lg:order-2 relative h-[300px] sm:h-[400px] md:h-[480px] lg:h-[500px] bg-[#b10017] text-white rounded-b-2xl sm:rounded-b-[32px] lg:rounded-none lg:rounded-l-[32px] overflow-hidden flex flex-col justify-center px-8 sm:px-12 md:px-16 lg:px-24">
             <div className="max-w-lg">
               <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-white/90 mb-4 sm:mb-5">
-                GET IN TOUCH WITH OUR TEAM
+                WE&apos;D LIKE TO HEAR FROM YOU
               </p>
               <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-serif font-bold text-white tracking-tight mb-6 sm:mb-8">
                 CONTACT US
               </h1>
               <p className="text-xl sm:text-2xl lg:text-[26px] font-serif text-white leading-snug mb-4 sm:mb-6">
-                &ldquo;Our team is ready to assist you with donation drop-offs, partnerships, and general enquiries.&rdquo;
+                Whether you have a question, want to support our current appeal, or would like to get involved, we&apos;re here to help.
               </p>
               <p className="text-sm sm:text-base text-white/90 font-sans">
-                Caritas Kampala Charities Department
+                &mdash; The Charities Department, Caritas Kampala
               </p>
             </div>
           </div>
