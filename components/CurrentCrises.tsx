@@ -4,43 +4,51 @@ import Image from "next/image";
 
 export default function CurrentCrises() {
   return (
-    <section className="w-full bg-[#be0f2e] text-white py-12 lg:py-16 relative overflow-hidden mt-8 sm:mt-12 lg:mt-16">
+    <section 
+      aria-labelledby="appeal-title"
+      className="w-full bg-[#be0f2e] text-white py-10 sm:py-14 lg:py-16 relative overflow-hidden mt-8 sm:mt-12 lg:mt-16"
+    >
       {/* Centered content container aligning with page grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="max-w-3xl mb-8 space-y-3">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif tracking-tight">
+        <div className="max-w-3xl mb-8 space-y-3 text-center lg:text-left mx-auto lg:mx-0">
+          <h2 
+            id="appeal-title"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif tracking-tight"
+          >
             Current Appeal
           </h2>
-          <p className="text-sm sm:text-base text-red-100 font-light leading-relaxed">
+          <p className="text-sm sm:text-base text-white/90 font-normal leading-relaxed">
             Drought has brought famine to Karamoja. The Kampala Archdiocese is rallying the Church in Uganda to respond, and the call is open to everyone, Catholic and non-Catholic alike.
           </p>
         </div>
 
-        {/* Inner Crisis Featured Card Container - rounded corners added */}
-        <div className="bg-white text-gray-900 p-6 sm:p-8 rounded-2xl shadow-xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Left Image - rounded corners added, hover scaling removed */}
-            <div className="lg:col-span-6 relative h-64 sm:h-80 lg:h-[380px] overflow-hidden rounded-xl">
+        {/* Inner Crisis Featured Card Container */}
+        <div className="bg-white text-gray-900 p-5 sm:p-8 lg:p-10 rounded-2xl shadow-xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
+            {/* Left Image - Responsive Mobile First aspect ratios */}
+            <div className="lg:col-span-6 relative w-full aspect-video sm:h-80 lg:h-[380px] lg:aspect-auto overflow-hidden rounded-xl">
               <Image
                 src="/images/current appeal/Caritas_Kampala_Current_Appeal.jpg"
-                alt="Famine in Kotido and Moroto"
+                alt="Families receiving famine relief support in Karamoja"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
 
-            {/* Right Details */}
-            <div className="lg:col-span-6 space-y-5">
-              <h3 className="text-2xl sm:text-3xl font-extrabold font-serif text-[#be0f2e]">
+            {/* Right Details - Mobile centered, Desktop left aligned */}
+            <div className="lg:col-span-6 space-y-4 lg:space-y-5 text-center lg:text-left">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-serif text-[#be0f2e]">
                 Famine in Kotido and Moroto
               </h3>
               <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                 Climate change has driven drought and famine across the Kotido and Moroto dioceses. The government has provided some relief, but it isn't enough. From July through September, the Archdiocese is collecting food such as posho, maize flour, rice, beans, and cooking oil to send to families in Karamoja. Every contribution counts, whatever its size.
               </p>
-              <div className="pt-2">
+              <div className="pt-1 sm:pt-2 flex justify-center lg:justify-start">
                 <a
                   href="#how-to-help"
+                  aria-label="See how to help families facing famine in Kotido and Moroto"
                   className="inline-block bg-[#be0f2e] text-white hover:bg-white hover:text-[#be0f2e] border-2 border-[#be0f2e] text-xs font-bold px-7 py-3 rounded-full tracking-wider uppercase transition-colors duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-[#be0f2e] focus-visible:outline-offset-2"
                 >
                   See How to Help
