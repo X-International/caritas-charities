@@ -192,21 +192,14 @@ export default function CurrentAppealPage() {
 
                 <hr className="border-white/15" />
 
-                {/* Contact items with icons */}
+                {/* Contact items without icons */}
                 <div className="space-y-2.5">
                   {/* Item 1: Donation Hotline */}
                   <a
                     href="tel:+256762506906"
-                    className="flex items-center justify-between bg-white/10 p-3 sm:p-3.5 rounded-2xl transition-colors"
+                    className="flex items-center justify-between bg-white/10 hover:bg-white/20 p-3 sm:p-3.5 rounded-2xl transition-colors"
                   >
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white text-[#be0f2e] flex items-center justify-center shrink-0">
-                        <svg className="w-4 h-4 sm:w-5 sm:h-5 fill-current" viewBox="0 0 24 24">
-                          <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27c1.12.45 2.33.69 3.58.69a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.24 2.46.69 3.58a1 1 0 01-.27 1.11l-2.3 2.3z" />
-                        </svg>
-                      </div>
-                      <span className="font-bold text-white text-xs sm:text-sm">Donation Hotline</span>
-                    </div>
+                    <span className="font-bold text-white text-xs sm:text-sm">Donation Hotline</span>
                     <span className="font-mono text-white text-xs sm:text-sm font-bold">+256 762 506 906</span>
                   </a>
 
@@ -215,51 +208,30 @@ export default function CurrentAppealPage() {
                     href="https://wa.me/256792176443"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between bg-white/10 p-3 sm:p-3.5 rounded-2xl transition-colors"
+                    className="flex items-center justify-between bg-white/10 hover:bg-white/20 p-3 sm:p-3.5 rounded-2xl transition-colors"
                   >
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white text-[#25D366] flex items-center justify-center shrink-0">
-                        <svg className="w-4 h-4 sm:w-5 sm:h-5 fill-current" viewBox="0 0 24 24">
-                          <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.27-2.42 5.82a8.18 8.18 0 01-5.82 2.42c-1.44 0-2.86-.38-4.11-1.11l-.3-.18-3.05.8.81-2.97-.19-.31A8.2 8.2 0 013.7 11.91c0-4.54 3.7-8.24 8.35-8.24zm4.55 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.66.81-.81.98-.15.17-.3.19-.55.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.36-.77-1.86-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.28 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.21-.18-.46-.31z" />
-                        </svg>
-                      </div>
-                      <span className="font-bold text-white text-xs sm:text-sm">WhatsApp</span>
-                    </div>
+                    <span className="font-bold text-white text-xs sm:text-sm">WhatsApp</span>
                     <span className="font-mono text-white text-xs sm:text-sm font-bold">+256 792 176 443</span>
                   </a>
 
                   {/* Item 3: Main Office */}
                   <a
                     href="tel:+256392176443"
-                    className="flex items-center justify-between bg-white/10 p-3 sm:p-3.5 rounded-2xl transition-colors"
+                    className="flex items-center justify-between bg-white/10 hover:bg-white/20 p-3 sm:p-3.5 rounded-2xl transition-colors"
                   >
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white text-[#be0f2e] flex items-center justify-center shrink-0">
-                        <svg className="w-4 h-4 sm:w-5 sm:h-5 fill-current" viewBox="0 0 24 24">
-                          <path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z" />
-                        </svg>
-                      </div>
-                      <span className="font-bold text-white text-xs sm:text-sm">Main Office</span>
-                    </div>
+                    <span className="font-bold text-white text-xs sm:text-sm">Main Office</span>
                     <span className="font-mono text-white text-xs sm:text-sm font-bold">+256 392 176 443</span>
                   </a>
                 </div>
 
-                {/* Support Button with Ghost Button hover effect */}
+                {/* Support Button - Centered text, no side icons, ghost hover effect */}
                 <div className="pt-2">
                   <Link
                     href="/contact-us"
-                    className="flex items-center justify-between w-full bg-white text-[#be0f2e] hover:bg-transparent hover:text-white border-2 border-white text-xs sm:text-sm font-bold px-6 py-3.5 rounded-full tracking-wider uppercase transition-all duration-200"
+                    aria-label="Support this appeal by contacting Caritas Kampala"
+                    className="block w-full text-center bg-white text-[#be0f2e] hover:bg-transparent hover:text-white border-2 border-white text-xs sm:text-sm font-bold px-6 py-3.5 rounded-full tracking-wider uppercase transition-all duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
                   >
-                    <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5 fill-none stroke-current" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                      </svg>
-                      <span>SUPPORT THIS APPEAL</span>
-                    </div>
-                    <svg className="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
+                    SUPPORT THIS APPEAL
                   </Link>
                 </div>
 
