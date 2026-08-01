@@ -2,9 +2,145 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+
+type FooterColumnData = {
+  title: string;
+  links: { label: string; href: string }[];
+};
+
+const footerColumns: FooterColumnData[] = [
+  {
+    title: "ABOUT",
+    links: [
+      { label: "About Us", href: "/about-us" },
+      { label: "Our Team", href: "/about-us/our-team" },
+      { label: "Partners — Chaconet Network", href: "/about-us/chaconet-partners" },
+      { label: "Our Programmes", href: "/our-programmes" },
+    ],
+  },
+  {
+    title: "GET INVOLVED",
+    links: [
+      { label: "Donate", href: "/donate" },
+      { label: "Get Involved", href: "/get-involved" },
+      { label: "Fundraise For Us", href: "/get-involved" },
+    ],
+  },
+  {
+    title: "EXPLORE",
+    links: [
+      { label: "Stories of Change", href: "/stories-of-change" },
+      { label: "Gallery", href: "/resources/gallery" },
+      { label: "News & Updates", href: "/resources/news" },
+    ],
+  },
+  {
+    title: "CONTACT & LEGAL",
+    links: [
+      { label: "Contact Us", href: "/contact-us" },
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Terms of Use", href: "/terms-of-use" },
+    ],
+  },
+];
+
+function DesktopColumn({ column }: { column: FooterColumnData }) {
+  return (
+    <div className="space-y-4">
+      <h3 className="text-sm sm:text-base font-extrabold uppercase tracking-wider text-white">
+        {column.title}
+      </h3>
+      <ul className="space-y-3 text-sm sm:text-base text-red-100/95 font-normal">
+        {column.links.map((link) => (
+          <li key={`${link.href}-${link.label}`}>
+            <Link
+              href={link.href}
+              className="hover:underline hover:text-white transition-colors"
+            >
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function MobileAccordion({
+  column,
+  isOpen,
+  onToggle,
+  index,
+}: {
+  column: FooterColumnData;
+  isOpen: boolean;
+  onToggle: () => void;
+  index: number;
+}) {
+  const contentId = `footer-accordion-content-${index}`;
+  return (
+    <div className="border-b border-white/20 last:border-b-0">
+      <button
+        type="button"
+        onClick={onToggle}
+        aria-expanded={isOpen}
+        aria-controls={contentId}
+        className="w-full flex items-center justify-between py-4 text-left focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 rounded group"
+      >
+        <h3 className="text-base font-extrabold uppercase tracking-wider text-white">
+          {column.title}
+        </h3>
+        <span
+          className={`text-white/90 shrink-0 ml-4 transition-transform duration-300 ease-in-out ${
+            isOpen ? "rotate-180" : "rotate-0"
+          }`}
+          aria-hidden="true"
+        >
+          <svg className="w-5 h-5 fill-none stroke-current" viewBox="0 0 24 24">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2.5}
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        id={contentId}
+        role="region"
+        aria-hidden={!isOpen}
+        className={`grid transition-all duration-300 ease-in-out ${
+          isOpen ? "grid-rows-[1fr] opacity-100 pb-4" : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <ul className="space-y-3 text-base text-red-100/95 font-normal pl-1">
+            {column.links.map((link) => (
+              <li key={`${link.href}-${link.label}`}>
+                <Link
+                  href={link.href}
+                  className="hover:underline hover:text-white transition-colors"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const [openAccordions, setOpenAccordions] = useState<Record<number, boolean>>({});
+
+  const toggleAccordion = (index: number) => {
+    setOpenAccordions((prev) => ({ ...prev, [index]: !prev[index] }));
+  };
 
   return (
     <footer aria-label="Site Footer" className="bg-[#a90012] text-white pt-16 pb-12 border-t border-[#8e000e] rounded-3xl mx-4 my-4 sm:mx-6 sm:my-6 lg:mx-8 lg:my-8 overflow-hidden">
@@ -88,108 +224,23 @@ export default function Footer() {
         {/* Lighter Horizontal Divider */}
         <hr className="border-white/25 my-8 sm:my-10" />
 
-        {/* 4 Column Navigation Links */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 lg:gap-16 pb-10">
-          {/* Column 1 — About */}
-          <div className="space-y-4">
-            <h3 className="text-sm sm:text-base font-extrabold uppercase tracking-wider text-white">
-              ABOUT
-            </h3>
-            <ul className="space-y-3 text-sm sm:text-base text-red-100/95 font-normal">
-              <li>
-                <Link href="/about-us" className="hover:underline hover:text-white transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/about-us/our-team" className="hover:underline hover:text-white transition-colors">
-                  Our Team
-                </Link>
-              </li>
-              <li>
-                <Link href="/about-us/chaconet-partners" className="hover:underline hover:text-white transition-colors">
-                  Partners &mdash; Chaconet Network
-                </Link>
-              </li>
-              <li>
-                <Link href="/our-programmes" className="hover:underline hover:text-white transition-colors">
-                  Our Programmes
-                </Link>
-              </li>
-            </ul>
-          </div>
+        {/* Desktop: 4-column grid (sm+) | Mobile: Accordions (<sm only) */}
+        <div className="hidden sm:grid grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 lg:gap-16 pb-10">
+          {footerColumns.map((col) => (
+            <DesktopColumn key={col.title} column={col} />
+          ))}
+        </div>
 
-          {/* Column 2 — Get Involved */}
-          <div className="space-y-4">
-            <h3 className="text-sm sm:text-base font-extrabold uppercase tracking-wider text-white">
-              GET INVOLVED
-            </h3>
-            <ul className="space-y-3 text-sm sm:text-base text-red-100/95 font-normal">
-              <li>
-                <Link href="/donate" className="hover:underline hover:text-white transition-colors">
-                  Donate
-                </Link>
-              </li>
-              <li>
-                <Link href="/get-involved" className="hover:underline hover:text-white transition-colors">
-                  Get Involved
-                </Link>
-              </li>
-              <li>
-                <Link href="/get-involved" className="hover:underline hover:text-white transition-colors">
-                  Fundraise For Us
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 3 — Explore */}
-          <div className="space-y-4">
-            <h3 className="text-sm sm:text-base font-extrabold uppercase tracking-wider text-white">
-              EXPLORE
-            </h3>
-            <ul className="space-y-3 text-sm sm:text-base text-red-100/95 font-normal">
-              <li>
-                <Link href="/stories-of-change" className="hover:underline hover:text-white transition-colors">
-                  Stories of Change
-                </Link>
-              </li>
-              <li>
-                <Link href="/resources/gallery" className="hover:underline hover:text-white transition-colors">
-                  Gallery
-                </Link>
-              </li>
-              <li>
-                <Link href="/resources/news" className="hover:underline hover:text-white transition-colors">
-                  News &amp; Updates
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 4 — Contact & Legal */}
-          <div className="space-y-4">
-            <h3 className="text-sm sm:text-base font-extrabold uppercase tracking-wider text-white">
-              CONTACT &amp; LEGAL
-            </h3>
-            <ul className="space-y-3 text-sm sm:text-base text-red-100/95 font-normal">
-              <li>
-                <Link href="/contact-us" className="hover:underline hover:text-white transition-colors">
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy-policy" className="hover:underline hover:text-white transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms-of-use" className="hover:underline hover:text-white transition-colors">
-                  Terms of Use
-                </Link>
-              </li>
-            </ul>
-          </div>
+        <div className="sm:hidden pb-4">
+          {footerColumns.map((col, i) => (
+            <MobileAccordion
+              key={col.title}
+              column={col}
+              index={i}
+              isOpen={!!openAccordions[i]}
+              onToggle={() => toggleAccordion(i)}
+            />
+          ))}
         </div>
 
         {/* Lighter Horizontal Divider */}
