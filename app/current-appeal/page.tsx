@@ -64,7 +64,7 @@ export default function CurrentAppealPage() {
                 <h1 className="text-[28px] sm:text-[34px] lg:text-[40px] font-extrabold font-serif text-[#be0f2e] leading-[1.18] tracking-tight">
                   A Call to Action: Famine in Kotido and Moroto
                 </h1>
-                <p className="text-base sm:text-lg font-serif text-gray-700 font-medium leading-relaxed">
+                <p className="text-[18px] sm:text-[21px] lg:text-[24px] font-serif text-gray-700 font-semibold leading-snug">
                   Standing with the people of Karamoja, together with the whole Church in Uganda.
                 </p>
               </div>
@@ -102,13 +102,12 @@ export default function CurrentAppealPage() {
 
                 {/* Food Items Card (Beige style matching screenshot) */}
                 <div className="bg-[#f2ebe3] p-6 sm:p-8 rounded-2xl space-y-4">
-                  <h3 className="text-xl sm:text-2xl font-bold font-serif text-[#be0f2e] italic">
+                  <h3 className="text-xl sm:text-2xl font-bold font-serif text-[#be0f2e]">
                     We are focused on food and basic household essentials, including:
                   </h3>
                   <ul className="list-disc list-inside space-y-1 text-[#be0f2e] text-[15px] sm:text-base lg:text-lg leading-relaxed font-medium">
                     <li>Rice</li>
                     <li>Posho</li>
-                    <li>Maize flour</li>
                     <li>Maize</li>
                     <li>Beans</li>
                     <li>Sugar</li>
@@ -169,7 +168,7 @@ export default function CurrentAppealPage() {
               </div>
 
               {/* Card 2: Contact Phone Numbers */}
-              <div className="bg-[#8a0a1f] text-white p-6 sm:p-7 rounded-2xl sm:rounded-3xl space-y-4">
+              <div className="bg-[#be0f2e] text-white p-6 sm:p-7 rounded-2xl sm:rounded-3xl space-y-4">
                 <p className="text-[10px] font-extrabold uppercase tracking-widest text-red-200">
                   DIRECT CONTACT LINES
                 </p>
