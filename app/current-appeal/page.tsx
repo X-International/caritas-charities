@@ -134,7 +134,7 @@ export default function CurrentAppealPage() {
               <section className="space-y-4 pt-1 sm:pt-2">
                 <div className="bg-red-50/90 p-5 sm:p-6 rounded-2xl space-y-3">
                   <p className="text-lg sm:text-xl lg:text-2xl font-serif text-[#be0f2e] font-bold italic leading-snug">
-                    &ldquo;For I was hungry and you gave me food.&rdquo;
+                    &ldquo;For I was hungry and you gave me something to eat.&rdquo;
                   </p>
                   <p className="text-xs sm:text-sm font-bold text-gray-600 uppercase tracking-widest">
                     Matthew 25:35
@@ -275,7 +275,7 @@ export default function CurrentAppealPage() {
               {/* Background Image - shadow removed */}
               <div className="lg:col-span-7 relative h-[300px] sm:h-[400px] lg:h-[460px] rounded-2xl sm:rounded-3xl overflow-hidden">
                 <Image
-                  src="/images/Main Slider/Caritas_Kampala_70.jpg"
+                  src="/images/Charities/Caritas_Kampala_83.jpg"
                   alt="Caritas Kampala field team supporting community development"
                   fill
                   sizes="(max-width: 1024px) 100vw, 58vw"
