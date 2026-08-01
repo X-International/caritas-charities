@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function CurrentCrises() {
   return (
@@ -46,13 +47,13 @@ export default function CurrentCrises() {
                 Climate change has driven drought and famine across the Kotido and Moroto dioceses. The government has provided some relief, but it isn't enough. From July through September, the Archdiocese is collecting food such as posho, maize flour, rice, beans, and cooking oil to send to families in Karamoja. Every contribution counts, whatever its size.
               </p>
               <div className="pt-1 sm:pt-2 flex justify-center lg:justify-start">
-                <a
-                  href="#how-to-help"
+                <Link
+                  href="/current-appeal"
                   aria-label="See how to help families facing famine in Kotido and Moroto"
                   className="inline-block bg-[#be0f2e] text-white hover:bg-white hover:text-[#be0f2e] border-2 border-[#be0f2e] text-xs font-bold px-7 py-3 rounded-full tracking-wider uppercase transition-colors duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-[#be0f2e] focus-visible:outline-offset-2"
                 >
                   See How to Help
-                </a>
+                </Link>
               </div>
             </div>
           </div>
