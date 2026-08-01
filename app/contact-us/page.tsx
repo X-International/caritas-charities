@@ -17,8 +17,8 @@ export default function ContactUsPage() {
 
       <main id="main-content" className="flex-1">
         {/* Breadcrumb Container - Matches Navbar Padding */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-6 sm:py-10 lg:py-12">
-          <nav aria-label="Breadcrumb" className="mb-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-4 sm:pt-6 lg:pt-8 pb-2">
+          <nav aria-label="Breadcrumb" className="mb-2 sm:mb-4">
             <ol className="flex items-center space-x-2 text-xs uppercase tracking-wider font-semibold">
               <li>
                 <Link href="/" className="text-[#b10017] hover:underline">
@@ -34,9 +34,9 @@ export default function ContactUsPage() {
         </div>
 
         {/* Full-width Two-Column Hero Header */}
-        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 mb-8 sm:mb-12">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-4 mb-8 sm:mb-12">
           {/* Left Column: Image */}
-          <div className="order-1 lg:order-1 relative h-[300px] sm:h-[400px] md:h-[480px] lg:h-[500px] rounded-r-2xl sm:rounded-r-[32px] overflow-hidden">
+          <div className="order-1 lg:order-1 relative h-[300px] sm:h-[400px] md:h-[480px] lg:h-[500px] rounded-t-2xl sm:rounded-t-[32px] lg:rounded-none lg:rounded-r-[32px] overflow-hidden">
             <Image
               src="/images/Event 01/Caritas_Kampala_72.jpg"
               alt="Caritas Kampala community outreach"
@@ -48,7 +48,7 @@ export default function ContactUsPage() {
           </div>
 
           {/* Right Column: Red Content Panel */}
-          <div className="order-2 lg:order-2 relative h-[300px] sm:h-[400px] md:h-[480px] lg:h-[500px] bg-[#b10017] text-white rounded-l-2xl sm:rounded-l-[32px] overflow-hidden flex flex-col justify-center px-8 sm:px-12 md:px-16 lg:px-24">
+          <div className="order-2 lg:order-2 relative h-[300px] sm:h-[400px] md:h-[480px] lg:h-[500px] bg-[#b10017] text-white rounded-b-2xl sm:rounded-b-[32px] lg:rounded-none lg:rounded-l-[32px] overflow-hidden flex flex-col justify-center px-8 sm:px-12 md:px-16 lg:px-24">
             <div className="max-w-lg">
               <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-white/90 mb-4 sm:mb-5">
                 GET IN TOUCH WITH OUR TEAM
