@@ -7,7 +7,7 @@ export default function CurrentCrises() {
   return (
     <section 
       aria-labelledby="appeal-title"
-      className="w-full bg-[#be0f2e] text-white py-10 sm:py-14 lg:py-16 relative overflow-hidden mt-8 sm:mt-12 lg:mt-16"
+      className="w-full bg-[#b10017] text-white py-10 sm:py-14 lg:py-16 relative overflow-hidden mt-8 sm:mt-12 lg:mt-16"
     >
       {/* Centered content container aligning with page grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,7 +40,7 @@ export default function CurrentCrises() {
 
             {/* Right Details - Mobile centered, Desktop left aligned */}
             <div className="lg:col-span-6 space-y-4 lg:space-y-5 text-center lg:text-left">
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-serif text-[#be0f2e]">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-serif text-[#b10017]">
                 Famine in Kotido and Moroto
               </h3>
               <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
@@ -50,7 +50,7 @@ export default function CurrentCrises() {
                 <Link
                   href="/current-appeal"
                   aria-label="See how to help families facing famine in Kotido and Moroto"
-                  className="inline-block bg-[#be0f2e] text-white hover:bg-white hover:text-[#be0f2e] border-2 border-[#be0f2e] text-xs font-bold px-7 py-3 rounded-full tracking-wider uppercase transition-colors duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-[#be0f2e] focus-visible:outline-offset-2"
+                  className="inline-block bg-[#b10017] text-white hover:bg-white hover:text-[#b10017] border-2 border-[#b10017] text-xs font-bold px-7 py-3 rounded-full tracking-wider uppercase transition-colors duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-2"
                 >
                   See How to Help
                 </Link>

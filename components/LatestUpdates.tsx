@@ -48,7 +48,7 @@ export default function LatestUpdates() {
       <div className="bg-[#f4efe6] text-gray-900 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-sm border border-[#e8dfd1]">
         {/* Section Heading */}
         <div className="mb-8">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif text-[#be0f2e] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif text-[#b10017] tracking-tight">
             Latest updates from Caritas
           </h2>
         </div>
@@ -62,12 +62,12 @@ export default function LatestUpdates() {
             >
               <div>
                 <div className="flex justify-between items-center text-xs font-semibold text-gray-600 mb-3">
-                  <span className="bg-[#f4efe6] text-[#be0f2e] font-bold px-2.5 py-0.5 rounded text-[10px] tracking-wider uppercase">
+                  <span className="bg-[#f4efe6] text-[#b10017] font-bold px-2.5 py-0.5 rounded text-[10px] tracking-wider uppercase">
                     {card.type}
                   </span>
                   <span>{card.date}</span>
                 </div>
-                <h3 className="text-lg font-bold font-serif text-gray-900 leading-snug mb-3 hover:text-[#be0f2e] transition-colors cursor-pointer">
+                <h3 className="text-lg font-bold font-serif text-gray-900 leading-snug mb-3 hover:text-[#b10017] transition-colors cursor-pointer">
                   {card.title}
                 </h3>
                 <p className="text-xs text-gray-700 leading-relaxed line-clamp-3">
@@ -78,7 +78,7 @@ export default function LatestUpdates() {
               <div className="pt-4 border-t border-gray-100 flex justify-end">
                 <a
                   href={card.link}
-                  className="w-8 h-8 rounded-full bg-gray-100 hover:bg-[#be0f2e] text-gray-700 hover:text-white flex items-center justify-center transition-colors"
+                  className="w-8 h-8 rounded-full bg-gray-100 hover:bg-[#b10017] text-gray-700 hover:text-white flex items-center justify-center transition-colors"
                   aria-label="Read update"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -101,7 +101,7 @@ export default function LatestUpdates() {
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
             {/* Deep Red Overlay Tint */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#be0f2e]/90 via-[#8e0a20]/80 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#b10017]/90 via-[#8e0a20]/80 to-transparent" />
 
             <div className="relative z-10 max-w-xl space-y-4">
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-serif leading-tight">
@@ -113,7 +113,7 @@ export default function LatestUpdates() {
               <div className="pt-2">
                 <a
                   href="#jerusalem-story"
-                  className="inline-block bg-white text-[#be0f2e] hover:bg-gray-100 text-xs font-bold px-7 py-3 rounded-full tracking-wider uppercase shadow transition-all transform hover:scale-105"
+                  className="inline-block bg-white text-[#b10017] hover:bg-gray-100 text-xs font-bold px-7 py-3 rounded-full tracking-wider uppercase shadow transition-all transform hover:scale-105"
                 >
                   READ MORE
                 </a>
@@ -125,12 +125,12 @@ export default function LatestUpdates() {
           <div className="lg:col-span-4 bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100 flex flex-col justify-between">
             <div>
               <div className="flex justify-between items-center text-xs font-semibold text-gray-600 mb-3">
-                <span className="bg-[#f4efe6] text-[#be0f2e] font-bold px-2.5 py-0.5 rounded text-[10px] tracking-wider uppercase">
+                <span className="bg-[#f4efe6] text-[#b10017] font-bold px-2.5 py-0.5 rounded text-[10px] tracking-wider uppercase">
                   NEWS
                 </span>
                 <span>28.06.2026</span>
               </div>
-              <h3 className="text-xl font-bold font-serif text-gray-900 leading-snug mb-3 hover:text-[#be0f2e] transition-colors cursor-pointer">
+              <h3 className="text-xl font-bold font-serif text-gray-900 leading-snug mb-3 hover:text-[#b10017] transition-colors cursor-pointer">
                 Alarming rate of malnutrition in South Sudan: Caritas responds with nutritional support
               </h3>
               <p className="text-xs text-gray-700 leading-relaxed">
@@ -141,7 +141,7 @@ export default function LatestUpdates() {
             <div className="pt-6 border-t border-gray-100 flex justify-end">
               <a
                 href="#south-sudan-news"
-                className="w-9 h-9 rounded-full bg-gray-100 hover:bg-[#be0f2e] text-gray-700 hover:text-white flex items-center justify-center transition-colors"
+                className="w-9 h-9 rounded-full bg-gray-100 hover:bg-[#b10017] text-gray-700 hover:text-white flex items-center justify-center transition-colors"
                 aria-label="Read update"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

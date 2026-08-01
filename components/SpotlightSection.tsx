@@ -62,7 +62,7 @@ export default function SpotlightSection() {
 
               {/* Play Icon */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#be0f2e] text-white rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#b10017] text-white rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform">
                   <svg className="w-8 h-8 fill-current ml-1" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
                   </svg>
@@ -108,7 +108,7 @@ export default function SpotlightSection() {
             {/* Close Button */}
             <button
               onClick={() => setIsVideoModalOpen(false)}
-              className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/20 text-white hover:bg-[#be0f2e] flex items-center justify-center transition-colors"
+              className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/20 text-white hover:bg-[#b10017] flex items-center justify-center transition-colors"
               aria-label="Close Video"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

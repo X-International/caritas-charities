@@ -19,7 +19,7 @@ export default function HumanitarianAppeal() {
 
         {/* Left Floating Red Card */}
         <div className="relative z-10 p-6 sm:p-10 lg:p-12 w-full max-w-xl">
-          <div className="bg-[#be0f2e] text-white p-8 sm:p-10 rounded-2xl shadow-2xl space-y-6 transform hover:-translate-y-1 transition-transform">
+          <div className="bg-[#b10017] text-white p-8 sm:p-10 rounded-2xl shadow-2xl space-y-6 transform hover:-translate-y-1 transition-transform">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-serif leading-tight">
               Caritas appeals to bring urgent relief to people facing humanitarian crises
             </h2>
@@ -29,7 +29,7 @@ export default function HumanitarianAppeal() {
             <div className="pt-2">
               <a
                 href="#explore-humanitarian"
-                className="inline-block bg-white text-[#be0f2e] hover:bg-red-50 text-xs sm:text-sm font-bold px-8 py-3.5 rounded-full tracking-wider uppercase transition-all transform hover:scale-105"
+                className="inline-block bg-white text-[#b10017] hover:bg-red-50 text-xs sm:text-sm font-bold px-8 py-3.5 rounded-full tracking-wider uppercase transition-all transform hover:scale-105"
               >
                 EXPLORE HUMANITARIAN
               </a>

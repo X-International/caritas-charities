@@ -144,7 +144,7 @@ export default function HeroSlider() {
               <a
                 href={slides[currentIndex].buttonLink}
                 onClick={(e) => e.preventDefault()}
-                className="inline-block bg-[#be0f2e] text-white hover:bg-white hover:text-[#be0f2e] border-2 border-[#be0f2e] text-xs sm:text-sm font-semibold px-8 py-3.5 rounded-full tracking-wider uppercase transition-colors duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+                className="inline-block bg-[#b10017] text-white hover:bg-white hover:text-[#b10017] border-2 border-[#b10017] text-xs sm:text-sm font-semibold px-8 py-3.5 rounded-full tracking-wider uppercase transition-colors duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
               >
                 {slides[currentIndex].buttonText}
               </a>
@@ -156,7 +156,7 @@ export default function HeroSlider() {
         <button
           onClick={prevSlide}
           aria-label="Previous Slide"
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-[#be0f2e] focus-visible:bg-[#be0f2e] focus-visible:outline-2 focus-visible:outline-white text-white flex items-center justify-center transition-all backdrop-blur-md border border-white/10 shadow-lg cursor-pointer"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-[#b10017] focus-visible:bg-[#b10017] focus-visible:outline-2 focus-visible:outline-white text-white flex items-center justify-center transition-all backdrop-blur-md border border-white/10 shadow-lg cursor-pointer"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
@@ -166,7 +166,7 @@ export default function HeroSlider() {
         <button
           onClick={nextSlide}
           aria-label="Next Slide"
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-[#be0f2e] focus-visible:bg-[#be0f2e] focus-visible:outline-2 focus-visible:outline-white text-white flex items-center justify-center transition-all backdrop-blur-md border border-white/10 shadow-lg cursor-pointer"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-[#b10017] focus-visible:bg-[#b10017] focus-visible:outline-2 focus-visible:outline-white text-white flex items-center justify-center transition-all backdrop-blur-md border border-white/10 shadow-lg cursor-pointer"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
@@ -179,7 +179,7 @@ export default function HeroSlider() {
           <button
             onClick={() => setIsPaused(!isPaused)}
             aria-label={isPaused ? "Play slide animation" : "Pause slide animation"}
-            className="text-white hover:text-[#be0f2e] focus-visible:outline-2 focus-visible:outline-white rounded cursor-pointer p-0.5"
+            className="text-white hover:text-[#b10017] focus-visible:outline-2 focus-visible:outline-white rounded cursor-pointer p-0.5"
           >
             {isPaused ? (
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
@@ -205,7 +205,7 @@ export default function HeroSlider() {
                 aria-label={`Go to slide ${index + 1}: ${slide.title}`}
                 className={`h-2.5 rounded-full transition-all cursor-pointer focus-visible:outline-2 focus-visible:outline-white ${
                   index === currentIndex
-                    ? "w-8 bg-[#be0f2e]"
+                    ? "w-8 bg-[#b10017]"
                     : "w-2.5 bg-white/60 hover:bg-white"
                 }`}
               />

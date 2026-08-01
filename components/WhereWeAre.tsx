@@ -141,7 +141,7 @@ export default function WhereWeAre() {
                   <h3 className="text-2xl sm:text-3xl font-extrabold font-serif leading-tight">
                     {region.name}
                   </h3>
-                  <div className="w-10 h-10 rounded-full bg-white/20 group-hover:bg-[#be0f2e] text-white flex items-center justify-center transition-colors backdrop-blur-sm shadow">
+                  <div className="w-10 h-10 rounded-full bg-white/20 group-hover:bg-[#b10017] text-white flex items-center justify-center transition-colors backdrop-blur-sm shadow">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>

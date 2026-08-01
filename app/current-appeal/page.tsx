@@ -21,7 +21,7 @@ export default function CurrentAppealPage() {
           <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex items-center space-x-2 text-xs uppercase tracking-wider font-semibold">
               <li>
-                <Link href="/" className="text-[#be0f2e] hover:underline">
+                <Link href="/" className="text-[#b10017] hover:underline">
                   HOME
                 </Link>
               </li>
@@ -44,7 +44,7 @@ export default function CurrentAppealPage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
             <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-10">
-              <span className="inline-block bg-[#be0f2e] text-white text-[10px] sm:text-[11px] font-extrabold uppercase tracking-widest px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-lg border border-white/20">
+              <span className="inline-block bg-[#b10017] text-white text-[10px] sm:text-[11px] font-extrabold uppercase tracking-widest px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-lg border border-white/20">
                 KOTIDO &amp; MOROTO, KARAMOJA
               </span>
             </div>
@@ -61,7 +61,7 @@ export default function CurrentAppealPage() {
             <div className="lg:col-span-8 space-y-7 sm:space-y-8">
               {/* Header Title & Subline */}
               <div className="space-y-3 sm:space-y-4">
-                <h1 className="text-[28px] sm:text-[34px] lg:text-[40px] font-extrabold font-serif text-[#be0f2e] leading-[1.18] tracking-tight">
+                <h1 className="text-[28px] sm:text-[34px] lg:text-[40px] font-extrabold font-serif text-[#b10017] leading-[1.18] tracking-tight">
                   Emergency Appeal for Kotido and Moroto
                 </h1>
                 <p className="text-[18px] sm:text-[21px] lg:text-[24px] font-serif text-gray-700 font-semibold leading-snug">
@@ -73,7 +73,7 @@ export default function CurrentAppealPage() {
 
               {/* The Situation */}
               <section className="space-y-4">
-                <h2 className="text-xl sm:text-2xl font-bold font-serif text-[#be0f2e]">
+                <h2 className="text-xl sm:text-2xl font-bold font-serif text-[#b10017]">
                   The Situation
                 </h2>
                 <div className="space-y-4 text-gray-700 text-[15px] sm:text-base lg:text-lg leading-relaxed font-normal">
@@ -88,7 +88,7 @@ export default function CurrentAppealPage() {
 
               {/* Our Response */}
               <section className="space-y-4 pt-1 sm:pt-2">
-                <h2 className="text-xl sm:text-2xl font-bold font-serif text-[#be0f2e]">
+                <h2 className="text-xl sm:text-2xl font-bold font-serif text-[#b10017]">
                   Our Response
                 </h2>
                 <div className="space-y-4 text-gray-700 text-[15px] sm:text-base lg:text-lg leading-relaxed font-normal">
@@ -102,10 +102,10 @@ export default function CurrentAppealPage() {
 
                 {/* Food Items Card (Beige style) */}
                 <div className="bg-[#f2ebe3] p-6 sm:p-8 rounded-2xl space-y-4">
-                  <h3 className="text-xl sm:text-2xl font-bold font-serif text-[#be0f2e]">
+                  <h3 className="text-xl sm:text-2xl font-bold font-serif text-[#b10017]">
                     We are focused on food and basic household essentials, including:
                   </h3>
-                  <ul className="list-disc list-inside space-y-1 text-[#be0f2e] text-[15px] sm:text-base lg:text-lg leading-relaxed font-medium">
+                  <ul className="list-disc list-inside space-y-1 text-[#b10017] text-[15px] sm:text-base lg:text-lg leading-relaxed font-medium">
                     <li>Rice</li>
                     <li>Posho</li>
                     <li>Maize</li>
@@ -122,7 +122,7 @@ export default function CurrentAppealPage() {
 
               {/* Open to Everyone */}
               <section className="space-y-4 pt-1 sm:pt-2">
-                <h2 className="text-xl sm:text-2xl font-bold font-serif text-[#be0f2e]">
+                <h2 className="text-xl sm:text-2xl font-bold font-serif text-[#b10017]">
                   Open to Everyone
                 </h2>
                 <p className="text-gray-700 text-[15px] sm:text-base lg:text-lg leading-relaxed font-normal">
@@ -133,7 +133,7 @@ export default function CurrentAppealPage() {
               {/* Scripture Pullquote */}
               <section className="space-y-4 pt-1 sm:pt-2">
                 <div className="bg-red-50/90 p-5 sm:p-6 rounded-2xl space-y-3">
-                  <p className="text-lg sm:text-xl lg:text-2xl font-serif text-[#be0f2e] font-bold italic leading-snug">
+                  <p className="text-lg sm:text-xl lg:text-2xl font-serif text-[#b10017] font-bold italic leading-snug">
                     &ldquo;For I was hungry and you gave me something to eat.&rdquo;
                   </p>
                   <p className="text-xs sm:text-sm font-bold text-gray-600 uppercase tracking-widest">
@@ -149,7 +149,7 @@ export default function CurrentAppealPage() {
             {/* Right Column: How to Help & Direct Contact Cards (Sticky Sidebar) */}
             <div className="lg:col-span-4 space-y-5 sm:space-y-6 lg:sticky lg:top-28">
               {/* Card 1: Collection Point & Address */}
-              <div className="bg-[#be0f2e] text-white p-6 sm:p-7 rounded-2xl sm:rounded-3xl space-y-4">
+              <div className="bg-[#b10017] text-white p-6 sm:p-7 rounded-2xl sm:rounded-3xl space-y-4">
                 <p className="text-[10px] font-extrabold uppercase tracking-widest text-red-200">
                   JULY – SEPTEMBER APPEAL
                 </p>
@@ -177,7 +177,7 @@ export default function CurrentAppealPage() {
               </div>
 
               {/* Card 2: Direct Contact (Matching Screenshot 3 design) */}
-              <div className="bg-[#be0f2e] text-white p-6 sm:p-7 rounded-2xl sm:rounded-3xl space-y-5">
+              <div className="bg-[#b10017] text-white p-6 sm:p-7 rounded-2xl sm:rounded-3xl space-y-5">
                 <div>
                   <p className="text-[10px] font-extrabold uppercase tracking-widest text-red-200 mb-1">
                     DIRECT CONTACT
@@ -229,7 +229,7 @@ export default function CurrentAppealPage() {
                   <Link
                     href="/contact-us"
                     aria-label="Support this appeal by contacting Caritas Kampala"
-                    className="block w-full text-center bg-white text-[#be0f2e] hover:bg-transparent hover:text-white border-2 border-white text-xs sm:text-sm font-bold px-6 py-3.5 rounded-full tracking-wider uppercase transition-all duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+                    className="block w-full text-center bg-white text-[#b10017] hover:bg-transparent hover:text-white border-2 border-white text-xs sm:text-sm font-bold px-6 py-3.5 rounded-full tracking-wider uppercase transition-all duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
                   >
                     SUPPORT THIS APPEAL
                   </Link>
@@ -257,14 +257,14 @@ export default function CurrentAppealPage() {
             <div className="relative grid grid-cols-1 lg:grid-cols-12 items-center gap-6 lg:gap-0">
               {/* Overlapping Crimson Callout Box - shadow removed */}
               <div className="lg:col-span-5 z-20 lg:-mr-12">
-                <div className="bg-[#be0f2e] text-white p-7 sm:p-10 lg:p-12 rounded-2xl sm:rounded-3xl space-y-5 sm:space-y-6">
+                <div className="bg-[#b10017] text-white p-7 sm:p-10 lg:p-12 rounded-2xl sm:rounded-3xl space-y-5 sm:space-y-6">
                   <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold font-serif leading-snug">
                     Each year, Caritas Kampala supports thousands of vulnerable families through food security, emergency relief, and community resilience programmes.
                   </h2>
                   <div>
                     <Link
                       href="/contact-us"
-                      className="inline-block bg-white text-[#be0f2e] hover:bg-transparent hover:text-white border-2 border-white text-xs font-bold px-7 py-3.5 rounded-full tracking-wider uppercase transition-all duration-200"
+                      className="inline-block bg-white text-[#b10017] hover:bg-transparent hover:text-white border-2 border-white text-xs font-bold px-7 py-3.5 rounded-full tracking-wider uppercase transition-all duration-200"
                     >
                       Contact Us to Contribute
                     </Link>

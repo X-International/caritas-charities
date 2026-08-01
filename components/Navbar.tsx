@@ -280,7 +280,7 @@ export default function Navbar() {
       {/* Skip Link for WCAG Accessibility */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-5 focus:py-3 focus:bg-[#be0f2e] focus:text-white focus:font-bold focus:text-sm focus:rounded-md focus:shadow-2xl focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-5 focus:py-3 focus:bg-[#b10017] focus:text-white focus:font-bold focus:text-sm focus:rounded-md focus:shadow-2xl focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
       >
         Skip to main content
       </a>
@@ -406,7 +406,7 @@ export default function Navbar() {
                           value={searchQuery}
                           onChange={(e) => setSearchQuery(e.target.value)}
                           placeholder="Search programs, updates, news..."
-                          className="w-full text-xs pl-3.5 pr-14 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#be0f2e] focus:ring-2 focus:ring-[#be0f2e]/20 transition-all"
+                          className="w-full text-xs pl-3.5 pr-14 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#b10017] focus:ring-2 focus:ring-[#b10017]/20 transition-all"
                         />
                         {searchQuery && (
                           <button
@@ -422,7 +422,7 @@ export default function Navbar() {
                         )}
                         <button
                           type="submit"
-                          className="absolute right-1.5 bg-[#be0f2e] hover:bg-[#8e0a20] text-white p-1.5 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#be0f2e] transition-colors cursor-pointer"
+                          className="absolute right-1.5 bg-[#b10017] hover:bg-[#8e0a20] text-white p-1.5 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] transition-colors cursor-pointer"
                           aria-label="Submit search"
                         >
                           <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -443,7 +443,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center shrink-0 rounded-xs focus-visible:outline-2 focus-visible:outline-[#be0f2e] focus-visible:outline-offset-4"
+            className="flex items-center shrink-0 rounded-xs focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-4"
             aria-label="Caritas Kampala Homepage"
           >
             <div className="relative h-14 sm:h-18 lg:h-20 w-auto">
@@ -480,10 +480,10 @@ export default function Navbar() {
                     id={linkId}
                     href={link.href}
                     aria-current={active ? "page" : undefined}
-                    className={`relative inline-flex items-center gap-1.5 text-[12px] xl:text-[13.5px] font-semibold tracking-wide transition-colors uppercase whitespace-nowrap py-2 px-1 rounded-xs focus-visible:outline-2 focus-visible:outline-[#be0f2e] focus-visible:outline-offset-4 ${
+                    className={`relative inline-flex items-center gap-1.5 text-[12px] xl:text-[13.5px] font-semibold tracking-wide transition-colors uppercase whitespace-nowrap py-2 px-1 rounded-xs focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-4 ${
                       active
-                        ? "text-[#be0f2e]"
-                        : "text-gray-800 hover:text-[#be0f2e]"
+                        ? "text-[#b10017]"
+                        : "text-gray-800 hover:text-[#b10017]"
                     }`}
                     aria-haspopup={link.megaMenu ? "true" : undefined}
                     aria-expanded={link.megaMenu ? openMegaMenu === link.name : undefined}
@@ -494,7 +494,7 @@ export default function Navbar() {
                     {link.megaMenu && (
                       <svg
                         className={`w-3 h-3 transition-transform duration-200 ${
-                          openMegaMenu === link.name ? "rotate-180 text-[#be0f2e]" : "text-gray-400"
+                          openMegaMenu === link.name ? "rotate-180 text-[#b10017]" : "text-gray-400"
                         }`}
                         fill="none"
                         stroke="currentColor"
@@ -513,7 +513,7 @@ export default function Navbar() {
                     {/* Active Route Bottom Bar Indicator */}
                     {active && (
                       <span
-                        className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#be0f2e] rounded-full animate-in fade-in duration-200"
+                        className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#b10017] rounded-full animate-in fade-in duration-200"
                         aria-hidden="true"
                       />
                     )}
@@ -545,10 +545,10 @@ export default function Navbar() {
                                       role="menuitem"
                                       href={sub.href}
                                       onClick={() => setOpenMegaMenu(null)}
-                                      className={`group flex items-start justify-between px-4 py-3 rounded-xl transition-all duration-150 focus-visible:outline-2 focus-visible:outline-[#be0f2e] ${
+                                      className={`group flex items-start justify-between px-4 py-3 rounded-xl transition-all duration-150 focus-visible:outline-2 focus-visible:outline-[#b10017] ${
                                         isSubActive
-                                          ? "bg-[#be0f2e] text-white shadow-xs"
-                                          : "hover:bg-[#be0f2e] text-gray-800 hover:text-white"
+                                          ? "bg-[#b10017] text-white shadow-xs"
+                                          : "hover:bg-[#b10017] text-gray-800 hover:text-white"
                                       }`}
                                     >
                                       <div className="flex flex-col">
@@ -601,7 +601,7 @@ export default function Navbar() {
                           <Link
                             href={link.href}
                             onClick={() => setOpenMegaMenu(null)}
-                            className="inline-flex items-center gap-1.5 mt-5 ml-4 text-xs font-bold text-[#be0f2e] hover:underline underline-offset-2 transition-colors uppercase tracking-wide focus-visible:outline-2 focus-visible:outline-[#be0f2e] rounded-xs w-fit"
+                            className="inline-flex items-center gap-1.5 mt-5 ml-4 text-xs font-bold text-[#b10017] hover:underline underline-offset-2 transition-colors uppercase tracking-wide focus-visible:outline-2 focus-visible:outline-[#b10017] rounded-xs w-fit"
                           >
                             View all {link.name}
                             <svg
@@ -622,7 +622,7 @@ export default function Navbar() {
                         </div>
 
                         {/* Right — featured card */}
-                        <div className="bg-[#be0f2e] p-6 flex flex-col justify-between border-l border-red-800/30">
+                        <div className="bg-[#b10017] p-6 flex flex-col justify-between border-l border-red-800/30">
                           <div>
                             <div className="relative w-full h-32 rounded-xl overflow-hidden mb-4 border border-white/10 shadow-xs">
                               <Image
@@ -645,7 +645,7 @@ export default function Navbar() {
                           <Link
                             href={link.megaMenu.card.cta.href}
                             onClick={() => setOpenMegaMenu(null)}
-                            className="inline-flex items-center gap-1.5 mt-5 bg-white text-[#be0f2e] font-bold text-xs px-4.5 py-2.5 rounded-full hover:bg-red-50 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none transition-colors duration-150 w-fit shadow-xs"
+                            className="inline-flex items-center gap-1.5 mt-5 bg-white text-[#b10017] font-bold text-xs px-4.5 py-2.5 rounded-full hover:bg-red-50 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none transition-colors duration-150 w-fit shadow-xs"
                           >
                             {link.megaMenu.card.cta.label}
                             <svg
@@ -676,7 +676,7 @@ export default function Navbar() {
           <div className="flex items-center space-x-3 shrink-0">
             <Link
               href="#donate"
-              className="hidden sm:inline-block bg-[#be0f2e] text-white hover:bg-white hover:text-[#be0f2e] focus-visible:bg-white focus-visible:text-[#be0f2e] focus-visible:outline-2 focus-visible:outline-[#be0f2e] focus-visible:outline-offset-2 border-2 border-[#be0f2e] text-xs xl:text-sm font-bold px-5 py-2.5 xl:px-7 xl:py-3 rounded-full tracking-wider uppercase transition-all duration-200 text-center shadow-xs cursor-pointer"
+              className="hidden sm:inline-block bg-[#b10017] text-white hover:bg-white hover:text-[#b10017] focus-visible:bg-white focus-visible:text-[#b10017] focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-2 border-2 border-[#b10017] text-xs xl:text-sm font-bold px-5 py-2.5 xl:px-7 xl:py-3 rounded-full tracking-wider uppercase transition-all duration-200 text-center shadow-xs cursor-pointer"
               aria-label="Donate to Caritas Kampala"
             >
               DONATE
@@ -688,7 +688,7 @@ export default function Navbar() {
                 setOpenMegaMenu(null);
                 setIsMobileMenuOpen((current) => !current);
               }}
-              className="lg:hidden text-gray-800 hover:text-[#be0f2e] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#be0f2e] p-2 rounded-md hover:bg-gray-100 transition-colors"
+              className="lg:hidden text-gray-800 hover:text-[#b10017] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] p-2 rounded-md hover:bg-gray-100 transition-colors"
               aria-label="Toggle navigation menu"
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-navigation-drawer"
@@ -747,7 +747,7 @@ export default function Navbar() {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search programmes, news, updates..."
-                    className="w-full text-xs sm:text-sm pl-3.5 pr-14 py-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#be0f2e] focus:ring-2 focus:ring-[#be0f2e]/20 transition-all shadow-2xs"
+                    className="w-full text-xs sm:text-sm pl-3.5 pr-14 py-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#b10017] focus:ring-2 focus:ring-[#b10017]/20 transition-all shadow-2xs"
                   />
                   {searchQuery && (
                     <button
@@ -774,7 +774,7 @@ export default function Navbar() {
                   )}
                   <button
                     type="submit"
-                    className="absolute right-1.5 bg-[#be0f2e] hover:bg-[#8e0a20] text-white p-2 rounded-lg transition-colors cursor-pointer shadow-xs"
+                    className="absolute right-1.5 bg-[#b10017] hover:bg-[#8e0a20] text-white p-2 rounded-lg transition-colors cursor-pointer shadow-xs"
                     aria-label="Submit search"
                   >
                     <svg
@@ -808,15 +808,15 @@ export default function Navbar() {
                             openMobileSubmenu === link.name ? null : link.name
                           )
                         }
-                        className={`flex items-center justify-between w-full text-sm font-bold min-h-[48px] py-3.5 px-2 uppercase transition-colors focus-visible:outline-2 focus-visible:outline-[#be0f2e] rounded-lg ${
-                          active ? "text-[#be0f2e]" : "text-gray-900 hover:text-[#be0f2e]"
+                        className={`flex items-center justify-between w-full text-sm font-bold min-h-[48px] py-3.5 px-2 uppercase transition-colors focus-visible:outline-2 focus-visible:outline-[#b10017] rounded-lg ${
+                          active ? "text-[#b10017]" : "text-gray-900 hover:text-[#b10017]"
                         }`}
                         aria-expanded={openMobileSubmenu === link.name}
                       >
                         <div className="flex items-center space-x-2.5">
                           {active && (
                             <span
-                              className="w-1.5 h-5 bg-[#be0f2e] rounded-full shrink-0"
+                              className="w-1.5 h-5 bg-[#b10017] rounded-full shrink-0"
                               aria-hidden="true"
                             />
                           )}
@@ -825,7 +825,7 @@ export default function Navbar() {
                         <svg
                           className={`w-4 h-4 transition-transform duration-200 ${
                             openMobileSubmenu === link.name
-                              ? "rotate-180 text-[#be0f2e]"
+                              ? "rotate-180 text-[#b10017]"
                               : "text-gray-400"
                           }`}
                           fill="none"
@@ -854,8 +854,8 @@ export default function Navbar() {
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className={`flex items-center justify-between text-xs min-h-[44px] py-3 px-3.5 rounded-lg transition-all ${
                                   isSubActive
-                                    ? "bg-[#be0f2e] text-white font-bold shadow-xs"
-                                    : "text-gray-800 hover:text-[#be0f2e] hover:bg-gray-100/90 font-medium"
+                                    ? "bg-[#b10017] text-white font-bold shadow-xs"
+                                    : "text-gray-800 hover:text-[#b10017] hover:bg-gray-100/90 font-medium"
                                 }`}
                               >
                                 <span className="uppercase tracking-wide">{sub.name}</span>
@@ -879,7 +879,7 @@ export default function Navbar() {
                           <Link
                             href={link.href}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className="inline-flex items-center gap-1.5 mt-2 ml-2 py-2 text-xs font-bold text-[#be0f2e] hover:underline underline-offset-2 uppercase tracking-wide"
+                            className="inline-flex items-center gap-1.5 mt-2 ml-2 py-2 text-xs font-bold text-[#b10017] hover:underline underline-offset-2 uppercase tracking-wide"
                           >
                             View all {link.name}
                             <svg
@@ -907,13 +907,13 @@ export default function Navbar() {
                         href={link.href}
                         aria-current={active ? "page" : undefined}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className={`flex items-center space-x-2.5 text-sm font-bold min-h-[48px] py-3.5 px-2 uppercase transition-colors focus-visible:text-[#be0f2e] focus-visible:outline-none ${
-                          active ? "text-[#be0f2e]" : "text-gray-900 hover:text-[#be0f2e]"
+                        className={`flex items-center space-x-2.5 text-sm font-bold min-h-[48px] py-3.5 px-2 uppercase transition-colors focus-visible:text-[#b10017] focus-visible:outline-none ${
+                          active ? "text-[#b10017]" : "text-gray-900 hover:text-[#b10017]"
                         }`}
                       >
                         {active && (
                           <span
-                            className="w-1.5 h-5 bg-[#be0f2e] rounded-full shrink-0"
+                            className="w-1.5 h-5 bg-[#b10017] rounded-full shrink-0"
                             aria-hidden="true"
                           />
                         )}
@@ -928,7 +928,7 @@ export default function Navbar() {
                   <Link
                     href="#donate"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block w-full text-center bg-[#be0f2e] text-white hover:bg-white hover:text-[#be0f2e] border-2 border-[#be0f2e] font-bold py-3.5 rounded-full text-sm uppercase tracking-wider transition-all duration-200 shadow-sm"
+                    className="block w-full text-center bg-[#b10017] text-white hover:bg-white hover:text-[#b10017] border-2 border-[#b10017] font-bold py-3.5 rounded-full text-sm uppercase tracking-wider transition-all duration-200 shadow-sm"
                     aria-label="Donate to Caritas Kampala"
                   >
                     Donate Now
@@ -1065,7 +1065,7 @@ export default function Navbar() {
                 setIsShareModalOpen(false);
                 shareTriggerRef.current?.focus();
               }}
-              className="absolute top-3 right-3 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center text-gray-400 hover:text-gray-700 focus-visible:outline-2 focus-visible:outline-[#be0f2e] focus-visible:outline-offset-1 transition-colors focus:outline-none rounded-full hover:bg-gray-100 cursor-pointer"
+              className="absolute top-3 right-3 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center text-gray-400 hover:text-gray-700 focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-1 transition-colors focus:outline-none rounded-full hover:bg-gray-100 cursor-pointer"
               aria-label="Close share modal"
             >
               <svg
@@ -1087,7 +1087,7 @@ export default function Navbar() {
             {/* Header */}
             <div className="flex items-start space-x-4 pr-8">
               <div
-                className="w-12 h-12 sm:w-14 sm:h-14 bg-[#be0f2e] text-white rounded-full flex items-center justify-center shrink-0 shadow-md"
+                className="w-12 h-12 sm:w-14 sm:h-14 bg-[#b10017] text-white rounded-full flex items-center justify-center shrink-0 shadow-md"
                 aria-hidden="true"
               >
                 <svg className="w-6 h-6 sm:w-7 sm:h-7 fill-current" viewBox="0 0 24 24">
@@ -1097,7 +1097,7 @@ export default function Navbar() {
               <div className="flex-1 min-w-0">
                 <h3
                   id="share-modal-title"
-                  className="text-lg sm:text-xl font-bold text-[#be0f2e] font-serif leading-tight"
+                  className="text-lg sm:text-xl font-bold text-[#b10017] font-serif leading-tight"
                 >
                   Help Us Reach More Hearts
                 </h3>

@@ -7,19 +7,19 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer aria-label="Site Footer" className="bg-[#a70011] text-white pt-16 pb-12 border-t border-[#8e000e]">
+    <footer aria-label="Site Footer" className="bg-[#a90012] text-white pt-16 pb-12 border-t border-[#8e000e]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Brand & Social Channels Row */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 pb-10">
-          {/* Brand Info (Left) */}
-          <div className="space-y-5 max-w-xl">
-            <Link href="/" className="inline-block focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-4 rounded-lg">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 lg:gap-12 pb-10">
+          {/* Brand Info (Logo on Left, Text on Right beside it) */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-7 max-w-3xl">
+            <Link href="/" className="shrink-0 focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-4 rounded-lg">
               <Image
                 src="/images/logos/Caritas_Kampala_footer.png"
                 alt="Caritas Kampala logo"
-                width={360}
-                height={120}
-                className="h-20 sm:h-24 lg:h-28 w-auto object-contain"
+                width={400}
+                height={140}
+                className="h-24 sm:h-28 lg:h-32 w-auto object-contain"
                 priority
               />
             </Link>
@@ -29,11 +29,11 @@ export default function Footer() {
           </div>
 
           {/* Social Channels (Right) */}
-          <div className="space-y-3">
+          <div className="space-y-3 shrink-0">
             <span className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-red-100 block">
               FOLLOW US
             </span>
-            <div className="flex items-center space-x-4 sm:space-x-5">
+            <div className="flex items-center space-x-4">
               {/* Facebook */}
               <a
                 href="#"
@@ -53,7 +53,7 @@ export default function Footer() {
                 aria-label="Follow Caritas Kampala on X (Twitter)"
                 className="text-white hover:text-red-200 transition-colors p-1 focus-visible:outline-2 focus-visible:outline-white rounded"
               >
-                <svg className="w-5 h-5 sm:w-6 sm:h-6 fill-current" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 sm:w-7 sm:h-7 fill-current" viewBox="0 0 24 24">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
               </a>
@@ -85,7 +85,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Lighter, Visible Horizontal Divider */}
+        {/* Lighter Horizontal Divider */}
         <hr className="border-white/25 my-8 sm:my-10" />
 
         {/* 4 Column Navigation Links */}
@@ -192,7 +192,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Lighter, Visible Horizontal Divider */}
+        {/* Lighter Horizontal Divider */}
         <hr className="border-white/25 my-8" />
 
         {/* Bottom Copyright & Main Website Link Strip */}
