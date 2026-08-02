@@ -293,9 +293,9 @@ export default function Navbar() {
         }`}
       >
         {/* ── Top Utility Bar ─────────────────────────────── */}
-        <div className="bg-[#141414] text-gray-200 text-xs py-2 px-4 sm:px-8 border-b border-white/5">
-          <div className="max-w-7xl mx-auto flex justify-center lg:justify-between items-center">
-            <div className="flex items-center space-x-2 text-xs min-w-0 lg:flex-1">
+        <div className="bg-[#141414] text-gray-200 text-xs py-2 border-b border-white/5">
+          <div className="site-container flex justify-center lg:grid lg:grid-cols-[1fr_auto] lg:items-center lg:gap-8">
+            <div className="flex items-center space-x-2 text-xs min-w-0 justify-center lg:justify-start">
               <strong className="text-white font-bold shrink-0 font-sans tracking-wide">
                 Part of Caritas Kampala
               </strong>
@@ -329,7 +329,7 @@ export default function Navbar() {
               </a>
             </div>
 
-            <div className="hidden lg:flex items-center space-x-5">
+            <div className="hidden lg:flex items-center space-x-5 shrink-0 justify-end">
               {/* Share Button */}
               <button
                 ref={shareTriggerRef}
@@ -439,20 +439,20 @@ export default function Navbar() {
         </div>
 
         {/* ── Main Navbar Row ──────────────────────────────── */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-[10px] sm:py-[12px] flex items-center justify-between gap-4">
+        <div className="site-container py-[8px] sm:py-[10px] lg:py-3 grid grid-cols-[auto_1fr_auto] items-center gap-3 lg:gap-6">
           {/* Logo */}
           <Link
             href="/"
             className="flex items-center shrink-0 rounded-xs focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-4"
             aria-label="Caritas Kampala Homepage"
           >
-            <div className="relative h-14 sm:h-18 lg:h-20 w-auto">
+            <div className="relative h-14 sm:h-16 lg:h-[4.25rem] w-auto">
               <Image
                 src="/images/logos/Caritas_Kampala_logo.jpg"
                 alt="Caritas Kampala Logo"
                 width={240}
                 height={96}
-                className="h-14 sm:h-18 lg:h-20 w-auto object-contain"
+                className="h-14 sm:h-16 lg:h-[4.25rem] w-auto object-contain"
                 priority
               />
             </div>
@@ -460,7 +460,7 @@ export default function Navbar() {
 
           {/* ── Desktop Navigation ───────────────────────── */}
           <nav
-            className="hidden lg:flex items-center space-x-3 xl:space-x-7"
+            className="hidden lg:flex items-center justify-center gap-3 xl:gap-4 2xl:gap-5 min-w-0"
             aria-label="Main Navigation"
           >
             {navLinks.map((link) => {
@@ -480,7 +480,7 @@ export default function Navbar() {
                     id={linkId}
                     href={link.href}
                     aria-current={active ? "page" : undefined}
-                    className={`relative inline-flex items-center gap-1.5 text-[12px] xl:text-[13.5px] font-semibold tracking-wide transition-colors uppercase whitespace-nowrap py-2 px-1 rounded-xs focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-4 ${
+                    className={`relative inline-flex items-center gap-1.5 text-[11.5px] xl:text-[12.5px] 2xl:text-[13px] font-semibold tracking-wide transition-colors uppercase whitespace-nowrap py-2 px-1 rounded-xs focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-4 ${
                       active
                         ? "text-[#b10017]"
                         : "text-gray-800 hover:text-[#b10017]"
@@ -673,10 +673,10 @@ export default function Navbar() {
           </nav>
 
           {/* Donate CTA + Mobile toggle */}
-          <div className="flex items-center space-x-3 shrink-0">
+          <div className="flex items-center justify-end space-x-3 shrink-0">
             <Link
               href="/donate"
-              className="hidden sm:inline-block bg-[#b10017] text-white hover:bg-white hover:text-[#b10017] focus-visible:bg-white focus-visible:text-[#b10017] focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-2 border-2 border-[#b10017] text-xs xl:text-sm font-bold px-5 py-2.5 xl:px-7 xl:py-3 rounded-full tracking-wider uppercase transition-all duration-200 text-center shadow-xs cursor-pointer"
+              className="hidden sm:inline-block bg-[#b10017] text-white hover:bg-white hover:text-[#b10017] focus-visible:bg-white focus-visible:text-[#b10017] focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-2 border-2 border-[#b10017] text-xs xl:text-sm font-bold px-5 py-2.5 xl:px-6 xl:py-2.5 2xl:px-7 2xl:py-3 rounded-full tracking-wider uppercase transition-all duration-200 text-center shadow-xs cursor-pointer"
               aria-label="Donate to Caritas Kampala"
             >
               DONATE

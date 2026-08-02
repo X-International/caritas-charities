@@ -90,13 +90,13 @@ export default function HeroSlider() {
   };
 
   return (
-    <div className="w-full max-w-[1440px] mx-auto px-2 sm:px-3 lg:px-4 pt-0 pb-0 sm:pb-3">
+    <div className="site-container pt-4 sm:pt-5 lg:pt-6 xl:pt-8 2xl:pt-10 pb-0 sm:pb-4 lg:pb-6">
       <section
         aria-label="Featured Emergency Appeals and Humanitarian Initiatives"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
-        className="relative w-full h-[540px] sm:h-[600px] lg:h-[650px] overflow-hidden bg-black text-white rounded-2xl sm:rounded-3xl shadow-2xl focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-[-4px]"
+        className="relative w-full h-[clamp(420px,52vh,720px)] overflow-hidden bg-black text-white rounded-2xl sm:rounded-3xl shadow-2xl focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-[-4px]"
       >
         {/* Background Image Carousel */}
         {slides.map((slide, index) => {
@@ -127,16 +127,16 @@ export default function HeroSlider() {
           );
         })}
 
-        {/* Content Container */}
-        <div className="relative z-20 max-w-7xl mx-auto h-full px-6 sm:px-12 flex flex-col justify-center items-center text-center">
-          <div key={currentIndex} className="max-w-3xl space-y-5 animate-in fade-in zoom-in-95 duration-300">
-            {/* Title — font-serif kept, size 35/47/59, heavy drop-shadow */}
-            <h1 className="text-[35px] sm:text-[47px] md:text-[59px] font-extrabold font-serif leading-[1.15] text-white tracking-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]">
+        {/* Content Container — absolute fill so flex centering works against full hero height */}
+        <div className="absolute inset-0 z-20 flex items-center justify-center px-6 sm:px-10 lg:px-12 xl:px-14 text-center">
+          <div key={currentIndex} className="max-w-3xl xl:max-w-4xl space-y-5 animate-in fade-in zoom-in-95 duration-300">
+            {/* Title — font-serif kept, scales through xl/2xl */}
+            <h1 className="text-[35px] sm:text-[47px] md:text-[59px] xl:text-[64px] 2xl:text-[68px] font-extrabold font-serif leading-[1.12] text-white tracking-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]">
               {slides[currentIndex].title}
             </h1>
 
-            {/* Subtitle — font-medium text-white/95 for crisp readability over any background */}
-            <p className="text-base sm:text-lg md:text-xl text-white/95 font-medium max-w-2xl mx-auto leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+            {/* Subtitle */}
+            <p className="text-base sm:text-lg md:text-xl xl:text-2xl text-white/95 font-medium max-w-2xl xl:max-w-3xl mx-auto leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
               {slides[currentIndex].subtitle}
             </p>
 

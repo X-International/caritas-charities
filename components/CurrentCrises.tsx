@@ -7,28 +7,27 @@ export default function CurrentCrises() {
   return (
     <section 
       aria-labelledby="appeal-title"
-      className="w-full bg-[#b10017] text-white py-10 sm:py-14 lg:py-16 relative overflow-hidden mt-8 sm:mt-12 lg:mt-16"
+      className="w-full bg-[#b10017] text-white py-10 sm:py-14 lg:py-16 xl:py-20 2xl:py-24 relative overflow-hidden mt-8 sm:mt-12 lg:mt-16"
     >
-      {/* Centered content container aligning with page grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="site-container">
         {/* Header */}
-        <div className="max-w-3xl mb-8 space-y-3 text-center lg:text-left mx-auto lg:mx-0">
+        <div className="max-w-3xl xl:max-w-4xl mb-8 xl:mb-10 space-y-3 text-center lg:text-left mx-auto lg:mx-0">
           <h2 
             id="appeal-title"
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif tracking-tight"
+            className="text-3xl sm:text-4xl lg:text-5xl xl:text-[3.25rem] font-extrabold font-serif tracking-tight"
           >
             Current Appeal
           </h2>
-          <p className="text-sm sm:text-base text-white/90 font-normal leading-relaxed">
+          <p className="text-sm sm:text-base xl:text-lg text-white/90 font-normal leading-relaxed">
             Drought has brought famine to Karamoja. The Kampala Archdiocese is rallying the Church in Uganda to respond, and the call is open to everyone, Catholic and non-Catholic alike.
           </p>
         </div>
 
         {/* Inner Crisis Featured Card Container */}
-        <div className="bg-white text-gray-900 p-5 sm:p-8 lg:p-10 rounded-2xl shadow-xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
-            {/* Left Image - Responsive Mobile First aspect ratios */}
-            <div className="lg:col-span-6 relative w-full aspect-video sm:h-80 lg:h-[380px] lg:aspect-auto overflow-hidden rounded-xl">
+        <div className="bg-white text-gray-900 p-5 sm:p-8 lg:p-10 xl:p-12 2xl:p-14 rounded-2xl shadow-xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 xl:gap-10 items-center">
+            {/* Left Image - Responsive aspect ratios */}
+            <div className="lg:col-span-6 relative w-full aspect-[4/3] sm:aspect-video lg:aspect-[5/4] max-h-[280px] sm:max-h-[320px] lg:max-h-[400px] xl:max-h-[460px] overflow-hidden rounded-xl">
               <Image
                 src="/images/current appeal/Caritas_Kampala_Current_Appeal.jpg"
                 alt="Families receiving famine relief support in Karamoja"
@@ -38,12 +37,12 @@ export default function CurrentCrises() {
               />
             </div>
 
-            {/* Right Details - Mobile centered, Desktop left aligned */}
-            <div className="lg:col-span-6 space-y-4 lg:space-y-5 text-center lg:text-left">
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-serif text-[#b10017]">
+            {/* Right Details */}
+            <div className="lg:col-span-6 space-y-4 lg:space-y-5 xl:space-y-6 text-center lg:text-left">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-[2rem] font-extrabold font-serif text-[#b10017]">
                 Famine in Kotido and Moroto
               </h3>
-              <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+              <p className="text-gray-700 text-sm sm:text-base xl:text-lg leading-relaxed max-w-prose mx-auto lg:mx-0">
                 Climate change has driven drought and famine across the Kotido and Moroto dioceses. The government has provided some relief, but it isn't enough. From July through September, the Archdiocese is collecting food such as posho, maize flour, rice, beans, and cooking oil to send to families in Karamoja. Every contribution counts, whatever its size.
               </p>
               <div className="pt-1 sm:pt-2 flex justify-center lg:justify-start">

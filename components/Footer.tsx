@@ -140,11 +140,11 @@ export default function Footer() {
   return (
     <footer
       aria-label="Site Footer"
-      className="bg-[#a90012] text-white pt-16 pb-12 border-t border-[#8e000e] rounded-3xl mx-4 my-4 sm:mx-6 sm:my-6 lg:mx-8 lg:my-8 overflow-hidden"
+      className="bg-[#a90012] text-white pt-14 sm:pt-16 pb-10 sm:pb-12 border-t border-[#8e000e] rounded-none sm:rounded-2xl lg:rounded-3xl mx-0 sm:mx-4 sm:my-4 lg:mx-6 lg:my-6 xl:mx-auto xl:my-8 xl:max-w-[calc(var(--site-max-width)+3rem)] 2xl:max-w-[calc(var(--site-max-width)+4rem)] overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 sm:gap-8 lg:gap-12 pb-8 sm:pb-10">
-          <div className="flex w-full flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-7 max-w-3xl text-center sm:text-left">
+      <div className="site-container">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center gap-6 sm:gap-8 xl:gap-10 pb-8 sm:pb-10">
+          <div className="flex w-full flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-6 xl:gap-7 max-w-3xl text-center sm:text-left mx-auto lg:mx-0">
             <Link
               href="/"
               className="shrink-0 mx-auto sm:mx-0 focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-4 rounded-lg"
@@ -154,7 +154,7 @@ export default function Footer() {
                 alt="Caritas Kampala logo"
                 width={400}
                 height={140}
-                className="h-24 sm:h-28 lg:h-32 w-auto object-contain"
+                className="h-20 sm:h-24 lg:h-28 xl:h-28 w-auto object-contain"
                 priority
               />
             </Link>
@@ -163,11 +163,11 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="w-full sm:w-auto space-y-3 shrink-0 text-center sm:text-left">
+          <div className="w-full lg:w-auto space-y-3 shrink-0 text-center lg:text-right">
             <span className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-red-100 block">
               FOLLOW US
             </span>
-            <div className="flex items-center justify-center sm:justify-start gap-4">
+            <div className="flex items-center justify-center lg:justify-end gap-4">
               <button
                 type="button"
                 aria-label="Follow Caritas Kampala on Facebook"
@@ -210,7 +210,7 @@ export default function Footer() {
 
         <hr className="border-white/25 my-8 sm:my-10" />
 
-        <div className="hidden sm:grid grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 lg:gap-16 pb-10">
+        <div className="hidden sm:grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-10 xl:gap-12 pb-10">
           {footerColumns.map((col) => (
             <DesktopColumn key={col.title} column={col} />
           ))}
