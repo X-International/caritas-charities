@@ -11,32 +11,14 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
   {
     id: "event-01",
     folder: "Event 01",
-    label: "Parish Outreach Programme",
-    shortLabel: "Outreach",
-  },
-  {
-    id: "event-02",
-    folder: "Event 02",
-    label: "Emergency Relief Distribution",
-    shortLabel: "Relief",
-  },
-  {
-    id: "event-03",
-    folder: "Event 03",
-    label: "Community Empowerment",
-    shortLabel: "Empowerment",
+    label: "Community Events",
+    shortLabel: "Events",
   },
   {
     id: "charities",
     folder: "Charities",
     label: "Partner Charities",
     shortLabel: "Charities",
-  },
-  {
-    id: "event-04",
-    folder: "Event 04",
-    label: "Annual Celebration",
-    shortLabel: "Celebration",
   },
 ];
 

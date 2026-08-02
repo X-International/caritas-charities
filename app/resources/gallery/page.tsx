@@ -6,7 +6,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import {
   filenameToAlt,
-  GALLERY_CATEGORIES,
   GALLERY_IMAGE_EXTENSIONS,
   type GalleryImage,
 } from "./gallery-config";
@@ -21,9 +20,21 @@ function readGalleryFiles(): GalleryImage[] {
   const publicDir = path.join(process.cwd(), "public", "images");
   const results: GalleryImage[] = [];
 
-  for (const category of GALLERY_CATEGORIES) {
-    const dir = path.join(publicDir, category.folder);
+  const FOLDER_TO_CATEGORY_MAP: Record<string, { id: string; label: string; shortLabel: string }> = {
+    "Event 01": { id: "event-01", label: "Community Events", shortLabel: "Events" },
+    "Event 02": { id: "event-01", label: "Emergency Relief Events", shortLabel: "Events" },
+    "Event 03": { id: "charities", label: "Community Empowerment", shortLabel: "Charities" },
+    "Event 04": { id: "charities", label: "Annual Celebrations", shortLabel: "Charities" },
+    "Charities": { id: "charities", label: "Partner Charities", shortLabel: "Charities" },
+  };
+
+  const folders = Object.keys(FOLDER_TO_CATEGORY_MAP);
+
+  for (const folder of folders) {
+    const dir = path.join(publicDir, folder);
     if (!fs.existsSync(dir)) continue;
+
+    const category = FOLDER_TO_CATEGORY_MAP[folder];
 
     const files = fs
       .readdirSync(dir)
@@ -37,11 +48,11 @@ function readGalleryFiles(): GalleryImage[] {
 
     for (const file of files) {
       results.push({
-        src: `/images/${category.folder}/${file}`,
+        src: `/images/${folder}/${file}`,
         categoryId: category.id,
         categoryLabel: category.label,
         alt: filenameToAlt(file, category.label),
-        caption: category.label,
+        caption: category.shortLabel,
       });
     }
   }
@@ -50,7 +61,6 @@ function readGalleryFiles(): GalleryImage[] {
 }
 
 const galleryImages = readGalleryFiles();
-const categoryCount = new Set(galleryImages.map((img) => img.categoryId)).size;
 
 export default function GalleryPage() {
   return (
@@ -99,26 +109,6 @@ export default function GalleryPage() {
                 Capturing moments of hope, relief, and community solidarity across the
                 Archdiocese.
               </p>
-
-              <dl className="mt-5 sm:mt-6 flex flex-wrap gap-x-4 gap-y-2 sm:gap-x-6 text-xs sm:text-sm text-white/90">
-                <div className="flex items-baseline gap-1.5">
-                  <dt className="font-semibold text-white">{galleryImages.length}</dt>
-                  <dd>photos</dd>
-                </div>
-                <div className="hidden xs:block text-white/40" aria-hidden>
-                  ·
-                </div>
-                <div className="flex items-baseline gap-1.5">
-                  <dt className="font-semibold text-white">{categoryCount}</dt>
-                  <dd>collections</dd>
-                </div>
-                <div className="hidden xs:block text-white/40" aria-hidden>
-                  ·
-                </div>
-                <div className="flex items-baseline gap-1.5 min-w-0">
-                  <dd className="truncate">Parish programmes across the Archdiocese</dd>
-                </div>
-              </dl>
             </div>
           </div>
         </section>

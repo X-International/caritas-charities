@@ -201,7 +201,7 @@ export default function ClientGallery({ images }: Props) {
                     <span
                       className={`absolute left-2 top-2 sm:left-3 sm:top-3 ${LABEL_CLASSES} text-white bg-black/50 px-2 py-1 rounded backdrop-blur-sm max-w-[calc(100%-1rem)] truncate`}
                     >
-                      {GALLERY_CATEGORIES.find((c) => c.id === img.categoryId)?.shortLabel}
+                      {img.caption}
                     </span>
                   </button>
                 </article>
