@@ -4,6 +4,7 @@ import ClientGallery from "../ClientGallery";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import DonateOnlineCard from "@/components/DonateOnlineCard";
 import {
   filenameToAlt,
   GALLERY_IMAGE_EXTENSIONS,
@@ -116,6 +117,10 @@ export default function GalleryPage() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
           <ClientGallery images={galleryImages} />
         </section>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <DonateOnlineCard />
+        </div>
       </main>
 
       <Footer />

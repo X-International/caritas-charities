@@ -1,4 +1,5 @@
 import { ArrowRight, Heart } from "lucide-react";
+import Link from "next/link";
 
 export default function DonateOnlineCard() {
   return (
@@ -18,13 +19,13 @@ export default function DonateOnlineCard() {
         </div>
 
         <div className="w-full md:w-auto md:pl-4 flex justify-center md:justify-end">
-          <button
-            type="button"
+          <Link
+            href="/donate"
             className="group w-full max-w-sm sm:w-auto min-w-45 inline-flex items-center justify-center gap-2 bg-[#b10017] text-white font-bold text-xs sm:text-sm px-7 py-3.5 rounded-full uppercase tracking-wider border-2 border-[#b10017] transition-all duration-200 hover:bg-white hover:text-[#b10017] hover:-translate-y-0.5"
           >
             <span>Donate Now</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true" />
-          </button>
+          </Link>
         </div>
       </div>
     </section>
