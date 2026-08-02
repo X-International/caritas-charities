@@ -14,7 +14,7 @@ export default function DonateOnlineCard() {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth={2}
-              d="M12 21s-6.5-4.35-9-8.4C1.16 9.65 2.75 6 6.5 6c2.05 0 3.36 1.15 4.01 2.1C11.16 7.15 12.47 6 14.5 6c3.75 0 5.34 3.65 3.5 6.6C18.5 16.65 12 21 12 21z"
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
             />
           </svg>
         </div>
@@ -31,9 +31,18 @@ export default function DonateOnlineCard() {
         <div className="md:ml-auto w-full md:w-auto md:pl-4">
           <button
             type="button"
-            className="w-full md:w-auto min-w-45 inline-flex items-center justify-center bg-[#b10017] text-white font-bold text-xs sm:text-sm px-7 py-3.5 rounded-full uppercase tracking-wider hover:bg-red-900 transition-colors"
+            className="group w-full md:w-auto min-w-45 inline-flex items-center justify-center gap-2 bg-[#b10017] text-white font-bold text-xs sm:text-sm px-7 py-3.5 rounded-full uppercase tracking-wider border-2 border-[#b10017] transition-all duration-200 hover:bg-white hover:text-[#b10017]"
           >
-            Donate Now →
+            <span>Donate Now</span>
+            <svg
+              className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+            </svg>
           </button>
         </div>
       </div>

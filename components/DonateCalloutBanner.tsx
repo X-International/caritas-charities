@@ -13,15 +13,6 @@ export default function DonateCalloutBanner() {
               <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-white/95 max-w-md">
                 &mdash; Matthew 25:40.
               </p>
-              <div className="appeal-callout-panel-cta pt-1 sm:pt-2">
-                <button
-                  type="button"
-                  className="inline-flex items-center justify-center bg-white text-[#b10017] hover:bg-transparent hover:text-white border-2 border-white text-xs font-bold px-7 py-3.5 rounded-full tracking-wider uppercase transition-all duration-200 cursor-default"
-                  aria-disabled="true"
-                >
-                  DONATE NOW
-                </button>
-              </div>
             </div>
           </div>
         </div>
