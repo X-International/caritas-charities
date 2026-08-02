@@ -3,11 +3,9 @@ import Image from "next/image";
 export default function DonateCalloutBanner() {
   return (
     <div className="relative pt-8 sm:pt-10 pb-10 sm:pb-16">
-      <div
-        className="appeal-callout appeal-callout--visible relative overflow-hidden grid grid-cols-1 gap-6 lg:block lg:h-140"
-      >
+      <div className="appeal-callout relative overflow-hidden grid grid-cols-1 gap-6 lg:block lg:h-140">
         <div className="appeal-callout-panel z-20 lg:absolute lg:inset-0 lg:flex lg:items-center lg:justify-start">
-          <div className="appeal-callout-panel-inner bg-[#b10017] text-white p-7 sm:p-10 lg:p-12 rounded-2xl sm:rounded-3xl space-y-5 sm:space-y-6 text-center lg:text-left lg:w-[37%] lg:max-w-130 shadow-2xl">
+          <div className="appeal-callout-panel-inner bg-[#b10017] text-white p-7 sm:p-10 lg:p-12 rounded-2xl sm:rounded-3xl space-y-5 sm:space-y-6 text-center lg:text-left lg:w-[37%] lg:max-w-130">
             <div className="appeal-callout-panel-content space-y-5 sm:space-y-6 flex flex-col items-center lg:items-start">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-serif leading-tight max-w-[14ch] sm:max-w-[15ch] lg:max-w-none">
                 &ldquo;Whatever you did for one of the least of these brothers and sisters of mine, you did for me.&rdquo;

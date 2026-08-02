@@ -256,7 +256,7 @@ body {
     z-index: 10;
     will-change: transform;
     backface-visibility: hidden;
-    transform: translate3d(0, calc(320px + 1.5rem), 0);
+    transform: none;
   }
 
   @media (min-width: 640px) {
@@ -270,18 +270,18 @@ body {
     }
 
     .appeal-callout-panel {
-      transform: translate3d(0, calc(420px + 1.5rem), 0);
+      transform: none;
     }
   }
 
   .appeal-callout-panel-content {
-    opacity: 0.88;
+    opacity: 1;
   }
 
   .appeal-callout-image-media {
     will-change: transform;
     backface-visibility: hidden;
-    transform: scale3d(1.08, 1.08, 1);
+    transform: none;
   }
 
   .appeal-callout--visible .appeal-callout-panel {
@@ -314,17 +314,17 @@ body {
   .appeal-callout-panel {
     will-change: transform;
     backface-visibility: hidden;
-    transform: translate3d(calc(58.333% - 3rem), 0, 0);
+    transform: none;
   }
 
   .appeal-callout-panel-content {
-    opacity: 0.88;
+    opacity: 1;
   }
 
   .appeal-callout-image-media {
     will-change: transform;
     backface-visibility: hidden;
-    transform: scale3d(1.08, 1.08, 1);
+    transform: none;
   }
 
   .appeal-callout--visible .appeal-callout-panel {
