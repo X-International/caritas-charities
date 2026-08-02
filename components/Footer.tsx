@@ -140,7 +140,7 @@ export default function Footer() {
   return (
     <footer
       aria-label="Site Footer"
-      className="bg-[#a90012] text-white pt-14 sm:pt-16 pb-10 sm:pb-12 border-t border-[#8e000e] rounded-none sm:rounded-2xl lg:rounded-3xl mx-0 sm:mx-4 sm:my-4 lg:mx-6 lg:my-6 xl:mx-auto xl:my-8 xl:max-w-[calc(var(--site-max-width)+3rem)] 2xl:max-w-[calc(var(--site-max-width)+4rem)] overflow-hidden"
+      className="bg-[#a90012] text-white pt-14 sm:pt-16 pb-10 sm:pb-12 border-t border-[#8e000e] w-full overflow-hidden mt-8 lg:mt-12"
     >
       <div className="site-container">
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center gap-6 sm:gap-8 xl:gap-10 pb-8 sm:pb-10">
