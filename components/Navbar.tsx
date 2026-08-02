@@ -66,7 +66,7 @@ const navLinks: NavLink[] = [
         {
           name: "Gallery",
           href: "/resources/gallery",
-          desc: "Photos and videos from our programmes and community work.",
+          desc: "Photos from our programmes and community work.",
         },
         {
           name: "Annual Reports",
