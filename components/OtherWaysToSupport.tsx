@@ -45,17 +45,30 @@ export default function OtherWaysToSupport() {
   return (
     <section className="w-full bg-[#f4efe6] py-8 sm:py-12 md:py-16 lg:py-20">
       <div className="site-container">
-        <h3 className="text-[#b10017] text-3xl sm:text-4xl md:text-5xl lg:text-[40px] font-serif text-center mb-6 sm:mb-8 md:mb-10">
-          Ways to Give
-        </h3>
+        <div className="max-w-3xl mx-auto text-center mb-6 sm:mb-8 md:mb-10 space-y-3 sm:space-y-4">
+          <h3 id="ways-to-give" className="text-[#b10017] text-3xl sm:text-4xl md:text-5xl lg:text-[40px] font-serif leading-tight">
+            Ways to Give
+          </h3>
+          <p className="text-sm sm:text-base md:text-[17px] leading-relaxed text-[#4d4338]">
+            This is the official donation page of the Charities Department, Caritas Kampala, Archdiocese of Kampala.{' '}
+            <a
+              href="https://www.caritaskampala.org/"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="font-bold text-[#b10017] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+            >
+              Visit Caritas Kampala →
+            </a>
+          </p>
+        </div>
 
-        <div className="w-full mb-8 sm:mb-10 md:mb-12 overflow-hidden rounded-3xl">
+        <div className="w-full mb-8 sm:mb-10 md:mb-12 overflow-hidden rounded-3xl aspect-1340/550 bg-[#e7ddcf]">
           <Image
             src="/images/Event%2001/Caritas_Kampala_71.jpg"
             alt="Community members receiving support from Caritas Kampala"
             width={1340}
             height={550}
-            className="w-full h-50 sm:h-70 md:h-95 lg:h-112.5 xl:h-125 2xl:h-137.5 object-cover"
+            className="w-full h-full object-cover"
             priority={false}
           />
         </div>
@@ -79,7 +92,7 @@ export default function OtherWaysToSupport() {
             <div className="pt-6 sm:pt-7 md:pt-8 flex flex-col items-center gap-3">
               <button
                 type="button"
-                className="group inline-flex items-center justify-center gap-2 border border-[#b10017] bg-[#b10017] text-white text-xs sm:text-[13px] md:text-[14px] font-bold uppercase tracking-wider rounded-full px-6 sm:px-7 md:px-7.5 py-3 sm:py-3.25 md:py-3.5 transition-all duration-200 hover:bg-white hover:text-[#b10017]"
+                className="group inline-flex items-center justify-center gap-2 border border-[#b10017] bg-[#b10017] text-white text-xs sm:text-[13px] md:text-[14px] font-bold uppercase tracking-wider rounded-full px-6 sm:px-7 md:px-7.5 py-3 sm:py-3.25 md:py-3.5 transition-colors duration-200 hover:bg-white hover:text-[#b10017] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
               >
                 Donate Now
                 <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true" />
@@ -97,9 +110,13 @@ export default function OtherWaysToSupport() {
                   Bank Transfer
                 </h4>
                 <p className="text-[#2c2c2c] text-base sm:text-[17px] md:text-[18px] leading-relaxed max-w-md mx-auto whitespace-pre-line">
-                  {"Send your gift directly to our account.\n\nCentenary Bank\nEntebbe Road Branch\nAccount No. "}
-                  <span className="font-bold text-[#2c2c2c]">3010309657</span>
-                  {"\nCaritas Kampala"}
+                    {"Send your gift directly to our account.\n\nCentenary Bank\nEntebbe Road Branch\nAccount No."}
+                  </p>
+                  <div className="inline-flex items-center justify-center rounded-full bg-[#f7f2ea] border border-[#e6d7c6] px-4 py-2 text-lg sm:text-xl font-semibold tracking-[0.12em] text-[#2c2c2c]">
+                    3010309657
+                  </div>
+                  <p className="text-[#2c2c2c] text-base sm:text-[17px] md:text-[18px] leading-relaxed max-w-md mx-auto">
+                    Caritas Kampala
                 </p>
               </div>
             </div>
@@ -108,7 +125,7 @@ export default function OtherWaysToSupport() {
               <button
                 type="button"
                 onClick={() => copyToClipboard(BANK_ACCOUNT, "bank")}
-                className="group inline-flex items-center justify-center gap-2 border border-[#b10017] bg-[#b10017] text-white text-xs sm:text-[13px] md:text-[14px] font-bold uppercase tracking-wider rounded-full px-6 sm:px-7 md:px-7.5 py-3 sm:py-3.25 md:py-3.5 transition-all duration-200 hover:bg-white hover:text-[#b10017]"
+                  className="group inline-flex items-center justify-center gap-2 border border-[#b10017] bg-[#b10017] text-white text-xs sm:text-[13px] md:text-[14px] font-bold uppercase tracking-wider rounded-full px-6 sm:px-7 md:px-7.5 py-3 sm:py-3.25 md:py-3.5 transition-colors duration-200 hover:bg-white hover:text-[#b10017] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
               >
                 {copiedKey === "bank" ? <Check className="w-4 h-4" aria-hidden="true" /> : <Copy className="w-4 h-4" aria-hidden="true" />}
                 <span>{copiedKey === "bank" ? "Copied" : "Copy Account Number"}</span>
@@ -133,11 +150,11 @@ export default function OtherWaysToSupport() {
                         key={number}
                         type="button"
                         onClick={() => copyToClipboard(number, number)}
-                        className="w-full inline-flex items-center justify-center gap-2 text-[#2c2c2c] hover:text-[#b10017] transition-colors group"
+                        className="w-full inline-flex items-center justify-between gap-3 rounded-full border border-[#e6d7c6] bg-[#faf7f1] px-4 py-3 text-[#2c2c2c] transition-colors hover:border-[#cfbca6] hover:text-[#b10017] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                         aria-label={`Copy mobile number ${number}`}
                       >
                         <span className="font-bold">{number}</span>
-                        <Copy className="w-4 h-4 shrink-0 transition-transform duration-200 group-hover:scale-110" aria-hidden="true" />
+                        <Copy className="w-4 h-4 shrink-0" aria-hidden="true" />
                       </button>
                     ))}
                   </div>
@@ -150,7 +167,7 @@ export default function OtherWaysToSupport() {
               <button
                 type="button"
                 onClick={copyAllMobileNumbers}
-                className="group inline-flex items-center justify-center gap-2 border border-[#b10017] bg-[#b10017] text-white text-xs sm:text-[13px] md:text-[14px] font-bold uppercase tracking-wider rounded-full px-6 sm:px-7 md:px-7.5 py-3 sm:py-3.25 md:py-3.5 transition-all duration-200 hover:bg-white hover:text-[#b10017]"
+                className="group inline-flex items-center justify-center gap-2 border border-[#b10017] bg-[#b10017] text-white text-xs sm:text-[13px] md:text-[14px] font-bold uppercase tracking-wider rounded-full px-6 sm:px-7 md:px-7.5 py-3 sm:py-3.25 md:py-3.5 transition-colors duration-200 hover:bg-white hover:text-[#b10017] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
               >
                 {copiedKey === "mobile-all" ? <Check className="w-4 h-4" aria-hidden="true" /> : <Copy className="w-4 h-4" aria-hidden="true" />}
                 <span>{copiedKey === "mobile-all" ? "Copied" : "Copy Numbers"}</span>
