@@ -84,10 +84,6 @@ export default function OtherWaysToSupport() {
                 Donate Now
                 <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true" />
               </button>
-              <p className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold tracking-wide text-[#6c6c6c]">
-                <LockKeyhole className="w-3.5 h-3.5 text-[#b10017]" aria-hidden="true" />
-                Secure payment
-              </p>
             </div>
           </div>
 
