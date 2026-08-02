@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DonateHero from "@/components/DonateHero";
 import DonateCalloutBanner from "@/components/DonateCalloutBanner";
+import DonateOnlineCard from "@/components/DonateOnlineCard";
 
 export const metadata = {
   title: "Donate & Support | Caritas Kampala",
@@ -69,6 +70,10 @@ export default function DonatePage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <DonateCalloutBanner />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <DonateOnlineCard />
         </div>
       </main>
 
