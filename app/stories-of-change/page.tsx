@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import DonateOnlineCard from "@/components/DonateOnlineCard";
 
 export const metadata = {
   title: "Stories of Change | Caritas Kampala",
@@ -88,6 +89,10 @@ export default function StoriesOfChangePage() {
             ))}
           </div>
         </section>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <DonateOnlineCard />
+        </div>
       </main>
 
       <Footer />

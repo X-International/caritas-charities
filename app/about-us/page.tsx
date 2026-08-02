@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import DonateOnlineCard from "@/components/DonateOnlineCard";
 
 export const metadata = {
   title: "About Us | Caritas Kampala",
@@ -61,7 +62,7 @@ export default function AboutUsPage() {
               </div>
             </div>
 
-            <div className="lg:col-span-6 relative h-[320px] sm:h-[420px] rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+            <div className="lg:col-span-6 relative h-80 sm:h-105 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
               <Image
                 src="/images/Main Slider/Caritas_Kampala_18.jpg"
                 alt="Caritas Kampala outreach team"
@@ -110,6 +111,8 @@ export default function AboutUsPage() {
               </p>
             </Link>
           </div>
+
+          <DonateOnlineCard />
         </section>
       </main>
 

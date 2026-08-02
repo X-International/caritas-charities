@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import DonateOnlineCard from "@/components/DonateOnlineCard";
 
 export const metadata = {
   title: "Our Story & Values | Caritas Kampala",
@@ -72,6 +73,8 @@ export default function OurStoryPage() {
               <li><strong className="text-gray-900">Integral Development:</strong> Empowering individuals physically, socially, and spiritually.</li>
             </ul>
           </div>
+
+          <DonateOnlineCard />
         </section>
       </main>
 

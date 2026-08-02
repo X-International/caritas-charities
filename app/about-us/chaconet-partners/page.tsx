@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import DonateOnlineCard from "@/components/DonateOnlineCard";
 
 export const metadata = {
   title: "Chaconet Partners | Caritas Kampala",
@@ -68,6 +69,8 @@ export default function ChaconetPartnersPage() {
               </p>
             </div>
           </div>
+
+          <DonateOnlineCard />
         </section>
       </main>
 

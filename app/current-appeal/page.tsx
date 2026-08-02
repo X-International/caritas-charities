@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import DonateOnlineCard from "@/components/DonateOnlineCard";
 import AppealCalloutBanner from "@/components/AppealCalloutBanner";
 import AppealPageHero from "@/components/AppealPageHero";
 
@@ -233,6 +234,8 @@ export default function CurrentAppealPage() {
           </div>
 
           <AppealCalloutBanner />
+
+          <DonateOnlineCard />
         </div>
       </main>
 
