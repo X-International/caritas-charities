@@ -1,3 +1,6 @@
+import fs from "fs";
+import path from "path";
+import ClientGallery from "../ClientGallery";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
@@ -9,14 +12,39 @@ export const metadata = {
     "View photo highlights of Caritas Kampala's humanitarian relief, community empowerment, and parish programs.",
 };
 
-const photos = [
-  { src: "/images/current appeal/Caritas_Kampala_Current_Appeal_details.jpg", title: "Famine Relief Distribution in Karamoja" },
-  { src: "/images/Main Slider/Caritas_Kampala_18.jpg", title: "Field Team Community Engagement" },
-  { src: "/images/Charities/Caritas_Kampala_83.jpg", title: "Child Support and Education Outreach" },
-  { src: "/images/Main Slider/Caritas_Kampala_91.jpg", title: "Sustainable Agriculture Training" },
-  { src: "/images/Main Slider/Caritas_Kampala_70.jpg", title: "Parish Volunteer Mobilization" },
-  { src: "/images/Main Slider/Caritas_Kampala_07.jpg", title: "Archdiocese Leadership Support" },
-];
+// Helper to read files from public folders in the requested order
+function readGalleryFiles() {
+  const publicDir = path.join(process.cwd(), "public", "images");
+  const folders = [
+    "Event 01",
+    "Event 02",
+    "Event 03",
+    "Charities",
+    "Event 04",
+  ];
+
+  const exts = [".jpg", ".jpeg", ".png", ".webp", ".gif"];
+
+  const results: string[] = [];
+
+  for (const folder of folders) {
+    const dir = path.join(publicDir, folder);
+    if (!fs.existsSync(dir)) continue;
+    const files = fs.readdirSync(dir).filter((f) => {
+      const ext = path.extname(f).toLowerCase();
+      return exts.includes(ext);
+    });
+    files.sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }));
+    for (const file of files) {
+      // public path
+      results.push(`/images/${folder}/${file}`);
+    }
+  }
+
+  return results;
+}
+
+const galleryImages = readGalleryFiles();
 
 export default function GalleryPage() {
   return (
@@ -25,48 +53,40 @@ export default function GalleryPage() {
 
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
-        <section className="bg-[#b10017] text-white py-14 sm:py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-            <nav aria-label="Breadcrumb" className="text-xs uppercase tracking-wider font-semibold text-red-200">
-              <ol className="flex items-center space-x-2">
+        <section className="bg-[#b10017] text-white py-10 sm:py-14">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav aria-label="Breadcrumb" className="text-xs uppercase tracking-wide font-semibold text-red-200">
+              <ol className="flex items-center space-x-1">
                 <li>
-                  <Link href="/" className="hover:underline text-white">HOME</Link>
+                  <Link href="/" className="hover:underline text-white focus-visible:underline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">HOME</Link>
                 </li>
-                <li>/</li>
+                <li className="px-2 text-red-200">/</li>
                 <li>
-                  <Link href="/resources" className="hover:underline text-white">RESOURCES</Link>
+                  <span className="text-white">RESOURCES</span>
                 </li>
-                <li>/</li>
+                <li className="px-2 text-red-200">/</li>
                 <li aria-current="page" className="text-red-200">GALLERY</li>
               </ol>
             </nav>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif tracking-tight">
-              Photo Gallery
-            </h1>
-            <p className="text-base sm:text-lg text-red-100 max-w-2xl font-light leading-relaxed">
-              Capturing moments of hope, relief, and community solidarity across the Archdiocese.
-            </p>
+
+            <div className="mt-4 lg:mt-6 max-w-3xl">
+              <h1 className="text-3xl sm:text-4xl lg:text-4xl font-extrabold font-serif leading-[1.06] tracking-tight">
+                Photo Gallery
+              </h1>
+
+              <div aria-hidden className="w-16 h-px bg-white/20 mt-4 mb-4 rounded" />
+
+              <p className="text-base sm:text-lg text-white/95 max-w-3xl font-normal leading-relaxed">
+                Capturing moments of hope, relief, and community solidarity across the Archdiocese.
+              </p>
+            </div>
           </div>
         </section>
 
         {/* Gallery Grid */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {photos.map((item, index) => (
-              <div key={index} className="relative group h-64 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
-                <Image
-                  src={item.src}
-                  alt={item.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-4 opacity-90 group-hover:opacity-100 transition-opacity">
-                  <p className="text-white text-xs sm:text-sm font-medium leading-snug">{item.title}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* Client-side gallery component handles grid, pagination and lightbox */}
+          <ClientGallery images={galleryImages} />
         </section>
       </main>
 
@@ -74,3 +94,9 @@ export default function GalleryPage() {
     </div>
   );
 }
+
+// ---------------- Client component ----------------
+// This must be a client component for interactivity (lightbox, pagination)
+
+// ClientGallery is dynamically imported from ./ClientGallery (client-side only)
+
