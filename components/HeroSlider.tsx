@@ -96,7 +96,7 @@ export default function HeroSlider() {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
-        className="relative w-full h-[clamp(420px,52vh,720px)] lg:h-[clamp(520px,62vh,880px)] xl:h-[clamp(580px,68vh,1000px)] 2xl:h-[clamp(640px,75vh,1150px)] overflow-hidden bg-black text-white rounded-2xl sm:rounded-3xl shadow-2xl focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-[-4px]"
+        className="relative w-full h-[clamp(420px,52vh,720px)] lg:h-[clamp(520px,62vh,880px)] xl:h-[clamp(580px,68vh,1000px)] 2xl:h-[clamp(580px,60vh,850px)] overflow-hidden bg-black text-white rounded-2xl sm:rounded-3xl shadow-2xl focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-[-4px]"
       >
         {/* Background Image Carousel */}
         {slides.map((slide, index) => {
