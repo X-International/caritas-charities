@@ -2,6 +2,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DonateHero from "@/components/DonateHero";
+import OtherWaysToSupport from "@/components/OtherWaysToSupport";
 import DonateCalloutBanner from "@/components/DonateCalloutBanner";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
 
@@ -35,6 +36,8 @@ export default function DonatePage() {
         </div>
 
         <DonateHero />
+
+        <OtherWaysToSupport />
 
         {/* Donation Details */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
