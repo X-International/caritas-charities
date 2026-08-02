@@ -30,12 +30,6 @@ export default function NewsPage() {
                 </Link>
               </li>
               <li className="text-gray-400">/</li>
-              <li>
-                <Link href="/resources" className="text-[#b10017] hover:underline">
-                  RESOURCES
-                </Link>
-              </li>
-              <li className="text-gray-400">/</li>
               <li className="text-gray-600" aria-current="page">
                 NEWS &amp; UPDATES
               </li>

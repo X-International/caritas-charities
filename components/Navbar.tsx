@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 /* ─── Types ─────────────────────────────────────────────── */
-type SubLink = { name: string; href: string; desc?: string };
+type SubLink = { name: string; href?: string; desc?: string };
 type MegaMenuCard = {
   title: string;
   description: string;
@@ -15,7 +15,7 @@ type MegaMenuCard = {
 };
 type NavLink = {
   name: string;
-  href: string;
+  href?: string;
   megaMenu?: { links: SubLink[]; card: MegaMenuCard };
 };
 
@@ -56,7 +56,6 @@ const navLinks: NavLink[] = [
   { name: "Stories of Change", href: "/stories-of-change" },
   {
     name: "Resources",
-    href: "/resources",
     megaMenu: {
       links: [
         {
@@ -71,7 +70,6 @@ const navLinks: NavLink[] = [
         },
         {
           name: "Annual Reports",
-          href: "/resources/annual-reports",
           desc: "Reports on our work - coming soon.",
         },
         {
@@ -85,7 +83,7 @@ const navLinks: NavLink[] = [
         description:
           "Photos, videos, and the latest updates from our work across the Archdiocese of Kampala.",
         image: "/images/Main Slider/Caritas_Kampala_90.jpg",
-        cta: { label: "Browse Resources", href: "/resources" },
+        cta: { label: "Browse News", href: "/resources/news" },
       },
     },
   },
@@ -254,7 +252,7 @@ export default function Navbar() {
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!searchQuery.trim()) return;
-    window.location.href = `/resources?search=${encodeURIComponent(searchQuery.trim())}`;
+    window.location.href = `/resources/news?search=${encodeURIComponent(searchQuery.trim())}`;
     setIsSearchOpen(false);
   };
 
@@ -262,6 +260,8 @@ export default function Navbar() {
     if (href === "/") return pathname === "/";
     return pathname.startsWith(href);
   };
+
+  const getMegaMenuHref = (link: NavLink) => link.href ?? link.megaMenu?.links[0]?.href ?? "/";
 
   /* Mega-menu hover helpers */
   const openMenu = (name: string) => {
@@ -280,7 +280,7 @@ export default function Navbar() {
       {/* Skip Link for WCAG Accessibility */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-5 focus:py-3 focus:bg-[#b10017] focus:text-white focus:font-bold focus:text-sm focus:rounded-md focus:shadow-2xl focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-100 focus:px-5 focus:py-3 focus:bg-[#b10017] focus:text-white focus:font-bold focus:text-sm focus:rounded-md focus:shadow-2xl focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
       >
         Skip to main content
       </a>
@@ -340,7 +340,7 @@ export default function Navbar() {
                 aria-expanded={isShareModalOpen}
               >
                 <span
-                  className="inline-flex items-center justify-center bg-[#e0ded3] text-[#141414] rounded-[3px] w-[16px] h-[16px] shrink-0 font-bold"
+                  className="inline-flex items-center justify-center bg-[#e0ded3] text-[#141414] rounded-[3px] w-4 h-4 shrink-0 font-bold"
                   aria-hidden="true"
                 >
                   <svg
@@ -392,7 +392,7 @@ export default function Navbar() {
                       aria-hidden="true"
                     />
                     <div
-                      className="absolute right-[-8px] sm:right-0 top-full mt-2.5 w-[290px] sm:w-80 bg-white text-gray-900 shadow-2xl rounded-xl p-3 z-50 border border-gray-200 animate-in fade-in slide-in-from-top-2 duration-150"
+                      className="absolute -right-2 sm:right-0 top-full mt-2.5 w-72.5 sm:w-80 bg-white text-gray-900 shadow-2xl rounded-xl p-3 z-50 border border-gray-200 animate-in fade-in slide-in-from-top-2 duration-150"
                       role="search"
                     >
                       <form onSubmit={handleSearchSubmit} className="relative flex items-center">
@@ -439,20 +439,20 @@ export default function Navbar() {
         </div>
 
         {/* ── Main Navbar Row ──────────────────────────────── */}
-        <div className="site-container py-[8px] sm:py-[10px] lg:py-3 grid grid-cols-[auto_1fr_auto] items-center gap-3 lg:gap-6">
+        <div className="site-container py-2 sm:py-2.5 lg:py-3 grid grid-cols-[auto_1fr_auto] items-center gap-3 lg:gap-6">
           {/* Logo */}
           <Link
             href="/"
             className="flex items-center shrink-0 rounded-xs focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-4"
             aria-label="Caritas Kampala Homepage"
           >
-            <div className="relative h-14 sm:h-16 lg:h-[4.25rem] w-auto">
+            <div className="relative h-14 sm:h-16 lg:h-17 w-auto">
               <Image
                 src="/images/logos/Caritas_Kampala_logo.jpg"
                 alt="Caritas Kampala Logo"
                 width={240}
                 height={96}
-                className="h-14 sm:h-16 lg:h-[4.25rem] w-auto object-contain"
+                className="h-14 sm:h-16 lg:h-17 w-auto object-contain"
                 priority
               />
             </div>
@@ -466,7 +466,7 @@ export default function Navbar() {
             {navLinks.map((link) => {
               const linkId = `nav-link-${link.name.toLowerCase().replace(/\s+/g, "-")}`;
               const menuId = `mega-menu-${link.name.toLowerCase().replace(/\s+/g, "-")}`;
-              const active = isRouteActive(link.href);
+              const active = link.href ? isRouteActive(link.href) : false;
 
               return (
                 <div
@@ -475,23 +475,19 @@ export default function Navbar() {
                   onMouseEnter={() => link.megaMenu && openMenu(link.name)}
                   onMouseLeave={() => link.megaMenu && scheduleClose()}
                 >
-                  {/* Nav trigger link */}
-                  <Link
-                    id={linkId}
-                    href={link.href}
-                    aria-current={active ? "page" : undefined}
-                    className={`relative inline-flex items-center gap-1.5 text-[11.5px] xl:text-[12.5px] 2xl:text-[13px] font-semibold tracking-wide transition-colors uppercase whitespace-nowrap py-2 px-1 rounded-xs focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-4 ${
-                      active
-                        ? "text-[#b10017]"
-                        : "text-gray-800 hover:text-[#b10017]"
-                    }`}
-                    aria-haspopup={link.megaMenu ? "true" : undefined}
-                    aria-expanded={link.megaMenu ? openMegaMenu === link.name : undefined}
-                    aria-controls={link.megaMenu ? menuId : undefined}
-                    onFocus={() => link.megaMenu && openMenu(link.name)}
-                  >
-                    <span>{link.name}</span>
-                    {link.megaMenu && (
+                  {link.megaMenu ? (
+                    <button
+                      id={linkId}
+                      type="button"
+                      className="relative inline-flex items-center gap-1.5 text-[11.5px] xl:text-[12.5px] 2xl:text-[13px] font-semibold tracking-wide transition-colors uppercase whitespace-nowrap py-2 px-1 rounded-xs text-gray-800 hover:text-[#b10017] focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-4"
+                      aria-haspopup="true"
+                      aria-expanded={openMegaMenu === link.name}
+                      aria-controls={menuId}
+                      onMouseEnter={() => openMenu(link.name)}
+                      onFocus={() => openMenu(link.name)}
+                      onClick={() => openMenu(link.name)}
+                    >
+                      <span>{link.name}</span>
                       <svg
                         className={`w-3 h-3 transition-transform duration-200 ${
                           openMegaMenu === link.name ? "rotate-180 text-[#b10017]" : "text-gray-400"
@@ -508,22 +504,34 @@ export default function Navbar() {
                           d="M19 9l-7 7-7-7"
                         />
                       </svg>
-                    )}
+                    </button>
+                  ) : (
+                    <Link
+                      id={linkId}
+                      href={link.href!}
+                      aria-current={active ? "page" : undefined}
+                      className={`relative inline-flex items-center gap-1.5 text-[11.5px] xl:text-[12.5px] 2xl:text-[13px] font-semibold tracking-wide transition-colors uppercase whitespace-nowrap py-2 px-1 rounded-xs focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-4 ${
+                        active
+                          ? "text-[#b10017]"
+                          : "text-gray-800 hover:text-[#b10017]"
+                      }`}
+                    >
+                      <span>{link.name}</span>
 
-                    {/* Active Route Bottom Bar Indicator */}
-                    {active && (
-                      <span
-                        className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#b10017] rounded-full animate-in fade-in duration-200"
-                        aria-hidden="true"
-                      />
-                    )}
-                  </Link>
+                      {active && (
+                        <span
+                          className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#b10017] rounded-full animate-in fade-in duration-200"
+                          aria-hidden="true"
+                        />
+                      )}
+                    </Link>
+                  )}
 
                   {/* ── Mega-menu flyout ─────────────────── */}
                   {link.megaMenu && openMegaMenu === link.name && (
                     <div
                       id={menuId}
-                      className="absolute top-[calc(100%+10px)] left-1/2 -translate-x-1/2 w-[620px] xl:w-[720px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-150"
+                      className="absolute top-[calc(100%+10px)] left-1/2 -translate-x-1/2 w-155 xl:w-180 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-150"
                       onMouseEnter={cancelClose}
                       onMouseLeave={scheduleClose}
                       role="region"
@@ -538,87 +546,100 @@ export default function Navbar() {
                             </p>
                             <ul className="space-y-1.5" role="menu">
                               {link.megaMenu.links.map((sub) => {
-                                const isSubActive = pathname === sub.href;
+                                const isSubActive = sub.href ? pathname === sub.href : false;
                                 return (
                                   <li key={sub.name} role="none">
-                                    <Link
-                                      role="menuitem"
-                                      href={sub.href}
-                                      onClick={() => setOpenMegaMenu(null)}
-                                      className={`group flex items-start justify-between px-4 py-3 rounded-xl transition-all duration-150 focus-visible:outline-2 focus-visible:outline-[#b10017] ${
-                                        isSubActive
-                                          ? "bg-[#b10017] text-white shadow-xs"
-                                          : "hover:bg-[#b10017] text-gray-800 hover:text-white"
-                                      }`}
-                                    >
-                                      <div className="flex flex-col">
-                                        <span
-                                          className={`text-[13px] font-semibold uppercase tracking-wide transition-colors ${
-                                            isSubActive
-                                              ? "text-white"
-                                              : "text-gray-900 group-hover:text-white"
-                                          }`}
-                                        >
-                                          {sub.name}
-                                        </span>
-                                        {sub.desc && (
+                                    {sub.href ? (
+                                      <Link
+                                        role="menuitem"
+                                        href={sub.href}
+                                        onClick={() => setOpenMegaMenu(null)}
+                                        className={`group flex items-start justify-between px-4 py-3 rounded-xl transition-all duration-150 focus-visible:outline-2 focus-visible:outline-[#b10017] ${
+                                          isSubActive
+                                            ? "bg-[#b10017] text-white shadow-xs"
+                                            : "hover:bg-[#b10017] text-gray-800 hover:text-white"
+                                        }`}
+                                      >
+                                        <div className="flex flex-col">
                                           <span
-                                            className={`text-[11.5px] mt-1 normal-case font-normal leading-relaxed transition-colors ${
+                                            className={`text-[13px] font-semibold uppercase tracking-wide transition-colors ${
                                               isSubActive
-                                                ? "text-red-100"
-                                                : "text-gray-500 group-hover:text-red-100"
+                                                ? "text-white"
+                                                : "text-gray-900 group-hover:text-white"
                                             }`}
                                           >
-                                            {sub.desc}
+                                            {sub.name}
                                           </span>
-                                        )}
-                                      </div>
-                                      <svg
-                                        className={`w-3.5 h-3.5 mt-0.5 transition-all duration-150 shrink-0 ml-2 ${
-                                          isSubActive
-                                            ? "text-white opacity-100 translate-x-0"
-                                            : "opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 text-white"
-                                        }`}
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                        aria-hidden="true"
+                                          {sub.desc && (
+                                            <span
+                                              className={`text-[11.5px] mt-1 normal-case font-normal leading-relaxed transition-colors ${
+                                                isSubActive
+                                                  ? "text-red-100"
+                                                  : "text-gray-500 group-hover:text-red-100"
+                                              }`}
+                                            >
+                                              {sub.desc}
+                                            </span>
+                                          )}
+                                        </div>
+                                        <svg
+                                          className={`w-3.5 h-3.5 mt-0.5 transition-all duration-150 shrink-0 ml-2 ${
+                                            isSubActive
+                                              ? "text-white opacity-100 translate-x-0"
+                                              : "opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 text-white"
+                                          }`}
+                                          fill="none"
+                                          stroke="currentColor"
+                                          viewBox="0 0 24 24"
+                                          aria-hidden="true"
+                                        >
+                                          <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2.5}
+                                            d="M9 5l7 7-7 7"
+                                          />
+                                        </svg>
+                                      </Link>
+                                    ) : (
+                                      <Link
+                                        role="menuitem"
+                                        href="#"
+                                        onClick={(event) => event.preventDefault()}
+                                        className="group flex items-start justify-between px-4 py-3 rounded-xl transition-all duration-150 hover:bg-[#b10017] text-gray-800 hover:text-white focus-visible:outline-2 focus-visible:outline-[#b10017]"
                                       >
-                                        <path
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"
-                                          strokeWidth={2.5}
-                                          d="M9 5l7 7-7 7"
-                                        />
-                                      </svg>
-                                    </Link>
+                                        <div className="flex flex-col">
+                                          <span className="text-[13px] font-semibold uppercase tracking-wide text-gray-900 group-hover:text-white">
+                                            {sub.name}
+                                          </span>
+                                          {sub.desc && (
+                                            <span className="text-[11.5px] mt-1 normal-case font-normal leading-relaxed text-gray-500 group-hover:text-red-100">
+                                              {sub.desc}
+                                            </span>
+                                          )}
+                                        </div>
+                                        <svg
+                                          className="w-3.5 h-3.5 mt-0.5 transition-all duration-150 shrink-0 ml-2 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 text-white"
+                                          fill="none"
+                                          stroke="currentColor"
+                                          viewBox="0 0 24 24"
+                                          aria-hidden="true"
+                                        >
+                                          <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2.5}
+                                            d="M9 5l7 7-7 7"
+                                          />
+                                        </svg>
+                                      </Link>
+                                    )}
                                   </li>
                                 );
                               })}
                             </ul>
                           </div>
 
-                          <Link
-                            href={link.href}
-                            onClick={() => setOpenMegaMenu(null)}
-                            className="inline-flex items-center gap-1.5 mt-5 ml-4 text-xs font-bold text-[#b10017] hover:underline underline-offset-2 transition-colors uppercase tracking-wide focus-visible:outline-2 focus-visible:outline-[#b10017] rounded-xs w-fit"
-                          >
-                            View all {link.name}
-                            <svg
-                              className="w-3 h-3"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                              aria-hidden="true"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2.5}
-                                d="M9 5l7 7-7 7"
-                              />
-                            </svg>
-                          </Link>
                         </div>
 
                         {/* Right — featured card */}
@@ -732,7 +753,7 @@ export default function Navbar() {
 
             <nav
               id="mobile-navigation-drawer"
-              className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white rounded-t-[32px] shadow-[0_-8px_30px_rgba(0,0,0,0.12)] max-h-[90vh] overflow-y-auto animate-in slide-in-from-bottom-8 duration-300 pb-6"
+              className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white rounded-t-4xl shadow-[0_-8px_30px_rgba(0,0,0,0.12)] max-h-[90vh] overflow-y-auto animate-in slide-in-from-bottom-8 duration-300 pb-6"
               aria-label="Mobile Navigation"
             >
               {/* Embedded Mobile Search Input */}
@@ -810,7 +831,7 @@ export default function Navbar() {
                             openMobileSubmenu === link.name ? null : link.name
                           )
                         }
-                        className={`flex items-center justify-between w-full text-sm font-bold min-h-[48px] py-3.5 px-2 uppercase transition-colors focus-visible:outline-2 focus-visible:outline-[#b10017] rounded-lg ${
+                        className={`flex items-center justify-between w-full text-sm font-bold min-h-12 py-3.5 px-2 uppercase transition-colors focus-visible:outline-2 focus-visible:outline-[#b10017] rounded-lg ${
                           active ? "text-[#b10017]" : "text-gray-900 hover:text-[#b10017]"
                         }`}
                         aria-expanded={openMobileSubmenu === link.name}
@@ -854,7 +875,7 @@ export default function Navbar() {
                                 href={sub.href}
                                 aria-current={isSubActive ? "page" : undefined}
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                className={`flex items-center justify-between text-xs min-h-[44px] py-3 px-3.5 rounded-lg transition-all ${
+                                className={`flex items-center justify-between text-xs min-h-11 py-3 px-3.5 rounded-lg transition-all ${
                                   isSubActive
                                     ? "bg-[#b10017] text-white font-bold shadow-xs"
                                     : "text-gray-800 hover:text-[#b10017] hover:bg-gray-100/90 font-medium"
@@ -879,7 +900,7 @@ export default function Navbar() {
                             );
                           })}
                           <Link
-                            href={link.href}
+                            href={getMegaMenuHref(link)}
                             onClick={() => setIsMobileMenuOpen(false)}
                             className="inline-flex items-center gap-1.5 mt-2 ml-2 py-2 text-xs font-bold text-[#b10017] hover:underline underline-offset-2 uppercase tracking-wide"
                           >
@@ -909,7 +930,7 @@ export default function Navbar() {
                         href={link.href}
                         aria-current={active ? "page" : undefined}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className={`flex items-center space-x-2.5 text-sm font-bold min-h-[48px] py-3.5 px-2 uppercase transition-colors focus-visible:text-[#b10017] focus-visible:outline-none ${
+                        className={`flex items-center space-x-2.5 text-sm font-bold min-h-12 py-3.5 px-2 uppercase transition-colors focus-visible:text-[#b10017] focus-visible:outline-none ${
                           active ? "text-[#b10017]" : "text-gray-900 hover:text-[#b10017]"
                         }`}
                       >
@@ -946,7 +967,7 @@ export default function Navbar() {
       {/* ── Share Modal ──────────────────────────────────── */}
       {isShareModalOpen && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-xs"
+          className="fixed inset-0 z-100 flex items-center justify-center bg-black/70 backdrop-blur-xs"
           role="dialog"
           aria-modal="true"
           aria-labelledby="share-modal-title"
@@ -1076,7 +1097,7 @@ export default function Navbar() {
                 className="group flex flex-col items-center gap-1.5 cursor-pointer focus-visible:outline-none"
                 aria-label="Visit us on Instagram"
               >
-                <span className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] hover:opacity-90 group-focus-visible:ring-2 group-focus-visible:ring-[#ee2a7b] group-focus-visible:ring-offset-2 text-white flex items-center justify-center shadow-md transition-opacity duration-200">
+                <span className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-linear-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] hover:opacity-90 group-focus-visible:ring-2 group-focus-visible:ring-[#ee2a7b] group-focus-visible:ring-offset-2 text-white flex items-center justify-center shadow-md transition-opacity duration-200">
                   <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
                   </svg>

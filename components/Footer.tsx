@@ -6,7 +6,7 @@ import { useState } from "react";
 
 type FooterColumnData = {
   title: string;
-  links: { label: string; href: string }[];
+  links: { label: string; href?: string }[];
 };
 
 const footerColumns: FooterColumnData[] = [
@@ -23,8 +23,8 @@ const footerColumns: FooterColumnData[] = [
     title: "GET INVOLVED",
     links: [
       { label: "Donate", href: "/donate" },
-      { label: "Get Involved", href: "/get-involved" },
-      { label: "Fundraise For Us", href: "/get-involved" },
+      { label: "Get Involved" },
+      { label: "Fundraise For Us" },
     ],
   },
   {
@@ -39,8 +39,8 @@ const footerColumns: FooterColumnData[] = [
     title: "CONTACT & LEGAL",
     links: [
       { label: "Contact Us", href: "/contact-us" },
-      { label: "Privacy Policy", href: "/privacy-policy" },
-      { label: "Terms of Use", href: "/terms-of-use" },
+      { label: "Privacy Policy" },
+      { label: "Terms of Use" },
     ],
   },
 ];
@@ -53,10 +53,14 @@ function DesktopColumn({ column }: { column: FooterColumnData }) {
       </h3>
       <ul className="space-y-3 text-sm sm:text-base text-red-100/95 font-normal">
         {column.links.map((link) => (
-          <li key={`${link.href}-${link.label}`}>
-            <Link href={link.href} className="hover:underline hover:text-white transition-colors">
-              {link.label}
-            </Link>
+          <li key={`${link.href ?? "text"}-${link.label}`}>
+            {link.href ? (
+              <Link href={link.href} className="hover:underline hover:text-white transition-colors">
+                {link.label}
+              </Link>
+            ) : (
+              <span className="text-red-100/95">{link.label}</span>
+            )}
           </li>
         ))}
       </ul>
@@ -116,10 +120,14 @@ function MobileAccordion({
         <div className="overflow-hidden">
           <ul className="space-y-3 text-base text-red-100/95 font-normal pl-0">
             {column.links.map((link) => (
-              <li key={`${link.href}-${link.label}`}>
-                <Link href={link.href} className="hover:underline hover:text-white transition-colors">
-                  {link.label}
-                </Link>
+              <li key={`${link.href ?? "text"}-${link.label}`}>
+                {link.href ? (
+                  <Link href={link.href} className="hover:underline hover:text-white transition-colors">
+                    {link.label}
+                  </Link>
+                ) : (
+                  <span className="text-red-100/95">{link.label}</span>
+                )}
               </li>
             ))}
           </ul>

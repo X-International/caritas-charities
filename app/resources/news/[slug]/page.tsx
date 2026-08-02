@@ -46,12 +46,6 @@ export default async function NewsArticlePage({ params }: { params: { slug: stri
               </li>
               <li className="text-gray-400">/</li>
               <li>
-                <Link href="/resources" className="text-[#b10017] hover:underline">
-                  RESOURCES
-                </Link>
-              </li>
-              <li className="text-gray-400">/</li>
-              <li>
                 <Link href="/resources/news" className="text-[#b10017] hover:underline">
                   NEWS &amp; UPDATES
                 </Link>
