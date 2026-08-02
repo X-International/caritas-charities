@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import NewsHero from "@/components/NewsHero";
+import { newsArticles } from "./news-data";
 
 export const metadata = {
   title: "News & Updates | Caritas Kampala",
@@ -10,29 +11,9 @@ export const metadata = {
     "The latest news, press releases, and operational updates from Caritas Kampala.",
 };
 
-const newsItems = [
-  {
-    title: "Kotido & Moroto Famine Relief Drive Mobilizes Parishes",
-    date: "28 July 2026",
-    category: "Emergency Appeal",
-    snippet: "Parishes across Kampala Archdiocese coordinate food and relief items collection for Karamoja families.",
-    image: "/images/current appeal/Caritas_Kampala_Current_Appeal_details.jpg",
-  },
-  {
-    title: "Caritas Kampala Launches New Agro-Ecology Training Initiative",
-    date: "15 June 2026",
-    category: "Livelihoods",
-    snippet: "Smallholder farmers in Mpigi district receive organic farming equipment and climate adaptation mentorship.",
-    image: "/images/Main Slider/Caritas_Kampala_91.jpg",
-  },
-  {
-    title: "Chaconet Annual Leadership Summit Concludes in Nsambya",
-    date: "02 May 2026",
-    category: "Partnership",
-    snippet: "Directors of 14 Catholic charity homes convene to review safeguarding guidelines and medical care protocols.",
-    image: "/images/Main Slider/Caritas_Kampala_18.jpg",
-  },
-];
+const labelTextClasses = "text-[#585858] uppercase tracking-[0.18em] text-[11px] sm:text-xs";
+const headlineLinkClasses =
+  "inline-block font-serif text-[22px] sm:text-[25px] lg:text-[28px] leading-[1.14] text-[#b10017] transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 focus-visible:ring-offset-white";
 
 export default function NewsPage() {
   return (
@@ -66,25 +47,31 @@ export default function NewsPage() {
 
         {/* News Grid */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {newsItems.map((news, i) => (
-              <article key={i} className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                <div className="relative h-48 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 lg:gap-7.5">
+            {newsArticles.map((news) => (
+              <article key={news.slug} className="flex h-full flex-col overflow-hidden rounded-3xl border border-[#eadfce] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
+                <div className="relative aspect-video w-full overflow-hidden bg-[#f5efe6]">
                   <Image
                     src={news.image}
-                    alt={news.title}
+                    alt={news.alt}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"
                   />
                 </div>
-                <div className="p-6 space-y-3">
-                  <div className="flex justify-between items-center text-xs">
-                    <span className="text-[#b10017] font-bold uppercase tracking-wider bg-red-50 px-2.5 py-0.5 rounded">{news.category}</span>
-                    <span className="text-gray-400 font-mono">{news.date}</span>
+                <div className="flex flex-1 flex-col px-5 py-5 sm:px-6 sm:py-6">
+                  <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
+                    <span className={labelTextClasses}>{news.category}</span>
+                    <span className="whitespace-nowrap text-[#7b7b7b] font-mono tracking-normal uppercase">{news.date}</span>
                   </div>
-                  <h2 className="text-lg font-serif font-bold text-gray-900 leading-snug">{news.title}</h2>
-                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{news.snippet}</p>
+                  <h2 className="mt-5">
+                    <Link href="#" aria-disabled="true" tabIndex={-1} className={headlineLinkClasses}>
+                      {news.title}
+                    </Link>
+                  </h2>
+                  <p className="mt-4 text-[15px] sm:text-[16px] leading-[1.7] text-[#4f4f4f]">
+                    {news.snippet}
+                  </p>
                 </div>
               </article>
             ))}
