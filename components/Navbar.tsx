@@ -74,7 +74,6 @@ const navLinks: NavLink[] = [
         },
         {
           name: "FAQs",
-          href: "/resources/faqs",
           desc: "Answers to common questions",
         },
       ],
@@ -821,7 +820,7 @@ export default function Navbar() {
               {/* Navigation Links list */}
               <div className="px-4 sm:px-6 py-4 space-y-1.5">
                 {navLinks.map((link) => {
-                  const active = isRouteActive(link.href);
+                  const active = link.href ? isRouteActive(link.href) : false;
                   return link.megaMenu ? (
                     /* Accordion item */
                     <div key={link.name} className="border-b border-gray-100 last:border-none">
@@ -868,8 +867,8 @@ export default function Navbar() {
                       {openMobileSubmenu === link.name && (
                         <div className="py-2.5 pl-3 pr-2 space-y-1 bg-gray-50/70 border border-gray-200/60 rounded-xl my-2 animate-in fade-in duration-150">
                           {link.megaMenu.links.map((sub) => {
-                            const isSubActive = pathname === sub.href;
-                            return (
+                            const isSubActive = sub.href ? pathname === sub.href : false;
+                            return sub.href ? (
                               <Link
                                 key={sub.name}
                                 href={sub.href}
@@ -897,6 +896,17 @@ export default function Navbar() {
                                   />
                                 </svg>
                               </Link>
+                            ) : (
+                              <button
+                                key={sub.name}
+                                type="button"
+                                onClick={(event) => event.preventDefault()}
+                                className={`w-full flex items-center justify-between text-xs min-h-11 py-3 px-3.5 rounded-lg transition-all ${
+                                  "text-gray-800 font-medium cursor-default"
+                                }`}
+                              >
+                                <span className="uppercase tracking-wide">{sub.name}</span>
+                              </button>
                             );
                           })}
                           <Link
@@ -927,7 +937,7 @@ export default function Navbar() {
                     /* Plain link */
                     <div key={link.name} className="border-b border-gray-100 last:border-none">
                       <Link
-                        href={link.href}
+                        href={link.href ?? "/"}
                         aria-current={active ? "page" : undefined}
                         onClick={() => setIsMobileMenuOpen(false)}
                         className={`flex items-center space-x-2.5 text-sm font-bold min-h-12 py-3.5 px-2 uppercase transition-colors focus-visible:text-[#b10017] focus-visible:outline-none ${
