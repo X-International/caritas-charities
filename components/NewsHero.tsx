@@ -25,9 +25,6 @@ export default function NewsHero() {
           <p className="text-xl sm:text-2xl lg:text-[26px] font-serif text-white leading-snug mb-4 sm:mb-6">
             Stay informed with press statements, campaign launches, and operational progress from Caritas Kampala.
           </p>
-          <p className="text-sm sm:text-base text-white/90 font-sans">
-            &mdash; The Charities Department, Caritas Kampala
-          </p>
         </div>
       </div>
     </div>

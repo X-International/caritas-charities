@@ -27,9 +27,6 @@ export default function DonateHero() {
           <p className="text-xl sm:text-2xl lg:text-[26px] font-serif text-white leading-snug mb-4 sm:mb-6">
             Your gift reaches families across the Archdiocese of Kampala. Every contribution counts, whatever its size.
           </p>
-          <p className="text-sm sm:text-base text-white/90 font-sans">
-            &mdash; The Charities Department, Caritas Kampala
-          </p>
         </div>
       </div>
     </div>
