@@ -41,6 +41,9 @@ function readGalleryFiles() {
     }
   }
 
+  // Reverse overall order so the last images (by the combined order) appear first
+  results.reverse();
+
   return results;
 }
 
