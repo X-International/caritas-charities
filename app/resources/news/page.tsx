@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import NewsHero from "@/components/NewsHero";
 
 export const metadata = {
   title: "News & Updates | Caritas Kampala",
@@ -39,30 +40,29 @@ export default function NewsPage() {
       <Navbar />
 
       <main id="main-content" className="flex-1">
-        {/* Hero Banner */}
-        <section className="bg-[#b10017] text-white py-14 sm:py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-            <nav aria-label="Breadcrumb" className="text-xs uppercase tracking-wider font-semibold text-red-200">
-              <ol className="flex items-center space-x-2">
-                <li>
-                  <Link href="/" className="hover:underline text-white">HOME</Link>
-                </li>
-                <li>/</li>
-                <li>
-                  <Link href="/resources" className="hover:underline text-white">RESOURCES</Link>
-                </li>
-                <li>/</li>
-                <li aria-current="page" className="text-red-200">NEWS &amp; UPDATES</li>
-              </ol>
-            </nav>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif tracking-tight">
-              News &amp; Updates
-            </h1>
-            <p className="text-base sm:text-lg text-red-100 max-w-2xl font-light leading-relaxed">
-              Stay informed with press statements, campaign launches, and operational progress.
-            </p>
-          </div>
-        </section>
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-4 sm:pt-6 lg:pt-8 pb-2">
+          <nav aria-label="Breadcrumb" className="mb-2 sm:mb-4">
+            <ol className="flex items-center space-x-2 text-xs uppercase tracking-wider font-semibold">
+              <li>
+                <Link href="/" className="text-[#b10017] hover:underline">
+                  HOME
+                </Link>
+              </li>
+              <li className="text-gray-400">/</li>
+              <li>
+                <Link href="/resources" className="text-[#b10017] hover:underline">
+                  RESOURCES
+                </Link>
+              </li>
+              <li className="text-gray-400">/</li>
+              <li className="text-gray-600" aria-current="page">
+                NEWS &amp; UPDATES
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+        <NewsHero />
 
         {/* News Grid */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-10">
