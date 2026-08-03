@@ -818,7 +818,7 @@ export default function Navbar() {
               </div>
 
               {/* Navigation Links list */}
-              <div className="px-4 sm:px-6 py-4 space-y-1.5">
+              <div className="px-4 sm:px-6 py-4 space-y-2">
                 {navLinks.map((link) => {
                   const active = link.href ? isRouteActive(link.href) : false;
                   return link.megaMenu ? (
@@ -830,8 +830,8 @@ export default function Navbar() {
                             openMobileSubmenu === link.name ? null : link.name
                           )
                         }
-                        className={`flex items-center justify-between w-full text-sm font-bold min-h-12 py-3.5 px-2 uppercase transition-colors focus-visible:outline-2 focus-visible:outline-[#b10017] rounded-lg ${
-                          active ? "text-[#b10017]" : "text-gray-900 hover:text-[#b10017]"
+                        className={`flex items-center justify-between w-full text-base font-bold min-h-16 py-4 px-4 uppercase transition-all focus-visible:outline-2 focus-visible:outline-[#b10017] rounded-xl ${
+                          active ? "bg-[#f8f8f8] text-[#b10017]" : "text-gray-900 hover:bg-[#f8f8f8] hover:text-[#b10017]"
                         }`}
                         aria-expanded={openMobileSubmenu === link.name}
                       >
@@ -874,7 +874,7 @@ export default function Navbar() {
                                 href={sub.href}
                                 aria-current={isSubActive ? "page" : undefined}
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                className={`flex items-center justify-between text-xs min-h-11 py-3 px-3.5 rounded-lg transition-all ${
+                                className={`flex items-center justify-between text-sm min-h-12 py-3.5 px-4 rounded-xl transition-all ${
                                   isSubActive
                                     ? "bg-[#b10017] text-white font-bold shadow-xs"
                                     : "text-gray-800 hover:text-[#b10017] hover:bg-gray-100/90 font-medium"
@@ -882,7 +882,7 @@ export default function Navbar() {
                               >
                                 <span className="uppercase tracking-wide">{sub.name}</span>
                                 <svg
-                                  className="w-3.5 h-3.5 opacity-60 shrink-0 ml-2"
+                                  className="w-4 h-4 opacity-60 shrink-0 ml-2"
                                   fill="none"
                                   stroke="currentColor"
                                   viewBox="0 0 24 24"
@@ -901,7 +901,7 @@ export default function Navbar() {
                                 key={sub.name}
                                 type="button"
                                 onClick={(event) => event.preventDefault()}
-                                className={`w-full flex items-center justify-between text-xs min-h-11 py-3 px-3.5 rounded-lg transition-all ${
+                                className={`w-full flex items-center justify-between text-sm min-h-12 py-3.5 px-4 rounded-xl transition-all ${
                                   "text-gray-800 font-medium cursor-default"
                                 }`}
                               >
@@ -940,28 +940,30 @@ export default function Navbar() {
                         href={link.href ?? "/"}
                         aria-current={active ? "page" : undefined}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className={`flex items-center space-x-2.5 text-sm font-bold min-h-12 py-3.5 px-2 uppercase transition-colors focus-visible:text-[#b10017] focus-visible:outline-none ${
-                          active ? "text-[#b10017]" : "text-gray-900 hover:text-[#b10017]"
+                        className={`flex items-center w-full text-base font-bold min-h-16 py-4 px-4 uppercase transition-all focus-visible:outline-2 focus-visible:outline-[#b10017] rounded-xl ${
+                          active ? "bg-[#f8f8f8] text-[#b10017]" : "text-gray-900 hover:bg-[#f8f8f8] hover:text-[#b10017]"
                         }`}
                       >
-                        {active && (
-                          <span
-                            className="w-1.5 h-5 bg-[#b10017] rounded-full shrink-0"
-                            aria-hidden="true"
-                          />
-                        )}
-                        <span>{link.name}</span>
+                        <div className="flex items-center space-x-3">
+                            {active && (
+                            <span
+                                className="w-1.5 h-5 bg-[#b10017] rounded-full shrink-0"
+                                aria-hidden="true"
+                            />
+                            )}
+                            <span>{link.name}</span>
+                        </div>
                       </Link>
                     </div>
                   );
                 })}
 
                 {/* Mobile Donate Button */}
-                <div className="pt-4 pb-2">
+                <div className="pt-6 pb-2 px-4">
                   <Link
                     href="/donate"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block w-full text-center bg-[#b10017] text-white hover:bg-white hover:text-[#b10017] border-2 border-[#b10017] font-bold py-3.5 rounded-full text-sm uppercase tracking-wider transition-all duration-200 shadow-sm"
+                    className="flex items-center justify-center w-full bg-[#b10017] text-white hover:bg-[#8e0a20] font-bold py-4 rounded-xl text-base uppercase tracking-wider transition-all duration-200 shadow-md"
                     aria-label="Donate to Caritas Kampala"
                   >
                     Donate Now
