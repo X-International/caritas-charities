@@ -59,7 +59,7 @@ export default function NewsPage() {
                     <span className="whitespace-nowrap text-[#7b7b7b] font-mono tracking-normal uppercase">{news.date}</span>
                   </div>
                   <h2 className="mt-6">
-                    <Link href="#" aria-disabled="true" tabIndex={-1} className={headlineLinkClasses}>
+                    <Link href={`/resources/news/${news.slug}`} className={headlineLinkClasses}>
                       {news.title}
                     </Link>
                   </h2>
