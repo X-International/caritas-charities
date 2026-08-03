@@ -35,6 +35,17 @@ export default function OurStoryPage() {
 
         <OurStoryHero />
 
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-4xl font-serif text-[#b10017] mb-8">The Journey and Mission of Caritas Kampala</h2>
+            <div className="space-y-6 text-lg text-gray-800 leading-relaxed">
+              <p>At Caritas Kampala Charities Department, we are dedicated to alleviating poverty, promoting social justice, and fostering community solidarity within the Kampala Archdiocese. Inspired by the Gospel and Catholic Social Teaching, our work is driven by compassion and love, serving the most vulnerable, including the poor, marginalized groups, persons with disabilities, and orphans, by reaching out with care to help them live fulfilling lives.</p>
+              <p>Our department responds to emergencies and disasters, providing vital assistance to affected communities to help them cope with tragedy. We strive to save lives, relieve suffering, and rebuild livelihoods and communities. We serve all people, regardless of gender, sex, religion, or ethnicity.</p>
+              <p>We are committed to sustaining vital programs and services for the most needy, such as the elderly, challenged families and children, urban refugees and asylum seekers, and those living with medical and special needs. All these efforts are carried out by energizing Catholic communities and all people of good will to stand in solidarity with their brothers and sisters in the Archdiocese of Kampala.</p>
+            </div>
+          </div>
+        </section>
+
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <DonateOnlineCard />
         </section>
