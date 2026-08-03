@@ -53,7 +53,6 @@ const navLinks: NavLink[] = [
     },
   },
   { name: "Our Programmes",    href: "/our-programmes" },
-  { name: "Stories of Change", href: "/stories-of-change" },
   {
     name: "Resources",
     megaMenu: {

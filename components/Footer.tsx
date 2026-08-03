@@ -30,7 +30,6 @@ const footerColumns: FooterColumnData[] = [
   {
     title: "EXPLORE",
     links: [
-      { label: "Stories of Change", href: "/stories-of-change" },
       { label: "Gallery", href: "/resources/gallery" },
       { label: "News & Updates", href: "/resources/news" },
     ],
