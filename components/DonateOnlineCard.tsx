@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function DonateOnlineCard() {
   return (
     <section className="pt-5 sm:pt-7 pb-2 sm:pb-4">
-      <div className="bg-[#ebe3d7] rounded-[28px] p-6 sm:p-8 md:p-10 flex flex-col md:flex-row md:items-center gap-5 sm:gap-6 md:gap-8 text-center md:text-left">
+      <div className="bg-[#fdfbf9] border border-gray-200 rounded-[28px] p-6 sm:p-8 md:p-10 flex flex-col md:flex-row md:items-center gap-5 sm:gap-6 md:gap-8 text-center md:text-left">
         <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#b10017] rounded-full flex items-center justify-center shrink-0 mx-auto md:mx-0">
           <Heart className="w-8 h-8 sm:w-9 sm:h-9 text-white" strokeWidth={2.25} aria-hidden="true" />
         </div>
@@ -13,7 +13,7 @@ export default function DonateOnlineCard() {
           <h2 className="font-serif font-bold text-[#b10017] text-xl sm:text-2xl md:text-[28px] leading-tight">
             Make a Gift Today
           </h2>
-          <p className="text-sm sm:text-base text-black leading-relaxed max-w-2xl">
+          <p className="text-sm sm:text-base text-gray-700 leading-relaxed max-w-2xl">
             Every gift, however given, reaches families who need it most. You'll be taken to a secure page to complete your donation.
           </p>
         </div>

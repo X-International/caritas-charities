@@ -36,7 +36,7 @@ export default function OtherWaysToSupport() {
   };
 
   const cardClassName =
-    "bg-white rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col h-full border border-[#efe3d2] shadow-[0px_1px_20px_0px_rgba(0,0,0,0.04)]";
+    "bg-white rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col h-full border border-[#efe3d2]";
 
   const copyAllMobileNumbers = async () => {
     await copyToClipboard(MOBILE_NUMBERS.join("\n"), "mobile-all");
