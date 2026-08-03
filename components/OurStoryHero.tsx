@@ -27,9 +27,6 @@ export default function OurStoryHero() {
           <p className="text-xl sm:text-2xl lg:text-[26px] font-serif text-white leading-snug mb-4 sm:mb-6">
             The Charities Department is one of Caritas Kampala's core departments, serving the Archdiocese of Kampala through compassion, dignity, and practical support for those who need it most.
           </p>
-          <p className="text-sm sm:text-base font-semibold text-white/80">
-            Charities Department, Caritas Kampala
-          </p>
         </div>
       </div>
     </div>
