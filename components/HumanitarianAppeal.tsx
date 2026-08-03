@@ -20,12 +20,14 @@ export default function HumanitarianAppeal() {
         {/* Left Floating Red Card */}
         <div className="relative z-10 p-4 sm:p-10 lg:p-12 w-full max-w-xl">
           <div className="bg-[#b10017] text-white p-6 sm:p-10 rounded-2xl shadow-2xl space-y-4 sm:space-y-6">
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold font-serif leading-tight">
-              <span className="italic">&quot;Truly I tell you, whatever you did for one of the least of these brothers and sisters of mine, you did for me.&quot;</span> — Matthew 25:40
-            </h2>
-            <p className="text-xs sm:text-base text-red-100 font-light">
-              The Charities Department of Caritas Kampala.
-            </p>
+            <div className="space-y-4 sm:space-y-6">
+              <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold font-serif leading-tight italic">
+                &quot;Truly I tell you, whatever you did for one of the least of these brothers and sisters of mine, you did for me.&quot;
+              </h2>
+              <p className="text-sm sm:text-base text-red-100 font-semibold uppercase tracking-widest opacity-90">
+                — Matthew 25:40
+              </p>
+            </div>
             <div className="pt-2">
               <a
                 href="/donate"
