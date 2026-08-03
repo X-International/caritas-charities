@@ -738,8 +738,9 @@ export default function Navbar() {
             </button>
           </div>
         </div>
+      </header>
 
-        {/* ── Mobile Drawer Backdrop & Container ─────────── */}
+      {/* ── Mobile Drawer Backdrop & Container ─────────── */}
         {isMobileMenuOpen && (
           <>
             {/* Darkened backdrop overlay to isolate mobile menu */}
@@ -971,7 +972,6 @@ export default function Navbar() {
             </nav>
           </>
         )}
-      </header>
 
       {/* ── Share Modal ──────────────────────────────────── */}
       {isShareModalOpen && (
