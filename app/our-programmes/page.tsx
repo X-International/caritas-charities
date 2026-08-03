@@ -39,23 +39,41 @@ export default function OurProgrammesPage() {
 
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
-        <section className="bg-[#b10017] text-white py-14 sm:py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-            <nav aria-label="Breadcrumb" className="text-xs uppercase tracking-wider font-semibold text-red-200">
-              <ol className="flex items-center space-x-2">
+        <section className="bg-[#b10017] text-white py-8 sm:py-10 md:py-14">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav
+              aria-label="Breadcrumb"
+              className="text-[10px] xs:text-xs uppercase tracking-wide font-semibold text-red-200"
+            >
+              <ol className="flex flex-wrap items-center gap-x-1 gap-y-1">
                 <li>
-                  <Link href="/" className="hover:underline text-white">HOME</Link>
+                  <Link
+                    href="/"
+                    className="hover:underline text-white focus-visible:underline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+                  >
+                    HOME
+                  </Link>
                 </li>
-                <li>/</li>
-                <li aria-current="page" className="text-red-200">OUR PROGRAMMES</li>
+                <li className="px-1 text-red-200" aria-hidden>
+                  /
+                </li>
+                <li aria-current="page" className="text-red-200">
+                  OUR PROGRAMMES
+                </li>
               </ol>
             </nav>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif tracking-tight">
-              Our Programmes
-            </h1>
-            <p className="text-base sm:text-lg text-red-100 max-w-2xl font-light leading-relaxed">
-              Transforming lives through structured humanitarian, pastoral, and community development initiatives.
-            </p>
+
+            <div className="mt-4 md:mt-6 max-w-3xl">
+              <h1 className="text-2xl xs:text-3xl sm:text-4xl font-extrabold font-serif leading-[1.06] tracking-tight">
+                Our Programmes
+              </h1>
+
+              <div aria-hidden className="w-12 sm:w-16 h-px bg-white/20 mt-3 sm:mt-4 mb-3 sm:mb-4 rounded" />
+
+              <p className="text-sm sm:text-base md:text-lg text-white/95 max-w-3xl font-normal leading-relaxed">
+                Transforming lives through structured humanitarian, pastoral, and community development initiatives.
+              </p>
+            </div>
           </div>
         </section>
 

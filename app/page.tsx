@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import HeroSlider from "@/components/HeroSlider";
 import CurrentCrises from "@/components/CurrentCrises";
-import LatestUpdates from "@/components/LatestUpdates";
 import HumanitarianAppeal from "@/components/HumanitarianAppeal";
 import SpotlightSection from "@/components/SpotlightSection";
 import WhereWeAre from "@/components/WhereWeAre";
@@ -21,7 +20,6 @@ export default function HomePage() {
       <main id="main-content" className="flex-1 space-y-4 tab-index-[-1] focus:outline-none">
         <HeroSlider />
         <CurrentCrises />
-        <LatestUpdates />
         <HumanitarianAppeal />
         <SpotlightSection />
         <WhereWeAre />
