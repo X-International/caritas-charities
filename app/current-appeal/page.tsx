@@ -82,17 +82,29 @@ export default function CurrentAppealPage() {
                 </div>
 
                 {/* Food Items Card (Beige style) */}
-                <div className="bg-[#f2ebe3] p-6 sm:p-8 rounded-2xl space-y-4">
+                <div className="bg-[#f2ebe3] p-6 sm:p-8 rounded-2xl space-y-5">
                   <h3 className="text-xl sm:text-2xl font-bold font-serif text-[#b10017]">
                     We are focused on food and basic household essentials, including:
                   </h3>
-                  <ul className="list-disc list-inside space-y-1 text-[#b10017] text-[15px] sm:text-base lg:text-lg leading-relaxed font-medium">
-                    <li>Rice</li>
-                    <li>Posho</li>
-                    <li>Maize</li>
-                    <li>Beans</li>
-                    <li>Sugar</li>
-                    <li>Cooking oil</li>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6 text-[#b10017] text-[15px] sm:text-base lg:text-lg font-medium">
+                    <li className="flex items-center gap-3">
+                      <span className="w-2 h-2 rounded-full bg-[#b10017]" /> Rice
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span className="w-2 h-2 rounded-full bg-[#b10017]" /> Posho
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span className="w-2 h-2 rounded-full bg-[#b10017]" /> Maize
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span className="w-2 h-2 rounded-full bg-[#b10017]" /> Beans
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span className="w-2 h-2 rounded-full bg-[#b10017]" /> Sugar
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span className="w-2 h-2 rounded-full bg-[#b10017]" /> Cooking oil
+                    </li>
                   </ul>
                 </div>
 
@@ -130,23 +142,26 @@ export default function CurrentAppealPage() {
             {/* Right Column: How to Help & Direct Contact Cards (Sticky Sidebar) */}
             <div className="lg:col-span-4 space-y-5 sm:space-y-6 lg:sticky lg:top-28">
               {/* Card 1: Collection Point & Address */}
-              <div className="bg-[#b10017] text-white p-6 sm:p-7 rounded-2xl sm:rounded-3xl space-y-4">
-                <p className="text-[10px] font-extrabold uppercase tracking-widest text-red-200">
-                  JULY – SEPTEMBER APPEAL
-                </p>
-                <h2 className="text-xl sm:text-2xl font-extrabold font-serif leading-snug">
-                  How to Help
-                </h2>
-                <p className="text-xs sm:text-sm text-red-100 font-normal leading-relaxed">
-                  The Kampala Archdiocese has designated the <strong className="text-white font-semibold">Caritas Kampala Office</strong> as the collection point for this appeal. Donations of food, essential relief items, and other support materials can be dropped off at:
-                </p>
-                <div className="bg-white/10 p-3.5 sm:p-4 rounded-xl text-xs sm:text-sm space-y-1 font-sans">
+              <div className="bg-[#b10017] text-white p-6 sm:p-7 rounded-2xl sm:rounded-3xl space-y-5">
+                <div>
+                  <p className="text-[10px] font-extrabold uppercase tracking-widest text-red-200 mb-1">
+                    JULY – SEPTEMBER APPEAL
+                  </p>
+                  <h3 className="text-xl sm:text-2xl font-extrabold font-serif leading-snug">
+                    How to Help
+                  </h3>
+                  <p className="text-xs sm:text-sm text-red-100 font-normal leading-relaxed mt-2">
+                    The Kampala Archdiocese has designated the <strong className="text-white font-semibold">Caritas Kampala Office</strong> as the collection point for this appeal. Donations of food, essential relief items, and other support materials can be dropped off at:
+                  </p>
+                </div>
+
+                <div className="bg-white/10 p-4 rounded-2xl text-xs sm:text-sm space-y-1 font-sans border border-white/10">
                   <p className="font-bold text-white">
                     <a
                       href="https://www.caritaskampala.org/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:underline underline-offset-2"
+                      className="hover:underline underline-offset-2 text-white"
                     >
                       Caritas Kampala Office
                     </a>
@@ -158,30 +173,30 @@ export default function CurrentAppealPage() {
               </div>
 
               {/* Card 2: Direct Contact (Matching Screenshot 3 design) */}
-              <div className="bg-[#b10017] text-white p-6 sm:p-7 rounded-2xl sm:rounded-3xl space-y-5">
+              <div className="bg-gray-50 border border-gray-100 text-gray-900 p-6 sm:p-7 rounded-2xl sm:rounded-3xl space-y-5">
                 <div>
-                  <p className="text-[10px] font-extrabold uppercase tracking-widest text-red-200 mb-1">
+                  <p className="text-[10px] font-extrabold uppercase tracking-widest text-[#b10017] mb-1">
                     DIRECT CONTACT
                   </p>
                   <h3 className="text-xl sm:text-2xl font-extrabold font-serif leading-snug">
                     Need More Information?
                   </h3>
-                  <p className="text-xs sm:text-sm text-red-100 font-normal leading-relaxed mt-2">
+                  <p className="text-xs sm:text-sm text-gray-600 font-normal leading-relaxed mt-2">
                     Questions about this appeal? Our team is ready to help with donations, collections, and enquiries.
                   </p>
                 </div>
 
-                <hr className="border-white/15" />
+                <hr className="border-gray-200" />
 
                 {/* Contact items without icons */}
                 <div className="space-y-2.5">
                   {/* Item 1: Donation Hotline */}
                   <a
                     href="tel:+256762506906"
-                    className="flex items-center justify-between bg-white/10 hover:bg-white/20 p-3 sm:p-3.5 rounded-2xl transition-colors"
+                    className="flex items-center justify-between bg-white hover:bg-gray-100 p-3 sm:p-3.5 rounded-2xl transition-colors border border-gray-100"
                   >
-                    <span className="font-bold text-white text-xs sm:text-sm">Donation Hotline</span>
-                    <span className="font-mono text-white text-xs sm:text-sm font-bold">+256 762 506 906</span>
+                    <span className="font-bold text-gray-900 text-xs sm:text-sm">Donation Hotline</span>
+                    <span className="font-mono text-[#b10017] text-xs sm:text-sm font-bold">+256 762 506 906</span>
                   </a>
 
                   {/* Item 2: WhatsApp */}
@@ -189,43 +204,43 @@ export default function CurrentAppealPage() {
                     href="https://wa.me/256792176443"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between bg-white/10 hover:bg-white/20 p-3 sm:p-3.5 rounded-2xl transition-colors"
+                    className="flex items-center justify-between bg-white hover:bg-gray-100 p-3 sm:p-3.5 rounded-2xl transition-colors border border-gray-100"
                   >
-                    <span className="font-bold text-white text-xs sm:text-sm">WhatsApp</span>
-                    <span className="font-mono text-white text-xs sm:text-sm font-bold">+256 792 176 443</span>
+                    <span className="font-bold text-gray-900 text-xs sm:text-sm">WhatsApp</span>
+                    <span className="font-mono text-[#b10017] text-xs sm:text-sm font-bold">+256 792 176 443</span>
                   </a>
 
                   {/* Item 3: Main Office */}
                   <a
                     href="tel:+256392176443"
-                    className="flex items-center justify-between bg-white/10 hover:bg-white/20 p-3 sm:p-3.5 rounded-2xl transition-colors"
+                    className="flex items-center justify-between bg-white hover:bg-gray-100 p-3 sm:p-3.5 rounded-2xl transition-colors border border-gray-100"
                   >
-                    <span className="font-bold text-white text-xs sm:text-sm">Main Office</span>
-                    <span className="font-mono text-white text-xs sm:text-sm font-bold">+256 392 176 443</span>
+                    <span className="font-bold text-gray-900 text-xs sm:text-sm">Main Office</span>
+                    <span className="font-mono text-[#b10017] text-xs sm:text-sm font-bold">+256 392 176 443</span>
                   </a>
                 </div>
 
                 {/* Support Button - Centered text, no side icons, ghost hover effect */}
                 <div className="pt-2">
                   <Link
-                    href="/contact-us"
-                    aria-label="Support this appeal by contacting Caritas Kampala"
-                    className="block w-full text-center bg-white text-[#b10017] hover:bg-transparent hover:text-white border-2 border-white text-xs sm:text-sm font-bold px-6 py-3.5 rounded-full tracking-wider uppercase transition-all duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+                    href="/donate"
+                    aria-label="Support this appeal by donating"
+                    className="block w-full text-center bg-[#b10017] text-white hover:bg-transparent hover:text-[#b10017] border-2 border-[#b10017] text-xs sm:text-sm font-bold px-6 py-3.5 rounded-full tracking-wider uppercase transition-all duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-2"
                   >
                     SUPPORT THIS APPEAL
                   </Link>
                 </div>
 
                 {/* Heart subtext */}
-                <div className="pt-2 text-center space-y-3 border-t border-white/15">
+                <div className="pt-2 text-center space-y-3 border-t border-gray-200">
                   <div className="flex items-center justify-center gap-3">
-                    <div className="h-px bg-white/20 flex-1" />
-                    <svg className="w-4 h-4 text-red-200 fill-current" viewBox="0 0 24 24">
+                    <div className="h-px bg-gray-200 flex-1" />
+                    <svg className="w-4 h-4 text-[#b10017] fill-current" viewBox="0 0 24 24">
                       <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                     </svg>
-                    <div className="h-px bg-white/20 flex-1" />
+                    <div className="h-px bg-gray-200 flex-1" />
                   </div>
-                  <p className="text-xs text-red-100 font-normal leading-relaxed">
+                  <p className="text-xs text-gray-600 font-normal leading-relaxed">
                     Every contribution brings hope to families affected by famine in Kotido and Moroto.
                   </p>
                 </div>
