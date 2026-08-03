@@ -192,9 +192,9 @@ export default function ClientGallery({ images }: Props) {
                     <span className="absolute inset-0 bg-black/0 motion-safe:transition-colors motion-safe:duration-300 group-hover:bg-black/20 group-focus-visible:bg-black/20" />
 
                     <span className="absolute inset-0 flex items-center justify-center opacity-0 motion-safe:transition-opacity motion-safe:duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
-                      <span className="flex items-center gap-2 rounded-full bg-white/95 px-3 py-2 text-xs sm:text-sm font-semibold text-[#b10017] shadow-lg">
+                      <span className="flex items-center gap-2 rounded-xl bg-[#b10017] px-4 py-2 text-xs sm:text-sm font-semibold text-white shadow-lg">
                         <ZoomIn className="h-4 w-4 shrink-0" aria-hidden />
-                        View
+                        View Photo
                       </span>
                     </span>
 
@@ -286,16 +286,16 @@ function FilterPill({
       type="button"
       onClick={onClick}
       aria-pressed={active}
-      className={`inline-flex shrink-0 items-center gap-1.5 min-h-11 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 ${
+      className={`inline-flex shrink-0 items-center gap-1.5 min-h-11 px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-wide transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 ${
         active
-          ? "bg-[#b10017] text-white shadow-sm"
-          : "bg-white text-[#585858] border border-[#eadfce] hover:bg-[#faf7f2] hover:text-gray-900"
+          ? "bg-[#b10017] text-white shadow-md"
+          : "bg-white text-[#585858] border border-[#eadfce] hover:border-[#b10017]/50 hover:bg-[#faf7f2] hover:text-gray-900"
       }`}
     >
       {label}
       <span
-        className={`tabular-nums text-[10px] sm:text-xs font-bold px-1.5 py-0.5 rounded-full ${
-          active ? "bg-white/20 text-white" : "bg-[#f5efe6] text-[#585858]"
+        className={`tabular-nums text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded-full ${
+          active ? "bg-white/30 text-white" : "bg-[#f5efe6] text-[#585858]"
         }`}
       >
         {count}
