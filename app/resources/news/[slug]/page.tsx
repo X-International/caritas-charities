@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import RelatedNewsCarousel from "@/components/RelatedNewsCarousel";
 import { getNewsArticle, newsArticles } from "../news-data";
 
 export function generateStaticParams() {
@@ -127,7 +128,7 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
             </article>
 
             {/* Right Column: Metadata */}
-            <aside className="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
+            <aside className="lg:col-span-4 space-y-8 lg:sticky lg:top-28">
               <div className="bg-gray-50 p-6 sm:p-7 rounded-2xl sm:rounded-3xl space-y-4">
                 <h2 className="text-sm font-extrabold uppercase tracking-widest text-[#585858]">
                   Article Details
@@ -167,6 +168,8 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
                   )}
                 </div>
               </div>
+
+              <RelatedNewsCarousel currentArticleSlug={article.slug} allArticles={newsArticles} />
             </aside>
           </div>
         </div>
