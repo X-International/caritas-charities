@@ -3,8 +3,6 @@ import Navbar from "@/components/Navbar";
 import HeroSlider from "@/components/HeroSlider";
 import CurrentCrises from "@/components/CurrentCrises";
 import HumanitarianAppeal from "@/components/HumanitarianAppeal";
-import SpotlightSection from "@/components/SpotlightSection";
-import WhereWeAre from "@/components/WhereWeAre";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -21,8 +19,6 @@ export default function HomePage() {
         <HeroSlider />
         <CurrentCrises />
         <HumanitarianAppeal />
-        <SpotlightSection />
-        <WhereWeAre />
       </main>
       <Footer />
     </div>
