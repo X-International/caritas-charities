@@ -4,34 +4,34 @@ import Image from "next/image";
 
 export default function HumanitarianAppeal() {
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-8 py-10">
-      <div className="relative rounded-3xl overflow-hidden shadow-xl min-h-[420px] sm:min-h-[480px] lg:min-h-[520px] flex items-center">
+    <section className="max-w-7xl mx-auto px-4 py-8 sm:px-8 sm:py-10">
+      <div className="relative rounded-3xl overflow-hidden shadow-xl min-h-[380px] sm:min-h-[480px] lg:min-h-[520px] flex items-center">
         {/* Background Image */}
         <Image
-          src="https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=1600&auto=format&fit=crop"
+          src="/images/Event 04/Caritas_Kampala_20.jpg"
           alt="Humanitarian relief water distribution"
           fill
           className="object-cover object-center"
         />
 
         {/* Soft Vignette Overlay on right side */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
 
         {/* Left Floating Red Card */}
-        <div className="relative z-10 p-6 sm:p-10 lg:p-12 w-full max-w-xl">
-          <div className="bg-[#b10017] text-white p-8 sm:p-10 rounded-2xl shadow-2xl space-y-6 transform hover:-translate-y-1 transition-transform">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-serif leading-tight">
-              Caritas appeals to bring urgent relief to people facing humanitarian crises
+        <div className="relative z-10 p-4 sm:p-10 lg:p-12 w-full max-w-xl">
+          <div className="bg-[#b10017] text-white p-6 sm:p-10 rounded-2xl shadow-2xl space-y-4 sm:space-y-6">
+            <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold font-serif leading-tight">
+              <span className="italic">&quot;Truly I tell you, whatever you did for one of the least of these brothers and sisters of mine, you did for me.&quot;</span> — Matthew 25:40
             </h2>
-            <p className="text-sm sm:text-base text-red-100 font-light">
-              See how you can help support communities facing emergency hardships around the world.
+            <p className="text-xs sm:text-base text-red-100 font-light">
+              The Charities Department of Caritas Kampala.
             </p>
             <div className="pt-2">
               <a
-                href="#explore-humanitarian"
-                className="inline-block bg-white text-[#b10017] hover:bg-red-50 text-xs sm:text-sm font-bold px-8 py-3.5 rounded-full tracking-wider uppercase transition-all transform hover:scale-105"
+                href="/donate"
+                className="inline-block bg-white text-[#b10017] hover:bg-transparent hover:text-white border-2 border-white text-xs font-bold px-7 py-3.5 rounded-full tracking-wider uppercase transition-all duration-200"
               >
-                EXPLORE HUMANITARIAN
+                DONATE NOW
               </a>
             </div>
           </div>
