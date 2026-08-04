@@ -20,9 +20,11 @@
 # production
 /build
 
-# misc
+# misc / IDE
 .DS_Store
 *.pem
+.idea/
+.junie/
 
 # debug
 npm-debug.log*
