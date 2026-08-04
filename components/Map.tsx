@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Map, { Marker, NavigationControl, ViewStateChangeEvent } from "react-map-gl";
+import Map, { Marker, NavigationControl, ViewStateChangeEvent } from "react-map-gl/mapbox";
 import "mapbox-gl/dist/mapbox-gl.css";
 import Image from "next/image";
 
