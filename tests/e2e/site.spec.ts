@@ -69,8 +69,23 @@ test.describe("public site journeys", () => {
   });
 
   test("mobile layouts do not create horizontal overflow", async ({ page }) => {
-    await page.goto("/");
-    const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth);
-    expect(overflow).toBe(false);
+    const routes = [
+      "/",
+      "/about-us",
+      "/contact-us",
+      "/current-appeal",
+      "/donate",
+      "/get-involved",
+      "/our-programmes",
+      "/resources/gallery",
+      "/resources/news",
+      "/resources/news/kotido-moroto-famine-relief-drive",
+    ];
+
+    for (const route of routes) {
+      await page.goto(route);
+      const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth);
+      expect(overflow, route).toBe(false);
+    }
   });
 });

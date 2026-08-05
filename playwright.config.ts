@@ -20,6 +20,18 @@ export default defineConfig({
   projects: [
     { name: "desktop", use: { ...devices["Desktop Chrome"], channel: browserChannel } },
     { name: "mobile", use: { ...devices["Pixel 7"], browserName: "chromium", channel: browserChannel } },
+    {
+      name: "mobile-320",
+      use: { ...devices["iPhone SE"], viewport: { width: 320, height: 568 }, browserName: "chromium", channel: browserChannel },
+    },
+    {
+      name: "mobile-375",
+      use: { ...devices["iPhone 12"], viewport: { width: 375, height: 812 }, browserName: "chromium", channel: browserChannel },
+    },
+    {
+      name: "tablet-768",
+      use: { ...devices["Desktop Chrome"], viewport: { width: 768, height: 1024 }, channel: browserChannel },
+    },
   ],
   webServer: process.env.PLAYWRIGHT_BASE_URL
     ? undefined
