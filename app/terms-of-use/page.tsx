@@ -6,6 +6,7 @@ export const metadata = {
   title: "Terms of Use | Caritas Kampala",
   description:
     "Terms of Use for visiting and interacting with the Caritas Kampala website.",
+  alternates: { canonical: "/terms-of-use" },
 };
 
 export default function TermsOfUsePage() {

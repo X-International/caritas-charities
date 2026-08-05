@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Caritas Kampala | Ending poverty, promoting justice, restoring dignity",
   description:
     "Caritas Kampala's Charities Department serves the Archdiocese through compassion, dignity, and practical support for those who need it most.",
+  alternates: { canonical: "/" },
 };
 
 export default function HomePage() {

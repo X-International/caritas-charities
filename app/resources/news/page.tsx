@@ -10,6 +10,7 @@ export const metadata = {
   title: "News & Updates | Caritas Kampala",
   description:
     "The latest news, press releases, and operational updates from Caritas Kampala.",
+  alternates: { canonical: "/resources/news" },
 };
 
 const labelTextClasses = "text-[#585858] uppercase tracking-[0.18em] text-[11px] sm:text-xs";

@@ -15,6 +15,7 @@ export const metadata = {
   title: "Photo Gallery | Caritas Kampala",
   description:
     "View photo highlights of Caritas Kampala's humanitarian relief, community empowerment, and parish programs.",
+  alternates: { canonical: "/resources/gallery" },
 };
 
 function readGalleryFiles(): GalleryImage[] {

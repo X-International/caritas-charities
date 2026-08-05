@@ -6,6 +6,7 @@ export const metadata = {
   title: "Our Programmes | Caritas Kampala",
   description:
     "Explore Caritas Kampala's programmes in emergency relief, food security, livelihoods, healthcare, and social welfare.",
+  alternates: { canonical: "/our-programmes" },
 };
 
 import { Heart, Users, AlertTriangle, TrendingUp, Globe, Accessibility, LucideIcon } from "lucide-react";

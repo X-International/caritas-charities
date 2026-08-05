@@ -9,6 +9,7 @@ export const metadata = {
   title: "Emergency Appeal for Kotido and Moroto | Caritas Kampala",
   description:
     "Standing with the people of Karamoja, together with the whole Church in Uganda. Caritas Kampala emergency appeal for famine relief in Kotido and Moroto.",
+  alternates: { canonical: "/current-appeal" },
 };
 
 export default function CurrentAppealPage() {

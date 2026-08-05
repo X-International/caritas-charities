@@ -7,6 +7,7 @@ export const metadata = {
   title: "Chaconet Partners | Caritas Kampala",
   description:
     "Discover the Catholic Charity Homes Network (Chaconet) partners working alongside Caritas Kampala.",
+  alternates: { canonical: "/about-us/chaconet-partners" },
 };
 
 export default function ChaconetPartnersPage() {

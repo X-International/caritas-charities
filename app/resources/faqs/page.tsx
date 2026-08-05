@@ -6,6 +6,7 @@ export const metadata = {
   title: "Frequently Asked Questions | Caritas Kampala",
   description:
     "Find answers to common questions about Caritas Kampala donation drop-offs, aid distribution, and volunteering.",
+  alternates: { canonical: "/resources/faqs" },
 };
 
 const faqs = [

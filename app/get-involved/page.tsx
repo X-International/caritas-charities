@@ -6,6 +6,7 @@ export const metadata = {
   title: "Get Involved | Caritas Kampala",
   description:
     "Partner with Caritas Kampala, volunteer with parish teams, or organize community fundraising initiatives.",
+  alternates: { canonical: "/get-involved" },
 };
 
 export default function GetInvolvedPage() {

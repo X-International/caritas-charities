@@ -9,6 +9,7 @@ export const metadata = {
   title: "About Us | Caritas Kampala",
   description:
     "The Charities Department is one of Caritas Kampala's core departments, serving the Archdiocese of Kampala through compassion, dignity, and practical support.",
+  alternates: { canonical: "/about-us" },
 };
 
 export default function AboutUsPage() {

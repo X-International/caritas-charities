@@ -10,6 +10,7 @@ export const metadata = {
   title: "Contact Us | Caritas Kampala",
   description:
     "Reach out to Caritas Kampala Charities Department for donations, relief enquiries, and office directions.",
+  alternates: { canonical: "/contact-us" },
 };
 
 const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${siteConfig.office.coordinates.latitude},${siteConfig.office.coordinates.longitude}`;

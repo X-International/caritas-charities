@@ -10,6 +10,7 @@ export const metadata = {
   title: "Who we are | Caritas Kampala",
   description:
     "Learn about who we are at Caritas Kampala.",
+  alternates: { canonical: "/about-us/our-story" },
 };
 
 export default function OurStoryPage() {

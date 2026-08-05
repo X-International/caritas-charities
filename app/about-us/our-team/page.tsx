@@ -7,6 +7,7 @@ export const metadata = {
   title: "Our Team | Caritas Kampala",
   description:
     "Meet the leadership, coordinators, and dedicated field workers serving Caritas Kampala Charities Department.",
+  alternates: { canonical: "/about-us/our-team" },
 };
 
 const teamMembers = [

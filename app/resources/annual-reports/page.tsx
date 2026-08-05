@@ -6,6 +6,7 @@ export const metadata = {
   title: "Annual Reports | Caritas Kampala",
   description:
     "Financial accountability statements and annual progress publications of Caritas Kampala Charities Department.",
+  alternates: { canonical: "/resources/annual-reports" },
 };
 
 export default function AnnualReportsPage() {

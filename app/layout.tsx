@@ -6,9 +6,46 @@ import "./globals.css";
 const isVercelDeployment = process.env.VERCEL === "1";
 
 export const metadata: Metadata = {
-  title: "Caritas - Ending poverty, promoting justice and restoring dignity",
+  metadataBase: new URL("https://www.caritaskampalacharities.me"),
+  title: {
+    default: "Caritas Kampala | Ending poverty, promoting justice, restoring dignity",
+    // Route metadata already uses the public-facing "| Caritas Kampala" suffix.
+    template: "%s",
+  },
   description:
-    "Caritas is a global confederation of over 160 Catholic organisations working in more than 200 countries. Together, we serve the poor and vulnerable, promote justice and peace.",
+    "Caritas Kampala serves the Archdiocese of Kampala through compassion, dignity, emergency relief, and practical support for people facing hardship.",
+  applicationName: "Caritas Kampala",
+  authors: [{ name: "Caritas Kampala" }],
+  creator: "Caritas Kampala",
+  publisher: "Caritas Kampala",
+  openGraph: {
+    type: "website",
+    locale: "en_UG",
+    url: "/",
+    siteName: "Caritas Kampala",
+    title: "Caritas Kampala | Ending poverty, promoting justice, restoring dignity",
+    description:
+      "Caritas Kampala serves the Archdiocese of Kampala through compassion, dignity, emergency relief, and practical support for people facing hardship.",
+    images: [
+      {
+        url: "/images/current%20appeal/Caritas_Kampala_Current_Appeal.jpg",
+        width: 1280,
+        height: 932,
+        alt: "Caritas Kampala humanitarian appeal",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Caritas Kampala | Ending poverty, promoting justice, restoring dignity",
+    description:
+      "Caritas Kampala serves the Archdiocese of Kampala through compassion, dignity, emergency relief, and practical support for people facing hardship.",
+    images: ["/images/current%20appeal/Caritas_Kampala_Current_Appeal.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   icons: {
     icon: [
       { url: "/favicons/android-chrome-512x512.png?v=2", sizes: "512x512", type: "image/png" },

@@ -6,6 +6,7 @@ export const metadata = {
   title: "Privacy Policy | Caritas Kampala",
   description:
     "Privacy Policy for Caritas Kampala website visitors, donors, and partners.",
+  alternates: { canonical: "/privacy-policy" },
 };
 
 export default function PrivacyPolicyPage() {

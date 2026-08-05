@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -10,7 +11,7 @@ export function generateStaticParams() {
   return newsArticles.map((article) => ({ slug: article.slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const article = getNewsArticle(slug);
 
@@ -21,6 +22,26 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${article.title} | Caritas Kampala`,
     description: article.snippet,
+    alternates: { canonical: `/resources/news/${article.slug}` },
+    openGraph: {
+      type: "article",
+      title: article.title,
+      description: article.snippet,
+      url: `/resources/news/${article.slug}`,
+      publishedTime: article.date,
+      images: [
+        {
+          url: article.image,
+          alt: article.alt,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.snippet,
+      images: [article.image],
+    },
   };
 }
 
