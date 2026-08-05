@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function SidebarCard() {
   return (
-    <div className="flex flex-col rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+    <div className="flex flex-col rounded-2xl overflow-hidden border border-gray-200">
       <div className="relative aspect-[4/3] w-full">
         <Image
           src="/images/Charities/Caritas_Kampala_83.jpg"
@@ -14,15 +14,15 @@ export default function SidebarCard() {
         />
       </div>
       <div className="bg-[#b10017] p-8 text-white">
-        <h3 className="text-2xl font-serif font-bold mb-4">Serving out of Love</h3>
+        <h3 className="text-2xl font-serif font-bold mb-4">Faith Put Into Practice</h3>
         <p className="text-sm text-white/90 leading-relaxed mb-8">
-          This publication presents the mission of Caritas in the Church. Rooted in Scripture and Catholic Social Teaching, it shows how Caritas serves the poor, responds to emergencies, empowers communities, and advocates for justice.
+          Our story is one of showing up, again and again, for the people who need it most. Every programme we run is one more way that story continues.
         </p>
         <Link
-          href="/donate"
-          className="inline-block bg-white text-[#b10017] px-8 py-3 rounded-full font-bold uppercase tracking-wider text-xs hover:bg-gray-100 transition-colors"
+          href="/our-programmes"
+          className="inline-flex items-center justify-center gap-2 bg-white text-[#b10017] font-bold text-xs px-7 py-3 rounded-full uppercase tracking-wider border-2 border-white transition-all duration-200 hover:bg-[#b10017] hover:text-white hover:-translate-y-0.5"
         >
-          DOWNLOAD
+          See What We Do
         </Link>
       </div>
     </div>

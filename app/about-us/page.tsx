@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Breadcrumb from "@/components/Breadcrumb";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
 
 export const metadata = {
@@ -19,15 +20,10 @@ export default function AboutUsPage() {
         {/* Hero Banner */}
         <section className="bg-[#b10017] text-white py-14 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-            <nav aria-label="Breadcrumb" className="text-xs uppercase tracking-wider font-semibold text-red-200">
-              <ol className="flex items-center space-x-2">
-                <li>
-                  <Link href="/" className="hover:underline text-white">HOME</Link>
-                </li>
-                <li>/</li>
-                <li aria-current="page" className="text-red-200">ABOUT US</li>
-              </ol>
-            </nav>
+            <Breadcrumb items={[
+                { label: "HOME", href: "/" },
+                { label: "ABOUT US" }
+            ]} />
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif tracking-tight">
               About Caritas Kampala
             </h1>
