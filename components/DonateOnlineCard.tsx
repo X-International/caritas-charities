@@ -2,11 +2,14 @@
 
 import { ArrowRight, Heart } from "lucide-react";
 import Link from "next/link";
+import { useId } from "react";
 import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
 
 export default function DonateOnlineCard() {
+  const headingId = useId();
+
   return (
-    <section aria-labelledby="make-a-gift-heading" className="pt-5 sm:pt-7 pb-2 sm:pb-4">
+    <section aria-labelledby={headingId} className="pt-5 sm:pt-7 pb-2 sm:pb-4">
       <div className="bg-[#ebe3d7] rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col md:flex-row md:items-center gap-5 sm:gap-6 md:gap-8 text-center md:text-left shadow-sm shadow-gray-200/60 border border-[#e2d8ca]">
         <div
           aria-hidden="true"
@@ -17,7 +20,7 @@ export default function DonateOnlineCard() {
 
         <div className="min-w-0 space-y-2 md:flex-1">
           <h2
-            id="make-a-gift-heading"
+            id={headingId}
             className="font-serif font-bold text-[#b10017] text-xl sm:text-2xl md:text-[28px] leading-tight"
           >
             Make a Gift Today
@@ -32,7 +35,7 @@ export default function DonateOnlineCard() {
             href="/contact-us"
             onClick={() => trackEvent(ANALYTICS_EVENTS.ctaClick, { placement: "gift_card", destination: "/contact-us" })}
             aria-label="Contact Caritas Kampala to confirm donation details"
-            className="group w-full max-w-sm sm:w-auto min-w-45 inline-flex items-center justify-center gap-2 bg-[#b10017] text-white font-bold text-xs sm:text-sm px-7 py-3.5 rounded-full uppercase tracking-wider border-2 border-[#b10017] transition-all duration-200 motion-reduce:transition-none hover:bg-white hover:text-[#b10017] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 focus-visible:ring-offset-[#ebe3d7] focus-visible:bg-white focus-visible:text-[#b10017]"
+            className="group w-full max-w-sm sm:w-auto min-w-45 inline-flex items-center justify-center gap-2 bg-[#b10017] text-white font-bold text-xs sm:text-sm px-7 py-3.5 rounded-full uppercase tracking-wider border-2 border-[#b10017] transition-[background-color,color] duration-200 motion-reduce:transition-none hover:bg-white hover:text-[#b10017] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 focus-visible:ring-offset-[#ebe3d7] focus-visible:bg-white focus-visible:text-[#b10017]"
           >
             <span>Confirm Giving Details</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none" aria-hidden="true" />
