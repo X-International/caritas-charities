@@ -1,6 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 
 const baseURL = process.env.PLAYWRIGHT_BASE_URL ?? "http://127.0.0.1:3100";
+const browserChannel = process.env.CI ? undefined : "chrome";
 
 export default defineConfig({
   testDir: "./tests/e2e",
@@ -17,13 +18,15 @@ export default defineConfig({
     screenshot: "only-on-failure",
   },
   projects: [
-    { name: "desktop", use: { ...devices["Desktop Chrome"], channel: "chrome" } },
-    { name: "mobile", use: { ...devices["Pixel 7"], browserName: "chromium", channel: "chrome" } },
+    { name: "desktop", use: { ...devices["Desktop Chrome"], channel: browserChannel } },
+    { name: "mobile", use: { ...devices["Pixel 7"], browserName: "chromium", channel: browserChannel } },
   ],
   webServer: process.env.PLAYWRIGHT_BASE_URL
     ? undefined
     : {
-        command: "npm run dev -- --webpack --hostname 127.0.0.1 --port 3100",
+        command: process.env.CI
+          ? "npm run start -- -H 127.0.0.1 -p 3100"
+          : "npm run dev -- --webpack --hostname 127.0.0.1 --port 3100",
         url: "http://127.0.0.1:3100",
         reuseExistingServer: !process.env.CI,
         timeout: 120_000,
