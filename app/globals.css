@@ -368,6 +368,14 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero-slider-slide,
+  .hero-slider-image,
+  .hero-slider-content {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+
   .appeal-hero-media,
   .appeal-hero-gradient,
   .appeal-hero-badge,
@@ -433,4 +441,3 @@ body {
     }
   }
 }
-

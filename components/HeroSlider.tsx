@@ -45,6 +45,8 @@ const slides: Slide[] = [
 export default function HeroSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
 
@@ -56,14 +58,23 @@ export default function HeroSlider() {
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
   }, []);
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updateMotionPreference = () => setPrefersReducedMotion(mediaQuery.matches);
+
+    updateMotionPreference();
+    mediaQuery.addEventListener("change", updateMotionPreference);
+    return () => mediaQuery.removeEventListener("change", updateMotionPreference);
+  }, []);
+
   /* Auto-play timer with pause control */
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || isFocused || prefersReducedMotion) return;
     const timer = setInterval(() => {
       nextSlide();
     }, 6000);
     return () => clearInterval(timer);
-  }, [isPaused, nextSlide]);
+  }, [isFocused, isPaused, nextSlide, prefersReducedMotion]);
 
   /* Touch / Swipe Navigation */
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -92,11 +103,21 @@ export default function HeroSlider() {
   return (
     <div className="site-container pt-4 sm:pt-5 lg:pt-6 xl:pt-8 2xl:pt-10 pb-0 sm:pb-4 lg:pb-6">
       <section
-        aria-label="Featured Emergency Appeals and Humanitarian Initiatives"
+        aria-roledescription="carousel"
+        aria-label="Featured emergency appeals and humanitarian initiatives"
+        aria-describedby="hero-slider-status"
+        onMouseEnter={() => setIsFocused(true)}
+        onMouseLeave={() => setIsFocused(false)}
+        onFocus={() => setIsFocused(true)}
+        onBlur={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+            setIsFocused(false);
+          }
+        }}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
-        className="relative w-full h-[clamp(420px,52vh,720px)] lg:h-[clamp(520px,62vh,880px)] xl:h-[clamp(580px,68vh,1000px)] 2xl:h-[clamp(580px,60vh,850px)] overflow-hidden bg-black text-white rounded-2xl sm:rounded-3xl shadow-2xl focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-[-4px] group"
+        className="hero-slider relative w-full h-[clamp(420px,52vh,720px)] lg:h-[clamp(520px,62vh,880px)] xl:h-[clamp(580px,68vh,1000px)] 2xl:h-[clamp(580px,60vh,850px)] overflow-hidden bg-black text-white rounded-2xl sm:rounded-3xl shadow-2xl focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-[-4px] group"
       >
         {/* Background Image Carousel */}
         {slides.map((slide, index) => {
@@ -108,7 +129,7 @@ export default function HeroSlider() {
               aria-roledescription="slide"
               aria-label={`Slide ${index + 1} of ${slides.length}: ${slide.title}`}
               aria-hidden={!isCurrent}
-              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              className={`hero-slider-slide absolute inset-0 transition-opacity duration-1000 ease-in-out ${
                 isCurrent ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
               }`}
             >
@@ -118,7 +139,7 @@ export default function HeroSlider() {
                 alt=""
                 fill
                 priority={index === 0}
-                className="object-cover object-top transform scale-105 transition-transform duration-10000"
+                className="hero-slider-image object-cover object-top transform scale-105 transition-transform duration-10000"
               />
 
               {/* Perfectly Balanced Overlay for Bright Image + Crisp Text */}
@@ -129,7 +150,7 @@ export default function HeroSlider() {
 
         {/* Content Container — absolute fill so flex centering works against full hero height */}
         <div className="absolute inset-0 z-20 flex items-center justify-center px-6 sm:px-10 lg:px-12 xl:px-14 text-center">
-          <div key={currentIndex} className="max-w-3xl xl:max-w-4xl space-y-5 animate-in fade-in zoom-in-95 duration-300">
+          <div key={currentIndex} className="hero-slider-content max-w-3xl xl:max-w-4xl space-y-5 animate-in fade-in zoom-in-95 duration-300">
             {/* Title — font-serif kept, scales through xl/2xl */}
             <h1 className="text-[35px] sm:text-[47px] md:text-[59px] xl:text-[64px] 2xl:text-[68px] font-extrabold font-serif leading-[1.12] text-white tracking-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]">
               {slides[currentIndex].title}
@@ -155,7 +176,7 @@ export default function HeroSlider() {
         <button
           onClick={prevSlide}
           aria-label="Previous Slide"
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-[#b10017] focus-visible:bg-[#b10017] focus-visible:outline-2 focus-visible:outline-white text-white flex items-center justify-center transition-all backdrop-blur-md border border-white/10 shadow-lg cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-[#b10017] focus-visible:bg-[#b10017] focus-visible:outline-2 focus-visible:outline-white text-white flex items-center justify-center transition-all backdrop-blur-md border border-white/10 shadow-lg cursor-pointer opacity-100 sm:opacity-0 sm:group-hover:opacity-100 focus-visible:opacity-100"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
@@ -165,7 +186,7 @@ export default function HeroSlider() {
         <button
           onClick={nextSlide}
           aria-label="Next Slide"
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-[#b10017] focus-visible:bg-[#b10017] focus-visible:outline-2 focus-visible:outline-white text-white flex items-center justify-center transition-all backdrop-blur-md border border-white/10 shadow-lg cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-[#b10017] focus-visible:bg-[#b10017] focus-visible:outline-2 focus-visible:outline-white text-white flex items-center justify-center transition-all backdrop-blur-md border border-white/10 shadow-lg cursor-pointer opacity-100 sm:opacity-0 sm:group-hover:opacity-100 focus-visible:opacity-100"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
@@ -194,13 +215,12 @@ export default function HeroSlider() {
           <span className="w-px h-3 bg-white/30" aria-hidden="true" />
 
           {/* Slide Indicator Dots */}
-          <div className="flex items-center space-x-2" role="tablist" aria-label="Slide Selection">
+          <div className="flex items-center space-x-2" role="group" aria-label="Choose a slide">
             {slides.map((slide, index) => (
               <button
                 key={slide.id}
                 onClick={() => setCurrentIndex(index)}
-                role="tab"
-                aria-selected={index === currentIndex}
+                aria-current={index === currentIndex ? "true" : undefined}
                 aria-label={`Go to slide ${index + 1}: ${slide.title}`}
                 className={`h-2.5 rounded-full transition-all cursor-pointer focus-visible:outline-2 focus-visible:outline-white ${
                   index === currentIndex
@@ -211,6 +231,10 @@ export default function HeroSlider() {
             ))}
           </div>
         </div>
+
+        <p id="hero-slider-status" className="sr-only" aria-live="polite" aria-atomic="true">
+          Slide {currentIndex + 1} of {slides.length}: {slides[currentIndex].title}. {slides[currentIndex].subtitle}
+        </p>
       </section>
     </div>
   );
