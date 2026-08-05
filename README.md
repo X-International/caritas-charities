@@ -86,6 +86,7 @@ Pull requests are expected to pass linting, TypeScript, the production build, an
 - [PERFORMANCE_REVIEW.md](PERFORMANCE_REVIEW.md) — performance risks and improvements
 - [FRONTEND_REVIEW.md](FRONTEND_REVIEW.md) — visual and UX review
 - [CODE_QUALITY_REVIEW.md](CODE_QUALITY_REVIEW.md) — maintainability review
+- [STATE_MANAGEMENT_REVIEW.md](STATE_MANAGEMENT_REVIEW.md) — state boundaries and recommended patterns
 
 ## Current scope and limitations
 
