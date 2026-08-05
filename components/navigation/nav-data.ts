@@ -39,8 +39,8 @@ export const navLinks: NavLink[] = [
       links: [
         { name: "News & Updates", href: "/resources/news", desc: "The latest updates and stories from our work." },
         { name: "Gallery", href: "/resources/gallery", desc: "Photos from our programmes and community work." },
-        { name: "Annual Reports", desc: "Reports on our work - coming soon." },
-        { name: "FAQs", desc: "Answers to common questions" },
+        { name: "Annual Reports", href: "/resources/annual-reports", desc: "Reports on our work and impact." },
+        { name: "FAQs", href: "/resources/faqs", desc: "Answers to common questions." },
       ],
       card: {
         title: "Resources",
