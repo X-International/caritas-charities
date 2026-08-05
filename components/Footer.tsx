@@ -15,7 +15,7 @@ const footerColumns: FooterColumnData[] = [
     links: [
       { label: "About Us", href: "/about-us" },
       { label: "Our Team" },
-      { label: "Partners — Chaconet Network", href: "/about-us/chaconet-partners" },
+      { label: "Partners — Chaconet Network" },
       { label: "Our Programmes" },
     ],
   },
