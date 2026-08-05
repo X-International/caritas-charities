@@ -234,7 +234,7 @@ export default function Footer() {
           </div>
           <div className="self-start sm:self-auto">
             <a
-              href="https://www.caritaskampalacharities.me/"
+              href="https://www.caritaskampala.org/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit Main Website (opens in a new tab)"

@@ -231,7 +231,7 @@ export default function Navbar() {
                 |
               </span>
               <a
-                href="https://www.caritaskampalacharities.me/"
+                href="https://www.caritaskampala.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group text-gray-300 hover:text-white focus-visible:text-white focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 transition-colors flex items-center shrink-0 no-underline rounded-xs"
