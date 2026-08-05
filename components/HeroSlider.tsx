@@ -16,10 +16,10 @@ interface Slide {
 const slides: Slide[] = [
   {
     id: 1,
-    title: "Standing With Those in Need",
+    title: "Serving with Compassion",
     subtitle:
-      "Serving vulnerable children, families, and communities across the Archdiocese of Kampala with compassion, dignity, and lasting hope.",
-    buttonText: "Donate Now",
+      "Supporting vulnerable children, families, and communities across the Archdiocese of Kampala through faith, dignity, and love.",
+    buttonText: "Donate Today",
     buttonLink: "/donate",
     image: "/images/Main Slider/Caritas_Kampala_87.jpg",
   },
@@ -27,19 +27,19 @@ const slides: Slide[] = [
     id: 2,
     title: "Transforming Lives Together",
     subtitle:
-      "From emergency response to long-term community development, we empower people to build brighter futures.",
-    buttonText: "See What We Do",
+      "Providing emergency relief, community support, and lasting hope for people facing hardship every day.",
+    buttonText: "Our Programmes",
     buttonLink: "/our-programmes",
-    image: "/images/Main Slider/Caritas_Kampala_70.jpg",
+    image: "/images/Main Slider/Caritas_Kampala_07.jpg",
   },
   {
     id: 3,
-    title: "Stronger as One Family",
+    title: "Hope Begins With Us",
     subtitle:
-      "Part of a network of charity homes across the Archdiocese, working together for those who need it most.",
-    buttonText: "Get Involved",
-    buttonLink: "/get-involved",
-    image: "/images/Main Slider/Caritas_Kampala_07.jpg",
+      "Together we can bring care, opportunity, and hope to those who need it most.",
+    buttonText: "Learn More",
+    buttonLink: "/about-us",
+    image: "/images/Main Slider/Caritas_Kampala_70.jpg",
   },
 ];
 
