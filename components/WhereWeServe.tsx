@@ -77,100 +77,142 @@ const IMPACT_AREAS: ImpactArea[] = [
   },
 ];
 
-export default function WhereWeServe() {
+/* ── White Card (Standard Mobile Responsive) ── */
+function WhiteCard({ area }: { area: ImpactArea }) {
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-[#f4efe6] relative overflow-hidden" aria-labelledby="core-pillars-title">
+    <article className="group bg-white rounded-2xl sm:rounded-[28px] p-5 sm:p-7 md:p-8 flex flex-col justify-between shadow-xs border border-gray-200/50 relative overflow-hidden h-full min-h-[300px] sm:min-h-[360px] transition-all duration-300 hover:shadow-xl focus-within:shadow-xl">
+      {/* DEFAULT STATE */}
+      <div className="flex flex-col justify-between h-full w-full z-0">
+        <div className="flex items-center justify-between text-[11px] sm:text-xs font-semibold text-gray-400 uppercase tracking-widest gap-2">
+          <span className="truncate">{area.category}</span>
+        </div>
+
+        <div className="my-3 sm:mt-4 sm:mb-5 flex-1">
+          <h3 className="text-xl sm:text-2xl lg:text-[25px] font-serif font-bold text-[#b10017] leading-snug mb-2.5 sm:mb-3.5 group-hover:underline group-focus-within:underline">
+            {area.title}
+          </h3>
+          <p className="text-sm sm:text-base text-[#4d4338] leading-relaxed font-sans">
+            {area.description}
+          </p>
+        </div>
+
+        <div className="pt-3.5 sm:pt-4 border-t border-gray-100/80 flex items-center justify-between text-[11px] sm:text-xs font-semibold text-gray-400 uppercase tracking-widest">
+          <span className="truncate">{area.serves}</span>
+        </div>
+      </div>
+
+      {/* HOVER OVERLAY (Touch & Hover Friendly) */}
+      <div className="absolute inset-0 z-10 p-5 sm:p-7 md:p-8 flex flex-col justify-between bg-gray-900 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto group-focus-within:pointer-events-auto">
+        <Image src={area.image} alt={area.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover" />
+        <div className="absolute inset-0 bg-[#b10017]/85 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20" />
+
+        <div className="relative z-10 flex items-center justify-start text-[11px] sm:text-xs font-semibold text-white/90 uppercase tracking-widest">
+          <span>{area.category}</span>
+        </div>
+
+        <div className="relative z-10 my-3 sm:mt-4 sm:mb-5 flex-1 space-y-2 sm:space-y-3">
+          <h3 className="text-xl sm:text-2xl lg:text-[26px] font-serif font-bold text-white leading-tight">
+            {area.title}
+          </h3>
+          <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-sans">
+            {area.description}
+          </p>
+        </div>
+
+        <div className="relative z-10 pt-3 sm:pt-4 flex items-center justify-center">
+          <Link
+            href="/donate"
+            className="shrink-0 inline-flex items-center gap-1.5 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full border border-white/90 text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-200 hover:bg-white hover:text-[#b10017]"
+          >
+            SUPPORT
+            <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" aria-hidden="true" />
+          </Link>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+/* ── Featured Card (Mobile Responsive Hero) ── */
+function FeaturedCard({ area }: { area: ImpactArea }) {
+  return (
+    <article className="relative rounded-2xl sm:rounded-[28px] overflow-hidden h-full min-h-[340px] sm:min-h-[400px] flex flex-col justify-between p-5 sm:p-7 md:p-9 bg-gray-900 shadow-lg border border-gray-200/30">
+      <Image src={area.image} alt={area.title} fill sizes="(max-width: 1024px) 100vw, 66vw" className="object-cover" />
+      <div className="absolute inset-0 bg-[#b10017]/85 mix-blend-multiply" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/15" />
+
+      {/* Top */}
+      <div className="relative z-10 flex flex-wrap items-center justify-between text-[11px] sm:text-xs font-semibold text-white/90 uppercase tracking-widest gap-2">
+        <span>{area.category}</span>
+        <span>{area.locations.join(", ")}</span>
+      </div>
+
+      {/* Middle */}
+      <div className="relative z-10 my-4 sm:my-6 flex-1 space-y-2 sm:space-y-4">
+        <h3 className="text-2xl sm:text-3xl lg:text-[40px] font-serif font-bold text-white leading-[1.15]">
+          {area.title}
+        </h3>
+        <p className="text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed font-sans max-w-xl">
+          {area.description}
+        </p>
+      </div>
+
+      {/* Bottom */}
+      <div className="relative z-10 pt-3 sm:pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
+        <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-amber-300">
+          {area.serves}
+        </span>
+        <Link
+          href="/donate"
+          className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border border-white/90 text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider hover:bg-white hover:text-[#b10017] transition-all duration-200"
+        >
+          SUPPORT THIS CAUSE
+          <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
+        </Link>
+      </div>
+    </article>
+  );
+}
+
+export default function WhereWeServe() {
+  const featured = IMPACT_AREAS[0]; // Emergency & Disaster Response
+  const rest = IMPACT_AREAS.slice(1);
+
+  return (
+    <section className="py-10 sm:py-16 md:py-20 bg-[#f4efe6] relative overflow-hidden" aria-labelledby="core-pillars-title">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Title */}
         <h2
           id="core-pillars-title"
-          className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#b10017] tracking-tight mb-8 sm:mb-12"
+          className="text-2xl sm:text-4xl md:text-5xl font-serif font-bold text-[#b10017] tracking-tight mb-6 sm:mb-10"
         >
           Our Core Pillars of Support
         </h2>
 
-        {/* 3-Column Equal Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {IMPACT_AREAS.map((area) => (
-            <div
-              key={area.id}
-              className="group bg-white rounded-[28px] p-6 sm:p-7 flex flex-col justify-between shadow-xs border border-gray-200/50 relative overflow-hidden min-h-[380px] sm:min-h-[410px] transition-all duration-300 hover:shadow-xl cursor-pointer"
-            >
-              {/* DEFAULT CARD CONTENT (UNHOVERED STATE) */}
-              <div className="flex flex-col justify-between h-full w-full z-0">
-                {/* Top Metadata Row with quiet Details Coming Soon badge */}
-                <div className="flex items-center justify-between text-[11px] font-semibold text-gray-400 uppercase tracking-widest gap-2">
-                  <span className="truncate">{area.category}</span>
-                  <span className="shrink-0 text-[10px] font-normal text-gray-400 bg-gray-100 px-2 py-0.5 rounded-md normal-case tracking-normal">
-                    Details coming soon
-                  </span>
-                </div>
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-7">
+          {/* Featured card (2 col) */}
+          <div className="lg:col-span-2 lg:row-span-2">
+            <FeaturedCard area={featured} />
+          </div>
+          <div>
+            <WhiteCard area={rest[0]} />
+          </div>
+          <div>
+            <WhiteCard area={rest[1]} />
+          </div>
 
-                {/* Main Content */}
-                <div className="my-4 flex-1">
-                  <h3 className="text-xl sm:text-[22px] font-serif font-bold text-[#b10017] leading-snug mb-3 group-hover:underline">
-                    {area.title}
-                  </h3>
-                  <p className="text-sm text-[#4d4338] leading-relaxed font-sans line-clamp-4">
-                    {area.description}
-                  </p>
-                </div>
-
-                {/* Bottom Metadata Row */}
-                <div className="pt-4 border-t border-gray-100/80 flex items-center justify-between text-[11px] font-semibold text-gray-400 uppercase tracking-widest gap-2">
-                  <span className="truncate">{area.serves}</span>
-                  <span className="shrink-0 text-[#b10017]">CARITAS</span>
-                </div>
-              </div>
-
-              {/* HOVER OVERLAY LAYER (REVEALS THE RED PHOTO OVERLAY CARD FROM SCREENSHOT) */}
-              <div className="absolute inset-0 z-10 p-6 sm:p-7 flex flex-col justify-between bg-gray-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto">
-                {/* Photo Background */}
-                <Image
-                  src={area.image}
-                  alt={area.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover"
-                />
-                {/* Crimson Red Multiply Overlay */}
-                <div className="absolute inset-0 bg-[#b10017]/85 mix-blend-multiply" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20" />
-
-                {/* Top Metadata in White with quiet Details Coming Soon indicator */}
-                <div className="relative z-10 flex items-center justify-between text-[11px] font-semibold text-white/90 uppercase tracking-widest gap-2">
-                  <span className="truncate">{area.category}</span>
-                  <span className="shrink-0 text-[10px] font-normal text-white/70 bg-white/10 px-2 py-0.5 rounded-md normal-case tracking-normal backdrop-blur-xs">
-                    Details coming soon
-                  </span>
-                </div>
-
-                {/* Middle Content in White */}
-                <div className="relative z-10 my-4 flex-1 space-y-2">
-                  <h3 className="text-2xl sm:text-[25px] font-serif font-bold text-white leading-tight">
-                    {area.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-sans line-clamp-3">
-                    {area.description}
-                  </p>
-                </div>
-
-                {/* Bottom Row: Amber Tag + Outline Button */}
-                <div className="relative z-10 pt-3 flex items-center justify-between gap-3">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-amber-300 truncate">
-                    {area.serves}
-                  </span>
-                  <Link
-                    href="/donate"
-                    className="shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-white/90 text-white text-[11px] font-bold uppercase tracking-wider hover:bg-white hover:text-[#b10017] transition-all duration-200"
-                  >
-                    SUPPORT THIS CAUSE
-                    <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          ))}
+          {/* Row 2: 3 white cards across */}
+          <div>
+            <WhiteCard area={rest[2]} />
+          </div>
+          <div>
+            <WhiteCard area={rest[3]} />
+          </div>
+          <div>
+            <WhiteCard area={rest[4]} />
+          </div>
         </div>
       </div>
     </section>
