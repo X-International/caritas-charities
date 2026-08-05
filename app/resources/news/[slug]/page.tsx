@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RelatedNewsCarousel from "@/components/RelatedNewsCarousel";
-import { getNewsArticle, newsArticles } from "../news-data";
+import { getNewsArticle, newsArticles } from "@/lib/content/news";
 
 export function generateStaticParams() {
   return newsArticles.map((article) => ({ slug: article.slug }));

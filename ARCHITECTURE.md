@@ -23,7 +23,7 @@ The most important future unknowns are ownership of content, the real contact de
 | Appeals & Relief | Current crisis, appeal narrative, help instructions, donation CTA | `app/current-appeal/page.tsx`, `components/CurrentCrises.tsx` | Business-critical content is mixed with presentation markup |
 | Giving Information | Bank/mobile details and online-giving status | `components/OtherWaysToSupport.tsx`, `lib/site-config.ts` | Now centralized, but payment execution is not implemented |
 | Contact & Enquiries | Contact details and enquiry submission | `app/contact-us/page.tsx`, `components/ContactForm.tsx`, `app/api/contact/route.ts` | Reasonable boundary; delivery provider is an anti-corruption boundary via `CONTACT_FORM_ENDPOINT` |
-| Resources & Publishing | News, search, gallery, annual reports, FAQs | `app/resources/**`, `app/resources/news/news-data.ts` | Largest future growth area; static data and UI are currently coupled |
+| Resources & Publishing | News, search, gallery, annual reports, FAQs | `app/resources/**`, `lib/content/news.ts` | Largest future growth area; records now have a route-independent content boundary |
 | Location & External Integrations | Mapbox/Google Maps, YouTube, analytics, external directions | `components/Map.tsx`, `components/GoogleMap.tsx`, `app/layout.tsx` | Integrations are component-owned rather than behind adapters |
 
 ### Mixed concerns and leaks

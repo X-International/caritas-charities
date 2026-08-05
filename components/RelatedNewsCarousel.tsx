@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { NewsArticle } from '@/app/resources/news/news-data';
+import { NewsArticle } from '@/lib/content/news';
 
 export default function RelatedNewsCarousel({ currentArticleSlug, allArticles }: { currentArticleSlug: string, allArticles: NewsArticle[] }) {
     const relatedArticles = useMemo(() => allArticles

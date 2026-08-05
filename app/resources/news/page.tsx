@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
 import NewsHero from "@/components/NewsHero";
-import { newsArticles } from "./news-data";
+import { newsArticles } from "@/lib/content/news";
 
 export const metadata = {
   title: "News & Updates | Caritas Kampala",

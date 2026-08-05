@@ -114,9 +114,7 @@ export const newsArticles: NewsArticle[] = [
     ],
     closingPrompt: {
       body: "Learn more about Chaconet and the organisations that make up this network.",
-      buttons: [
-        { text: "Meet Our Partners →", link: "/partners" },
-      ],
+      buttons: [{ text: "Meet Our Partners →", link: "/partners" }],
     },
   },
 ];
