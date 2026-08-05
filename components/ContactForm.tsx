@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
 
 type SubmissionState =
   | { status: "idle" }
@@ -17,6 +18,7 @@ export default function ContactForm() {
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSubmission({ status: "loading" });
+    trackEvent(ANALYTICS_EVENTS.contactFormSubmit, { form: "contact" });
     const form = event.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
     const controller = new AbortController();
@@ -38,11 +40,13 @@ export default function ContactForm() {
       }
       form.reset();
       setSubmission({ status: "success" });
+      trackEvent(ANALYTICS_EVENTS.contactFormResult, { form: "contact", result: "success" });
     } catch (error) {
       const message = error instanceof Error && error.name === "AbortError"
         ? "The request took too long. Please check your connection and try again."
         : error instanceof Error ? error.message : "We could not send your message. Please try again.";
       setSubmission({ status: "error", message });
+      trackEvent(ANALYTICS_EVENTS.contactFormResult, { form: "contact", result: "error" });
     } finally {
       window.clearTimeout(timeout);
     }

@@ -87,6 +87,7 @@ Pull requests are expected to pass linting, TypeScript, the production build, an
 - [FRONTEND_REVIEW.md](FRONTEND_REVIEW.md) — visual and UX review
 - [CODE_QUALITY_REVIEW.md](CODE_QUALITY_REVIEW.md) — maintainability review
 - [STATE_MANAGEMENT_REVIEW.md](STATE_MANAGEMENT_REVIEW.md) — state boundaries and recommended patterns
+- [ANALYTICS.md](ANALYTICS.md) — product events and privacy boundaries
 
 ## Current scope and limitations
 

@@ -1,5 +1,8 @@
+"use client";
+
 import { ArrowRight, Heart } from "lucide-react";
 import Link from "next/link";
+import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
 
 export default function DonateOnlineCard() {
   return (
@@ -27,6 +30,7 @@ export default function DonateOnlineCard() {
         <div className="w-full md:w-auto md:pl-4 flex justify-center md:justify-end">
           <Link
             href="/contact-us"
+            onClick={() => trackEvent(ANALYTICS_EVENTS.ctaClick, { placement: "gift_card", destination: "/contact-us" })}
             aria-label="Contact Caritas Kampala to confirm donation details"
             className="group w-full max-w-sm sm:w-auto min-w-45 inline-flex items-center justify-center gap-2 bg-[#b10017] text-white font-bold text-xs sm:text-sm px-7 py-3.5 rounded-full uppercase tracking-wider border-2 border-[#b10017] transition-all duration-200 motion-reduce:transition-none hover:bg-white hover:text-[#b10017] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 focus-visible:ring-offset-[#ebe3d7] focus-visible:bg-white focus-visible:text-[#b10017]"
           >

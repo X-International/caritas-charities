@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks, type NavLink } from "@/components/navigation/nav-data";
+import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
 
 /* ─── Component ──────────────────────────────────────────── */
 export default function Navbar() {
@@ -142,6 +143,7 @@ export default function Navbar() {
   }, [isSearchOpen, isMobileMenuOpen, isShareModalOpen]);
 
   const handleSharePlatform = (platform: "facebook" | "twitter" | "whatsapp" | "email") => {
+    trackEvent(ANALYTICS_EVENTS.shareClick, { platform });
     const shareUrl = shareUrlRef.current;
     const url = encodeURIComponent(shareUrl);
     const title = encodeURIComponent(
@@ -248,7 +250,10 @@ export default function Navbar() {
               {/* Share Button */}
               <button
                 ref={shareTriggerRef}
-                onClick={() => setIsShareModalOpen(true)}
+                onClick={() => {
+                  setIsShareModalOpen(true);
+                  trackEvent(ANALYTICS_EVENTS.shareOpen, { placement: "utility_bar" });
+                }}
                 className="flex items-center space-x-1.5 hover:text-white text-gray-200 transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 rounded-xs"
                 aria-label="Open Share Modal"
                 aria-haspopup="dialog"
@@ -311,7 +316,10 @@ export default function Navbar() {
                       className="absolute -right-2 sm:right-0 top-full mt-2.5 w-72.5 sm:w-80 bg-white text-gray-900 shadow-2xl rounded-xl p-3 z-50 border border-gray-200 animate-in fade-in slide-in-from-top-2 duration-150"
                       role="search"
                     >
-                      <form action="/resources/news" method="get" onSubmit={() => setIsSearchOpen(false)} className="relative flex items-center">
+                      <form action="/resources/news" method="get" onSubmit={() => {
+                        setIsSearchOpen(false);
+                        trackEvent(ANALYTICS_EVENTS.newsSearch, { query_present: Boolean(searchQuery), query_length: searchQuery.length });
+                      }} className="relative flex items-center">
                         <label htmlFor="navbar-search-input" className="sr-only">
                           Search Website
                         </label>
@@ -678,7 +686,10 @@ export default function Navbar() {
               <div className="p-4 pt-6 bg-gray-50/90 border-b border-gray-200/80 relative">
                 {/* Bottom Sheet Handle */}
                 <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-12 h-1.5 bg-gray-300 rounded-full" aria-hidden="true"></div>
-                <form action="/resources/news" method="get" onSubmit={() => setIsMobileMenuOpen(false)} className="relative flex items-center">
+                <form action="/resources/news" method="get" onSubmit={() => {
+                  setIsMobileMenuOpen(false);
+                  trackEvent(ANALYTICS_EVENTS.newsSearch, { query_present: Boolean(searchQuery), query_length: searchQuery.length });
+                }} className="relative flex items-center">
                   <label htmlFor="mobile-drawer-search" className="sr-only">
                     Search Website
                   </label>
