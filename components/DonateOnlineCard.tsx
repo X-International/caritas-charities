@@ -20,17 +20,17 @@ export default function DonateOnlineCard() {
             Make a Gift Today
           </h2>
           <p className="text-sm sm:text-base text-gray-900 leading-relaxed max-w-2xl font-sans">
-            Every gift, however given, reaches families who need it most. You&apos;ll be taken to a secure page to complete your donation.
+            Every gift, however given, reaches families who need it most. Contact our office to confirm the current official payment route before sending money.
           </p>
         </div>
 
         <div className="w-full md:w-auto md:pl-4 flex justify-center md:justify-end">
           <Link
-            href="/donate"
-            aria-label="Donate Now — Make a gift to support families in need"
+            href="/contact-us"
+            aria-label="Contact Caritas Kampala to confirm donation details"
             className="group w-full max-w-sm sm:w-auto min-w-45 inline-flex items-center justify-center gap-2 bg-[#b10017] text-white font-bold text-xs sm:text-sm px-7 py-3.5 rounded-full uppercase tracking-wider border-2 border-[#b10017] transition-all duration-200 motion-reduce:transition-none hover:bg-white hover:text-[#b10017] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 focus-visible:ring-offset-[#ebe3d7] focus-visible:bg-white focus-visible:text-[#b10017]"
           >
-            <span>Donate Now</span>
+            <span>Confirm Giving Details</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none" aria-hidden="true" />
           </Link>
         </div>

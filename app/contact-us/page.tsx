@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
 import LocationMap from "@/components/Map";
 import ContactHero from "@/components/ContactHero";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
   title: "Contact Us | Caritas Kampala",
@@ -120,7 +121,8 @@ export default function ContactUsPage() {
                 <h2 className="text-2xl font-serif font-bold text-[#b10017]">Send Us a Message</h2>
                 <p className="text-sm text-gray-600 mt-2">Fill out the form below and we&apos;ll get back to you as soon as possible.</p>
               </div>
-              <form className="space-y-5">
+              <ContactForm />
+              {/*
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="name" className="block text-[11px] font-bold uppercase tracking-wider text-gray-700 mb-1.5">
@@ -213,7 +215,7 @@ export default function ContactUsPage() {
                     By submitting this form, you agree to be contacted about your enquiry.
                   </p>
                 </div>
-              </form>
+              */}
             </div>
             </div>
           </section>

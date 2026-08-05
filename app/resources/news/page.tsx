@@ -16,7 +16,21 @@ const labelTextClasses = "text-[#585858] uppercase tracking-[0.18em] text-[11px]
 const headlineLinkClasses =
   "inline-block font-serif text-[22px] sm:text-[24px] lg:text-[26px] leading-[1.15] text-[#b10017] transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 focus-visible:ring-offset-white";
 
-export default function NewsPage() {
+export default async function NewsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ search?: string }>;
+}) {
+  const params = await searchParams;
+  const query = params.search?.trim() ?? "";
+  const filteredArticles = query
+    ? newsArticles.filter((article) =>
+        [article.title, article.snippet, article.category, article.region]
+          .filter(Boolean)
+          .some((value) => value!.toLowerCase().includes(query.toLowerCase()))
+      )
+    : newsArticles;
+
   return (
     <div className="min-h-screen flex flex-col bg-white text-gray-900 font-sans">
       <Navbar />
@@ -31,10 +45,24 @@ export default function NewsPage() {
 
         <NewsHero />
 
+        {query && (
+          <div className="site-container pt-8" aria-live="polite">
+            <p className="text-sm text-[#585858]">
+              Showing {filteredArticles.length} result{filteredArticles.length === 1 ? "" : "s"} for <strong className="text-gray-900">{query}</strong>.
+            </p>
+          </div>
+        )}
+
         {/* News Grid */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-10">
+          {filteredArticles.length === 0 ? (
+            <div className="rounded-3xl border border-[#eadfce] bg-[#faf7f2] px-6 py-12 text-center">
+              <h2 className="font-serif text-2xl text-[#b10017]">No matching updates</h2>
+              <p className="mt-2 text-sm text-[#585858]">Try a different search term.</p>
+            </div>
+          ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7 lg:gap-8">
-            {newsArticles.map((news) => (
+            {filteredArticles.map((news) => (
               <article key={news.slug} className="flex h-full flex-col overflow-hidden rounded-3xl border border-[#eadfce] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
                 <div className="relative aspect-video w-full overflow-hidden bg-[#f5efe6]">
                   <Image
@@ -62,6 +90,7 @@ export default function NewsPage() {
               </article>
             ))}
           </div>
+          )}
         </section>
       </main>
 

@@ -52,10 +52,7 @@
 /* Athelas Regular */
 @font-face {
   font-family: "Athelas";
-  src: url("/fonts/Athelas%20Regular/Athelas%20Regular.ttf") format("truetype"),
-       url("https://db.onlinewebfonts.com/t/7554892c2195f2bda22cb3a61476aa45.woff2") format("woff2"),
-       url("https://db.onlinewebfonts.com/t/7554892c2195f2bda22cb3a61476aa45.woff") format("woff"),
-       url("https://db.onlinewebfonts.com/t/7554892c2195f2bda22cb3a61476aa45.ttf") format("truetype");
+  src: url("/fonts/Athelas%20Regular/Athelas%20Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;

@@ -27,7 +27,7 @@ export default function RelatedNewsCarousel({ currentArticleSlug, allArticles }:
     const article = relatedArticles[currentIndex];
 
     return (
-        <section className="space-y-4">
+        <section className="space-y-4" aria-live="polite" aria-atomic="true">
             <h2 className="text-xl font-bold font-serif text-[#b10017]">
               Related Content
             </h2>

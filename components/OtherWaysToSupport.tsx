@@ -84,19 +84,19 @@ export default function OtherWaysToSupport() {
                   Give Online
                 </h4>
                 <p className="text-[#2c2c2c] text-base sm:text-[17px] md:text-[18px] leading-relaxed max-w-md mx-auto">
-                  Give securely through our online payment partner. It only takes a minute, and every gift goes directly to support this work.
+                  For secure online giving instructions, contact our team. We will confirm the current official payment route before you send money.
                 </p>
               </div>
             </div>
 
             <div className="pt-6 sm:pt-7 md:pt-8 flex flex-col items-center gap-3">
-              <button
-                type="button"
+              <a
+                href="/contact-us"
                 className="group inline-flex items-center justify-center gap-2 border border-[#b10017] bg-[#b10017] text-white text-xs sm:text-[13px] md:text-[14px] font-bold uppercase tracking-wider rounded-full px-6 sm:px-7 md:px-7.5 py-3 sm:py-3.25 md:py-3.5 transition-colors duration-200 hover:bg-white hover:text-[#b10017] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
               >
                 Donate Now
                 <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true" />
-              </button>
+              </a>
             </div>
           </div>
 
