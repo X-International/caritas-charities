@@ -388,7 +388,7 @@ body {
   @media (max-width: 1023px) {
     .contact-hero-panel {
       animation: none;
-      transform: translate3d(0, 100%, 0);
+      transform: none;
     }
 
     .contact-hero-panel-content,

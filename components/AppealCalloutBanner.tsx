@@ -16,10 +16,7 @@ export default function AppealCalloutBanner() {
       "(prefers-reduced-motion: reduce)"
     ).matches;
 
-    if (prefersReducedMotion) {
-      setIsVisible(true);
-      return;
-    }
+    if (prefersReducedMotion) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {

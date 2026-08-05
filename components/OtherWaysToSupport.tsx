@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight, Check, Copy, Heart, Landmark, LockKeyhole, Smartphone } from "lucide-react";
+import { ArrowRight, Check, Copy, Heart, Landmark, Smartphone } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const BANK_ACCOUNT = "3010309657";

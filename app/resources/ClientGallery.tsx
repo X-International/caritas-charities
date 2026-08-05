@@ -73,14 +73,6 @@ export default function ClientGallery({ images }: Props) {
   }, [images]);
 
   useEffect(() => {
-    setPage(1);
-  }, [categoryFilter]);
-
-  useEffect(() => {
-    if (page > totalPages) setPage(totalPages);
-  }, [page, totalPages]);
-
-  useEffect(() => {
     if (!open && lastFocusRef.current) {
       lastFocusRef.current.focus();
     }
@@ -94,6 +86,7 @@ export default function ClientGallery({ images }: Props) {
 
   const handleCategoryChange = (categoryId: string) => {
     setCategoryFilter(categoryId);
+    setPage(1);
     filterScrollRef.current?.scrollTo({ left: 0, behavior: "smooth" });
   };
 

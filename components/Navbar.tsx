@@ -94,7 +94,6 @@ export default function Navbar() {
   const [isMobileMenuOpen,  setIsMobileMenuOpen]  = useState(false);
   const [isSearchOpen,      setIsSearchOpen]      = useState(false);
   const [isShareModalOpen,  setIsShareModalOpen]  = useState(false);
-  const [copied,            setCopied]            = useState(false);
   const [openMegaMenu,      setOpenMegaMenu]      = useState<string | null>(null);
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null);
   const [isScrolled,        setIsScrolled]        = useState(false);
@@ -197,26 +196,6 @@ export default function Navbar() {
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, [isSearchOpen, isMobileMenuOpen, isShareModalOpen]);
-
-  const handleCopyLink = async () => {
-    try {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(shareUrl);
-      } else {
-        const textarea = document.createElement("textarea");
-        textarea.value = shareUrl;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand("copy");
-        document.body.removeChild(textarea);
-      }
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2500);
-    } catch {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2500);
-    }
-  };
 
   const handleSharePlatform = (platform: "facebook" | "twitter" | "whatsapp" | "email") => {
     const url = encodeURIComponent(shareUrl);
@@ -983,20 +962,20 @@ export default function Navbar() {
           aria-modal="true"
           aria-labelledby="share-modal-title"
         >
-          <div
+          <button
+            type="button"
             className="absolute inset-0 cursor-default"
             onClick={() => {
               setIsShareModalOpen(false);
               shareTriggerRef.current?.focus();
             }}
-            aria-hidden="true"
+            aria-label="Close share dialog"
           />
 
           <div
             ref={shareModalRef}
             className="relative bg-white rounded-2xl p-6 sm:p-8 max-w-sm sm:max-w-md w-[calc(100%-2rem)] mx-4 shadow-2xl z-10 border border-gray-100"
             style={{ animation: "shareModalIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards" }}
-            onClick={(e) => e.stopPropagation()}
           >
             <style>{`
               @keyframes shareModalIn {

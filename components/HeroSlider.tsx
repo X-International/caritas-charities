@@ -28,7 +28,7 @@ const slides: Slide[] = [
     subtitle:
       "From emergency response to long-term community development, we empower people to build brighter futures.",
     buttonText: "See What We Do",
-    buttonLink: "#",
+    buttonLink: "/our-programmes",
     image: "/images/Main Slider/Caritas_Kampala_70.jpg",
   },
   {
@@ -37,7 +37,7 @@ const slides: Slide[] = [
     subtitle:
       "Part of a network of charity homes across the Archdiocese, working together for those who need it most.",
     buttonText: "Get Involved",
-    buttonLink: "#",
+    buttonLink: "/get-involved",
     image: "/images/Main Slider/Caritas_Kampala_07.jpg",
   },
 ];
