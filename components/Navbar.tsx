@@ -34,6 +34,11 @@ export default function Navbar() {
     mobileToggleRef.current?.focus();
   };
 
+  const closeSearch = () => {
+    setIsSearchOpen(false);
+    searchButtonRef.current?.focus();
+  };
+
   useEffect(() => {
     shareUrlRef.current = window.location.href;
   }, []);
@@ -137,8 +142,7 @@ export default function Navbar() {
       if (e.key === "Escape") {
         setOpenMegaMenu(null);
         if (isSearchOpen) {
-          setIsSearchOpen(false);
-          searchButtonRef.current?.focus();
+          closeSearch();
         }
         if (isMobileMenuOpen) {
           closeMobileMenu();
@@ -262,6 +266,7 @@ export default function Navbar() {
               <button
                 ref={shareTriggerRef}
                 onClick={() => {
+                  closeSearch();
                   setIsShareModalOpen(true);
                   trackEvent(ANALYTICS_EVENTS.shareOpen, { placement: "utility_bar" });
                 }}
@@ -291,10 +296,17 @@ export default function Navbar() {
               <div className="relative">
                 <button
                   ref={searchButtonRef}
-                  onClick={() => setIsSearchOpen(!isSearchOpen)}
+                  onClick={() => {
+                    if (isSearchOpen) {
+                      closeSearch();
+                    } else {
+                      setIsSearchOpen(true);
+                    }
+                  }}
                   className="flex items-center space-x-1.5 hover:text-white text-gray-200 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 cursor-pointer rounded-xs"
-                  aria-label="Toggle Search Input"
+                  aria-label={isSearchOpen ? "Close search" : "Open search"}
                   aria-expanded={isSearchOpen}
+                  aria-controls="navbar-search-panel"
                 >
                   <svg
                     className="w-3.5 h-3.5 text-gray-300"
@@ -319,16 +331,22 @@ export default function Navbar() {
                   <>
                     <button
                       type="button"
+                      tabIndex={-1}
                       className="fixed inset-0 z-40 cursor-default"
-                      onClick={() => setIsSearchOpen(false)}
+                      onClick={closeSearch}
                       aria-label="Close search"
                     />
                     <div
-                      className="absolute -right-2 sm:right-0 top-full mt-2.5 w-72.5 sm:w-80 bg-white text-gray-900 shadow-2xl rounded-xl p-3 z-50 border border-gray-200 animate-in fade-in slide-in-from-top-2 duration-150"
+                      id="navbar-search-panel"
+                      className="absolute -right-2 sm:right-0 top-full mt-2.5 w-72.5 sm:w-80 bg-white text-gray-900 shadow-2xl rounded-xl p-3 z-50 border border-gray-200 animate-in fade-in slide-in-from-top-2 duration-150 motion-reduce:animate-none"
                       role="search"
                     >
-                      <form action="/resources/news" method="get" onSubmit={() => {
-                        setIsSearchOpen(false);
+                      <form action="/resources/news" method="get" onSubmit={(event) => {
+                        if (!searchQuery.trim()) {
+                          event.preventDefault();
+                          return;
+                        }
+                        closeSearch();
                         trackEvent(ANALYTICS_EVENTS.newsSearch, { query_present: Boolean(searchQuery), query_length: searchQuery.length });
                       }} className="relative flex items-center">
                         <label htmlFor="navbar-search-input" className="sr-only">
@@ -339,11 +357,13 @@ export default function Navbar() {
                           id="navbar-search-input"
                           name="search"
                           type="text"
+                          inputMode="search"
                           autoComplete="off"
+                          required
                           value={searchQuery}
                           onChange={(e) => setSearchQuery(e.target.value)}
                           placeholder="Search programs, updates, news…"
-                          className="w-full text-xs pl-3.5 pr-14 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#b10017] focus:ring-2 focus:ring-[#b10017]/20 transition-all"
+                          className="w-full text-xs pl-3.5 pr-14 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#b10017] focus:ring-2 focus:ring-[#b10017]/20 transition-[border-color,box-shadow]"
                         />
                         {searchQuery && (
                           <button
