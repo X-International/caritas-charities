@@ -139,6 +139,7 @@ export default function HeroSlider() {
                 alt=""
                 fill
                 priority={index === 0}
+                sizes="100vw"
                 className="hero-slider-image object-cover object-top transform scale-105 transition-transform duration-10000"
               />
 

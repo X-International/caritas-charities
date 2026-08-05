@@ -98,6 +98,7 @@ export default function LatestUpdates() {
               src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200&auto=format&fit=crop"
               alt="Caritas Jerusalem"
               fill
+              sizes="(max-width: 1024px) 100vw, 66vw"
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
             {/* Deep Red Overlay Tint */}

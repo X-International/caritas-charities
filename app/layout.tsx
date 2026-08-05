@@ -3,6 +3,8 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
+const isVercelDeployment = process.env.VERCEL === "1";
+
 export const metadata: Metadata = {
   title: "Caritas - Ending poverty, promoting justice and restoring dignity",
   description:
@@ -32,8 +34,8 @@ export default function RootLayout({
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col font-sans bg-gray-50 text-gray-900">
         {children}
-        <Analytics />
-        <SpeedInsights />
+        {isVercelDeployment && <Analytics />}
+        {isVercelDeployment && <SpeedInsights />}
       </body>
     </html>
   );

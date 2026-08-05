@@ -1,9 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
-import LocationMap from "@/components/Map";
 import ContactHero from "@/components/ContactHero";
 import ContactForm from "@/components/ContactForm";
+import DeferredLocationMap from "@/components/DeferredLocationMap";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata = {
@@ -133,7 +133,7 @@ export default function ContactUsPage() {
         aria-label="Caritas Kampala Office Location Map"
         className="rounded-3xl mx-4 my-4 sm:mx-6 sm:my-6 lg:mx-8 lg:my-8 overflow-hidden bg-gray-100 shadow-lg shadow-gray-200/80 h-56 sm:h-72 lg:h-80"
       >
-        <LocationMap />
+        <DeferredLocationMap />
       </section>
 
       <Footer />

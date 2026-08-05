@@ -11,6 +11,7 @@ export default function HumanitarianAppeal() {
           src="/images/Event 04/Caritas_Kampala_20.jpg"
           alt="Humanitarian relief water distribution"
           fill
+          sizes="(max-width: 1024px) 100vw, 66vw"
           className="object-cover object-center"
         />
 
