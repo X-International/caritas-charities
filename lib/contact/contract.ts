@@ -6,6 +6,8 @@ export type ContactSubmission = {
   message: string;
 };
 
+export const CONTACT_SUBJECTS = ["general", "donations", "partnerships", "media", "other"] as const;
+
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export function parseContactSubmission(value: unknown): ContactSubmission | null {
@@ -25,6 +27,7 @@ export function parseContactSubmission(value: unknown): ContactSubmission | null
   };
 
   if (!emailPattern.test(submission.email)) return null;
+  if (!(CONTACT_SUBJECTS as readonly string[]).includes(submission.subject)) return null;
   if (submission.name.length > 100 || submission.email.length > 254 || submission.phone.length > 30 || submission.message.length > 4000) return null;
   return submission;
 }

@@ -4,6 +4,7 @@ import { logger, requestIdFrom } from "@/lib/observability/logger";
 
 const WINDOW_MS = 10 * 60 * 1000;
 const MAX_REQUESTS = 5;
+const MAX_BODY_BYTES = 16_000;
 const requests = new Map<string, { count: number; resetAt: number }>();
 
 function pruneRateLimitEntries(now: number) {
@@ -20,10 +21,11 @@ export async function POST(request: NextRequest) {
   const requestId = requestIdFrom(request);
   const startedAt = performance.now();
   const respond = (body: object, status: number, headers: Record<string, string> = {}) =>
-    NextResponse.json(body, {
+    NextResponse.json({ ...body, requestId }, {
       status,
       headers: {
         "X-Request-ID": requestId,
+        "Cache-Control": "no-store",
         ...headers,
       },
     });
@@ -33,6 +35,12 @@ export async function POST(request: NextRequest) {
   if (origin && origin !== siteOrigin) {
     logger.warn("contact.request.rejected", { requestId, reason: "invalid_origin" });
     return respond({ error: "Invalid request origin", code: "INVALID_ORIGIN" }, 403);
+  }
+
+  const contentType = request.headers.get("content-type")?.split(";", 1)[0].trim();
+  if (contentType !== "application/json") {
+    logger.info("contact.request.invalid_content_type", { requestId });
+    return respond({ error: "Content-Type must be application/json", code: "UNSUPPORTED_MEDIA_TYPE" }, 415);
   }
 
   const key = clientKey(request);
@@ -50,7 +58,18 @@ export async function POST(request: NextRequest) {
   }
   requests.set(key, entry && entry.resetAt > now ? { count: entry.count + 1, resetAt: entry.resetAt } : { count: 1, resetAt: now + WINDOW_MS });
 
-  const body = parseContactSubmission(await request.json().catch(() => null));
+  const rawBody = await request.text().catch(() => "");
+  if (new TextEncoder().encode(rawBody).byteLength > MAX_BODY_BYTES) {
+    logger.warn("contact.request.body_too_large", { requestId });
+    return respond({ error: "Submission is too large", code: "PAYLOAD_TOO_LARGE" }, 413);
+  }
+  let parsedBody: unknown = null;
+  try {
+    parsedBody = JSON.parse(rawBody);
+  } catch {
+    parsedBody = null;
+  }
+  const body = parseContactSubmission(parsedBody);
   if (!body) {
     logger.info("contact.request.invalid", { requestId });
     return respond({ error: "Invalid submission", code: "INVALID_SUBMISSION" }, 400);
