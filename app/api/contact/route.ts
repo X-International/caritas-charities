@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { parseContactSubmission } from "@/lib/contact/contract";
 
 const WINDOW_MS = 10 * 60 * 1000;
 const MAX_REQUESTS = 5;
@@ -23,20 +24,9 @@ export async function POST(request: NextRequest) {
   }
   requests.set(key, entry && entry.resetAt > now ? { count: entry.count + 1, resetAt: entry.resetAt } : { count: 1, resetAt: now + WINDOW_MS });
 
-  const body = await request.json().catch(() => null);
-  if (!body || typeof body !== "object" || body.website) {
+  const body = parseContactSubmission(await request.json().catch(() => null));
+  if (!body) {
     return NextResponse.json({ error: "Invalid submission" }, { status: 400 });
-  }
-
-  const fields = ["name", "email", "subject", "message"] as const;
-  if (fields.some((field) => typeof body[field] !== "string" || !body[field].trim())) {
-    return NextResponse.json({ error: "Required fields are missing" }, { status: 400 });
-  }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(body.email))) {
-    return NextResponse.json({ error: "Invalid email address" }, { status: 400 });
-  }
-  if (String(body.name).length > 100 || String(body.email).length > 254 || String(body.phone ?? "").length > 30 || String(body.message).length > 4000) {
-    return NextResponse.json({ error: "Submission is too long" }, { status: 400 });
   }
 
   const endpoint = process.env.CONTACT_FORM_ENDPOINT;
@@ -50,7 +40,7 @@ export async function POST(request: NextRequest) {
     const response = await fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: body.name, email: body.email, phone: body.phone ?? "", subject: body.subject, message: body.message }),
+      body: JSON.stringify(body),
       signal: controller.signal,
       cache: "no-store",
     });
