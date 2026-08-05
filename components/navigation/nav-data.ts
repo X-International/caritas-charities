@@ -48,7 +48,7 @@ export const navLinks: NavLink[] = [
         title: "Transforming Lives Together",
         description: "Discover how Caritas Kampala responds to urgent needs while building stronger, more resilient communities through compassionate action.",
         image: "/images/Main Slider/Caritas_Kampala_92.jpg",
-        cta: { label: "View Our Programmes", href: "/our-programmes" },
+        cta: { label: "Support Our Work", href: "/donate" },
       },
     },
   },
