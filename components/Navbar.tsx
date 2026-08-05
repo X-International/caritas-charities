@@ -580,10 +580,7 @@ export default function Navbar() {
                                         </svg>
                                       </Link>
                                     ) : (
-                                      <Link
-                                        role="menuitem"
-                                        href="#"
-                                        onClick={(event) => event.preventDefault()}
+                                      <span
                                         className="group flex items-start justify-between px-4 py-3 rounded-xl transition-all duration-150 hover:bg-[#b10017] text-gray-800 hover:text-white focus-visible:outline-2 focus-visible:outline-[#b10017]"
                                       >
                                         <div className="flex flex-col">
@@ -610,7 +607,7 @@ export default function Navbar() {
                                             d="M9 5l7 7-7 7"
                                           />
                                         </svg>
-                                      </Link>
+                                      </span>
                                     )}
                                   </li>
                                 );

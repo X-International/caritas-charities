@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { siteConfig } from "@/lib/site-config";
 
 const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
-const MAP_LAT = 0.299230886593831;
-const MAP_LNG = 32.593433862503;
+const MAP_LAT = siteConfig.office.coordinates.latitude;
+const MAP_LNG = siteConfig.office.coordinates.longitude;
 const MARKER_PATH = "/maps/Caritas_Kampala_Pin.png";
 const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${MAP_LAT},${MAP_LNG}`;
 
