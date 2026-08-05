@@ -45,6 +45,7 @@ export default function VisionMissionValues() {
               key={section.id}
               type="button"
               role="tab"
+              id={`identity-tab-${section.id}`}
               aria-selected={activeId === section.id}
               aria-controls={`identity-panel-${section.id}`}
               onClick={() => setActiveId(section.id)}
@@ -55,7 +56,7 @@ export default function VisionMissionValues() {
           ))}
         </div>
 
-        <div id={`identity-panel-${activeSection.id}`} role="tabpanel" aria-live="polite" className="mt-8 grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+        <div id={`identity-panel-${activeSection.id}`} role="tabpanel" aria-labelledby={`identity-tab-${activeSection.id}`} tabIndex={0} aria-live="polite" className="mt-8 grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[20px] lg:aspect-[16/9]">
             <Image key={activeSection.image} src={activeSection.image} alt={activeSection.title} fill sizes="(max-width: 1023px) 100vw, 50vw" className="object-cover" />
           </div>

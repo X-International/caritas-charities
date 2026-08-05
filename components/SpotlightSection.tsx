@@ -1,12 +1,46 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function SpotlightSection() {
   const [activeTab, setActiveTab] = useState("look-back");
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const videoCloseRef = useRef<HTMLButtonElement>(null);
+  const videoModalRef = useRef<HTMLDivElement>(null);
+  const videoTriggerRef = useRef<HTMLButtonElement>(null);
+  const videoHasOpenedRef = useRef(false);
+
+  useEffect(() => {
+    if (!isVideoModalOpen) {
+      if (videoHasOpenedRef.current) videoTriggerRef.current?.focus();
+      return;
+    }
+    videoHasOpenedRef.current = true;
+
+    videoCloseRef.current?.focus();
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsVideoModalOpen(false);
+        return;
+      }
+      if (event.key !== "Tab" || !videoModalRef.current) return;
+      const focusable = Array.from(videoModalRef.current.querySelectorAll<HTMLElement>("button, iframe, [href], [tabindex]:not([tabindex='-1'])"));
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isVideoModalOpen]);
 
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-8 py-10">
@@ -55,6 +89,7 @@ export default function SpotlightSection() {
           <div className="lg:col-span-6">
             <button
               type="button"
+              ref={videoTriggerRef}
               onClick={() => setIsVideoModalOpen(true)}
               aria-label="Play video Ordinary People. Extraordinary Love."
               className="relative w-full rounded-2xl overflow-hidden shadow-2xl cursor-pointer group h-72 sm:h-80 lg:h-96 border-4 border-white/20 text-left block"
@@ -111,11 +146,12 @@ export default function SpotlightSection() {
 
       {/* Video Lightbox Modal */}
       {isVideoModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center overscroll-contain bg-black/90 p-4 backdrop-blur-md" role="dialog" aria-modal="true" aria-label="Caritas video">
-          <div className="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-2xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center overscroll-contain bg-black/90 p-4 backdrop-blur-md" role="dialog" aria-modal="true" aria-labelledby="caritas-video-title">
+          <div ref={videoModalRef} className="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-2xl">
             {/* Close Button */}
             <button
               onClick={() => setIsVideoModalOpen(false)}
+              ref={videoCloseRef}
               className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/20 text-white hover:bg-[#b10017] flex items-center justify-center transition-colors"
               aria-label="Close Video"
             >
@@ -124,6 +160,7 @@ export default function SpotlightSection() {
               </svg>
             </button>
 
+            <h2 id="caritas-video-title" className="sr-only">Caritas video</h2>
             <div className="aspect-video w-full">
               <iframe
                 className="w-full h-full"

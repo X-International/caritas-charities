@@ -25,6 +25,7 @@ export default function Navbar() {
   const mobileToggleRef = useRef<HTMLButtonElement | null>(null);
   const shareCloseRef = useRef<HTMLButtonElement | null>(null);
   const shareModalRef = useRef<HTMLDivElement | null>(null);
+  const mobileNavRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     shareUrlRef.current = window.location.href;
@@ -91,6 +92,31 @@ export default function Navbar() {
       document.removeEventListener("keydown", trapFocus);
     };
   }, [isShareModalOpen]);
+
+  useEffect(() => {
+    if (!isMobileMenuOpen || !mobileNavRef.current) return;
+    const drawer = mobileNavRef.current;
+    const focusableSelector = 'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])';
+    const firstFocusable = drawer.querySelector<HTMLElement>(focusableSelector);
+    firstFocusable?.focus();
+
+    const trapFocus = (event: KeyboardEvent) => {
+      if (event.key !== "Tab") return;
+      const focusable = Array.from(drawer.querySelectorAll<HTMLElement>(focusableSelector));
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener("keydown", trapFocus);
+    return () => document.removeEventListener("keydown", trapFocus);
+  }, [isMobileMenuOpen]);
 
   /* Global Keyboard Esc & Accessibility listener */
   useEffect(() => {
@@ -275,10 +301,11 @@ export default function Navbar() {
 
                 {isSearchOpen && (
                   <>
-                    <div
+                    <button
+                      type="button"
                       className="fixed inset-0 z-40 cursor-default"
                       onClick={() => setIsSearchOpen(false)}
-                      aria-hidden="true"
+                      aria-label="Close search"
                     />
                     <div
                       className="absolute -right-2 sm:right-0 top-full mt-2.5 w-72.5 sm:w-80 bg-white text-gray-900 shadow-2xl rounded-xl p-3 z-50 border border-gray-200 animate-in fade-in slide-in-from-top-2 duration-150"
@@ -640,9 +667,12 @@ export default function Navbar() {
             />
 
             <nav
+              ref={mobileNavRef}
               id="mobile-navigation-drawer"
               className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white rounded-t-4xl shadow-[0_-8px_30px_rgba(0,0,0,0.12)] max-h-[90vh] overflow-y-auto animate-in slide-in-from-bottom-8 duration-300 pb-6"
               aria-label="Mobile Navigation"
+              role="dialog"
+              aria-modal="true"
             >
               {/* Embedded Mobile Search Input */}
               <div className="p-4 pt-6 bg-gray-50/90 border-b border-gray-200/80 relative">
