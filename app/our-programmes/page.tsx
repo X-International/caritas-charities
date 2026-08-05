@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -9,26 +8,44 @@ export const metadata = {
     "Explore Caritas Kampala's programmes in emergency relief, food security, livelihoods, healthcare, and social welfare.",
 };
 
-const programmes = [
+import { Heart, Users, AlertTriangle, TrendingUp, Globe, Accessibility, LucideIcon } from "lucide-react";
+
+const programmes: { title: string; desc: string; serves: string; icon: LucideIcon }[] = [
   {
-    title: "Emergency & Disaster Relief",
-    desc: "Providing food, household essentials, and medical aid to communities struck by famine, flood, or crisis.",
-    image: "/images/current appeal/Caritas_Kampala_Current_Appeal_details.jpg",
+    title: "Emergency & Disaster Response",
+    desc: "Provides immediate assistance to families and communities affected by disasters, fires, and other emergencies.",
+    serves: "FAMILIES & COMMUNITIES AFFECTED BY EMERGENCIES",
+    icon: AlertTriangle,
   },
   {
-    title: "Food Security & Livelihoods",
-    desc: "Empowering rural and peri-urban farmers with sustainable agricultural tools, seeds, and climate resilience training.",
-    image: "/images/Main Slider/Caritas_Kampala_91.jpg",
+    title: "Support for the Elderly",
+    desc: "Provides ongoing practical support to elderly people across the Archdiocese.",
+    serves: "ELDERLY PEOPLE ACROSS THE ARCHDIOCESE",
+    icon: Heart,
   },
   {
-    title: "Child Protection & Education Support",
-    desc: "Partnering with charity homes to fund school fees, scholastic materials, and child safeguarding policies.",
-    image: "/images/Charities/Caritas_Kampala_83.jpg",
+    title: "Family & Child Support",
+    desc: "Supports families and children facing hardship, helping stabilise households in need.",
+    serves: "FAMILIES & CHILDREN FACING HARDSHIP",
+    icon: Users,
   },
   {
-    title: "Elderly Care & Community Support",
-    desc: "Delivering monthly food rations and healthcare support to destitute seniors across parishes in Kampala Archdiocese.",
-    image: "/images/Main Slider/Caritas_Kampala_70.jpg",
+    title: "Refugee & Asylum Seeker Support",
+    desc: "Provides practical assistance to urban refugees and asylum seekers.",
+    serves: "URBAN REFUGEES & ASYLUM SEEKERS",
+    icon: Globe,
+  },
+  {
+    title: "Disability & Special Needs Support",
+    desc: "Supports people living with disabilities and special medical needs.",
+    serves: "PEOPLE WITH DISABILITIES & SPECIAL NEEDS",
+    icon: Accessibility,
+  },
+  {
+    title: "Poverty Alleviation & Livelihoods",
+    desc: "Works with individuals and families to help build sustainable livelihoods.",
+    serves: "INDIVIDUALS & FAMILIES FACING POVERTY",
+    icon: TrendingUp,
   },
 ];
 
@@ -79,21 +96,23 @@ export default function OurProgrammesPage() {
 
         {/* Grid */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {programmes.map((prog, index) => (
-              <div key={index} className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                <div className="relative h-56 w-full">
-                  <Image
-                    src={prog.image}
-                    alt={prog.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover"
-                  />
+              <div key={index} className="bg-white rounded-2xl border-t-4 border-[#b10017] p-8 shadow-sm flex flex-col">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-14 h-14 rounded-full bg-[#f4efe6] flex items-center justify-center">
+                    <prog.icon className="w-7 h-7 text-[#b10017]" />
+                  </div>
+                  <span className="text-[10px] font-normal text-gray-400 bg-gray-100 px-2 py-0.5 rounded-md">
+                    Details coming soon
+                  </span>
                 </div>
-                <div className="p-6 space-y-3">
+                <div className="space-y-3 flex-1">
                   <h2 className="text-xl font-serif font-bold text-[#b10017]">{prog.title}</h2>
                   <p className="text-sm text-gray-700 leading-relaxed">{prog.desc}</p>
+                </div>
+                <div className="pt-4 mt-6 border-t border-gray-100">
+                  <p className="text-[11px] font-semibold text-gray-400 uppercase tracking-widest">{prog.serves}</p>
                 </div>
               </div>
             ))}
