@@ -88,6 +88,7 @@ Pull requests are expected to pass linting, TypeScript, the production build, an
 - [CODE_QUALITY_REVIEW.md](CODE_QUALITY_REVIEW.md) — maintainability review
 - [STATE_MANAGEMENT_REVIEW.md](STATE_MANAGEMENT_REVIEW.md) — state boundaries and recommended patterns
 - [ANALYTICS.md](ANALYTICS.md) — product events and privacy boundaries
+- [COST_EFFICIENCY_REVIEW.md](COST_EFFICIENCY_REVIEW.md) — resource usage and caching decisions
 
 ## Current scope and limitations
 
