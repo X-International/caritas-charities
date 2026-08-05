@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -82,7 +80,7 @@ function WhiteCard({ area }: { area: ImpactArea }) {
   return (
     <article
       aria-labelledby={`pillar-title-${area.id}`}
-      className="group bg-white rounded-2xl sm:rounded-[28px] p-5 sm:p-7 md:p-8 flex flex-col justify-between shadow-xs border border-gray-200/70 relative overflow-hidden h-full min-h-[300px] sm:min-h-[360px] transition-all duration-300 motion-reduce:transition-none hover:shadow-xl focus-within:shadow-xl focus-within:ring-2 focus-within:ring-[#b10017] focus-within:ring-offset-2"
+      className="group bg-white rounded-2xl sm:rounded-[28px] p-5 sm:p-7 md:p-8 flex flex-col justify-between shadow-xs border border-gray-200/70 relative overflow-hidden h-full min-h-[300px] sm:min-h-[360px] transition-shadow duration-300 motion-reduce:transition-none hover:shadow-xl focus-within:shadow-xl focus-within:ring-2 focus-within:ring-[#b10017] focus-within:ring-offset-2"
     >
       {/* DEFAULT UNHOVERED STATE */}
       <div className="flex flex-col justify-between h-full w-full z-0">
@@ -93,7 +91,7 @@ function WhiteCard({ area }: { area: ImpactArea }) {
         <div className="my-3 sm:mt-4 sm:mb-5 flex-1">
           <h3
             id={`pillar-title-${area.id}`}
-            className="text-xl sm:text-2xl lg:text-[25px] font-serif font-bold text-[#b10017] leading-snug mb-2.5 sm:mb-3.5 group-hover:underline group-focus-within:underline"
+            className="text-xl sm:text-2xl lg:text-[25px] font-serif font-bold text-[#b10017] leading-snug mb-2.5 sm:mb-3.5"
           >
             {area.title}
           </h3>
@@ -108,22 +106,22 @@ function WhiteCard({ area }: { area: ImpactArea }) {
       </div>
 
       {/* HOVER / KEYBOARD FOCUS OVERLAY */}
-      <div className="absolute inset-0 z-10 p-5 sm:p-7 md:p-8 flex flex-col justify-between bg-gray-900 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 motion-reduce:transition-none pointer-events-none group-hover:pointer-events-auto group-focus-within:pointer-events-auto">
+      <div className="absolute inset-0 z-10 p-5 sm:p-7 md:p-8 flex flex-col justify-between bg-gray-900 opacity-0 max-lg:opacity-100 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 motion-reduce:transition-none pointer-events-none max-lg:pointer-events-auto group-hover:pointer-events-auto group-focus-within:pointer-events-auto">
         <Image
           src={area.image}
-          alt={`Caritas Kampala ${area.title} programme`}
+          alt=""
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-[#b10017]/90 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20" />
+        <div aria-hidden="true" className="absolute inset-0 bg-[#b10017]/90 mix-blend-multiply" />
+        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20" />
 
-        <div className="relative z-10 flex items-center justify-start text-[11px] sm:text-xs font-bold text-white uppercase tracking-widest">
+        <div aria-hidden="true" className="relative z-10 flex items-center justify-start text-[11px] sm:text-xs font-bold text-white uppercase tracking-widest">
           <span>{area.category}</span>
         </div>
 
-        <div className="relative z-10 my-3 sm:mt-4 sm:mb-5 flex-1 space-y-2 sm:space-y-3">
+        <div aria-hidden="true" className="relative z-10 my-3 sm:mt-4 sm:mb-5 flex-1 space-y-2 sm:space-y-3">
           <h3 className="text-xl sm:text-2xl lg:text-[26px] font-serif font-bold text-white leading-tight">
             {area.title}
           </h3>
@@ -136,7 +134,7 @@ function WhiteCard({ area }: { area: ImpactArea }) {
           <Link
             href="/donate"
             aria-label={`Support ${area.title}`}
-            className="shrink-0 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full border-2 border-white text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-200 hover:bg-white hover:text-[#b10017] focus-visible:bg-white focus-visible:text-[#b10017] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            className="shrink-0 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full border-2 border-white text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-[background-color,color] duration-200 motion-reduce:transition-none hover:bg-white hover:text-[#b10017] focus-visible:bg-white focus-visible:text-[#b10017] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
           >
             <span>SUPPORT</span>
             <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" aria-hidden="true" />
@@ -191,7 +189,7 @@ function FeaturedCard({ area }: { area: ImpactArea }) {
         <Link
           href="/donate"
           aria-label={`Support ${area.title}`}
-          className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border-2 border-white text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider hover:bg-white hover:text-[#b10017] focus-visible:bg-white focus-visible:text-[#b10017] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white transition-all duration-200"
+        className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border-2 border-white text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider hover:bg-white hover:text-[#b10017] focus-visible:bg-white focus-visible:text-[#b10017] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white transition-[background-color,color] duration-200 motion-reduce:transition-none"
         >
           <span>SUPPORT THIS CAUSE</span>
           <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
@@ -214,7 +212,7 @@ export default function WhereWeServe() {
         {/* Section Title */}
         <h2
           id="core-pillars-title"
-          className="text-2xl sm:text-4xl md:text-5xl font-serif font-bold text-[#b10017] tracking-tight mb-6 sm:mb-10"
+          className="text-2xl sm:text-4xl md:text-5xl font-serif font-bold text-[#b10017] tracking-tight mb-6 sm:mb-10 text-balance"
         >
           Our Core Pillars of Support
         </h2>
