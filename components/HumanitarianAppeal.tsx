@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function HumanitarianAppeal() {
   return (
-    <section className="max-w-7xl mx-auto px-4 py-8 sm:px-8 sm:py-10">
+    <section className="site-container py-8 sm:py-10">
       <div className="relative rounded-3xl overflow-hidden shadow-xl min-h-[380px] sm:min-h-[480px] lg:min-h-[520px] flex items-center">
         {/* Background Image */}
         <Image
