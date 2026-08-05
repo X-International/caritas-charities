@@ -35,12 +35,13 @@ export default function LocationMap() {
           longitude={MAP_LNG} 
           latitude={MAP_LAT} 
           anchor="bottom"
-          onClick={() => {
-            window.open(DIRECTIONS_URL, "_blank", "noopener,noreferrer");
-          }}
-          style={{ cursor: "pointer" }}
         >
-          <div title="Caritas Kampala — Click to get directions">
+          <button
+            type="button"
+            aria-label="Open directions to Caritas Kampala Main Office"
+            onClick={() => window.open(DIRECTIONS_URL, "_blank", "noopener,noreferrer")}
+            className="rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2"
+          >
             <Image 
               src={MARKER_PATH} 
               alt="Caritas Kampala Pin" 
@@ -48,7 +49,7 @@ export default function LocationMap() {
               height={48} 
               className="drop-shadow-md"
             />
-          </div>
+          </button>
         </Marker>
       </Map>
     </div>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function SpotlightSection() {
   const [activeTab, setActiveTab] = useState("look-back");
@@ -18,10 +19,13 @@ export default function SpotlightSection() {
           </h2>
 
           {/* Toggle Pills */}
-          <div className="inline-flex p-1 bg-[#005247] rounded-full border border-teal-600/50">
+          <div className="inline-flex rounded-full border border-teal-600/50 bg-[#005247] p-1" role="tablist" aria-label="Spotlight sections">
             <button
+              type="button"
+              role="tab"
               onClick={() => setActiveTab("look-back")}
-              className={`px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${
+              aria-selected={activeTab === "look-back"}
+              className={`px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-colors ${
                 activeTab === "look-back"
                   ? "bg-white text-[#006b5d] shadow"
                   : "text-teal-100 hover:text-white"
@@ -30,8 +34,11 @@ export default function SpotlightSection() {
               TAKE A LOOK BACK
             </button>
             <button
+              type="button"
+              role="tab"
               onClick={() => setActiveTab("confederations")}
-              className={`px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${
+              aria-selected={activeTab === "confederations"}
+              className={`px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-colors ${
                 activeTab === "confederations"
                   ? "bg-white text-[#006b5d] shadow"
                   : "text-teal-100 hover:text-white"
@@ -90,12 +97,12 @@ export default function SpotlightSection() {
               Stories & Reflections from Caritas Secretariat staff and field workers worldwide. In the spirit of love and solidarity, Caritas staff and volunteers accompany, support, and rebuild communities in need across every continent.
             </p>
             <div className="pt-2">
-              <a
-                href="#read-story"
+              <Link
+                href="/resources/news"
                 className="inline-block bg-white text-[#006b5d] hover:bg-teal-50 text-xs sm:text-sm font-bold px-8 py-3.5 rounded-full tracking-wider uppercase transition-all transform hover:scale-105"
               >
                 READ STORY
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -103,7 +110,7 @@ export default function SpotlightSection() {
 
       {/* Video Lightbox Modal */}
       {isVideoModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center overscroll-contain bg-black/90 p-4 backdrop-blur-md" role="dialog" aria-modal="true" aria-label="Caritas video">
           <div className="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-2xl">
             {/* Close Button */}
             <button

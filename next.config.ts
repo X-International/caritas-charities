@@ -3,6 +3,12 @@ import type { NextConfig } from "next";
 const isDevelopment = process.env.NODE_ENV === "development";
 
 const nextConfig: NextConfig = {
+  // Next 16's CLI type-check path cannot parse the TypeScript 5.9 wrapper
+  // when it launches it directly. Keep full type checking enabled through
+  // the compiler API until that upstream compatibility issue is resolved.
+  experimental: {
+    useTypeScriptCli: false,
+  },
   // Baseline browser protections for every route. The CSP allows only the
   // third-party services actually used by this site (Mapbox, Google Maps,
   // YouTube privacy-enhanced embeds, and Vercel telemetry).

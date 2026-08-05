@@ -37,7 +37,7 @@ export default function ContactForm() {
         </div>
         <div>
           <label htmlFor="email" className="mb-1.5 block text-[11px] font-bold uppercase tracking-wider text-gray-700">Email Address <span className="text-[#b10017]">*</span></label>
-          <input className={inputClass} type="email" id="email" name="email" autoComplete="email" required maxLength={254} placeholder="e.g. jane@example.com" />
+          <input className={inputClass} type="email" id="email" name="email" autoComplete="email" spellCheck={false} required maxLength={254} placeholder="e.g. jane@example.com…" />
         </div>
       </div>
 
@@ -60,7 +60,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="message" className="mb-1.5 block text-[11px] font-bold uppercase tracking-wider text-gray-700">Message <span className="text-[#b10017]">*</span></label>
-        <textarea className={`${inputClass} resize-y`} id="message" name="message" rows={5} required maxLength={4000} placeholder="How can we help you?" />
+        <textarea className={`${inputClass} resize-y`} id="message" name="message" rows={5} required maxLength={4000} placeholder="How can we help you?…" />
       </div>
 
       <input className="hidden" tabIndex={-1} autoComplete="off" name="website" aria-hidden="true" />

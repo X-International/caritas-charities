@@ -1,6 +1,34 @@
 import { expect, test } from "@playwright/test";
 
 test.describe("public site journeys", () => {
+  test("all public routes render successfully", async ({ page }) => {
+    const routes = [
+      "/",
+      "/about-us",
+      "/about-us/chaconet-partners",
+      "/about-us/our-story",
+      "/about-us/our-team",
+      "/contact-us",
+      "/current-appeal",
+      "/donate",
+      "/get-involved",
+      "/our-programmes",
+      "/privacy-policy",
+      "/resources/annual-reports",
+      "/resources/faqs",
+      "/resources/gallery",
+      "/resources/news",
+      "/resources/news/kotido-moroto-famine-relief-drive",
+      "/terms-of-use",
+    ];
+
+    for (const route of routes) {
+      const response = await page.goto(route);
+      expect(response?.status(), route).toBe(200);
+      await expect(page.locator("body")).not.toContainText(/application error|internal server error/i);
+    }
+  });
+
   test("homepage exposes primary donation and programme journeys", async ({ page }) => {
     await page.goto("/");
     await expect(page).toHaveTitle(/Caritas Kampala/i);
@@ -35,9 +63,9 @@ test.describe("public site journeys", () => {
     await expect(page.getByRole("group", { name: /filter gallery/i })).toBeVisible();
     const firstPhoto = page.getByRole("button", { name: /view photo/i }).first();
     await firstPhoto.click();
-    await expect(page.getByRole("dialog")).toBeVisible();
+    await expect(page.locator(".yarl__root")).toBeVisible();
     await page.keyboard.press("Escape");
-    await expect(page.getByRole("dialog")).toHaveCount(0);
+    await expect(page.locator(".yarl__root")).toHaveCount(0);
   });
 
   test("mobile layouts do not create horizontal overflow", async ({ page }) => {

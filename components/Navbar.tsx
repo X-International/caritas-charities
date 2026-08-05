@@ -3,13 +3,12 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { navLinks, type NavLink } from "@/components/navigation/nav-data";
 
 /* ─── Component ──────────────────────────────────────────── */
 export default function Navbar() {
   const pathname = usePathname();
-  const router = useRouter();
   const [isMobileMenuOpen,  setIsMobileMenuOpen]  = useState(false);
   const [isSearchOpen,      setIsSearchOpen]      = useState(false);
   const [isShareModalOpen,  setIsShareModalOpen]  = useState(false);
@@ -17,6 +16,7 @@ export default function Navbar() {
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null);
   const [isScrolled,        setIsScrolled]        = useState(false);
   const [searchQuery,       setSearchQuery]       = useState("");
+  const shareUrlRef = useRef("https://www.caritaskampalacharities.me/");
 
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const searchInputRef = useRef<HTMLInputElement | null>(null);
@@ -26,10 +26,9 @@ export default function Navbar() {
   const shareCloseRef = useRef<HTMLButtonElement | null>(null);
   const shareModalRef = useRef<HTMLDivElement | null>(null);
 
-  const shareUrl =
-    typeof window !== "undefined"
-      ? window.location.href
-      : "https://www.caritaskampalacharities.me/";
+  useEffect(() => {
+    shareUrlRef.current = window.location.href;
+  }, []);
 
   /* Scroll Listener for Sticky Glass Header Elevation */
   useEffect(() => {
@@ -117,6 +116,7 @@ export default function Navbar() {
   }, [isSearchOpen, isMobileMenuOpen, isShareModalOpen]);
 
   const handleSharePlatform = (platform: "facebook" | "twitter" | "whatsapp" | "email") => {
+    const shareUrl = shareUrlRef.current;
     const url = encodeURIComponent(shareUrl);
     const title = encodeURIComponent(
       "Caritas Kampala - Ending poverty, promoting justice and restoring dignity"
@@ -141,15 +141,8 @@ export default function Navbar() {
         "noopener,noreferrer"
       );
     } else if (platform === "email") {
-      window.location.href = `mailto:?subject=${title}&body=Check out Caritas Kampala: ${shareUrl}`;
+      window.location.href = `mailto:?subject=${title}&body=Check out Caritas Kampala: ${shareUrlRef.current}`;
     }
-  };
-
-  const handleSearchSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!searchQuery.trim()) return;
-    router.push(`/resources/news?search=${encodeURIComponent(searchQuery.trim())}`);
-    setIsSearchOpen(false);
   };
 
   const isRouteActive = (href: string) => {
@@ -291,17 +284,18 @@ export default function Navbar() {
                       className="absolute -right-2 sm:right-0 top-full mt-2.5 w-72.5 sm:w-80 bg-white text-gray-900 shadow-2xl rounded-xl p-3 z-50 border border-gray-200 animate-in fade-in slide-in-from-top-2 duration-150"
                       role="search"
                     >
-                      <form onSubmit={handleSearchSubmit} className="relative flex items-center">
+                      <form action="/resources/news" method="get" onSubmit={() => setIsSearchOpen(false)} className="relative flex items-center">
                         <label htmlFor="navbar-search-input" className="sr-only">
                           Search Website
                         </label>
                         <input
                           ref={searchInputRef}
                           id="navbar-search-input"
+                          name="search"
                           type="text"
                           value={searchQuery}
                           onChange={(e) => setSearchQuery(e.target.value)}
-                          placeholder="Search programs, updates, news..."
+                          placeholder="Search programs, updates, news…"
                           className="w-full text-xs pl-3.5 pr-14 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#b10017] focus:ring-2 focus:ring-[#b10017]/20 transition-all"
                         />
                         {searchQuery && (
@@ -654,16 +648,17 @@ export default function Navbar() {
               <div className="p-4 pt-6 bg-gray-50/90 border-b border-gray-200/80 relative">
                 {/* Bottom Sheet Handle */}
                 <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-12 h-1.5 bg-gray-300 rounded-full" aria-hidden="true"></div>
-                <form onSubmit={handleSearchSubmit} className="relative flex items-center">
+                <form action="/resources/news" method="get" onSubmit={() => setIsMobileMenuOpen(false)} className="relative flex items-center">
                   <label htmlFor="mobile-drawer-search" className="sr-only">
                     Search Website
                   </label>
                   <input
                     id="mobile-drawer-search"
+                    name="search"
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Search programmes, news, updates..."
+                    placeholder="Search programmes, news, updates…"
                     className="w-full text-xs sm:text-sm pl-3.5 pr-14 py-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#b10017] focus:ring-2 focus:ring-[#b10017]/20 transition-all shadow-2xs"
                   />
                   {searchQuery && (
