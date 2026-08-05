@@ -37,7 +37,7 @@ export default function VisionMissionValues() {
   return (
     <section aria-labelledby="identity-title" className="mx-auto max-w-[1340px] px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
       <div className="overflow-hidden rounded-[22px] bg-[#b10017] px-6 py-10 text-white sm:px-8 lg:px-10 lg:py-12">
-        <h2 id="identity-title" className="text-center font-serif text-4xl font-bold sm:text-5xl lg:text-[52px]">Vision, mission and values</h2>
+        <h2 id="identity-title" className="scroll-mt-32 text-center font-serif text-4xl font-bold sm:text-5xl lg:text-[52px]">Vision, mission and values</h2>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-4" role="tablist" aria-label="Our identity">
           {identitySections.map((section) => (

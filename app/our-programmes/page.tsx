@@ -11,38 +11,44 @@ export const metadata = {
 
 import { Heart, Users, AlertTriangle, TrendingUp, Globe, Accessibility, LucideIcon } from "lucide-react";
 
-const programmes: { title: string; desc: string; serves: string; icon: LucideIcon }[] = [
+const programmes: { id: string; title: string; desc: string; serves: string; icon: LucideIcon }[] = [
   {
+    id: "emergency-disaster-response",
     title: "Emergency & Disaster Response",
     desc: "Provides immediate assistance to families and communities affected by disasters, fires, and other emergencies.",
     serves: "FAMILIES & COMMUNITIES AFFECTED BY EMERGENCIES",
     icon: AlertTriangle,
   },
   {
+    id: "support-for-the-elderly",
     title: "Support for the Elderly",
     desc: "Provides ongoing practical support to elderly people across the Archdiocese.",
     serves: "ELDERLY PEOPLE ACROSS THE ARCHDIOCESE",
     icon: Heart,
   },
   {
+    id: "family-child-support",
     title: "Family & Child Support",
     desc: "Supports families and children facing hardship, helping stabilise households in need.",
     serves: "FAMILIES & CHILDREN FACING HARDSHIP",
     icon: Users,
   },
   {
+    id: "refugee-asylum-seeker-support",
     title: "Refugee & Asylum Seeker Support",
     desc: "Provides practical assistance to urban refugees and asylum seekers.",
     serves: "URBAN REFUGEES & ASYLUM SEEKERS",
     icon: Globe,
   },
   {
+    id: "disability-special-needs-support",
     title: "Disability & Special Needs Support",
     desc: "Supports people living with disabilities and special medical needs.",
     serves: "PEOPLE WITH DISABILITIES & SPECIAL NEEDS",
     icon: Accessibility,
   },
   {
+    id: "poverty-alleviation-livelihoods",
     title: "Poverty Alleviation & Livelihoods",
     desc: "Works with individuals and families to help build sustainable livelihoods.",
     serves: "INDIVIDUALS & FAMILIES FACING POVERTY",
@@ -98,8 +104,8 @@ export default function OurProgrammesPage() {
         {/* Grid */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {programmes.map((prog, index) => (
-              <div key={index} className="bg-white rounded-2xl border-t-4 border-[#b10017] p-8 shadow-sm flex flex-col">
+            {programmes.map((prog) => (
+              <div id={prog.id} key={prog.id} className="scroll-mt-32 bg-white rounded-2xl border-t-4 border-[#b10017] p-8 shadow-sm flex flex-col">
                 <div className="flex items-center justify-between mb-6">
                   <div className="w-14 h-14 rounded-full bg-[#f4efe6] flex items-center justify-center">
                     <prog.icon className="w-7 h-7 text-[#b10017]" />

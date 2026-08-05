@@ -17,9 +17,12 @@ export default function Navbar() {
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null);
   const [isScrolled,        setIsScrolled]        = useState(false);
   const [searchQuery,       setSearchQuery]       = useState("");
+  const [currentHash,       setCurrentHash]       = useState("");
+  const [mobileMenuTop,     setMobileMenuTop]     = useState(106);
   const shareUrlRef = useRef("https://www.caritaskampalacharities.me/");
 
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const headerRef = useRef<HTMLElement | null>(null);
   const searchInputRef = useRef<HTMLInputElement | null>(null);
   const searchButtonRef = useRef<HTMLButtonElement | null>(null);
   const shareTriggerRef = useRef<HTMLButtonElement | null>(null);
@@ -43,6 +46,13 @@ export default function Navbar() {
     shareUrlRef.current = window.location.href;
   }, []);
 
+  useEffect(() => {
+    const updateHash = () => setCurrentHash(window.location.hash);
+    updateHash();
+    window.addEventListener("hashchange", updateHash);
+    return () => window.removeEventListener("hashchange", updateHash);
+  }, [pathname]);
+
   /* Scroll Listener for Sticky Glass Header Elevation */
   useEffect(() => {
     const handleScroll = () => {
@@ -52,6 +62,16 @@ export default function Navbar() {
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!isMobileMenuOpen || !headerRef.current) return;
+    const header = headerRef.current;
+    const updateMenuTop = () => setMobileMenuTop(Math.ceil(header.getBoundingClientRect().height));
+    updateMenuTop();
+    const observer = new ResizeObserver(updateMenuTop);
+    observer.observe(header);
+    return () => observer.disconnect();
+  }, [isMobileMenuOpen]);
 
   /* Lock body scroll when mobile menu or modal is open */
   useEffect(() => {
@@ -189,8 +209,15 @@ export default function Navbar() {
   };
 
   const isRouteActive = (href: string) => {
-    if (href === "/") return pathname === "/";
-    return pathname.startsWith(href);
+    const route = href.split("#")[0];
+    if (route === "/") return pathname === "/";
+    return pathname.startsWith(route);
+  };
+
+  const isSubRouteActive = (href: string) => {
+    const [route, hash] = href.split("#");
+    if (hash) return pathname.startsWith(route) && currentHash === `#${hash}`;
+    return isRouteActive(href);
   };
 
   const getMegaMenuHref = (link: NavLink) => link.href ?? link.megaMenu?.links[0]?.href ?? "/";
@@ -218,6 +245,7 @@ export default function Navbar() {
       </a>
 
       <header
+        ref={headerRef}
         className={`w-full bg-white sticky top-0 z-50 transition-all duration-200 ${
           isScrolled
             ? "shadow-md border-b border-gray-200/90 backdrop-blur-md bg-white/95"
@@ -515,7 +543,7 @@ export default function Navbar() {
                             </p>
                             <ul className="space-y-1.5">
                               {link.megaMenu.links.map((sub) => {
-                                const isSubActive = sub.href ? isRouteActive(sub.href) : false;
+                                const isSubActive = sub.href ? isSubRouteActive(sub.href) : false;
                                 return (
                                   <li key={sub.name}>
                                     {sub.href ? (
@@ -724,7 +752,8 @@ export default function Navbar() {
             <nav
               ref={mobileNavRef}
               id="mobile-navigation-drawer"
-              className="lg:hidden fixed top-[106px] bottom-0 left-0 right-0 z-50 bg-white shadow-2xl overflow-y-auto overscroll-contain animate-in slide-in-from-bottom-8 duration-300 motion-reduce:animate-none pb-6 relative"
+              className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white shadow-2xl overflow-y-auto overscroll-contain animate-in slide-in-from-bottom-8 duration-300 motion-reduce:animate-none pb-6 relative"
+              style={{ top: `${mobileMenuTop}px` }}
               aria-label="Mobile Navigation"
               role="dialog"
               aria-modal="true"
@@ -737,6 +766,7 @@ export default function Navbar() {
                     /* Accordion item */
                     <div key={link.name} className="border-b border-gray-100 last:border-none">
                       <button
+                        type="button"
                         onClick={() =>
                           setOpenMobileSubmenu(
                             openMobileSubmenu === link.name ? null : link.name
@@ -746,6 +776,7 @@ export default function Navbar() {
                           active ? "bg-[#f8f8f8] text-gray-900" : "text-gray-900 hover:bg-[#f8f8f8] hover:text-[#b10017]"
                         }`}
                         aria-expanded={openMobileSubmenu === link.name}
+                        aria-controls={`mobile-submenu-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
                       >
                         <div className="flex items-center space-x-2.5">
                           <span>{link.name}</span>
@@ -771,9 +802,9 @@ export default function Navbar() {
                       </button>
 
                       {openMobileSubmenu === link.name && (
-                        <div className="py-2.5 pl-3 pr-2 space-y-1 bg-gray-50/70 border border-gray-200/60 rounded-xl my-2 animate-in fade-in duration-150">
+                        <div id={`mobile-submenu-${link.name.toLowerCase().replace(/\s+/g, "-")}`} className="py-2.5 pl-3 pr-2 space-y-1 bg-gray-50/70 border border-gray-200/60 rounded-xl my-2 animate-in fade-in duration-150">
                           {link.megaMenu.links.map((sub) => {
-                            const isSubActive = sub.href ? isRouteActive(sub.href) : false;
+                            const isSubActive = sub.href ? isSubRouteActive(sub.href) : false;
                             return sub.href ? (
                               <Link
                                 key={sub.name}
