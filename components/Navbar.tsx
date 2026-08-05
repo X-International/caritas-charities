@@ -858,13 +858,16 @@ export default function Navbar() {
       {/* ── Share Modal ──────────────────────────────────── */}
       {isShareModalOpen && (
         <div
+          ref={shareModalRef}
           className="fixed inset-0 z-100 flex items-center justify-center bg-black/70 backdrop-blur-xs"
           role="dialog"
           aria-modal="true"
           aria-labelledby="share-modal-title"
+          aria-describedby="share-modal-description"
         >
           <button
             type="button"
+            tabIndex={-1}
             className="absolute inset-0 cursor-default"
             onClick={() => {
               setIsShareModalOpen(false);
@@ -874,14 +877,18 @@ export default function Navbar() {
           />
 
           <div
-            ref={shareModalRef}
-            className="relative bg-white rounded-2xl p-6 sm:p-8 max-w-sm sm:max-w-md w-[calc(100%-2rem)] mx-4 shadow-2xl z-10 border border-gray-100"
-            style={{ animation: "shareModalIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards" }}
+            className="share-modal-enter relative bg-white rounded-2xl p-6 sm:p-8 max-w-sm sm:max-w-md w-[calc(100%-2rem)] max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain mx-4 shadow-2xl z-10 border border-gray-100"
           >
             <style>{`
               @keyframes shareModalIn {
                 from { opacity: 0; transform: scale(0.95) translateY(8px); }
                 to   { opacity: 1; transform: scale(1) translateY(0); }
+              }
+              .share-modal-enter {
+                animation: shareModalIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+              }
+              @media (prefers-reduced-motion: reduce) {
+                .share-modal-enter { animation: none; }
               }
             `}</style>
 
@@ -892,7 +899,7 @@ export default function Navbar() {
                 setIsShareModalOpen(false);
                 shareTriggerRef.current?.focus();
               }}
-              className="absolute top-3 right-3 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center text-gray-400 hover:text-gray-700 focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-1 transition-colors focus:outline-none rounded-full hover:bg-gray-100 cursor-pointer"
+              className="absolute top-3 right-3 min-h-11 min-w-11 flex items-center justify-center text-gray-400 hover:text-gray-700 focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-1 transition-colors focus:outline-none rounded-full hover:bg-gray-100 cursor-pointer"
               aria-label="Close share modal"
             >
               <svg
@@ -928,14 +935,14 @@ export default function Navbar() {
                 >
                   Help Us Reach More Hearts
                 </h3>
-                <p className="text-xs sm:text-sm text-gray-600 mt-1.5 leading-relaxed font-sans">
+                <p id="share-modal-description" className="text-xs sm:text-sm text-gray-600 mt-1.5 leading-relaxed font-sans">
                   Every share extends our message of hope, love, and compassion. Invite others to join our mission.
                 </p>
               </div>
             </div>
 
             {/* Share Platform Buttons with Labels */}
-            <div className="grid grid-cols-5 gap-2 sm:gap-3 mt-7">
+            <div className="flex flex-wrap justify-center gap-3 mt-7 sm:flex-nowrap">
               {/* Facebook */}
               <button
                 type="button"
