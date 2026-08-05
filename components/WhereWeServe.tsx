@@ -77,37 +77,49 @@ const IMPACT_AREAS: ImpactArea[] = [
   },
 ];
 
-/* ── White Card (Standard Mobile Responsive) ── */
+/* ── White Card (Standard Mobile & Keyboard Accessible) ── */
 function WhiteCard({ area }: { area: ImpactArea }) {
   return (
-    <article className="group bg-white rounded-2xl sm:rounded-[28px] p-5 sm:p-7 md:p-8 flex flex-col justify-between shadow-xs border border-gray-200/50 relative overflow-hidden h-full min-h-[300px] sm:min-h-[360px] transition-all duration-300 hover:shadow-xl focus-within:shadow-xl">
-      {/* DEFAULT STATE */}
+    <article
+      aria-labelledby={`pillar-title-${area.id}`}
+      className="group bg-white rounded-2xl sm:rounded-[28px] p-5 sm:p-7 md:p-8 flex flex-col justify-between shadow-xs border border-gray-200/70 relative overflow-hidden h-full min-h-[300px] sm:min-h-[360px] transition-all duration-300 motion-reduce:transition-none hover:shadow-xl focus-within:shadow-xl focus-within:ring-2 focus-within:ring-[#b10017] focus-within:ring-offset-2"
+    >
+      {/* DEFAULT UNHOVERED STATE */}
       <div className="flex flex-col justify-between h-full w-full z-0">
-        <div className="flex items-center justify-between text-[11px] sm:text-xs font-semibold text-gray-400 uppercase tracking-widest gap-2">
+        <div className="flex items-center justify-between text-[11px] sm:text-xs font-bold text-gray-600 uppercase tracking-widest gap-2">
           <span className="truncate">{area.category}</span>
         </div>
 
         <div className="my-3 sm:mt-4 sm:mb-5 flex-1">
-          <h3 className="text-xl sm:text-2xl lg:text-[25px] font-serif font-bold text-[#b10017] leading-snug mb-2.5 sm:mb-3.5 group-hover:underline group-focus-within:underline">
+          <h3
+            id={`pillar-title-${area.id}`}
+            className="text-xl sm:text-2xl lg:text-[25px] font-serif font-bold text-[#b10017] leading-snug mb-2.5 sm:mb-3.5 group-hover:underline group-focus-within:underline"
+          >
             {area.title}
           </h3>
-          <p className="text-sm sm:text-base text-[#4d4338] leading-relaxed font-sans">
+          <p className="text-sm sm:text-base text-gray-800 leading-relaxed font-sans">
             {area.description}
           </p>
         </div>
 
-        <div className="pt-3.5 sm:pt-4 border-t border-gray-100/80 flex items-center justify-between text-[11px] sm:text-xs font-semibold text-gray-400 uppercase tracking-widest">
+        <div className="pt-3.5 sm:pt-4 border-t border-gray-200 flex items-center justify-between text-[11px] sm:text-xs font-bold text-gray-600 uppercase tracking-widest">
           <span className="truncate">{area.serves}</span>
         </div>
       </div>
 
-      {/* HOVER OVERLAY (Touch & Hover Friendly) */}
-      <div className="absolute inset-0 z-10 p-5 sm:p-7 md:p-8 flex flex-col justify-between bg-gray-900 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto group-focus-within:pointer-events-auto">
-        <Image src={area.image} alt={area.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover" />
-        <div className="absolute inset-0 bg-[#b10017]/85 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20" />
+      {/* HOVER / KEYBOARD FOCUS OVERLAY */}
+      <div className="absolute inset-0 z-10 p-5 sm:p-7 md:p-8 flex flex-col justify-between bg-gray-900 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 motion-reduce:transition-none pointer-events-none group-hover:pointer-events-auto group-focus-within:pointer-events-auto">
+        <Image
+          src={area.image}
+          alt={`Caritas Kampala ${area.title} programme`}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-[#b10017]/90 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20" />
 
-        <div className="relative z-10 flex items-center justify-start text-[11px] sm:text-xs font-semibold text-white/90 uppercase tracking-widest">
+        <div className="relative z-10 flex items-center justify-start text-[11px] sm:text-xs font-bold text-white uppercase tracking-widest">
           <span>{area.category}</span>
         </div>
 
@@ -115,7 +127,7 @@ function WhiteCard({ area }: { area: ImpactArea }) {
           <h3 className="text-xl sm:text-2xl lg:text-[26px] font-serif font-bold text-white leading-tight">
             {area.title}
           </h3>
-          <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-sans">
+          <p className="text-xs sm:text-sm text-white/95 leading-relaxed font-sans">
             {area.description}
           </p>
         </div>
@@ -123,9 +135,10 @@ function WhiteCard({ area }: { area: ImpactArea }) {
         <div className="relative z-10 pt-3 sm:pt-4 flex items-center justify-center">
           <Link
             href="/donate"
-            className="shrink-0 inline-flex items-center gap-1.5 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full border border-white/90 text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-200 hover:bg-white hover:text-[#b10017]"
+            aria-label={`Support ${area.title}`}
+            className="shrink-0 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full border-2 border-white text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-200 hover:bg-white hover:text-[#b10017] focus-visible:bg-white focus-visible:text-[#b10017] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
           >
-            SUPPORT
+            <span>SUPPORT</span>
             <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" aria-hidden="true" />
           </Link>
         </div>
@@ -134,40 +147,53 @@ function WhiteCard({ area }: { area: ImpactArea }) {
   );
 }
 
-/* ── Featured Card (Mobile Responsive Hero) ── */
+/* ── Featured Card (Hero Landmark & Accessible) ── */
 function FeaturedCard({ area }: { area: ImpactArea }) {
   return (
-    <article className="relative rounded-2xl sm:rounded-[28px] overflow-hidden h-full min-h-[340px] sm:min-h-[400px] flex flex-col justify-between p-5 sm:p-7 md:p-9 bg-gray-900 shadow-lg border border-gray-200/30">
-      <Image src={area.image} alt={area.title} fill sizes="(max-width: 1024px) 100vw, 66vw" className="object-cover" />
-      <div className="absolute inset-0 bg-[#b10017]/85 mix-blend-multiply" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/15" />
+    <article
+      aria-labelledby={`featured-pillar-title-${area.id}`}
+      className="group relative rounded-2xl sm:rounded-[28px] overflow-hidden h-full min-h-[340px] sm:min-h-[400px] flex flex-col justify-between p-5 sm:p-7 md:p-9 bg-gray-900 shadow-lg border border-gray-200/30 focus-within:ring-2 focus-within:ring-[#b10017] focus-within:ring-offset-2"
+    >
+      <Image
+        src={area.image}
+        alt={`Caritas Kampala ${area.title} featured programme`}
+        fill
+        sizes="(max-width: 1024px) 100vw, 66vw"
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-[#b10017]/90 mix-blend-multiply" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20" />
 
-      {/* Top */}
-      <div className="relative z-10 flex flex-wrap items-center justify-between text-[11px] sm:text-xs font-semibold text-white/90 uppercase tracking-widest gap-2">
+      {/* Top Metadata */}
+      <div className="relative z-10 flex flex-wrap items-center justify-between text-[11px] sm:text-xs font-bold text-white uppercase tracking-widest gap-2">
         <span>{area.category}</span>
         <span>{area.locations.join(", ")}</span>
       </div>
 
-      {/* Middle */}
+      {/* Middle Content */}
       <div className="relative z-10 my-4 sm:my-6 flex-1 space-y-2 sm:space-y-4">
-        <h3 className="text-2xl sm:text-3xl lg:text-[40px] font-serif font-bold text-white leading-[1.15]">
+        <h3
+          id={`featured-pillar-title-${area.id}`}
+          className="text-2xl sm:text-3xl lg:text-[40px] font-serif font-bold text-white leading-[1.15]"
+        >
           {area.title}
         </h3>
-        <p className="text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed font-sans max-w-xl">
+        <p className="text-sm sm:text-base lg:text-lg text-white/95 leading-relaxed font-sans max-w-xl">
           {area.description}
         </p>
       </div>
 
-      {/* Bottom */}
+      {/* Bottom Row */}
       <div className="relative z-10 pt-3 sm:pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
-        <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-amber-300">
+        <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-amber-300">
           {area.serves}
         </span>
         <Link
           href="/donate"
-          className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border border-white/90 text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider hover:bg-white hover:text-[#b10017] transition-all duration-200"
+          aria-label={`Support ${area.title}`}
+          className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border-2 border-white text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider hover:bg-white hover:text-[#b10017] focus-visible:bg-white focus-visible:text-[#b10017] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white transition-all duration-200"
         >
-          SUPPORT THIS CAUSE
+          <span>SUPPORT THIS CAUSE</span>
           <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
         </Link>
       </div>
@@ -180,7 +206,10 @@ export default function WhereWeServe() {
   const rest = IMPACT_AREAS.slice(1);
 
   return (
-    <section className="py-10 sm:py-16 md:py-20 bg-[#f4efe6] relative overflow-hidden" aria-labelledby="core-pillars-title">
+    <section
+      aria-labelledby="core-pillars-title"
+      className="py-10 sm:py-16 md:py-20 bg-[#f4efe6] relative overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Title */}
         <h2
