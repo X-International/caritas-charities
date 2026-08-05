@@ -35,6 +35,8 @@ test.describe("public site journeys", () => {
     await expect(page.getByRole("heading", { name: /serving with compassion/i })).toBeVisible();
     await expect(page.getByRole("link", { name: /donate today/i })).toBeVisible();
     await expect(page.getByRole("button", { name: /next slide/i })).toBeVisible();
+    await expect(page.getByRole("heading", { name: /current appeal/i })).toBeVisible();
+    await expect(page.getByRole("link", { name: /see how to help families/i })).toBeVisible();
   });
 
   test("news search returns matching content and a useful empty state", async ({ page }) => {

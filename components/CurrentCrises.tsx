@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,7 +12,7 @@ export default function CurrentCrises() {
         <div className="max-w-3xl xl:max-w-4xl mb-8 xl:mb-10 space-y-3 text-center lg:text-left mx-auto lg:mx-0">
           <h2 
             id="appeal-title"
-            className="text-3xl sm:text-4xl lg:text-5xl xl:text-[3.25rem] font-extrabold font-serif tracking-tight"
+            className="text-3xl sm:text-4xl lg:text-5xl xl:text-[3.25rem] font-extrabold font-serif tracking-tight text-balance"
           >
             Current Appeal
           </h2>
@@ -32,6 +30,7 @@ export default function CurrentCrises() {
                 src="/images/current appeal/Caritas_Kampala_Current_Appeal.jpg"
                 alt="Families receiving famine relief support in Karamoja"
                 fill
+                loading="lazy"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
@@ -39,7 +38,7 @@ export default function CurrentCrises() {
 
             {/* Right Details */}
             <div className="lg:col-span-6 space-y-4 lg:space-y-5 xl:space-y-6 text-center lg:text-left">
-              <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-[2rem] font-extrabold font-serif text-[#b10017]">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-[2rem] font-extrabold font-serif text-[#b10017] text-balance">
                 Famine in Kotido and Moroto
               </h3>
               <p className="text-gray-700 text-sm sm:text-base xl:text-lg leading-relaxed max-w-prose mx-auto lg:mx-0">
@@ -49,7 +48,7 @@ export default function CurrentCrises() {
                 <Link
                   href="/current-appeal"
                   aria-label="See how to help families facing famine in Kotido and Moroto"
-                  className="inline-block bg-[#b10017] text-white hover:bg-white hover:text-[#b10017] border-2 border-[#b10017] text-xs font-bold px-7 py-3 rounded-full tracking-wider uppercase transition-colors duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-2"
+                  className="inline-block bg-[#b10017] text-white hover:bg-white hover:text-[#b10017] border-2 border-[#b10017] text-xs font-bold px-7 py-3 rounded-full tracking-wider uppercase transition-colors duration-200 motion-reduce:transition-none cursor-pointer focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-2"
                 >
                   See How to Help
                 </Link>
