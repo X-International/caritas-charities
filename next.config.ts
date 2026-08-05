@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+const isDevelopment = process.env.NODE_ENV === "development";
+
 const nextConfig: NextConfig = {
   // Baseline browser protections for every route. The CSP allows only the
   // third-party services actually used by this site (Mapbox, Google Maps,
@@ -24,7 +26,7 @@ const nextConfig: NextConfig = {
               "form-action 'self'",
               "frame-ancestors 'self'",
               "object-src 'none'",
-              "script-src 'self' 'unsafe-inline' https://api.mapbox.com https://maps.googleapis.com https://va.vercel-scripts.com",
+              `script-src 'self' 'unsafe-inline'${isDevelopment ? " 'unsafe-eval'" : ""} https://api.mapbox.com https://maps.googleapis.com https://va.vercel-scripts.com`,
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' data: https://fonts.gstatic.com",
               "img-src 'self' data: blob: https:",
