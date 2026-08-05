@@ -246,7 +246,7 @@ export default function Footer() {
           </div>
           <div className="self-start sm:self-auto">
             <a
-              href="https://www.caritaskampala.org/"
+              href="https://www.caritaskampalacharities.me/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:underline inline-flex items-center gap-1.5 font-bold text-white hover:text-red-200 transition-colors"

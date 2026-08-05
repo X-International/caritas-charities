@@ -111,7 +111,7 @@ export default function Navbar() {
   const shareUrl =
     typeof window !== "undefined"
       ? window.location.href
-      : "https://www.caritaskampala.org/";
+      : "https://www.caritaskampalacharities.me/";
 
   /* Scroll Listener for Sticky Glass Header Elevation */
   useEffect(() => {
@@ -301,7 +301,7 @@ export default function Navbar() {
                 |
               </span>
               <a
-                href="https://www.caritaskampala.org/"
+                href="https://www.caritaskampalacharities.me/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group text-gray-300 hover:text-white focus-visible:text-white focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 transition-colors flex items-center shrink-0 no-underline rounded-xs"

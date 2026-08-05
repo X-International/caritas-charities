@@ -158,7 +158,7 @@ export default function CurrentAppealPage() {
                 <div className="bg-white/10 p-4 rounded-2xl text-xs sm:text-sm space-y-1 font-sans border border-white/10">
                   <p className="font-bold text-white">
                     <a
-                      href="https://www.caritaskampala.org/"
+                      href="https://www.caritaskampalacharities.me/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:underline underline-offset-2 text-white"

@@ -52,7 +52,7 @@ export default function OtherWaysToSupport() {
           <p className="text-sm sm:text-base md:text-[17px] leading-relaxed text-[#4d4338]">
             This is the official donation page of the Charities Department, Caritas Kampala, Archdiocese of Kampala.{' '}
             <a
-              href="https://www.caritaskampala.org/"
+              href="https://www.caritaskampalacharities.me/"
               target="_blank"
               rel="noreferrer noopener"
               className="font-bold text-[#b10017] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
