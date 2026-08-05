@@ -55,7 +55,7 @@ test.describe("public site journeys", () => {
     await page.getByLabel("Subject *").selectOption("general");
     await page.getByLabel("Message *").fill("A test enquiry");
     await page.getByRole("button", { name: /send message/i }).click();
-    await expect(page.getByRole("status")).toContainText(/could not send/i);
+    await expect(page.getByRole("status")).toContainText(/temporarily unavailable|could not send/i);
   });
 
   test("gallery filters and lightbox controls are usable", async ({ page }) => {

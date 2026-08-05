@@ -5,6 +5,12 @@ const WINDOW_MS = 10 * 60 * 1000;
 const MAX_REQUESTS = 5;
 const requests = new Map<string, { count: number; resetAt: number }>();
 
+function pruneRateLimitEntries(now: number) {
+  for (const [key, entry] of requests) {
+    if (entry.resetAt <= now) requests.delete(key);
+  }
+}
+
 function clientKey(request: NextRequest) {
   return request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
 }
@@ -18,9 +24,13 @@ export async function POST(request: NextRequest) {
 
   const key = clientKey(request);
   const now = Date.now();
+  pruneRateLimitEntries(now);
   const entry = requests.get(key);
   if (entry && entry.resetAt > now && entry.count >= MAX_REQUESTS) {
-    return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+    return NextResponse.json(
+      { error: "Too many requests", code: "RATE_LIMITED" },
+      { status: 429, headers: { "Retry-After": String(Math.ceil((entry.resetAt - now) / 1000)) } }
+    );
   }
   requests.set(key, entry && entry.resetAt > now ? { count: entry.count + 1, resetAt: entry.resetAt } : { count: 1, resetAt: now + WINDOW_MS });
 
@@ -44,10 +54,14 @@ export async function POST(request: NextRequest) {
       signal: controller.signal,
       cache: "no-store",
     });
-    if (!response.ok) return NextResponse.json({ error: "Contact service rejected the message" }, { status: 502 });
+    if (!response.ok) {
+      console.error("Contact provider rejected submission", { status: response.status });
+      return NextResponse.json({ error: "Contact service rejected the message", code: "PROVIDER_REJECTED" }, { status: 502 });
+    }
     return NextResponse.json({ ok: true });
-  } catch {
-    return NextResponse.json({ error: "Contact service unavailable" }, { status: 502 });
+  } catch (error) {
+    console.error("Contact provider request failed", { reason: error instanceof Error ? error.name : "unknown" });
+    return NextResponse.json({ error: "Contact service unavailable", code: "PROVIDER_UNAVAILABLE" }, { status: 502 });
   } finally {
     clearTimeout(timeout);
   }

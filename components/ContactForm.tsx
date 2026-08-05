@@ -7,24 +7,40 @@ const inputClass =
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus("loading");
+    setErrorMessage("");
     const form = event.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 12_000);
 
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
+        signal: controller.signal,
       });
-      if (!response.ok) throw new Error("Unable to send message");
+      if (!response.ok) {
+        const result = (await response.json().catch(() => null)) as { code?: string } | null;
+        if (response.status === 429 || result?.code === "RATE_LIMITED") {
+          throw new Error("We have received several requests from this connection. Please wait a few minutes and try again.");
+        }
+        throw new Error("Our message service is temporarily unavailable. Please try again or use one of the direct contact lines.");
+      }
       form.reset();
       setStatus("success");
-    } catch {
+    } catch (error) {
+      setErrorMessage(error instanceof Error && error.name === "AbortError"
+        ? "The request took too long. Please check your connection and try again."
+        : error instanceof Error ? error.message : "We could not send your message. Please try again.");
       setStatus("error");
+    } finally {
+      window.clearTimeout(timeout);
     }
   }
 
@@ -71,7 +87,7 @@ export default function ContactForm() {
         </button>
         <p className="text-[11px] text-gray-500">By submitting this form, you agree to be contacted about your enquiry.</p>
         <p role="status" aria-live="polite" className={`text-sm font-medium ${status === "success" ? "text-[#006b5d]" : status === "error" ? "text-[#b10017]" : "sr-only"}`}>
-          {status === "success" ? "Your message was sent successfully." : status === "error" ? "We could not send your message. Please use one of the direct contact lines instead." : ""}
+          {status === "success" ? "Your message was sent successfully." : status === "error" ? errorMessage : ""}
         </p>
       </div>
     </form>

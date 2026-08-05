@@ -3,23 +3,38 @@
 import Map, { Marker, NavigationControl } from "react-map-gl/mapbox";
 import "mapbox-gl/dist/mapbox-gl.css";
 import Image from "next/image";
+import { useState } from "react";
 import { siteConfig } from "@/lib/site-config";
 
 const MAP_LAT = siteConfig.office.coordinates.latitude;
 const MAP_LNG = siteConfig.office.coordinates.longitude;
 const MARKER_PATH = "/maps/Caritas_Kampala_Pin.png";
 const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${MAP_LAT},${MAP_LNG}`;
+const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
 export default function LocationMap() {
+  const [hasError, setHasError] = useState(!MAPBOX_TOKEN);
+
   return (
     <div className="w-full h-full bg-gray-100 relative">
-      <Map
+      {hasError ? (
+        <div className="absolute inset-0 z-10 flex items-center justify-center p-8 text-center">
+          <div className="space-y-3">
+            <p className="text-sm font-medium text-gray-600">The interactive map is unavailable right now.</p>
+            <a href={DIRECTIONS_URL} target="_blank" rel="noopener noreferrer" className="inline-flex rounded-full bg-[#b10017] px-5 py-2.5 text-sm font-bold text-white hover:bg-[#8e0a20] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2">
+              Open in Google Maps
+            </a>
+          </div>
+        </div>
+      ) : null}
+      {!hasError && <Map
         initialViewState={{ longitude: MAP_LNG, latitude: MAP_LAT, zoom: 16.5 }}
         mapStyle="mapbox://styles/mapbox/streets-v12"
-        mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
+        mapboxAccessToken={MAPBOX_TOKEN}
         style={{ width: "100%", height: "100%" }}
         minZoom={3}
         cooperativeGestures={true}
+        onError={() => setHasError(true)}
       >
         <NavigationControl position="top-right" />
         
@@ -43,7 +58,7 @@ export default function LocationMap() {
             />
           </button>
         </Marker>
-      </Map>
+      </Map>}
     </div>
   );
 }
