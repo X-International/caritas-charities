@@ -14,16 +14,16 @@ const footerColumns: FooterColumnData[] = [
     title: "ABOUT",
     links: [
       { label: "About Us", href: "/about-us" },
-      { label: "Our Team", href: "/about-us/our-team" },
+      { label: "Our Team" },
       { label: "Partners — Chaconet Network", href: "/about-us/chaconet-partners" },
-      { label: "Our Programmes", href: "/our-programmes" },
+      { label: "Our Programmes" },
     ],
   },
   {
     title: "GET INVOLVED",
     links: [
       { label: "Donate", href: "/donate" },
-      { label: "Get Involved", href: "/get-involved" },
+      { label: "Get Involved" },
     ],
   },
   {
@@ -37,8 +37,8 @@ const footerColumns: FooterColumnData[] = [
     title: "CONTACT & LEGAL",
     links: [
       { label: "Contact Us", href: "/contact-us" },
-      { label: "Privacy Policy", href: "/privacy-policy" },
-      { label: "Terms of Use", href: "/terms-of-use" },
+      { label: "Privacy Policy" },
+      { label: "Terms of Use" },
     ],
   },
 ];
@@ -60,7 +60,7 @@ function DesktopColumn({ column }: { column: FooterColumnData }) {
                 {link.label}
               </Link>
             ) : (
-              <span className="text-red-100/80">{link.label}</span>
+              <span aria-disabled="true" className="text-red-100/80 cursor-pointer">{link.label}</span>
             )}
           </li>
         ))}
@@ -114,7 +114,7 @@ function MobileAccordion({
         id={contentId}
         role="region"
         aria-hidden={!isOpen}
-        className={`grid transition-all duration-300 ease-in-out motion-reduce:transition-none ${
+        className={`grid transition-[grid-template-rows,opacity,padding] duration-300 ease-in-out motion-reduce:transition-none ${
           isOpen ? "grid-rows-[1fr] opacity-100 pb-3" : "grid-rows-[0fr] opacity-0 pointer-events-none"
         }`}
       >
@@ -131,7 +131,7 @@ function MobileAccordion({
                     {link.label}
                   </Link>
                 ) : (
-                  <span className="text-red-100/80">{link.label}</span>
+                  <span aria-disabled="true" className="text-red-100/80 cursor-pointer">{link.label}</span>
                 )}
               </li>
             ))}
@@ -185,20 +185,17 @@ export default function Footer() {
               CONNECT WITH US
             </span>
             <div className="flex items-center justify-center lg:justify-end gap-5">
-              <Link href="/contact-us" className="rounded-full border border-white/50 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-[#8d000f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#a90012]">
-                Contact our office
-              </Link>
               <div className="flex items-center gap-2" aria-label="Social channels coming soon">
-                <span role="img" aria-label="Facebook — link coming soon" title="Facebook — link coming soon" className="group relative flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white/85 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-white/60 hover:bg-white hover:text-[#8d000f]">
+                <span role="img" aria-label="Facebook — link coming soon" title="Facebook — link coming soon" className="group relative flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white/85 shadow-sm transition-[background-color,border-color,color] duration-200 hover:border-white/60 hover:bg-white/20 hover:text-white">
                   <svg className="h-4.5 w-4.5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.75l.4-3h-3.15V8.08c0-.87.24-1.46 1.5-1.46h1.6V3.94c-.28-.04-1.24-.12-2.36-.12-2.33 0-3.93 1.42-3.93 4.03V10H7.7v3h2.61v8h3.19Z" /></svg>
                 </span>
-                <span role="img" aria-label="Instagram — link coming soon" title="Instagram — link coming soon" className="group relative flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white/85 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-white/60 hover:bg-white hover:text-[#8d000f]">
+                <span role="img" aria-label="Instagram — link coming soon" title="Instagram — link coming soon" className="group relative flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white/85 shadow-sm transition-[background-color,border-color,color] duration-200 hover:border-white/60 hover:bg-white/20 hover:text-white">
                   <svg className="h-4.5 w-4.5 fill-none stroke-current" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" strokeWidth="1.8" /><circle cx="12" cy="12" r="4" strokeWidth="1.8" /><circle cx="17.4" cy="6.6" r="1" className="fill-current stroke-none" /></svg>
                 </span>
-                <span role="img" aria-label="YouTube — link coming soon" title="YouTube — link coming soon" className="group relative flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white/85 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-white/60 hover:bg-white hover:text-[#8d000f]">
+                <span role="img" aria-label="YouTube — link coming soon" title="YouTube — link coming soon" className="group relative flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white/85 shadow-sm transition-[background-color,border-color,color] duration-200 hover:border-white/60 hover:bg-white/20 hover:text-white">
                   <svg className="h-4.5 w-4.5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.8 4.7 12 4.7 12 4.7s-5.8 0-7.6.5a2.8 2.8 0 0 0-2 2C2 9 2 12 2 12s0 3 .4 4.8a2.8 2.8 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.8 2.8 0 0 0 2-2C22 15 22 12 22 12s0-3-.4-4.8ZM10 15.5v-7l6 3.5-6 3.5Z" /></svg>
                 </span>
-                <span role="img" aria-label="X — link coming soon" title="X — link coming soon" className="group relative flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white/85 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-white/60 hover:bg-white hover:text-[#8d000f]">
+                <span role="img" aria-label="X — link coming soon" title="X — link coming soon" className="group relative flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white/85 shadow-sm transition-[background-color,border-color,color] duration-200 hover:border-white/60 hover:bg-white/20 hover:text-white">
                   <svg className="h-4.5 w-4.5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.4L2.8 2h6.4l4.4 5.8L18.9 2Zm-1.1 17.9h1.7L8.3 4H6.5l11.3 15.9Z" /></svg>
                 </span>
               </div>

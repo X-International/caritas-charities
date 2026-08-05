@@ -220,7 +220,7 @@ export default function Navbar() {
     return isRouteActive(href);
   };
 
-  const getMegaMenuHref = (link: NavLink) => link.href ?? link.megaMenu?.links[0]?.href ?? "/";
+  const getMegaMenuHref = (link: NavLink) => link.href ?? link.megaMenu?.links[0]?.href;
 
   /* Mega-menu hover helpers */
   const openMenu = (name: string) => {
@@ -599,7 +599,8 @@ export default function Navbar() {
                                       </Link>
                                     ) : (
                                       <span
-                                        className="group flex items-start justify-between px-4 py-3 rounded-xl transition-all duration-150 hover:bg-[#b10017] text-gray-800 hover:text-white focus-visible:outline-2 focus-visible:outline-[#b10017]"
+                                        aria-disabled="true"
+                                        className="group flex items-start justify-between px-4 py-3 rounded-xl transition-all duration-150 hover:bg-[#b10017] text-gray-800 hover:text-white focus-visible:outline-2 focus-visible:outline-[#b10017] cursor-pointer"
                                       >
                                         <div className="flex flex-col">
                                           <span className="text-[13px] font-semibold uppercase tracking-wide text-gray-900 group-hover:text-white">
@@ -656,27 +657,50 @@ export default function Navbar() {
                             </p>
                           </div>
 
-                          <Link
-                            href={link.megaMenu.card.cta.href}
-                            onClick={() => setOpenMegaMenu(null)}
-                            className="inline-flex items-center gap-1.5 mt-5 bg-white text-[#b10017] font-bold text-xs px-4.5 py-2.5 rounded-full hover:bg-red-50 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none transition-colors duration-150 w-fit shadow-xs"
-                          >
-                            {link.megaMenu.card.cta.label}
-                            <svg
-                              className="w-3 h-3"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                              aria-hidden="true"
+                          {link.megaMenu.card.cta.href ? (
+                            <Link
+                              href={link.megaMenu.card.cta.href}
+                              onClick={() => setOpenMegaMenu(null)}
+                              className="inline-flex items-center gap-1.5 mt-5 bg-white text-[#b10017] font-bold text-xs px-4.5 py-2.5 rounded-full hover:bg-red-50 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none transition-colors duration-150 w-fit shadow-xs"
                             >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2.5}
-                                d="M9 5l7 7-7 7"
-                              />
-                            </svg>
-                          </Link>
+                              {link.megaMenu.card.cta.label}
+                              <svg
+                                className="w-3 h-3"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2.5}
+                                  d="M9 5l7 7-7 7"
+                                />
+                              </svg>
+                            </Link>
+                          ) : (
+                            <span
+                              aria-disabled="true"
+                              className="inline-flex items-center gap-1.5 mt-5 bg-white text-[#b10017] font-bold text-xs px-4.5 py-2.5 rounded-full w-fit shadow-xs cursor-pointer"
+                            >
+                              {link.megaMenu.card.cta.label}
+                              <svg
+                                className="w-3 h-3"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2.5}
+                                  d="M9 5l7 7-7 7"
+                                />
+                              </svg>
+                            </span>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -834,39 +858,59 @@ export default function Navbar() {
                                 </svg>
                               </Link>
                             ) : (
-                              <button
+                              <span
                                 key={sub.name}
-                                type="button"
-                                onClick={(event) => event.preventDefault()}
-                                className={`w-full flex items-center justify-between text-sm min-h-12 py-3.5 px-4 rounded-xl transition-all ${
-                                  "text-gray-800 font-medium cursor-default"
-                                }`}
+                                aria-disabled="true"
+                                className="w-full flex items-center justify-between text-sm min-h-12 py-3.5 px-4 rounded-xl transition-all text-gray-800 font-medium cursor-pointer"
                               >
                                 <span className="uppercase tracking-wide">{sub.name}</span>
-                              </button>
+                              </span>
                             );
                           })}
-                          <Link
-                            href={getMegaMenuHref(link)}
-                            onClick={closeMobileMenu}
-                            className="inline-flex items-center gap-1.5 mt-2 ml-2 py-2 text-xs font-bold text-[#b10017] hover:underline underline-offset-2 uppercase tracking-wide"
-                          >
-                            View all {link.name}
-                            <svg
-                              className="w-3 h-3"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                              aria-hidden="true"
+                          {getMegaMenuHref(link) ? (
+                            <Link
+                              href={getMegaMenuHref(link)!}
+                              onClick={closeMobileMenu}
+                              className="inline-flex items-center gap-1.5 mt-2 ml-2 py-2 text-xs font-bold text-[#b10017] hover:underline underline-offset-2 uppercase tracking-wide"
                             >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2.5}
-                                d="M9 5l7 7-7 7"
-                              />
-                            </svg>
-                          </Link>
+                              View all {link.name}
+                              <svg
+                                className="w-3 h-3"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2.5}
+                                  d="M9 5l7 7-7 7"
+                                />
+                              </svg>
+                            </Link>
+                          ) : (
+                            <span
+                              aria-disabled="true"
+                              className="inline-flex items-center gap-1.5 mt-2 ml-2 py-2 text-xs font-bold text-[#b10017] uppercase tracking-wide cursor-pointer"
+                            >
+                              View all {link.name}
+                              <svg
+                                className="w-3 h-3"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2.5}
+                                  d="M9 5l7 7-7 7"
+                                />
+                              </svg>
+                            </span>
+                          )}
                         </div>
                       )}
                     </div>
