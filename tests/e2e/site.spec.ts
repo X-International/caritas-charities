@@ -32,8 +32,9 @@ test.describe("public site journeys", () => {
   test("homepage exposes primary donation and programme journeys", async ({ page }) => {
     await page.goto("/");
     await expect(page).toHaveTitle(/Caritas Kampala/i);
-    await expect(page.getByRole("link", { name: /donate now/i }).first()).toBeVisible();
-    await expect(page.getByRole("link", { name: /see how to help/i })).toBeVisible();
+    await expect(page.getByRole("heading", { name: /serving with compassion/i })).toBeVisible();
+    await expect(page.getByRole("link", { name: /donate today/i })).toBeVisible();
+    await expect(page.getByRole("button", { name: /next slide/i })).toBeVisible();
   });
 
   test("news search returns matching content and a useful empty state", async ({ page }) => {

@@ -87,7 +87,11 @@ export default function HeroSlider() {
   };
 
   const handleTouchEnd = () => {
-    if (!touchStartX.current || !touchEndX.current) return;
+    if (touchStartX.current === null || touchEndX.current === null) {
+      touchStartX.current = null;
+      touchEndX.current = null;
+      return;
+    }
     const distance = touchStartX.current - touchEndX.current;
     const minSwipeDistance = 50;
 
@@ -99,6 +103,16 @@ export default function HeroSlider() {
 
     touchStartX.current = null;
     touchEndX.current = null;
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      prevSlide();
+    } else if (e.key === "ArrowRight") {
+      e.preventDefault();
+      nextSlide();
+    }
   };
 
   return (
@@ -118,7 +132,8 @@ export default function HeroSlider() {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
-        className="hero-slider relative w-full h-[clamp(420px,52vh,720px)] lg:h-[clamp(520px,62vh,880px)] xl:h-[clamp(580px,68vh,1000px)] 2xl:h-[clamp(580px,60vh,850px)] overflow-hidden bg-black text-white rounded-2xl sm:rounded-3xl shadow-2xl focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-[-4px] group"
+        onTouchCancel={handleTouchEnd}
+        className="hero-slider relative w-full h-[clamp(420px,52vh,720px)] lg:h-[clamp(520px,62vh,880px)] xl:h-[clamp(580px,68vh,1000px)] 2xl:h-[clamp(580px,60vh,850px)] overflow-hidden touch-pan-y select-none bg-black text-white rounded-2xl sm:rounded-3xl shadow-2xl focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-[-4px] group"
       >
         {/* Background Image Carousel */}
         {slides.map((slide, index) => {
@@ -166,6 +181,7 @@ export default function HeroSlider() {
             <div className="pt-3">
               <a
                 href={slides[currentIndex].buttonLink}
+                onKeyDown={handleKeyDown}
                 onClick={() => trackEvent(ANALYTICS_EVENTS.ctaClick, {
                   placement: "hero",
                   slide: slides[currentIndex].id,
@@ -181,9 +197,11 @@ export default function HeroSlider() {
 
         {/* Navigation Arrows */}
         <button
+          type="button"
           onClick={prevSlide}
+          onKeyDown={handleKeyDown}
           aria-label="Previous Slide"
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-[#b10017] focus-visible:bg-[#b10017] focus-visible:outline-2 focus-visible:outline-white text-white flex items-center justify-center transition-all backdrop-blur-md border border-white/10 shadow-lg cursor-pointer opacity-100 sm:opacity-0 sm:group-hover:opacity-100 focus-visible:opacity-100"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-[#b10017] focus-visible:bg-[#b10017] focus-visible:outline-2 focus-visible:outline-white text-white flex items-center justify-center transition-[opacity,background-color] backdrop-blur-md border border-white/10 shadow-lg cursor-pointer opacity-100 sm:opacity-0 sm:group-hover:opacity-100 focus-visible:opacity-100"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
@@ -191,9 +209,11 @@ export default function HeroSlider() {
         </button>
 
         <button
+          type="button"
           onClick={nextSlide}
+          onKeyDown={handleKeyDown}
           aria-label="Next Slide"
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-[#b10017] focus-visible:bg-[#b10017] focus-visible:outline-2 focus-visible:outline-white text-white flex items-center justify-center transition-all backdrop-blur-md border border-white/10 shadow-lg cursor-pointer opacity-100 sm:opacity-0 sm:group-hover:opacity-100 focus-visible:opacity-100"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-[#b10017] focus-visible:bg-[#b10017] focus-visible:outline-2 focus-visible:outline-white text-white flex items-center justify-center transition-[opacity,background-color] backdrop-blur-md border border-white/10 shadow-lg cursor-pointer opacity-100 sm:opacity-0 sm:group-hover:opacity-100 focus-visible:opacity-100"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
@@ -204,7 +224,9 @@ export default function HeroSlider() {
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center space-x-3 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full border border-white/15 shadow-xl">
           {/* Pause/Play Toggle Button */}
           <button
+            type="button"
             onClick={() => setIsPaused(!isPaused)}
+            onKeyDown={handleKeyDown}
             aria-label={isPaused ? "Play slide animation" : "Pause slide animation"}
             className="text-white hover:text-[#b10017] focus-visible:outline-2 focus-visible:outline-white rounded cursor-pointer p-0.5"
           >
@@ -226,10 +248,12 @@ export default function HeroSlider() {
             {slides.map((slide, index) => (
               <button
                 key={slide.id}
+                type="button"
                 onClick={() => setCurrentIndex(index)}
+                onKeyDown={handleKeyDown}
                 aria-current={index === currentIndex ? "true" : undefined}
                 aria-label={`Go to slide ${index + 1}: ${slide.title}`}
-                className={`h-2.5 rounded-full transition-all cursor-pointer focus-visible:outline-2 focus-visible:outline-white ${
+                className={`h-2.5 rounded-full transition-[width,background-color] cursor-pointer focus-visible:outline-2 focus-visible:outline-white ${
                   index === currentIndex
                     ? "w-8 bg-[#b10017]"
                     : "w-2.5 bg-white/60 hover:bg-white"
