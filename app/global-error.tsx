@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 export default function GlobalError({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
   useEffect(() => {
-    console.error("Fatal application error", { digest: error.digest });
+    console.error(JSON.stringify({ event: "frontend.global_error", digest: error.digest ?? null, timestamp: new Date().toISOString() }));
   }, [error.digest]);
 
   return (

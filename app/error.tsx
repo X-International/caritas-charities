@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 export default function Error({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
   useEffect(() => {
-    console.error("Unexpected application error", { digest: error.digest });
+    console.error(JSON.stringify({ event: "frontend.route_error", digest: error.digest ?? null, timestamp: new Date().toISOString() }));
   }, [error.digest]);
 
   return (
