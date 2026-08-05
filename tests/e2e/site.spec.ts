@@ -48,6 +48,13 @@ test.describe("public site journeys", () => {
     await expect(page.getByRole("heading", { name: /no matching updates/i })).toBeVisible();
   });
 
+  test("current appeal page exposes its support actions", async ({ page }) => {
+    await page.goto("/current-appeal");
+    await expect(page.getByRole("heading", { name: /emergency appeal for kotido and moroto/i })).toBeVisible();
+    await expect(page.getByRole("link", { name: /support this appeal by donating/i })).toBeVisible();
+    await expect(page.getByRole("link", { name: /message the appeal team on whatsapp/i })).toBeVisible();
+  });
+
   test("contact form reports a provider failure without losing user trust", async ({ page }) => {
     await page.route("**/api/contact", async (route) => {
       await route.fulfill({ status: 503, contentType: "application/json", body: JSON.stringify({ error: "Contact service is not configured" }) });

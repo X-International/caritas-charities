@@ -17,7 +17,7 @@ export default function CurrentAppealPage() {
     <div className="min-h-screen flex flex-col bg-white text-gray-900 font-sans">
       <Navbar />
 
-      <main id="main-content" className="flex-1">
+      <main id="main-content" tabIndex={-1} className="flex-1">
         {/* Main Container */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 lg:py-12">
           {/* Breadcrumb */}
@@ -28,7 +28,7 @@ export default function CurrentAppealPage() {
                   HOME
                 </Link>
               </li>
-              <li className="text-gray-400">/</li>
+              <li aria-hidden="true" className="text-gray-400">/</li>
               <li className="text-gray-600" aria-current="page">
                 CURRENT APPEAL
               </li>
@@ -54,8 +54,8 @@ export default function CurrentAppealPage() {
               <hr className="border-gray-200" />
 
               {/* The Situation */}
-              <section className="space-y-4">
-                <h2 className="text-xl sm:text-2xl font-bold font-serif text-[#b10017]">
+              <section aria-labelledby="situation-heading" className="space-y-4">
+                <h2 id="situation-heading" className="text-xl sm:text-2xl font-bold font-serif text-[#b10017] text-balance">
                   The Situation
                 </h2>
                 <div className="space-y-4 text-gray-700 text-[15px] sm:text-base lg:text-lg leading-relaxed font-normal">
@@ -69,8 +69,8 @@ export default function CurrentAppealPage() {
               </section>
 
               {/* Our Response */}
-              <section className="space-y-4 pt-1 sm:pt-2">
-                <h2 className="text-xl sm:text-2xl font-bold font-serif text-[#b10017]">
+              <section aria-labelledby="response-heading" className="space-y-4 pt-1 sm:pt-2">
+                <h2 id="response-heading" className="text-xl sm:text-2xl font-bold font-serif text-[#b10017] text-balance">
                   Our Response
                 </h2>
                 <div className="space-y-4 text-gray-700 text-[15px] sm:text-base lg:text-lg leading-relaxed font-normal">
@@ -84,27 +84,27 @@ export default function CurrentAppealPage() {
 
                 {/* Food Items Card (Beige style) */}
                 <div className="bg-[#f2ebe3] p-6 sm:p-8 rounded-2xl space-y-5">
-                  <h3 className="text-xl sm:text-2xl font-bold font-serif text-[#b10017]">
+                  <h3 className="text-xl sm:text-2xl font-bold font-serif text-[#b10017] text-balance">
                     We are focused on food and basic household essentials, including:
                   </h3>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6 text-[#b10017] text-[15px] sm:text-base lg:text-lg font-medium">
                     <li className="flex items-center gap-3">
-                      <span className="w-2 h-2 rounded-full bg-[#b10017]" /> Rice
+                      <span aria-hidden="true" className="w-2 h-2 rounded-full bg-[#b10017]" /> Rice
                     </li>
                     <li className="flex items-center gap-3">
-                      <span className="w-2 h-2 rounded-full bg-[#b10017]" /> Posho
+                      <span aria-hidden="true" className="w-2 h-2 rounded-full bg-[#b10017]" /> Posho
                     </li>
                     <li className="flex items-center gap-3">
-                      <span className="w-2 h-2 rounded-full bg-[#b10017]" /> Maize
+                      <span aria-hidden="true" className="w-2 h-2 rounded-full bg-[#b10017]" /> Maize
                     </li>
                     <li className="flex items-center gap-3">
-                      <span className="w-2 h-2 rounded-full bg-[#b10017]" /> Beans
+                      <span aria-hidden="true" className="w-2 h-2 rounded-full bg-[#b10017]" /> Beans
                     </li>
                     <li className="flex items-center gap-3">
-                      <span className="w-2 h-2 rounded-full bg-[#b10017]" /> Sugar
+                      <span aria-hidden="true" className="w-2 h-2 rounded-full bg-[#b10017]" /> Sugar
                     </li>
                     <li className="flex items-center gap-3">
-                      <span className="w-2 h-2 rounded-full bg-[#b10017]" /> Cooking oil
+                      <span aria-hidden="true" className="w-2 h-2 rounded-full bg-[#b10017]" /> Cooking oil
                     </li>
                   </ul>
                 </div>
@@ -115,8 +115,8 @@ export default function CurrentAppealPage() {
               </section>
 
               {/* Open to Everyone */}
-              <section className="space-y-4 pt-1 sm:pt-2">
-                <h2 className="text-xl sm:text-2xl font-bold font-serif text-[#b10017]">
+              <section aria-labelledby="open-to-everyone-heading" className="space-y-4 pt-1 sm:pt-2">
+                <h2 id="open-to-everyone-heading" className="text-xl sm:text-2xl font-bold font-serif text-[#b10017] text-balance">
                   Open to Everyone
                 </h2>
                 <p className="text-gray-700 text-[15px] sm:text-base lg:text-lg leading-relaxed font-normal">
@@ -141,7 +141,7 @@ export default function CurrentAppealPage() {
             </div>
 
             {/* Right Column: How to Help & Direct Contact Cards (Sticky Sidebar) */}
-            <div className="lg:col-span-4 space-y-5 sm:space-y-6 lg:sticky lg:top-28">
+            <aside aria-label="How to support this appeal" className="lg:col-span-4 space-y-5 sm:space-y-6 lg:sticky lg:top-28">
               {/* Card 1: Collection Point & Address */}
               <div className="bg-[#b10017] text-white p-6 sm:p-7 rounded-2xl sm:rounded-3xl space-y-5">
                 <div>
@@ -162,7 +162,8 @@ export default function CurrentAppealPage() {
                       href="https://www.caritaskampalacharities.me/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:underline underline-offset-2 text-white"
+                      aria-label="Visit the Caritas Kampala website (opens in a new tab)"
+                      className="text-white hover:underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
                     >
                       Caritas Kampala Office
                     </a>
@@ -194,7 +195,7 @@ export default function CurrentAppealPage() {
                   {/* Item 1: Donation Hotline */}
                   <a
                     href="tel:+256762506906"
-                    className="flex items-center justify-between bg-white hover:bg-gray-100 p-3 sm:p-3.5 rounded-2xl transition-colors border border-gray-100"
+                    className="flex items-center justify-between bg-white hover:bg-gray-100 p-3 sm:p-3.5 rounded-2xl transition-colors motion-reduce:transition-none border border-gray-100 focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-2"
                   >
                     <span className="font-bold text-gray-900 text-xs sm:text-sm">Donation Hotline</span>
                     <span className="font-mono text-[#b10017] text-xs sm:text-sm font-bold">+256 762 506 906</span>
@@ -205,7 +206,8 @@ export default function CurrentAppealPage() {
                     href="https://wa.me/256792176443"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between bg-white hover:bg-gray-100 p-3 sm:p-3.5 rounded-2xl transition-colors border border-gray-100"
+                    aria-label="Message the appeal team on WhatsApp at +256 792 176 443 (opens in a new tab)"
+                    className="flex items-center justify-between bg-white hover:bg-gray-100 p-3 sm:p-3.5 rounded-2xl transition-colors motion-reduce:transition-none border border-gray-100 focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-2"
                   >
                     <span className="font-bold text-gray-900 text-xs sm:text-sm">WhatsApp</span>
                     <span className="font-mono text-[#b10017] text-xs sm:text-sm font-bold">+256 792 176 443</span>
@@ -214,7 +216,7 @@ export default function CurrentAppealPage() {
                   {/* Item 3: Main Office */}
                   <a
                     href="tel:+256392176443"
-                    className="flex items-center justify-between bg-white hover:bg-gray-100 p-3 sm:p-3.5 rounded-2xl transition-colors border border-gray-100"
+                    className="flex items-center justify-between bg-white hover:bg-gray-100 p-3 sm:p-3.5 rounded-2xl transition-colors motion-reduce:transition-none border border-gray-100 focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-2"
                   >
                     <span className="font-bold text-gray-900 text-xs sm:text-sm">Main Office</span>
                     <span className="font-mono text-[#b10017] text-xs sm:text-sm font-bold">+256 392 176 443</span>
@@ -226,7 +228,7 @@ export default function CurrentAppealPage() {
                   <Link
                     href="/donate"
                     aria-label="Support this appeal by donating"
-                    className="block w-full text-center bg-[#b10017] text-white hover:bg-transparent hover:text-[#b10017] border-2 border-[#b10017] text-xs sm:text-sm font-bold px-6 py-3.5 rounded-full tracking-wider uppercase transition-all duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-2"
+                    className="block w-full text-center bg-[#b10017] text-white hover:bg-transparent hover:text-[#b10017] border-2 border-[#b10017] text-xs sm:text-sm font-bold px-6 py-3.5 rounded-full tracking-wider uppercase transition-colors duration-200 motion-reduce:transition-none cursor-pointer focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-2"
                   >
                     SUPPORT THIS APPEAL
                   </Link>
@@ -236,7 +238,7 @@ export default function CurrentAppealPage() {
                 <div className="pt-2 text-center space-y-3 border-t border-gray-200">
                   <div className="flex items-center justify-center gap-3">
                     <div className="h-px bg-gray-200 flex-1" />
-                    <svg className="w-4 h-4 text-[#b10017] fill-current" viewBox="0 0 24 24">
+                    <svg aria-hidden="true" className="w-4 h-4 text-[#b10017] fill-current" viewBox="0 0 24 24">
                       <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                     </svg>
                     <div className="h-px bg-gray-200 flex-1" />
@@ -246,7 +248,7 @@ export default function CurrentAppealPage() {
                   </p>
                 </div>
               </div>
-            </div>
+            </aside>
           </div>
 
           <AppealCalloutBanner />
