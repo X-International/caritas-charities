@@ -4,6 +4,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import LocationMap from "@/components/Map";
 import ContactHero from "@/components/ContactHero";
 import ContactForm from "@/components/ContactForm";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata = {
   title: "Contact Us | Caritas Kampala",
@@ -11,8 +12,7 @@ export const metadata = {
     "Reach out to Caritas Kampala Charities Department for donations, relief enquiries, and office directions.",
 };
 
-const DIRECTIONS_URL =
-  "https://www.google.com/maps/dir/?api=1&destination=0.299230886593831,32.593433862503";
+const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${siteConfig.office.coordinates.latitude},${siteConfig.office.coordinates.longitude}`;
 
 export default function ContactUsPage() {
   return (

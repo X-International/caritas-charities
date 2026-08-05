@@ -3,9 +3,10 @@
 import Image from "next/image";
 import { ArrowRight, Check, Copy, Heart, Landmark, Smartphone } from "lucide-react";
 import { useEffect, useState } from "react";
+import { siteConfig } from "@/lib/site-config";
 
-const BANK_ACCOUNT = "3010309657";
-const MOBILE_NUMBERS = ["+256 762 506 906", "+256 792 176 443"];
+const BANK_ACCOUNT = siteConfig.giving.bank.accountNumber;
+const MOBILE_NUMBERS = [siteConfig.office.phones.appeal, siteConfig.office.phones.appealAlternate];
 
 export default function OtherWaysToSupport() {
   const [copiedKey, setCopiedKey] = useState<string | null>(null);
