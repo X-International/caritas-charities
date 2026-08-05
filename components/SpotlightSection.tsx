@@ -122,6 +122,7 @@ export default function SpotlightSection() {
                 src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=1"
                 title="Caritas Video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                sandbox="allow-scripts allow-same-origin allow-presentation"
                 allowFullScreen
               />
             </div>

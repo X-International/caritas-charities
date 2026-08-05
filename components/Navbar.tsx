@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 /* ─── Types ─────────────────────────────────────────────── */
 type SubLink = { name: string; href?: string; desc?: string };
@@ -91,6 +91,7 @@ const navLinks: NavLink[] = [
 /* ─── Component ──────────────────────────────────────────── */
 export default function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [isMobileMenuOpen,  setIsMobileMenuOpen]  = useState(false);
   const [isSearchOpen,      setIsSearchOpen]      = useState(false);
   const [isShareModalOpen,  setIsShareModalOpen]  = useState(false);
@@ -229,7 +230,7 @@ export default function Navbar() {
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!searchQuery.trim()) return;
-    window.location.href = `/resources/news?search=${encodeURIComponent(searchQuery.trim())}`;
+    router.push(`/resources/news?search=${encodeURIComponent(searchQuery.trim())}`);
     setIsSearchOpen(false);
   };
 
