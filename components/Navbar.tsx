@@ -253,27 +253,31 @@ export default function Navbar() {
         }`}
       >
         {/* ── Top Utility Bar ─────────────────────────────── */}
-        <div className="bg-[#141414] text-gray-200 text-xs py-2 border-b border-white/5">
-          <div className="site-container flex justify-center lg:grid lg:grid-cols-[1fr_auto] lg:items-center lg:gap-8">
-            <div className="flex items-center space-x-2 text-xs min-w-0 justify-center lg:justify-start">
+        <div
+          className="bg-[#141414] text-gray-200 text-[11px] sm:text-xs py-1.5 sm:py-2 border-b border-white/10 transition-all duration-200"
+          role="region"
+          aria-label="Top utility bar"
+        >
+          <div className="site-container flex items-center justify-between gap-3 lg:gap-8">
+            <div className="flex items-center gap-2 text-[11px] sm:text-xs min-w-0 flex-wrap sm:flex-nowrap">
               <strong className="text-white font-bold shrink-0 font-sans tracking-wide">
                 Part of Caritas Kampala
               </strong>
-              <span className="text-gray-500 shrink-0" aria-hidden="true">
+              <span className="text-gray-400 shrink-0 select-none" aria-hidden="true">
                 |
               </span>
               <a
                 href="https://www.caritaskampala.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group text-gray-300 hover:text-white focus-visible:text-white focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 transition-colors flex items-center shrink-0 no-underline rounded-xs"
+                className="group text-gray-300 hover:text-white focus-visible:text-white focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 transition-colors inline-flex items-center gap-1 shrink-0 no-underline rounded-sm py-1 px-1.5 -my-1 hover:bg-white/10 active:bg-white/15"
                 aria-label="Visit Caritas Kampala Main Website (opens in a new tab)"
               >
-                <span className="group-hover:underline underline-offset-2 decoration-gray-400 group-hover:decoration-white font-sans">
+                <span className="group-hover:underline underline-offset-2 decoration-gray-400 group-hover:decoration-white font-sans font-medium">
                   Main Website
                 </span>
                 <svg
-                  className="w-3 h-3 ml-1 shrink-0 text-gray-400 group-hover:text-white inline-block select-none transition-colors"
+                  className="w-3 h-3 text-gray-400 group-hover:text-white inline-block select-none transition-colors"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -289,7 +293,7 @@ export default function Navbar() {
               </a>
             </div>
 
-            <div className="hidden lg:flex items-center space-x-5 shrink-0 justify-end">
+            <div className="flex items-center gap-1.5 sm:gap-3 shrink-0 justify-end">
               {/* Share Button */}
               <button
                 ref={shareTriggerRef}
@@ -298,24 +302,19 @@ export default function Navbar() {
                   setIsShareModalOpen(true);
                   trackEvent(ANALYTICS_EVENTS.shareOpen, { placement: "utility_bar" });
                 }}
-                className="flex items-center space-x-1.5 hover:text-white text-gray-200 transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 rounded-xs"
+                className="inline-flex items-center justify-center gap-1.5 text-gray-300 hover:text-white hover:bg-white/10 active:bg-white/15 focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 transition-colors cursor-pointer rounded-md p-1.5 sm:px-2.5 sm:py-1 min-w-[32px] min-h-[32px]"
                 aria-label="Open Share Modal"
                 aria-haspopup="dialog"
                 aria-expanded={isShareModalOpen}
               >
-                <span
-                  className="inline-flex items-center justify-center bg-[#e0ded3] text-[#141414] rounded-[3px] w-4 h-4 shrink-0 font-bold"
+                <svg
+                  className="w-3.5 h-3.5 fill-current text-gray-300 shrink-0"
+                  viewBox="0 0 24 24"
                   aria-hidden="true"
                 >
-                  <svg
-                    className="w-2.5 h-2.5 fill-current"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z" />
-                  </svg>
-                </span>
-                <span className="text-[10px] sm:text-[11px] tracking-widest font-semibold uppercase font-sans">
+                  <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z" />
+                </svg>
+                <span className="hidden sm:inline text-[10px] sm:text-[11px] tracking-widest font-semibold uppercase font-sans">
                   SHARE
                 </span>
               </button>
@@ -331,13 +330,17 @@ export default function Navbar() {
                       setIsSearchOpen(true);
                     }
                   }}
-                  className="flex items-center space-x-1.5 hover:text-white text-gray-200 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 cursor-pointer rounded-xs"
+                  className={`inline-flex items-center justify-center gap-1.5 transition-colors cursor-pointer rounded-md p-1.5 sm:px-2.5 sm:py-1 min-w-[32px] min-h-[32px] focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 ${
+                    isSearchOpen
+                      ? "bg-[#b10017] text-white shadow-xs"
+                      : "text-gray-300 hover:text-white hover:bg-white/10 active:bg-white/15"
+                  }`}
                   aria-label={isSearchOpen ? "Close search" : "Open search"}
                   aria-expanded={isSearchOpen}
                   aria-controls="navbar-search-panel"
                 >
                   <svg
-                    className="w-3.5 h-3.5 text-gray-300"
+                    className="w-3.5 h-3.5 shrink-0"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -350,7 +353,7 @@ export default function Navbar() {
                       d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                     />
                   </svg>
-                  <span className="hidden md:inline text-[10px] sm:text-[11px] tracking-widest font-semibold uppercase font-sans">
+                  <span className="hidden sm:inline text-[10px] sm:text-[11px] tracking-widest font-semibold uppercase font-sans">
                     Search
                   </span>
                 </button>
