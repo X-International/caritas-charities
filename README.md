@@ -1,101 +1,168 @@
-# Caritas Kampala
+# Caritas Kampala (Charities Office Website)
 
-The public website for Caritas Kampala. It presents the organisation’s mission, programmes, appeals, news, gallery, FAQs, annual reports, contact details, and giving guidance.
+The official public web platform for **Caritas Kampala, Charity Office** — the socio-pastoral arm of the Roman Catholic Archdiocese of Kampala. The website presents the organization's mission, emergency appeals, development programmes, news updates, photo galleries, annual reports, contact details, and guidance for donor support and volunteering.
 
-This is a Next.js App Router site with mostly static content, client-side galleries/maps, and a small server route that forwards contact enquiries to a configured provider.
+Built with **Next.js 16 (App Router)**, **React 19**, **TypeScript**, and **Tailwind CSS 4**, the platform combines static site generation for performance and SEO with interactive client components and serverless API handlers.
 
-## Stack
+---
 
-- Next.js 16 with React 19 and TypeScript
-- Tailwind CSS 4
-- Mapbox (with Google Maps fallback) for location content
-- Playwright for browser smoke tests
-- Vercel Analytics and Speed Insights
+## 🌟 Key Features
 
-## Prerequisites
+- **Programmes & Appeals:** Showcases current humanitarian appeals, sustainable agriculture, education, healthcare, and community empowerment initiatives.
+- **Interactive News & Lightbox Gallery:** Searchable news directory with full article views and a responsive image gallery lightbox using `yet-another-react-lightbox`.
+- **Interactive Location Mapping:** Mapbox GL integration with Google Maps fallback for displaying organizational centers and target service areas.
+- **Secure Contact Pipeline:** Contact form powered by a Next.js Server Route with same-origin checking, input validation, honeypot anti-spam, and in-memory rate limiting.
+- **Automated SEO & Accessibility:** Dynamic sitemap generation via `next-sitemap`, accessibility-first components (`eslint-plugin-jsx-a11y`), semantic HTML structure, and strict Content Security Policy (CSP) headers.
+- **E2E Smoke Testing:** Comprehensive desktop and mobile cross-browser test suite powered by Playwright.
 
-- Node.js 22 or newer
-- npm
+---
 
-## Local setup
+## 🛠️ Tech Stack
 
-```bash
-npm ci
-cp .env.example .env.local
-npm run dev
-```
+- **Framework:** Next.js 16 (App Router)
+- **UI & Styling:** React 19, Tailwind CSS 4, Lucide React
+- **Language:** TypeScript 5
+- **Maps:** Mapbox GL (`mapbox-gl`, `react-map-gl`) with Google Maps API fallback
+- **Media & Lightbox:** Yet Another React Lightbox
+- **Testing:** Playwright (`@playwright/test`)
+- **Analytics & Observability:** Vercel Analytics (`@vercel/analytics`), Vercel Speed Insights (`@vercel/speed-insights`)
+- **Sitemap Generator:** `next-sitemap`
 
-Open [http://localhost:3000](http://localhost:3000). The site can run without map credentials; map sections will use their configured fallback or graceful unavailable state. The contact form requires `CONTACT_FORM_ENDPOINT` to deliver messages.
+---
 
-Never commit `.env.local` or real credentials. Browser-visible variables must still be restricted by production origin and provider quota.
+## 📋 Prerequisites
 
-## Configuration
+- **Node.js**: v22.0.0 or higher
+- **Package Manager**: npm v10.0.0 or higher
 
-| Variable | Required | Used for |
+---
+
+## 🚀 Local Setup & Development
+
+1. **Clone the repository and install dependencies:**
+   ```bash
+   git clone <repository-url>
+   cd caritas-charities
+   npm ci
+   ```
+
+2. **Set up environment variables:**
+   ```bash
+   cp .env.example .env.local
+   ```
+   *(Optionally edit `.env.local` to add map credentials or contact endpoint URL)*
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Access the application:**
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+> [!NOTE]
+> The site runs gracefully without map credentials. If Mapbox or Google Maps credentials are absent, location sections fallback to an informative fallback state.
+
+---
+
+## ⚙️ Environment Configuration
+
+Configuration keys are managed via `.env.local` for local development and hosting provider environment variables in deployment environments.
+
+| Variable | Required | Type | Description |
+| --- | --- | --- | --- |
+| `CONTACT_FORM_ENDPOINT` | For live messaging | Server-only | HTTP POST endpoint to forward validated contact form submissions to. Must **not** begin with `NEXT_PUBLIC_`. |
+| `NEXT_PUBLIC_MAPBOX_TOKEN` | Optional | Browser-public | Origin-restricted Mapbox access token for interactive map rendering. |
+| `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` | Optional | Browser-public | Origin-restricted Google Maps API key for the legacy map fallback component. |
+
+> [!CAUTION]
+> Never commit `.env.local` or secret keys to source control. Ensure browser-public variables (`NEXT_PUBLIC_*`) are restricted by production HTTP origin and provider API quota.
+
+---
+
+## 💻 Available Scripts
+
+| Script | Command | Description |
 | --- | --- | --- |
-| `CONTACT_FORM_ENDPOINT` | For live contact delivery | Server-only endpoint receiving validated contact submissions. Do not prefix it with `NEXT_PUBLIC_`. |
-| `NEXT_PUBLIC_MAPBOX_TOKEN` | Optional | Origin-restricted Mapbox browser token. |
-| `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` | Optional | Origin-restricted Google Maps key for the legacy fallback component. |
+| `npm run dev` | `next dev --webpack` | Starts the Next.js development server with Webpack. |
+| `npm run build` | `next build --webpack` | Builds the application for production and generates `sitemap.xml` via `postbuild`. |
+| `npm run start` | `next start` | Serves the production build locally. |
+| `npm run lint` | `eslint` | Runs ESLint to check for code quality and accessibility issues. |
+| `npx tsc --noEmit` | `npx tsc --noEmit` | Executes TypeScript type checking across the project without emitting output files. |
+| `npm run test:e2e` | `playwright test` | Executes Playwright desktop and mobile end-to-end smoke test suite. |
 
-Use `.env.example` as the configuration contract. Configure Preview and Production independently in the hosting provider’s encrypted environment store. Preview should use a test endpoint or intentionally leave contact delivery disabled.
+---
 
-## Common commands
+## 🗺️ Main Routes & Site Structure
 
-```bash
-npm run dev          # Start local development
-npm run lint         # Run ESLint
-npx tsc --noEmit     # Type-check the project
-npm run build        # Create a production build and sitemap
-npm run start        # Serve the production build locally
-npm run test:e2e     # Run Playwright desktop/mobile smoke tests
+```
+├── /                                   # Homepage with hero, appeals, programmes, and updates
+├── /about-us                           # About Caritas Kampala overview
+│   ├── /about-us/our-story             # Organizational history & mission background
+│   ├── /about-us/our-team              # Leadership & staff directory
+│   └── /about-us/chaconet-partners     # Partner organization network
+├── /our-programmes                     # Core thematic development & aid programmes
+├── /current-appeal                     # Active emergency & humanitarian appeal highlights
+├── /get-involved                       # Volunteering, partnerships, and community involvement
+├── /donate                             # Guidance on giving, bank details, and verified donor options
+├── /resources                          # Resources index
+│   ├── /resources/news                 # Searchable news repository
+│   ├── /resources/news/[slug]          # Individual news articles
+│   ├── /resources/gallery              # Filterable photo gallery with lightbox viewer
+│   ├── /resources/faqs                 # Frequently asked questions
+│   └── /resources/annual-reports       # Annual reporting and downloadable documents
+├── /contact-us                         # Office location, map, and contact enquiry form
+├── /privacy-policy                     # Privacy statement and data handling policy
+├── /terms-of-use                       # Terms of use and legal disclaimer
+└── /api                                # Server API Routes
+    ├── POST /api/contact               # Contact form validation & external dispatch handler
+    └── GET /api/health                 # Health check probe endpoint for deployment monitoring
 ```
 
-## Main routes
+---
 
-- `/` — homepage
-- `/about-us`, `/about-us/our-story`, `/about-us/our-team`, `/about-us/chaconet-partners` — organisation information
-- `/our-programmes` and `/current-appeal` — programmes and current appeal
-- `/donate` — giving guidance and verified destination links
-- `/resources/news` and `/resources/news/[slug]` — searchable news and article pages
-- `/resources/gallery` — filterable gallery and lightbox
-- `/resources/faqs` and `/resources/annual-reports` — supporting resources
-- `/contact-us` — contact details, map, and enquiry form
-- `/api/contact` — validated contact forwarding endpoint
-- `/api/health` — no-store health check for deployment probes
+## 🔒 Contact Submission & Security Model
 
-## Contact submission behavior
+The contact form dispatches POST requests to `/api/contact`. The endpoint enforces strict operational & security boundaries:
 
-The browser submits JSON to `POST /api/contact`. The route enforces same-origin requests, JSON content type, a 16 KB body limit, field validation, a honeypot, and a process-local rate limit. It forwards valid submissions to `CONTACT_FORM_ENDPOINT` with an eight-second timeout and returns a request ID for support diagnostics.
+- **Origin Enforcement:** Verifies same-origin request header.
+- **Payload Constraints:** Enforces `application/json` Content-Type and a strict 16 KB body payload limit.
+- **Input Validation & Sanitization:** Validates required contact fields.
+- **Anti-Spam Honeypot:** Rejects bot submissions populating hidden honeypot fields.
+- **Rate Limiting:** Employs an in-memory rate limiter (10 submissions per minute per IP address).
+- **Forwarding Pipeline:** Dispatches validated enquiries to `CONTACT_FORM_ENDPOINT` with an 8-second timeout, returning a unique request ID for diagnostic logging.
 
-The endpoint is an external delivery boundary, not a durable inbox: submissions are not stored in this application. Before running multiple instances, move rate limiting to an edge/WAF or shared store. Before adding retries or asynchronous delivery, add durable storage and idempotency.
+---
 
-## CI and deployment
+## 📚 Technical Documentation Map
 
-Pull requests are expected to pass linting, TypeScript, the production build, and desktop/mobile Playwright checks. See [DEPLOYMENT.md](DEPLOYMENT.md) for environment promotion, rollback, health checks, and production monitoring.
+For detailed architectural decisions, security models, and code quality audits, refer to the project documentation specs:
 
-## Documentation map
+| Specification | Description |
+| --- | --- |
+| [ARCHITECTURE.md](ARCHITECTURE.md) | Domain boundaries, component design, and target system architecture. |
+| [TESTING.md](TESTING.md) | Test strategy, Playwright e2e configuration, and coverage priorities. |
+| [DEPLOYMENT.md](DEPLOYMENT.md) | Environment setup, CI/CD pipeline, releases, and rollbacks. |
+| [OBSERVABILITY.md](OBSERVABILITY.md) | Request tracing, diagnostic IDs, error handling, and Vercel analytics. |
+| [API_REVIEW.md](API_REVIEW.md) | Analysis of endpoint security, payloads, and backend interface design. |
+| [RELIABILITY_REVIEW.md](RELIABILITY_REVIEW.md) | System resilience, fault isolation, and timeout strategies. |
+| [AUTH_SECURITY_REVIEW.md](AUTH_SECURITY_REVIEW.md) | Security posture, identity, and access management evaluation. |
+| [ACCESSIBILITY_REVIEW.md](ACCESSIBILITY_REVIEW.md) | WCAG accessibility findings, keyboard navigation, and ARIA support. |
+| [PERFORMANCE_REVIEW.md](PERFORMANCE_REVIEW.md) | Web Vitals performance benchmarks and optimization strategies. |
+| [FRONTEND_REVIEW.md](FRONTEND_REVIEW.md) | Design system, visual UX, and component structure audit. |
+| [CODE_QUALITY_REVIEW.md](CODE_QUALITY_REVIEW.md) | Maintainability, code patterns, and linting guidelines. |
+| [STATE_MANAGEMENT_REVIEW.md](STATE_MANAGEMENT_REVIEW.md) | State scope boundaries and data fetching patterns. |
+| [ANALYTICS.md](ANALYTICS.md) | Product telemetry, analytics events, and user privacy boundaries. |
+| [COST_EFFICIENCY_REVIEW.md](COST_EFFICIENCY_REVIEW.md) | Hosting resource optimization and caching efficiency. |
+| [caritas-charities-threat-model.md](caritas-charities-threat-model.md) | Comprehensive threat model analysis and mitigation measures. |
+| [security_best_practices_report.md](security_best_practices_report.md) | Security auditing recommendations and implementation status. |
 
-- [ARCHITECTURE.md](ARCHITECTURE.md) — domains, boundaries, and target module structure
-- [TESTING.md](TESTING.md) — current coverage and testing priorities
-- [DEPLOYMENT.md](DEPLOYMENT.md) — delivery process and release safety
-- [OBSERVABILITY.md](OBSERVABILITY.md) — logs, request IDs, metrics, and monitoring
-- [API_REVIEW.md](API_REVIEW.md) — API contract and backend review
-- [RELIABILITY_REVIEW.md](RELIABILITY_REVIEW.md) — failure handling and resilience
-- [AUTH_SECURITY_REVIEW.md](AUTH_SECURITY_REVIEW.md) — identity/access-control boundary review
-- [ACCESSIBILITY_REVIEW.md](ACCESSIBILITY_REVIEW.md) — accessibility findings and fixes
-- [PERFORMANCE_REVIEW.md](PERFORMANCE_REVIEW.md) — performance risks and improvements
-- [FRONTEND_REVIEW.md](FRONTEND_REVIEW.md) — visual and UX review
-- [CODE_QUALITY_REVIEW.md](CODE_QUALITY_REVIEW.md) — maintainability review
-- [STATE_MANAGEMENT_REVIEW.md](STATE_MANAGEMENT_REVIEW.md) — state boundaries and recommended patterns
-- [ANALYTICS.md](ANALYTICS.md) — product events and privacy boundaries
-- [COST_EFFICIENCY_REVIEW.md](COST_EFFICIENCY_REVIEW.md) — resource usage and caching decisions
+---
 
-## Current scope and limitations
+## 📌 Scope & Current Limitations
 
-- There is no authentication, admin area, CMS, or application database.
-- Giving is informational; this site does not process donations or represent a completed payment.
-- Contact forwarding depends on the configured external provider and is not durably queued.
-- The in-memory contact rate limiter is suitable only for a small single instance.
-- News, gallery, and organisation content are maintained in the repository, so content changes require a code change and deployment.
+- **Content Storage:** Articles, team bios, and gallery metadata are statically maintained within the codebase (`lib/content/`). Content updates require code changes and redeployment.
+- **Financial Processing:** The `/donate` page provides verified banking instructions and guidance; direct payment processing is intentionally delegated outside the app.
+- **No Direct Database / User Accounts:** The platform contains no user authentication, admin backend, or database.
+- **Contact State:** Contact submissions are forwarded to the configured external delivery endpoint (`CONTACT_FORM_ENDPOINT`) and are not stored locally in a database.
 
-When these boundaries change, update this README and the relevant specialist document in the same pull request.
