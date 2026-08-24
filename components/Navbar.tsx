@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks, type NavLink } from "@/components/navigation/nav-data";
+import ShareModal from "@/components/ShareModal";
 import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
 
 /* ─── Component ──────────────────────────────────────────── */
@@ -19,16 +20,12 @@ export default function Navbar() {
   const [searchQuery,       setSearchQuery]       = useState("");
   const [currentHash,       setCurrentHash]       = useState("");
   const [mobileMenuTop,     setMobileMenuTop]     = useState(106);
-  const shareUrlRef = useRef("https://www.caritaskampalacharities.me/");
-
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const headerRef = useRef<HTMLElement | null>(null);
   const searchInputRef = useRef<HTMLInputElement | null>(null);
   const searchButtonRef = useRef<HTMLButtonElement | null>(null);
   const shareTriggerRef = useRef<HTMLButtonElement | null>(null);
   const mobileToggleRef = useRef<HTMLButtonElement | null>(null);
-  const shareCloseRef = useRef<HTMLButtonElement | null>(null);
-  const shareModalRef = useRef<HTMLDivElement | null>(null);
   const mobileNavRef = useRef<HTMLElement | null>(null);
 
   const closeMobileMenu = () => {
@@ -42,9 +39,10 @@ export default function Navbar() {
     searchButtonRef.current?.focus();
   };
 
-  useEffect(() => {
-    shareUrlRef.current = window.location.href;
-  }, []);
+  const closeShareModal = () => {
+    setIsShareModalOpen(false);
+    shareTriggerRef.current?.focus();
+  };
 
   useEffect(() => {
     const updateHash = () => setCurrentHash(window.location.hash);
@@ -93,38 +91,6 @@ export default function Navbar() {
     }
   }, [isSearchOpen]);
 
-  /* Focus trap & auto-focus for share modal */
-  useEffect(() => {
-    if (!isShareModalOpen) return;
-    const timer = setTimeout(() => shareCloseRef.current?.focus(), 50);
-
-    const trapFocus = (e: KeyboardEvent) => {
-      if (e.key !== "Tab" || !shareModalRef.current) return;
-      const focusable = shareModalRef.current.querySelectorAll<HTMLElement>(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-      );
-      if (!focusable.length) return;
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      if (e.shiftKey) {
-        if (document.activeElement === first) {
-          e.preventDefault();
-          last.focus();
-        }
-      } else {
-        if (document.activeElement === last) {
-          e.preventDefault();
-          first.focus();
-        }
-      }
-    };
-    document.addEventListener("keydown", trapFocus);
-    return () => {
-      clearTimeout(timer);
-      document.removeEventListener("keydown", trapFocus);
-    };
-  }, [isShareModalOpen]);
-
   useEffect(() => {
     if (!isMobileMenuOpen || !mobileNavRef.current) return;
     const drawer = mobileNavRef.current;
@@ -168,45 +134,13 @@ export default function Navbar() {
           closeMobileMenu();
         }
         if (isShareModalOpen) {
-          setIsShareModalOpen(false);
-          shareTriggerRef.current?.focus();
+          closeShareModal();
         }
       }
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, [isSearchOpen, isMobileMenuOpen, isShareModalOpen]);
-
-  const handleSharePlatform = (platform: "facebook" | "twitter" | "whatsapp" | "email") => {
-    trackEvent(ANALYTICS_EVENTS.shareClick, { platform });
-    const shareUrl = shareUrlRef.current;
-    const url = encodeURIComponent(shareUrl);
-    const title = encodeURIComponent(
-      "Caritas Kampala - Ending poverty, promoting justice and restoring dignity"
-    );
-
-    if (platform === "facebook") {
-      window.open(
-        `https://www.facebook.com/sharer/sharer.php?u=${url}`,
-        "_blank",
-        "width=600,height=450,noopener,noreferrer"
-      );
-    } else if (platform === "twitter") {
-      window.open(
-        `https://twitter.com/intent/tweet?url=${url}&text=${title}`,
-        "_blank",
-        "width=600,height=450,noopener,noreferrer"
-      );
-    } else if (platform === "whatsapp") {
-      window.open(
-        `https://wa.me/?text=${title}%20${url}`,
-        "_blank",
-        "noopener,noreferrer"
-      );
-    } else if (platform === "email") {
-      window.location.href = `mailto:?subject=${title}&body=Check out Caritas Kampala: ${shareUrlRef.current}`;
-    }
-  };
 
   const isRouteActive = (href: string) => {
     const route = href.split("#")[0];
@@ -303,7 +237,7 @@ export default function Navbar() {
                   trackEvent(ANALYTICS_EVENTS.shareOpen, { placement: "utility_bar" });
                 }}
                 className="inline-flex items-center justify-center gap-1.5 text-gray-300 hover:text-white hover:bg-white/10 active:bg-white/15 focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 transition-colors cursor-pointer rounded-md p-1.5 sm:px-2.5 sm:py-1 min-w-[32px] min-h-[32px]"
-                aria-label="Open Share Modal"
+                aria-label="Share this page"
                 aria-haspopup="dialog"
                 aria-expanded={isShareModalOpen}
               >
@@ -953,172 +887,7 @@ export default function Navbar() {
           </>
         )}
 
-      {/* ── Share Modal ──────────────────────────────────── */}
-      {isShareModalOpen && (
-        <div
-          ref={shareModalRef}
-          className="fixed inset-0 z-100 flex items-center justify-center bg-black/70 backdrop-blur-xs"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="share-modal-title"
-          aria-describedby="share-modal-description"
-        >
-          <button
-            type="button"
-            tabIndex={-1}
-            className="absolute inset-0 cursor-default"
-            onClick={() => {
-              setIsShareModalOpen(false);
-              shareTriggerRef.current?.focus();
-            }}
-            aria-label="Close share dialog"
-          />
-
-          <div
-            className="share-modal-enter relative bg-white rounded-2xl p-6 sm:p-8 max-w-sm sm:max-w-md w-[calc(100%-2rem)] max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain mx-4 shadow-2xl z-10 border border-gray-100"
-          >
-            <style>{`
-              @keyframes shareModalIn {
-                from { opacity: 0; transform: scale(0.95) translateY(8px); }
-                to   { opacity: 1; transform: scale(1) translateY(0); }
-              }
-              .share-modal-enter {
-                animation: shareModalIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-              }
-              @media (prefers-reduced-motion: reduce) {
-                .share-modal-enter { animation: none; }
-              }
-            `}</style>
-
-            {/* Close Button - 44px minimum touch target */}
-            <button
-              ref={shareCloseRef}
-              onClick={() => {
-                setIsShareModalOpen(false);
-                shareTriggerRef.current?.focus();
-              }}
-              className="absolute top-3 right-3 min-h-11 min-w-11 flex items-center justify-center text-gray-400 hover:text-gray-700 focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-1 transition-colors focus:outline-none rounded-full hover:bg-gray-100 cursor-pointer"
-              aria-label="Close share modal"
-            >
-              <svg
-                className="w-4.5 h-4.5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2.5}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-
-            {/* Header */}
-            <div className="flex items-start space-x-4 pr-8">
-              <div
-                className="w-12 h-12 sm:w-14 sm:h-14 bg-[#b10017] text-white rounded-full flex items-center justify-center shrink-0 shadow-md"
-                aria-hidden="true"
-              >
-                <svg className="w-6 h-6 sm:w-7 sm:h-7 fill-current" viewBox="0 0 24 24">
-                  <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z" />
-                </svg>
-              </div>
-              <div className="flex-1 min-w-0">
-                <h3
-                  id="share-modal-title"
-                  className="text-lg sm:text-xl font-bold text-[#b10017] font-serif leading-tight"
-                >
-                  Help Us Reach More Hearts
-                </h3>
-                <p id="share-modal-description" className="text-xs sm:text-sm text-gray-600 mt-1.5 leading-relaxed font-sans">
-                  Every share extends our message of hope, love, and compassion. Invite others to join our mission.
-                </p>
-              </div>
-            </div>
-
-            {/* Share Platform Buttons with Labels */}
-            <div className="flex flex-wrap justify-center gap-3 mt-7 sm:flex-nowrap">
-              {/* Facebook */}
-              <button
-                type="button"
-                onClick={() => handleSharePlatform("facebook")}
-                className="group flex flex-col items-center gap-1.5 cursor-pointer focus-visible:outline-none"
-                aria-label="Share on Facebook"
-              >
-                <span className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#1877f2] hover:bg-[#0d65d9] group-focus-visible:ring-2 group-focus-visible:ring-[#1877f2] group-focus-visible:ring-offset-2 text-white flex items-center justify-center shadow-md transition-colors duration-200">
-                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M9 8H7v3h2v9h3v-9h3l.5-3H12V6c0-.88.39-1 1-1h2V2h-3c-2.4 0-4 1.2-4 3v3z" />
-                  </svg>
-                </span>
-                <span className="text-[10px] font-semibold text-gray-500 group-hover:text-gray-700 transition-colors">Facebook</span>
-              </button>
-
-              {/* X (Twitter) */}
-              <button
-                type="button"
-                onClick={() => handleSharePlatform("twitter")}
-                className="group flex flex-col items-center gap-1.5 cursor-pointer focus-visible:outline-none"
-                aria-label="Share on X (Twitter)"
-              >
-                <span className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black hover:bg-[#222] group-focus-visible:ring-2 group-focus-visible:ring-black group-focus-visible:ring-offset-2 text-white flex items-center justify-center shadow-md transition-colors duration-200">
-                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                  </svg>
-                </span>
-                <span className="text-[10px] font-semibold text-gray-500 group-hover:text-gray-700 transition-colors">X</span>
-              </button>
-
-              {/* WhatsApp */}
-              <button
-                type="button"
-                onClick={() => handleSharePlatform("whatsapp")}
-                className="group flex flex-col items-center gap-1.5 cursor-pointer focus-visible:outline-none"
-                aria-label="Share on WhatsApp"
-              >
-                <span className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#25D366] hover:bg-[#1ebe57] group-focus-visible:ring-2 group-focus-visible:ring-[#25D366] group-focus-visible:ring-offset-2 text-white flex items-center justify-center shadow-md transition-colors duration-200">
-                  <svg className="w-5.5 h-5.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                  </svg>
-                </span>
-                <span className="text-[10px] font-semibold text-gray-500 group-hover:text-gray-700 transition-colors">WhatsApp</span>
-              </button>
-
-              {/* Instagram */}
-              <button
-                type="button"
-                onClick={() => window.open("https://www.instagram.com/", "_blank", "noopener,noreferrer")}
-                className="group flex flex-col items-center gap-1.5 cursor-pointer focus-visible:outline-none"
-                aria-label="Visit us on Instagram"
-              >
-                <span className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-linear-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] hover:opacity-90 group-focus-visible:ring-2 group-focus-visible:ring-[#ee2a7b] group-focus-visible:ring-offset-2 text-white flex items-center justify-center shadow-md transition-opacity duration-200">
-                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-                  </svg>
-                </span>
-                <span className="text-[10px] font-semibold text-gray-500 group-hover:text-gray-700 transition-colors">Instagram</span>
-              </button>
-
-              {/* Email */}
-              <button
-                type="button"
-                onClick={() => handleSharePlatform("email")}
-                className="group flex flex-col items-center gap-1.5 cursor-pointer focus-visible:outline-none"
-                aria-label="Share via Email"
-              >
-                <span className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#ea4335] hover:bg-[#d63022] group-focus-visible:ring-2 group-focus-visible:ring-[#ea4335] group-focus-visible:ring-offset-2 text-white flex items-center justify-center shadow-md transition-colors duration-200">
-                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                  </svg>
-                </span>
-                <span className="text-[10px] font-semibold text-gray-500 group-hover:text-gray-700 transition-colors">Email</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      {isShareModalOpen && <ShareModal onClose={closeShareModal} />}
     </>
   );
 }

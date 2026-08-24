@@ -182,7 +182,7 @@ export default function Footer() {
 
           <div className="w-full lg:w-auto space-y-4 shrink-0 text-center lg:text-right">
             <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-red-50 block">
-              CONNECT WITH US
+              FOLLOW CARITAS KAMPALA
             </span>
             <div className="flex items-center justify-center lg:justify-end gap-5">
               <div className="flex items-center gap-2" aria-label="Social channels coming soon">
