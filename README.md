@@ -6,7 +6,7 @@ Built with **Next.js 16 (App Router)**, **React 19**, **TypeScript**, and **Tail
 
 ---
 
-## 🌟 Key Features
+##  Key Features
 
 - **Programmes & Appeals:** Showcases current humanitarian appeals, sustainable agriculture, education, healthcare, and community empowerment initiatives.
 - **Interactive News & Lightbox Gallery:** Searchable news directory with full article views and a responsive image gallery lightbox using `yet-another-react-lightbox`.
@@ -17,7 +17,7 @@ Built with **Next.js 16 (App Router)**, **React 19**, **TypeScript**, and **Tail
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Framework:** Next.js 16 (App Router)
 - **UI & Styling:** React 19, Tailwind CSS 4, Lucide React
@@ -30,14 +30,14 @@ Built with **Next.js 16 (App Router)**, **React 19**, **TypeScript**, and **Tail
 
 ---
 
-## 📋 Prerequisites
+## Prerequisites
 
 - **Node.js**: v22.0.0 or higher
 - **Package Manager**: npm v10.0.0 or higher
 
 ---
 
-## 🚀 Local Setup & Development
+##  Local Setup & Development
 
 1. **Clone the repository and install dependencies:**
    ```bash
@@ -65,7 +65,7 @@ Built with **Next.js 16 (App Router)**, **React 19**, **TypeScript**, and **Tail
 
 ---
 
-## ⚙️ Environment Configuration
+##  Environment Configuration
 
 Configuration keys are managed via `.env.local` for local development and hosting provider environment variables in deployment environments.
 
@@ -80,7 +80,7 @@ Configuration keys are managed via `.env.local` for local development and hostin
 
 ---
 
-## 💻 Available Scripts
+##  Available Scripts
 
 | Script | Command | Description |
 | --- | --- | --- |
@@ -93,7 +93,7 @@ Configuration keys are managed via `.env.local` for local development and hostin
 
 ---
 
-## 🗺️ Main Routes & Site Structure
+##  Main Routes & Site Structure
 
 ```
 ├── /                                   # Homepage with hero, appeals, programmes, and updates
@@ -121,7 +121,7 @@ Configuration keys are managed via `.env.local` for local development and hostin
 
 ---
 
-## 🔒 Contact Submission & Security Model
+##  Contact Submission & Security Model
 
 The contact form dispatches POST requests to `/api/contact`. The endpoint enforces strict operational & security boundaries:
 
@@ -134,7 +134,7 @@ The contact form dispatches POST requests to `/api/contact`. The endpoint enforc
 
 ---
 
-## 📚 Technical Documentation Map
+##  Technical Documentation Map
 
 For detailed architectural decisions, security models, and code quality audits, refer to the project documentation specs:
 
@@ -159,7 +159,7 @@ For detailed architectural decisions, security models, and code quality audits, 
 
 ---
 
-## 📌 Scope & Current Limitations
+## Scope & Current Limitations
 
 - **Content Storage:** Articles, team bios, and gallery metadata are statically maintained within the codebase (`lib/content/`). Content updates require code changes and redeployment.
 - **Financial Processing:** The `/donate` page provides verified banking instructions and guidance; direct payment processing is intentionally delegated outside the app.
