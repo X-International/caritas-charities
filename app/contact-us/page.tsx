@@ -9,7 +9,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata = {
   title: "Contact Us | Caritas Kampala",
   description:
-    "Reach out to Caritas Kampala Charities Department for donations, relief enquiries, and office directions.",
+    "Reach out to the Caritas Kampala Charities Office for donations, relief enquiries, and office directions.",
   alternates: { canonical: "/contact-us" },
 };
 

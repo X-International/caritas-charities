@@ -135,7 +135,7 @@ export default function CurrentAppealPage() {
                   </p>
                 </div>
                 <p className="text-gray-700 text-[15px] sm:text-base lg:text-lg leading-relaxed font-normal">
-                  This is the same passage that guides the wider mission of the Charities Department, and it is why we see responding to hunger, wherever we find it, as central to who we are.
+                  This is the same passage that guides the wider mission of the Charities Office, and it is why we see responding to hunger, wherever we find it, as central to who we are.
                 </p>
               </section>
             </div>
@@ -159,7 +159,7 @@ export default function CurrentAppealPage() {
                 <div className="bg-white/10 p-4 rounded-2xl text-xs sm:text-sm space-y-1 font-sans border border-white/10">
                   <p className="font-bold text-white">
                     <a
-                      href="https://www.caritaskampalacharities.me/"
+                      href="https://www.caritaskampalacharities.org/"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Visit the Caritas Kampala website (opens in a new tab)"

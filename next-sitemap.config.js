@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 const config = {
-  siteUrl: "https://www.caritaskampalacharities.me/",
+  siteUrl: "https://www.caritaskampalacharities.org/",
   generateRobotsTxt: true,
   autoLastmod: false,
   changefreq: "weekly",

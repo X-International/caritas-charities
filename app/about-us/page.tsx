@@ -8,7 +8,7 @@ import DonateOnlineCard from "@/components/DonateOnlineCard";
 export const metadata = {
   title: "About Us | Caritas Kampala",
   description:
-    "The Charities Department is one of Caritas Kampala's core departments, serving the Archdiocese of Kampala through compassion, dignity, and practical support.",
+    "The Charities Office operates under Caritas Kampala, serving the Archdiocese of Kampala through compassion, dignity, and practical support.",
   alternates: { canonical: "/about-us" },
 };
 
@@ -46,7 +46,7 @@ export default function AboutUsPage() {
                   Caritas Kampala is the socio-pastoral ministry of the Catholic Church in the Archdiocese of Kampala. Established to put the gospel message of love and charity into concrete action, we serve all individuals regardless of religious, ethnic, or political background.
                 </p>
                 <p>
-                  Our Charities Department works directly with vulnerable communities, orphanages, elderly care homes, healthcare initiatives, and emergency relief efforts throughout the Archdiocese.
+                  Our Charities Office works directly with vulnerable communities, orphanages, elderly care homes, healthcare initiatives, and emergency relief efforts throughout the Archdiocese.
                 </p>
               </div>
               <div className="pt-2">

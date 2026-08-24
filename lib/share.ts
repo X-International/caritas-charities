@@ -6,10 +6,10 @@ export type PageSharePayload = {
 };
 
 export const SHARE_INTRO =
-  "Discover the work of Caritas Kampala Charities Office:";
+  "Discover the work of the Caritas Kampala Charities Office. Learn more and see how you can get involved:";
 
 const FALLBACK_DESCRIPTION =
-  "Help more people discover the work of the Caritas Kampala Charities Office. Share this page to help connect others with our mission and work.";
+  "Discover the work of the Caritas Kampala Charities Office. Share this page to help connect others with our mission.";
 
 const ROUTE_META: Record<string, { title: string; description: string }> = {
   "/": {
@@ -18,7 +18,7 @@ const ROUTE_META: Record<string, { title: string; description: string }> = {
   },
   "/our-programmes": {
     title: "Our Programmes | Caritas Kampala - Charities Office",
-    description: "The work of the Charities Department across Kampala, Wakiso, and Mpigi.",
+    description: "The work of the Charities Office across Kampala, Wakiso, and Mpigi.",
   },
   "/current-appeal": {
     title: "Current Appeal | Caritas Kampala - Charities Office",
@@ -103,17 +103,17 @@ export function getPageSharePayload(): PageSharePayload {
 }
 
 export function buildWhatsAppShareText(payload: PageSharePayload): string {
-  return `Discover the work of Caritas Kampala Charities Department:\n${payload.title}\n${payload.url}`;
+  return `Discover the work of the Caritas Kampala Charities Office. Learn more and see how you can get involved: ${payload.url}`;
 }
 
 export function buildEmailShare(payload: PageSharePayload): { subject: string; body: string } {
-  const subject = "Caritas Kampala Charities Department";
-  const body = `I thought you might find this page from the Caritas Kampala Charities Department helpful:\n\n${payload.title}\n\n${payload.url}\n\nLearn more about the work of Caritas Kampala Charities Department.`;
+  const subject = "Caritas Kampala Charities Office";
+  const body = `I thought you might be interested in the work of the Caritas Kampala Charities Office.\n\nLearn more:\n${payload.url}`;
   return { subject, body };
 }
 
 export function buildXShareText(payload: PageSharePayload): string {
-  return `${payload.title}\n${payload.url}`;
+  return `Discover the work of the Caritas Kampala Charities Office. Learn more about our mission and work: ${payload.url}`;
 }
 
 export type SharePlatform = "whatsapp" | "facebook" | "email" | "linkedin" | "x" | "copy" | "native";

@@ -44,7 +44,7 @@ export const newsArticles: NewsArticle[] = [
       "In July, the first batch of support, including money and household items, was sent to Caritas Uganda, who delivered it to families in Kotido and Moroto. Collection continues now, with parishes gathering food and essential relief items to send in the coming months.",
       "The drive is focused on staple food items, including posho, maize flour, maize, rice, beans, sugar, and cooking oil. Contributions of money and household items are also welcome.",
       "This appeal is open to everyone, not only Catholics. Caritas does not discriminate based on religion, because hunger affects everyone the same way, regardless of their faith. While the Catholic Church is leading this initiative, the help itself is for anyone in Kotido and Moroto who needs it.",
-      "As Matthew 25:35 says, \"For I was hungry and you gave me food.\" This is the same passage that guides the wider mission of the Charities Department, and it is why responding to hunger, wherever it is found, remains central to this work.",
+      "As Matthew 25:35 says, \"For I was hungry and you gave me food.\" This is the same passage that guides the wider mission of the Charities Office, and it is why responding to hunger, wherever it is found, remains central to this work.",
     ],
     helpSection: {
       title: "How to Help",
@@ -65,18 +65,18 @@ export const newsArticles: NewsArticle[] = [
   },
   {
     slug: "charities-department-launches-new-website",
-    title: "The Charities Department Launches Its New Website",
+    title: "The Charities Office Launches Its New Website",
     date: "02 Aug 2026",
     category: "Announcement",
     snippet:
-      "A new online home for the Charities Department, sharing our work, our network, and how you can help.",
+      "A new online home for the Charities Office, sharing our work, our network, and how you can help.",
     image: "/images/Event 02/Caritas_Kampala_98.jpg",
-    alt: "The Charities Department Lead speaking at a department gathering. Credit: Caritas Kampala.",
+    alt: "The Charities Office Lead speaking at a gathering. Credit: Caritas Kampala.",
     body: [
-      "The Charities Department of Caritas Kampala now has its own website, a dedicated space to share the work of the department with donors, partners, and the wider community across the Archdiocese of Kampala.",
+      "The Caritas Kampala Charities Office now has its own website, a dedicated space to share the work of the office with donors, partners, and the wider community across the Archdiocese of Kampala.",
       "The new site brings together information that was previously scattered or difficult to find: our mission and values, the programmes we run, our place within the Chaconet network of charity homes, and the many ways people can support this work, whether through giving, volunteering, or partnership.",
       "Visitors can also find our latest news and appeals in one place, including our current relief drive for families affected by famine in Kotido and Moroto, alongside stories from the people and communities we work alongside.",
-      "This website is part of Caritas Kampala and sits alongside the Archdiocese's main site, reflecting the Charities Department's own identity while remaining clearly connected to the wider Caritas Kampala family.",
+      "This website is part of Caritas Kampala and sits alongside the Archdiocese's main site, reflecting the Charities Office's own identity while remaining clearly connected to the wider Caritas Kampala family.",
       "We'll continue to add to this site over time, including more stories, programme details, and updates from our work. If there's something you'd like to see here, or a way you'd like to get involved, we'd love to hear from you.",
     ],
     closingPrompt: {

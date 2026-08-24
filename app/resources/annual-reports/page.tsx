@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 export const metadata = {
   title: "Annual Reports | Caritas Kampala",
   description:
-    "Financial accountability statements and annual progress publications of Caritas Kampala Charities Department.",
+    "Financial accountability statements and annual progress publications of the Caritas Kampala Charities Office.",
   alternates: { canonical: "/resources/annual-reports" },
 };
 

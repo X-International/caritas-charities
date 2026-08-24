@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Caritas Kampala | Ending poverty, promoting justice, restoring dignity",
   description:
-    "Caritas Kampala's Charities Department serves the Archdiocese through compassion, dignity, and practical support for those who need it most.",
+    "The Caritas Kampala Charities Office serves the Archdiocese through compassion, dignity, and practical support for those who need it most.",
   alternates: { canonical: "/" },
 };
 

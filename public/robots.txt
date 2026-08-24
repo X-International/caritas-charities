@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.caritaskampalacharities.me/
+Host: https://www.caritaskampalacharities.org/
 
 # Sitemaps
-Sitemap: https://www.caritaskampalacharities.me/sitemap.xml
+Sitemap: https://www.caritaskampalacharities.org/sitemap.xml

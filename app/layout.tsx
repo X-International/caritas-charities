@@ -6,7 +6,7 @@ import "./globals.css";
 const isVercelDeployment = process.env.VERCEL === "1";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.caritaskampalacharities.me"),
+  metadataBase: new URL("https://www.caritaskampalacharities.org"),
   title: {
     default: "Caritas Kampala | Ending poverty, promoting justice, restoring dignity",
     // Route metadata already uses the public-facing "| Caritas Kampala" suffix.

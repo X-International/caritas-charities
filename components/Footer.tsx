@@ -176,7 +176,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm sm:text-base text-red-50 font-normal leading-relaxed max-w-xl">
-              The Charities Department is one of Caritas Kampala&apos;s core departments, serving the Archdiocese of Kampala through compassion, dignity, and practical support for those who need it most.
+              The Charities Office operates under Caritas Kampala, serving the Archdiocese of Kampala through compassion, dignity, and practical support for those who need it most.
             </p>
           </div>
 
@@ -227,7 +227,7 @@ export default function Footer() {
 
         <div className="flex w-full flex-col sm:flex-row justify-between items-start sm:items-center text-xs sm:text-sm text-red-100 font-normal gap-3 pt-1 text-left">
           <div>
-            {`© ${currentYear} Caritas Kampala — Charities Department. All Rights Reserved.`}
+            {`© ${currentYear} Caritas Kampala — Charities Office. All Rights Reserved.`}
           </div>
           <div className="self-start sm:self-auto">
             <a

@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata = {
   title: "Our Team | Caritas Kampala",
   description:
-    "Meet the leadership, coordinators, and dedicated field workers serving Caritas Kampala Charities Department.",
+    "Meet the leadership, coordinators, and dedicated field workers serving the Caritas Kampala Charities Office.",
   alternates: { canonical: "/about-us/our-team" },
 };
 
@@ -18,7 +18,7 @@ const teamMembers = [
     image: "/images/Main Slider/Caritas_Kampala_07.jpg",
   },
   {
-    name: "Charities Department Coordinator",
+    name: "Charities Office Coordinator",
     role: "Head of Relief & Special Needs",
     bio: "Overseeing daily field logistics, orphanage support, and emergency relief distribution.",
     image: "/images/Main Slider/Caritas_Kampala_18.jpg",
