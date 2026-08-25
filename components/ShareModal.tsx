@@ -127,7 +127,7 @@ export default function ShareModal({ onClose }: ShareModalProps) {
   const closeRef = useRef<HTMLButtonElement | null>(null);
   const copyRef = useRef<HTMLButtonElement | null>(null);
   const nativeRef = useRef<HTMLButtonElement | null>(null);
-  const [payload] = useState<PageSharePayload | null>(() =>
+  const [payload, setPayload] = useState<PageSharePayload | null>(() =>
     typeof window !== "undefined" ? getPageSharePayload() : null
   );
   const [nativeAvailable] = useState<boolean>(() =>
@@ -135,6 +135,10 @@ export default function ShareModal({ onClose }: ShareModalProps) {
   );
   const [copied, setCopied] = useState(false);
   const [copyError, setCopyError] = useState(false);
+
+  useEffect(() => {
+    setPayload(getPageSharePayload());
+  }, []);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {

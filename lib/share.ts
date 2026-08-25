@@ -102,23 +102,58 @@ const ROUTE_META: Record<string, { title: string; description: string }> = {
   },
 };
 
+const CANONICAL_ORIGIN = "https://www.caritaskampalacharities.org";
+
 function metaContent(selector: string): string | null {
   return document.querySelector(selector)?.getAttribute("content")?.trim() || null;
 }
 
 function absoluteUrl(value: string): string {
   try {
-    return new URL(value, window.location.origin).href;
+    return new URL(value, CANONICAL_ORIGIN).href;
   } catch {
     return value;
   }
+}
+
+export function getCleanTitle(title: string): string {
+  let cleaned = title
+    .replace(/\s*\|\s*Caritas Kampala Charities Office/gi, "")
+    .replace(/\s*\|\s*Caritas Kampala/gi, "")
+    .replace(/^Caritas Kampala Charities Office\s*\|\s*/gi, "")
+    .trim();
+
+  return cleaned || "Caritas Kampala Charities Office";
+}
+
+function resolveCanonicalUrl(pathname: string): string {
+  if (typeof document !== "undefined") {
+    const canonicalHref = document.querySelector('link[rel="canonical"]')?.getAttribute("href")?.trim();
+    if (canonicalHref) {
+      try {
+        return new URL(canonicalHref, CANONICAL_ORIGIN).href;
+      } catch {
+        // Fall back to origin + pathname below
+      }
+    }
+    const ogUrl = document.querySelector('meta[property="og:url"]')?.getAttribute("content")?.trim();
+    if (ogUrl) {
+      try {
+        return new URL(ogUrl, CANONICAL_ORIGIN).href;
+      } catch {
+        // Fall back to origin + pathname below
+      }
+    }
+  }
+  const cleanPath = pathname && pathname !== "" ? (pathname.startsWith("/") ? pathname : `/${pathname}`) : "/";
+  return `${CANONICAL_ORIGIN}${cleanPath}`;
 }
 
 /** Reads the page the visitor is on so sharing stays correct on every current and future route. */
 export function getPageSharePayload(): PageSharePayload {
   if (typeof window === "undefined") {
     return {
-      url: "https://www.caritaskampalacharities.org/",
+      url: `${CANONICAL_ORIGIN}/`,
       title: "Caritas Kampala Charities Office",
       description: FALLBACK_DESCRIPTION,
       image: null,
@@ -143,7 +178,7 @@ export function getPageSharePayload(): PageSharePayload {
   const imageRaw = metaContent('meta[property="og:image"]');
 
   return {
-    url: window.location.href,
+    url: resolveCanonicalUrl(pathname),
     title,
     description,
     image: imageRaw ? absoluteUrl(imageRaw) : null,
@@ -151,17 +186,20 @@ export function getPageSharePayload(): PageSharePayload {
 }
 
 export function buildWhatsAppShareText(payload: PageSharePayload): string {
-  return `Learn more about the work of Caritas Kampala Charities Office: ${payload.title}\n${payload.url}`;
+  const cleanTitle = getCleanTitle(payload.title);
+  return `Discover the work of the Caritas Kampala Charities Office: ${cleanTitle}\n${payload.url}`;
 }
 
 export function buildEmailShare(payload: PageSharePayload): { subject: string; body: string } {
-  const subject = `Caritas Kampala Charities Office — ${payload.title}`;
-  const body = `I thought you might be interested in this page from Caritas Kampala Charities Office:\n\n${payload.title}\n${payload.url}`;
+  const cleanTitle = getCleanTitle(payload.title);
+  const subject = `Discover: ${cleanTitle} | Caritas Kampala Charities Office`;
+  const body = `I thought you might be interested in this page from the Caritas Kampala Charities Office:\n\n${payload.title}\n${payload.url}`;
   return { subject, body };
 }
 
 export function buildXShareText(payload: PageSharePayload): string {
-  return `Take a look at the work of Caritas Kampala Charities Office: ${payload.title}\n${payload.url}`;
+  const cleanTitle = getCleanTitle(payload.title);
+  return `Discover the work of the Caritas Kampala Charities Office: ${cleanTitle}`;
 }
 
 export type SharePlatform = "whatsapp" | "facebook" | "email" | "linkedin" | "x" | "copy" | "native";
@@ -177,7 +215,7 @@ export function getShareDestinationUrl(platform: Exclude<SharePlatform, "copy" |
     case "linkedin":
       return `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
     case "x":
-      return `https://twitter.com/intent/tweet?text=${encodeURIComponent(buildXShareText(payload))}`;
+      return `https://twitter.com/intent/tweet?text=${encodeURIComponent(buildXShareText(payload))}&url=${encodedUrl}`;
     case "email": {
       const { subject, body } = buildEmailShare(payload);
       return `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
