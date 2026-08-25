@@ -9,7 +9,7 @@ import { newsArticles } from "@/lib/content/news";
 export const metadata = {
   title: "News & Updates | Caritas Kampala",
   description:
-    "The latest news, press releases, and operational updates from Caritas Kampala.",
+    "The latest news, press releases, and operational updates from the Caritas Kampala Charities Office.",
   alternates: { canonical: "/resources/news" },
 };
 

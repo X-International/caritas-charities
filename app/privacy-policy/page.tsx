@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 export const metadata = {
   title: "Privacy Policy | Caritas Kampala",
   description:
-    "Privacy Policy for Caritas Kampala website visitors, donors, and partners.",
+    "Privacy Policy for the Caritas Kampala Charities Office website visitors, donors, and partners.",
   alternates: { canonical: "/privacy-policy" },
 };
 
@@ -36,7 +36,7 @@ export default function PrivacyPolicyPage() {
         {/* Content */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-6 text-gray-700 leading-relaxed text-sm sm:text-base">
           <p>
-            Caritas Kampala is committed to respecting and protecting the privacy of our supporters, beneficiaries, volunteers, and website visitors.
+            Caritas Kampala Charities Office is committed to respecting and protecting the privacy of our supporters, beneficiaries, volunteers, and website visitors.
           </p>
           <h2 className="text-xl font-serif font-bold text-[#b10017]">Information Collection &amp; Use</h2>
           <p>

@@ -28,6 +28,14 @@ const ROUTE_META: Record<string, { title: string; description: string }> = {
     title: "Get Involved | Caritas Kampala - Charities Office",
     description: "Discover ways to volunteer, partner, and support our community empowerment programs.",
   },
+  "/get-involved/volunteer": {
+    title: "Volunteer | Caritas Kampala - Charities Office",
+    description: "Offer your time and skills to support the work of the Caritas Kampala Charities Office.",
+  },
+  "/get-involved/charity-shop": {
+    title: "Charity Shop | Caritas Kampala - Charities Office",
+    description: "Shop or donate goods to support the cause of the Caritas Kampala Charities Office.",
+  },
   "/donate": {
     title: "Donate & Support | Caritas Kampala - Charities Office",
     description: "Verified guidance on giving, bank details, and donor options to support our mission.",
@@ -40,6 +48,14 @@ const ROUTE_META: Record<string, { title: string; description: string }> = {
     title: "Our Story | Caritas Kampala - Charities Office",
     description: "Real stories of change, community resilience, and social-pastoral ministry.",
   },
+  "/about-us/our-team": {
+    title: "Our Team | Caritas Kampala - Charities Office",
+    description: "Meet the leadership, coordinators, and dedicated field workers serving the Caritas Kampala Charities Office.",
+  },
+  "/about-us/chaconet-partners": {
+    title: "Chaconet Partners | Caritas Kampala - Charities Office",
+    description: "Catholic Charity Homes Network (Chaconet) partners working alongside the Caritas Kampala Charities Office.",
+  },
   "/resources/news": {
     title: "News & Articles | Caritas Kampala - Charities Office",
     description: "Latest news, field updates, and articles from Caritas Kampala.",
@@ -48,9 +64,25 @@ const ROUTE_META: Record<string, { title: string; description: string }> = {
     title: "Photo Gallery | Caritas Kampala - Charities Office",
     description: "Photo gallery highlighting field interventions and community projects.",
   },
+  "/resources/annual-reports": {
+    title: "Annual Reports | Caritas Kampala - Charities Office",
+    description: "Financial accountability statements and annual progress publications of the Caritas Kampala Charities Office.",
+  },
+  "/resources/faqs": {
+    title: "FAQs | Caritas Kampala - Charities Office",
+    description: "Frequently asked questions regarding the work and giving options of Caritas Kampala Charities Office.",
+  },
   "/contact-us": {
     title: "Contact Us | Caritas Kampala - Charities Office",
     description: "Get in touch with the Caritas Kampala Charities Office team.",
+  },
+  "/privacy-policy": {
+    title: "Privacy Policy | Caritas Kampala - Charities Office",
+    description: "Privacy Policy for the Caritas Kampala Charities Office website visitors, donors, and partners.",
+  },
+  "/terms-of-use": {
+    title: "Terms of Use | Caritas Kampala - Charities Office",
+    description: "Terms of Use for the official website of the Caritas Kampala Charities Office.",
   },
 };
 

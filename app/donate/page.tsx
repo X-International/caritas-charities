@@ -9,7 +9,7 @@ import DonateOnlineCard from "@/components/DonateOnlineCard";
 export const metadata = {
   title: "Donate & Support | Caritas Kampala",
   description:
-    "Support Caritas Kampala's emergency relief campaigns, orphanages, and food security programmes.",
+    "Support the Caritas Kampala Charities Office emergency relief campaigns, orphanages, and food security programmes.",
   alternates: { canonical: "/donate" },
 };
 

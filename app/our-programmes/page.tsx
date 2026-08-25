@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 export const metadata = {
   title: "Our Programmes | Caritas Kampala",
   description:
-    "Explore Caritas Kampala's programmes in emergency relief, food security, livelihoods, healthcare, and social welfare.",
+    "Explore the Caritas Kampala Charities Office programmes in emergency relief, food security, livelihoods, healthcare, and social welfare.",
   alternates: { canonical: "/our-programmes" },
 };
 

@@ -1,12 +1,12 @@
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Breadcrumb from "@/components/Breadcrumb";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
 
 export const metadata = {
   title: "Chaconet Partners | Caritas Kampala",
   description:
-    "Discover the Catholic Charity Homes Network (Chaconet) partners working alongside Caritas Kampala.",
+    "Discover the Catholic Charity Homes Network (Chaconet) partners working alongside the Caritas Kampala Charities Office.",
   alternates: { canonical: "/about-us/chaconet-partners" },
 };
 
@@ -19,19 +19,13 @@ export default function ChaconetPartnersPage() {
         {/* Hero Banner */}
         <section className="bg-[#b10017] text-white py-14 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-            <nav aria-label="Breadcrumb" className="text-xs uppercase tracking-wider font-semibold text-red-200">
-              <ol className="flex items-center space-x-2">
-                <li>
-                  <Link href="/" className="hover:underline text-white">HOME</Link>
-                </li>
-                <li>/</li>
-                <li>
-                  <Link href="/about-us" className="hover:underline text-white">ABOUT US</Link>
-                </li>
-                <li>/</li>
-                <li aria-current="page" className="text-red-200">CHACONET PARTNERS</li>
-              </ol>
-            </nav>
+            <Breadcrumb
+              items={[
+                { label: "HOME", href: "/" },
+                { label: "ABOUT US", href: "/about-us" },
+                { label: "CHACONET PARTNERS" },
+              ]}
+            />
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif tracking-tight">
               Partners &mdash; Chaconet Network
             </h1>

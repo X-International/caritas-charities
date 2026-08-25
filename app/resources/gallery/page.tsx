@@ -14,7 +14,7 @@ import {
 export const metadata = {
   title: "Photo Gallery | Caritas Kampala",
   description:
-    "View photo highlights of Caritas Kampala's humanitarian relief, community empowerment, and parish programs.",
+    "View photo highlights of the Caritas Kampala Charities Office humanitarian relief, community empowerment, and parish programs.",
   alternates: { canonical: "/resources/gallery" },
 };
 

@@ -1,11 +1,11 @@
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata = {
   title: "Get Involved | Caritas Kampala",
   description:
-    "Partner with Caritas Kampala, volunteer with parish teams, or organize community fundraising initiatives.",
+    "Partner with the Caritas Kampala Charities Office, volunteer with parish teams, or organize community fundraising initiatives.",
   alternates: { canonical: "/get-involved" },
 };
 
@@ -18,20 +18,17 @@ export default function GetInvolvedPage() {
         {/* Hero Banner */}
         <section className="bg-[#b10017] text-white py-14 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-            <nav aria-label="Breadcrumb" className="text-xs uppercase tracking-wider font-semibold text-red-200">
-              <ol className="flex items-center space-x-2">
-                <li>
-                  <Link href="/" className="hover:underline text-white">HOME</Link>
-                </li>
-                <li>/</li>
-                <li aria-current="page" className="text-red-200">GET INVOLVED</li>
-              </ol>
-            </nav>
+            <Breadcrumb
+              items={[
+                { label: "HOME", href: "/" },
+                { label: "GET INVOLVED" },
+              ]}
+            />
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif tracking-tight">
               Get Involved
             </h1>
             <p className="text-base sm:text-lg text-red-100 max-w-2xl font-light leading-relaxed">
-              Join hands with Caritas Kampala as a volunteer, parish champion, or corporate partner.
+              Join hands with the Caritas Kampala Charities Office as a volunteer, parish champion, or corporate partner.
             </p>
           </div>
         </section>
