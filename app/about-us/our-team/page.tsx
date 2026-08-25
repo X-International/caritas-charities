@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Card from "@/components/ui/Card";
+import { Heading, Lead } from "@/components/ui/Typography";
 
 export const metadata = {
   title: "Our Team | Caritas Kampala Charities Office",
@@ -54,12 +55,12 @@ export default function OurTeamPage() {
                 <li aria-current="page" className="text-red-200">OUR TEAM</li>
               </ol>
             </nav>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif tracking-tight">
+            <Heading level={1} variant="page" color="white">
               Our Team
-            </h1>
-            <p className="text-base sm:text-lg text-red-100 max-w-2xl font-light leading-relaxed">
+            </Heading>
+            <Lead variant="hero">
               Meet the people carrying out Caritas Kampala&apos;s mission every day across the Archdiocese.
-            </p>
+            </Lead>
           </div>
         </section>
 
@@ -78,7 +79,7 @@ export default function OurTeamPage() {
                   />
                 </div>
                 <div className="p-6 space-y-2">
-                  <h3 className="text-xl font-serif font-bold text-[#b10017]">{member.name}</h3>
+                  <Heading level={3} variant="card" color="red">{member.name}</Heading>
                   <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">{member.role}</p>
                   <p className="text-sm text-gray-700 leading-relaxed pt-2">{member.bio}</p>
                 </div>

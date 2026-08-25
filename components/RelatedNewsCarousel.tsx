@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { NewsArticle } from '@/lib/content/news';
 import Card from '@/components/ui/Card';
+import { Heading, Eyebrow } from '@/components/ui/Typography';
 
 export default function RelatedNewsCarousel({ currentArticleSlug, allArticles }: { currentArticleSlug: string, allArticles: NewsArticle[] }) {
     const relatedArticles = useMemo(() => allArticles
@@ -29,9 +30,9 @@ export default function RelatedNewsCarousel({ currentArticleSlug, allArticles }:
 
     return (
         <section className="space-y-4" aria-live="polite" aria-atomic="true">
-            <h2 className="text-xl font-bold font-serif text-[#b10017]">
+            <Heading level={2} variant="card" color="red">
               Related Content
-            </h2>
+            </Heading>
             <div className="relative group">
                 <Card variant="content" className="overflow-hidden p-0 sm:p-0">
                     <Link href={`/resources/news/${article.slug}`} className="block">
@@ -46,17 +47,17 @@ export default function RelatedNewsCarousel({ currentArticleSlug, allArticles }:
                     </div>
                     <div className="px-5 py-5 sm:px-6 sm:py-6">
                         <div className="flex justify-between items-center text-[10px] sm:text-xs uppercase tracking-widest text-[#585858]">
-                            <span>{article.category}</span>
+                            <Eyebrow color="muted">{article.category}</Eyebrow>
                             <span className="font-mono text-[#7b7b7b] tracking-normal">{article.date}</span>
                         </div>
-                        <h3 className="mt-4 font-serif text-[18px] sm:text-[20px] leading-[1.2] text-[#b10017] line-clamp-2">
+                        <Heading level={3} variant="card" color="red" className="mt-4 text-[18px] sm:text-[20px] leading-[1.2] line-clamp-2">
                             {article.title}
-                        </h3>
+                        </Heading>
                         <p className="mt-3 text-[14px] leading-relaxed text-[#4f4f4f] line-clamp-2">
                             {article.snippet}
                         </p>
                         <div className="mt-4 flex justify-between items-center text-[10px] sm:text-xs uppercase tracking-widest text-[#585858]">
-                            <span>{article.category}</span>
+                            <Eyebrow color="muted">{article.category}</Eyebrow>
                             <span>{article.region || ''}</span>
                         </div>
                     </div>

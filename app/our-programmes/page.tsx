@@ -2,6 +2,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Card from "@/components/ui/Card";
+import { Heading, Lead } from "@/components/ui/Typography";
 
 export const metadata = {
   title: "Our Programmes | Caritas Kampala Charities Office",
@@ -89,15 +90,15 @@ export default function OurProgrammesPage() {
             </nav>
 
             <div className="mt-4 md:mt-6 max-w-3xl">
-              <h1 className="text-2xl xs:text-3xl sm:text-4xl font-extrabold font-serif leading-[1.06] tracking-tight">
+              <Heading level={1} variant="page" color="white">
                 Our Programmes
-              </h1>
+              </Heading>
 
               <div aria-hidden className="w-12 sm:w-16 h-px bg-white/20 mt-3 sm:mt-4 mb-3 sm:mb-4 rounded" />
 
-              <p className="text-sm sm:text-base md:text-lg text-white/95 max-w-3xl font-normal leading-relaxed">
+              <Lead variant="hero">
                 Transforming lives through structured humanitarian, pastoral, and community development initiatives.
-              </p>
+              </Lead>
             </div>
           </div>
         </section>
@@ -116,7 +117,7 @@ export default function OurProgrammesPage() {
                   </span>
                 </div>
                 <div className="space-y-3 flex-1">
-                  <h2 className="text-xl font-serif font-bold text-[#b10017]">{prog.title}</h2>
+                  <Heading level={2} variant="card" color="red">{prog.title}</Heading>
                   <p className="text-sm text-gray-700 leading-relaxed">{prog.desc}</p>
                 </div>
                 <div className="pt-4 mt-6 border-t border-gray-100">

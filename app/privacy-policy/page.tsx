@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Heading } from "@/components/ui/Typography";
 
 export const metadata = {
   title: "Privacy Policy | Caritas Kampala Charities Office",
@@ -27,9 +28,9 @@ export default function PrivacyPolicyPage() {
                 <li aria-current="page" className="text-red-200">PRIVACY POLICY</li>
               </ol>
             </nav>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif tracking-tight">
+            <Heading level={1} variant="page" color="white">
               Privacy Policy
-            </h1>
+            </Heading>
           </div>
         </section>
 
@@ -38,11 +39,11 @@ export default function PrivacyPolicyPage() {
           <p>
             Caritas Kampala Charities Office is committed to respecting and protecting the privacy of our supporters, beneficiaries, volunteers, and website visitors.
           </p>
-          <h2 className="text-xl font-serif font-bold text-[#b10017]">Information Collection &amp; Use</h2>
+          <Heading level={2} variant="card" color="red">Information Collection &amp; Use</Heading>
           <p>
             We collect personal information (such as name, email address, phone number) only when voluntarily submitted through our contact forms, newsletter subscription, or donation enquiries. This information is strictly used to communicate regarding your requests and our charitable activities.
           </p>
-          <h2 className="text-xl font-serif font-bold text-[#b10017]">Data Protection</h2>
+          <Heading level={2} variant="card" color="red">Data Protection</Heading>
           <p>
             We do not sell, rent, or trade personal data to third parties. All collected data is handled securely in accordance with applicable data protection laws.
           </p>

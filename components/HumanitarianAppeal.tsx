@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Heading } from "@/components/ui/Typography";
 
 export default function HumanitarianAppeal() {
   return (
@@ -22,9 +23,15 @@ export default function HumanitarianAppeal() {
         <div className="relative z-10 p-4 sm:p-10 lg:p-12 w-full max-w-xl">
           <div className="bg-[#b10017] text-white p-6 sm:p-10 rounded-2xl shadow-2xl space-y-4 sm:space-y-6">
             <div className="space-y-4 sm:space-y-6">
-              <h2 id="humanitarian-appeal-heading" className="text-xl sm:text-3xl lg:text-4xl font-extrabold font-serif leading-tight italic text-balance">
+              <Heading
+                level={2}
+                variant="subsection"
+                color="white"
+                id="humanitarian-appeal-heading"
+                className="text-xl sm:text-3xl lg:text-4xl leading-tight italic text-balance"
+              >
                 &ldquo;Truly I tell you, whatever you did for one of the least of these brothers and sisters of mine, you did for me.&rdquo;
-              </h2>
+              </Heading>
               <p className="text-sm sm:text-base text-red-100 font-semibold uppercase tracking-widest opacity-90">
                 — Matthew 25:40
               </p>

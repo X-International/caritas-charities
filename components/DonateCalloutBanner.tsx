@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Heading } from "@/components/ui/Typography";
 
 export default function DonateCalloutBanner() {
   return (
@@ -7,9 +8,9 @@ export default function DonateCalloutBanner() {
         <div className="appeal-callout-panel z-20 lg:absolute lg:inset-0 lg:flex lg:items-center lg:justify-start">
           <div className="appeal-callout-panel-inner bg-[#b10017] text-white p-7 sm:p-10 lg:p-12 rounded-2xl sm:rounded-3xl space-y-5 sm:space-y-6 text-center lg:text-left lg:w-[37%] lg:max-w-130">
             <div className="appeal-callout-panel-content space-y-5 sm:space-y-6 flex flex-col items-center lg:items-start">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-serif leading-tight max-w-[14ch] sm:max-w-[15ch] lg:max-w-none">
+              <Heading level={2} variant="subsection" color="white" className="text-2xl sm:text-3xl lg:text-4xl leading-tight max-w-[14ch] sm:max-w-[15ch] lg:max-w-none">
                 &ldquo;Whatever you did for one of the least of these brothers and sisters of mine, you did for me.&rdquo;
-              </h2>
+              </Heading>
               <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-white/95 max-w-md">
                 &mdash; Matthew 25:40.
               </p>

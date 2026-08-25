@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Heading } from "@/components/ui/Typography";
 
 export default function CurrentCrises() {
   return (
@@ -10,12 +11,15 @@ export default function CurrentCrises() {
       <div className="site-container">
         {/* Header */}
         <div className="max-w-3xl xl:max-w-4xl mb-8 xl:mb-10 space-y-3 text-center lg:text-left mx-auto lg:mx-0">
-          <h2 
+          <Heading 
+            level={2}
+            variant="section"
+            color="white"
             id="appeal-title"
-            className="text-3xl sm:text-4xl lg:text-5xl xl:text-[3.25rem] font-extrabold font-serif tracking-tight text-balance"
+            className="xl:text-[3.25rem] text-balance"
           >
             Current Appeal
-          </h2>
+          </Heading>
           <p className="text-sm sm:text-base xl:text-lg text-white/90 font-normal leading-relaxed">
             Drought has brought famine to Karamoja. The Kampala Archdiocese is rallying the Church in Uganda to respond, and the call is open to everyone, Catholic and non-Catholic alike.
           </p>
@@ -38,9 +42,9 @@ export default function CurrentCrises() {
 
             {/* Right Details */}
             <div className="lg:col-span-6 space-y-4 lg:space-y-5 xl:space-y-6 text-center lg:text-left">
-              <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-[2rem] font-extrabold font-serif text-[#b10017] text-balance">
+              <Heading level={3} variant="subsection" color="red" className="text-xl sm:text-2xl lg:text-3xl xl:text-[2rem] text-balance">
                 Famine in Kotido and Moroto
-              </h3>
+              </Heading>
               <p className="text-gray-700 text-sm sm:text-base xl:text-lg leading-relaxed max-w-prose mx-auto lg:mx-0">
                 Climate change has driven drought and famine across the Kotido and Moroto dioceses. The government has provided some relief, but it isn&apos;t enough. From July through September, the Archdiocese is collecting food such as posho, maize flour, rice, beans, and cooking oil to send to families in Karamoja. Every contribution counts, whatever its size.
               </p>

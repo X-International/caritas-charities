@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
+import { Heading, Lead } from "@/components/ui/Typography";
 import {
   filenameToAlt,
   GALLERY_IMAGE_EXTENSIONS,
@@ -101,16 +102,16 @@ export default function GalleryPage() {
             </nav>
 
             <div className="mt-4 md:mt-6 max-w-3xl">
-              <h1 className="text-2xl xs:text-3xl sm:text-4xl font-extrabold font-serif leading-[1.06] tracking-tight">
+              <Heading level={1} variant="page" color="white">
                 Photo Gallery
-              </h1>
+              </Heading>
 
               <div aria-hidden className="w-12 sm:w-16 h-px bg-white/20 mt-3 sm:mt-4 mb-3 sm:mb-4 rounded" />
 
-              <p className="text-sm sm:text-base md:text-lg text-white/95 max-w-3xl font-normal leading-relaxed">
+              <Lead variant="hero">
                 Capturing moments of hope, relief, and community solidarity across the
                 Archdiocese.
-              </p>
+              </Lead>
             </div>
           </div>
         </section>

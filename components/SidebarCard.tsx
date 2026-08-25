@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Button from "@/components/ui/Button";
+import { Heading } from "@/components/ui/Typography";
 
 export default function SidebarCard() {
   return (
@@ -14,8 +15,10 @@ export default function SidebarCard() {
         />
       </div>
       <div className="bg-[#b10017] p-8 text-white">
-        <h3 className="text-2xl font-serif font-bold mb-4">Faith Put Into Practice</h3>
-        <p className="text-sm text-white/90 leading-relaxed mb-8">
+        <Heading level={3} variant="subsection" color="white" className="mb-4">
+          Faith Put Into Practice
+        </Heading>
+        <p className="text-sm text-white/90 leading-relaxed mb-8 font-sans">
           Our story is one of showing up, again and again, for the people who need it most. Every programme we run is one more way that story continues.
         </p>
         <Button href="/our-programmes" variant="secondary" size="md">

@@ -5,6 +5,7 @@ import { ArrowRight, Check, Copy, Heart, Landmark, Smartphone } from "lucide-rea
 import { useEffect, useState } from "react";
 import { siteConfig } from "@/lib/site-config";
 import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
+import { Heading } from "@/components/ui/Typography";
 
 const BANK_ACCOUNT = siteConfig.giving.bank.accountNumber;
 const MOBILE_NUMBERS = [siteConfig.office.phones.appeal, siteConfig.office.phones.appealAlternate];
@@ -50,9 +51,9 @@ export default function OtherWaysToSupport() {
     <section className="w-full bg-[#f4efe6] py-8 sm:py-12 md:py-16 lg:py-20">
       <div className="site-container">
         <div className="max-w-3xl mx-auto text-center mb-6 sm:mb-8 md:mb-10 space-y-3 sm:space-y-4">
-          <h3 id="ways-to-give" className="text-[#b10017] text-3xl sm:text-4xl md:text-5xl lg:text-[40px] font-serif leading-tight">
+          <Heading level={2} variant="section" color="red" id="ways-to-give" className="text-3xl sm:text-4xl md:text-5xl lg:text-[40px] leading-tight">
             Ways to Give
-          </h3>
+          </Heading>
           <p className="text-sm sm:text-base md:text-[17px] leading-relaxed text-[#4d4338]">
             This is the official donation page of the Caritas Kampala Charities Office.{' '}
             <a
@@ -84,9 +85,9 @@ export default function OtherWaysToSupport() {
                 <Heart className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10" strokeWidth={2.25} aria-hidden="true" />
               </div>
               <div className="space-y-3 sm:space-y-4">
-                <h4 className="text-[#b10017] text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-serif font-normal leading-tight">
+                <Heading level={3} variant="subsection" color="red" className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-normal leading-tight">
                   Give Online
-                </h4>
+                </Heading>
                 <p className="text-[#2c2c2c] text-base sm:text-[17px] md:text-[18px] leading-relaxed max-w-md mx-auto">
                   For secure online giving instructions, contact our team. We will confirm the current official payment route before you send money.
                 </p>
@@ -111,9 +112,9 @@ export default function OtherWaysToSupport() {
                 <Landmark className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10" strokeWidth={2.25} aria-hidden="true" />
               </div>
               <div className="space-y-3 sm:space-y-4">
-                <h4 className="text-[#b10017] text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-serif font-normal leading-tight">
+                <Heading level={3} variant="subsection" color="red" className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-normal leading-tight">
                   Bank Transfer
-                </h4>
+                </Heading>
                 <p className="text-[#2c2c2c] text-base sm:text-[17px] md:text-[18px] leading-relaxed max-w-md mx-auto whitespace-pre-line">
                     {"Send your gift directly to our account.\n\nCentenary Bank\nEntebbe Road Branch\nAccount No."}
                   </p>
@@ -144,9 +145,9 @@ export default function OtherWaysToSupport() {
                 <Smartphone className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10" strokeWidth={2.25} aria-hidden="true" />
               </div>
               <div className="space-y-3 sm:space-y-4">
-                <h4 className="text-[#b10017] text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-serif font-normal leading-tight">
+                <Heading level={3} variant="subsection" color="red" className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-normal leading-tight">
                   Mobile Money
-                </h4>
+                </Heading>
                 <div className="text-[#2c2c2c] text-base sm:text-[17px] md:text-[18px] leading-relaxed max-w-md mx-auto space-y-3">
                   <p>Give directly using Mobile Money.</p>
                   <div className="space-y-2">

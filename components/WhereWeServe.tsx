@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { Heading, Eyebrow } from "@/components/ui/Typography";
 
 interface ImpactArea {
   id: string;
@@ -89,12 +90,15 @@ function WhiteCard({ area }: { area: ImpactArea }) {
         </div>
 
         <div className="my-3 sm:mt-4 sm:mb-5 flex-1">
-          <h3
+          <Heading
+            level={3}
+            variant="subsection"
+            color="red"
             id={`pillar-title-${area.id}`}
-            className="text-xl sm:text-2xl lg:text-[25px] font-serif font-bold text-[#b10017] leading-snug mb-2.5 sm:mb-3.5"
+            className="mb-2.5 sm:mb-3.5 leading-snug"
           >
             {area.title}
-          </h3>
+          </Heading>
           <p className="text-sm sm:text-base text-gray-800 leading-relaxed font-sans">
             {area.description}
           </p>
@@ -122,9 +126,9 @@ function WhiteCard({ area }: { area: ImpactArea }) {
         </div>
 
         <div aria-hidden="true" className="relative z-10 my-3 sm:mt-4 sm:mb-5 flex-1 space-y-2 sm:space-y-3">
-          <h3 className="text-xl sm:text-2xl lg:text-[26px] font-serif font-bold text-white leading-tight">
+          <Heading level={3} variant="subsection" color="white" className="leading-tight">
             {area.title}
-          </h3>
+          </Heading>
           <p className="text-xs sm:text-sm text-white/95 leading-relaxed font-sans">
             {area.description}
           </p>
@@ -170,12 +174,15 @@ function FeaturedCard({ area }: { area: ImpactArea }) {
 
       {/* Middle Content */}
       <div className="relative z-10 my-4 sm:my-6 flex-1 space-y-2 sm:space-y-4">
-        <h3
+        <Heading
+          level={3}
+          variant="subsection"
+          color="white"
           id={`featured-pillar-title-${area.id}`}
-          className="text-2xl sm:text-3xl lg:text-[40px] font-serif font-bold text-white leading-[1.15]"
+          className="text-2xl sm:text-3xl lg:text-[40px] leading-[1.15]"
         >
           {area.title}
-        </h3>
+        </Heading>
         <p className="text-sm sm:text-base lg:text-lg text-white/95 leading-relaxed font-sans max-w-xl">
           {area.description}
         </p>
@@ -210,12 +217,15 @@ export default function WhereWeServe() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Title */}
-        <h2
+        <Heading
+          level={2}
+          variant="section"
+          color="red"
           id="core-pillars-title"
-          className="text-2xl sm:text-4xl md:text-5xl font-serif font-bold text-[#b10017] tracking-tight mb-6 sm:mb-10 text-balance"
+          className="mb-6 sm:mb-10 text-balance"
         >
           Our Core Pillars of Support
-        </h2>
+        </Heading>
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-7">

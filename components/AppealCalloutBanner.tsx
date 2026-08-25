@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { Heading } from "@/components/ui/Typography";
 
 export default function AppealCalloutBanner() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -44,9 +45,15 @@ export default function AppealCalloutBanner() {
         <div className="appeal-callout-panel z-20 lg:absolute lg:inset-0 lg:flex lg:items-center">
           <div className="appeal-callout-panel-inner bg-[#b10017] text-white p-7 sm:p-10 lg:p-12 rounded-2xl sm:rounded-3xl space-y-5 sm:space-y-6 lg:w-[41.667%]">
             <div className="appeal-callout-panel-content space-y-5 sm:space-y-6">
-              <h2 id="appeal-callout-heading" className="text-xl sm:text-2xl lg:text-3xl font-bold font-serif leading-snug text-balance">
+              <Heading
+                level={2}
+                variant="subsection"
+                color="white"
+                id="appeal-callout-heading"
+                className="text-xl sm:text-2xl lg:text-3xl leading-snug text-balance"
+              >
                 Each year, Caritas Kampala supports thousands of vulnerable families through food security, emergency relief, and community resilience programmes.
-              </h2>
+              </Heading>
               <div className="appeal-callout-panel-cta">
                 <Link
                   href="/contact-us"

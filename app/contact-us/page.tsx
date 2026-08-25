@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
 import ContactHero from "@/components/ContactHero";
 import ContactForm from "@/components/ContactForm";
+import { Heading } from "@/components/ui/Typography";
 import DeferredLocationMap from "@/components/DeferredLocationMap";
 import { siteConfig } from "@/lib/site-config";
 
@@ -38,7 +39,7 @@ export default function ContactUsPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
               <div className="lg:col-span-6 space-y-6">
                 <div>
-                  <h2 className="text-2xl font-serif font-bold text-[#b10017]">Visit &amp; Call Us</h2>
+                  <Heading level={2} variant="subsection" color="red">Visit &amp; Call Us</Heading>
                   <p className="text-sm text-gray-600 mt-2">
                     Our main office location and direct phone lines.
                   </p>
@@ -119,7 +120,7 @@ export default function ContactUsPage() {
             {/* Quick Form */}
             <div className="lg:col-span-6 bg-white p-6 sm:p-8 md:p-10 rounded-3xl border border-gray-200 space-y-6">
               <div>
-                <h2 className="text-2xl font-serif font-bold text-[#b10017]">Send Us a Message</h2>
+                <Heading level={2} variant="subsection" color="red">Send Us a Message</Heading>
                 <p className="text-sm text-gray-600 mt-2">Fill out the form below and we&apos;ll get back to you as soon as possible.</p>
               </div>
               <ContactForm />

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Card from "@/components/ui/Card";
+import { Heading, Lead } from "@/components/ui/Typography";
 
 export const metadata = {
   title: "FAQs | Caritas Kampala Charities Office",
@@ -51,12 +52,12 @@ export default function FAQsPage() {
                 <li aria-current="page" className="text-red-200">FAQS</li>
               </ol>
             </nav>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif tracking-tight">
+            <Heading level={1} variant="page" color="white">
               Frequently Asked Questions
-            </h1>
-            <p className="text-base sm:text-lg text-red-100 max-w-2xl font-light leading-relaxed">
+            </Heading>
+            <Lead variant="hero">
               Clear answers to help you get involved, contribute, and support our mission.
-            </p>
+            </Lead>
           </div>
         </section>
 
@@ -64,7 +65,7 @@ export default function FAQsPage() {
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-6">
           {faqs.map((faq, i) => (
             <Card key={i} variant="content" className="space-y-2">
-              <h2 className="text-lg sm:text-xl font-serif font-bold text-[#b10017]">{faq.q}</h2>
+              <Heading level={2} variant="card" color="red">{faq.q}</Heading>
               <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{faq.a}</p>
             </Card>
           ))}

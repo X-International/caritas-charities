@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
+import { Heading, Lead } from "@/components/ui/Typography";
 
 export const metadata = {
   title: "About Us | Caritas Kampala Charities Office",
@@ -25,12 +26,12 @@ export default function AboutUsPage() {
                 { label: "HOME", href: "/" },
                 { label: "ABOUT US" }
             ]} />
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif tracking-tight">
+            <Heading level={1} variant="page" color="white">
               About Caritas Kampala
-            </h1>
-            <p className="text-base sm:text-lg text-red-100 max-w-2xl font-light leading-relaxed">
+            </Heading>
+            <Lead variant="hero">
               Serving the Archdiocese of Kampala through compassion, dignity, and practical support for those who need it most.
-            </p>
+            </Lead>
           </div>
         </section>
 
@@ -38,9 +39,9 @@ export default function AboutUsPage() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#b10017]">
+              <Heading level={2} variant="subsection" color="red">
                 Who We Are
-              </h2>
+              </Heading>
               <div className="space-y-4 text-gray-700 leading-relaxed text-base sm:text-lg">
                 <p>
                   Caritas Kampala is the socio-pastoral ministry of the Catholic Church in the Archdiocese of Kampala. Established to put the gospel message of love and charity into concrete action, we serve all individuals regardless of religious, ethnic, or political background.

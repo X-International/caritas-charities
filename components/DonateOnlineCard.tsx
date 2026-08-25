@@ -4,6 +4,7 @@ import { ArrowRight, Heart } from "lucide-react";
 import { useId } from "react";
 import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
 import Button from "@/components/ui/Button";
+import { Heading } from "@/components/ui/Typography";
 
 export default function DonateOnlineCard() {
   const headingId = useId();
@@ -19,12 +20,15 @@ export default function DonateOnlineCard() {
         </div>
 
         <div className="min-w-0 space-y-2 md:flex-1">
-          <h2
+          <Heading
+            level={2}
+            variant="subsection"
+            color="red"
             id={headingId}
-            className="font-serif font-bold text-[#b10017] text-xl sm:text-2xl md:text-[28px] leading-tight"
+            className="md:text-[28px] leading-tight"
           >
             Make a Gift Today
-          </h2>
+          </Heading>
           <p className="text-sm sm:text-base text-gray-900 leading-relaxed max-w-2xl font-sans">
             Every gift, however given, reaches families who need it most. Contact our office to confirm the current official payment route before sending money.
           </p>

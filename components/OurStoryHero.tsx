@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Heading, Eyebrow, Lead } from "@/components/ui/Typography";
 
 export default function OurStoryHero() {
   return (
@@ -17,16 +18,16 @@ export default function OurStoryHero() {
 
       {/* Right Column: Red Content Panel */}
       <div className="contact-hero-panel order-2 relative h-75 sm:h-100 md:h-120 lg:h-full bg-[#b10017] text-white rounded-b-2xl sm:rounded-b-4xl lg:rounded-none lg:rounded-l-4xl overflow-hidden flex flex-col justify-center px-8 sm:px-12 md:px-16 lg:px-24">
-        <div className="contact-hero-panel-content max-w-lg">
-          <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-white/90 mb-4 sm:mb-5">
+        <div className="contact-hero-panel-content max-w-lg space-y-4">
+          <Eyebrow color="white">
             THE CHARITIES OFFICE
-          </p>
-          <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-serif font-bold text-white tracking-tight mb-6 sm:mb-8">
+          </Eyebrow>
+          <Heading level={1} variant="hero" color="white">
             About Us
-          </h1>
-          <p className="text-xl sm:text-2xl lg:text-[26px] font-serif text-white leading-snug mb-4 sm:mb-6">
+          </Heading>
+          <Lead variant="article" className="text-white">
             The Charities Office operates under Caritas Kampala, serving the Archdiocese of Kampala through compassion, dignity, and practical support for those who need it most.
-          </p>
+          </Lead>
         </div>
       </div>
     </div>

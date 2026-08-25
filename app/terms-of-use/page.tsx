@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Heading } from "@/components/ui/Typography";
 
 export const metadata = {
   title: "Terms of Use | Caritas Kampala Charities Office",
@@ -26,9 +27,9 @@ export default function TermsOfUsePage() {
                 <li aria-current="page" className="text-red-200">TERMS OF USE</li>
               </ol>
             </nav>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif tracking-tight">
+            <Heading level={1} variant="page" color="white">
               Terms of Use
-            </h1>
+            </Heading>
           </div>
         </section>
 
@@ -37,11 +38,11 @@ export default function TermsOfUsePage() {
           <p>
             Welcome to the official website of the Caritas Kampala Charities Office. By accessing or using this website, you agree to comply with and be bound by the following terms.
           </p>
-          <h2 className="text-xl font-serif font-bold text-[#b10017]">Use of Materials</h2>
+          <Heading level={2} variant="card" color="red">Use of Materials</Heading>
           <p>
             All content, images, articles, and brand logos on this website are the property of Caritas Kampala unless otherwise stated. Materials may be downloaded or shared for non-commercial, educational, and awareness purposes with proper attribution.
           </p>
-          <h2 className="text-xl font-serif font-bold text-[#b10017]">External Links</h2>
+          <Heading level={2} variant="card" color="red">External Links</Heading>
           <p>
             This website may contain links to external third-party sites. Caritas Kampala is not responsible for the content or privacy practices of external web platforms.
           </p>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
+import { Heading } from "@/components/ui/Typography";
 
 interface NewsCard {
   id: number;
@@ -51,9 +52,9 @@ export default function LatestUpdates() {
       <div className="bg-[#f4efe6] text-gray-900 rounded-card p-6 sm:p-10 lg:p-12 shadow-sm border border-[#e8dfd1]">
         {/* Section Heading */}
         <div className="mb-8">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif text-[#b10017] tracking-tight">
+          <Heading level={2} variant="section" color="red">
             Latest updates from Caritas
-          </h2>
+          </Heading>
         </div>
 
         {/* Top 3 Cards Grid */}
@@ -71,9 +72,9 @@ export default function LatestUpdates() {
                   </span>
                   <span>{card.date}</span>
                 </div>
-                <h3 className="text-lg font-bold font-serif text-gray-900 leading-snug mb-3 hover:text-[#b10017] transition-colors cursor-pointer">
+                <Heading level={3} variant="card" color="dark" className="text-lg leading-snug mb-3 hover:text-[#b10017] transition-colors cursor-pointer">
                   {card.title}
-                </h3>
+                </Heading>
                 <p className="text-xs text-gray-700 leading-relaxed line-clamp-3">
                   {card.excerpt}
                 </p>
@@ -109,9 +110,9 @@ export default function LatestUpdates() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#b10017]/90 via-[#8e0a20]/80 to-transparent" />
 
             <div className="relative z-10 max-w-xl space-y-4">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-serif leading-tight">
+              <Heading level={3} variant="subsection" color="white" className="text-2xl sm:text-3xl md:text-4xl leading-tight">
                 A Story from Caritas Jerusalem: Light Amid the Darkness
-              </h3>
+              </Heading>
               <p className="text-sm text-red-100 font-light leading-relaxed hidden sm:block">
                 Amid ongoing crisis, local healthcare workers and Caritas volunteers continue to provide hope, medical relief, and community support.
               </p>
@@ -136,9 +137,9 @@ export default function LatestUpdates() {
                 </span>
                 <span>28.06.2026</span>
               </div>
-              <h3 className="text-xl font-bold font-serif text-gray-900 leading-snug mb-3 hover:text-[#b10017] transition-colors cursor-pointer">
+              <Heading level={3} variant="card" color="dark" className="text-xl leading-snug mb-3 hover:text-[#b10017] transition-colors cursor-pointer">
                 Alarming rate of malnutrition in South Sudan: Caritas responds with nutritional support
-              </h3>
+              </Heading>
               <p className="text-xs text-gray-700 leading-relaxed line-clamp-3">
                 Emergency feeding centers established across high-risk districts offer specialized therapeutic food and infant medical care.
               </p>

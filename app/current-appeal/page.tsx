@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
 import AppealCalloutBanner from "@/components/AppealCalloutBanner";
 import AppealPageHero from "@/components/AppealPageHero";
+import { Heading, Eyebrow } from "@/components/ui/Typography";
 
 export const metadata = {
   title: "Current Appeal: Famine in Kotido & Moroto | Caritas Kampala",
@@ -43,9 +44,9 @@ export default function CurrentAppealPage() {
             <div className="lg:col-span-8 space-y-7 sm:space-y-8">
               {/* Header Title & Subline */}
               <div className="space-y-3 sm:space-y-4">
-                <h1 className="text-[28px] sm:text-[34px] lg:text-[40px] font-extrabold font-serif text-[#b10017] leading-[1.18] tracking-tight">
+                <Heading level={1} variant="article" color="red">
                   Emergency Appeal for Kotido and Moroto
-                </h1>
+                </Heading>
                 <p className="text-[18px] sm:text-[21px] lg:text-[24px] font-serif text-gray-700 font-semibold leading-snug">
                   Standing with the people of Karamoja, together with the whole Church in Uganda.
                 </p>
@@ -55,9 +56,9 @@ export default function CurrentAppealPage() {
 
               {/* The Situation */}
               <section aria-labelledby="situation-heading" className="space-y-4">
-                <h2 id="situation-heading" className="text-xl sm:text-2xl font-bold font-serif text-[#b10017] text-balance">
+                <Heading level={2} variant="card" color="red" id="situation-heading" className="text-balance">
                   The Situation
-                </h2>
+                </Heading>
                 <div className="space-y-4 text-gray-700 text-[15px] sm:text-base lg:text-lg leading-relaxed font-normal">
                   <p>
                     Climate change has brought drought to the Karamoja region, and that drought has now become famine in the Kotido and Moroto dioceses. Families across the region are struggling to find enough food, and the need is urgent.
@@ -70,9 +71,9 @@ export default function CurrentAppealPage() {
 
               {/* Our Response */}
               <section aria-labelledby="response-heading" className="space-y-4 pt-1 sm:pt-2">
-                <h2 id="response-heading" className="text-xl sm:text-2xl font-bold font-serif text-[#b10017] text-balance">
+                <Heading level={2} variant="card" color="red" id="response-heading" className="text-balance">
                   Our Response
-                </h2>
+                </Heading>
                 <div className="space-y-4 text-gray-700 text-[15px] sm:text-base lg:text-lg leading-relaxed font-normal">
                   <p>
                     As the Kampala Archdiocese, we are calling on the entire Church in Uganda to come together for the people of Kotido and Moroto. This effort began in July and will continue through September.
@@ -84,9 +85,9 @@ export default function CurrentAppealPage() {
 
                 {/* Food Items Card (Beige style) */}
                 <div className="bg-[#f2ebe3] p-6 sm:p-8 rounded-2xl space-y-5">
-                  <h3 className="text-xl sm:text-2xl font-bold font-serif text-[#b10017] text-balance">
+                  <Heading level={3} variant="card" color="red" className="text-balance">
                     We are focused on food and basic household essentials, including:
-                  </h3>
+                  </Heading>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6 text-[#b10017] text-[15px] sm:text-base lg:text-lg font-medium">
                     <li className="flex items-center gap-3">
                       <span aria-hidden="true" className="w-2 h-2 rounded-full bg-[#b10017]" /> Rice
@@ -116,9 +117,9 @@ export default function CurrentAppealPage() {
 
               {/* Open to Everyone */}
               <section aria-labelledby="open-to-everyone-heading" className="space-y-4 pt-1 sm:pt-2">
-                <h2 id="open-to-everyone-heading" className="text-xl sm:text-2xl font-bold font-serif text-[#b10017] text-balance">
+                <Heading level={2} variant="card" color="red" id="open-to-everyone-heading" className="text-balance">
                   Open to Everyone
-                </h2>
+                </Heading>
                 <p className="text-gray-700 text-[15px] sm:text-base lg:text-lg leading-relaxed font-normal">
                   This appeal is not only for Catholics. Caritas does not discriminate based on religion, because hunger affects everyone the same way, regardless of their faith. While the Catholic Church is leading this initiative, the help itself is for anyone in Kotido and Moroto who needs it.
                 </p>
@@ -145,12 +146,12 @@ export default function CurrentAppealPage() {
               {/* Card 1: Collection Point & Address */}
               <div className="bg-[#b10017] text-white p-6 sm:p-7 rounded-2xl sm:rounded-3xl space-y-5">
                 <div>
-                  <p className="text-[10px] font-extrabold uppercase tracking-widest text-red-200 mb-1">
+                  <Eyebrow color="white" className="text-red-200 mb-1 block">
                     JULY – SEPTEMBER APPEAL
-                  </p>
-                  <h3 className="text-xl sm:text-2xl font-extrabold font-serif leading-snug">
+                  </Eyebrow>
+                  <Heading level={3} variant="subsection" color="white" className="text-xl sm:text-2xl leading-snug">
                     How to Help
-                  </h3>
+                  </Heading>
                   <p className="text-xs sm:text-sm text-red-100 font-normal leading-relaxed mt-2">
                     The Kampala Archdiocese has designated the <strong className="text-white font-semibold">Caritas Kampala Office</strong> as the collection point for this appeal. Donations of food, essential relief items, and other support materials can be dropped off at:
                   </p>
@@ -177,12 +178,12 @@ export default function CurrentAppealPage() {
               {/* Card 2: Direct Contact (Matching Screenshot 3 design) */}
               <div className="bg-gray-50 border border-gray-100 text-gray-900 p-6 sm:p-7 rounded-2xl sm:rounded-3xl space-y-5">
                 <div>
-                  <p className="text-[10px] font-extrabold uppercase tracking-widest text-[#b10017] mb-1">
+                  <Eyebrow color="red" className="mb-1 block">
                     DIRECT CONTACT
-                  </p>
-                  <h3 className="text-xl sm:text-2xl font-extrabold font-serif leading-snug">
+                  </Eyebrow>
+                  <Heading level={3} variant="subsection" color="dark" className="text-xl sm:text-2xl leading-snug">
                     Need More Information?
-                  </h3>
+                  </Heading>
                   <p className="text-xs sm:text-sm text-gray-600 font-normal leading-relaxed mt-2">
                     Questions about this appeal? Our team is ready to help with donations, collections, and enquiries.
                   </p>

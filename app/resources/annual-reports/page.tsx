@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Heading, Lead } from "@/components/ui/Typography";
 
 export const metadata = {
   title: "Annual Reports | Caritas Kampala Charities Office",
@@ -31,19 +32,19 @@ export default function AnnualReportsPage() {
                 <li aria-current="page" className="text-red-200">ANNUAL REPORTS</li>
               </ol>
             </nav>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif tracking-tight">
+            <Heading level={1} variant="page" color="white">
               Annual Reports
-            </h1>
-            <p className="text-base sm:text-lg text-red-100 max-w-2xl font-light leading-relaxed">
+            </Heading>
+            <Lead variant="hero">
               Transparent financial auditing and yearly impact reviews for our supporters and partners.
-            </p>
+            </Lead>
           </div>
         </section>
 
         {/* Reports Archive */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-8">
           <div className="bg-[#f4efe6] p-8 rounded-2xl border border-amber-200 text-center space-y-3">
-            <h2 className="text-xl font-serif font-bold text-[#b10017]">Annual Publications Archive</h2>
+            <Heading level={2} variant="card" color="red">Annual Publications Archive</Heading>
             <p className="text-sm text-gray-700 max-w-lg mx-auto">
               Our 2025/2026 Annual Impact &amp; Financial Accountability Report is currently being compiled and will be available for PDF download shortly.
             </p>

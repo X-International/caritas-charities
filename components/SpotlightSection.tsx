@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
+import { Heading } from "@/components/ui/Typography";
 
 export default function SpotlightSection() {
   const [activeTab, setActiveTab] = useState("look-back");
@@ -48,9 +49,9 @@ export default function SpotlightSection() {
       <div className="bg-[#006b5d] text-white rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl relative">
         {/* Section Heading & Tabs */}
         <div className="text-center max-w-2xl mx-auto mb-10 space-y-6">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif tracking-tight">
+          <Heading level={2} variant="section" color="white">
             Spotlight
-          </h2>
+          </Heading>
 
           {/* Toggle Pills */}
           <div className="inline-flex rounded-full border border-teal-600/50 bg-[#005247] p-1" role="tablist" aria-label="Spotlight sections">
@@ -126,9 +127,9 @@ export default function SpotlightSection() {
 
           {/* Right Details */}
           <div className="lg:col-span-6 space-y-6 lg:pl-6">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-serif leading-tight">
+            <Heading level={3} variant="subsection" color="white" className="text-2xl sm:text-3xl lg:text-4xl leading-tight">
               Ordinary People. Extraordinary Love.
-            </h3>
+            </Heading>
             <p className="text-sm sm:text-base text-teal-100 font-light leading-relaxed">
               Stories & Reflections from Caritas Secretariat staff and field workers worldwide. In the spirit of love and solidarity, Caritas staff and volunteers accompany, support, and rebuild communities in need across every continent.
             </p>

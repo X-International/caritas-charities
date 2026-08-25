@@ -8,6 +8,7 @@ import RelatedNewsCarousel from "@/components/RelatedNewsCarousel";
 import { getNewsArticle, newsArticles } from "@/lib/content/news";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
+import { Heading, Eyebrow } from "@/components/ui/Typography";
 
 export function generateStaticParams() {
   return newsArticles.map((article) => ({ slug: article.slug }));
@@ -98,9 +99,9 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
               </div>
 
               <div className="space-y-6">
-                <h1 className="font-serif text-3xl sm:text-4xl lg:text-[44px] leading-[1.15] text-[#b10017]">
+                <Heading level={1} variant="article" color="red">
                   {article.title}
-                </h1>
+                </Heading>
                 {article.subtitle && (
                   <p className="text-xl sm:text-2xl font-serif text-gray-700 leading-snug">
                     {article.subtitle}
@@ -113,9 +114,9 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
                 </div>
                 {article.helpSection && (
                   <Card variant="info" className="space-y-6 mt-8">
-                    <h2 className="text-xl sm:text-2xl font-bold font-serif text-[#b10017]">
+                    <Heading level={2} variant="card" color="red">
                       {article.helpSection.title}
-                    </h2>
+                    </Heading>
                     <div className="space-y-2 text-[#4f4f4f] text-[16px] leading-relaxed">
                       {article.helpSection.content.map((line, index) => (
                         <p key={index}>{line}</p>
