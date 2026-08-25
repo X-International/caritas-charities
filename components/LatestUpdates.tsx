@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import Button from "@/components/ui/Button";
 
 interface NewsCard {
   id: number;
@@ -113,12 +114,13 @@ export default function LatestUpdates() {
                 Amid ongoing crisis, local healthcare workers and Caritas volunteers continue to provide hope, medical relief, and community support.
               </p>
               <div className="pt-2">
-                <Link
+                <Button
                   href="/resources/news"
-                  className="inline-block bg-white text-[#b10017] hover:bg-gray-100 text-xs font-bold px-7 py-3 rounded-full tracking-wider uppercase shadow transition-all transform hover:scale-105"
+                  variant="secondary"
+                  size="sm"
                 >
                   READ MORE
-                </Link>
+                </Button>
               </div>
             </div>
           </div>

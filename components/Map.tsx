@@ -5,6 +5,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import Image from "next/image";
 import { useState } from "react";
 import { siteConfig } from "@/lib/site-config";
+import Button from "@/components/ui/Button";
 
 const MAP_LAT = siteConfig.office.coordinates.latitude;
 const MAP_LNG = siteConfig.office.coordinates.longitude;
@@ -21,9 +22,9 @@ export default function LocationMap() {
         <div className="absolute inset-0 z-10 flex items-center justify-center p-8 text-center">
           <div className="space-y-3">
             <p className="text-sm font-medium text-gray-600">The interactive map is unavailable right now.</p>
-            <a href={DIRECTIONS_URL} target="_blank" rel="noopener noreferrer" className="inline-flex rounded-full bg-[#b10017] px-5 py-2.5 text-sm font-bold text-white hover:bg-[#8e0a20] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2">
+            <Button href={DIRECTIONS_URL} target="_blank" rel="noopener noreferrer" variant="primary" size="sm">
               Open in Google Maps
-            </a>
+            </Button>
           </div>
         </div>
       ) : null}

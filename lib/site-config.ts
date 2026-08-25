@@ -4,6 +4,7 @@
  * not belong here; they remain server/environment configuration.
  */
 export const siteConfig = {
+  domain: "https://www.caritaskampalacharities.org",
   office: {
     name: "Caritas Kampala Main Office",
     address: ["Old Ggaba Road, Nsambya", "(next to the American Embassy)", "Kampala, Uganda"],

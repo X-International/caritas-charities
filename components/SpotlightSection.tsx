@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import Button from "@/components/ui/Button";
 
 export default function SpotlightSection() {
   const [activeTab, setActiveTab] = useState("look-back");
@@ -133,12 +133,13 @@ export default function SpotlightSection() {
               Stories & Reflections from Caritas Secretariat staff and field workers worldwide. In the spirit of love and solidarity, Caritas staff and volunteers accompany, support, and rebuild communities in need across every continent.
             </p>
             <div className="pt-2">
-              <Link
+              <Button
                 href="/resources/news"
-                className="inline-block bg-white text-[#006b5d] hover:bg-teal-50 text-xs sm:text-sm font-bold px-8 py-3.5 rounded-full tracking-wider uppercase transition-all transform hover:scale-105"
+                variant="secondary"
+                size="md"
               >
                 READ STORY
-              </Link>
+              </Button>
             </div>
           </div>
         </div>

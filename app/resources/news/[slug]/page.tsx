@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RelatedNewsCarousel from "@/components/RelatedNewsCarousel";
 import { getNewsArticle, newsArticles } from "@/lib/content/news";
+import Button from "@/components/ui/Button";
 
 export function generateStaticParams() {
   return newsArticles.map((article) => ({ slug: article.slug }));
@@ -110,7 +111,7 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
                   ))}
                 </div>
                 {article.helpSection && (
-                  <div className="bg-gray-50 p-6 sm:p-8 rounded-2xl space-y-6 mt-8">
+                  <div className="bg-[#f4efe6] p-6 sm:p-8 rounded-2xl space-y-6 mt-8 border border-[#e8dfd1]">
                     <h2 className="text-xl sm:text-2xl font-bold font-serif text-[#b10017]">
                       {article.helpSection.title}
                     </h2>
@@ -119,28 +120,30 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
                         <p key={index}>{line}</p>
                       ))}
                     </div>
-                    <Link
+                    <Button
                       href={article.helpSection.buttonLink}
-                      className="inline-block bg-[#b10017] text-white px-6 py-3 rounded-full font-bold hover:bg-[#8e0013] transition-colors"
+                      variant="primary"
+                      size="md"
                     >
                       {article.helpSection.buttonText}
-                    </Link>
+                    </Button>
                   </div>
                 )}
                 {article.closingPrompt && (
-                  <div className="bg-gray-50 p-6 sm:p-8 rounded-2xl space-y-6 mt-8">
+                  <div className="bg-[#f4efe6] p-6 sm:p-8 rounded-2xl space-y-6 mt-8 border border-[#e8dfd1]">
                     <p className="text-[17px] sm:text-[18px] leading-[1.7] text-[#4f4f4f]">
                       {article.closingPrompt.body}
                     </p>
                     <div className="flex flex-wrap gap-4">
                       {article.closingPrompt.buttons.map((button) => (
-                        <Link
+                        <Button
                           key={button.text}
                           href={button.link}
-                          className="inline-block bg-[#b10017] text-white px-6 py-3 rounded-full font-bold hover:bg-[#8e0013] transition-colors"
+                          variant="primary"
+                          size="md"
                         >
                           {button.text}
-                        </Link>
+                        </Button>
                       ))}
                     </div>
                   </div>
@@ -150,7 +153,7 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
 
             {/* Right Column: Metadata */}
             <aside className="lg:col-span-4 space-y-8 lg:sticky lg:top-28">
-              <div className="bg-gray-50 p-6 sm:p-7 rounded-2xl sm:rounded-3xl space-y-4">
+              <div className="bg-[#f4efe6] p-6 sm:p-7 rounded-2xl sm:rounded-3xl space-y-4 border border-[#e8dfd1]">
                 <h2 className="text-sm font-extrabold uppercase tracking-widest text-[#585858]">
                   Article Details
                 </h2>
@@ -161,10 +164,10 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
                     </span>
                     <span className={`inline-flex items-center rounded-full px-3 py-1 font-semibold text-white text-[11px] ${
                       article.category === "Emergency Appeal"
-                        ? "bg-[#b10017]"
+                        ? "bg-category-emergency"
                         : article.category === "Announcement"
-                          ? "bg-[#7a5b1d]"
-                          : "bg-[#0f6d67]"
+                          ? "bg-category-announcement"
+                          : "bg-category-partnership"
                     }`}>
                       {article.category}
                     </span>

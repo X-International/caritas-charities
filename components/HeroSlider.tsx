@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
+import Button from "@/components/ui/Button";
 
 interface Slide {
   id: number;
@@ -179,7 +180,7 @@ export default function HeroSlider() {
             </p>
 
             <div className="pt-3">
-              <a
+              <Button
                 href={slides[currentIndex].buttonLink}
                 onKeyDown={handleKeyDown}
                 onClick={() => trackEvent(ANALYTICS_EVENTS.ctaClick, {
@@ -187,10 +188,11 @@ export default function HeroSlider() {
                   slide: slides[currentIndex].id,
                   destination: slides[currentIndex].buttonLink,
                 })}
-                className="inline-block bg-[#b10017] text-white hover:bg-white hover:text-[#b10017] border-2 border-[#b10017] text-xs sm:text-sm font-semibold px-8 py-3.5 rounded-full tracking-wider uppercase transition-colors duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+                variant="primary"
+                size="lg"
               >
                 {slides[currentIndex].buttonText}
-              </a>
+              </Button>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import Button from "@/components/ui/Button";
 
 export default function SidebarCard() {
   return (
@@ -18,12 +18,9 @@ export default function SidebarCard() {
         <p className="text-sm text-white/90 leading-relaxed mb-8">
           Our story is one of showing up, again and again, for the people who need it most. Every programme we run is one more way that story continues.
         </p>
-        <Link
-          href="/our-programmes"
-          className="inline-flex items-center justify-center gap-2 bg-white text-[#b10017] font-bold text-xs px-7 py-3 rounded-full uppercase tracking-wider border-2 border-white transition-all duration-200 hover:bg-[#b10017] hover:text-white hover:-translate-y-0.5"
-        >
+        <Button href="/our-programmes" variant="secondary" size="md">
           See What We Do
-        </Link>
+        </Button>
       </div>
     </div>
   );

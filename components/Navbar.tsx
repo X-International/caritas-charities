@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { navLinks, type NavLink } from "@/components/navigation/nav-data";
 import ShareModal from "@/components/ShareModal";
 import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
+import Button from "@/components/ui/Button";
 
 /* ─── Component ──────────────────────────────────────────── */
 export default function Navbar() {
@@ -649,13 +650,15 @@ export default function Navbar() {
 
           {/* Donate CTA + Mobile toggle */}
           <div className="flex items-center justify-end space-x-3 shrink-0">
-            <Link
+            <Button
               href="/donate"
-              className="hidden sm:inline-block bg-[#b10017] text-white hover:bg-white hover:text-[#b10017] focus-visible:bg-white focus-visible:text-[#b10017] focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-2 border-2 border-[#b10017] text-xs xl:text-sm font-bold px-5 py-2.5 xl:px-6 xl:py-2.5 2xl:px-7 2xl:py-3 rounded-full tracking-wider uppercase transition-all duration-200 text-center shadow-xs cursor-pointer"
+              variant="primary"
+              size="md"
+              className="hidden sm:inline-flex"
               aria-label="Donate to Caritas Kampala"
             >
               DONATE
-            </Link>
+            </Button>
 
             <button
               ref={mobileToggleRef}

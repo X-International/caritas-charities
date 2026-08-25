@@ -46,104 +46,89 @@ const footerColumns: FooterColumnData[] = [
   },
 ];
 
-function DesktopColumn({ column }: { column: FooterColumnData }) {
-  return (
-    <nav aria-label={`${column.title} links`} className="space-y-6">
-      <h3 className="text-sm font-bold uppercase tracking-widest text-white">
-        {column.title}
-      </h3>
-      <ul className="space-y-4 text-sm text-red-50 font-normal">
-        {column.links.map((link) => (
-          <li key={`${link.href ?? "text"}-${link.label}`}>
-            {link.href ? (
-              <Link
-                href={link.href}
-                className="hover:underline hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#8d000f] focus-visible:underline rounded-xs"
-              >
-                {link.label}
-              </Link>
-            ) : (
-              <span aria-disabled="true" className="text-red-100/80 cursor-pointer">{link.label}</span>
-            )}
-          </li>
-        ))}
-      </ul>
-    </nav>
-  );
-}
+const DesktopColumn = ({ column }: { column: FooterColumnData }) => (
+  <div className="space-y-4 text-left">
+    <h3 className="text-[13px] font-bold uppercase tracking-[0.2em] text-red-50 font-sans">
+      {column.title}
+    </h3>
+    <ul className="space-y-3.5 text-xs sm:text-sm font-light text-red-100">
+      {column.links.map((link) => (
+        <li key={link.label}>
+          {link.href ? (
+            <Link
+              href={link.href}
+              className="hover:underline hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#8e0a20] focus-visible:underline rounded-xs"
+            >
+              {link.label}
+            </Link>
+          ) : (
+            <span aria-disabled="true" className="cursor-default opacity-85">
+              {link.label}
+            </span>
+          )}
+        </li>
+      ))}
+    </ul>
+  </div>
+);
 
-function MobileAccordion({
+const MobileAccordion = ({
   column,
+  index,
   isOpen,
   onToggle,
-  index,
 }: {
   column: FooterColumnData;
+  index: number;
   isOpen: boolean;
   onToggle: () => void;
-  index: number;
-}) {
-  const contentId = `footer-accordion-content-${index}`;
-
+}) => {
+  const contentId = `footer-accordion-panel-${index}`;
   return (
-    <div className="border-b border-white/20 last:border-b-0">
+    <div className="border-b border-white/20 text-left">
       <button
         type="button"
         onClick={onToggle}
         aria-expanded={isOpen}
         aria-controls={contentId}
-        className="w-full flex items-center justify-between py-3.5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#8d000f] rounded group"
+        className="w-full flex items-center justify-between py-3.5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#8e0a20] rounded group"
       >
-        <h3 className="text-base font-extrabold uppercase tracking-wider text-white">
+        <span className="text-[13px] font-bold uppercase tracking-[0.2em] text-red-50 font-sans">
           {column.title}
-        </h3>
-        <span
-          className={`text-white/90 shrink-0 ml-4 transition-transform duration-300 ease-in-out motion-reduce:transition-none ${
-            isOpen ? "rotate-180" : "rotate-0"
-          }`}
-          aria-hidden="true"
-        >
-          <svg className="w-5 h-5 fill-none stroke-current" viewBox="0 0 24 24">
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2.5}
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
         </span>
+        <svg
+          className={`w-4 h-4 text-red-100 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
       </button>
-      <div
-        id={contentId}
-        role="region"
-        aria-hidden={!isOpen}
-        className={`grid transition-[grid-template-rows,opacity,padding] duration-300 ease-in-out motion-reduce:transition-none ${
-          isOpen ? "grid-rows-[1fr] opacity-100 pb-3" : "grid-rows-[0fr] opacity-0 pointer-events-none"
-        }`}
-      >
-        <div className="overflow-hidden">
-          <ul className="space-y-3 text-base text-red-100 font-normal pl-0">
-            {column.links.map((link) => (
-              <li key={`${link.href ?? "text"}-${link.label}`}>
-                {link.href ? (
-                  <Link
-                    href={link.href}
-                    tabIndex={isOpen ? 0 : -1}
-                    className="hover:underline hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#8d000f] focus-visible:underline rounded-xs"
-                  >
-                    {link.label}
-                  </Link>
-                ) : (
-                  <span aria-disabled="true" className="text-red-100/80 cursor-pointer">{link.label}</span>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+
+      {isOpen && (
+        <ul id={contentId} className="pb-4 space-y-3 text-xs sm:text-sm font-light text-red-100 pl-1">
+          {column.links.map((link) => (
+            <li key={link.label}>
+              {link.href ? (
+                <Link
+                  href={link.href}
+                  className="hover:underline hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#8e0a20] focus-visible:underline rounded-xs"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <span aria-disabled="true" className="cursor-default opacity-85">
+                  {link.label}
+                </span>
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
-}
+};
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -157,9 +142,9 @@ export default function Footer() {
     <footer
       role="contentinfo"
       aria-label="Site Footer"
-      className="text-white pt-16 sm:pt-20 pb-12 sm:pb-16 border-t border-[#8d000f] w-full overflow-hidden mt-8 lg:mt-12"
+      className="text-white pt-16 sm:pt-20 pb-12 sm:pb-16 border-t border-[#8e0a20] w-full overflow-hidden mt-8 lg:mt-12"
       style={{
-        background: "linear-gradient(to bottom, #a90012 200px, #8d000f 100%)",
+        background: "linear-gradient(to bottom, #b10017 200px, #8e0a20 100%)",
       }}
     >
       <div className="site-container">
@@ -168,7 +153,7 @@ export default function Footer() {
             <Link
               href="/"
               aria-label="Caritas Kampala Homepage"
-              className="shrink-0 mx-auto sm:mx-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[#a90012] rounded-lg"
+              className="shrink-0 mx-auto sm:mx-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[#b10017] rounded-lg"
             >
               <Image
                 src="/images/logos/Caritas_Kampala_footer.png"
@@ -238,7 +223,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit Main Website (opens in a new tab)"
-              className="hover:underline inline-flex items-center gap-1.5 font-bold text-white hover:text-red-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#8d000f] rounded"
+              className="hover:underline inline-flex items-center gap-1.5 font-bold text-white hover:text-red-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#8e0a20] rounded"
             >
               <span>Visit Main Website</span>
               <svg className="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24" aria-hidden="true">

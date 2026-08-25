@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function VisionQuote() {
   return (
-    <section className="bg-[#fdfbf9] py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-[#f4efe6] py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-sm font-bold text-[#b10017] uppercase tracking-[0.2em] mb-6">
           OUR VISION
