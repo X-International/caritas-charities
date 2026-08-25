@@ -7,9 +7,9 @@ import DeferredLocationMap from "@/components/DeferredLocationMap";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata = {
-  title: "Contact Us | Caritas Kampala",
+  title: "Contact Us | Caritas Kampala Charities Office",
   description:
-    "Reach out to the Caritas Kampala Charities Office for donations, relief enquiries, and office directions.",
+    "Get in touch with the Charities Office of Caritas Kampala. Find our address, phone number, and location in Nsambya, Kampala.",
   alternates: { canonical: "/contact-us" },
 };
 

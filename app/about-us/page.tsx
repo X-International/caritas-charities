@@ -6,9 +6,9 @@ import Breadcrumb from "@/components/Breadcrumb";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
 
 export const metadata = {
-  title: "About Us | Caritas Kampala",
+  title: "About Us | Caritas Kampala Charities Office",
   description:
-    "The Charities Office operates under Caritas Kampala, serving the Archdiocese of Kampala through compassion, dignity, and practical support.",
+    "Learn about the mission, vision and values of the Charities Office, part of Caritas Kampala, serving the Archdiocese of Kampala.",
   alternates: { canonical: "/about-us" },
 };
 

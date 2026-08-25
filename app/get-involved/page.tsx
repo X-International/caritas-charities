@@ -3,9 +3,9 @@ import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata = {
-  title: "Get Involved | Caritas Kampala",
+  title: "Get Involved | Caritas Kampala Charities Office",
   description:
-    "Partner with the Caritas Kampala Charities Office, volunteer with parish teams, or organize community fundraising initiatives.",
+    "Volunteer or shop our Charity Shop. Discover the ways you can support the Charities Office's work in Kampala, Wakiso and Mpigi.",
   alternates: { canonical: "/get-involved" },
 };
 

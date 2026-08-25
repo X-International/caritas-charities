@@ -4,7 +4,16 @@ const config = {
   generateRobotsTxt: true,
   autoLastmod: false,
   changefreq: "weekly",
-  exclude: ["/api/*", "/apple-icon.png", "/icon.png"],
+  exclude: ["/api/*", "/resources", "/_not-found", "/apple-icon.png", "/icon.png"],
+  robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/api/", "/_not-found"],
+      },
+    ],
+  },
 };
 
 module.exports = config;

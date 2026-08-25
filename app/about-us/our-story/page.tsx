@@ -7,9 +7,9 @@ import VisionQuote from "@/components/VisionQuote";
 import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata = {
-  title: "Who we are | Caritas Kampala",
+  title: "Our Story | Caritas Kampala Charities Office",
   description:
-    "Learn about who we are at Caritas Kampala.",
+    "Read the story, mission, and values behind the Charities Office of Caritas Kampala, serving the Archdiocese since its founding.",
   alternates: { canonical: "/about-us/our-story" },
 };
 

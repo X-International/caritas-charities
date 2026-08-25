@@ -1,6 +1,8 @@
 # *
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_not-found
 
 # Host
 Host: https://www.caritaskampalacharities.org/

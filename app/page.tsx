@@ -8,9 +8,9 @@ import DonateOnlineCard from "@/components/DonateOnlineCard";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Caritas Kampala | Ending poverty, promoting justice, restoring dignity",
+  title: "Caritas Kampala Charities Office | Serving Kampala, Wakiso & Mpigi",
   description:
-    "The Caritas Kampala Charities Office serves the Archdiocese through compassion, dignity, and practical support for those who need it most.",
+    "The Charities Office of Caritas Kampala supports the poor, vulnerable and marginalized across the Archdiocese of Kampala. Learn about our work and donate today.",
   alternates: { canonical: "/" },
 };
 

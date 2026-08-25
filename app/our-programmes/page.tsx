@@ -3,9 +3,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Our Programmes | Caritas Kampala",
+  title: "Our Programmes | Caritas Kampala Charities Office",
   description:
-    "Explore the Caritas Kampala Charities Office programmes in emergency relief, food security, livelihoods, healthcare, and social welfare.",
+    "Explore the programmes run by Caritas Kampala's Charities Office, supporting families, the elderly, refugees and people with disabilities across Kampala, Wakiso and Mpigi.",
   alternates: { canonical: "/our-programmes" },
 };
 

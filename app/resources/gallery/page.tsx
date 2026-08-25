@@ -12,9 +12,9 @@ import {
 } from "./gallery-config";
 
 export const metadata = {
-  title: "Photo Gallery | Caritas Kampala",
+  title: "Gallery | Caritas Kampala Charities Office",
   description:
-    "View photo highlights of the Caritas Kampala Charities Office humanitarian relief, community empowerment, and parish programs.",
+    "Photos from the Charities Office's programmes, events and community work across the Archdiocese of Kampala.",
   alternates: { canonical: "/resources/gallery" },
 };
 

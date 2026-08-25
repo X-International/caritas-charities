@@ -7,9 +7,9 @@ import NewsHero from "@/components/NewsHero";
 import { newsArticles } from "@/lib/content/news";
 
 export const metadata = {
-  title: "News & Updates | Caritas Kampala",
+  title: "News & Updates | Caritas Kampala Charities Office",
   description:
-    "The latest news, press releases, and operational updates from the Caritas Kampala Charities Office.",
+    "The latest updates and stories from the work of the Charities Office across the Archdiocese of Kampala.",
   alternates: { canonical: "/resources/news" },
 };
 

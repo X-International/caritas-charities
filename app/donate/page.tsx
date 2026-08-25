@@ -7,9 +7,9 @@ import DonateCalloutBanner from "@/components/DonateCalloutBanner";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
 
 export const metadata = {
-  title: "Donate & Support | Caritas Kampala",
+  title: "Donate | Caritas Kampala Charities Office",
   description:
-    "Support the Caritas Kampala Charities Office emergency relief campaigns, orphanages, and food security programmes.",
+    "Support families across Kampala, Wakiso and Mpigi. Give online, by bank transfer, or Mobile Money to the Charities Office of Caritas Kampala.",
   alternates: { canonical: "/donate" },
 };
 

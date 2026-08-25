@@ -3,9 +3,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Privacy Policy | Caritas Kampala",
+  title: "Privacy Policy | Caritas Kampala Charities Office",
   description:
-    "Privacy Policy for the Caritas Kampala Charities Office website visitors, donors, and partners.",
+    "How the Charities Office collects, uses, and protects your information.",
   alternates: { canonical: "/privacy-policy" },
 };
 

@@ -3,10 +3,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Frequently Asked Questions | Caritas Kampala",
-  description:
-    "Find answers to common questions about Caritas Kampala donation drop-offs, aid distribution, and volunteering.",
+  title: "FAQs | Caritas Kampala Charities Office",
+  description: "Answers to common questions about the Charities Office, coming soon.",
   alternates: { canonical: "/resources/faqs" },
+  robots: { index: false, follow: true },
 };
 
 const faqs = [

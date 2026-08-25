@@ -1,5 +1,10 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Page Not Found | Caritas Kampala Charities Office",
+  robots: { index: false, follow: true },
+};
+
 export default function NotFound() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-[#faf7f2] px-6 py-16 text-center">

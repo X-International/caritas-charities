@@ -64,7 +64,7 @@ export const newsArticles: NewsArticle[] = [
     },
   },
   {
-    slug: "charities-department-launches-new-website",
+    slug: "charities-office-launches-new-website",
     title: "The Charities Office Launches Its New Website",
     date: "02 Aug 2026",
     category: "Announcement",

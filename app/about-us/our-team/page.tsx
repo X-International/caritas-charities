@@ -4,9 +4,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Our Team | Caritas Kampala",
+  title: "Our Team | Caritas Kampala Charities Office",
   description:
-    "Meet the leadership, coordinators, and dedicated field workers serving the Caritas Kampala Charities Office.",
+    "Meet the leadership and team behind the Charities Office at Caritas Kampala.",
   alternates: { canonical: "/about-us/our-team" },
 };
 

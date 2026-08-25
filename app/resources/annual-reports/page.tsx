@@ -3,10 +3,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Annual Reports | Caritas Kampala",
-  description:
-    "Financial accountability statements and annual progress publications of the Caritas Kampala Charities Office.",
+  title: "Annual Reports | Caritas Kampala Charities Office",
+  description: "Reports on the work of the Charities Office, coming soon.",
   alternates: { canonical: "/resources/annual-reports" },
+  robots: { index: false, follow: true },
 };
 
 export default function AnnualReportsPage() {

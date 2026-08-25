@@ -6,9 +6,9 @@ import AppealCalloutBanner from "@/components/AppealCalloutBanner";
 import AppealPageHero from "@/components/AppealPageHero";
 
 export const metadata = {
-  title: "Emergency Appeal for Kotido and Moroto | Caritas Kampala",
+  title: "Current Appeal: Famine in Kotido & Moroto | Caritas Kampala",
   description:
-    "Standing with the people of Karamoja, together with the whole Church in Uganda. Caritas Kampala emergency appeal for famine relief in Kotido and Moroto.",
+    "Drought has brought famine to Karamoja. Learn how to support our emergency relief drive for families in Kotido and Moroto.",
   alternates: { canonical: "/current-appeal" },
 };
 

@@ -3,9 +3,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Terms of Use | Caritas Kampala",
-  description:
-    "Terms of Use for visiting and interacting with the Caritas Kampala website.",
+  title: "Terms of Use | Caritas Kampala Charities Office",
+  description: "The terms governing use of this website.",
   alternates: { canonical: "/terms-of-use" },
 };
 

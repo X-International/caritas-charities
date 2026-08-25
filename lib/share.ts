@@ -13,76 +13,88 @@ const FALLBACK_DESCRIPTION =
 
 const ROUTE_META: Record<string, { title: string; description: string }> = {
   "/": {
-    title: "Caritas Kampala | Charities Office",
-    description: "Serving communities through compassion, emergency relief, sustainable agriculture, education, and practical support.",
+    title: "Caritas Kampala Charities Office | Serving Kampala, Wakiso & Mpigi",
+    description: "The Charities Office of Caritas Kampala supports the poor, vulnerable and marginalized across the Archdiocese of Kampala. Learn about our work and donate today.",
   },
   "/our-programmes": {
-    title: "Our Programmes | Caritas Kampala - Charities Office",
-    description: "The work of the Charities Office across Kampala, Wakiso, and Mpigi.",
+    title: "Our Programmes | Caritas Kampala Charities Office",
+    description: "Explore the programmes run by Caritas Kampala's Charities Office, supporting families, the elderly, refugees and people with disabilities across Kampala, Wakiso and Mpigi.",
   },
   "/current-appeal": {
-    title: "Current Appeal | Caritas Kampala - Charities Office",
-    description: "Active emergency and humanitarian appeal highlights supporting families and communities in need.",
+    title: "Current Appeal: Famine in Kotido & Moroto | Caritas Kampala",
+    description: "Drought has brought famine to Karamoja. Learn how to support our emergency relief drive for families in Kotido and Moroto.",
   },
   "/get-involved": {
-    title: "Get Involved | Caritas Kampala - Charities Office",
-    description: "Discover ways to volunteer, partner, and support our community empowerment programs.",
+    title: "Get Involved | Caritas Kampala Charities Office",
+    description: "Volunteer or shop our Charity Shop. Discover the ways you can support the Charities Office's work in Kampala, Wakiso and Mpigi.",
   },
   "/get-involved/volunteer": {
-    title: "Volunteer | Caritas Kampala - Charities Office",
-    description: "Offer your time and skills to support the work of the Caritas Kampala Charities Office.",
+    title: "Volunteer With Us | Caritas Kampala Charities Office",
+    description: "See how you can offer your time and skills to support the Charities Office's work across the Archdiocese of Kampala.",
   },
   "/get-involved/charity-shop": {
-    title: "Charity Shop | Caritas Kampala - Charities Office",
-    description: "Shop or donate goods to support the cause of the Caritas Kampala Charities Office.",
+    title: "Charity Shop | Caritas Kampala Charities Office",
+    description: "Shop or donate goods to support the work of the Charities Office. Every purchase helps families across the Archdiocese.",
   },
   "/donate": {
-    title: "Donate & Support | Caritas Kampala - Charities Office",
-    description: "Verified guidance on giving, bank details, and donor options to support our mission.",
+    title: "Donate | Caritas Kampala Charities Office",
+    description: "Support families across Kampala, Wakiso and Mpigi. Give online, by bank transfer, or Mobile Money to the Charities Office of Caritas Kampala.",
   },
   "/about-us": {
-    title: "About Us | Caritas Kampala - Charities Office",
-    description: "Learn about the mission, history, and team restoring dignity and hope across Kampala.",
+    title: "About Us | Caritas Kampala Charities Office",
+    description: "Learn about the mission, vision and values of the Charities Office, part of Caritas Kampala, serving the Archdiocese of Kampala.",
   },
   "/about-us/our-story": {
-    title: "Our Story | Caritas Kampala - Charities Office",
-    description: "Real stories of change, community resilience, and social-pastoral ministry.",
+    title: "Our Story | Caritas Kampala Charities Office",
+    description: "Read the story, mission, and values behind the Charities Office of Caritas Kampala, serving the Archdiocese since its founding.",
   },
   "/about-us/our-team": {
-    title: "Our Team | Caritas Kampala - Charities Office",
-    description: "Meet the leadership, coordinators, and dedicated field workers serving the Caritas Kampala Charities Office.",
+    title: "Our Team | Caritas Kampala Charities Office",
+    description: "Meet the leadership and team behind the Charities Office at Caritas Kampala.",
   },
   "/about-us/chaconet-partners": {
-    title: "Chaconet Partners | Caritas Kampala - Charities Office",
-    description: "Catholic Charity Homes Network (Chaconet) partners working alongside the Caritas Kampala Charities Office.",
+    title: "Chaconet Partners | Caritas Kampala Charities Office",
+    description: "The Charities Office works within Chaconet, a network of nine charity homes across the Archdiocese of Kampala.",
   },
   "/resources/news": {
-    title: "News & Articles | Caritas Kampala - Charities Office",
-    description: "Latest news, field updates, and articles from Caritas Kampala.",
+    title: "News & Updates | Caritas Kampala Charities Office",
+    description: "The latest updates and stories from the work of the Charities Office across the Archdiocese of Kampala.",
+  },
+  "/resources/news/kotido-moroto-famine-relief-drive": {
+    title: "Kotido & Moroto Famine Relief Drive Mobilizes Parishes | Caritas Kampala",
+    description: "Parishes across the Archdiocese of Kampala are collecting food and relief items for families facing famine in Kotido and Moroto.",
+  },
+  "/resources/news/charities-office-launches-new-website": {
+    title: "The Charities Office Launches Its New Website | Caritas Kampala",
+    description: "A new online home for the Charities Office, sharing our work, our network, and how you can help.",
+  },
+  "/resources/news/getting-to-know-chaconet-our-network-of-nine-charity-homes": {
+    title: "Getting to Know Chaconet, Our Network of Nine Charity Homes | Caritas Kampala",
+    description: "A closer look at Chaconet, the network of charity homes working together across the Archdiocese of Kampala.",
   },
   "/resources/gallery": {
-    title: "Photo Gallery | Caritas Kampala - Charities Office",
-    description: "Photo gallery highlighting field interventions and community projects.",
+    title: "Gallery | Caritas Kampala Charities Office",
+    description: "Photos from the Charities Office's programmes, events and community work across the Archdiocese of Kampala.",
   },
   "/resources/annual-reports": {
-    title: "Annual Reports | Caritas Kampala - Charities Office",
-    description: "Financial accountability statements and annual progress publications of the Caritas Kampala Charities Office.",
+    title: "Annual Reports | Caritas Kampala Charities Office",
+    description: "Reports on the work of the Charities Office, coming soon.",
   },
   "/resources/faqs": {
-    title: "FAQs | Caritas Kampala - Charities Office",
-    description: "Frequently asked questions regarding the work and giving options of Caritas Kampala Charities Office.",
+    title: "FAQs | Caritas Kampala Charities Office",
+    description: "Answers to common questions about the Charities Office, coming soon.",
   },
   "/contact-us": {
-    title: "Contact Us | Caritas Kampala - Charities Office",
-    description: "Get in touch with the Caritas Kampala Charities Office team.",
+    title: "Contact Us | Caritas Kampala Charities Office",
+    description: "Get in touch with the Charities Office of Caritas Kampala. Find our address, phone number, and location in Nsambya, Kampala.",
   },
   "/privacy-policy": {
-    title: "Privacy Policy | Caritas Kampala - Charities Office",
-    description: "Privacy Policy for the Caritas Kampala Charities Office website visitors, donors, and partners.",
+    title: "Privacy Policy | Caritas Kampala Charities Office",
+    description: "How the Charities Office collects, uses, and protects your information.",
   },
   "/terms-of-use": {
-    title: "Terms of Use | Caritas Kampala - Charities Office",
-    description: "Terms of Use for the official website of the Caritas Kampala Charities Office.",
+    title: "Terms of Use | Caritas Kampala Charities Office",
+    description: "The terms governing use of this website.",
   },
 };
 

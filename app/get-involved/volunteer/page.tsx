@@ -3,9 +3,9 @@ import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata = {
-  title: "Volunteer | Caritas Kampala",
+  title: "Volunteer With Us | Caritas Kampala Charities Office",
   description:
-    "Join our team of volunteers and support the work of the Caritas Kampala Charities Office across our communities.",
+    "See how you can offer your time and skills to support the Charities Office's work across the Archdiocese of Kampala.",
   alternates: { canonical: "/get-involved/volunteer" },
 };
 

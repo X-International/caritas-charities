@@ -4,9 +4,9 @@ import Breadcrumb from "@/components/Breadcrumb";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
 
 export const metadata = {
-  title: "Chaconet Partners | Caritas Kampala",
+  title: "Chaconet Partners | Caritas Kampala Charities Office",
   description:
-    "Discover the Catholic Charity Homes Network (Chaconet) partners working alongside the Caritas Kampala Charities Office.",
+    "The Charities Office works within Chaconet, a network of nine charity homes across the Archdiocese of Kampala.",
   alternates: { canonical: "/about-us/chaconet-partners" },
 };
 

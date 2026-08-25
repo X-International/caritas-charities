@@ -3,9 +3,9 @@ import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata = {
-  title: "Charity Shop | Caritas Kampala",
+  title: "Charity Shop | Caritas Kampala Charities Office",
   description:
-    "Discover how shopping or donating goods supports the ongoing community work of the Caritas Kampala Charities Office.",
+    "Shop or donate goods to support the work of the Charities Office. Every purchase helps families across the Archdiocese.",
   alternates: { canonical: "/get-involved/charity-shop" },
 };
 
