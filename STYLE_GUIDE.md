@@ -212,7 +212,31 @@ export interface CardProps {
 
 ---
 
-## 8. COMPONENT LIBRARY
+---
+
+## 8. FORM SYSTEM
+
+The website uses a modular form component suite ([`components/ui/Form.tsx`](file:///run/media/stuart/Shared/Caritas%20Kampala/Website/caritas-charities/components/ui/Form.tsx)) built using semantic HTML5 primitives, `React.forwardRef` support, and accessibility attributes.
+
+### Component Primitives
+| Component | Semantic HTML Element | Class / Styling Pattern | Description |
+|:---|:---|:---|:---|
+| **`<FormLabel>`** | `<label>` | `mb-1.5 block text-[11px] font-bold uppercase tracking-wider text-gray-700` | Uppercase tracking label. Renders red asterisk (`*`) when `required={true}` or `(optional)` badge when `optional={true}`. |
+| **`<TextInput>`** | `<input>` | `rounded-input border bg-white px-4 py-3.5 text-sm font-sans text-gray-900` | Single-line input for text, email, telephone, numbers. Supports 5 states (default, focus, filled, error, disabled). |
+| **`<TextArea>`** | `<textarea>` | `rounded-input border bg-white px-4 py-3.5 text-sm font-sans text-gray-900 resize-y` | Multi-line textarea with vertical resizing. |
+| **`<Select>`** | `<select>` | `rounded-input border bg-white px-4 py-3.5 text-sm font-sans text-gray-900` | Dropdown select box for subject or option selection. |
+| **`<FormError>`** | `<p>` | `mt-1.5 flex items-center gap-1 text-xs font-semibold text-[#b10017]` | Inline error message with warning icon. |
+| **`<FormHelperText>`**| `<p>` | `mt-1.5 text-[11px] text-gray-500 leading-relaxed` | Supporting helper/privacy disclaimer text below inputs or submit buttons. |
+
+### Visual States Matrix
+- **Default:** `border-gray-300 bg-white text-gray-900`
+- **Focus:** `focus:border-[#b10017] focus:outline-none focus:ring-2 focus:ring-[#b10017]/20`
+- **Error:** `border-[#b10017] focus:border-[#b10017] focus:ring-[#b10017]/30`
+- **Disabled:** `disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed`
+
+---
+
+## 9. COMPONENT LIBRARY
 
 ### 1. Parent Utility Bar
 - **Description:** Dark black (`#111111`) top bar displaying `"Part of Caritas Kampala"` link, search trigger, and share modal trigger.
@@ -236,7 +260,7 @@ export interface CardProps {
 
 ---
 
-## 9. CONTENT & TONE QUICK REFERENCE
+## 10. CONTENT & TONE QUICK REFERENCE
 
 | Guideline | Standard Requirement | Incorrect Example | Correct Example |
 |:---|:---|:---|:---|
@@ -249,7 +273,7 @@ export interface CardProps {
 
 ---
 
-## 10. INCONSISTENCIES RESOLUTION STATUS
+## 11. INCONSISTENCIES RESOLUTION STATUS
 
 All visual and architectural inconsistencies identified in earlier codebase audits have been resolved:
 
@@ -260,4 +284,6 @@ All visual and architectural inconsistencies identified in earlier codebase audi
 5. **Inline Button Styling — RESOLVED:** Built a formal `<Button>` component system (`components/ui/Button.tsx`) and refactored button instances across the application to use it.
 6. **Ad-Hoc Border-Radius Variations — RESOLVED:** Defined 4 semantic radius tokens (`rounded-card`, `rounded-subcard`, `rounded-input`, `rounded-pill`) in `globals.css` and applied them consistently across all components.
 7. **Ad-Hoc Card Variations & Footer Misalignment — RESOLVED:** Built a central `<Card>` component system (`components/ui/Card.tsx`) with `content` (white) and `info` (beige) variants, enforced consistent `line-clamp-3` text truncation, and refactored card instances across all content pages.
+8. **Typography & Text Style Variations — RESOLVED:** Built a central typography component suite (`components/ui/Typography.tsx`) providing `<Heading>`, `<Lead>`, `<Eyebrow>`, and `<Text>` components and refactored raw text class strings across all components and content pages.
+9. **Form Field Component Consolidation — RESOLVED:** Built a central form component suite (`components/ui/Form.tsx`) providing `<FormLabel>`, `<TextInput>`, `<TextArea>`, `<Select>`, `<FormError>`, and `<FormHelperText>` components, enforcing `rounded-input` border radius, primary focus rings, required indicators, and refactoring `ContactForm.tsx`.
 
