@@ -44,7 +44,7 @@ export default function FAQsPage() {
                 </li>
                 <li>/</li>
                 <li>
-                  <Link href="/resources" className="hover:underline text-white">RESOURCES</Link>
+                  <Link href="/resources/news" className="hover:underline text-white">RESOURCES</Link>
                 </li>
                 <li>/</li>
                 <li aria-current="page" className="text-red-200">FAQS</li>

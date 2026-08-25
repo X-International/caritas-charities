@@ -14,16 +14,17 @@ const footerColumns: FooterColumnData[] = [
     title: "ABOUT",
     links: [
       { label: "About Us", href: "/about-us" },
-      { label: "Our Team" },
-      { label: "Partners — Chaconet Network" },
-      { label: "Our Programmes" },
+      { label: "Our Team", href: "/about-us/our-team" },
+      { label: "Partners — Chaconet Network", href: "/about-us/chaconet-partners" },
+      { label: "Our Programmes", href: "/our-programmes" },
     ],
   },
   {
     title: "GET INVOLVED",
     links: [
       { label: "Donate", href: "/donate" },
-      { label: "Get Involved" },
+      { label: "Volunteer", href: "/get-involved/volunteer" },
+      { label: "Charity Shop", href: "/get-involved/charity-shop" },
     ],
   },
   {
@@ -31,14 +32,16 @@ const footerColumns: FooterColumnData[] = [
     links: [
       { label: "Gallery", href: "/resources/gallery" },
       { label: "News & Updates", href: "/resources/news" },
+      { label: "Annual Reports", href: "/resources/annual-reports" },
+      { label: "FAQs", href: "/resources/faqs" },
     ],
   },
   {
     title: "CONTACT & LEGAL",
     links: [
       { label: "Contact Us", href: "/contact-us" },
-      { label: "Privacy Policy" },
-      { label: "Terms of Use" },
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Terms of Use", href: "/terms-of-use" },
     ],
   },
 ];

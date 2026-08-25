@@ -25,7 +25,7 @@ export default function AnnualReportsPage() {
                 </li>
                 <li>/</li>
                 <li>
-                  <Link href="/resources" className="hover:underline text-white">RESOURCES</Link>
+                  <Link href="/resources/news" className="hover:underline text-white">RESOURCES</Link>
                 </li>
                 <li>/</li>
                 <li aria-current="page" className="text-red-200">ANNUAL REPORTS</li>

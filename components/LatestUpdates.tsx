@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 interface NewsCard {
   id: number;
@@ -19,7 +20,7 @@ const topNews: NewsCard[] = [
     title: "Aid delivered to remote communities affected by East Bangladesh floods",
     excerpt:
       "Caritas emergency teams have reached isolated villages, distributing dry food rations, clean drinking water, and hygiene kits to over 25,000 survivors.",
-    link: "#news-1",
+    link: "/resources/news",
   },
   {
     id: 2,
@@ -28,7 +29,7 @@ const topNews: NewsCard[] = [
     title: "A child saved is a family restored: how a campus key campaign supports healing",
     excerpt:
       "Through community health centers, Caritas nutrition programs are rehabilitating malnourished infants and empowering mothers with sustainable care techniques.",
-    link: "#news-2",
+    link: "/resources/news",
   },
   {
     id: 3,
@@ -37,7 +38,7 @@ const topNews: NewsCard[] = [
     title: "How access to clean water changed lives in rural villages in Madagascar",
     excerpt:
       "New solar-powered borehole wells constructed by Caritas provide reliable drinking water to over 15,000 rural residents in dry Southern districts.",
-    link: "#news-3",
+    link: "/resources/news",
   },
 ];
 
@@ -76,7 +77,7 @@ export default function LatestUpdates() {
               </div>
 
               <div className="pt-4 border-t border-gray-100 flex justify-end">
-                <a
+                <Link
                   href={card.link}
                   className="w-8 h-8 rounded-full bg-gray-100 hover:bg-[#b10017] text-gray-700 hover:text-white flex items-center justify-center transition-colors"
                   aria-label="Read update"
@@ -84,7 +85,7 @@ export default function LatestUpdates() {
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           ))}
@@ -112,12 +113,12 @@ export default function LatestUpdates() {
                 Amid ongoing crisis, local healthcare workers and Caritas volunteers continue to provide hope, medical relief, and community support.
               </p>
               <div className="pt-2">
-                <a
-                  href="#jerusalem-story"
+                <Link
+                  href="/resources/news"
                   className="inline-block bg-white text-[#b10017] hover:bg-gray-100 text-xs font-bold px-7 py-3 rounded-full tracking-wider uppercase shadow transition-all transform hover:scale-105"
                 >
                   READ MORE
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -140,15 +141,15 @@ export default function LatestUpdates() {
             </div>
 
             <div className="pt-6 border-t border-gray-100 flex justify-end">
-              <a
-                href="#south-sudan-news"
+              <Link
+                href="/resources/news"
                 className="w-9 h-9 rounded-full bg-gray-100 hover:bg-[#b10017] text-gray-700 hover:text-white flex items-center justify-center transition-colors"
                 aria-label="Read update"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
