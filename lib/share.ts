@@ -6,10 +6,10 @@ export type PageSharePayload = {
 };
 
 export const SHARE_INTRO =
-  "Help more people discover the work of Caritas Kampala Charities Office. Share this page to help connect others with our mission and work.";
+  "Share the work of the Charities Office and help more people discover our mission and the difference we make.";
 
 const FALLBACK_DESCRIPTION =
-  "Help more people discover the work of Caritas Kampala Charities Office. Share this page to help connect others with our mission and work.";
+  "Share the work of the Charities Office and help more people discover our mission and the difference we make.";
 
 const ROUTE_META: Record<string, { title: string; description: string }> = {
   "/": {

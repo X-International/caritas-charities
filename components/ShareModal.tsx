@@ -280,7 +280,7 @@ export default function ShareModal({ onClose }: ShareModalProps) {
               Share This Page
             </Heading>
             <Text id={descriptionId} size="xs" color="muted" className="mt-1.5 leading-relaxed sm:text-sm">
-              Help more people discover the work of Caritas Kampala Charities Office. Share this page to help connect others with our mission and work.
+              Share the work of the Charities Office and help more people discover our mission and the difference we make.
             </Text>
           </div>
         </div>
