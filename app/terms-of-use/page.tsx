@@ -17,7 +17,7 @@ export default function TermsOfUsePage() {
 
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
-        <section className="bg-[#b10017] text-white py-14 sm:py-20">
+        <section className="bg-[#b10017] text-white section-lg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
             <nav aria-label="Breadcrumb" className="text-xs uppercase tracking-wider font-semibold text-red-200">
               <ol className="flex items-center space-x-2">
@@ -35,7 +35,7 @@ export default function TermsOfUsePage() {
         </section>
 
         {/* Content */}
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-6 text-gray-700 leading-relaxed text-sm sm:text-base">
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 section-md space-y-6 text-gray-700 leading-relaxed text-sm sm:text-base">
           <p>
             Welcome to the official website of the Caritas Kampala Charities Office. By accessing or using this website, you agree to comply with and be bound by the following terms.
           </p>

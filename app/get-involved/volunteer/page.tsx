@@ -17,7 +17,7 @@ export default function VolunteerPage() {
 
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
-        <section className="bg-[#b10017] text-white py-14 sm:py-20">
+        <section className="bg-[#b10017] text-white section-lg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
             <Breadcrumb
               items={[
@@ -33,7 +33,7 @@ export default function VolunteerPage() {
         </section>
 
         {/* Content Section */}
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center">
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 section-lg text-center">
           <p className="text-lg sm:text-xl text-gray-600 font-sans">
             Content coming soon.
           </p>

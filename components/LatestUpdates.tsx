@@ -47,7 +47,7 @@ const topNews: NewsCard[] = [
 
 export default function LatestUpdates() {
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-8 py-10">
+    <section className="max-w-7xl mx-auto px-4 sm:px-8 section-md">
       {/* Beige Card Container */}
       <div className="bg-[#f4efe6] text-gray-900 rounded-card p-6 sm:p-10 lg:p-12 shadow-sm border border-[#e8dfd1]">
         {/* Section Heading */}

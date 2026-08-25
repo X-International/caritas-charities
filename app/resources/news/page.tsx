@@ -56,7 +56,7 @@ export default async function NewsPage({
         )}
 
         {/* News Grid */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-10">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-md space-y-10">
           {filteredArticles.length === 0 ? (
             <div className="rounded-3xl border border-[#eadfce] bg-[#faf7f2] px-6 py-12 text-center">
               <h2 className="font-serif text-2xl text-[#b10017]">No matching updates</h2>

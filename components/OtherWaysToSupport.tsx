@@ -48,7 +48,7 @@ export default function OtherWaysToSupport() {
   };
 
   return (
-    <section className="w-full bg-[#f4efe6] py-8 sm:py-12 md:py-16 lg:py-20">
+    <section className="w-full bg-[#f4efe6] section-lg">
       <div className="site-container">
         <div className="max-w-3xl mx-auto text-center mb-6 sm:mb-8 md:mb-10 space-y-3 sm:space-y-4">
           <Heading level={2} variant="section" color="red" id="ways-to-give" className="text-3xl sm:text-4xl md:text-5xl lg:text-[40px] leading-tight">

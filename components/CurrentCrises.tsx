@@ -6,7 +6,7 @@ export default function CurrentCrises() {
   return (
     <section 
       aria-labelledby="appeal-title"
-      className="w-full bg-[#b10017] text-white py-10 sm:py-14 lg:py-16 xl:py-20 2xl:py-24 relative overflow-hidden mt-8 sm:mt-12 lg:mt-16"
+      className="w-full bg-[#b10017] text-white section-lg relative overflow-hidden mt-8 sm:mt-12 lg:mt-16"
     >
       <div className="site-container">
         {/* Header */}

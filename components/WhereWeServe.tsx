@@ -213,7 +213,7 @@ export default function WhereWeServe() {
   return (
     <section
       aria-labelledby="core-pillars-title"
-      className="py-10 sm:py-16 md:py-20 bg-[#f4efe6] relative overflow-hidden"
+      className="section-lg bg-[#f4efe6] relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Title */}

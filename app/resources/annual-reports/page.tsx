@@ -18,7 +18,7 @@ export default function AnnualReportsPage() {
 
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
-        <section className="bg-[#b10017] text-white py-14 sm:py-20">
+        <section className="bg-[#b10017] text-white section-lg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
             <nav aria-label="Breadcrumb" className="text-xs uppercase tracking-wider font-semibold text-red-200">
               <ol className="flex items-center space-x-2">
@@ -43,7 +43,7 @@ export default function AnnualReportsPage() {
         </section>
 
         {/* Reports Archive */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-8">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-md space-y-8">
           <div className="bg-[#f4efe6] p-8 rounded-2xl border border-amber-200 text-center space-y-3">
             <Heading level={2} variant="card" color="red">Annual Publications Archive</Heading>
             <p className="text-sm text-gray-700 max-w-lg mx-auto">

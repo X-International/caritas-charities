@@ -44,7 +44,7 @@ export default function SpotlightSection() {
   }, [isVideoModalOpen]);
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-8 py-10">
+    <section className="max-w-7xl mx-auto px-4 sm:px-8 section-md">
       {/* Deep Emerald Teal Container */}
       <div className="bg-[#006b5d] text-white rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl relative">
         {/* Section Heading & Tabs */}

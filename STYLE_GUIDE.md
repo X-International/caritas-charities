@@ -75,20 +75,21 @@ Layout containers are configured in `app/globals.css` via the `.site-container` 
 - **Max Width:** `--site-max-width: 80rem` (`1280px`).
 - **Breakpoints:** `xs` (30rem / 480px), `sm` (40rem / 640px), `md` (48rem / 768px), `lg` (64rem / 1024px), `xl` (80rem / 1280px), `2xl` (96rem / 1536px).
 
-### Responsive Container Padding Scale
+### Section Spacing Presets
 
-```css
-.site-container {
-  width: 100%;
-  max-width: var(--site-max-width);
-  margin-inline: auto;
-  padding-inline: 1rem; /* < 640px */
-}
-@media (min-width: 640px) { .site-container { padding-inline: 1.5rem; } }
-@media (min-width: 1024px) { .site-container { padding-inline: 2rem; } }
-@media (min-width: 1280px) { .site-container { padding-inline: 2.5rem; } }
-@media (min-width: 1536px) { .site-container { padding-inline: 3rem; } }
-```
+Vertical spacing for page sections is standardized via 3 responsive CSS utility classes defined in `app/globals.css`:
+
+| Preset Class | Mobile Padding (`<640px`) | Tablet Padding (`≥640px`) | Desktop Padding (`≥1024px`) | Primary Usage |
+|:---|:---|:---|:---|:---|
+| **`.section-sm`** | `2rem` (`32px`) | `2.5rem` (`40px`) | `3rem` (`48px`) | Article detail containers (`/current-appeal`, `/resources/news/[slug]`) |
+| **`.section-md`** | `3rem` (`48px`) | `4.5rem` (`64px`) | `4.5rem` (`64px`) | Standard content sections below hero banners, grid containers, homepage card cards |
+| **`.section-lg`** | `3.5rem` (`56px`) | `5rem` (`80px`) | `5rem` (`80px`) | Red panel hero banners, major featured sections (`CurrentCrises`, `WhereWeServe`, `OtherWaysToSupport`) |
+
+#### Intentional Exceptions
+- **VisionMissionValues (Quick Identity Strip):** Uses `py-12 lg:py-16` outer padding to preserve its compact design.
+- **DonateOnlineCard Homepage Wrapper:** Uses minimal `py-4 sm:py-6` container padding.
+- **DonateCalloutBanner:** Uses asymmetric `pt-8 sm:pt-10 pb-10 sm:pb-16` for its overlapping panel layout.
+- **HumanitarianAppeal:** Uses `py-8 sm:py-10` for its compact callout container.
 
 ---
 
@@ -286,4 +287,5 @@ All visual and architectural inconsistencies identified in earlier codebase audi
 7. **Ad-Hoc Card Variations & Footer Misalignment — RESOLVED:** Built a central `<Card>` component system (`components/ui/Card.tsx`) with `content` (white) and `info` (beige) variants, enforced consistent `line-clamp-3` text truncation, and refactored card instances across all content pages.
 8. **Typography & Text Style Variations — RESOLVED:** Built a central typography component suite (`components/ui/Typography.tsx`) providing `<Heading>`, `<Lead>`, `<Eyebrow>`, and `<Text>` components and refactored raw text class strings across all components and content pages.
 9. **Form Field Component Consolidation — RESOLVED:** Built a central form component suite (`components/ui/Form.tsx`) providing `<FormLabel>`, `<TextInput>`, `<TextArea>`, `<Select>`, `<FormError>`, and `<FormHelperText>` components, enforcing `rounded-input` border radius, primary focus rings, required indicators, and refactoring `ContactForm.tsx`.
+10. **Section Vertical Spacing Consolidation — RESOLVED:** Consolidated ad-hoc `py-*` padding values across all page sections and hero banners into 3 responsive CSS presets (`.section-sm`, `.section-md`, `.section-lg`) in `globals.css`.
 

@@ -54,6 +54,43 @@
   }
 }
 
+/* Section vertical spacing presets — consistent top/bottom padding for page sections */
+/* section-sm: article detail pages, compact callouts, tight connectors */
+.section-sm {
+  padding-block: 2rem; /* 32px — py-8 */
+}
+@media (min-width: 640px) {
+  .section-sm {
+    padding-block: 2.5rem; /* 40px — py-10 */
+  }
+}
+@media (min-width: 1024px) {
+  .section-sm {
+    padding-block: 3rem; /* 48px — py-12 */
+  }
+}
+
+/* section-md: standard content sections below a hero, white-background grids */
+.section-md {
+  padding-block: 3rem; /* 48px — py-12 */
+}
+@media (min-width: 640px) {
+  .section-md {
+    padding-block: 4rem; /* 64px — py-16 */
+  }
+}
+
+/* section-lg: red panel hero banners, major full-bleed featured sections */
+.section-lg {
+  padding-block: 3.5rem; /* 56px — py-14 */
+}
+@media (min-width: 640px) {
+  .section-lg {
+    padding-block: 5rem; /* 80px — py-20 */
+  }
+}
+
+
 /* Custom Fonts Setup */
 
 /* Athelas Regular */

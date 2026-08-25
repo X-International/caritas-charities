@@ -144,7 +144,7 @@ export default function Footer() {
       aria-label="Site Footer"
       className="text-white pt-16 sm:pt-20 pb-12 sm:pb-16 border-t border-[#8e0a20] w-full overflow-hidden mt-8 lg:mt-12"
       style={{
-        background: "linear-gradient(to bottom, #b10017 200px, #8e0a20 100%)",
+        background: "linear-gradient(to bottom, #a80012 0px, #a80012 240px, #8e0a20 100%)",
       }}
     >
       <div className="site-container">
@@ -153,7 +153,7 @@ export default function Footer() {
             <Link
               href="/"
               aria-label="Caritas Kampala Homepage"
-              className="shrink-0 mx-auto sm:mx-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[#b10017] rounded-lg"
+              className="shrink-0 mx-auto sm:mx-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[#a80012] rounded-lg"
             >
               <Image
                 src="/images/logos/Caritas_Kampala_footer.png"

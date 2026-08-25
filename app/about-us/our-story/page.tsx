@@ -31,7 +31,7 @@ export default function OurStoryPage() {
 
         <OurStoryHero />
 
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#fdfbf9]">
+        <section className="section-lg px-4 sm:px-6 lg:px-8 bg-[#fdfbf9]">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-16">
             <div className="lg:col-span-2">
               <h2 className="text-3xl sm:text-4xl font-serif text-[#b10017] mb-8 text-center lg:text-left">The Journey and Mission of Caritas Kampala</h2>
@@ -48,7 +48,7 @@ export default function OurStoryPage() {
         </section>
         <VisionQuote />
 
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-md">
           <DonateOnlineCard />
         </section>
       </main>

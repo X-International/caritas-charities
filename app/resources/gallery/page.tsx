@@ -72,7 +72,7 @@ export default function GalleryPage() {
       <Navbar />
 
       <main id="main-content" className="flex-1">
-        <section className="bg-[#b10017] text-white py-8 sm:py-10 md:py-14">
+        <section className="bg-[#b10017] text-white section-lg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <nav
               aria-label="Breadcrumb"
@@ -117,7 +117,7 @@ export default function GalleryPage() {
           </div>
         </section>
 
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-md">
           <ClientGallery images={galleryImages} />
         </section>
 

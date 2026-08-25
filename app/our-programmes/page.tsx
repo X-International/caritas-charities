@@ -66,7 +66,7 @@ export default function OurProgrammesPage() {
 
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
-        <section className="bg-[#b10017] text-white py-8 sm:py-10 md:py-14">
+        <section className="bg-[#b10017] text-white section-lg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <nav
               aria-label="Breadcrumb"
@@ -105,7 +105,7 @@ export default function OurProgrammesPage() {
         </section>
 
         {/* Grid */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-12">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-md space-y-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {programmes.map((prog) => (
               <Card id={prog.id} key={prog.id} variant="content" className="scroll-mt-32 border-t-4 border-t-[#b10017] p-8 flex flex-col">

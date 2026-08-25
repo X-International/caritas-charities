@@ -36,7 +36,7 @@ export default function ContactUsPage() {
         {/* Main Container for the rest of the page */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Contact Info & Directions */}
-          <section className="py-12 sm:py-16">
+          <section className="section-md">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
               <div className="lg:col-span-6 space-y-6">
                 <div>
