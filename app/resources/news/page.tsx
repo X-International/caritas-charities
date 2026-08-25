@@ -6,6 +6,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import NewsHero from "@/components/NewsHero";
 import { newsArticles } from "@/lib/content/news";
 import { buildPageMetadata } from "@/lib/metadata-utils";
+import { Card } from "@/components/ui/Card";
 
 export const metadata = buildPageMetadata({
   title: "News & Updates | Caritas Kampala Charities Office",
@@ -58,15 +59,15 @@ export default async function NewsPage({
         {/* News Grid */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-md space-y-10">
           {filteredArticles.length === 0 ? (
-            <div className="rounded-3xl border border-[#eadfce] bg-[#faf7f2] px-6 py-12 text-center">
-              <h2 className="font-serif text-2xl text-[#b10017]">No matching updates</h2>
+            <Card variant="info" className="px-6 py-12 text-center">
+              <h2 className="font-serif text-2xl text-caritas-red">No matching updates</h2>
               <p className="mt-2 text-sm text-[#585858]">Try a different search term.</p>
-            </div>
+            </Card>
           ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7 lg:gap-8">
             {filteredArticles.map((news) => (
-              <article key={news.slug} className="flex h-full flex-col overflow-hidden rounded-3xl border border-[#eadfce] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
-                <div className="relative aspect-video w-full overflow-hidden bg-[#f5efe6]">
+              <Card key={news.slug} as="article" variant="content" className="flex h-full flex-col overflow-hidden p-0">
+                <div className="relative aspect-video w-full overflow-hidden bg-caritas-beige">
                   <Image
                     src={news.image}
                     alt={news.alt}
@@ -89,7 +90,7 @@ export default async function NewsPage({
                     {news.snippet}
                   </p>
                 </div>
-              </article>
+              </Card>
             ))}
           </div>
           )}

@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Heading } from "@/components/ui/Typography";
+import Button from "@/components/ui/Button";
+import { Card } from "@/components/ui/Card";
 
 interface ImpactArea {
   id: string;
@@ -79,9 +81,11 @@ const IMPACT_AREAS: ImpactArea[] = [
 /* ── White Card (Standard Mobile & Keyboard Accessible) ── */
 function WhiteCard({ area }: { area: ImpactArea }) {
   return (
-    <article
+    <Card
+      as="article"
+      variant="content"
       aria-labelledby={`pillar-title-${area.id}`}
-      className="group bg-white rounded-2xl sm:rounded-[28px] p-5 sm:p-7 md:p-8 flex flex-col justify-between shadow-xs border border-gray-200/70 relative overflow-hidden h-full min-h-[300px] sm:min-h-[360px] transition-shadow duration-300 motion-reduce:transition-none hover:shadow-xl focus-within:shadow-xl focus-within:ring-2 focus-within:ring-[#b10017] focus-within:ring-offset-2"
+      className="group relative flex flex-col justify-between overflow-hidden h-full min-h-[300px] sm:min-h-[360px] p-5 sm:p-7 md:p-8 transition-shadow duration-300 motion-reduce:transition-none hover:shadow-xl focus-within:shadow-xl focus-within:ring-2 focus-within:ring-caritas-red focus-within:ring-offset-2"
     >
       {/* DEFAULT UNHOVERED STATE */}
       <div className="flex flex-col justify-between h-full w-full z-0">
@@ -135,17 +139,18 @@ function WhiteCard({ area }: { area: ImpactArea }) {
         </div>
 
         <div className="relative z-10 pt-3 sm:pt-4 flex items-center justify-center">
-          <Link
+          <Button
             href="/donate"
+            variant="secondary"
+            size="sm"
+            rightIcon={<ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" aria-hidden="true" />}
             aria-label={`Support ${area.title}`}
-            className="shrink-0 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full border-2 border-white text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-[background-color,color] duration-200 motion-reduce:transition-none hover:bg-white hover:text-[#b10017] focus-visible:bg-white focus-visible:text-[#b10017] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
           >
-            <span>SUPPORT</span>
-            <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" aria-hidden="true" />
-          </Link>
+            SUPPORT
+          </Button>
         </div>
       </div>
-    </article>
+    </Card>
   );
 }
 
@@ -193,14 +198,15 @@ function FeaturedCard({ area }: { area: ImpactArea }) {
         <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-amber-300">
           {area.serves}
         </span>
-        <Link
+        <Button
           href="/donate"
+          variant="secondary"
+          size="md"
+          rightIcon={<ArrowUpRight className="w-4 h-4" aria-hidden="true" />}
           aria-label={`Support ${area.title}`}
-        className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border-2 border-white text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider hover:bg-white hover:text-[#b10017] focus-visible:bg-white focus-visible:text-[#b10017] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white transition-[background-color,color] duration-200 motion-reduce:transition-none"
         >
-          <span>SUPPORT THIS CAUSE</span>
-          <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
-        </Link>
+          SUPPORT THIS CAUSE
+        </Button>
       </div>
     </article>
   );

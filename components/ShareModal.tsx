@@ -3,6 +3,7 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from "react";
 import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
 import Button from "@/components/ui/Button";
+import { Heading, Text } from "@/components/ui/Typography";
 import {
   canUseNativeShare,
   copyPageUrl,
@@ -260,18 +261,18 @@ export default function ShareModal({ onClose }: ShareModalProps) {
 
         <div className="flex items-start space-x-4 pr-8">
           <div
-            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-pill bg-[#b10017] text-white shadow-md sm:h-14 sm:w-14"
+            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-pill bg-caritas-red text-white shadow-md sm:h-14 sm:w-14"
             aria-hidden="true"
           >
             <ShareIcon className="h-6 w-6 sm:h-7 sm:w-7" />
           </div>
           <div className="min-w-0 flex-1">
-            <h2 id={titleId} className="font-serif text-lg font-bold leading-tight text-[#b10017] sm:text-xl">
+            <Heading id={titleId} level={2} variant="card" color="red" className="text-lg sm:text-xl font-bold font-serif">
               Share This Page
-            </h2>
-            <p id={descriptionId} className="mt-1.5 font-sans text-xs leading-relaxed text-gray-600 sm:text-sm">
+            </Heading>
+            <Text id={descriptionId} size="xs" color="muted" className="mt-1.5 leading-relaxed sm:text-sm">
               Help more people discover the work of Caritas Kampala Charities Office. Share this page to help connect others with our mission and work.
-            </p>
+            </Text>
           </div>
         </div>
 

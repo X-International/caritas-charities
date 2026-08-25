@@ -106,7 +106,7 @@ export default function SpotlightSection() {
 
               {/* Play Icon */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#b10017] text-white rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-caritas-red text-white rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform">
                   <svg className="w-8 h-8 fill-current ml-1" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
                   </svg>

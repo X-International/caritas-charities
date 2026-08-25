@@ -15,6 +15,7 @@ import {
   GALLERY_CATEGORIES,
   type GalleryImage,
 } from "./gallery/gallery-config";
+import { Card } from "@/components/ui/Card";
 
 type Props = { images: GalleryImage[] };
 
@@ -163,14 +164,16 @@ export default function ClientGallery({ images }: Props) {
             {pageImages.map((img, i) => {
               const globalIndex = (page - 1) * IMAGES_PER_PAGE + i;
               return (
-                <article
+                <Card
                   key={img.src}
-                  className="group flex flex-col overflow-hidden rounded-2xl sm:rounded-3xl border border-[#eadfce] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.02)]"
+                  as="article"
+                  variant="content"
+                  className="group flex flex-col overflow-hidden p-0"
                 >
                   <button
                     type="button"
                     onClick={(e) => openAt(globalIndex, e)}
-                    className={`relative w-full aspect-[4/3] overflow-hidden bg-[#f5efe6] ${THUMB_FOCUS_CLASSES}`}
+                    className={`relative w-full aspect-[4/3] overflow-hidden bg-caritas-beige ${THUMB_FOCUS_CLASSES}`}
                     aria-label={`View photo: ${img.alt}`}
                   >
                     <Image
@@ -185,7 +188,7 @@ export default function ClientGallery({ images }: Props) {
                     <span className="absolute inset-0 bg-black/0 motion-safe:transition-colors motion-safe:duration-300 group-hover:bg-black/20 group-focus-visible:bg-black/20" />
 
                     <span className="absolute inset-0 flex items-center justify-center opacity-0 motion-safe:transition-opacity motion-safe:duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
-                      <span className="flex items-center gap-2 rounded-xl bg-[#b10017] px-4 py-2 text-xs sm:text-sm font-semibold text-white shadow-lg">
+                      <span className="flex items-center gap-2 rounded-xl bg-caritas-red px-4 py-2 text-xs sm:text-sm font-semibold text-white shadow-lg">
                         <ZoomIn className="h-4 w-4 shrink-0" aria-hidden />
                         View Photo
                       </span>
@@ -197,7 +200,7 @@ export default function ClientGallery({ images }: Props) {
                       {img.caption}
                     </span>
                   </button>
-                </article>
+                </Card>
               );
             })}
           </div>

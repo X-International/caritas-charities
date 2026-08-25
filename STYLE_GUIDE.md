@@ -62,7 +62,14 @@ The typography system combines a traditional serif font for headings with a clea
 | **Caption / Category Tag** | `text-[#585858] uppercase tracking-[0.18em] text-[11px] sm:text-xs font-semibold` | Sans-Serif (`font-sans`) | `LatestUpdates.tsx`, `NewsHero.tsx` |
 | **Main Nav Label** | `text-sm font-bold uppercase tracking-wider` | Sans-Serif (`font-sans`) | `components/Navbar.tsx` |
 | **Utility Bar Label** | `text-[11px] font-medium tracking-wide uppercase` | Sans-Serif (`font-sans`) | `components/Navbar.tsx` |
-| **Primary Button Text** | `text-xs sm:text-sm font-bold uppercase tracking-wider` | Sans-Serif (`font-sans`) | `Button.tsx` (`variant="primary"`) |
+### Centralized Typography Components (`components/ui/Typography.tsx`)
+
+All text headings, lead copy, eyebrows, and body copy across the application are rendered using the formal typography component suite located at `components/ui/Typography.tsx`:
+
+- **`<Heading>`**: Renders semantic `<h1>`, `<h2>`, or `<h3>` headings with standardized size variants (`hero`, `page`, `article`, `section`, `subsection`, `card`), font family (`serif`), and color tokens (`red`, `dark`, `white`).
+- **`<Lead>`**: Renders prominent introduction/lead paragraphs in `hero`, `body`, or `article` styles.
+- **`<Eyebrow>`**: Renders uppercase tracking eyebrow labels above headings (`text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em]`).
+- **`<Text>`**: Renders standardized body paragraphs (`xs`, `sm`, `base`, `lg`) in `dark`, `muted`, `white`, or `red` colors.
 
 ---
 
@@ -256,7 +263,7 @@ The website uses a modular form component suite ([`components/ui/Form.tsx`](file
 - **Used In:** `DonateHero.tsx`, `OurStoryHero.tsx`, `ContactHero.tsx`, `VolunteerPage`, `CharityShopPage`.
 
 ### 5. Footer Component
-- **Description:** Full-width footer (`components/Footer.tsx`) with standardized red gradient (`linear-gradient(to bottom, #b10017 200px, #8e0a20 100%)`). Contains official logo, mission statement, 4 navigation columns, social triggers, copyright line, and link to parent Archdiocese site.
+- **Description:** Full-width footer (`components/Footer.tsx`) with standardized red gradient (`linear-gradient(to bottom, #a80012 0px, #a80012 240px, #8e0a20 100%)`) perfectly blended with the logo background (`#a80012`). Contains official logo, mission statement, 4 navigation columns, social triggers, copyright line, and link to parent Archdiocese site.
 - **Used In:** All pages via `Footer.tsx`.
 
 ---

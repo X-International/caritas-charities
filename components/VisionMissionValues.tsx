@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { Heading, Lead, Text } from "@/components/ui/Typography";
 
 const identitySections = [
   {
@@ -36,8 +37,10 @@ export default function VisionMissionValues() {
 
   return (
     <section aria-labelledby="identity-title" className="mx-auto max-w-[1340px] px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-      <div className="overflow-hidden rounded-[22px] bg-[#b10017] px-6 py-10 text-white sm:px-8 lg:px-10 lg:py-12">
-        <h2 id="identity-title" className="scroll-mt-32 text-center font-serif text-4xl font-bold sm:text-5xl lg:text-[52px]">Vision, mission and values</h2>
+      <div className="overflow-hidden rounded-[22px] bg-caritas-red px-6 py-10 text-white sm:px-8 lg:px-10 lg:py-12">
+        <Heading id="identity-title" level={2} variant="section" color="white" className="scroll-mt-32 text-center text-4xl font-bold sm:text-5xl lg:text-[52px]">
+          Vision, mission and values
+        </Heading>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-4" role="tablist" aria-label="Our identity">
           {identitySections.map((section) => (
@@ -49,7 +52,7 @@ export default function VisionMissionValues() {
               aria-selected={activeId === section.id}
               aria-controls={`identity-panel-${section.id}`}
               onClick={() => setActiveId(section.id)}
-              className={`rounded-full px-5 py-3 text-sm font-bold uppercase transition-colors focus-visible:outline-2 focus-visible:outline-white sm:px-7 ${activeId === section.id ? "bg-white text-[#b10017]" : "text-white hover:bg-white/15"}`}
+              className={`rounded-full px-5 py-3 text-sm font-bold uppercase transition-colors focus-visible:outline-2 focus-visible:outline-white sm:px-7 ${activeId === section.id ? "bg-white text-caritas-red" : "text-white hover:bg-white/15"}`}
             >
               {section.label}
             </button>
@@ -61,9 +64,15 @@ export default function VisionMissionValues() {
             <Image key={activeSection.image} src={activeSection.image} alt={activeSection.title} fill sizes="(max-width: 1023px) 100vw, 50vw" className="object-cover" />
           </div>
           <div className="lg:pr-5">
-            <h3 className="font-serif text-3xl leading-tight sm:text-4xl">{activeSection.title}</h3>
-            <p className="mt-5 font-serif text-xl leading-[1.3] sm:text-2xl">{activeSection.lead}</p>
-            <p className="mt-5 text-base leading-relaxed text-white/95 sm:text-lg">{activeSection.body}</p>
+            <Heading level={3} variant="subsection" color="white" className="text-3xl leading-tight sm:text-4xl">
+              {activeSection.title}
+            </Heading>
+            <Lead color="white" className="mt-5 font-serif text-xl leading-[1.3] sm:text-2xl">
+              {activeSection.lead}
+            </Lead>
+            <Text color="white" className="mt-5 text-base leading-relaxed opacity-95 sm:text-lg">
+              {activeSection.body}
+            </Text>
           </div>
         </div>
 

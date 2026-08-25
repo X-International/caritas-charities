@@ -74,7 +74,7 @@ const jsonLd = {
       "parentOrganization": {
         "@type": "Organization",
         "name": "Caritas Kampala",
-        "url": "http://caritaskampala.org/"
+        "url": "https://www.caritaskampala.org/"
       },
       "address": {
         "@type": "PostalAddress",

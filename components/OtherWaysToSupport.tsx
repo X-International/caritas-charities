@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { siteConfig } from "@/lib/site-config";
 import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
 import { Heading } from "@/components/ui/Typography";
+import Button from "@/components/ui/Button";
 
 const BANK_ACCOUNT = siteConfig.giving.bank.accountNumber;
 const MOBILE_NUMBERS = [siteConfig.office.phones.appeal, siteConfig.office.phones.appealAlternate];
@@ -95,14 +96,15 @@ export default function OtherWaysToSupport() {
             </div>
 
             <div className="pt-6 sm:pt-7 md:pt-8 flex flex-col items-center gap-3">
-              <a
+              <Button
                 href="/contact-us"
+                variant="primary"
+                size="md"
+                rightIcon={<ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true" />}
                 onClick={() => trackEvent(ANALYTICS_EVENTS.ctaClick, { placement: "donation_methods", destination: "/contact-us" })}
-                className="group inline-flex items-center justify-center gap-2 border border-[#b10017] bg-[#b10017] text-white text-xs sm:text-[13px] md:text-[14px] font-bold uppercase tracking-wider rounded-full px-6 sm:px-7 md:px-7.5 py-3 sm:py-3.25 md:py-3.5 transition-colors duration-200 hover:bg-white hover:text-[#b10017] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
               >
                 Donate Now
-                <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true" />
-              </a>
+              </Button>
             </div>
           </div>
 
@@ -128,14 +130,15 @@ export default function OtherWaysToSupport() {
             </div>
 
             <div className="pt-6 sm:pt-7 md:pt-8 flex justify-center">
-              <button
+              <Button
                 type="button"
+                variant="primary"
+                size="md"
+                leftIcon={copiedKey === "bank" ? <Check className="w-4 h-4" aria-hidden="true" /> : <Copy className="w-4 h-4" aria-hidden="true" />}
                 onClick={() => copyToClipboard(BANK_ACCOUNT, "bank")}
-                  className="group inline-flex items-center justify-center gap-2 border border-[#b10017] bg-[#b10017] text-white text-xs sm:text-[13px] md:text-[14px] font-bold uppercase tracking-wider rounded-full px-6 sm:px-7 md:px-7.5 py-3 sm:py-3.25 md:py-3.5 transition-colors duration-200 hover:bg-white hover:text-[#b10017] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
               >
-                {copiedKey === "bank" ? <Check className="w-4 h-4" aria-hidden="true" /> : <Copy className="w-4 h-4" aria-hidden="true" />}
-                <span>{copiedKey === "bank" ? "Copied" : "Copy Account Number"}</span>
-              </button>
+                {copiedKey === "bank" ? "Copied" : "Copy Account Number"}
+              </Button>
             </div>
           </div>
 
@@ -170,14 +173,15 @@ export default function OtherWaysToSupport() {
             </div>
 
             <div className="pt-6 sm:pt-7 md:pt-8 flex justify-center">
-              <button
+              <Button
                 type="button"
+                variant="primary"
+                size="md"
+                leftIcon={copiedKey === "mobile-all" ? <Check className="w-4 h-4" aria-hidden="true" /> : <Copy className="w-4 h-4" aria-hidden="true" />}
                 onClick={copyAllMobileNumbers}
-                className="group inline-flex items-center justify-center gap-2 border border-[#b10017] bg-[#b10017] text-white text-xs sm:text-[13px] md:text-[14px] font-bold uppercase tracking-wider rounded-full px-6 sm:px-7 md:px-7.5 py-3 sm:py-3.25 md:py-3.5 transition-colors duration-200 hover:bg-white hover:text-[#b10017] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
               >
-                {copiedKey === "mobile-all" ? <Check className="w-4 h-4" aria-hidden="true" /> : <Copy className="w-4 h-4" aria-hidden="true" />}
-                <span>{copiedKey === "mobile-all" ? "Copied" : "Copy Numbers"}</span>
-              </button>
+                {copiedKey === "mobile-all" ? "Copied" : "Copy Numbers"}
+              </Button>
             </div>
           </div>
         </div>

@@ -14,7 +14,7 @@ export default function SidebarCard() {
           className="object-cover"
         />
       </div>
-      <div className="bg-[#b10017] p-8 text-white">
+      <div className="bg-caritas-red p-8 text-white">
         <Heading level={3} variant="subsection" color="white" className="mb-4">
           Faith Put Into Practice
         </Heading>

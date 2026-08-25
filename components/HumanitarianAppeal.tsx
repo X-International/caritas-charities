@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Heading } from "@/components/ui/Typography";
+import Button from "@/components/ui/Button";
 
 export default function HumanitarianAppeal() {
   return (
@@ -37,13 +37,14 @@ export default function HumanitarianAppeal() {
               </p>
             </div>
             <div className="pt-2">
-              <Link
+              <Button
                 href="/donate"
+                variant="secondary"
+                size="md"
                 aria-label="Donate to support Caritas Kampala humanitarian work"
-                className="inline-block bg-white text-[#b10017] hover:bg-transparent hover:text-white border-2 border-white text-xs font-bold px-7 py-3.5 rounded-full tracking-wider uppercase transition-colors duration-200 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
               >
                 DONATE NOW
-              </Link>
+              </Button>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
+import { Heading, Lead } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
 export const metadata = buildPageMetadata({
@@ -17,7 +18,7 @@ export default function VolunteerPage() {
 
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
-        <section className="bg-[#b10017] text-white section-lg">
+        <section className="bg-caritas-red text-white section-lg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
             <Breadcrumb
               items={[
@@ -26,17 +27,17 @@ export default function VolunteerPage() {
                 { label: "VOLUNTEER" },
               ]}
             />
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif tracking-tight">
+            <Heading level={1} variant="page" color="white">
               Volunteer
-            </h1>
+            </Heading>
           </div>
         </section>
 
         {/* Content Section */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 section-lg text-center">
-          <p className="text-lg sm:text-xl text-gray-600 font-sans">
+          <Lead variant="hero" color="muted">
             Content coming soon.
-          </p>
+          </Lead>
         </section>
       </main>
 

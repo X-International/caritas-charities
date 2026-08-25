@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
 import { Heading, Lead } from "@/components/ui/Typography";
+import Button from "@/components/ui/Button";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
 export const metadata = buildPageMetadata({
@@ -52,12 +53,13 @@ export default function AboutUsPage() {
                 </p>
               </div>
               <div className="pt-2">
-                <Link
+                <Button
                   href="/about-us/our-story"
-                  className="inline-block bg-[#b10017] text-white hover:bg-white hover:text-[#b10017] border-2 border-[#b10017] text-xs font-bold px-7 py-3 rounded-full tracking-wider uppercase transition-colors"
+                  variant="primary"
+                  size="md"
                 >
                   Read Our Full Story
-                </Link>
+                </Button>
               </div>
             </div>
 

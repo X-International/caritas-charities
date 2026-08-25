@@ -203,7 +203,7 @@ export default function HeroSlider() {
           onClick={prevSlide}
           onKeyDown={handleKeyDown}
           aria-label="Previous Slide"
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-[#b10017] focus-visible:bg-[#b10017] focus-visible:outline-2 focus-visible:outline-white text-white flex items-center justify-center transition-[opacity,background-color] backdrop-blur-md border border-white/10 shadow-lg cursor-pointer opacity-100 sm:opacity-0 sm:group-hover:opacity-100 focus-visible:opacity-100"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-caritas-red focus-visible:bg-caritas-red focus-visible:outline-2 focus-visible:outline-white text-white flex items-center justify-center transition-[opacity,background-color] backdrop-blur-md border border-white/10 shadow-lg cursor-pointer opacity-100 sm:opacity-0 sm:group-hover:opacity-100 focus-visible:opacity-100"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
@@ -215,7 +215,7 @@ export default function HeroSlider() {
           onClick={nextSlide}
           onKeyDown={handleKeyDown}
           aria-label="Next Slide"
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-[#b10017] focus-visible:bg-[#b10017] focus-visible:outline-2 focus-visible:outline-white text-white flex items-center justify-center transition-[opacity,background-color] backdrop-blur-md border border-white/10 shadow-lg cursor-pointer opacity-100 sm:opacity-0 sm:group-hover:opacity-100 focus-visible:opacity-100"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-caritas-red focus-visible:bg-caritas-red focus-visible:outline-2 focus-visible:outline-white text-white flex items-center justify-center transition-[opacity,background-color] backdrop-blur-md border border-white/10 shadow-lg cursor-pointer opacity-100 sm:opacity-0 sm:group-hover:opacity-100 focus-visible:opacity-100"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
@@ -230,7 +230,7 @@ export default function HeroSlider() {
             onClick={() => setIsPaused(!isPaused)}
             onKeyDown={handleKeyDown}
             aria-label={isPaused ? "Play slide animation" : "Pause slide animation"}
-            className="text-white hover:text-[#b10017] focus-visible:outline-2 focus-visible:outline-white rounded cursor-pointer p-0.5"
+            className="text-white hover:text-caritas-red focus-visible:outline-2 focus-visible:outline-white rounded cursor-pointer p-0.5"
           >
             {isPaused ? (
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
@@ -257,8 +257,8 @@ export default function HeroSlider() {
                 aria-label={`Go to slide ${index + 1}: ${slide.title}`}
                 className={`h-2.5 rounded-full transition-[width,background-color] cursor-pointer focus-visible:outline-2 focus-visible:outline-white ${
                   index === currentIndex
-                    ? "w-8 bg-[#b10017]"
-                    : "w-2.5 bg-white/60 hover:bg-white"
+                    ? "w-8 bg-caritas-red"
+                    : "w-2.5 bg-white/50 hover:bg-white"
                 }`}
               />
             ))}

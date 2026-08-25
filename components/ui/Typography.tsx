@@ -116,7 +116,7 @@ export function Eyebrow({
 }
 
 // Text (Body) Component
-export type TextSize = "sm" | "base" | "lg";
+export type TextSize = "xs" | "sm" | "base" | "lg";
 export type TextColor = "default" | "dark" | "muted" | "white";
 
 export interface TextProps extends React.HTMLAttributes<HTMLParagraphElement> {
@@ -127,6 +127,7 @@ export interface TextProps extends React.HTMLAttributes<HTMLParagraphElement> {
 }
 
 const textSizeStyles: Record<TextSize, string> = {
+  xs: "text-xs leading-relaxed",
   sm: "text-xs sm:text-sm leading-relaxed",
   base: "text-sm sm:text-base leading-relaxed",
   lg: "text-[16px] sm:text-[17px] leading-[1.7]",

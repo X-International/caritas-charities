@@ -32,7 +32,7 @@ const variantClasses: Record<CardVariant, string> = {
  * </Card>
  * ```
  */
-export default function Card({
+export function Card({
   variant = "content",
   as: Component = "div",
   className = "",
@@ -49,3 +49,5 @@ export default function Card({
     </Component>
   );
 }
+
+export default Card;

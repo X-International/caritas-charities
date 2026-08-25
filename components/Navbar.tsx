@@ -875,14 +875,16 @@ export default function Navbar() {
 
                 {/* Mobile Donate Button */}
                 <div className="pt-6 pb-2 px-4">
-                  <Link
+                  <Button
                     href="/donate"
+                    variant="primary"
+                    size="lg"
+                    className="w-full justify-center rounded-xl"
                     onClick={closeMobileMenu}
-                    className="flex items-center justify-center w-full bg-[#b10017] text-white hover:bg-[#8e0a20] font-bold py-4 rounded-xl text-base uppercase tracking-wider transition-all duration-200 shadow-md"
                     aria-label="Donate to Caritas Kampala"
                   >
                     Donate Now
-                  </Link>
+                  </Button>
                 </div>
               </div>
 

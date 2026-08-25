@@ -5,6 +5,7 @@ import DonateOnlineCard from "@/components/DonateOnlineCard";
 import AppealCalloutBanner from "@/components/AppealCalloutBanner";
 import AppealPageHero from "@/components/AppealPageHero";
 import { Heading, Eyebrow } from "@/components/ui/Typography";
+import Button from "@/components/ui/Button";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
 export const metadata = buildPageMetadata({
@@ -228,13 +229,15 @@ export default function CurrentAppealPage() {
 
                 {/* Support Button - Centered text, no side icons, ghost hover effect */}
                 <div className="pt-2">
-                  <Link
+                  <Button
                     href="/donate"
+                    variant="primary"
+                    size="lg"
+                    className="w-full justify-center"
                     aria-label="Support this appeal by donating"
-                    className="block w-full text-center bg-[#b10017] text-white hover:bg-transparent hover:text-[#b10017] border-2 border-[#b10017] text-xs sm:text-sm font-bold px-6 py-3.5 rounded-full tracking-wider uppercase transition-colors duration-200 motion-reduce:transition-none cursor-pointer focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-2"
                   >
                     SUPPORT THIS APPEAL
-                  </Link>
+                  </Button>
                 </div>
 
                 {/* Heart subtext */}
