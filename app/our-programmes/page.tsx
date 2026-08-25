@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Card from "@/components/ui/Card";
 
 export const metadata = {
   title: "Our Programmes | Caritas Kampala Charities Office",
@@ -105,7 +106,7 @@ export default function OurProgrammesPage() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {programmes.map((prog) => (
-              <div id={prog.id} key={prog.id} className="scroll-mt-32 bg-white rounded-2xl border-t-4 border-[#b10017] p-8 shadow-sm flex flex-col">
+              <Card id={prog.id} key={prog.id} variant="content" className="scroll-mt-32 border-t-4 border-t-[#b10017] p-8 flex flex-col">
                 <div className="flex items-center justify-between mb-6">
                   <div className="w-14 h-14 rounded-full bg-[#f4efe6] flex items-center justify-center">
                     <prog.icon className="w-7 h-7 text-[#b10017]" />
@@ -121,7 +122,7 @@ export default function OurProgrammesPage() {
                 <div className="pt-4 mt-6 border-t border-gray-100">
                   <p className="text-[11px] font-semibold text-gray-400 uppercase tracking-widest">{prog.serves}</p>
                 </div>
-              </div>
+              </Card>
             ))}
           </div>
         </section>

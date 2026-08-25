@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { NewsArticle } from '@/lib/content/news';
+import Card from '@/components/ui/Card';
 
 export default function RelatedNewsCarousel({ currentArticleSlug, allArticles }: { currentArticleSlug: string, allArticles: NewsArticle[] }) {
     const relatedArticles = useMemo(() => allArticles
@@ -32,7 +33,8 @@ export default function RelatedNewsCarousel({ currentArticleSlug, allArticles }:
               Related Content
             </h2>
             <div className="relative group">
-                <Link href={`/resources/news/${article.slug}`} className="block overflow-hidden rounded-3xl border border-[#eadfce] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
+                <Card variant="content" className="overflow-hidden p-0 sm:p-0">
+                    <Link href={`/resources/news/${article.slug}`} className="block">
                     <div className="relative aspect-video w-full overflow-hidden bg-[#f5efe6]">
                         <Image
                             src={article.image}
@@ -58,7 +60,8 @@ export default function RelatedNewsCarousel({ currentArticleSlug, allArticles }:
                             <span>{article.region || ''}</span>
                         </div>
                     </div>
-                </Link>
+                    </Link>
+                </Card>
 
                 {relatedArticles.length > 1 && (
                     <>

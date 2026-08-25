@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
+import Card from "@/components/ui/Card";
 
 export const metadata = {
   title: "Chaconet Partners | Caritas Kampala Charities Office",
@@ -50,18 +51,18 @@ export default function ChaconetPartnersPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-            <div className="bg-[#f4efe6] p-6 sm:p-8 rounded-2xl space-y-3">
+            <Card variant="info" className="space-y-3">
               <h3 className="text-xl font-serif font-bold text-[#b10017]">Child &amp; Youth Care Homes</h3>
               <p className="text-sm text-gray-700 leading-relaxed">
                 Providing shelter, education, nutrition, and psychological support for orphaned and vulnerable children.
               </p>
-            </div>
-            <div className="bg-[#f4efe6] p-6 sm:p-8 rounded-2xl space-y-3">
+            </Card>
+            <Card variant="info" className="space-y-3">
               <h3 className="text-xl font-serif font-bold text-[#b10017]">Elderly &amp; Special Needs Facilities</h3>
               <p className="text-sm text-gray-700 leading-relaxed">
                 Offering medical care, dignity, and family-style shelter to seniors and individuals with severe disabilities.
               </p>
-            </div>
+            </Card>
           </div>
 
           <DonateOnlineCard />

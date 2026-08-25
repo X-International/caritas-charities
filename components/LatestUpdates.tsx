@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
+import Card from "@/components/ui/Card";
 
 interface NewsCard {
   id: number;
@@ -47,7 +48,7 @@ export default function LatestUpdates() {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-8 py-10">
       {/* Beige Card Container */}
-      <div className="bg-[#f4efe6] text-gray-900 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-sm border border-[#e8dfd1]">
+      <div className="bg-[#f4efe6] text-gray-900 rounded-card p-6 sm:p-10 lg:p-12 shadow-sm border border-[#e8dfd1]">
         {/* Section Heading */}
         <div className="mb-8">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif text-[#b10017] tracking-tight">
@@ -58,9 +59,10 @@ export default function LatestUpdates() {
         {/* Top 3 Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           {topNews.map((card) => (
-            <div
+            <Card
               key={card.id}
-              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100 flex flex-col justify-between"
+              variant="content"
+              className="flex flex-col justify-between"
             >
               <div>
                 <div className="flex justify-between items-center text-xs font-semibold text-gray-600 mb-3">
@@ -88,7 +90,7 @@ export default function LatestUpdates() {
                   </svg>
                 </Link>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
 
@@ -126,7 +128,7 @@ export default function LatestUpdates() {
           </div>
 
           {/* Right Card */}
-          <div className="lg:col-span-4 bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100 flex flex-col justify-between">
+          <Card variant="content" className="lg:col-span-4 flex flex-col justify-between">
             <div>
               <div className="flex justify-between items-center text-xs font-semibold text-gray-600 mb-3">
                 <span className="bg-[#f4efe6] text-[#b10017] font-bold px-2.5 py-0.5 rounded text-[10px] tracking-wider uppercase">
@@ -137,7 +139,7 @@ export default function LatestUpdates() {
               <h3 className="text-xl font-bold font-serif text-gray-900 leading-snug mb-3 hover:text-[#b10017] transition-colors cursor-pointer">
                 Alarming rate of malnutrition in South Sudan: Caritas responds with nutritional support
               </h3>
-              <p className="text-xs text-gray-700 leading-relaxed">
+              <p className="text-xs text-gray-700 leading-relaxed line-clamp-3">
                 Emergency feeding centers established across high-risk districts offer specialized therapeutic food and infant medical care.
               </p>
             </div>
@@ -153,7 +155,7 @@ export default function LatestUpdates() {
                 </svg>
               </Link>
             </div>
-          </div>
+          </Card>
         </div>
       </div>
     </section>

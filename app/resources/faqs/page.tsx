@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Card from "@/components/ui/Card";
 
 export const metadata = {
   title: "FAQs | Caritas Kampala Charities Office",
@@ -62,10 +63,10 @@ export default function FAQsPage() {
         {/* FAQs Accordion/List */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-6">
           {faqs.map((faq, i) => (
-            <div key={i} className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-200 shadow-xs space-y-2">
+            <Card key={i} variant="content" className="space-y-2">
               <h2 className="text-lg sm:text-xl font-serif font-bold text-[#b10017]">{faq.q}</h2>
               <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{faq.a}</p>
-            </div>
+            </Card>
           ))}
         </section>
       </main>

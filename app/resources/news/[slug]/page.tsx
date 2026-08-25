@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import RelatedNewsCarousel from "@/components/RelatedNewsCarousel";
 import { getNewsArticle, newsArticles } from "@/lib/content/news";
 import Button from "@/components/ui/Button";
+import Card from "@/components/ui/Card";
 
 export function generateStaticParams() {
   return newsArticles.map((article) => ({ slug: article.slug }));
@@ -111,7 +112,7 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
                   ))}
                 </div>
                 {article.helpSection && (
-                  <div className="bg-[#f4efe6] p-6 sm:p-8 rounded-2xl space-y-6 mt-8 border border-[#e8dfd1]">
+                  <Card variant="info" className="space-y-6 mt-8">
                     <h2 className="text-xl sm:text-2xl font-bold font-serif text-[#b10017]">
                       {article.helpSection.title}
                     </h2>
@@ -127,10 +128,10 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
                     >
                       {article.helpSection.buttonText}
                     </Button>
-                  </div>
+                  </Card>
                 )}
                 {article.closingPrompt && (
-                  <div className="bg-[#f4efe6] p-6 sm:p-8 rounded-2xl space-y-6 mt-8 border border-[#e8dfd1]">
+                  <Card variant="info" className="space-y-6 mt-8">
                     <p className="text-[17px] sm:text-[18px] leading-[1.7] text-[#4f4f4f]">
                       {article.closingPrompt.body}
                     </p>
@@ -146,14 +147,14 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
                         </Button>
                       ))}
                     </div>
-                  </div>
+                  </Card>
                 )}
               </div>
             </article>
 
             {/* Right Column: Metadata */}
             <aside className="lg:col-span-4 space-y-8 lg:sticky lg:top-28">
-              <div className="bg-[#f4efe6] p-6 sm:p-7 rounded-2xl sm:rounded-3xl space-y-4 border border-[#e8dfd1]">
+              <Card variant="info" className="p-6 sm:p-7 space-y-4">
                 <h2 className="text-sm font-extrabold uppercase tracking-widest text-[#585858]">
                   Article Details
                 </h2>
@@ -191,7 +192,7 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
                     </div>
                   )}
                 </div>
-              </div>
+              </Card>
 
               <RelatedNewsCarousel currentArticleSlug={article.slug} allArticles={newsArticles} />
             </aside>

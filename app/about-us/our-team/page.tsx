@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Card from "@/components/ui/Card";
 
 export const metadata = {
   title: "Our Team | Caritas Kampala Charities Office",
@@ -66,7 +67,7 @@ export default function OurTeamPage() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {teamMembers.map((member, i) => (
-              <div key={i} className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <Card key={i} variant="content" className="overflow-hidden p-0 sm:p-0">
                 <div className="relative h-64 w-full">
                   <Image
                     src={member.image}
@@ -81,7 +82,7 @@ export default function OurTeamPage() {
                   <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">{member.role}</p>
                   <p className="text-sm text-gray-700 leading-relaxed pt-2">{member.bio}</p>
                 </div>
-              </div>
+              </Card>
             ))}
           </div>
         </section>

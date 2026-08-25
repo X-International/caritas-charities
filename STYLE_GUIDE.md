@@ -158,7 +158,61 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 ---
 
-## 7. COMPONENT LIBRARY
+## 7. CARD COMPONENT SYSTEM (`components/ui/Card.tsx`)
+
+All standard content cards and informational blocks across the codebase are built using the centralized `Card` component located at `components/ui/Card.tsx`.
+
+### Component Properties
+
+```typescript
+export type CardVariant = "content" | "info";
+
+export interface CardProps {
+  variant?: CardVariant;   // Default: "content"
+  as?: React.ElementType;  // Default: "div"
+  className?: string;
+  children: React.ReactNode;
+}
+```
+
+### Variants
+
+- **`content` (White Surface Card):** White background (`bg-white`), subcard radius (`rounded-subcard` / 16px), subtle border (`border border-gray-100`), shadow with hover elevation (`shadow-sm hover:shadow-md transition-shadow`), and responsive padding (`p-6 sm:p-8`). Used for news updates, carousel items, FAQ items, team profiles, and programme cards.
+- **`info` (Beige Surface Card):** Warm beige background (`bg-caritas-beige` / `#f4efe6`), subcard radius (`rounded-subcard` / 16px), warm neutral border (`border border-[#e8dfd1]`), and responsive padding (`p-6 sm:p-8`). Used for informational callouts, partner category summaries, help sections, and article detail sidebars.
+
+### Layout & Truncation Guidelines
+
+- **Flex Layout:** When rendering cards in a grid with fixed-position footers or action icons, pass `className="flex flex-col justify-between"` and wrap body content in a `flex-1` container.
+- **Text Truncation:** Card description paragraphs in grids MUST enforce `line-clamp-3` (or `line-clamp-2` for compact carousels) to prevent varying content lengths from misaligning footer dividers across the grid row.
+
+### Code Examples
+
+```tsx
+/* Standard Content Card (News Update) */
+<Card variant="content" className="flex flex-col justify-between">
+  <div>
+    <div className="flex justify-between items-center text-xs font-semibold text-gray-600 mb-3">
+      <span className="bg-[#f4efe6] text-[#b10017] font-bold px-2.5 py-0.5 rounded text-[10px] uppercase">NEWS</span>
+      <span>10.07.2026</span>
+    </div>
+    <h3 className="text-lg font-bold font-serif text-gray-900 mb-3">Title</h3>
+    <p className="text-xs text-gray-700 line-clamp-3">Description...</p>
+  </div>
+  <div className="pt-4 border-t border-gray-100 flex justify-end">
+    <Link href="..." className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">→</Link>
+  </div>
+</Card>
+
+/* Informational Callout Card */
+<Card variant="info" className="space-y-3">
+  <h2 className="text-xl font-serif font-bold text-[#b10017]">Volunteer With Us</h2>
+  <p className="text-sm text-gray-900">Assist in logistics, food packaging, and community outreach.</p>
+</Card>
+```
+
+---
+
+## 8. COMPONENT LIBRARY
 
 ### 1. Parent Utility Bar
 - **Description:** Dark black (`#111111`) top bar displaying `"Part of Caritas Kampala"` link, search trigger, and share modal trigger.
@@ -182,7 +236,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 ---
 
-## 8. CONTENT & TONE QUICK REFERENCE
+## 9. CONTENT & TONE QUICK REFERENCE
 
 | Guideline | Standard Requirement | Incorrect Example | Correct Example |
 |:---|:---|:---|:---|
@@ -195,7 +249,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 ---
 
-## 9. INCONSISTENCIES RESOLUTION STATUS
+## 10. INCONSISTENCIES RESOLUTION STATUS
 
 All visual and architectural inconsistencies identified in earlier codebase audits have been resolved:
 
@@ -205,3 +259,5 @@ All visual and architectural inconsistencies identified in earlier codebase audi
 4. **Inline News Category Colors — RESOLVED:** Replaced inline hex codes with CSS variables (`--category-emergency`, `--category-announcement`, `--category-partnership`) and Tailwind utility classes (`bg-category-emergency`, etc.).
 5. **Inline Button Styling — RESOLVED:** Built a formal `<Button>` component system (`components/ui/Button.tsx`) and refactored button instances across the application to use it.
 6. **Ad-Hoc Border-Radius Variations — RESOLVED:** Defined 4 semantic radius tokens (`rounded-card`, `rounded-subcard`, `rounded-input`, `rounded-pill`) in `globals.css` and applied them consistently across all components.
+7. **Ad-Hoc Card Variations & Footer Misalignment — RESOLVED:** Built a central `<Card>` component system (`components/ui/Card.tsx`) with `content` (white) and `info` (beige) variants, enforced consistent `line-clamp-3` text truncation, and refactored card instances across all content pages.
+
