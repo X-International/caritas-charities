@@ -66,7 +66,7 @@ const platforms: PlatformButton[] = [
     id: "whatsapp",
     label: "WhatsApp",
     ariaLabel: "Share this page on WhatsApp",
-    className: "bg-[#25D366] hover:bg-[#1ebe57] focus-visible:ring-[#25D366]",
+    className: "bg-[#25D366] group-hover:bg-[#1ebe57] focus-visible:ring-[#25D366]",
     icon: (
       <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
@@ -77,7 +77,7 @@ const platforms: PlatformButton[] = [
     id: "facebook",
     label: "Facebook",
     ariaLabel: "Share this page on Facebook",
-    className: "bg-[#1877f2] hover:bg-[#0d65d9] focus-visible:ring-[#1877f2]",
+    className: "bg-[#1877f2] group-hover:bg-[#0d65d9] focus-visible:ring-[#1877f2]",
     icon: (
       <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M9 8H7v3h2v9h3v-9h3l.5-3H12V6c0-.88.39-1 1-1h2V2h-3c-2.4 0-4 1.2-4 3v3z" />
@@ -88,7 +88,7 @@ const platforms: PlatformButton[] = [
     id: "x",
     label: "X",
     ariaLabel: "Share this page on X",
-    className: "bg-black hover:bg-[#222] focus-visible:ring-black",
+    className: "bg-black group-hover:bg-[#222] focus-visible:ring-black",
     icon: (
       <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -99,7 +99,7 @@ const platforms: PlatformButton[] = [
     id: "linkedin",
     label: "LinkedIn",
     ariaLabel: "Share this page on LinkedIn",
-    className: "bg-[#0a66c2] hover:bg-[#084e96] focus-visible:ring-[#0a66c2]",
+    className: "bg-[#0a66c2] group-hover:bg-[#084e96] focus-visible:ring-[#0a66c2]",
     icon: (
       <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0z" />
@@ -110,7 +110,7 @@ const platforms: PlatformButton[] = [
     id: "email",
     label: "Email",
     ariaLabel: "Share this page via Email",
-    className: "bg-[#ea4335] hover:bg-[#d63022] focus-visible:ring-[#ea4335]",
+    className: "bg-[#ea4335] group-hover:bg-[#d63022] focus-visible:ring-[#ea4335]",
     icon: (
       <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
@@ -138,6 +138,11 @@ export default function ShareModal({ onClose }: ShareModalProps) {
 
   useEffect(() => {
     setPayload(getPageSharePayload());
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
   }, []);
 
   useEffect(() => {
@@ -255,7 +260,7 @@ export default function ShareModal({ onClose }: ShareModalProps) {
           ref={closeRef}
           type="button"
           onClick={onClose}
-          className="absolute top-3 right-3 flex min-h-11 min-w-11 items-center justify-center rounded-pill text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#b10017] cursor-pointer"
+          className="absolute top-3 right-3 flex min-h-11 min-w-11 items-center justify-center rounded-pill text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-caritas-red cursor-pointer"
           aria-label="Close share dialog"
         >
           <svg className="h-4.5 w-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -265,7 +270,7 @@ export default function ShareModal({ onClose }: ShareModalProps) {
 
         <div className="flex items-start space-x-4 pr-8">
           <div
-            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-pill bg-caritas-red text-white shadow-md sm:h-14 sm:w-14"
+            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-pill bg-caritas-red text-white sm:h-14 sm:w-14"
             aria-hidden="true"
           >
             <ShareIcon className="h-6 w-6 sm:h-7 sm:w-7" />
@@ -288,7 +293,7 @@ export default function ShareModal({ onClose }: ShareModalProps) {
               variant="primary"
               size="md"
               leftIcon={<ShareIcon className="h-4.5 w-4.5" />}
-              className="w-full rounded-input md:hidden font-semibold normal-case text-sm tracking-normal shadow-sm"
+              className="w-full rounded-input md:hidden font-semibold normal-case text-sm tracking-normal shadow-none"
             >
               Share Page
             </Button>
@@ -305,7 +310,7 @@ export default function ShareModal({ onClose }: ShareModalProps) {
             className={`w-full rounded-input font-semibold normal-case text-sm tracking-normal border-2 ${
               copied
                 ? "border-[#1b7a4a] bg-[#1b7a4a] text-white hover:bg-[#15623b]"
-                : "border-[#b10017] bg-white text-[#b10017] hover:bg-[#b10017] hover:text-white"
+                : "border-caritas-red bg-white text-caritas-red hover:bg-caritas-red hover:text-white"
             }`}
           >
             {copied ? "Link Copied" : "Copy Link"}
@@ -319,21 +324,21 @@ export default function ShareModal({ onClose }: ShareModalProps) {
           <p className="mb-4 text-center text-[11px] font-bold uppercase tracking-[0.16em] text-gray-500">
             SHARE VIA
           </p>
-          <div className="grid grid-cols-5 gap-1.5 sm:gap-3 max-w-sm mx-auto items-center justify-items-center">
+          <div className="grid grid-cols-5 gap-1 sm:gap-3 max-w-sm mx-auto items-center justify-items-center">
             {platforms.map((platform) => (
               <button
                 key={platform.id}
                 type="button"
                 onClick={() => shareVia(platform.id)}
-                className="group flex min-w-0 w-full flex-col items-center gap-1.5 focus-visible:outline-none cursor-pointer"
+                className="group flex min-w-[44px] min-h-[44px] w-full flex-col items-center justify-center gap-1.5 focus-visible:outline-none cursor-pointer"
                 aria-label={platform.ariaLabel}
               >
                 <span
-                  className={`flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-pill text-white shadow-md transition-colors duration-200 group-focus-visible:ring-2 group-focus-visible:ring-offset-2 ${platform.className}`}
+                  className={`flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-pill text-white transition-colors duration-200 group-focus-visible:ring-2 group-focus-visible:ring-offset-2 ${platform.className}`}
                 >
                   {platform.icon}
                 </span>
-                <span className="text-[10px] font-semibold text-gray-700 transition-colors group-hover:text-gray-900 truncate w-full text-center">
+                <span className="text-[10px] font-semibold text-gray-700 transition-colors group-hover:text-gray-900 group-hover:underline truncate w-full text-center">
                   {platform.label}
                 </span>
               </button>
@@ -346,8 +351,8 @@ export default function ShareModal({ onClose }: ShareModalProps) {
             onClick={handleNativeShare}
             variant="outline"
             size="md"
-            leftIcon={<ShareIcon className="h-4 w-4 text-[#b10017]" />}
-            className="mt-6 hidden w-full rounded-input border-gray-200 text-gray-700 hover:border-gray-300 hover:bg-gray-50 focus-visible:ring-[#b10017] md:flex font-semibold normal-case text-sm tracking-normal"
+            leftIcon={<ShareIcon className="h-4 w-4 text-caritas-red" />}
+            className="mt-6 hidden w-full rounded-input border-gray-200 text-gray-700 hover:border-gray-300 hover:bg-gray-50 focus-visible:ring-caritas-red md:flex font-semibold normal-case text-sm tracking-normal"
           >
             More ways to share
           </Button>
