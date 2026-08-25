@@ -1,13 +1,14 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
+import { buildPageMetadata } from "@/lib/metadata-utils";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Charity Shop | Caritas Kampala Charities Office",
   description:
     "Shop or donate goods to support the work of the Charities Office. Every purchase helps families across the Archdiocese.",
-  alternates: { canonical: "/get-involved/charity-shop" },
-};
+  path: "/get-involved/charity-shop",
+});
 
 export default function CharityShopPage() {
   return (

@@ -6,10 +6,10 @@ export type PageSharePayload = {
 };
 
 export const SHARE_INTRO =
-  "Discover the work of the Caritas Kampala Charities Office. Learn more and see how you can get involved:";
+  "Help more people discover the work of Caritas Kampala Charities Office. Share this page to help connect others with our mission and work.";
 
 const FALLBACK_DESCRIPTION =
-  "Discover the work of the Caritas Kampala Charities Office. Share this page to help connect others with our mission.";
+  "Help more people discover the work of Caritas Kampala Charities Office. Share this page to help connect others with our mission and work.";
 
 const ROUTE_META: Record<string, { title: string; description: string }> = {
   "/": {
@@ -56,20 +56,24 @@ const ROUTE_META: Record<string, { title: string; description: string }> = {
     title: "Chaconet Partners | Caritas Kampala Charities Office",
     description: "The Charities Office works within Chaconet, a network of nine charity homes across the Archdiocese of Kampala.",
   },
+  "/resources": {
+    title: "Resources | Caritas Kampala Charities Office",
+    description: "Explore news, photo gallery, publications, and FAQs from the Charities Office of Caritas Kampala.",
+  },
   "/resources/news": {
     title: "News & Updates | Caritas Kampala Charities Office",
     description: "The latest updates and stories from the work of the Charities Office across the Archdiocese of Kampala.",
   },
   "/resources/news/kotido-moroto-famine-relief-drive": {
-    title: "Kotido & Moroto Famine Relief Drive Mobilizes Parishes | Caritas Kampala",
+    title: "Kotido & Moroto Famine Relief Drive Mobilizes Parishes | Caritas Kampala Charities Office",
     description: "Parishes across the Archdiocese of Kampala are collecting food and relief items for families facing famine in Kotido and Moroto.",
   },
   "/resources/news/charities-office-launches-new-website": {
-    title: "The Charities Office Launches Its New Website | Caritas Kampala",
+    title: "The Charities Office Launches Its New Website | Caritas Kampala Charities Office",
     description: "A new online home for the Charities Office, sharing our work, our network, and how you can help.",
   },
   "/resources/news/getting-to-know-chaconet-our-network-of-nine-charity-homes": {
-    title: "Getting to Know Chaconet, Our Network of Nine Charity Homes | Caritas Kampala",
+    title: "Getting to Know Chaconet, Our Network of Nine Charity Homes | Caritas Kampala Charities Office",
     description: "A closer look at Chaconet, the network of charity homes working together across the Archdiocese of Kampala.",
   },
   "/resources/gallery": {
@@ -78,11 +82,11 @@ const ROUTE_META: Record<string, { title: string; description: string }> = {
   },
   "/resources/annual-reports": {
     title: "Annual Reports | Caritas Kampala Charities Office",
-    description: "Reports on the work of the Charities Office, coming soon.",
+    description: "Annual impact reviews and financial accountability reports from the Charities Office of Caritas Kampala.",
   },
   "/resources/faqs": {
     title: "FAQs | Caritas Kampala Charities Office",
-    description: "Answers to common questions about the Charities Office, coming soon.",
+    description: "Answers to common questions about donation drop-offs, volunteering, and supporting the Charities Office of Caritas Kampala.",
   },
   "/contact-us": {
     title: "Contact Us | Caritas Kampala Charities Office",
@@ -115,7 +119,7 @@ export function getPageSharePayload(): PageSharePayload {
   if (typeof window === "undefined") {
     return {
       url: "https://www.caritaskampalacharities.org/",
-      title: "Caritas Kampala - Charities Office",
+      title: "Caritas Kampala Charities Office",
       description: FALLBACK_DESCRIPTION,
       image: null,
     };
@@ -128,7 +132,7 @@ export function getPageSharePayload(): PageSharePayload {
   const docTitle = document.title.trim();
   const rawTitle = metaTitle || (docTitle && docTitle !== "Caritas Kampala" ? docTitle : null);
 
-  const title = rawTitle || routeFallback?.title || "Caritas Kampala | Charities Office";
+  const title = rawTitle || routeFallback?.title || "Caritas Kampala Charities Office";
 
   const metaDesc =
     metaContent('meta[property="og:description"]') ||
@@ -147,17 +151,17 @@ export function getPageSharePayload(): PageSharePayload {
 }
 
 export function buildWhatsAppShareText(payload: PageSharePayload): string {
-  return `Discover the work of the Caritas Kampala Charities Office. Learn more and see how you can get involved: ${payload.url}`;
+  return `Learn more about the work of Caritas Kampala Charities Office: ${payload.title}\n${payload.url}`;
 }
 
 export function buildEmailShare(payload: PageSharePayload): { subject: string; body: string } {
-  const subject = "Caritas Kampala Charities Office";
-  const body = `I thought you might be interested in the work of the Caritas Kampala Charities Office.\n\nLearn more:\n${payload.url}`;
+  const subject = `Caritas Kampala Charities Office — ${payload.title}`;
+  const body = `I thought you might be interested in this page from Caritas Kampala Charities Office:\n\n${payload.title}\n${payload.url}`;
   return { subject, body };
 }
 
 export function buildXShareText(payload: PageSharePayload): string {
-  return `Discover the work of the Caritas Kampala Charities Office. Learn more about our mission and work: ${payload.url}`;
+  return `Take a look at the work of Caritas Kampala Charities Office: ${payload.title}\n${payload.url}`;
 }
 
 export type SharePlatform = "whatsapp" | "facebook" | "email" | "linkedin" | "x" | "copy" | "native";

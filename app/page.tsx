@@ -6,13 +6,14 @@ import HumanitarianAppeal from "@/components/HumanitarianAppeal";
 import WhereWeServe from "@/components/WhereWeServe";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
 import Footer from "@/components/Footer";
+import { buildPageMetadata } from "@/lib/metadata-utils";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Caritas Kampala Charities Office | Serving Kampala, Wakiso & Mpigi",
   description:
     "The Charities Office of Caritas Kampala supports the poor, vulnerable and marginalized across the Archdiocese of Kampala. Learn about our work and donate today.",
-  alternates: { canonical: "/" },
-};
+  path: "/",
+});
 
 export default function HomePage() {
   return (

@@ -1,10 +1,13 @@
 import Button from "@/components/ui/Button";
 import { Heading } from "@/components/ui/Typography";
+import { buildPageMetadata } from "@/lib/metadata-utils";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Page Not Found | Caritas Kampala Charities Office",
+  description: "The page you are looking for may have moved or no longer exists.",
+  path: "/404",
   robots: { index: false, follow: true },
-};
+});
 
 export default function NotFound() {
   return (

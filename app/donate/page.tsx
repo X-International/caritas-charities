@@ -5,13 +5,14 @@ import DonateHero from "@/components/DonateHero";
 import OtherWaysToSupport from "@/components/OtherWaysToSupport";
 import DonateCalloutBanner from "@/components/DonateCalloutBanner";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
+import { buildPageMetadata } from "@/lib/metadata-utils";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Donate | Caritas Kampala Charities Office",
   description:
     "Support families across Kampala, Wakiso and Mpigi. Give online, by bank transfer, or Mobile Money to the Charities Office of Caritas Kampala.",
-  alternates: { canonical: "/donate" },
-};
+  path: "/donate",
+});
 
 export default function DonatePage() {
   return (

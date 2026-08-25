@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_UG",
     url: "/",
-    siteName: "Caritas Kampala",
+    siteName: "Caritas Kampala Charities Office",
     title: "Caritas Kampala Charities Office | Serving Kampala, Wakiso & Mpigi",
     description:
       "The Charities Office of Caritas Kampala supports the poor, vulnerable and marginalized across the Archdiocese of Kampala. Learn about our work and donate today.",
@@ -62,6 +62,40 @@ export const metadata: Metadata = {
   manifest: "/favicons/site.webmanifest?v=2",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "NGO",
+      "@id": "https://www.caritaskampalacharities.org/#organization",
+      "name": "Caritas Kampala Charities Office",
+      "alternateName": "Caritas Kampala",
+      "url": "https://www.caritaskampalacharities.org/",
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Caritas Kampala",
+        "url": "http://caritaskampala.org/"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Old Ggaba Road, Nsambya (next to the American Embassy)",
+        "addressLocality": "Kampala",
+        "addressCountry": "UG"
+      },
+      "telephone": "+256 762 506 906"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.caritaskampalacharities.org/#website",
+      "url": "https://www.caritaskampalacharities.org/",
+      "name": "Caritas Kampala Charities Office",
+      "publisher": {
+        "@id": "https://www.caritaskampalacharities.org/#organization"
+      }
+    }
+  ]
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -69,6 +103,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col font-sans bg-gray-50 text-gray-900">
         {children}
         {isVercelDeployment && <Analytics />}

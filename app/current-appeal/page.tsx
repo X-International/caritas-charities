@@ -5,13 +5,15 @@ import DonateOnlineCard from "@/components/DonateOnlineCard";
 import AppealCalloutBanner from "@/components/AppealCalloutBanner";
 import AppealPageHero from "@/components/AppealPageHero";
 import { Heading, Eyebrow } from "@/components/ui/Typography";
+import { buildPageMetadata } from "@/lib/metadata-utils";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Current Appeal: Famine in Kotido & Moroto | Caritas Kampala",
   description:
     "Drought has brought famine to Karamoja. Learn how to support our emergency relief drive for families in Kotido and Moroto.",
-  alternates: { canonical: "/current-appeal" },
-};
+  path: "/current-appeal",
+  image: "/images/current%20appeal/Caritas_Kampala_Current_Appeal_details.jpg",
+});
 
 export default function CurrentAppealPage() {
   return (

@@ -3,13 +3,13 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Card from "@/components/ui/Card";
 import { Heading, Lead } from "@/components/ui/Typography";
+import { buildPageMetadata } from "@/lib/metadata-utils";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "FAQs | Caritas Kampala Charities Office",
-  description: "Answers to common questions about the Charities Office, coming soon.",
-  alternates: { canonical: "/resources/faqs" },
-  robots: { index: false, follow: true },
-};
+  description: "Answers to common questions about donation drop-offs, volunteering, and supporting the Charities Office of Caritas Kampala.",
+  path: "/resources/faqs",
+});
 
 const faqs = [
   {

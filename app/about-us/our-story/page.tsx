@@ -5,13 +5,14 @@ import SidebarCard from "@/components/SidebarCard";
 import OurStoryHero from "@/components/OurStoryHero";
 import VisionQuote from "@/components/VisionQuote";
 import Breadcrumb from "@/components/Breadcrumb";
+import { buildPageMetadata } from "@/lib/metadata-utils";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Our Story | Caritas Kampala Charities Office",
   description:
     "Read the story, mission, and values behind the Charities Office of Caritas Kampala, serving the Archdiocese since its founding.",
-  alternates: { canonical: "/about-us/our-story" },
-};
+  path: "/about-us/our-story",
+});
 
 export default function OurStoryPage() {
   return (

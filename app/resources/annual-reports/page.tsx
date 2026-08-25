@@ -2,13 +2,14 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Heading, Lead } from "@/components/ui/Typography";
+import { buildPageMetadata } from "@/lib/metadata-utils";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Annual Reports | Caritas Kampala Charities Office",
-  description: "Reports on the work of the Charities Office, coming soon.",
-  alternates: { canonical: "/resources/annual-reports" },
-  robots: { index: false, follow: true },
-};
+  description: "Annual impact reviews and financial accountability reports from the Charities Office of Caritas Kampala.",
+  path: "/resources/annual-reports",
+  robots: { index: true, follow: true },
+});
 
 export default function AnnualReportsPage() {
   return (

@@ -8,7 +8,9 @@ import RelatedNewsCarousel from "@/components/RelatedNewsCarousel";
 import { getNewsArticle, newsArticles } from "@/lib/content/news";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
-import { Heading, Eyebrow } from "@/components/ui/Typography";
+import { Heading } from "@/components/ui/Typography";
+import { buildPageMetadata } from "@/lib/metadata-utils";
+import { siteConfig } from "@/lib/site-config";
 
 export function generateStaticParams() {
   return newsArticles.map((article) => ({ slug: article.slug }));
@@ -22,30 +24,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {};
   }
 
-  return {
-    title: `${article.title} | Caritas Kampala`,
+  return buildPageMetadata({
+    title: `${article.title} | Caritas Kampala Charities Office`,
     description: article.snippet,
-    alternates: { canonical: `/resources/news/${article.slug}` },
-    openGraph: {
-      type: "article",
-      title: article.title,
-      description: article.snippet,
-      url: `/resources/news/${article.slug}`,
-      publishedTime: article.date,
-      images: [
-        {
-          url: article.image,
-          alt: article.alt,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: article.title,
-      description: article.snippet,
-      images: [article.image],
-    },
-  };
+    path: `/resources/news/${article.slug}`,
+    image: article.image,
+    type: "article",
+    publishedTime: article.date,
+  });
 }
 
 export default async function NewsArticlePage({ params }: { params: Promise<{ slug: string }> }) {
@@ -56,8 +42,39 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
     notFound();
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": article.title,
+    "description": article.snippet,
+    "image": [
+      article.image.startsWith("http")
+        ? article.image
+        : `${siteConfig.domain}${article.image.startsWith("/") ? article.image : `/${article.image}`}`
+    ],
+    "datePublished": article.date,
+    "author": {
+      "@type": "Organization",
+      "name": "Caritas Kampala Charities Office",
+      "url": siteConfig.domain
+    },
+    "publisher": {
+      "@type": "NGO",
+      "name": "Caritas Kampala Charities Office",
+      "url": siteConfig.domain
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `${siteConfig.domain}/resources/news/${article.slug}`
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-white text-gray-900 font-sans">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
 
       <main id="main-content" className="flex-1">

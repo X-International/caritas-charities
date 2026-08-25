@@ -5,13 +5,14 @@ import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
 import { Heading, Lead } from "@/components/ui/Typography";
+import { buildPageMetadata } from "@/lib/metadata-utils";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "About Us | Caritas Kampala Charities Office",
   description:
     "Learn about the mission, vision and values of the Charities Office, part of Caritas Kampala, serving the Archdiocese of Kampala.",
-  alternates: { canonical: "/about-us" },
-};
+  path: "/about-us",
+});
 
 export default function AboutUsPage() {
   return (

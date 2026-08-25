@@ -1,13 +1,14 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
+import { buildPageMetadata } from "@/lib/metadata-utils";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Volunteer With Us | Caritas Kampala Charities Office",
   description:
     "See how you can offer your time and skills to support the Charities Office's work across the Archdiocese of Kampala.",
-  alternates: { canonical: "/get-involved/volunteer" },
-};
+  path: "/get-involved/volunteer",
+});
 
 export default function VolunteerPage() {
   return (

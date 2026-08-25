@@ -6,18 +6,19 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
 import { Heading, Lead } from "@/components/ui/Typography";
+import { buildPageMetadata } from "@/lib/metadata-utils";
 import {
   filenameToAlt,
   GALLERY_IMAGE_EXTENSIONS,
   type GalleryImage,
 } from "./gallery-config";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Gallery | Caritas Kampala Charities Office",
   description:
     "Photos from the Charities Office's programmes, events and community work across the Archdiocese of Kampala.",
-  alternates: { canonical: "/resources/gallery" },
-};
+  path: "/resources/gallery",
+});
 
 function readGalleryFiles(): GalleryImage[] {
   const publicDir = path.join(process.cwd(), "public", "images");

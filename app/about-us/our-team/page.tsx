@@ -4,13 +4,14 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Card from "@/components/ui/Card";
 import { Heading, Lead } from "@/components/ui/Typography";
+import { buildPageMetadata } from "@/lib/metadata-utils";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Our Team | Caritas Kampala Charities Office",
   description:
     "Meet the leadership and team behind the Charities Office at Caritas Kampala.",
-  alternates: { canonical: "/about-us/our-team" },
-};
+  path: "/about-us/our-team",
+});
 
 const teamMembers = [
   {

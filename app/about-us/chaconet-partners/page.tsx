@@ -4,13 +4,14 @@ import Breadcrumb from "@/components/Breadcrumb";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
 import Card from "@/components/ui/Card";
 import { Heading, Lead } from "@/components/ui/Typography";
+import { buildPageMetadata } from "@/lib/metadata-utils";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Chaconet Partners | Caritas Kampala Charities Office",
   description:
     "The Charities Office works within Chaconet, a network of nine charity homes across the Archdiocese of Kampala.",
-  alternates: { canonical: "/about-us/chaconet-partners" },
-};
+  path: "/about-us/chaconet-partners",
+});
 
 export default function ChaconetPartnersPage() {
   return (

@@ -2,12 +2,13 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Heading } from "@/components/ui/Typography";
+import { buildPageMetadata } from "@/lib/metadata-utils";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Terms of Use | Caritas Kampala Charities Office",
   description: "The terms governing use of this website.",
-  alternates: { canonical: "/terms-of-use" },
-};
+  path: "/terms-of-use",
+});
 
 export default function TermsOfUsePage() {
   return (

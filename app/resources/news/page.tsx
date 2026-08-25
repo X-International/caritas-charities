@@ -5,13 +5,14 @@ import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
 import NewsHero from "@/components/NewsHero";
 import { newsArticles } from "@/lib/content/news";
+import { buildPageMetadata } from "@/lib/metadata-utils";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "News & Updates | Caritas Kampala Charities Office",
   description:
     "The latest updates and stories from the work of the Charities Office across the Archdiocese of Kampala.",
-  alternates: { canonical: "/resources/news" },
-};
+  path: "/resources/news",
+});
 
 const labelTextClasses = "text-[#585858] uppercase tracking-[0.18em] text-[11px] sm:text-xs";
 const headlineLinkClasses =

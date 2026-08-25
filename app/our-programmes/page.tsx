@@ -3,13 +3,14 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Card from "@/components/ui/Card";
 import { Heading, Lead } from "@/components/ui/Typography";
+import { buildPageMetadata } from "@/lib/metadata-utils";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Our Programmes | Caritas Kampala Charities Office",
   description:
     "Explore the programmes run by Caritas Kampala's Charities Office, supporting families, the elderly, refugees and people with disabilities across Kampala, Wakiso and Mpigi.",
-  alternates: { canonical: "/our-programmes" },
-};
+  path: "/our-programmes",
+});
 
 import { Heart, Users, AlertTriangle, TrendingUp, Globe, Accessibility, LucideIcon } from "lucide-react";
 

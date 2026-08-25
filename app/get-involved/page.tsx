@@ -3,13 +3,14 @@ import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
 import Card from "@/components/ui/Card";
 import { Heading, Lead } from "@/components/ui/Typography";
+import { buildPageMetadata } from "@/lib/metadata-utils";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Get Involved | Caritas Kampala Charities Office",
   description:
     "Volunteer or shop our Charity Shop. Discover the ways you can support the Charities Office's work in Kampala, Wakiso and Mpigi.",
-  alternates: { canonical: "/get-involved" },
-};
+  path: "/get-involved",
+});
 
 export default function GetInvolvedPage() {
   return (

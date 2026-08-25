@@ -6,13 +6,14 @@ import ContactForm from "@/components/ContactForm";
 import { Heading } from "@/components/ui/Typography";
 import DeferredLocationMap from "@/components/DeferredLocationMap";
 import { siteConfig } from "@/lib/site-config";
+import { buildPageMetadata } from "@/lib/metadata-utils";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Contact Us | Caritas Kampala Charities Office",
   description:
     "Get in touch with the Charities Office of Caritas Kampala. Find our address, phone number, and location in Nsambya, Kampala.",
-  alternates: { canonical: "/contact-us" },
-};
+  path: "/contact-us",
+});
 
 const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${siteConfig.office.coordinates.latitude},${siteConfig.office.coordinates.longitude}`;
 

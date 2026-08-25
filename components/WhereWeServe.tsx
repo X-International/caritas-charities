@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { Heading, Eyebrow } from "@/components/ui/Typography";
+import { Heading } from "@/components/ui/Typography";
 
 interface ImpactArea {
   id: string;
