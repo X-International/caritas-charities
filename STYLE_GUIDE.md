@@ -1,6 +1,6 @@
 # Design Style Guide — Caritas Kampala Charities Office
 
-This document serves as the official design style guide and system documentation for the Caritas Kampala Charities Office web application. Its purpose is to document the visual identity, color system, typography scale, spacing rules, component patterns, and the formal Button component system implemented across the codebase so future development remains visually consistent and aligned with established standards.
+This document serves as the official design style guide and system documentation for the Caritas Kampala Charities Office web application. Its purpose is to document the visual identity, color system, typography scale, spacing rules, border-radius token system, component patterns, and the formal Button component system implemented across the codebase so future development remains visually consistent and aligned with established standards.
 
 ---
 
@@ -92,7 +92,26 @@ Layout containers are configured in `app/globals.css` via the `.site-container` 
 
 ---
 
-## 5. BUTTON COMPONENT SYSTEM (`components/ui/Button.tsx`)
+## 5. BORDER RADIUS TOKEN SYSTEM
+
+Ad-hoc border-radius values (`rounded-3xl`, `rounded-2xl`, `rounded-xl`, `rounded-full`) have been consolidated into 4 semantic radius tokens defined in `app/globals.css`:
+
+| Token Name | Radius Value | Utility Class | Primary Usage |
+|:---|:---|:---|:---|
+| **`--radius-card`** | `1.5rem` (`24px`) | `rounded-card` | Major content cards, feature callouts, appeal banners (`DonateOnlineCard`, `LatestUpdates`, `SpotlightSection`). |
+| **`--radius-subcard`** | `1.0rem` (`16px`) | `rounded-subcard` | Nested sub-cards, photo media containers, sidebars, modal dialog windows (`SidebarCard`, `ShareModal`). |
+| **`--radius-input`** | `0.75rem` (`12px`) | `rounded-input` | Form text fields, textareas, select boxes, copy-link bar (`ContactForm.tsx`, `ShareModal.tsx`). |
+| **`--radius-pill`** | `9999px` | `rounded-pill` | Buttons (`Button.tsx`), category tags, circular icon backdrops, carousel dots. |
+
+### Intentional Layout Exceptions
+
+1. **Hero Split Banners:** Banners (`OurStoryHero`, `ContactHero`, `DonateHero`) use asymmetric top/bottom or left/right rounding (`rounded-t-2xl sm:rounded-t-4xl lg:rounded-r-4xl` / `rounded-b-2xl sm:rounded-b-4xl lg:rounded-l-4xl`) to handle responsive transitions between mobile stacked blocks and desktop split panels.
+2. **Where We Serve Cards:** `WhereWeServe.tsx` uses custom responsive curve `rounded-2xl sm:rounded-[28px]`.
+3. **Compact Micro-UI Triggers:** Compact navigation dropdown items and mobile menu toggles use `rounded-md` (6px) or `rounded-sm` (4px).
+
+---
+
+## 6. BUTTON COMPONENT SYSTEM (`components/ui/Button.tsx`)
 
 All interactive buttons and CTA links across the codebase are built using the centralized `Button` component located at `components/ui/Button.tsx`.
 
@@ -137,31 +156,9 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 - **Disabled:** `disabled:opacity-50 disabled:pointer-events-none`.
 - **Loading:** Displays an inline SVG spinner (`isLoading={true}`) and automatically disables interactions.
 
-### Code Examples
-
-```tsx
-import Button from "@/components/ui/Button";
-import { ArrowRight } from "lucide-react";
-
-// Primary Link CTA
-<Button href="/donate" variant="primary" size="md">
-  DONATE NOW
-</Button>
-
-// Secondary CTA on Red Panel
-<Button href="/our-programmes" variant="secondary" size="md">
-  See What We Do
-</Button>
-
-// Button with Icon & Loading State
-<Button type="submit" variant="primary" size="lg" isLoading={isSubmitting} rightIcon={<ArrowRight className="w-4 h-4" />}>
-  Send Message
-</Button>
-```
-
 ---
 
-## 6. COMPONENT LIBRARY
+## 7. COMPONENT LIBRARY
 
 ### 1. Parent Utility Bar
 - **Description:** Dark black (`#111111`) top bar displaying `"Part of Caritas Kampala"` link, search trigger, and share modal trigger.
@@ -185,7 +182,7 @@ import { ArrowRight } from "lucide-react";
 
 ---
 
-## 7. CONTENT & TONE QUICK REFERENCE
+## 8. CONTENT & TONE QUICK REFERENCE
 
 | Guideline | Standard Requirement | Incorrect Example | Correct Example |
 |:---|:---|:---|:---|
@@ -198,7 +195,7 @@ import { ArrowRight } from "lucide-react";
 
 ---
 
-## 8. INCONSISTENCIES RESOLUTION STATUS
+## 9. INCONSISTENCIES RESOLUTION STATUS
 
 All visual and architectural inconsistencies identified in earlier codebase audits have been resolved:
 
@@ -207,3 +204,4 @@ All visual and architectural inconsistencies identified in earlier codebase audi
 3. **Primary Red Hover Variations — RESOLVED:** Consolidated all primary red button hover states to `#8e0a20`.
 4. **Inline News Category Colors — RESOLVED:** Replaced inline hex codes with CSS variables (`--category-emergency`, `--category-announcement`, `--category-partnership`) and Tailwind utility classes (`bg-category-emergency`, etc.).
 5. **Inline Button Styling — RESOLVED:** Built a formal `<Button>` component system (`components/ui/Button.tsx`) and refactored button instances across the application to use it.
+6. **Ad-Hoc Border-Radius Variations — RESOLVED:** Defined 4 semantic radius tokens (`rounded-card`, `rounded-subcard`, `rounded-input`, `rounded-pill`) in `globals.css` and applied them consistently across all components.

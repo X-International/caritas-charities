@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
+import Button from "@/components/ui/Button";
 
 type SubmissionState =
   | { status: "idle" }
@@ -10,7 +11,7 @@ type SubmissionState =
   | { status: "error"; message: string };
 
 const inputClass =
-  "w-full rounded-xl border border-gray-300 px-4 py-3.5 text-sm transition-colors focus:border-[#b10017] focus:outline-none focus:ring-2 focus:ring-[#b10017]/20";
+  "w-full rounded-input border border-gray-300 px-4 py-3.5 text-sm transition-colors focus:border-[#b10017] focus:outline-none focus:ring-2 focus:ring-[#b10017]/20";
 
 export default function ContactForm() {
   const [submission, setSubmission] = useState<SubmissionState>({ status: "idle" });
@@ -90,9 +91,15 @@ export default function ContactForm() {
       <input className="hidden" tabIndex={-1} autoComplete="off" name="website" aria-hidden="true" />
 
       <div className="space-y-3 pt-2">
-        <button type="submit" disabled={submission.status === "loading"} aria-busy={submission.status === "loading"} className="w-full rounded-full border-2 border-[#b10017] bg-[#b10017] px-8 py-3.5 text-xs font-bold uppercase tracking-wider text-white transition-all hover:bg-white hover:text-[#b10017] disabled:cursor-wait disabled:opacity-60 sm:w-auto">
-          {submission.status === "loading" ? "Sending…" : "Send Message"}
-        </button>
+        <Button
+          type="submit"
+          variant="primary"
+          size="lg"
+          isLoading={submission.status === "loading"}
+          className="w-full sm:w-auto"
+        >
+          Send Message
+        </Button>
         <p className="text-[11px] text-gray-500">By submitting this form, you agree to be contacted about your enquiry.</p>
         <p role="status" aria-live="polite" className={`text-sm font-medium ${submission.status === "success" ? "text-[#006b5d]" : submission.status === "error" ? "text-[#b10017]" : "sr-only"}`}>
           {submission.status === "success" ? "Your message was sent successfully." : submission.status === "error" ? submission.message : ""}

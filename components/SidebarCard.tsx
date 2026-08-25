@@ -3,7 +3,7 @@ import Button from "@/components/ui/Button";
 
 export default function SidebarCard() {
   return (
-    <div className="flex flex-col rounded-2xl overflow-hidden border border-gray-200">
+    <div className="flex flex-col rounded-subcard overflow-hidden border border-gray-200">
       <div className="relative aspect-[4/3] w-full">
         <Image
           src="/images/Charities/Caritas_Kampala_83.jpg"

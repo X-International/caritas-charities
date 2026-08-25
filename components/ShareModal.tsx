@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useRef, useState, type ReactNode } from "react";
 import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
+import Button from "@/components/ui/Button";
 import {
   canUseNativeShare,
   copyPageUrl,
@@ -230,7 +231,7 @@ export default function ShareModal({ onClose }: ShareModalProps) {
         aria-modal="true"
         aria-labelledby={titleId}
         aria-describedby={descriptionId}
-        className="share-modal-enter relative z-10 w-full max-w-md max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain rounded-2xl border border-gray-100 bg-white p-6 shadow-2xl sm:p-8"
+        className="share-modal-enter relative z-10 w-full max-w-md max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain rounded-subcard border border-gray-100 bg-white p-6 shadow-2xl sm:p-8"
       >
         <style>{`
           @keyframes shareModalIn {
@@ -249,7 +250,7 @@ export default function ShareModal({ onClose }: ShareModalProps) {
           ref={closeRef}
           type="button"
           onClick={onClose}
-          className="absolute top-3 right-3 flex min-h-11 min-w-11 items-center justify-center rounded-full text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#b10017] cursor-pointer"
+          className="absolute top-3 right-3 flex min-h-11 min-w-11 items-center justify-center rounded-pill text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#b10017] cursor-pointer"
           aria-label="Close share dialog"
         >
           <svg className="h-4.5 w-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -259,7 +260,7 @@ export default function ShareModal({ onClose }: ShareModalProps) {
 
         <div className="flex items-start space-x-4 pr-8">
           <div
-            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#b10017] text-white shadow-md sm:h-14 sm:w-14"
+            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-pill bg-[#b10017] text-white shadow-md sm:h-14 sm:w-14"
             aria-hidden="true"
           >
             <ShareIcon className="h-6 w-6 sm:h-7 sm:w-7" />
@@ -276,32 +277,34 @@ export default function ShareModal({ onClose }: ShareModalProps) {
 
         <div className="mt-6 space-y-3">
           {nativeAvailable && (
-            <button
-              ref={nativeRef}
-              type="button"
+            <Button
+              ref={nativeRef as React.Ref<HTMLButtonElement>}
               onClick={handleNativeShare}
-              className="flex min-h-12 w-full items-center justify-center gap-2.5 rounded-xl bg-[#b10017] px-4 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#8e0a20] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 md:hidden cursor-pointer"
+              variant="primary"
+              size="md"
+              leftIcon={<ShareIcon className="h-4.5 w-4.5" />}
+              className="w-full rounded-input md:hidden font-semibold normal-case text-sm tracking-normal shadow-sm"
             >
-              <ShareIcon className="h-4.5 w-4.5" />
               Share Page
-            </button>
+            </Button>
           )}
 
-          <button
-            ref={copyRef}
-            type="button"
+          <Button
+            ref={copyRef as React.Ref<HTMLButtonElement>}
             onClick={handleCopy}
             aria-label="Copy page link"
             aria-describedby={statusId}
-            className={`flex min-h-12 w-full items-center justify-center gap-2.5 rounded-xl border-2 px-4 text-sm font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 cursor-pointer ${
+            variant={copied ? "primary" : "outline"}
+            size="md"
+            leftIcon={copied ? <CheckIcon className="h-5 w-5" /> : <LinkIcon className="h-5 w-5" />}
+            className={`w-full rounded-input font-semibold normal-case text-sm tracking-normal border-2 ${
               copied
-                ? "border-[#1b7a4a] bg-[#1b7a4a] text-white"
+                ? "border-[#1b7a4a] bg-[#1b7a4a] text-white hover:bg-[#15623b]"
                 : "border-[#b10017] bg-white text-[#b10017] hover:bg-[#b10017] hover:text-white"
             }`}
           >
-            {copied ? <CheckIcon className="h-5 w-5" /> : <LinkIcon className="h-5 w-5" />}
             {copied ? "Link Copied" : "Copy Link"}
-          </button>
+          </Button>
           <p id={statusId} className="sr-only" role="status" aria-live="polite">
             {statusMessage}
           </p>
@@ -321,7 +324,7 @@ export default function ShareModal({ onClose }: ShareModalProps) {
                 aria-label={platform.ariaLabel}
               >
                 <span
-                  className={`flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full text-white shadow-md transition-colors duration-200 group-focus-visible:ring-2 group-focus-visible:ring-offset-2 ${platform.className}`}
+                  className={`flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-pill text-white shadow-md transition-colors duration-200 group-focus-visible:ring-2 group-focus-visible:ring-offset-2 ${platform.className}`}
                 >
                   {platform.icon}
                 </span>
@@ -334,14 +337,15 @@ export default function ShareModal({ onClose }: ShareModalProps) {
         </div>
 
         {nativeAvailable && (
-          <button
-            type="button"
+          <Button
             onClick={handleNativeShare}
-            className="mt-6 hidden min-h-11 w-full items-center justify-center gap-2 rounded-xl border border-gray-200 px-4 text-sm font-semibold text-gray-700 transition-colors hover:border-gray-300 hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 md:flex cursor-pointer"
+            variant="outline"
+            size="md"
+            leftIcon={<ShareIcon className="h-4 w-4 text-[#b10017]" />}
+            className="mt-6 hidden w-full rounded-input border-gray-200 text-gray-700 hover:border-gray-300 hover:bg-gray-50 focus-visible:ring-[#b10017] md:flex font-semibold normal-case text-sm tracking-normal"
           >
-            <ShareIcon className="h-4 w-4 text-[#b10017]" />
             More ways to share
-          </button>
+          </Button>
         )}
       </div>
     </div>

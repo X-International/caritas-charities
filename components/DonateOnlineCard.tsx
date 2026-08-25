@@ -10,10 +10,10 @@ export default function DonateOnlineCard() {
 
   return (
     <section aria-labelledby={headingId} className="pt-5 sm:pt-7 pb-2 sm:pb-4">
-      <div className="bg-[#f4efe6] rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col md:flex-row md:items-center gap-5 sm:gap-6 md:gap-8 text-center md:text-left shadow-sm shadow-gray-200/60 border border-[#e8dfd1]">
+      <div className="bg-[#f4efe6] rounded-card p-6 sm:p-8 md:p-10 flex flex-col md:flex-row md:items-center gap-5 sm:gap-6 md:gap-8 text-center md:text-left shadow-sm shadow-gray-200/60 border border-[#e8dfd1]">
         <div
           aria-hidden="true"
-          className="w-16 h-16 sm:w-20 sm:h-20 bg-[#b10017] rounded-full flex items-center justify-center shrink-0 mx-auto md:mx-0 shadow-xs"
+          className="w-16 h-16 sm:w-20 sm:h-20 bg-[#b10017] rounded-pill flex items-center justify-center shrink-0 mx-auto md:mx-0 shadow-xs"
         >
           <Heart className="w-8 h-8 sm:w-9 sm:h-9 text-white" strokeWidth={2.25} />
         </div>

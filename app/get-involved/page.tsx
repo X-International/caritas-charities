@@ -36,19 +36,19 @@ export default function GetInvolvedPage() {
         {/* Options */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-[#f4efe6] p-6 sm:p-8 rounded-3xl space-y-3 shadow-sm shadow-gray-200/60 border border-[#e8dfd1]">
+            <div className="bg-[#f4efe6] p-6 sm:p-8 rounded-card space-y-3 shadow-sm shadow-gray-200/60 border border-[#e8dfd1]">
               <h2 className="text-xl font-serif font-bold text-[#b10017]">Volunteer With Us</h2>
               <p className="text-sm text-gray-900 leading-relaxed font-sans">
                 Assist in logistics, food packaging, parish collections, and community outreach.
               </p>
             </div>
-            <div className="bg-[#f4efe6] p-6 sm:p-8 rounded-3xl space-y-3 shadow-sm shadow-gray-200/60 border border-[#e8dfd1]">
+            <div className="bg-[#f4efe6] p-6 sm:p-8 rounded-card space-y-3 shadow-sm shadow-gray-200/60 border border-[#e8dfd1]">
               <h2 className="text-xl font-serif font-bold text-[#b10017]">Fundraise for Us</h2>
               <p className="text-sm text-gray-900 leading-relaxed font-sans">
                 Organize parish drives, school collections, or corporate fundraisers for our relief appeals.
               </p>
             </div>
-            <div className="bg-[#f4efe6] p-6 sm:p-8 rounded-3xl space-y-3 shadow-sm shadow-gray-200/60 border border-[#e8dfd1]">
+            <div className="bg-[#f4efe6] p-6 sm:p-8 rounded-card space-y-3 shadow-sm shadow-gray-200/60 border border-[#e8dfd1]">
               <h2 className="text-xl font-serif font-bold text-[#b10017]">Institutional Partnership</h2>
               <p className="text-sm text-gray-900 leading-relaxed font-sans">
                 Partner your company, foundation, or international agency with Caritas Kampala programmes.
