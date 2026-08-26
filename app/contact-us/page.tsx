@@ -113,6 +113,14 @@ export default function ContactUsPage() {
                         <span className="text-sm font-semibold text-black">Main Office:</span>
                         <span className="font-mono text-sm font-bold text-black shrink-0">+256 392 176 443</span>
                       </a>
+                      <a
+                        href={`mailto:${siteConfig.office.email}`}
+                        aria-label={`Email us at ${siteConfig.office.email}`}
+                        className="flex items-center justify-between gap-4 rounded-xl bg-white/40 hover:bg-white/70 px-3 py-2.5 transition-colors"
+                      >
+                        <span className="text-sm font-semibold text-black">Email:</span>
+                        <span className="font-mono text-sm font-bold text-black shrink-0">{siteConfig.office.email}</span>
+                      </a>
                     </div>
                   </div>
                 </div>
