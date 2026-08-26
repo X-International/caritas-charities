@@ -24,7 +24,7 @@ export default function ContactUsPage() {
 
       <main id="main-content" className="flex-1">
         {/* Breadcrumb Container - Matches Navbar Padding */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-4 sm:pt-6 lg:pt-8 pb-2">
+        <div className="site-container pt-4 sm:pt-6 lg:pt-8 pb-2">
           <Breadcrumb items={[
             { label: "HOME", href: "/" },
             { label: "CONTACT US" }
@@ -34,7 +34,7 @@ export default function ContactUsPage() {
         <ContactHero />
 
         {/* Main Container for the rest of the page */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="site-container">
           {/* Contact Info & Directions */}
           <section className="section-md">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">

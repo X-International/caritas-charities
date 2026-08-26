@@ -23,7 +23,7 @@ export default function AboutUsPage() {
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
         <section className="bg-[#b10017] text-white section-lg">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+          <div className="site-container space-y-4">
             <Breadcrumb items={[
                 { label: "HOME", href: "/" },
                 { label: "ABOUT US" }
@@ -38,7 +38,7 @@ export default function AboutUsPage() {
         </section>
 
         {/* Content Section */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-md space-y-12">
+        <section className="site-container section-md space-y-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
               <Heading level={2} variant="subsection" color="red">

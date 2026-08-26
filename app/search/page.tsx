@@ -7,6 +7,7 @@ import { Heading, Lead } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 import { searchSite } from "@/lib/search/search-engine";
 import { SITE_DOMAIN } from "@/lib/search/search-index";
+import DonateCalloutBanner from "@/components/DonateCalloutBanner";
 
 export const metadata = buildPageMetadata({
   title: "Search Results | Caritas Kampala Charities Office",
@@ -36,7 +37,7 @@ export default async function SearchPage({
       <main id="main-content" className="flex-1">
         {/* Hero Section */}
         <section className="bg-[#b10017] text-white section-lg">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+          <div className="site-container space-y-4">
             <Breadcrumb
               items={[
                 { label: "HOME", href: "/" },
@@ -56,7 +57,7 @@ export default async function SearchPage({
 
         {/* Results Metadata Bar */}
         {query && (
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8" aria-live="polite">
+          <div className="site-container pt-8" aria-live="polite">
             <p className="text-sm text-[#585858]">
               Found <strong className="text-gray-900">{results.length}</strong> result
               {results.length === 1 ? "" : "s"} for <strong className="text-gray-900">&ldquo;{query}&rdquo;</strong>.
@@ -65,7 +66,7 @@ export default async function SearchPage({
         )}
 
         {/* Results Container */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-md space-y-6">
+        <section className="site-container section-md space-y-6">
           {!query ? (
             <Card variant="info" className="px-6 py-12 text-center space-y-3">
               <Heading level={2} variant="card" color="red">
@@ -92,7 +93,7 @@ export default async function SearchPage({
                   : `${SITE_DOMAIN}${result.url}`;
 
                 return (
-                  <Card key={result.id} variant="content" className="p-5 sm:p-6 space-y-3 transition-shadow hover:shadow-md">
+                  <Card key={result.id} variant="info" className="p-6 sm:p-8 space-y-3">
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <span className={labelTextClasses}>{result.category}</span>
                       <span className="text-[11px] font-mono text-gray-400 truncate max-w-full sm:max-w-xs">
@@ -127,6 +128,7 @@ export default async function SearchPage({
             </div>
           )}
         </section>
+        <DonateCalloutBanner />
       </main>
 
       <Footer />

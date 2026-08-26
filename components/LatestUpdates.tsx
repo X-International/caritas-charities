@@ -47,7 +47,7 @@ const topNews: NewsCard[] = [
 
 export default function LatestUpdates() {
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-8 section-md">
+    <section className="site-container section-md">
       {/* Beige Card Container */}
       <div className="bg-[#f4efe6] text-gray-900 rounded-card p-6 sm:p-10 lg:p-12 shadow-sm border border-[#e8dfd1]">
         {/* Section Heading */}
@@ -104,7 +104,7 @@ export default function LatestUpdates() {
               alt="Caritas Jerusalem"
               fill
               sizes="(max-width: 1024px) 100vw, 66vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              className="object-cover"
             />
             {/* Deep Red Overlay Tint */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#b10017]/90 via-[#8e0a20]/80 to-transparent" />

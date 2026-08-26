@@ -19,7 +19,7 @@ export default function CharityShopPage() {
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
         <section className="bg-caritas-red text-white section-lg">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+          <div className="site-container space-y-4">
             <Breadcrumb
               items={[
                 { label: "HOME", href: "/" },

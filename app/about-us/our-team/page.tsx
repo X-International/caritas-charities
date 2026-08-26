@@ -42,7 +42,7 @@ export default function OurTeamPage() {
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
         <section className="bg-[#b10017] text-white section-lg">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+          <div className="site-container space-y-4">
             <nav aria-label="Breadcrumb" className="text-xs uppercase tracking-wider font-semibold text-red-200">
               <ol className="flex items-center space-x-2">
                 <li>
@@ -66,7 +66,7 @@ export default function OurTeamPage() {
         </section>
 
         {/* Team Grid */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-md space-y-12">
+        <section className="site-container section-md space-y-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {teamMembers.map((member, i) => (
               <Card key={i} variant="content" className="overflow-hidden p-0 sm:p-0">

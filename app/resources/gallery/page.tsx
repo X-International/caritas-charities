@@ -73,7 +73,7 @@ export default function GalleryPage() {
 
       <main id="main-content" className="flex-1">
         <section className="bg-[#b10017] text-white section-lg">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="site-container">
             <nav
               aria-label="Breadcrumb"
               className="text-[10px] xs:text-xs uppercase tracking-wide font-semibold text-red-200"
@@ -117,11 +117,11 @@ export default function GalleryPage() {
           </div>
         </section>
 
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-md">
+        <section className="site-container section-md">
           <ClientGallery images={galleryImages} />
         </section>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="site-container">
           <DonateOnlineCard />
         </div>
       </main>

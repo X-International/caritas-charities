@@ -15,7 +15,7 @@
   --radius-subcard: 1rem;
   --radius-input: 0.75rem;
   --radius-pill: 9999px;
-  --site-max-width: 80rem;
+  --site-max-width: 80rem; /* 1280px, unchanged below 1440px */
   --motion-reveal-duration: 1200ms;
   --motion-reveal-delay: 100ms;
   --motion-image-duration: 1400ms;
@@ -48,8 +48,15 @@
   }
 }
 
+@media (min-width: 1440px) {
+  .site-container {
+    max-width: 86.25rem; /* 1380px */
+  }
+}
+
 @media (min-width: 1536px) {
   .site-container {
+    max-width: 92.5rem; /* 1480px */
     padding-inline: 3rem;
   }
 }

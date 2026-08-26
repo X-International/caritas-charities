@@ -36,7 +36,7 @@ export default function VisionMissionValues() {
   const activeSection = identitySections.find((section) => section.id === activeId) ?? identitySections[0];
 
   return (
-    <section aria-labelledby="identity-title" className="mx-auto max-w-[1340px] px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+    <section aria-labelledby="identity-title" className="site-container py-12 lg:py-16">
       <div className="overflow-hidden rounded-[22px] bg-caritas-red px-6 py-10 text-white sm:px-8 lg:px-10 lg:py-12">
         <Heading id="identity-title" level={2} variant="section" color="white" className="scroll-mt-32 text-center text-4xl font-bold sm:text-5xl lg:text-[52px]">
           Vision, mission and values

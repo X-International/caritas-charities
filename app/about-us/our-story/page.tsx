@@ -22,7 +22,7 @@ export default function OurStoryPage() {
 
       <main id="main-content" className="flex-1">
         {/* Breadcrumb Container - Matches Navbar Padding */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-4 sm:pt-6 lg:pt-8 pb-2">
+        <div className="site-container pt-4 sm:pt-6 lg:pt-8 pb-2">
           <Breadcrumb items={[
             { label: "HOME", href: "/" },
             { label: "ABOUT US", href: "/about-us" },
@@ -32,8 +32,8 @@ export default function OurStoryPage() {
 
         <OurStoryHero />
 
-        <section className="section-lg px-4 sm:px-6 lg:px-8 bg-[#fdfbf9]">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-16">
+        <section className="section-lg bg-[#fdfbf9]">
+          <div className="site-container grid grid-cols-1 lg:grid-cols-3 gap-16">
             <div className="lg:col-span-2">
               <Heading level={2} variant="section" color="red" className="mb-8 text-center lg:text-left">
                 The Journey and Mission of Caritas Kampala
@@ -57,7 +57,7 @@ export default function OurStoryPage() {
         </section>
         <VisionQuote />
 
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-md">
+        <section className="site-container section-md">
           <DonateOnlineCard />
         </section>
       </main>

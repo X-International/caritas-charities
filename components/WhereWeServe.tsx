@@ -85,7 +85,7 @@ function WhiteCard({ area }: { area: ImpactArea }) {
       as="article"
       variant="content"
       aria-labelledby={`pillar-title-${area.id}`}
-      className="group relative flex flex-col justify-between overflow-hidden h-full min-h-[300px] sm:min-h-[360px] p-5 sm:p-7 md:p-8 transition-shadow duration-300 motion-reduce:transition-none hover:shadow-xl focus-within:shadow-xl focus-within:ring-2 focus-within:ring-caritas-red focus-within:ring-offset-2"
+      className="group relative flex flex-col justify-between overflow-hidden h-full min-h-[300px] sm:min-h-[360px] p-5 sm:p-7 md:p-8 focus-within:ring-2 focus-within:ring-caritas-red focus-within:ring-offset-2"
     >
       {/* DEFAULT UNHOVERED STATE */}
       <div className="flex flex-col justify-between h-full w-full z-0">
@@ -221,7 +221,7 @@ export default function WhereWeServe() {
       aria-labelledby="core-pillars-title"
       className="section-lg bg-[#f4efe6] relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="site-container relative">
         {/* Section Title */}
         <Heading
           level={2}

@@ -77,9 +77,9 @@ All text headings, lead copy, eyebrows, and body copy across the application are
 
 ### Container Max Width & Breakpoints
 
-Layout containers are configured in `app/globals.css` via the `.site-container` class and `max-w-7xl` utility:
+Layout containers are configured in `app/globals.css` using the single `.site-container` class everywhere.
 
-- **Max Width:** `--site-max-width: 80rem` (`1280px`).
+- **Max Width:** 80rem below 1440px, 86.25rem from 1440px to 1535px, and 92.5rem at 1536px and above.
 - **Breakpoints:** `xs` (30rem / 480px), `sm` (40rem / 640px), `md` (48rem / 768px), `lg` (64rem / 1024px), `xl` (80rem / 1280px), `2xl` (96rem / 1536px).
 
 ### Section Spacing Presets
@@ -185,7 +185,7 @@ export interface CardProps {
 
 ### Variants
 
-- **`content` (White Surface Card):** White background (`bg-white`), subcard radius (`rounded-subcard` / 16px), subtle border (`border border-gray-100`), shadow with hover elevation (`shadow-sm hover:shadow-md transition-shadow`), and responsive padding (`p-6 sm:p-8`). Used for news updates, carousel items, FAQ items, team profiles, and programme cards.
+- **`content` (White Surface Card):** White background (`bg-white`), subcard radius (`rounded-subcard` / 16px), subtle border (`border border-gray-100`), shadow (`shadow-sm`), and responsive padding (`p-6 sm:p-8`). Used for news updates, carousel items, FAQ items, team profiles, and programme cards.
 - **`info` (Beige Surface Card):** Warm beige background (`bg-caritas-beige` / `#f4efe6`), subcard radius (`rounded-subcard` / 16px), warm neutral border (`border border-[#e8dfd1]`), and responsive padding (`p-6 sm:p-8`). Used for informational callouts, partner category summaries, help sections, and article detail sidebars.
 
 ### Layout & Truncation Guidelines

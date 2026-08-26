@@ -38,7 +38,7 @@ export default function FAQsPage() {
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
         <section className="bg-[#b10017] text-white section-lg">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+          <div className="site-container space-y-4">
             <nav aria-label="Breadcrumb" className="text-xs uppercase tracking-wider font-semibold text-red-200">
               <ol className="flex items-center space-x-2">
                 <li>

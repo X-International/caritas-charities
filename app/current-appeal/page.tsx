@@ -23,7 +23,7 @@ export default function CurrentAppealPage() {
 
       <main id="main-content" tabIndex={-1} className="flex-1">
         {/* Main Container */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-sm">
+        <div className="site-container section-sm">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex items-center space-x-2 text-xs uppercase tracking-wider font-semibold">

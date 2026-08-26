@@ -20,7 +20,7 @@ export default function GetInvolvedPage() {
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
         <section className="bg-[#b10017] text-white section-lg">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+          <div className="site-container space-y-4">
             <Breadcrumb
               items={[
                 { label: "HOME", href: "/" },
@@ -37,7 +37,7 @@ export default function GetInvolvedPage() {
         </section>
 
         {/* Options */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-md space-y-8">
+        <section className="site-container section-md space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card variant="info" className="space-y-3">
               <Heading level={2} variant="card" color="red">Volunteer With Us</Heading>

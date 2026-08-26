@@ -14,7 +14,7 @@ export interface CardProps extends React.HTMLAttributes<HTMLElement> {
 
 const variantClasses: Record<CardVariant, string> = {
   content:
-    "bg-white rounded-subcard border border-gray-100 shadow-sm hover:shadow-md transition-shadow p-6 sm:p-8",
+    "bg-white rounded-subcard border border-gray-100 shadow-sm p-6 sm:p-8",
   info:
     "bg-caritas-beige rounded-subcard border border-[#e8dfd1] p-6 sm:p-8",
 };

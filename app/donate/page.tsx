@@ -21,7 +21,7 @@ export default function DonatePage() {
 
       <main id="main-content" className="flex-1">
         {/* Breadcrumb Container - Matches Navbar Padding */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-4 sm:pt-6 lg:pt-8 pb-2">
+        <div className="site-container pt-4 sm:pt-6 lg:pt-8 pb-2">
           <Breadcrumb items={[
             { label: "HOME", href: "/" },
             { label: "DONATE" }
@@ -32,11 +32,11 @@ export default function DonatePage() {
 
         <OtherWaysToSupport />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="site-container">
           <DonateCalloutBanner />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="site-container">
           <DonateOnlineCard />
         </div>
       </main>
