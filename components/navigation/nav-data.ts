@@ -27,7 +27,7 @@ export const navLinks: NavLink[] = [
       ],
       card: {
         title: "About Caritas Kampala",
-        description: "Serving the Archdiocese of Kampala by bringing hope, compassion, and practical support to vulnerable individuals, families, and communities.",
+        description: "Serving the Kampala Archdiocese by bringing hope, compassion, and practical support to vulnerable individuals, families, and communities.",
         image: "/images/Main Slider/Caritas_Kampala_18.jpg",
         cta: { label: "Discover Our Story", href: "/about-us/our-story" },
       },

@@ -19,7 +19,7 @@ const slides: Slide[] = [
     id: 1,
     title: "Serving with Compassion",
     subtitle:
-      "Supporting vulnerable children, families, and communities across the Archdiocese of Kampala through faith, dignity, and love.",
+      "Supporting vulnerable children, families, and communities across the Kampala Archdiocese through faith, dignity, and love.",
     buttonText: "Donate Today",
     buttonLink: "/donate",
     image: "/images/Main Slider/Caritas_Kampala_87.jpg",

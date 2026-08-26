@@ -11,7 +11,7 @@ import { buildPageMetadata } from "@/lib/metadata-utils";
 export const metadata = buildPageMetadata({
   title: "About Us | Caritas Kampala Charities Office",
   description:
-    "Learn about the mission, vision and values of the Charities Office, part of Caritas Kampala, serving the Archdiocese of Kampala.",
+    "Learn about the mission, vision and values of the Charities Office, part of Caritas Kampala, serving the Kampala Archdiocese.",
   path: "/about-us",
 });
 
@@ -32,7 +32,7 @@ export default function AboutUsPage() {
               About Caritas Kampala
             </Heading>
             <Lead variant="hero">
-              Serving the Archdiocese of Kampala through compassion, dignity, and practical support for those who need it most.
+              Serving the Kampala Archdiocese through compassion, dignity, and practical support for those who need it most.
             </Lead>
           </div>
         </section>
@@ -46,7 +46,7 @@ export default function AboutUsPage() {
               </Heading>
               <div className="space-y-4 text-gray-700 leading-relaxed text-base sm:text-lg">
                 <p>
-                  Caritas Kampala is the socio-pastoral ministry of the Catholic Church in the Archdiocese of Kampala. Established to put the gospel message of love and charity into concrete action, we serve all individuals regardless of religious, ethnic, or political background.
+                  Caritas Kampala is the socio-pastoral ministry of the Catholic Church in the Kampala Archdiocese. Established to put the gospel message of love and charity into concrete action, we serve all individuals regardless of religious, ethnic, or political background.
                 </p>
                 <p>
                   Our Charities Office works directly with vulnerable communities, orphanages, elderly care homes, healthcare initiatives, and emergency relief efforts throughout the Archdiocese.

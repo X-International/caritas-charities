@@ -65,7 +65,7 @@ Error: page.evaluate: Execution context was destroyed, most likely because of a 
       - generic [ref=f5e68]:
         - text: GIVE WITH CONFIDENCE
         - heading "DONATE" [level=1] [ref=f5e69]
-        - paragraph [ref=f5e70]: Your gift reaches families across the Archdiocese of Kampala. Every contribution counts, whatever its size.
+        - paragraph [ref=f5e70]: Your gift reaches families across the Kampala Archdiocese. Every contribution counts, whatever its size.
     - generic [ref=f5e72]:
       - generic [ref=f5e73]:
         - heading "Ways to Give" [level=2] [ref=f5e74]
@@ -119,7 +119,7 @@ Error: page.evaluate: Execution context was destroyed, most likely because of a 
           - link "Caritas Kampala Homepage" [ref=f5e164] [cursor=pointer]:
             - /url: /
             - img "Caritas Kampala logo" [ref=f5e165]
-          - paragraph [ref=f5e166]: The Charities Office operates under Caritas Kampala, serving the Archdiocese of Kampala through compassion, dignity, and practical support for those who need it most.
+          - paragraph [ref=f5e166]: The Charities Office operates under Caritas Kampala, serving the Kampala Archdiocese through compassion, dignity, and practical support for those who need it most.
         - generic [ref=f5e167]:
           - generic [ref=f5e168]: FOLLOW CARITAS KAMPALA
           - generic "Social channels coming soon" [ref=f5e170]:

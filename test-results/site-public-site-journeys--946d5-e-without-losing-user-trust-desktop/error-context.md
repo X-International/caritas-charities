@@ -146,7 +146,7 @@ Call log:
           - link "Caritas Kampala Homepage" [ref=f1e140] [cursor=pointer]:
             - /url: /
             - img "Caritas Kampala logo" [ref=f1e141]
-          - paragraph [ref=f1e142]: The Charities Office operates under Caritas Kampala, serving the Archdiocese of Kampala through compassion, dignity, and practical support for those who need it most.
+          - paragraph [ref=f1e142]: The Charities Office operates under Caritas Kampala, serving the Kampala Archdiocese through compassion, dignity, and practical support for those who need it most.
         - generic [ref=f1e143]:
           - generic [ref=f1e144]: FOLLOW CARITAS KAMPALA
           - generic "Social channels coming soon" [ref=f1e146]:

@@ -30,12 +30,12 @@ export const newsArticles: NewsArticle[] = [
     slug: "kotido-moroto-famine-relief-drive",
     title: "Kotido & Moroto Famine Relief Drive Mobilizes Parishes",
     subtitle:
-      "Parishes across the Archdiocese of Kampala are collecting food and relief items for families facing famine in Kotido and Moroto.",
+      "Parishes across the Kampala Archdiocese are collecting food and relief items for families facing famine in Kotido and Moroto.",
     date: "28 Jul 2026",
     category: "Emergency Appeal",
     region: "Karamoja",
     snippet:
-      "Parishes across the Archdiocese of Kampala are collecting food and relief items for families facing famine in Kotido and Moroto.",
+      "Parishes across the Kampala Archdiocese are collecting food and relief items for families facing famine in Kotido and Moroto.",
     image: "/images/current appeal/Caritas_Kampala_Current_Appeal_details.jpg",
     alt: "Community members in Karamoja affected by the ongoing drought. Credit: Caritas Kampala.",
     body: [
@@ -73,7 +73,7 @@ export const newsArticles: NewsArticle[] = [
     image: "/images/Event 02/Caritas_Kampala_98.jpg",
     alt: "The Charities Office Lead speaking at a gathering. Credit: Caritas Kampala.",
     body: [
-      "The Caritas Kampala Charities Office now has its own website, a dedicated space to share the work of the office with donors, partners, and the wider community across the Archdiocese of Kampala.",
+      "The Caritas Kampala Charities Office now has its own website, a dedicated space to share the work of the office with donors, partners, and the wider community across the Kampala Archdiocese.",
       "The new site brings together information that was previously scattered or difficult to find: our mission and values, the programmes we run, our place within the Chaconet network of charity homes, and the many ways people can support this work, whether through giving, volunteering, or partnership.",
       "Visitors can also find our latest news and appeals in one place, including our current relief drive for families affected by famine in Kotido and Moroto, alongside stories from the people and communities we work alongside.",
       "This website is part of Caritas Kampala and sits alongside the Archdiocese's main site, reflecting the Charities Office's own identity while remaining clearly connected to the wider Caritas Kampala family.",
@@ -94,11 +94,11 @@ export const newsArticles: NewsArticle[] = [
     date: "30 Jul 2026",
     category: "Partnership",
     snippet:
-      "A closer look at Chaconet, the network of charity homes working together across the Archdiocese of Kampala.",
+      "A closer look at Chaconet, the network of charity homes working together across the Kampala Archdiocese.",
     image: "/images/Event 02/Caritas_Kampala_92.jpg",
     alt: "Caritas Kampala staff and partners gathered at a formal Chaconet network event",
     body: [
-      "Across the Archdiocese of Kampala, a network of charity homes works together to care for some of the community's most vulnerable people. It's called Chaconet, and it brings together charity homes, Caritas Kampala, and the Good Samaritan Fraternity, all working toward the same goal: transforming lives and creating hope for those who need it most.",
+      "Across the Kampala Archdiocese, a network of charity homes works together to care for some of the community's most vulnerable people. It's called Chaconet, and it brings together charity homes, Caritas Kampala, and the Good Samaritan Fraternity, all working toward the same goal: transforming lives and creating hope for those who need it most.",
       "Chaconet's mission is to transform lives by creating safe, nurturing homes and empowering vulnerable communities through compassionate support, education, and sustainable programmes. In practice, that means fostering collaboration between member organisations, sharing best practices and resources, building the capacity of partner organisations through training, coordinating volunteer and fundraising efforts, and advocating for vulnerable populations.",
       "The network currently includes nine members, each serving a specific community:",
       "Caritas Kampala Charity Office",

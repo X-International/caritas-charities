@@ -1,6 +1,6 @@
 # Caritas Kampala (Charities Office Website)
 
-The official public web platform for **Caritas Kampala, Charity Office** — the socio-pastoral arm of the Roman Catholic Archdiocese of Kampala. The website presents the organization's mission, emergency appeals, development programmes, news updates, photo galleries, annual reports, contact details, and guidance for donor support and volunteering.
+The official public web platform for **Caritas Kampala, Charity Office** — the socio-pastoral arm of the Roman Catholic Kampala Archdiocese. The website presents the organization's mission, emergency appeals, development programmes, news updates, photo galleries, annual reports, contact details, and guidance for donor support and volunteering.
 
 Built with **Next.js 16 (App Router)**, **React 19**, **TypeScript**, and **Tailwind CSS 4**, the platform combines static site generation for performance and SEO with interactive client components and serverless API handlers.
 

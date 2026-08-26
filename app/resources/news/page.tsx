@@ -14,7 +14,7 @@ import { ArrowRight, Search as SearchIcon } from "lucide-react";
 export const metadata = buildPageMetadata({
   title: "News & Updates | Caritas Kampala Charities Office",
   description:
-    "The latest updates and stories from the work of the Charities Office across the Archdiocese of Kampala.",
+    "The latest updates and stories from the work of the Charities Office across the Kampala Archdiocese.",
   path: "/resources/news",
 });
 

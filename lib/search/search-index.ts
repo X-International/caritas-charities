@@ -23,9 +23,9 @@ const staticSiteItems: SearchIndexItem[] = [
     title: "Caritas Kampala Charities Office",
     url: "/",
     category: "Page",
-    snippet: "The Charities Office of Caritas Kampala supports the poor, vulnerable and marginalized across the Archdiocese of Kampala.",
-    content: "Caritas Kampala Charities Office home. Serving Kampala, Wakiso & Mpigi. Supporting the poor, vulnerable, elderly, orphans, refugees, persons with disabilities, and families facing hardship across the Archdiocese of Kampala. Humanitarian appeals, emergency relief, community development.",
-    keywords: ["home", "homepage", "caritas kampala", "charities office", "archdiocese of kampala", "wakiso", "mpigi", "humanitarian", "relief"]
+    snippet: "The Charities Office of Caritas Kampala supports the poor, vulnerable and marginalized across the Kampala Archdiocese.",
+    content: "Caritas Kampala Charities Office home. Serving Kampala, Wakiso & Mpigi. Supporting the poor, vulnerable, elderly, orphans, refugees, persons with disabilities, and families facing hardship across the Kampala Archdiocese. Humanitarian appeals, emergency relief, community development.",
+    keywords: ["home", "homepage", "caritas kampala", "charities office", "Kampala Archdiocese", "wakiso", "mpigi", "humanitarian", "relief"]
   },
   {
     id: "page-donate",
@@ -51,7 +51,7 @@ const staticSiteItems: SearchIndexItem[] = [
     url: "/current-appeal",
     category: "Emergency Appeal",
     snippet: "Drought has brought famine to Karamoja. Support our emergency relief drive collecting food and supplies for families in Kotido and Moroto.",
-    content: "Emergency appeal for Kotido and Moroto dioceses in Karamoja region. Drought and climate change have driven severe famine. Archdiocese of Kampala collection drive for posho, maize flour, rice, beans, sugar, cooking oil, household items, and financial donations. Drop off items at Caritas Kampala office in Nsambya.",
+    content: "Emergency appeal for Kotido and Moroto dioceses in Karamoja region. Drought and climate change have driven severe famine. Kampala Archdiocese collection drive for posho, maize flour, rice, beans, sugar, cooking oil, household items, and financial donations. Drop off items at Caritas Kampala office in Nsambya.",
     keywords: ["kotido", "moroto", "famine", "karamoja", "drought", "emergency appeal", "relief drive", "food collection", "posho", "beans", "starvation", "parishes"]
   },
   {
@@ -124,8 +124,8 @@ const staticSiteItems: SearchIndexItem[] = [
     url: "/about-us",
     category: "Page",
     snippet: "Learn about the mission, vision and values of the Charities Office, part of Caritas Kampala.",
-    content: "About Caritas Kampala Charities Office. Socio-pastoral ministry of the Catholic Church in the Archdiocese of Kampala. Putting gospel message of love into action without discrimination based on religion, ethnicity, or politics.",
-    keywords: ["about us", "who we are", "caritas kampala", "catholic church", "archdiocese of kampala", "mission", "values"]
+    content: "About Caritas Kampala Charities Office. Socio-pastoral ministry of the Catholic Church in the Kampala Archdiocese. Putting gospel message of love into action without discrimination based on religion, ethnicity, or politics.",
+    keywords: ["about us", "who we are", "caritas kampala", "catholic church", "Kampala Archdiocese", "mission", "values"]
   },
   {
     id: "page-our-story",
@@ -142,7 +142,7 @@ const staticSiteItems: SearchIndexItem[] = [
     url: "/about-us/our-team",
     category: "Page",
     snippet: "Meet the leadership, staff, and parish coordinators behind the Charities Office of Caritas Kampala.",
-    content: "Our Team and Leadership. Dedicated team of coordinators, social workers, administrative staff, and parish volunteers carrying out charity operations across the Archdiocese of Kampala under the leadership of Caritas Kampala.",
+    content: "Our Team and Leadership. Dedicated team of coordinators, social workers, administrative staff, and parish volunteers carrying out charity operations across the Kampala Archdiocese under the leadership of Caritas Kampala.",
     keywords: ["our team", "team", "staff", "leadership", "coordinators", "directors", "social workers"]
   },
   {
@@ -151,7 +151,7 @@ const staticSiteItems: SearchIndexItem[] = [
     url: "/about-us/chaconet-partners",
     category: "Page",
     snippet: "Chaconet is a network of nine registered Catholic charity homes working together across Kampala Archdiocese.",
-    content: "Chaconet (Catholic Charity Homes Network) is an initiative under Caritas Kampala bringing together registered Catholic orphanages, disability centers, elderly homes, and rehabilitation facilities across the Archdiocese of Kampala. Resource coordination, policy compliance, standards of care.",
+    content: "Chaconet (Catholic Charity Homes Network) is an initiative under Caritas Kampala bringing together registered Catholic orphanages, disability centers, elderly homes, and rehabilitation facilities across the Kampala Archdiocese. Resource coordination, policy compliance, standards of care.",
     keywords: ["chaconet", "charity homes", "orphanages", "elderly homes", "disability centers", "network", "partners", "care institutions"]
   },
   {

@@ -26,7 +26,7 @@ export default function DonateHero() {
             DONATE
           </Heading>
           <Lead variant="article" className="text-white">
-            Your gift reaches families across the Archdiocese of Kampala. Every contribution counts, whatever its size.
+            Your gift reaches families across the Kampala Archdiocese. Every contribution counts, whatever its size.
           </Lead>
         </div>
       </div>

@@ -16,7 +16,7 @@ import {
 export const metadata = buildPageMetadata({
   title: "Gallery | Caritas Kampala Charities Office",
   description:
-    "Photos from the Charities Office's programmes, events and community work across the Archdiocese of Kampala.",
+    "Photos from the Charities Office's programmes, events and community work across the Kampala Archdiocese.",
   path: "/resources/gallery",
 });
 

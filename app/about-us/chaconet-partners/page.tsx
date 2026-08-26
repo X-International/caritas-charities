@@ -9,7 +9,7 @@ import { buildPageMetadata } from "@/lib/metadata-utils";
 export const metadata = buildPageMetadata({
   title: "Chaconet Partners | Caritas Kampala Charities Office",
   description:
-    "The Charities Office works within Chaconet, a network of nine charity homes across the Archdiocese of Kampala.",
+    "The Charities Office works within Chaconet, a network of nine charity homes across the Kampala Archdiocese.",
   path: "/about-us/chaconet-partners",
 });
 

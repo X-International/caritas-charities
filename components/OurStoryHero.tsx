@@ -26,7 +26,7 @@ export default function OurStoryHero() {
             About Us
           </Heading>
           <Lead variant="article" className="text-white">
-            The Charities Office operates under Caritas Kampala, serving the Archdiocese of Kampala through compassion, dignity, and practical support for those who need it most.
+            The Charities Office operates under Caritas Kampala, serving the Kampala Archdiocese through compassion, dignity, and practical support for those who need it most.
           </Lead>
         </div>
       </div>

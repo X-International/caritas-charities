@@ -9,7 +9,7 @@ import { buildPageMetadata } from "@/lib/metadata-utils";
 export const metadata = buildPageMetadata({
   title: "Our Team | Caritas Kampala Charities Office",
   description:
-    "Meet the people behind the Charities Office, under Caritas Kampala, serving vulnerable people and communities across the Archdiocese of Kampala.",
+    "Meet the people behind the Charities Office, under Caritas Kampala, serving vulnerable people and communities across the Kampala Archdiocese.",
   path: "/about-us/our-team",
 });
 

@@ -164,7 +164,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm sm:text-base text-gray-200 font-normal leading-relaxed max-w-xl">
-              The Charities Office operates under Caritas Kampala, serving the Archdiocese of Kampala through compassion, dignity, and practical support for those who need it most.
+              The Charities Office operates under Caritas Kampala, serving the Kampala Archdiocese through compassion, dignity, and practical support for those who need it most.
             </p>
           </div>
 

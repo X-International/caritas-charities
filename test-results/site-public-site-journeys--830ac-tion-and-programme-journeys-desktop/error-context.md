@@ -55,7 +55,7 @@ Call log:
   - region "Featured emergency appeals and humanitarian initiatives":
     - 'group "Slide 1 of 3: Serving with Compassion"'
     - heading "Serving with Compassion" [level=1]
-    - paragraph: Supporting vulnerable children, families, and communities across the Archdiocese of Kampala through faith, dignity, and love.
+    - paragraph: Supporting vulnerable children, families, and communities across the Kampala Archdiocese through faith, dignity, and love.
     - link "Donate Today":
       - /url: /donate
     - button "Previous Slide"
@@ -65,7 +65,7 @@ Call log:
       - 'button "Go to slide 1: Serving with Compassion"'
       - 'button "Go to slide 2: Transforming Lives Together"'
       - 'button "Go to slide 3: Hope Begins With Us"'
-    - paragraph: "Slide 1 of 3: Serving with Compassion. Supporting vulnerable children, families, and communities across the Archdiocese of Kampala through faith, dignity, and love."
+    - paragraph: "Slide 1 of 3: Serving with Compassion. Supporting vulnerable children, families, and communities across the Kampala Archdiocese through faith, dignity, and love."
   - region "Current Appeal":
     - heading "Current Appeal" [level=2]
     - paragraph: Drought has brought famine to Karamoja. The Kampala Archdiocese is rallying the Church in Uganda to respond, and the call is open to everyone, Catholic and non-Catholic alike.
@@ -135,7 +135,7 @@ Call log:
   - link "Caritas Kampala Homepage":
     - /url: /
     - img "Caritas Kampala logo"
-  - paragraph: The Charities Office operates under Caritas Kampala, serving the Archdiocese of Kampala through compassion, dignity, and practical support for those who need it most.
+  - paragraph: The Charities Office operates under Caritas Kampala, serving the Kampala Archdiocese through compassion, dignity, and practical support for those who need it most.
   - text: FOLLOW CARITAS KAMPALA
   - img "Facebook — link coming soon"
   - img "Instagram — link coming soon"

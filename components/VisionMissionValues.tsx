@@ -19,7 +19,7 @@ const identitySections = [
     title: "Our Mission",
     image: "/images/Charities/Caritas_Kampala_83.jpg",
     lead: "Inspired by the Gospel and Catholic Social Teaching, we serve people living in poverty and respond to the needs of vulnerable communities.",
-    body: "Through compassion, solidarity and practical action, Caritas Kampala works to save lives, relieve suffering, promote justice and restore dignity across the Archdiocese of Kampala.",
+    body: "Through compassion, solidarity and practical action, Caritas Kampala works to save lives, relieve suffering, promote justice and restore dignity across the Kampala Archdiocese.",
   },
   {
     id: "values",
