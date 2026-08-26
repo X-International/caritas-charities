@@ -19,6 +19,7 @@ test.describe("public site journeys", () => {
       "/resources/gallery",
       "/resources/news",
       "/resources/news/kotido-moroto-famine-relief-drive",
+      "/search",
       "/terms-of-use",
     ];
 
@@ -43,7 +44,8 @@ test.describe("public site journeys", () => {
 
   test("news search returns matching content and a useful empty state", async ({ page }) => {
     await page.goto("/resources/news?search=famine");
-    await expect(page.getByText(/showing .* result/i)).toBeVisible();
+    // Updated result text: "Showing X news article(s) matching ..."
+    await expect(page.getByText(/showing .* news article/i)).toBeVisible();
     await expect(page.getByRole("link", { name: /kotido.*moroto/i })).toBeVisible();
 
     await page.goto("/resources/news?search=term-that-does-not-exist");

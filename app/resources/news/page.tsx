@@ -22,10 +22,10 @@ const headlineLinkClasses =
 export default async function NewsPage({
   searchParams,
 }: {
-  searchParams: Promise<{ search?: string }>;
+  searchParams: Promise<{ search?: string; q?: string }>;
 }) {
   const params = await searchParams;
-  const query = params.search?.trim() ?? "";
+  const query = (params.search ?? params.q)?.trim() ?? "";
   const filteredArticles = query
     ? newsArticles.filter((article) =>
         [article.title, article.snippet, article.category, article.region]
@@ -49,10 +49,21 @@ export default async function NewsPage({
         <NewsHero />
 
         {query && (
-          <div className="site-container pt-8" aria-live="polite">
-            <p className="text-sm text-[#585858]">
-              Showing {filteredArticles.length} result{filteredArticles.length === 1 ? "" : "s"} for <strong className="text-gray-900">{query}</strong>.
-            </p>
+          <div className="site-container pt-8 space-y-3" aria-live="polite">
+            <div className="flex flex-wrap items-center justify-between gap-4 p-4 bg-gray-50 border border-gray-200 rounded-xl">
+              <p className="text-sm text-[#585858]">
+                Showing {filteredArticles.length} news article{filteredArticles.length === 1 ? "" : "s"} matching <strong className="text-gray-900">&ldquo;{query}&rdquo;</strong>.
+              </p>
+              <Link
+                href={`/search?q=${encodeURIComponent(query)}`}
+                className="text-xs font-semibold text-[#b10017] hover:underline inline-flex items-center gap-1"
+              >
+                <span>Search all site content for &ldquo;{query}&rdquo;</span>
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
           </div>
         )}
 

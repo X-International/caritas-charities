@@ -307,13 +307,18 @@ export default function Navbar() {
                       className="absolute -right-2 sm:right-0 top-full mt-2.5 w-72.5 sm:w-80 bg-white text-gray-900 shadow-2xl rounded-xl p-3 z-50 border border-gray-200 animate-in fade-in slide-in-from-top-2 duration-150 motion-reduce:animate-none"
                       role="search"
                     >
-                      <form action="/resources/news" method="get" onSubmit={(event) => {
+                      <form action="/search" method="get" onSubmit={(event) => {
                         if (!searchQuery.trim()) {
                           event.preventDefault();
                           return;
                         }
-                        closeSearch();
+                        // Close the panel and reset query after a tick so the
+                        // native GET form submission can fire before unmount.
                         trackEvent(ANALYTICS_EVENTS.newsSearch, { query_present: Boolean(searchQuery), query_length: searchQuery.length });
+                        setTimeout(() => {
+                          setIsSearchOpen(false);
+                          setSearchQuery("");
+                        }, 0);
                       }} className="relative flex items-center">
                         <label htmlFor="navbar-search-input" className="sr-only">
                           Search Website
@@ -321,7 +326,7 @@ export default function Navbar() {
                         <input
                           ref={searchInputRef}
                           id="navbar-search-input"
-                          name="search"
+                          name="q"
                           type="text"
                           inputMode="search"
                           autoComplete="off"
