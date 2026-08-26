@@ -48,16 +48,16 @@ const footerColumns: FooterColumnData[] = [
 
 const DesktopColumn = ({ column }: { column: FooterColumnData }) => (
   <div className="space-y-4 text-left">
-    <h3 className="text-[13px] font-bold uppercase tracking-[0.2em] text-red-50 font-sans">
+    <h3 className="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-200 font-sans">
       {column.title}
     </h3>
-    <ul className="space-y-3.5 text-xs sm:text-sm font-light text-red-100">
+    <ul className="space-y-3.5 text-xs sm:text-sm font-light text-gray-400">
       {column.links.map((link) => (
         <li key={link.label}>
           {link.href ? (
             <Link
               href={link.href}
-              className="hover:underline hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#8e0a20] focus-visible:underline rounded-xs"
+              className="hover:underline hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#141414] focus-visible:underline rounded-xs"
             >
               {link.label}
             </Link>
@@ -91,13 +91,13 @@ const MobileAccordion = ({
         onClick={onToggle}
         aria-expanded={isOpen}
         aria-controls={contentId}
-        className="w-full flex items-center justify-between py-3.5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#8e0a20] rounded group"
+        className="w-full flex items-center justify-between py-3.5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#141414] rounded group"
       >
-        <span className="text-[13px] font-bold uppercase tracking-[0.2em] text-red-50 font-sans">
+        <span className="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-200 font-sans">
           {column.title}
         </span>
         <svg
-          className={`w-4 h-4 text-red-100 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+          className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -107,13 +107,13 @@ const MobileAccordion = ({
       </button>
 
       {isOpen && (
-        <ul id={contentId} className="pb-4 space-y-3 text-xs sm:text-sm font-light text-red-100 pl-1">
+        <ul id={contentId} className="pb-4 space-y-3 text-xs sm:text-sm font-light text-gray-400 pl-1">
           {column.links.map((link) => (
             <li key={link.label}>
               {link.href ? (
                 <Link
                   href={link.href}
-                  className="hover:underline hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#8e0a20] focus-visible:underline rounded-xs"
+                  className="hover:underline hover:text-[#b10017] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#141414] focus-visible:underline rounded-xs"
                 >
                   {link.label}
                 </Link>
@@ -142,9 +142,9 @@ export default function Footer() {
     <footer
       role="contentinfo"
       aria-label="Site Footer"
-      className="text-white pt-16 sm:pt-20 pb-12 sm:pb-16 border-t border-[#8e0a20] w-full overflow-hidden mt-8 lg:mt-12"
+      className="text-white pt-16 sm:pt-20 pb-12 sm:pb-16 border-t border-white/20 w-full overflow-hidden mt-8 lg:mt-12"
       style={{
-        background: "linear-gradient(to bottom, #a80012 0px, #a80012 240px, #8e0a20 100%)",
+        background: "linear-gradient(to bottom, #262626 0px, #262626 240px, #141414 100%)",
       }}
     >
       <div className="site-container">
@@ -153,23 +153,23 @@ export default function Footer() {
             <Link
               href="/"
               aria-label="Caritas Kampala Homepage"
-              className="shrink-0 mx-auto sm:mx-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[#a80012] rounded-lg"
+              className="shrink-0 mx-auto sm:mx-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[#262626] rounded-lg"
             >
               <Image
-                src="/images/logos/Caritas_Kampala_footer.png"
+                src="/images/logos/Caritas_Kampala_Footer.png"
                 alt="Caritas Kampala logo"
                 width={400}
                 height={140}
                 className="h-28 sm:h-32 lg:h-40 xl:h-44 w-auto object-contain"
               />
             </Link>
-            <p className="text-sm sm:text-base text-red-50 font-normal leading-relaxed max-w-xl">
+            <p className="text-sm sm:text-base text-gray-200 font-normal leading-relaxed max-w-xl">
               The Charities Office operates under Caritas Kampala, serving the Archdiocese of Kampala through compassion, dignity, and practical support for those who need it most.
             </p>
           </div>
 
           <div className="w-full lg:w-auto space-y-4 shrink-0 text-center lg:text-right">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-red-50 block">
+            <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-gray-200 block">
               Follow us on social media
             </span>
             <div className="flex items-center justify-center lg:justify-end gap-5">
@@ -216,7 +216,7 @@ export default function Footer() {
 
         <hr className="border-white/25 my-8" />
 
-        <div className="flex w-full flex-col sm:flex-row justify-between items-start sm:items-center text-xs sm:text-sm text-red-100 font-normal gap-3 pt-1 text-left">
+        <div className="flex w-full flex-col sm:flex-row justify-between items-start sm:items-center text-xs sm:text-sm text-gray-400 font-normal gap-3 pt-1 text-left">
           <div>
             {`© ${currentYear} Caritas Kampala — Charities Office. All Rights Reserved.`}
           </div>
@@ -226,7 +226,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit Main Website (opens in a new tab)"
-              className="hover:underline inline-flex items-center gap-1.5 font-bold text-white hover:text-red-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#8e0a20] rounded"
+              className="hover:underline inline-flex items-center gap-1.5 font-bold text-white hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#141414] rounded"
             >
               <span>Visit Main Website</span>
               <svg className="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24" aria-hidden="true">

@@ -53,8 +53,8 @@ const teamMembers = [
   {
     name: "Ms. Bridget Atuhairwe",
     role: "Digital Communications Officer",
-    image: "/images/Team/placeholder_Caritas_Kampala_Charities_OfficeNjala_Patrick_Caritas_Kampala_Charities_Office.jpg",
-    alt: "Photograph not currently available for Ms. Bridget Atuhairwe"
+    image: "/images/Team/Bridget_Atuhairwe_Caritas Kampala.jpeg",
+    alt: "Portrait of Ms. Bridget Atuhairwe"
   },
 ];
 
