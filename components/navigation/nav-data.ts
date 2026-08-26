@@ -23,6 +23,7 @@ export const navLinks: NavLink[] = [
         { name: "Who We Are", href: "/about-us/our-story", desc: "Learn who we are and the mission that inspires our work." },
         { name: "Our Vision, Mission & Values", href: "/about-us/our-story", desc: "Discover the principles that guide every act of service." },
         { name: "Our Team", href: "/about-us/our-team", desc: "Meet the dedicated people serving our communities with compassion." },
+        { name: "Chaconet", href: "/about-us/chaconet-partners", desc: "Learn about the network of charity homes and our collaborative approach to serving vulnerable communities." },
       ],
       card: {
         title: "About Caritas Kampala",
@@ -42,6 +43,8 @@ export const navLinks: NavLink[] = [
     megaMenu: {
       links: [
         { name: "News & Updates", href: "/resources/news", desc: "Stay informed with our latest news, stories, and announcements." },
+        { name: "Success Stories", href: "/resources/success-stories", desc: "Read inspiring stories of transformation and hope from the lives we have impacted together." },
+        { name: "Events", href: "/resources/events", desc: "Discover upcoming events and opportunities to engage with our work." },
         { name: "Gallery", href: "/resources/gallery", desc: "Explore moments of hope through photos from our community work." },
         { name: "Annual Reports", href: "/resources/annual-reports", desc: "View our reports, achievements, and organizational impact." },
         { name: "FAQs", href: "/resources/faqs", desc: "Find answers to the questions we are asked most often." },
