@@ -17,7 +17,7 @@ export const metadata = buildPageMetadata({
 
 const labelTextClasses = "inline-block text-[#585858] uppercase tracking-[0.18em] text-[11px] font-semibold bg-gray-100 px-2.5 py-1 rounded";
 const headlineLinkClasses =
-  "inline-block font-serif text-[20px] sm:text-[22px] lg:text-[24px] leading-snug text-[#b10017] transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2";
+  "inline-block font-serif text-[20px] sm:text-[22px] lg:text-[24px] leading-snug text-[#b10017] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2";
 
 export default async function SearchPage({
   searchParams,
@@ -92,7 +92,7 @@ export default async function SearchPage({
                   : `${SITE_DOMAIN}${result.url}`;
 
                 return (
-                  <Card key={result.id} variant="info" className="p-6 sm:p-8 space-y-3">
+                  <Card key={result.id} variant="info" className="p-6 sm:p-8 md:p-10 space-y-4">
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <span className={labelTextClasses}>{result.category}</span>
                       <span className="text-[11px] font-mono text-gray-400 truncate max-w-full sm:max-w-xs">
@@ -100,20 +100,20 @@ export default async function SearchPage({
                       </span>
                     </div>
 
-                    <h2>
+                    <h2 className="max-w-2xl">
                       <Link href={result.url} className={headlineLinkClasses}>
                         {result.title}
                       </Link>
                     </h2>
 
-                    <p className="text-[14px] sm:text-[15px] leading-relaxed text-[#4f4f4f]">
+                    <p className="text-[14px] sm:text-[15px] leading-relaxed text-[#4f4f4f] max-w-2xl">
                       {result.snippet}
                     </p>
 
                     <div className="pt-1">
                       <Link
                         href={result.url}
-                        className="inline-flex items-center gap-1 text-xs font-semibold text-[#b10017] hover:underline"
+                        className="inline-flex items-center gap-1 text-xs font-semibold text-[#b10017]"
                       >
                         <span>View page</span>
                         <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
