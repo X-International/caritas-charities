@@ -2,92 +2,139 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Card from "@/components/ui/Card";
-import { Heading, Lead } from "@/components/ui/Typography";
+import { Heading, Lead, Text } from "@/components/ui/Typography";
+import Button from "@/components/ui/Button";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
 export const metadata = buildPageMetadata({
   title: "Our Team | Caritas Kampala Charities Office",
   description:
-    "Meet the leadership and team behind the Charities Office at Caritas Kampala.",
+    "Meet the people behind the Charities Office, under Caritas Kampala, serving vulnerable people and communities across the Archdiocese of Kampala.",
   path: "/about-us/our-team",
 });
 
 const teamMembers = [
   {
-    name: "Rev. Fr. M. Ssekyewa",
+    name: "Rev. Fr. Peter Musumba",
     role: "Director, Caritas Kampala",
-    bio: "Guiding the strategic and pastoral vision of Caritas Kampala across all socio-developmental programmes.",
-    image: "/images/Main Slider/Caritas_Kampala_07.jpg",
+    image: "/images/Team/Fr_Peter_Musumba_Caritas_Kampala_Charities_Office.jpg",
+    alt: "Portrait of Rev. Fr. Peter Musumba"
   },
   {
-    name: "Charities Office Coordinator",
-    role: "Head of Relief & Special Needs",
-    bio: "Overseeing daily field logistics, orphanage support, and emergency relief distribution.",
-    image: "/images/Main Slider/Caritas_Kampala_18.jpg",
+    name: "Mr. Patrick Njala",
+    role: "Charities Office Coordinator",
+    image: "/images/Team/Njala_Patrick_Caritas_Kampala_Charities_Office.jpg",
+    alt: "Portrait of Mr. Patrick Njala"
   },
   {
-    name: "Field Operations Team",
-    role: "Community Response & Outreach",
-    bio: "Directly engaging with parishes, community leaders, and families in need across the Archdiocese.",
-    image: "/images/Charities/Caritas_Kampala_83.jpg",
+    name: "Ms. Rose Salaama",
+    role: "Technical Advisor",
+    image: "/images/Team/placeholder_Caritas_Kampala_Charities_OfficeNjala_Patrick_Caritas_Kampala_Charities_Office.jpg",
+    alt: "Photograph not currently available for Ms. Rose Salaama"
+  },
+  {
+    name: "Ms. Margaret Kisakye",
+    role: "Social Worker",
+    image: "/images/Team/Margaret_Kisakye_Caritas_Kampala_Charities_Office.jpg",
+    alt: "Portrait of Ms. Margaret Kisakye"
+  },
+  {
+    name: "Ms. Penina Nawajje",
+    role: "Social Worker",
+    image: "/images/Team/Penina_Nawajje_Caritas_Kampala_Charities_Office.jpg",
+    alt: "Portrait of Ms. Penina Nawajje"
+  },
+  {
+    name: "Ms. Kobutungi Proscovia",
+    role: "Social Worker",
+    image: "/images/Team/Kobutungi_Proscovia_Caritas_Kampala_Charities_Office.jpg",
+    alt: "Portrait of Ms. Kobutungi Proscovia"
+  },
+  {
+    name: "Ms. Bridget Atuhairwe",
+    role: "Digital Communications Officer",
+    image: "/images/Team/placeholder_Caritas_Kampala_Charities_OfficeNjala_Patrick_Caritas_Kampala_Charities_Office.jpg",
+    alt: "Photograph not currently available for Ms. Bridget Atuhairwe"
   },
 ];
 
 export default function OurTeamPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-white text-gray-900 font-sans">
+    <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
 
       <main id="main-content" className="flex-1">
-        {/* Hero Banner */}
-        <section className="bg-[#b10017] text-white section-lg">
-          <div className="site-container space-y-4">
-            <nav aria-label="Breadcrumb" className="text-xs uppercase tracking-wider font-semibold text-red-200">
+        {/* Page Hero */}
+        <section className="bg-[#b10017] text-white pt-16 pb-12 sm:pt-20 sm:pb-16 lg:pt-24 lg:pb-20">
+          <div className="site-container space-y-6">
+            <nav aria-label="Breadcrumb" className="text-xs uppercase tracking-widest font-semibold text-red-200">
               <ol className="flex items-center space-x-2">
-                <li>
-                  <Link href="/" className="hover:underline text-white">HOME</Link>
-                </li>
-                <li>/</li>
-                <li>
-                  <Link href="/about-us" className="hover:underline text-white">ABOUT US</Link>
-                </li>
-                <li>/</li>
-                <li aria-current="page" className="text-red-200">OUR TEAM</li>
+                <li><Link href="/" className="hover:text-white text-red-100">Home</Link></li>
+                <li className="text-red-300">/</li>
+                <li><Link href="/about-us" className="hover:text-white text-red-100">About Us</Link></li>
+                <li className="text-red-300">/</li>
+                <li aria-current="page" className="text-white">Our Team</li>
               </ol>
             </nav>
             <Heading level={1} variant="page" color="white">
               Our Team
             </Heading>
-            <Lead variant="hero">
-              Meet the people carrying out Caritas Kampala&apos;s mission every day across the Archdiocese.
+            <Lead variant="hero" className="max-w-xl">
+              Meet the dedicated people working every day to serve with compassion and build hope.
             </Lead>
           </div>
         </section>
 
+        {/* Introduction Section */}
+        <section className="py-16 sm:py-20 lg:py-24 bg-white text-center">
+          <div className="site-container max-w-3xl space-y-6">
+            <Heading level={2} variant="section" color="red">
+              Dedicated to Serving With Compassion
+            </Heading>
+            <Text size="lg" color="muted" className="leading-relaxed">
+              Our team is committed to supporting vulnerable people, strengthening communities, and advancing the mission of the Charities Office.
+            </Text>
+          </div>
+        </section>
+
         {/* Team Grid */}
-        <section className="site-container section-md space-y-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <section className="site-container pb-20 sm:pb-24 lg:pb-28">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, i) => (
-              <Card key={i} variant="content" className="overflow-hidden p-0 sm:p-0">
-                <div className="relative h-64 w-full">
+              <div key={i} className="flex flex-col">
+                <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-gray-100 mb-4">
                   <Image
                     src={member.image}
-                    alt={member.name}
+                    alt={member.alt}
                     fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover"
                   />
                 </div>
-                <div className="p-6 space-y-2">
-                  <Heading level={3} variant="card" color="red">{member.name}</Heading>
-                  <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">{member.role}</p>
-                  <p className="text-sm text-gray-700 leading-relaxed pt-2">{member.bio}</p>
-                </div>
-              </Card>
+                <Heading level={3} variant="card" color="dark" className="text-center">{member.name}</Heading>
+                <Text size="sm" color="default" className="text-center mt-1">{member.role}</Text>
+              </div>
             ))}
           </div>
         </section>
+
+        {/* CTA Section */}
+        <section className="bg-gray-50 py-16 sm:py-20 text-center">
+            <div className="site-container max-w-2xl space-y-6">
+                <Heading level={2} variant="section" color="red">
+                    Together, We Can Bring Hope and Dignity
+                </Heading>
+                <Text size="lg" color="muted">
+                    Join us in supporting vulnerable people and communities through the work of the Charities Office.
+                </Text>
+                <div className="pt-4">
+                    <Button href="/donate" variant="primary" size="lg">
+                        SUPPORT OUR WORK
+                    </Button>
+                </div>
+            </div>
+        </section>
+
       </main>
 
       <Footer />
