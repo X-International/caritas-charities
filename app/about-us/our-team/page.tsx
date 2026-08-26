@@ -101,8 +101,8 @@ export default function OurTeamPage() {
         <section className="site-container pb-20 sm:pb-24 lg:pb-28">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, i) => (
-              <div key={i} className="flex flex-col">
-                <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-gray-100 mb-4">
+              <div key={i} className="flex flex-col rounded-lg border border-gray-100 bg-white p-4">
+                <div className="relative aspect-square w-full overflow-hidden rounded-md bg-gray-100 mb-4">
                   <Image
                     src={member.image}
                     alt={member.alt}
@@ -116,23 +116,6 @@ export default function OurTeamPage() {
               </div>
             ))}
           </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="bg-gray-50 py-16 sm:py-20 text-center">
-            <div className="site-container max-w-2xl space-y-6">
-                <Heading level={2} variant="section" color="red">
-                    Together, We Can Bring Hope and Dignity
-                </Heading>
-                <Text size="lg" color="muted">
-                    Join us in supporting vulnerable people and communities through the work of the Charities Office.
-                </Text>
-                <div className="pt-4">
-                    <Button href="/donate" variant="primary" size="lg">
-                        SUPPORT OUR WORK
-                    </Button>
-                </div>
-            </div>
         </section>
 
       </main>
