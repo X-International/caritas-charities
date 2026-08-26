@@ -29,6 +29,8 @@ function readGalleryFiles(): GalleryImage[] {
     "Event 02": { id: "event-01", label: "Emergency Relief Events", shortLabel: "Events" },
     "Event 03": { id: "charities", label: "Community Empowerment", shortLabel: "Charities" },
     "Event 04": { id: "charities", label: "Annual Celebrations", shortLabel: "Charities" },
+    "Event 05": { id: "event-01", label: "Community Events", shortLabel: "Events" },
+    "Event 06": { id: "workshops", label: "Workshops", shortLabel: "Workshops" },
     "Charities": { id: "charities", label: "Partner Charities", shortLabel: "Charities" },
   };
 

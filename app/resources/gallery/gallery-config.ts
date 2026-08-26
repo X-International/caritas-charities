@@ -20,6 +20,12 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
     label: "Partner Charities",
     shortLabel: "Charities",
   },
+  {
+    id: "workshops",
+    folder: "Event 06",
+    label: "Workshops",
+    shortLabel: "Workshops",
+  },
 ];
 
 export type GalleryImage = {
