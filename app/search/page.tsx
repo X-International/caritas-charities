@@ -7,7 +7,6 @@ import { Heading, Lead } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 import { searchSite } from "@/lib/search/search-engine";
 import { SITE_DOMAIN } from "@/lib/search/search-index";
-import DonateCalloutBanner from "@/components/DonateCalloutBanner";
 
 export const metadata = buildPageMetadata({
   title: "Search Results | Caritas Kampala Charities Office",
@@ -128,7 +127,6 @@ export default async function SearchPage({
             </div>
           )}
         </section>
-        <DonateCalloutBanner />
       </main>
 
       <Footer />
