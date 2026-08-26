@@ -721,8 +721,8 @@ export default function Navbar() {
             <nav
               ref={mobileNavRef}
               id="mobile-navigation-drawer"
-              className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white shadow-2xl overflow-y-auto overscroll-contain animate-in slide-in-from-bottom-8 duration-300 motion-reduce:animate-none pb-6 relative"
-              style={{ top: `${mobileMenuTop}px` }}
+              className="lg:hidden fixed left-0 right-0 z-50 bg-white shadow-2xl overflow-y-auto overscroll-contain animate-in slide-in-from-bottom-8 duration-300 motion-reduce:animate-none pb-6"
+              style={{ top: `${mobileMenuTop}px`, height: `calc(100vh - ${mobileMenuTop}px)` }}
               aria-label="Mobile Navigation"
               role="dialog"
               aria-modal="true"
