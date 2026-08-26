@@ -160,7 +160,7 @@ export default function Footer() {
                 alt="Caritas Kampala logo"
                 width={400}
                 height={140}
-                className="h-20 sm:h-24 lg:h-28 xl:h-28 w-auto object-contain"
+                className="h-28 sm:h-32 lg:h-40 xl:h-44 w-auto object-contain"
               />
             </Link>
             <p className="text-sm sm:text-base text-red-50 font-normal leading-relaxed max-w-xl">
