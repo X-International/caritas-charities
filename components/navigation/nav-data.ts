@@ -21,7 +21,6 @@ export const navLinks: NavLink[] = [
     megaMenu: {
       links: [
         { name: "Who We Are", href: "/about-us/our-story", desc: "Learn who we are and the mission that inspires our work." },
-        { name: "Our Vision, Mission & Values", href: "/about-us/our-story", desc: "Discover the principles that guide every act of service." },
         { name: "Our Team", href: "/about-us/our-team", desc: "Meet the dedicated people serving our communities with compassion." },
         { name: "Chaconet", href: "/about-us/chaconet-partners", desc: "Learn about the network of charity homes and our collaborative approach to serving vulnerable communities." },
       ],

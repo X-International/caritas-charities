@@ -1,8 +1,13 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Heading } from "@/components/ui/Typography";
+import Button from "@/components/ui/Button";
 
 export default function CurrentCrises() {
+  const expiryDate = new Date("2026-09-30T23:59:59");
+  if (new Date() > expiryDate) {
+    return null;
+  }
+
   return (
     <section 
       aria-labelledby="appeal-title"
@@ -49,13 +54,14 @@ export default function CurrentCrises() {
                 Climate change has driven drought and famine across the Kotido and Moroto dioceses. The government has provided some relief, but it isn&apos;t enough. From July through September, the Archdiocese is collecting food such as posho, maize flour, rice, beans, and cooking oil to send to families in Karamoja. Every contribution counts, whatever its size.
               </p>
               <div className="pt-1 sm:pt-2 flex justify-center lg:justify-start">
-                <Link
+                <Button
                   href="/current-appeal"
+                  variant="primary"
+                  size="md"
                   aria-label="See how to help families facing famine in Kotido and Moroto"
-                  className="inline-block bg-[#b10017] text-white hover:bg-white hover:text-[#b10017] border-2 border-[#b10017] text-xs font-bold px-7 py-3 rounded-full tracking-wider uppercase transition-colors duration-200 motion-reduce:transition-none cursor-pointer focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-2"
                 >
                   See How to Help
-                </Link>
+                </Button>
               </div>
             </div>
           </div>

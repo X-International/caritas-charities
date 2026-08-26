@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import HeroSlider from "@/components/HeroSlider";
 import CurrentCrises from "@/components/CurrentCrises";
 import HumanitarianAppeal from "@/components/HumanitarianAppeal";
+import CharityShopSection from "@/components/CharityShopSection";
 import WhereWeServe from "@/components/WhereWeServe";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
 import Footer from "@/components/Footer";
@@ -23,6 +24,7 @@ export default function HomePage() {
         <HeroSlider />
         <CurrentCrises />
         <HumanitarianAppeal />
+        <CharityShopSection />
         <WhereWeServe />
         <section className="site-container py-4 sm:py-6">
           <DonateOnlineCard />
