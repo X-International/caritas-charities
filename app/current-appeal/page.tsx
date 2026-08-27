@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
@@ -176,6 +177,17 @@ export default function CurrentAppealPage() {
                   <p className="text-red-100">(next to the American Embassy)</p>
                   <p className="text-red-100">Kampala, Uganda</p>
                 </div>
+              </div>
+
+              {/* Appeal Banner Image Card */}
+              <div className="relative aspect-[4/5] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm border border-gray-200">
+                <Image
+                  src="/images/Miscellany/banner.png"
+                  alt="Caritas Kampala emergency relief appeal banner"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  className="object-cover"
+                />
               </div>
 
               {/* Card 2: Direct Contact (Matching Screenshot 3 design) */}
