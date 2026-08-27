@@ -600,13 +600,13 @@ export default function Navbar() {
                             </p>
                           </div>
 
-                          {link.megaMenu.card.cta.href ? (
-                            <Link
-                              href={link.megaMenu.card.cta.href}
-                              onClick={() => setOpenMegaMenu(null)}
-                              className="inline-flex items-center gap-1.5 mt-5 bg-white text-[#b10017] font-bold text-xs px-4.5 py-2.5 rounded-full hover:bg-red-50 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none transition-colors duration-150 w-fit shadow-xs"
-                            >
-                              {link.megaMenu.card.cta.label}
+                          <Button
+                            disabled={!link.megaMenu.card.cta.href}
+                            href={link.megaMenu.card.cta.href}
+                            variant="secondary"
+                            size="sm"
+                            className="mt-5"
+                            rightIcon={
                               <svg
                                 className="w-3 h-3"
                                 fill="none"
@@ -621,29 +621,11 @@ export default function Navbar() {
                                   d="M9 5l7 7-7 7"
                                 />
                               </svg>
-                            </Link>
-                          ) : (
-                            <span
-                              aria-disabled="true"
-                              className="inline-flex items-center gap-1.5 mt-5 bg-white text-[#b10017] font-bold text-xs px-4.5 py-2.5 rounded-full w-fit shadow-xs cursor-pointer"
-                            >
-                              {link.megaMenu.card.cta.label}
-                              <svg
-                                className="w-3 h-3"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                aria-hidden="true"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2.5}
-                                  d="M9 5l7 7-7 7"
-                                />
-                              </svg>
-                            </span>
-                          )}
+                            }
+                            onClick={() => setOpenMegaMenu(null)}
+                          >
+                            {link.megaMenu.card.cta.label}
+                          </Button>
                         </div>
                       </div>
                     </div>
