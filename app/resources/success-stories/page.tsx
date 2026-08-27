@@ -1,14 +1,12 @@
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Heading } from "@/components/ui/Typography";
+import SplitPageHeader from "@/components/SplitPageHeader";
 import { buildPageMetadata } from "@/lib/metadata-utils";
-import PageHeader from "@/components/PageHeader";
-import DonateOnlineCard from "@/components/DonateOnlineCard";
 
 export const metadata = buildPageMetadata({
   title: "Success Stories | Caritas Kampala Charities Office",
-  description: "Read inspiring stories of transformation and hope from the lives we have impacted together through the Charities Office of Caritas Kampala.",
+  description:
+    "Read real success stories and impact reports from the programmes of the Charities Office under Caritas Kampala.",
   path: "/resources/success-stories",
 });
 
@@ -18,26 +16,23 @@ export default function SuccessStoriesPage() {
       <Navbar />
 
       <main id="main-content" className="flex-1">
-        {/* Hero Banner */}
-        <PageHeader
-          title="Success Stories"
+        <SplitPageHeader
           breadcrumbs={[
             { label: "Home", href: "/" },
             { label: "Resources", href: "/resources/news" },
             { label: "Success Stories" },
           ]}
-          description="Read real stories that show the impact of our work in people's lives and communities."
+          eyebrow="STORIES FROM OUR WORK"
+          title="Success Stories"
+          description="Read real stories that show how practical support has affected the lives of people and communities we work alongside."
+          image="/images/Event 01/Caritas_Kampala_02.jpg"
+          imageAlt="Community members and beneficiaries of Caritas Kampala programmes"
         />
 
         {/* Content placeholder */}
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 section-md">
-          <p className="text-lg text-gray-700 leading-relaxed">
-            Coming soon: Read inspiring stories of how our collective efforts are making a difference in the lives of vulnerable individuals and communities.
-          </p>
+        <section className="site-container section-md">
+          <p className="text-gray-600 text-center">Success stories and impact reports coming soon.</p>
         </section>
-        <div className="site-container py-4 sm:py-6">
-          <DonateOnlineCard />
-        </div>
       </main>
 
       <Footer />

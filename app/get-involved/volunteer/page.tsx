@@ -1,8 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SplitPageHeader from "@/components/SplitPageHeader";
 import { Heading, Lead, Text } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
-import PageHeader from "@/components/PageHeader";
 
 export const metadata = buildPageMetadata({
   title: "Volunteer With Us | Caritas Kampala Charities Office",
@@ -17,15 +17,17 @@ export default function VolunteerPage() {
       <Navbar />
 
       <main id="main-content" className="flex-1">
-        {/* Hero Banner */}
-        <PageHeader
-          title="Volunteer With Us"
+        <SplitPageHeader
           breadcrumbs={[
             { label: "Home", href: "/" },
             { label: "Get Involved", href: "/get-involved" },
             { label: "Volunteer" },
           ]}
+          eyebrow="GIVE YOUR TIME"
+          title="Volunteer With Us"
           description="Offer your time, skills, and experience to support the work of the Charities Office."
+          image="/images/Event 01/Caritas_Kampala_01.jpg"
+          imageAlt="Volunteers supporting Caritas Kampala community activities"
         />
 
         {/* Content Section */}

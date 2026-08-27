@@ -59,7 +59,7 @@ export default function EventsPage() {
           title="Events"
           breadcrumbs={[
             { label: "Home", href: "/" },
-            { label: "Resources", href: "/resources/news" },
+            { label: "Resources", href: "/resources" },
             { label: "Events" },
           ]}
           description="See upcoming meetings, gatherings, and opportunities to engage with our work."

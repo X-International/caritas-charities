@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Breadcrumb from "@/components/Breadcrumb";
-import DonateHero from "@/components/DonateHero";
+import SplitPageHeader from "@/components/SplitPageHeader";
 import OtherWaysToSupport from "@/components/OtherWaysToSupport";
 import DonateCalloutBanner from "@/components/DonateCalloutBanner";
 import { buildPageMetadata } from "@/lib/metadata-utils";
@@ -19,15 +18,17 @@ export default function DonatePage() {
       <Navbar />
 
       <main id="main-content" className="flex-1">
-        {/* Breadcrumb Container - Matches Navbar Padding */}
-        <div className="site-container pt-4 sm:pt-6 lg:pt-8 pb-2">
-          <Breadcrumb items={[
-            { label: "HOME", href: "/" },
-            { label: "DONATE" }
-          ]} />
-        </div>
-
-        <DonateHero />
+        <SplitPageHeader
+          breadcrumbs={[
+            { label: "Home", href: "/" },
+            { label: "Donate" }
+          ]}
+          eyebrow="SUPPORT THE WORK"
+          title="Donate"
+          description="Your gift supports practical care for vulnerable individuals, families, and communities across the Archdiocese of Kampala."
+          image="/images/Event 04/Caritas_Kampala_18.jpg"
+          imageAlt="Caritas Kampala community support and care"
+        />
 
         <OtherWaysToSupport />
 

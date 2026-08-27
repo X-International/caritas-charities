@@ -1,8 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PageHeader from "@/components/PageHeader";
+import SplitPageHeader from "@/components/SplitPageHeader";
 import Card from "@/components/ui/Card";
-import { Heading, Lead } from "@/components/ui/Typography";
+import { Heading } from "@/components/ui/Typography";
 import Button from "@/components/ui/Button";
 import Link from "next/link";
 import { buildPageMetadata } from "@/lib/metadata-utils";
@@ -20,14 +20,16 @@ export default function GetInvolvedPage() {
       <Navbar />
 
       <main id="main-content" className="flex-1">
-        {/* Hero Banner */}
-        <PageHeader 
-          title="Get Involved"
+        <SplitPageHeader
           breadcrumbs={[
-            { label: "HOME", href: "/" },
-            { label: "GET INVOLVED" }
+            { label: "Home", href: "/" },
+            { label: "Get Involved" }
           ]}
-          description="Join hands with the Caritas Kampala Charities Office as a volunteer, parish champion, or corporate partner."
+          eyebrow="WAYS TO TAKE PART"
+          title="Get Involved"
+          description="Give your time, skills, resources, or partnership to support practical work with vulnerable people and communities."
+          image="/images/Miscellany/Caritas_Kampala_43.jpg"
+          imageAlt="Volunteers and community members participating in Caritas Kampala programmes"
         />
 
         {/* Options */}

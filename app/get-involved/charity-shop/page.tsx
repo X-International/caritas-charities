@@ -2,11 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SplitPageHeader from "@/components/SplitPageHeader";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
-import PageHeader from "@/components/PageHeader";
 
 export const metadata = buildPageMetadata({
   title: "Charity Shop | Caritas Kampala Charities Office",
@@ -21,15 +21,17 @@ export default function CharityShopPage() {
       <Navbar />
 
       <main id="main-content" className="flex-1">
-        {/* Hero Section */}
-        <PageHeader
-          title="Charity Shop"
+        <SplitPageHeader
           breadcrumbs={[
             { label: "Home", href: "/" },
             { label: "Get Involved", href: "/get-involved" },
             { label: "Charity Shop" },
           ]}
-          description="Visit our second-hand Charity Shop in Nsambya or donate suitable items to support our work."
+          eyebrow="GIVE • SHOP • SUPPORT"
+          title="Charity Shop"
+          description="Visit our second-hand Charity Shop in Nsambya or donate suitable items to support the work of the Charities Office."
+          image="/images/Charity Shop/Caritas_Kampala_58.jpg"
+          imageAlt="Caritas Kampala Second Hand Charity Shop in Nsambya"
         />
 
         {/* About Section */}

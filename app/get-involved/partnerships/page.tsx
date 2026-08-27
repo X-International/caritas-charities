@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PageHeader from "@/components/PageHeader";
+import SplitPageHeader from "@/components/SplitPageHeader";
 import { Heading, Text } from "@/components/ui/Typography";
 import Button from "@/components/ui/Button";
 import { buildPageMetadata } from "@/lib/metadata-utils";
@@ -18,14 +18,17 @@ export default function PartnershipsPage() {
       <Navbar />
 
       <main id="main-content" className="flex-1">
-        <PageHeader
-          title="Partnerships"
+        <SplitPageHeader
           breadcrumbs={[
             { label: "Home", href: "/" },
             { label: "Get Involved", href: "/get-involved" },
             { label: "Partnerships" },
           ]}
+          eyebrow="WORK WITH US"
+          title="Partnerships"
           description="Explore ways your organisation can work with the Charities Office to support vulnerable communities."
+          image="/images/Event 02/Caritas_Kampala_01.jpg"
+          imageAlt="Partners and community representatives working together with Caritas Kampala"
         />
 
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 section-md space-y-6">

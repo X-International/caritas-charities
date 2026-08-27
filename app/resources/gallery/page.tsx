@@ -79,7 +79,7 @@ export default function GalleryPage() {
           title="Photo Gallery"
           breadcrumbs={[
             { label: "Home", href: "/" },
-            { label: "Resources", href: "/resources/news" },
+            { label: "Resources", href: "/resources" },
             { label: "Gallery" },
           ]}
           description="Explore photos from our programmes, events, and community activities across the Archdiocese of Kampala."

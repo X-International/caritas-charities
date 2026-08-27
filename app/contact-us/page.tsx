@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Breadcrumb from "@/components/Breadcrumb";
-import ContactHero from "@/components/ContactHero";
+import SplitPageHeader from "@/components/SplitPageHeader";
 import ContactForm from "@/components/ContactForm";
 import { Heading } from "@/components/ui/Typography";
 import DeferredLocationMap from "@/components/DeferredLocationMap";
@@ -23,15 +22,17 @@ export default function ContactUsPage() {
       <Navbar />
 
       <main id="main-content" className="flex-1">
-        {/* Breadcrumb Container - Matches Navbar Padding */}
-        <div className="site-container pt-4 sm:pt-6 lg:pt-8 pb-2">
-          <Breadcrumb items={[
-            { label: "HOME", href: "/" },
-            { label: "CONTACT US" }
-          ]} />
-        </div>
-
-        <ContactHero />
+        <SplitPageHeader
+          breadcrumbs={[
+            { label: "Home", href: "/" },
+            { label: "Contact Us" }
+          ]}
+          eyebrow="WE'D LIKE TO HEAR FROM YOU"
+          title="Contact Us"
+          description="Whether you have a question, want to support our work, or would like to get involved, we're here to help."
+          image="/images/Event 01/Caritas_Kampala_72.jpg"
+          imageAlt="Caritas Kampala community outreach"
+        />
 
         {/* Main Container for the rest of the page */}
         <div className="site-container">
