@@ -156,7 +156,7 @@ export default function HeroSlider() {
                 fill
                 priority={index === 0}
                 sizes="100vw"
-                className="hero-slider-image object-cover object-top transform scale-105 transition-transform duration-10000"
+                className="hero-slider-image object-cover object-top origin-top transform scale-105 transition-transform duration-10000"
               />
 
               {/* Directional Gradient Overlay for Readability */}
