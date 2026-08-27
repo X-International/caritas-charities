@@ -20,9 +20,9 @@ export const navLinks: NavLink[] = [
     href: "/about-us",
     megaMenu: {
       links: [
-        { name: "Who We Are", href: "/about-us", desc: "Learn who we are and the mission that inspires our work." },
-        { name: "Our Team", href: "/about-us/our-team", desc: "Meet the dedicated people serving our communities with compassion." },
-        { name: "Chaconet", href: "/about-us/chaconet-partners", desc: "Learn about the network of charity homes and our collaborative approach to serving vulnerable communities." },
+        { name: "Who We Are", href: "/about-us", desc: "Learn about the Charities Office, its mission, values, and place under Caritas Kampala." },
+        { name: "Our Team", href: "/about-us/our-team", desc: "Meet the people leading and carrying out the work of the Charities Office." },
+        { name: "Chaconet Network", href: "/about-us/chaconet-partners", desc: "Discover the network of charity homes and institutions working together across the Archdiocese of Kampala." },
       ],
       card: {
         title: "About Caritas Kampala",
@@ -37,39 +37,39 @@ export const navLinks: NavLink[] = [
     href: "/our-programmes",
   },
   {
-    name: "Resources",
-    href: "/resources/news",
-    megaMenu: {
-      links: [
-        { name: "News & Updates", href: "/resources/news", desc: "Stay informed with our latest news, stories, and announcements." },
-        { name: "Success Stories", href: "/resources/success-stories", desc: "Read inspiring stories of transformation and hope from the lives we have impacted together." },
-        { name: "Events", href: "/resources/events", desc: "Discover upcoming events and opportunities to engage with our work." },
-        { name: "Gallery", href: "/resources/gallery", desc: "Explore moments of hope through photos from our community work." },
-        { name: "Annual Reports", href: "/resources/annual-reports", desc: "View our reports, achievements, and organizational impact." },
-        { name: "FAQs", href: "/resources/faqs", desc: "Find answers to the questions we are asked most often." },
-      ],
-      card: {
-        title: "News & Resources",
-        description: "Learn more about Caritas Kampala through stories, publications, reports, and moments that reflect our ongoing mission of compassion and service.",
-        image: "/images/Main Slider/Caritas_Kampala_90.jpg",
-        cta: { label: "View All Resources", href: "/resources/news" },
-      },
-    },
-  },
-  {
     name: "Get Involved",
     href: "/get-involved",
     megaMenu: {
       links: [
-        { name: "Volunteer", href: "/get-involved/volunteer", desc: "See how you can offer your time and skills to support our work." },
-        { name: "Charity Shop", href: "/get-involved/charity-shop", desc: "Shop or donate goods to support our cause." },
-        { name: "Partnerships", href: "/get-involved/partnerships", desc: "Learn how your organization can partner with us to serve vulnerable communities." },
+        { name: "Volunteer", href: "/get-involved/volunteer", desc: "Give your time and skills to support practical work across our communities." },
+        { name: "Partnerships", href: "/get-involved/partnerships", desc: "Explore ways your organisation can work with the Charities Office to support vulnerable communities." },
+        { name: "Charity Shop", href: "/get-involved/charity-shop", desc: "Visit our second-hand Charity Shop or donate suitable items to support our work." },
       ],
       card: {
         title: "Get Involved with Caritas Kampala",
         description: "Explore opportunities to share your time, skills, and compassion with the people who need it most.",
         image: "/images/Main Slider/Caritas_Kampala_07.jpg",
         cta: { label: "Explore Opportunities", href: "/get-involved" },
+      },
+    },
+  },
+  {
+    name: "Resources",
+    href: "/resources/news",
+    megaMenu: {
+      links: [
+        { name: "News & Updates", href: "/resources/news", desc: "Read the latest news, announcements, and updates from the Charities Office." },
+        { name: "Events", href: "/resources/events", desc: "See upcoming events, meetings, and opportunities to take part." },
+        { name: "Success Stories", href: "/resources/success-stories", desc: "Read real stories that show the impact of our work in people's lives and communities." },
+        { name: "Gallery", href: "/resources/gallery", desc: "Explore photos from our programmes, events, and community activities." },
+        { name: "Annual Reports", href: "/resources/annual-reports", desc: "View reports on our work, progress, and organisational activities." },
+        { name: "FAQs", href: "/resources/faqs", desc: "Find clear answers to common questions about our work and how to get involved." },
+      ],
+      card: {
+        title: "News & Resources",
+        description: "Learn more about Caritas Kampala through stories, publications, reports, and moments that reflect our ongoing mission of compassion and service.",
+        image: "/images/Main Slider/Caritas_Kampala_90.jpg",
+        cta: { label: "View All Resources", href: "/resources/news" },
       },
     },
   },
