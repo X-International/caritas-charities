@@ -19,28 +19,28 @@ const slides: Slide[] = [
     id: 1,
     title: "Serving with Compassion",
     subtitle:
-      "Supporting vulnerable children, families, and communities across the Kampala Archdiocese through faith, dignity, and love.",
-    buttonText: "Donate Today",
-    buttonLink: "/donate",
+      "The Charities Office serves vulnerable people and communities across the Kampala Archdiocese with practical support, dignity, and care.",
+    buttonText: "OUR PROGRAMMES",
+    buttonLink: "/our-programmes",
     image: "/images/Miscellany/Caritas_Kampala_39.jpg",
   },
   {
     id: 2,
-    title: "Transforming Lives Together",
+    title: "Responding to Need",
     subtitle:
-      "Providing emergency relief, community support, and lasting hope for people facing hardship every day.",
-    buttonText: "Our Programmes",
+      "From emergency response to family support, elderly care, livelihoods, and assistance for refugees and people with disabilities, our programmes respond to real needs across our communities.",
+    buttonText: "SEE OUR WORK",
     buttonLink: "/our-programmes",
     image: "/images/Miscellany/Caritas_Kampala_43.jpg",
   },
   {
     id: 3,
-    title: "Hope Begins With Us",
+    title: "Be Part of the Work",
     subtitle:
-      "Together we can bring care, opportunity, and hope to those who need it most.",
-    buttonText: "Learn More",
-    buttonLink: "/about-us",
-    image: "/images/Event 06/Caritas_Kampala_47.jpg",
+      "Volunteer your time, offer your skills, partner with us, or support the work in other practical ways.",
+    buttonText: "GET INVOLVED",
+    buttonLink: "/get-involved",
+    image: "/images/Main Slider/Caritas_Kampala_70.jpg",
   },
 ];
 
