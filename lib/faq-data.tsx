@@ -4,7 +4,7 @@ import Link from "next/link";
 export const faqs = [
   {
     q: "What is Caritas Kampala?",
-    a: "Caritas Kampala is the social service and charitable arm of the Catholic Church in Kampala, Uganda. It provides humanitarian aid, social services, and development programmes to improve the lives of vulnerable communities. Caritas Kampala works through a network of pastoral agents in the 75 parishes of the Catholic Archdiocese of Kampala, covering Kampala, Wakiso, Mpigi, and Butambala districts.",
+    a: "Caritas Kampala is the social service and charitable arm of the Catholic Church in Kampala, Uganda. It provides humanitarian aid, social services, and development programmes to improve the lives of vulnerable communities. Caritas Kampala works through a network of pastoral agents in the 75 parishes of the Catholic Kampala Archdiocese, covering Kampala, Wakiso, Mpigi, and Butambala districts.",
   },
   {
     q: "How can I donate to the Charities Office?",

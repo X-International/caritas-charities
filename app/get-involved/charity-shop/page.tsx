@@ -44,7 +44,7 @@ export default function CharityShopPage() {
                   Located in Nsambya, the Second Hand Charity Shop is an initiative of the Charities Office under Caritas Kampala. The shop gives donated clothes and other items a new purpose by making them available at affordable prices while raising funds to support our charity work.
                 </p>
                 <p>
-                  Many of these items are donated through parish communities across the Archdiocese of Kampala. By shopping with us or donating materials in good condition, you help strengthen the work we do with vulnerable people and communities.
+                  Many of these items are donated through parish communities across the Kampala Archdiocese. By shopping with us or donating materials in good condition, you help strengthen the work we do with vulnerable people and communities.
                 </p>
               </div>
             </div>

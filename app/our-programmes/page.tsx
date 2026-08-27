@@ -10,7 +10,7 @@ import PageHeader from "@/components/PageHeader";
 export const metadata = buildPageMetadata({
   title: "Our Programmes | Caritas Kampala Charities Office",
   description:
-    "Explore the programmes of the Caritas Kampala Charities Office, supporting families, children, elderly people, refugees, people with disabilities, and communities facing poverty across the Archdiocese of Kampala.",
+    "Explore the programmes of the Caritas Kampala Charities Office, supporting families, children, elderly people, refugees, people with disabilities, and communities facing poverty across the Kampala Archdiocese.",
   path: "/our-programmes",
 });
 
@@ -103,7 +103,7 @@ export default function OurProgrammesPage() {
               Together, We Can Make a Difference
             </Heading>
             <p className="text-lg text-white/90 leading-relaxed">
-              Your support helps us reach people facing hardship and build stronger, more resilient communities across the Archdiocese of Kampala.
+              Your support helps us reach people facing hardship and build stronger, more resilient communities across the Kampala Archdiocese.
             </p>
             <div className="pt-4">
               <Button href="/donate" variant="secondary" size="lg">

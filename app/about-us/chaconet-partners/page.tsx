@@ -9,7 +9,7 @@ import PageHeader from "@/components/PageHeader";
 export const metadata = buildPageMetadata({
   title: "Chaconet Partners | Caritas Kampala Charities Office",
   description:
-    "Meet the Chaconet partners working together to support children, families, older people and vulnerable communities across the Archdiocese of Kampala.",
+    "Meet the Chaconet partners working together to support children, families, older people and vulnerable communities across the Kampala Archdiocese.",
   path: "/about-us/chaconet-partners",
 });
 
@@ -88,7 +88,7 @@ export default function ChaconetPartnersPage() {
             </Heading>
             <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
               <p>
-                Chaconet (Catholic Charity Homes Network) is an initiative under Caritas Kampala that brings together registered Catholic charity homes, disability centres, elderly homes and rehabilitation facilities across the Archdiocese of Kampala.
+                Chaconet (Catholic Charity Homes Network) is an initiative under Caritas Kampala that brings together registered Catholic charity homes, disability centres, elderly homes and rehabilitation facilities across the Kampala Archdiocese.
               </p>
               <p>
                 By coordinating resources, promoting policy compliance and strengthening fundraising support, Chaconet helps participating homes uphold high standards of care and protection while promoting dignity, wellbeing and hope for every person they serve.
@@ -105,7 +105,7 @@ export default function ChaconetPartnersPage() {
                 Our Chaconet Partners
               </Heading>
               <p className="text-lg text-gray-600 max-w-xl mx-auto">
-                Chaconet brings together organisations and homes serving children, families, older people and people living with disabilities across the Archdiocese of Kampala.
+                Chaconet brings together organisations and homes serving children, families, older people and people living with disabilities across the Kampala Archdiocese.
               </p>
             </div>
             
