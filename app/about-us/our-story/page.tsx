@@ -2,9 +2,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
 import SidebarCard from "@/components/SidebarCard";
-import OurStoryHero from "@/components/OurStoryHero";
+import PageHeader from "@/components/PageHeader";
 import VisionQuote from "@/components/VisionQuote";
-import Breadcrumb from "@/components/Breadcrumb";
 import { Heading, Text } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
@@ -21,16 +20,15 @@ export default function OurStoryPage() {
       <Navbar />
 
       <main id="main-content" className="flex-1">
-        {/* Breadcrumb Container - Matches Navbar Padding */}
-        <div className="site-container pt-4 sm:pt-6 lg:pt-8 pb-2">
-          <Breadcrumb items={[
+        <PageHeader
+          title="Our Story"
+          breadcrumbs={[
             { label: "HOME", href: "/" },
             { label: "ABOUT US", href: "/about-us" },
-            { label: "WHO WE ARE" }
-          ]} />
-        </div>
-
-        <OurStoryHero />
+            { label: "WHO WE ARE" },
+          ]}
+          description="Read the story, mission, and values behind the Charities Office of Caritas Kampala, serving the Archdiocese since its founding."
+        />
 
         <section className="section-lg bg-[#fdfbf9]">
           <div className="site-container grid grid-cols-1 lg:grid-cols-3 gap-16">

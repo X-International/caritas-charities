@@ -2,10 +2,11 @@ import { Calendar, Clock, MapPin, Users } from "lucide-react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Heading, Lead, Text, Eyebrow } from "@/components/ui/Typography";
+import { Heading, Text } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
+import PageHeader from "@/components/PageHeader";
 
 export const metadata = buildPageMetadata({
   title: "Upcoming Events | Caritas Kampala Charities Office",
@@ -53,25 +54,15 @@ export default function EventsPage() {
 
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
-        <section className="bg-[#b10017] text-white py-16 sm:py-20 lg:py-24">
-          <div className="site-container space-y-6">
-            <nav aria-label="Breadcrumb" className="text-xs uppercase tracking-widest font-semibold text-red-200">
-              <ol className="flex items-center space-x-2">
-                <li><Link href="/" className="hover:text-white text-red-100">Home</Link></li>
-                <li className="text-red-300">/</li>
-                <li><Link href="/resources" className="hover:text-white text-red-100">Resources</Link></li>
-                <li className="text-red-300">/</li>
-                <li aria-current="page" className="text-white">Upcoming Events</li>
-              </ol>
-            </nav>
-            <Heading level={1} variant="page" color="white">
-              Upcoming Events
-            </Heading>
-            <Lead variant="hero" className="max-w-xl">
-              Join us at our upcoming events as we work together to bring hope and dignity to those in need.
-            </Lead>
-          </div>
-        </section>
+        <PageHeader
+          title="Upcoming Events"
+          breadcrumbs={[
+            { label: "HOME", href: "/" },
+            { label: "RESOURCES", href: "/resources" },
+            { label: "UPCOMING EVENTS" },
+          ]}
+          description="Join us at our upcoming events as we work together to bring hope and dignity to those in need."
+        />
 
         {/* Introduction Section */}
         <section className="py-16 sm:py-20 lg:py-24 bg-white text-center">

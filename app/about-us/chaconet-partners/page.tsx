@@ -1,10 +1,10 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Breadcrumb from "@/components/Breadcrumb";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
-import { Heading, Lead } from "@/components/ui/Typography";
+import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
+import PageHeader from "@/components/PageHeader";
 
 export const metadata = buildPageMetadata({
   title: "Chaconet Partners | Caritas Kampala Charities Office",
@@ -70,23 +70,15 @@ export default function ChaconetPartnersPage() {
 
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
-        <section className="bg-[#b10017] text-white py-16 sm:py-20 lg:py-24">
-          <div className="site-container space-y-4">
-            <Breadcrumb
-              items={[
-                { label: "HOME", href: "/" },
-                { label: "ABOUT US", href: "/about-us" },
-                { label: "CHACONET PARTNERS" },
-              ]}
-            />
-            <Heading level={1} className="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-white">
-              Chaconet Partners
-            </Heading>
-            <Lead className="text-lg sm:text-xl text-white/90 max-w-2xl">
-              Working together in faith and solidarity to serve the most vulnerable in our communities.
-            </Lead>
-          </div>
-        </section>
+        <PageHeader
+          title="Chaconet Partners"
+          breadcrumbs={[
+            { label: "HOME", href: "/" },
+            { label: "ABOUT US", href: "/about-us" },
+            { label: "CHACONET PARTNERS" },
+          ]}
+          description="Working together in faith and solidarity to serve the most vulnerable in our communities."
+        />
 
         {/* What is Chaconet? */}
         <section className="site-container py-16 sm:py-20">

@@ -1,12 +1,12 @@
 import fs from "fs";
 import path from "path";
 import ClientGallery from "../ClientGallery";
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
-import { Heading, Lead } from "@/components/ui/Typography";
+import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
+import PageHeader from "@/components/PageHeader";
 import {
   filenameToAlt,
   GALLERY_IMAGE_EXTENSIONS,
@@ -75,50 +75,15 @@ export default function GalleryPage() {
       <Navbar />
 
       <main id="main-content" className="flex-1">
-        <section className="bg-[#b10017] text-white section-lg">
-          <div className="site-container">
-            <nav
-              aria-label="Breadcrumb"
-              className="text-[10px] xs:text-xs uppercase tracking-wide font-semibold text-red-200"
-            >
-              <ol className="flex flex-wrap items-center gap-x-1 gap-y-1">
-                <li>
-                  <Link
-                    href="/"
-                    className="hover:underline text-white focus-visible:underline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
-                  >
-                    HOME
-                  </Link>
-                </li>
-                <li className="px-1 text-red-200" aria-hidden>
-                  /
-                </li>
-                <li>
-                  <span className="text-white">RESOURCES</span>
-                </li>
-                <li className="px-1 text-red-200" aria-hidden>
-                  /
-                </li>
-                <li aria-current="page" className="text-red-200">
-                  GALLERY
-                </li>
-              </ol>
-            </nav>
-
-            <div className="mt-4 md:mt-6 max-w-3xl">
-              <Heading level={1} variant="page" color="white">
-                Photo Gallery
-              </Heading>
-
-              <div aria-hidden className="w-12 sm:w-16 h-px bg-white/20 mt-3 sm:mt-4 mb-3 sm:mb-4 rounded" />
-
-              <Lead variant="hero">
-                Capturing moments of hope, relief, and community solidarity across the
-                Archdiocese.
-              </Lead>
-            </div>
-          </div>
-        </section>
+        <PageHeader
+          title="Photo Gallery"
+          breadcrumbs={[
+            { label: "HOME", href: "/" },
+            { label: "RESOURCES", href: "/resources" },
+            { label: "GALLERY" },
+          ]}
+          description="Capturing moments of hope, relief, and community solidarity across the Archdiocese."
+        />
 
         <section className="site-container section-md">
           <ClientGallery images={galleryImages} />

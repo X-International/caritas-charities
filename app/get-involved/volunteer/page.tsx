@@ -1,8 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Breadcrumb from "@/components/Breadcrumb";
-import { Heading, Lead } from "@/components/ui/Typography";
+import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
+import PageHeader from "@/components/PageHeader";
 
 export const metadata = buildPageMetadata({
   title: "Volunteer With Us | Caritas Kampala Charities Office",
@@ -18,20 +18,14 @@ export default function VolunteerPage() {
 
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
-        <section className="bg-caritas-red text-white section-lg">
-          <div className="site-container space-y-4">
-            <Breadcrumb
-              items={[
-                { label: "HOME", href: "/" },
-                { label: "GET INVOLVED", href: "/get-involved" },
-                { label: "VOLUNTEER" },
-              ]}
-            />
-            <Heading level={1} variant="page" color="white">
-              Volunteer
-            </Heading>
-          </div>
-        </section>
+        <PageHeader
+          title="Volunteer"
+          breadcrumbs={[
+            { label: "HOME", href: "/" },
+            { label: "GET INVOLVED", href: "/get-involved" },
+            { label: "VOLUNTEER" },
+          ]}
+        />
 
         {/* Content Section */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 section-lg text-center">

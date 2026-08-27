@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Heading, Lead } from "@/components/ui/Typography";
+import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
+import PageHeader from "@/components/PageHeader";
 
 export const metadata = buildPageMetadata({
   title: "Annual Reports | Caritas Kampala Charities Office",
@@ -18,29 +19,15 @@ export default function AnnualReportsPage() {
 
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
-        <section className="bg-[#b10017] text-white section-lg">
-          <div className="site-container space-y-4">
-            <nav aria-label="Breadcrumb" className="text-xs uppercase tracking-wider font-semibold text-red-200">
-              <ol className="flex items-center space-x-2">
-                <li>
-                  <Link href="/" className="hover:underline text-white">HOME</Link>
-                </li>
-                <li>/</li>
-                <li>
-                  <Link href="/resources/news" className="hover:underline text-white">RESOURCES</Link>
-                </li>
-                <li>/</li>
-                <li aria-current="page" className="text-red-200">ANNUAL REPORTS</li>
-              </ol>
-            </nav>
-            <Heading level={1} variant="page" color="white">
-              Annual Reports
-            </Heading>
-            <Lead variant="hero">
-              Transparent financial auditing and yearly impact reviews for our supporters and partners.
-            </Lead>
-          </div>
-        </section>
+        <PageHeader
+          title="Annual Reports"
+          breadcrumbs={[
+            { label: "HOME", href: "/" },
+            { label: "RESOURCES", href: "/resources" },
+            { label: "ANNUAL REPORTS" },
+          ]}
+          description="Transparent financial auditing and yearly impact reviews for our supporters and partners."
+        />
 
         {/* Reports Archive */}
         <section className="site-container section-md space-y-8">

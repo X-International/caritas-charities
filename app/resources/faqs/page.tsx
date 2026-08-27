@@ -2,8 +2,9 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Card from "@/components/ui/Card";
-import { Heading, Lead } from "@/components/ui/Typography";
+import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
+import PageHeader from "@/components/PageHeader";
 
 export const metadata = buildPageMetadata({
   title: "FAQs | Caritas Kampala Charities Office",
@@ -37,29 +38,15 @@ export default function FAQsPage() {
 
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
-        <section className="bg-[#b10017] text-white section-lg">
-          <div className="site-container space-y-4">
-            <nav aria-label="Breadcrumb" className="text-xs uppercase tracking-wider font-semibold text-red-200">
-              <ol className="flex items-center space-x-2">
-                <li>
-                  <Link href="/" className="hover:underline text-white">HOME</Link>
-                </li>
-                <li>/</li>
-                <li>
-                  <Link href="/resources/news" className="hover:underline text-white">RESOURCES</Link>
-                </li>
-                <li>/</li>
-                <li aria-current="page" className="text-red-200">FAQS</li>
-              </ol>
-            </nav>
-            <Heading level={1} variant="page" color="white">
-              Frequently Asked Questions
-            </Heading>
-            <Lead variant="hero">
-              Clear answers to help you get involved, contribute, and support our mission.
-            </Lead>
-          </div>
-        </section>
+        <PageHeader
+          title="Frequently Asked Questions"
+          breadcrumbs={[
+            { label: "HOME", href: "/" },
+            { label: "RESOURCES", href: "/resources" },
+            { label: "FAQS" },
+          ]}
+          description="Clear answers to help you get involved, contribute, and support our mission."
+        />
 
         {/* FAQs Accordion/List */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 section-md space-y-6">
