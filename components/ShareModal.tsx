@@ -20,9 +20,6 @@ type ShareModalProps = {
 
 const COPY_RESET_MS = 2500;
 
-function openShareWindow(url: string) {
-  window.open(url, "_blank", "width=640,height=520,noopener,noreferrer");
-}
 
 function ShareIcon({ className }: { className?: string }) {
   return (
@@ -190,16 +187,6 @@ export default function ShareModal({ onClose }: ShareModalProps) {
     return () => window.clearTimeout(timer);
   }, [copied]);
 
-  const shareVia = (platform: Exclude<SharePlatform, "copy" | "native">) => {
-    if (!payload) return;
-    trackEvent(ANALYTICS_EVENTS.shareClick, { platform });
-    const destination = getShareDestinationUrl(platform, payload);
-    if (platform === "email") {
-      window.location.assign(destination);
-      return;
-    }
-    openShareWindow(destination);
-  };
 
   const handleCopy = async () => {
     if (!payload) return;
@@ -226,22 +213,16 @@ export default function ShareModal({ onClose }: ShareModalProps) {
     <div
       className="fixed inset-0 z-100 flex items-center justify-center bg-black/70 backdrop-blur-xs p-4"
       role="presentation"
+      onClick={onClose}
     >
-      <button
-        type="button"
-        tabIndex={-1}
-        className="absolute inset-0 cursor-default"
-        onClick={onClose}
-        aria-label="Close share dialog"
-      />
-
       <div
         ref={dialogRef}
+        onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
         aria-describedby={descriptionId}
-        className="share-modal-enter relative z-10 w-full max-w-md max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain rounded-subcard border border-gray-100 bg-white p-6 shadow-2xl sm:p-8"
+        className="share-modal-enter relative z-10 w-full max-w-sm max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain rounded-subcard border border-gray-100 bg-white p-6 shadow-2xl sm:p-8"
       >
         <style>{`
           @keyframes shareModalIn {
@@ -280,7 +261,7 @@ export default function ShareModal({ onClose }: ShareModalProps) {
               Share This Page
             </Heading>
             <Text id={descriptionId} size="xs" color="muted" className="mt-1.5 leading-relaxed sm:text-sm">
-              Share the work of the Charities Office and help more people discover our mission and the difference we make.
+              Share the work of the Charities Office and help more people discover our mission.
             </Text>
           </div>
         </div>
@@ -326,10 +307,12 @@ export default function ShareModal({ onClose }: ShareModalProps) {
           </p>
           <div className="grid grid-cols-5 gap-1 sm:gap-3 max-w-sm mx-auto items-center justify-items-center">
             {platforms.map((platform) => (
-              <button
+              <a
                 key={platform.id}
-                type="button"
-                onClick={() => shareVia(platform.id)}
+                href={payload ? getShareDestinationUrl(platform.id, payload) : "#"}
+                target={platform.id === "email" ? undefined : "_blank"}
+                rel={platform.id === "email" ? undefined : "noopener noreferrer"}
+                onClick={() => trackEvent(ANALYTICS_EVENTS.shareClick, { platform: platform.id })}
                 className="group flex min-w-[44px] min-h-[44px] w-full flex-col items-center justify-center gap-1.5 focus-visible:outline-none cursor-pointer"
                 aria-label={platform.ariaLabel}
               >
@@ -341,7 +324,7 @@ export default function ShareModal({ onClose }: ShareModalProps) {
                 <span className="text-[10px] font-semibold text-gray-700 transition-colors group-hover:text-gray-900 group-hover:underline truncate w-full text-center">
                   {platform.label}
                 </span>
-              </button>
+              </a>
             ))}
           </div>
         </div>
