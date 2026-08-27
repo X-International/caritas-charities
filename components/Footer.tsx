@@ -51,6 +51,7 @@ const DesktopColumn = ({ column }: { column: FooterColumnData }) => (
     <h3 className="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-200 font-sans">
       {column.title}
     </h3>
+    <div className="w-10 h-0.5 bg-[#b10017]" />
     <ul className="space-y-3.5 text-xs sm:text-sm font-light text-gray-400">
       {column.links.map((link) => (
         <li key={link.label}>
@@ -174,19 +175,19 @@ export default function Footer() {
             </span>
             <div className="flex items-center justify-center lg:justify-end gap-5">
               <div className="flex items-center gap-2" aria-label="Social channels">
-                <a href="https://www.facebook.com/profile.php?id=61592649493991" target="_blank" rel="noopener noreferrer" aria-label="Facebook (opens in a new tab)" title="Facebook" className="group relative flex h-12 w-12 items-center justify-center rounded-full text-white/85 transition-colors duration-200 hover:text-white">
+                <a href="https://www.facebook.com/profile.php?id=61592649493991" target="_blank" rel="noopener noreferrer" aria-label="Facebook (opens in a new tab)" title="Facebook" className="group relative flex h-12 w-12 items-center justify-center rounded-full text-white/85 transition-colors duration-200 hover:text-white border border-white/30">
                   <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.75l.4-3h-3.15V8.08c0-.87.24-1.46 1.5-1.46h1.6V3.94c-.28-.04-1.24-.12-2.36-.12-2.33 0-3.93 1.42-3.93 4.03V10H7.7v3h2.61v8h3.19Z" /></svg>
                 </a>
-                <a href="https://www.instagram.com/charityofficecaritas" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)" title="Instagram" className="group relative flex h-12 w-12 items-center justify-center rounded-full text-white/85 transition-colors duration-200 hover:text-white">
+                <a href="https://www.instagram.com/charityofficecaritas" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)" title="Instagram" className="group relative flex h-12 w-12 items-center justify-center rounded-full text-white/85 transition-colors duration-200 hover:text-white border border-white/30">
                   <svg className="h-6 w-6 fill-none stroke-current" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" strokeWidth="1.8" /><circle cx="12" cy="12" r="4" strokeWidth="1.8" /><circle cx="17.4" cy="6.6" r="1" className="fill-current stroke-none" /></svg>
                 </a>
-                <a href="https://www.linkedin.com/in/charity-office-caritas-kampala-318713428" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)" title="LinkedIn" className="group relative flex h-12 w-12 items-center justify-center rounded-full text-white/85 transition-colors duration-200 hover:text-white">
+                <a href="https://www.linkedin.com/in/charity-office-caritas-kampala-318713428" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)" title="LinkedIn" className="group relative flex h-12 w-12 items-center justify-center rounded-full text-white/85 transition-colors duration-200 hover:text-white border border-white/30">
                   <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 2H3.6A1.6 1.6 0 0 0 2 3.6v16.8A1.6 1.6 0 0 0 3.6 22h16.8a1.6 1.6 0 0 0 1.6-1.6V3.6A1.6 1.6 0 0 0 20.4 2ZM7.7 18.8H4.6V9.4h3.1v9.4Zm-1.6-10.7a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6Zm12.7 10.7h-3.1v-5.2c0-1.2 0-2.8-1.7-2.8-1.7 0-2 1.4-2 2.7v5.3h-3.1V9.4h3.1v1.3h.1c.4-.8 1.5-1.7 3.1-1.7 3.3 0 3.9 2.2 3.9 5v4.8Z" /></svg>
                 </a>
-                <a href="https://www.youtube.com/@charityofficecaritaskampala" target="_blank" rel="noopener noreferrer" aria-label="YouTube (opens in a new tab)" title="YouTube" className="group relative flex h-12 w-12 items-center justify-center rounded-full text-white/85 transition-colors duration-200 hover:text-white">
+                <a href="https://www.youtube.com/@charityofficecaritaskampala" target="_blank" rel="noopener noreferrer" aria-label="YouTube (opens in a new tab)" title="YouTube" className="group relative flex h-12 w-12 items-center justify-center rounded-full text-white/85 transition-colors duration-200 hover:text-white border border-white/30">
                   <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.8 4.7 12 4.7 12 4.7s-5.8 0-7.6.5a2.8 2.8 0 0 0-2 2C2 9 2 12 2 12s0 3 .4 4.8a2.8 2.8 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.8 2.8 0 0 0 2-2C22 15 22 12 22 12s0-3-.4-4.8ZM10 15.5v-7l6 3.5-6 3.5Z" /></svg>
                 </a>
-                <a href="https://x.com/charityoffmm" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter) (opens in a new tab)" title="X (formerly Twitter)" className="group relative flex h-12 w-12 items-center justify-center rounded-full text-white/85 transition-colors duration-200 hover:text-white">
+                <a href="https://x.com/charityoffmm" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter) (opens in a new tab)" title="X (formerly Twitter)" className="group relative flex h-12 w-12 items-center justify-center rounded-full text-white/85 transition-colors duration-200 hover:text-white border border-white/30">
                   <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.4L2.8 2h6.4l4.4 5.8L18.9 2Zm-1.1 17.9h1.7L8.3 4H6.5l11.3 15.9Z" /></svg>
                 </a>
               </div>
