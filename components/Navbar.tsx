@@ -21,6 +21,11 @@ export default function Navbar() {
   const [searchQuery,       setSearchQuery]       = useState("");
   const [currentHash,       setCurrentHash]       = useState("");
   const [mobileMenuTop,     setMobileMenuTop]     = useState(106);
+
+  const isHomePage = pathname === "/";
+  const transparentTop = isHomePage && !isScrolled;
+  const linkTextColor = transparentTop ? "text-white hover:text-[#b10017]" : "text-gray-800 hover:text-[#b10017]";
+  const mobileToggleColor = transparentTop ? "text-white hover:text-[#b10017] hover:bg-white/10" : "text-gray-800 hover:text-[#b10017] hover:bg-gray-100";
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const headerRef = useRef<HTMLElement | null>(null);
   const searchInputRef = useRef<HTMLInputElement | null>(null);
@@ -55,12 +60,13 @@ export default function Navbar() {
   /* Scroll Listener for Sticky Glass Header Elevation */
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 15);
+      const threshold = pathname === "/" ? 80 : 15;
+      setIsScrolled(window.scrollY > threshold);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     if (!isMobileMenuOpen || !headerRef.current) return;
@@ -181,10 +187,12 @@ export default function Navbar() {
 
       <header
         ref={headerRef}
-        className={`w-full bg-white sticky top-0 z-50 transition-all duration-200 ${
-          isScrolled
-            ? "shadow-md border-b border-gray-200/90 backdrop-blur-md bg-white/95"
-            : "border-b border-gray-100 shadow-xs"
+        className={`w-full z-50 transition-all duration-300 ease-out ${
+          isHomePage && !isScrolled
+            ? "relative bg-transparent"
+            : isScrolled
+            ? "sticky top-0 bg-white/95 shadow-md border-b border-gray-200/90 backdrop-blur-md"
+            : "sticky top-0 bg-white border-b border-gray-100 shadow-xs"
         }`}
       >
         {/* ── Top Utility Bar ─────────────────────────────── */}
@@ -367,7 +375,8 @@ export default function Navbar() {
         </div>
 
         {/* ── Main Navbar Row ──────────────────────────────── */}
-        <div className="site-container py-2 sm:py-2.5 lg:py-3 grid grid-cols-[auto_1fr_auto] items-center gap-3 lg:gap-6">
+        <div className={`w-full transition-all duration-300 ease-out ${transparentTop ? "absolute top-full left-0 right-0 bg-[rgba(10,10,10,0.30)] border-b border-white/10 shadow-sm" : "bg-white"}`}>
+          <div className="site-container py-2 sm:py-2.5 lg:py-3 grid grid-cols-[auto_1fr_auto] items-center gap-3 lg:gap-6">
           {/* Logo */}
           <Link
             href="/"
@@ -376,11 +385,11 @@ export default function Navbar() {
           >
             <div className="relative h-14 sm:h-16 lg:h-17 w-auto">
               <Image
-                src="/images/logos/Caritas_Kampala_logo.jpg"
+                src={transparentTop ? "/images/logos/Caritas_Kampala_Footer.png" : "/images/logos/Caritas_Kampala_logo.jpg"}
                 alt="Caritas Kampala Logo"
                 width={240}
                 height={96}
-                className="h-14 sm:h-16 lg:h-17 w-auto object-contain"
+                className="h-14 sm:h-16 lg:h-17 w-auto object-contain transition-opacity duration-300"
                 priority
               />
             </div>
@@ -425,14 +434,16 @@ export default function Navbar() {
                           openMenu(link.name);
                         }
                       }}
-                      className={`relative inline-flex items-center gap-1.5 text-[11.5px] xl:text-[12.5px] 2xl:text-[13px] font-semibold tracking-wide transition-colors uppercase whitespace-nowrap py-2 px-1 rounded-xs ${
-                        "text-gray-800 hover:text-[#b10017]"
-                      } focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-4`}
+                      className={`relative inline-flex items-center gap-1.5 text-[11.5px] xl:text-[12.5px] 2xl:text-[13px] font-semibold tracking-wide transition-colors uppercase whitespace-nowrap py-2 px-1 rounded-xs ${linkTextColor} focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-4`}
                     >
                       <span>{link.name}</span>
                       <svg
                         className={`w-3 h-3 transition-transform duration-200 ${
-                          openMegaMenu === link.name ? "rotate-180 text-[#b10017]" : "text-gray-400"
+                          openMegaMenu === link.name
+                            ? "rotate-180 text-[#b10017]"
+                            : transparentTop
+                            ? "text-white/70"
+                            : "text-gray-400"
                         }`}
                         fill="none"
                         stroke="currentColor"
@@ -446,15 +457,19 @@ export default function Navbar() {
                           d="M19 9l-7 7-7-7"
                         />
                       </svg>
+                      {active && (
+                        <span
+                          className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#b10017] rounded-full animate-in fade-in duration-200"
+                          aria-hidden="true"
+                        />
+                      )}
                     </button>
                   ) : (
                     <Link
                       id={linkId}
                       href={link.href!}
                       aria-current={active ? "page" : undefined}
-                      className={`relative inline-flex items-center gap-1.5 text-[11.5px] xl:text-[12.5px] 2xl:text-[13px] font-semibold tracking-wide transition-colors uppercase whitespace-nowrap py-2 px-1 rounded-xs focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-4 ${
-                          "text-gray-800 hover:text-[#b10017]"
-                      }`}
+                      className={`relative inline-flex items-center gap-1.5 text-[11.5px] xl:text-[12.5px] 2xl:text-[13px] font-semibold tracking-wide transition-colors uppercase whitespace-nowrap py-2 px-1 rounded-xs focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-4 ${linkTextColor}`}
                     >
                       <span>{link.name}</span>
 
@@ -657,7 +672,7 @@ export default function Navbar() {
                   setIsMobileMenuOpen(true);
                 }
               }}
-              className="lg:hidden text-gray-800 hover:text-[#b10017] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] p-2 rounded-md hover:bg-gray-100 transition-colors"
+              className={`lg:hidden ${mobileToggleColor} focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] p-2 rounded-md transition-colors`}
               aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-navigation-drawer"
@@ -688,7 +703,8 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-      </header>
+      </div>
+    </header>
 
       {/* ── Mobile Drawer Backdrop & Container ─────────── */}
         {isMobileMenuOpen && (

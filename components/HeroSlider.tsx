@@ -117,7 +117,6 @@ export default function HeroSlider() {
   };
 
   return (
-    <div className="site-container pt-4 sm:pt-5 lg:pt-6 xl:pt-8 2xl:pt-10 pb-0 sm:pb-4 lg:pb-6">
       <section
         aria-roledescription="carousel"
         aria-label="Featured emergency appeals and humanitarian initiatives"
@@ -134,7 +133,7 @@ export default function HeroSlider() {
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
         onTouchCancel={handleTouchEnd}
-        className="hero-slider relative w-full h-[clamp(420px,52vh,720px)] lg:h-[clamp(520px,62vh,880px)] xl:h-[clamp(580px,68vh,1000px)] 2xl:h-[clamp(580px,60vh,850px)] overflow-hidden touch-pan-y select-none bg-black text-white rounded-2xl sm:rounded-3xl shadow-2xl focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-[-4px] group"
+        className="hero-slider relative w-full h-[clamp(650px,78vh,820px)] lg:h-[clamp(700px,82vh,880px)] min-h-[640px] sm:min-h-[690px] overflow-hidden touch-pan-y select-none bg-black text-white focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-[-4px] group"
       >
         {/* Background Image Carousel */}
         {slides.map((slide, index) => {
@@ -160,22 +159,28 @@ export default function HeroSlider() {
                 className="hero-slider-image object-cover object-top transform scale-105 transition-transform duration-10000"
               />
 
-              {/* Perfectly Balanced Overlay for Bright Image + Crisp Text */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20" aria-hidden="true" />
+              {/* Directional Gradient Overlay for Readability */}
+              <div 
+                className="absolute inset-0" 
+                style={{
+                  background: "linear-gradient(90deg, rgba(0,0,0,0.64) 0%, rgba(0,0,0,0.45) 32%, rgba(0,0,0,0.20) 62%, rgba(0,0,0,0.06) 100%)"
+                }}
+                aria-hidden="true" 
+              />
             </div>
           );
         })}
 
-        {/* Content Container — absolute fill so flex centering works against full hero height */}
-        <div className="absolute inset-0 z-20 flex items-center justify-center px-6 sm:px-10 lg:px-12 xl:px-14 text-center">
-          <div key={currentIndex} className="hero-slider-content max-w-3xl xl:max-w-4xl space-y-5 animate-in fade-in zoom-in-95 duration-300">
-            {/* Title — font-serif kept, scales through xl/2xl */}
-            <h1 className="text-[35px] sm:text-[47px] md:text-[59px] xl:text-[64px] 2xl:text-[68px] font-extrabold font-serif leading-[1.12] text-white tracking-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]">
+        {/* Content Container — absolute fill, left aligned, site-container alignment */}
+        <div className="absolute inset-0 z-20 flex items-center site-container px-6 sm:px-10 lg:px-12 xl:px-14">
+          <div key={currentIndex} className="hero-slider-content max-w-[560px] lg:max-w-[600px] xl:max-w-[640px] space-y-4 sm:space-y-5 text-left pt-24 sm:pt-28 lg:pt-32 animate-in fade-in zoom-in-95 duration-300">
+            {/* Title */}
+            <h1 className="text-[36px] sm:text-[42px] md:text-[50px] lg:text-[58px] xl:text-[64px] font-extrabold font-serif leading-[1.1] text-white tracking-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]">
               {slides[currentIndex].title}
             </h1>
 
             {/* Subtitle */}
-            <p className="text-base sm:text-lg md:text-xl xl:text-2xl text-white/95 font-medium max-w-2xl xl:max-w-3xl mx-auto leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+            <p className="text-[17px] sm:text-[18px] md:text-[20px] lg:text-[22px] text-white/95 font-medium max-w-[560px] lg:max-w-[600px] leading-[1.5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
               {slides[currentIndex].subtitle}
             </p>
 
@@ -269,6 +274,5 @@ export default function HeroSlider() {
           Slide {currentIndex + 1} of {slides.length}: {slides[currentIndex].title}. {slides[currentIndex].subtitle}
         </p>
       </section>
-    </div>
   );
 }
