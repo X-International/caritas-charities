@@ -451,12 +451,6 @@ export default function Navbar() {
                           d="M19 9l-7 7-7-7"
                         />
                       </svg>
-                      {transparentTop && !active && (
-                        <span
-                          className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#b10017] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"
-                          aria-hidden="true"
-                        />
-                      )}
                       {active && (
                         <span
                           className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#b10017] rounded-full animate-in fade-in duration-200"
@@ -473,12 +467,6 @@ export default function Navbar() {
                     >
                       <span>{link.name}</span>
 
-                      {transparentTop && !active && (
-                        <span
-                          className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#b10017] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"
-                          aria-hidden="true"
-                        />
-                      )}
 
                       {active && (
                         <span
