@@ -29,13 +29,15 @@ export default async function NewsPage({
 }) {
   const params = await searchParams;
   const query = (params.search ?? params.q)?.trim() ?? "";
+  const sortedArticles = [...newsArticles].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
   const filteredArticles = query
-    ? newsArticles.filter((article) =>
+    ? sortedArticles.filter((article) =>
         [article.title, article.snippet, article.category, article.region]
           .filter(Boolean)
           .some((value) => value!.toLowerCase().includes(query.toLowerCase()))
       )
-    : newsArticles;
+    : sortedArticles;
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-gray-900 font-sans">

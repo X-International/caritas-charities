@@ -66,7 +66,7 @@ export const newsArticles: NewsArticle[] = [
   {
     slug: "charities-office-launches-new-website",
     title: "The Charities Office Launches Its New Website",
-    date: "02 Aug 2026",
+    date: "28 Aug 2026",
     category: "Announcement",
     snippet:
       "A new online home for the Charities Office, sharing our work, our network, and how you can help.",
@@ -87,6 +87,24 @@ export const newsArticles: NewsArticle[] = [
         { text: "Contact Us →", link: "/contact-us" },
       ],
     },
+  },
+  {
+    slug: "breakfast-meeting-world-day-of-poor",
+    title: "Charities Office Marks World Day of the Poor with First Breakfast Meeting",
+    date: "14 Nov 2025",
+    category: "Event",
+    snippet:
+      "The Charities Office, under Caritas Kampala, brought together charity homes, partners, beneficiaries and members of the wider community for its first Breakfast Meeting in commemoration of the World Day of the Poor.",
+    image: "/images/Event 02/Caritas_Kampala_12.jpg",
+    alt: "Participants at the Charities Office Breakfast Meeting commemorating World Day of the Poor.",
+    body: [
+      "On 14 November 2025, the Charities Office held its first Breakfast Meeting at Cardinal Nsubuga Leadership Training Centre in Nsambya to commemorate the World Day of the Poor.",
+      "Held under the theme “You Are My Hope” (Psalm 71:5), the gathering brought together representatives of charity homes and institutions, members of the business and healthcare communities, Caritas Kampala staff, religious congregations, SACCO and cooperative leaders, and beneficiaries.",
+      "Fr. Raymond Kalanzi of Teresa Ministries addressed participants on the importance of charity. Representatives from different charity homes also shared their work and experiences, followed by an open discussion on collaboration and ways of strengthening support for vulnerable people.",
+      "The gathering was also an opportunity for participants and beneficiaries to share a meal, build relationships and reflect on the responsibility we share towards people experiencing poverty and vulnerability.",
+      "As part of the day, food items contributed through the support of TotalEnergies staff and bedding from Caritas Kampala were handed over to Mapeera Bakateyamba Home.",
+      "The meeting strengthened connections between the Charities Office, CHACONET members and potential partners while encouraging practical solidarity, dignity and shared responsibility in responding to the needs of vulnerable communities.",
+    ],
   },
 ];
 

@@ -72,6 +72,10 @@ const ROUTE_META: Record<string, { title: string; description: string }> = {
     title: "The Charities Office Launches Its New Website | Caritas Kampala Charities Office",
     description: "A new online home for the Charities Office, sharing our work, our network, and how you can help.",
   },
+  "/resources/news/breakfast-meeting-world-day-of-poor": {
+    title: "Charities Office Marks World Day of the Poor with First Breakfast Meeting | Caritas Kampala Charities Office",
+    description: "The Charities Office, under Caritas Kampala, brought together charity homes, partners, beneficiaries and members of the wider community for its first Breakfast Meeting in commemoration of the World Day of the Poor.",
+  },
   "/resources/gallery": {
     title: "Gallery | Caritas Kampala Charities Office",
     description: "Photos from the Charities Office's programmes, events and community work across the Kampala Archdiocese.",
