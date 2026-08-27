@@ -187,17 +187,11 @@ export default function Navbar() {
 
       <header
         ref={headerRef}
-        className={`w-full z-50 transition-all duration-300 ease-out ${
-          isHomePage && !isScrolled
-            ? "relative bg-transparent"
-            : isScrolled
-            ? "sticky top-0 bg-white/95 shadow-md border-b border-gray-200/90 backdrop-blur-md"
-            : "sticky top-0 bg-white border-b border-gray-100 shadow-xs"
-        }`}
+        className="w-full sticky top-0 z-50 bg-transparent"
       >
         {/* ── Top Utility Bar ─────────────────────────────── */}
         <div
-          className="bg-[#141414] text-gray-200 text-[11px] sm:text-xs py-1.5 sm:py-2 border-b border-white/10 transition-all duration-200"
+          className="bg-[#141414] text-gray-200 text-[11px] sm:text-xs py-1.5 sm:py-2 border-b border-white/10"
           role="region"
           aria-label="Top utility bar"
         >
@@ -375,7 +369,7 @@ export default function Navbar() {
         </div>
 
         {/* ── Main Navbar Row ──────────────────────────────── */}
-        <div className={`w-full transition-all duration-300 ease-out ${transparentTop ? "absolute top-full left-0 right-0 bg-[rgba(10,10,10,0.30)] border-b border-white/10 shadow-sm" : "bg-white"}`}>
+        <div className={`w-full transition-colors duration-300 ease-out ${transparentTop ? "bg-[rgba(10,10,10,0.30)] border-b border-white/10" : "bg-white"}`}>
           <div className="site-container py-2 sm:py-2.5 lg:py-3 grid grid-cols-[auto_1fr_auto] items-center gap-3 lg:gap-6">
           {/* Logo */}
           <Link

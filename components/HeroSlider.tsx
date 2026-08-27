@@ -133,7 +133,7 @@ export default function HeroSlider() {
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
         onTouchCancel={handleTouchEnd}
-        className="hero-slider relative w-full h-[clamp(650px,78vh,820px)] lg:h-[clamp(700px,82vh,880px)] min-h-[640px] sm:min-h-[690px] overflow-hidden touch-pan-y select-none bg-black text-white focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-[-4px] group"
+        className="hero-slider relative w-full h-[clamp(650px,78vh,820px)] lg:h-[clamp(700px,82vh,880px)] min-h-[640px] sm:min-h-[690px] overflow-hidden touch-pan-y select-none bg-black text-white focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-[-4px] group -mt-[106px] sm:-mt-[114px] lg:-mt-[120px]"
       >
         {/* Background Image Carousel */}
         {slides.map((slide, index) => {
@@ -172,8 +172,8 @@ export default function HeroSlider() {
         })}
 
         {/* Content Container — absolute fill, left aligned, site-container alignment */}
-        <div className="absolute inset-0 z-20 flex items-center site-container px-6 sm:px-10 lg:px-12 xl:px-14">
-          <div key={currentIndex} className="hero-slider-content max-w-[560px] lg:max-w-[600px] xl:max-w-[640px] space-y-4 sm:space-y-5 text-left pt-24 sm:pt-28 lg:pt-32 animate-in fade-in zoom-in-95 duration-300">
+        <div className="absolute inset-0 z-20 flex items-center site-container px-6 sm:px-10 lg:px-12 xl:px-14 pt-[106px] sm:pt-[114px] lg:pt-[120px]">
+          <div key={currentIndex} className="hero-slider-content max-w-[560px] lg:max-w-[600px] xl:max-w-[640px] space-y-4 sm:space-y-5 text-left animate-in fade-in zoom-in-95 duration-300">
             {/* Title */}
             <h1 className="text-[36px] sm:text-[42px] md:text-[50px] lg:text-[58px] xl:text-[64px] font-extrabold font-serif leading-[1.1] text-white tracking-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]">
               {slides[currentIndex].title}
