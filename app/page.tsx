@@ -5,7 +5,6 @@ import CurrentCrises from "@/components/CurrentCrises";
 import HumanitarianAppeal from "@/components/HumanitarianAppeal";
 import CharityShopSection from "@/components/CharityShopSection";
 import WhereWeServe from "@/components/WhereWeServe";
-import DonateOnlineCard from "@/components/DonateOnlineCard";
 import Footer from "@/components/Footer";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
@@ -26,9 +25,6 @@ export default function HomePage() {
         <HumanitarianAppeal />
         <CharityShopSection />
         <WhereWeServe />
-        <section className="site-container py-4 sm:py-6">
-          <DonateOnlineCard />
-        </section>
       </main>
       <Footer />
     </div>

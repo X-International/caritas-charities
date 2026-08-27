@@ -6,6 +6,7 @@ import Button from "@/components/ui/Button";
 import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 import PageHeader from "@/components/PageHeader";
+import DonateOnlineCard from "@/components/DonateOnlineCard";
 
 export const metadata = buildPageMetadata({
   title: "Our Programmes | Caritas Kampala Charities Office",
@@ -112,6 +113,9 @@ export default function OurProgrammesPage() {
             </div>
           </div>
         </section>
+        <div className="site-container py-4 sm:py-6">
+          <DonateOnlineCard />
+        </div>
       </main>
 
       <Footer />

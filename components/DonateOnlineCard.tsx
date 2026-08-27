@@ -28,24 +28,24 @@ export default function DonateOnlineCard() {
             id={headingId}
             className="md:text-[28px] leading-tight"
           >
-            Make a Gift Today
+            Support Our Work
           </Heading>
           <p className="text-sm sm:text-base text-gray-900 leading-relaxed max-w-2xl font-sans">
-            Every gift, however given, reaches families who need it most. Contact our office to confirm the current official payment route before sending money.
+            Your gift helps the Charities Office provide practical support to vulnerable individuals and families across the Kampala Archdiocese.
           </p>
         </div>
 
         <div className="w-full md:w-auto md:pl-4 flex justify-center md:justify-end">
           <Button
-            href="/contact-us"
-            onClick={() => trackEvent(ANALYTICS_EVENTS.ctaClick, { placement: "gift_card", destination: "/contact-us" })}
-            aria-label="Contact Caritas Kampala to confirm donation details"
+            href="/donate"
+            onClick={() => trackEvent(ANALYTICS_EVENTS.ctaClick, { placement: "gift_card", destination: "/donate" })}
+            aria-label="Donate to support the work of the Charities Office"
             variant="primary"
             size="lg"
             rightIcon={<ArrowRight className="w-4 h-4" aria-hidden="true" />}
             className="w-full max-w-sm sm:w-auto min-w-45"
           >
-            Confirm Giving Details
+            DONATE
           </Button>
         </div>
       </Card>

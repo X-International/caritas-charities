@@ -7,6 +7,7 @@ import { buildPageMetadata } from "@/lib/metadata-utils";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import PageHeader from "@/components/PageHeader";
+import DonateOnlineCard from "@/components/DonateOnlineCard";
 
 export const metadata = buildPageMetadata({
   title: "Upcoming Events | Caritas Kampala Charities Office",
@@ -140,6 +141,9 @@ export default function EventsPage() {
             );
           })}
         </section>
+        <div className="site-container py-4 sm:py-6">
+          <DonateOnlineCard />
+        </div>
       </main>
 
       <Footer />

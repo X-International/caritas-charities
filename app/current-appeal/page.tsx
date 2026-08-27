@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import DonateOnlineCard from "@/components/DonateOnlineCard";
 import AppealCalloutBanner from "@/components/AppealCalloutBanner";
 import AppealPageHero from "@/components/AppealPageHero";
 import { Heading, Eyebrow } from "@/components/ui/Typography";
@@ -270,8 +269,6 @@ export default function CurrentAppealPage() {
           </div>
 
           <AppealCalloutBanner />
-
-          <DonateOnlineCard />
         </div>
       </main>
 

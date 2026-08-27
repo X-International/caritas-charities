@@ -4,7 +4,6 @@ import Breadcrumb from "@/components/Breadcrumb";
 import DonateHero from "@/components/DonateHero";
 import OtherWaysToSupport from "@/components/OtherWaysToSupport";
 import DonateCalloutBanner from "@/components/DonateCalloutBanner";
-import DonateOnlineCard from "@/components/DonateOnlineCard";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
 export const metadata = buildPageMetadata({
@@ -34,10 +33,6 @@ export default function DonatePage() {
 
         <div className="site-container">
           <DonateCalloutBanner />
-        </div>
-
-        <div className="site-container">
-          <DonateOnlineCard />
         </div>
       </main>
 

@@ -10,6 +10,7 @@ import { Card } from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import { Heading } from "@/components/ui/Typography";
 import { ArrowRight, Search as SearchIcon } from "lucide-react";
+import DonateOnlineCard from "@/components/DonateOnlineCard";
 
 export const metadata = buildPageMetadata({
   title: "News & Updates | Caritas Kampala Charities Office",
@@ -193,6 +194,9 @@ export default async function NewsPage({
             )
           )}
         </section>
+        <div className="site-container py-4 sm:py-6">
+          <DonateOnlineCard />
+        </div>
       </main>
 
       <Footer />

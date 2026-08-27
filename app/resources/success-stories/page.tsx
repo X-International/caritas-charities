@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 import PageHeader from "@/components/PageHeader";
+import DonateOnlineCard from "@/components/DonateOnlineCard";
 
 export const metadata = buildPageMetadata({
   title: "Success Stories | Caritas Kampala Charities Office",
@@ -34,6 +35,9 @@ export default function SuccessStoriesPage() {
             Coming soon: Read inspiring stories of how our collective efforts are making a difference in the lives of vulnerable individuals and communities.
           </p>
         </section>
+        <div className="site-container py-4 sm:py-6">
+          <DonateOnlineCard />
+        </div>
       </main>
 
       <Footer />
