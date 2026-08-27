@@ -379,7 +379,7 @@ export default function Navbar() {
           >
             <div className="relative h-14 sm:h-16 lg:h-17 w-auto">
               <Image
-                src={transparentTop ? "/images/logos/Caritas_Kampala_Footer.png" : "/images/logos/Caritas_Kampala_logo.jpg"}
+                src={transparentTop ? "/images/logos/Caritas_Kampala_Footer.png" : "/images/logos/Caritas_Kampala_logo.png"}
                 alt="Caritas Kampala Logo"
                 width={240}
                 height={96}
