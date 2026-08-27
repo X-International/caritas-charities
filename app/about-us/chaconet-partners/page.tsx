@@ -94,6 +94,23 @@ export default function ChaconetPartnersPage() {
                 By coordinating resources, promoting policy compliance and strengthening fundraising support, Chaconet helps participating homes uphold high standards of care and protection while promoting dignity, wellbeing and hope for every person they serve.
               </p>
             </div>
+
+            <div className="pt-8 space-y-6">
+              <Heading level={2} className="text-2xl sm:text-3xl font-bold font-serif text-gray-900">
+                Working Together for Better Care
+              </Heading>
+              <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
+                <p>
+                  Through CHACONET, the Charities Office works with Catholic charity homes and institutions across the Kampala Archdiocese to strengthen services for vulnerable people.
+                </p>
+                <p>
+                  The network provides a platform for members to share resources, strengthen collaboration and improve the quality of care provided to the people and communities they serve.
+                </p>
+                <p className="font-medium">
+                  Established in 2024, CHACONET strengthens cooperation between the Charities Office and participating charity homes and institutions across the Kampala Archdiocese.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
