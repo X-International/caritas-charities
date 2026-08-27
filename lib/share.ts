@@ -72,10 +72,6 @@ const ROUTE_META: Record<string, { title: string; description: string }> = {
     title: "The Charities Office Launches Its New Website | Caritas Kampala Charities Office",
     description: "A new online home for the Charities Office, sharing our work, our network, and how you can help.",
   },
-  "/resources/news/getting-to-know-chaconet-our-network-of-nine-charity-homes": {
-    title: "Getting to Know Chaconet, Our Network of Nine Charity Homes | Caritas Kampala Charities Office",
-    description: "A closer look at Chaconet, the network of charity homes working together across the Kampala Archdiocese.",
-  },
   "/resources/gallery": {
     title: "Gallery | Caritas Kampala Charities Office",
     description: "Photos from the Charities Office's programmes, events and community work across the Kampala Archdiocese.",

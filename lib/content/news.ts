@@ -88,35 +88,6 @@ export const newsArticles: NewsArticle[] = [
       ],
     },
   },
-  {
-    slug: "getting-to-know-chaconet-our-network-of-nine-charity-homes",
-    title: "Getting to Know Chaconet, Our Network of Nine Charity Homes",
-    date: "30 Jul 2026",
-    category: "Partnership",
-    snippet:
-      "A closer look at Chaconet, the network of charity homes working together across the Kampala Archdiocese.",
-    image: "/images/Event 02/Caritas_Kampala_92.jpg",
-    alt: "Caritas Kampala staff and partners gathered at a formal Chaconet network event",
-    body: [
-      "Across the Kampala Archdiocese, a network of charity homes works together to care for some of the community's most vulnerable people. It's called Chaconet, and it brings together charity homes, Caritas Kampala, and the Good Samaritan Fraternity, all working toward the same goal: transforming lives and creating hope for those who need it most.",
-      "Chaconet's mission is to transform lives by creating safe, nurturing homes and empowering vulnerable communities through compassionate support, education, and sustainable programmes. In practice, that means fostering collaboration between member organisations, sharing best practices and resources, building the capacity of partner organisations through training, coordinating volunteer and fundraising efforts, and advocating for vulnerable populations.",
-      "The network currently includes nine members, each serving a specific community:",
-      "Caritas Kampala Charity Office",
-      "Archdiocesan Good Samaritan Fraternity",
-      "Child Welfare and Adoption Society (CWAS), including its four centres: CWAS Head Office, CWAS-Nsambya Babies Home, CWAS-Kankobe Children's Home, and CWAS-Nateete Family Group",
-      "Teresa Ministries Uganda",
-      "Missionaries of the Poor, Uganda",
-      "Kyasira Home of Hope",
-      "Mapeera Bakateyamba Home, Nalukolongo",
-      "Mulago School of the Deaf",
-      "Many communities across the region face real and overwhelming challenges, high orphan rates, limited access to healthcare and education, homelessness, and social exclusion among them. These challenges can trap vulnerable individuals in cycles of poverty and despair.",
-      "Chaconet's response is built on nine charity homes, each tailored to address specific needs, providing shelter, education, healthcare, and empowerment, alongside holistic support such as livelihood assistance, food, clothing, bedding, psychosocial care, and skills training. Together, these efforts form a cohesive, community-driven approach to lasting change.",
-    ],
-    closingPrompt: {
-      body: "Learn more about Chaconet and the organisations that make up this network.",
-      buttons: [{ text: "Meet Our Partners →", link: "/partners" }],
-    },
-  },
 ];
 
 export function getNewsArticle(slug: string) {
