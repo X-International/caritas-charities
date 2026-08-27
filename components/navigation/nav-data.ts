@@ -20,7 +20,7 @@ export const navLinks: NavLink[] = [
     href: "/about-us",
     megaMenu: {
       links: [
-        { name: "Who We Are", href: "/about-us/our-story", desc: "Learn who we are and the mission that inspires our work." },
+        { name: "Who We Are", href: "/about-us", desc: "Learn who we are and the mission that inspires our work." },
         { name: "Our Team", href: "/about-us/our-team", desc: "Meet the dedicated people serving our communities with compassion." },
         { name: "Chaconet", href: "/about-us/chaconet-partners", desc: "Learn about the network of charity homes and our collaborative approach to serving vulnerable communities." },
       ],
@@ -28,7 +28,7 @@ export const navLinks: NavLink[] = [
         title: "About Caritas Kampala",
         description: "Serving the Kampala Archdiocese by bringing hope, compassion, and practical support to vulnerable individuals, families, and communities.",
         image: "/images/Main Slider/Caritas_Kampala_18.jpg",
-        cta: { label: "Discover Our Story", href: "/about-us/our-story" },
+        cta: { label: "Discover Our Story", href: "/about-us" },
       },
     },
   },
@@ -63,6 +63,7 @@ export const navLinks: NavLink[] = [
       links: [
         { name: "Volunteer", href: "/get-involved/volunteer", desc: "See how you can offer your time and skills to support our work." },
         { name: "Charity Shop", href: "/get-involved/charity-shop", desc: "Shop or donate goods to support our cause." },
+        { name: "Partnerships", href: "/get-involved/partnerships", desc: "Learn how your organization can partner with us to serve vulnerable communities." },
       ],
       card: {
         title: "Get Involved with Caritas Kampala",

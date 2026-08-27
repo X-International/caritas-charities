@@ -36,6 +36,10 @@ const ROUTE_META: Record<string, { title: string; description: string }> = {
     title: "Charity Shop | Caritas Kampala Charities Office",
     description: "Shop or donate goods to support the work of the Charities Office. Every purchase helps families across the Archdiocese.",
   },
+  "/get-involved/partnerships": {
+    title: "Partnerships | Caritas Kampala Charities Office",
+    description: "Partner with us to support vulnerable communities in the Kampala Archdiocese through expertise, resources, and collaboration.",
+  },
   "/donate": {
     title: "Donate | Caritas Kampala Charities Office",
     description: "Support families across Kampala, Wakiso and Mpigi. Give online, by bank transfer, or Mobile Money to the Charities Office of Caritas Kampala.",
@@ -43,10 +47,6 @@ const ROUTE_META: Record<string, { title: string; description: string }> = {
   "/about-us": {
     title: "About Us | Caritas Kampala Charities Office",
     description: "Learn about the mission, vision and values of the Charities Office, part of Caritas Kampala, serving the Kampala Archdiocese.",
-  },
-  "/about-us/our-story": {
-    title: "Our Story | Caritas Kampala Charities Office",
-    description: "Read the story, mission, and values behind the Charities Office of Caritas Kampala, serving the Archdiocese since its founding.",
   },
   "/about-us/our-team": {
     title: "Our Team | Caritas Kampala Charities Office",

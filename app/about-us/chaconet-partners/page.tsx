@@ -15,9 +15,9 @@ export const metadata = buildPageMetadata({
 
 const partners = [
   {
-    name: "Good Samaritan Kampala Archdiocese",
+    name: "Good Samaritans & Prisons Fraternity",
     description:
-      "Serving people in need with compassion and care, Good Samaritan Kampala Archdiocese supports vulnerable communities through charitable and social services.",
+      "Serving people in need with compassion and care, the Good Samaritans & Prisons Fraternity supports vulnerable communities through charitable and social services.",
     url: "https://www.africa2trust.com/B2BAfrica/uganda/non-government-organization-ngo/ngos-charities-and-non-profits-general/good-samaritan-kampala-archdiocese/Profile/AboutUs/1/1/24617/3",
     image: "/images/logos/good-samaritan-placeholder.png",
   },
@@ -34,21 +34,21 @@ const partners = [
     ],
   },
   {
-    name: "Mapeera Bakateyamba’s Home",
+    name: "Mapeera Bakateyamba Home",
     description:
       "A home providing care, support and a safe environment for people in need, with a commitment to dignity, compassion and community.",
     url: "https://www.facebook.com/p/Mapeera-Bakateyambas-Home-100080494298138/",
     image: "/images/logos/mapeera-placeholder.png",
   },
   {
-    name: "Ministries of the Poor",
+    name: "Missionaries of the Poor",
     description:
       "Serving people living in poverty and those most in need through compassionate care, service and solidarity.",
     url: "https://missionariesofthepoor.org/",
     image: "/images/logos/ministries-poor-placeholder.png",
   },
   {
-    name: "Teresa Ministries Uganda",
+    name: "Teresa Ministries",
     description:
       "Continuing a mission of compassionate service to people who are poor, vulnerable, sick and in need of care.",
     url: "https://www.teresaministriesug.org/",
@@ -60,6 +60,13 @@ const partners = [
       "A place of care, hope and support for vulnerable children and families.",
     url: "https://www.facebook.com/Kyasirahomeofhope/",
     image: "/images/logos/kyasira-home-placeholder.png",
+  },
+  {
+    name: "Mulago School for the Deaf",
+    description:
+      "Providing specialised education and support for children with hearing impairments to help them thrive and reach their potential.",
+    url: "#",
+    image: "/images/logos/mulago-deaf-placeholder.png",
   },
 ];
 

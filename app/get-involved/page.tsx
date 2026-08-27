@@ -1,8 +1,10 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Breadcrumb from "@/components/Breadcrumb";
+import PageHeader from "@/components/PageHeader";
 import Card from "@/components/ui/Card";
 import { Heading, Lead } from "@/components/ui/Typography";
+import Button from "@/components/ui/Button";
+import Link from "next/link";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
 export const metadata = buildPageMetadata({
@@ -19,22 +21,14 @@ export default function GetInvolvedPage() {
 
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
-        <section className="bg-[#b10017] text-white section-lg">
-          <div className="site-container space-y-4">
-            <Breadcrumb
-              items={[
-                { label: "HOME", href: "/" },
-                { label: "GET INVOLVED" },
-              ]}
-            />
-            <Heading level={1} variant="page" color="white">
-              Get Involved
-            </Heading>
-            <Lead variant="hero">
-              Join hands with the Caritas Kampala Charities Office as a volunteer, parish champion, or corporate partner.
-            </Lead>
-          </div>
-        </section>
+        <PageHeader 
+          title="Get Involved"
+          breadcrumbs={[
+            { label: "HOME", href: "/" },
+            { label: "GET INVOLVED" }
+          ]}
+          description="Join hands with the Caritas Kampala Charities Office as a volunteer, parish champion, or corporate partner."
+        />
 
         {/* Options */}
         <section className="site-container section-md space-y-8">
@@ -52,11 +46,32 @@ export default function GetInvolvedPage() {
               </p>
             </Card>
             <Card variant="info" className="space-y-3">
-              <Heading level={2} variant="card" color="red">Institutional Partnership</Heading>
+              <Heading level={2} variant="card" color="red">Partnerships</Heading>
               <p className="text-sm text-gray-900 leading-relaxed font-sans">
-                Partner your company, foundation, or international agency with Caritas Kampala programmes.
+                Explore formal partnerships for your company, foundation, or institution to support our programmes.
               </p>
+              <div className="pt-2">
+                <Link href="/get-involved/partnerships" className="text-sm font-semibold text-red-700 hover:underline">
+                  View Partnerships &rarr;
+                </Link>
+              </div>
             </Card>
+          </div>
+        </section>
+
+        {/* Partner With Us */}
+        <section className="site-container section-md">
+          <div className="bg-[#f4efe6] p-8 sm:p-12 rounded-2xl space-y-6">
+            <Heading level={2} variant="section" color="red">Partner With Us</Heading>
+            <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
+              <p>Lasting support often comes through working together. The Charities Office welcomes partnerships with businesses, institutions, professional groups, faith communities and other organisations that share a commitment to serving vulnerable people.</p>
+              <p>Partnerships can include financial or in-kind support, professional expertise, healthcare and education initiatives, skills development, event support and other practical forms of collaboration.</p>
+            </div>
+            <div className="pt-2">
+              <Button href="/contact-us" variant="primary" size="md">
+                Talk to Us About Partnership
+              </Button>
+            </div>
           </div>
         </section>
       </main>

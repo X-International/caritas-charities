@@ -128,15 +128,6 @@ const staticSiteItems: SearchIndexItem[] = [
     keywords: ["about us", "who we are", "caritas kampala", "catholic church", "Kampala Archdiocese", "mission", "values"]
   },
   {
-    id: "page-our-story",
-    title: "Our Story & Mission",
-    url: "/about-us/our-story",
-    category: "Page",
-    snippet: "Read the story, history, mission, and Catholic social teaching behind the Charities Office.",
-    content: "Our Story and Mission. Driven by Gospel principles, Catholic Social Teaching, Matthew 25:35 ('For I was hungry and you gave me food'). Alleviating poverty, serving vulnerable groups, standing in solidarity with communities across Kampala Archdiocese.",
-    keywords: ["our story", "history", "mission", "catholic social teaching", "gospel", "matthew 25", "solidarity"]
-  },
-  {
     id: "page-our-team",
     title: "Our Team & Leadership",
     url: "/about-us/our-team",
@@ -162,6 +153,15 @@ const staticSiteItems: SearchIndexItem[] = [
     snippet: "Discover how you can support our work through giving, volunteering, parish involvement, or partnership.",
     content: "Get Involved with Caritas Kampala Charities Office. Opportunities to contribute: donate funds, drop off relief items, volunteer your time, visit our charity shop, or partner with us through your parish or organization.",
     keywords: ["get involved", "participate", "ways to help", "volunteering", "giving", "parish network", "partnerships"]
+  },
+  {
+    id: "page-partnerships",
+    title: "Partnerships",
+    url: "/get-involved/partnerships",
+    category: "Page",
+    snippet: "Partner with us to support vulnerable communities in the Kampala Archdiocese through expertise, resources, and collaboration.",
+    content: "Partnerships with businesses, healthcare institutions, professional volunteers, organisations and institutions. Opportunities for financial/in-kind support, professional expertise, healthcare and education initiatives, skills development, event support and other practical forms of collaboration.",
+    keywords: ["partnerships", "partner with us", "collaboration", "business", "institution", "support", "vulnerable", "community"]
   },
   {
     id: "page-volunteer",

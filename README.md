@@ -98,7 +98,6 @@ Configuration keys are managed via `.env.local` for local development and hostin
 ```
 ├── /                                   # Homepage with hero, appeals, programmes, and updates
 ├── /about-us                           # About Caritas Kampala overview
-│   ├── /about-us/our-story             # Organizational history & mission background
 │   ├── /about-us/our-team              # Leadership & staff directory
 │   └── /about-us/chaconet-partners     # Partner organization network
 ├── /our-programmes                     # Core thematic development & aid programmes

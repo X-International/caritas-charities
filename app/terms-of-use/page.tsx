@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PageHeader from "@/components/PageHeader";
 import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
@@ -17,22 +18,13 @@ export default function TermsOfUsePage() {
 
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
-        <section className="bg-[#b10017] text-white section-lg">
-          <div className="site-container space-y-4">
-            <nav aria-label="Breadcrumb" className="text-xs uppercase tracking-wider font-semibold text-red-200">
-              <ol className="flex items-center space-x-2">
-                <li>
-                  <Link href="/" className="hover:underline text-white">HOME</Link>
-                </li>
-                <li>/</li>
-                <li aria-current="page" className="text-red-200">TERMS OF USE</li>
-              </ol>
-            </nav>
-            <Heading level={1} variant="page" color="white">
-              Terms of Use
-            </Heading>
-          </div>
-        </section>
+        <PageHeader 
+          title="Terms of Use"
+          breadcrumbs={[
+            { label: "HOME", href: "/" },
+            { label: "TERMS OF USE" }
+          ]}
+        />
 
         {/* Content */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 section-md space-y-6 text-gray-700 leading-relaxed text-sm sm:text-base">
