@@ -66,11 +66,11 @@ export default function OurProgrammesPage() {
         {/* Intro */}
         <section className="site-container py-16 sm:py-20 text-center">
             <Heading level={2} className="text-3xl sm:text-4xl font-bold font-serif text-gray-900">
-              Making a Difference in Our Community
+              Practical Support. Longer-Term Resilience.
             </Heading>
             <div aria-hidden className="w-16 h-px bg-[#b10017] mx-auto mt-6 mb-8 rounded" />
             <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Through a range of impactful programmes, Caritas Kampala Charities Office works alongside communities to respond to needs, promote dignity, and build a better future for all.
+              Our programmes respond to immediate needs while also helping individuals, families and communities build greater stability for the future. From emergency assistance and essential services to livelihoods, inclusion and community support, our work is shaped by the needs of the people we serve.
             </p>
         </section>
 

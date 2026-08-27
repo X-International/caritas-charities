@@ -168,9 +168,9 @@ const staticSiteItems: SearchIndexItem[] = [
     title: "Volunteer With Us",
     url: "/get-involved/volunteer",
     category: "Page",
-    snippet: "Offer your time and skills to support emergency distribution, parish drives, and community outreach.",
-    content: "Volunteer with Caritas Kampala Charities Office. Join parish networks, youth initiatives, emergency relief distribution teams, event organization, and community welfare programs.",
-    keywords: ["volunteer", "volunteering", "volunteer with us", "offer time", "skills", "parish volunteers", "youth initiatives"]
+    snippet: "Offer your time and professional skills to support emergency distribution, community outreach, and strengthen our service capacity.",
+    content: "Volunteer with Caritas Kampala Charities Office. Offer your time through parish networks, youth initiatives, emergency relief, and community outreach. Share Your Skills: Volunteering is not limited to programme activities. Professional skills can also strengthen our work. Depending on current needs, the Charities Office may welcome people who can contribute experience in areas such as communications, healthcare, administration, technology, training, fundraising and other professional services. If you have a skill you would like to offer, tell us about it when you get in touch.",
+    keywords: ["volunteer", "volunteering", "volunteer with us", "offer time", "skills", "professional skills", "parish volunteers", "youth initiatives", "communications", "healthcare"]
   },
   {
     id: "page-charity-shop",
