@@ -133,7 +133,7 @@ export default function HeroSlider() {
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
         onTouchCancel={handleTouchEnd}
-        className="hero-slider relative w-full h-[clamp(650px,78vh,820px)] lg:h-[clamp(700px,82vh,880px)] min-h-[640px] sm:min-h-[690px] overflow-hidden touch-pan-y select-none bg-black text-white focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-[-4px] group -mt-[106px] sm:-mt-[114px] lg:-mt-[120px]"
+        className="hero-slider relative w-full h-[clamp(620px,74svh,700px)] sm:h-[clamp(700px,76vh,780px)] lg:h-[clamp(740px,80vh,840px)] xl:h-[clamp(780px,82vh,840px)] min-h-[620px] sm:min-h-[700px] lg:min-h-[740px] overflow-hidden touch-pan-y select-none bg-black text-white focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-[-4px] group -mt-[106px] sm:-mt-[114px] lg:-mt-[120px]"
       >
         {/* Background Image Carousel */}
         {slides.map((slide, index) => {
@@ -171,20 +171,20 @@ export default function HeroSlider() {
           );
         })}
 
-        {/* Content Container — absolute fill, left aligned, site-container alignment */}
-        <div className="absolute inset-0 z-20 flex items-center site-container px-6 sm:px-10 lg:px-12 xl:px-14 pt-[106px] sm:pt-[114px] lg:pt-[120px]">
-          <div key={currentIndex} className="hero-slider-content max-w-[560px] lg:max-w-[600px] xl:max-w-[640px] space-y-4 sm:space-y-5 text-left animate-in fade-in zoom-in-95 duration-300">
+        {/* Content Container — absolute fill, centered on mobile, left-aligned on sm+, site-container alignment */}
+        <div className="absolute inset-0 z-20 flex items-center site-container px-4 sm:px-10 lg:px-12 xl:px-14 pt-[106px] sm:pt-[114px] lg:pt-[120px]">
+          <div key={currentIndex} className="hero-slider-content max-w-[340px] mx-auto sm:mx-0 sm:max-w-[560px] lg:max-w-[600px] xl:max-w-[640px] space-y-4 sm:space-y-5 max-sm:text-center max-sm:items-center sm:text-left sm:items-start animate-in fade-in zoom-in-95 duration-300">
             {/* Title */}
-            <h1 className="text-[36px] sm:text-[42px] md:text-[50px] lg:text-[58px] xl:text-[64px] font-extrabold font-serif leading-[1.1] text-white tracking-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]">
+            <h1 className="text-[34px] sm:text-[46px] md:text-[52px] lg:text-[58px] xl:text-[64px] font-extrabold font-serif leading-[1.1] text-white tracking-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]">
               {slides[currentIndex].title}
             </h1>
 
             {/* Subtitle */}
-            <p className="text-[17px] sm:text-[18px] md:text-[20px] lg:text-[22px] text-white/95 font-medium max-w-[560px] lg:max-w-[600px] leading-[1.5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+            <p className="text-[17px] sm:text-[18px] md:text-[20px] lg:text-[22px] text-white/95 font-medium max-w-[340px] sm:max-w-[560px] lg:max-w-[600px] mx-auto sm:mx-0 leading-[1.5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
               {slides[currentIndex].subtitle}
             </p>
 
-            <div className="pt-3">
+            <div className="pt-3 max-sm:flex max-sm:justify-center">
               <Button
                 href={slides[currentIndex].buttonLink}
                 onKeyDown={handleKeyDown}

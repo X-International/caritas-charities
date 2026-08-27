@@ -24,8 +24,8 @@ export default function Navbar() {
 
   const isHomePage = pathname === "/";
   const transparentTop = isHomePage && !isScrolled;
-  const linkTextColor = transparentTop ? "text-white hover:text-[#b10017]" : "text-gray-800 hover:text-[#b10017]";
-  const mobileToggleColor = transparentTop ? "text-white hover:text-[#b10017] hover:bg-white/10" : "text-gray-800 hover:text-[#b10017] hover:bg-gray-100";
+  const linkTextColor = transparentTop ? "text-white hover:text-white group" : "text-gray-800 hover:text-[#b10017]";
+  const mobileToggleColor = transparentTop ? "text-white hover:text-white hover:bg-white/10" : "text-gray-800 hover:text-[#b10017] hover:bg-gray-100";
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const headerRef = useRef<HTMLElement | null>(null);
   const searchInputRef = useRef<HTMLInputElement | null>(null);
@@ -434,9 +434,9 @@ export default function Navbar() {
                       <svg
                         className={`w-3 h-3 transition-transform duration-200 ${
                           openMegaMenu === link.name
-                            ? "rotate-180 text-[#b10017]"
+                            ? "rotate-180 text-white"
                             : transparentTop
-                            ? "text-white/70"
+                            ? "text-white/70 group-hover:text-white"
                             : "text-gray-400"
                         }`}
                         fill="none"
@@ -451,6 +451,12 @@ export default function Navbar() {
                           d="M19 9l-7 7-7-7"
                         />
                       </svg>
+                      {transparentTop && !active && (
+                        <span
+                          className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#b10017] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"
+                          aria-hidden="true"
+                        />
+                      )}
                       {active && (
                         <span
                           className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#b10017] rounded-full animate-in fade-in duration-200"
@@ -466,6 +472,13 @@ export default function Navbar() {
                       className={`relative inline-flex items-center gap-1.5 text-[11.5px] xl:text-[12.5px] 2xl:text-[13px] font-semibold tracking-wide transition-colors uppercase whitespace-nowrap py-2 px-1 rounded-xs focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-4 ${linkTextColor}`}
                     >
                       <span>{link.name}</span>
+
+                      {transparentTop && !active && (
+                        <span
+                          className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#b10017] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"
+                          aria-hidden="true"
+                        />
+                      )}
 
                       {active && (
                         <span
