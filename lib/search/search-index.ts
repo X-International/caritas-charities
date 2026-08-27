@@ -124,7 +124,7 @@ const staticSiteItems: SearchIndexItem[] = [
     url: "/about-us",
     category: "Page",
     snippet: "Learn about the mission, vision and values of the Charities Office, part of Caritas Kampala.",
-    content: "About Caritas Kampala Charities Office. Socio-pastoral ministry of the Catholic Church in the Kampala Archdiocese. Putting gospel message of love into action without discrimination based on religion, ethnicity, or politics.",
+    content: "About Caritas Kampala Charities Office. Socio-pastoral ministry of the Catholic Church in the Kampala Archdiocese. Putting gospel message of love into action without discrimination based on religion, ethnicity, or politics. Dignity, Solidarity and Shared Responsibility: charity is more than responding to immediate need. Recognising the dignity of every person, listening to people's experiences and responding through practical action. Bring people together — communities, charity homes, volunteers, partners and supporters — around a shared responsibility to care for those experiencing hardship.",
     keywords: ["about us", "who we are", "caritas kampala", "catholic church", "Kampala Archdiocese", "mission", "values"]
   },
   {

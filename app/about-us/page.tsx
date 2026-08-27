@@ -65,6 +65,20 @@ export default function AboutUsPage() {
                 </div>
               </div>
 
+              <div className="space-y-6">
+                <Heading level={2} variant="subsection" color="red">
+                  Dignity, Solidarity and Shared Responsibility
+                </Heading>
+                <div className="space-y-4 text-gray-700 leading-relaxed text-base sm:text-lg">
+                  <p>
+                    We believe charity is more than responding to immediate need. It begins with recognising the dignity of every person, listening to people's experiences and responding through practical action.
+                  </p>
+                  <p>
+                    Our work seeks to bring people together — communities, charity homes, volunteers, partners and supporters — around a shared responsibility to care for those experiencing hardship and to address the conditions that keep people vulnerable.
+                  </p>
+                </div>
+              </div>
+
               <div className="space-y-8 pt-8 border-t border-gray-200">
                 <Heading level={2} variant="section" color="red">
                   The Journey and Mission of Caritas Kampala
