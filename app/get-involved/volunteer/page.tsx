@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Heading } from "@/components/ui/Typography";
+import { Heading, Lead } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 import PageHeader from "@/components/PageHeader";
 
@@ -29,7 +29,7 @@ export default function VolunteerPage() {
 
         {/* Content Section */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 section-lg text-center">
-          <Lead variant="hero" color="muted">
+          <Lead variant="hero">
             Content coming soon.
           </Lead>
         </section>
