@@ -78,11 +78,11 @@ export default function GalleryPage() {
         <PageHeader
           title="Photo Gallery"
           breadcrumbs={[
-            { label: "HOME", href: "/" },
-            { label: "RESOURCES", href: "/resources" },
-            { label: "GALLERY" },
+            { label: "Home", href: "/" },
+            { label: "Resources", href: "/resources/news" },
+            { label: "Gallery" },
           ]}
-          description="Capturing moments of hope, relief, and community solidarity across the Archdiocese."
+          description="Explore photos from our programmes, events, and community activities across the Archdiocese of Kampala."
         />
 
         <section className="site-container section-md">

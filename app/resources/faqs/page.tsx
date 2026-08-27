@@ -23,11 +23,11 @@ export default function FAQsPage() {
         <PageHeader
           title="Frequently Asked Questions"
           breadcrumbs={[
-            { label: "HOME", href: "/" },
-            { label: "RESOURCES", href: "/resources" },
-            { label: "FAQS" },
+            { label: "Home", href: "/" },
+            { label: "Resources", href: "/resources/news" },
+            { label: "FAQs" },
           ]}
-          description="Answers to common questions about the Charities Office and how to support our work."
+          description="Find clear answers to common questions about our work and how to get involved."
         />
 
         {/* Intro Section */}

@@ -58,10 +58,10 @@ export default function OurProgrammesPage() {
         <PageHeader 
           title="Our Programmes"
           breadcrumbs={[
-            { label: "HOME", href: "/" },
-            { label: "OUR PROGRAMMES" }
+            { label: "Home", href: "/" },
+            { label: "Our Programmes" }
           ]}
-          description="We serve with compassion through programmes that respond to need, promote dignity, and help communities build a better future."
+          description="Explore the practical programmes serving vulnerable people and communities across the Archdiocese of Kampala."
         />
 
         {/* Intro */}

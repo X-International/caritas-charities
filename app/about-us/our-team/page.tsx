@@ -67,11 +67,11 @@ export default function OurTeamPage() {
         <PageHeader
           title="Our Team"
           breadcrumbs={[
-            { label: "HOME", href: "/" },
-            { label: "ABOUT US", href: "/about-us" },
-            { label: "OUR TEAM" },
+            { label: "Home", href: "/" },
+            { label: "About Us", href: "/about-us" },
+            { label: "Our Team" },
           ]}
-          description="Meet the dedicated people working every day to serve with compassion and build hope."
+          description="Meet the people leading and carrying out the work of the Charities Office."
         />
 
         {/* Introduction Section */}

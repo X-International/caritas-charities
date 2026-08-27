@@ -21,11 +21,11 @@ export default function PartnershipsPage() {
         <PageHeader
           title="Partnerships"
           breadcrumbs={[
-            { label: "HOME", href: "/" },
-            { label: "GET INVOLVED", href: "/get-involved" },
-            { label: "PARTNERSHIPS" },
+            { label: "Home", href: "/" },
+            { label: "Get Involved", href: "/get-involved" },
+            { label: "Partnerships" },
           ]}
-          description="Partner with us to support vulnerable communities in the Kampala Archdiocese through expertise, resources, and collaboration."
+          description="Explore ways your organisation can work with the Charities Office to support vulnerable communities."
         />
 
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 section-md space-y-6">

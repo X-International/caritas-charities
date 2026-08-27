@@ -25,11 +25,11 @@ export default function CharityShopPage() {
         <PageHeader
           title="Charity Shop"
           breadcrumbs={[
-            { label: "HOME", href: "/" },
-            { label: "GET INVOLVED", href: "/get-involved" },
-            { label: "CHARITY SHOP" },
+            { label: "Home", href: "/" },
+            { label: "Get Involved", href: "/get-involved" },
+            { label: "Charity Shop" },
           ]}
-          description="Shop with purpose. Every purchase and donation helps support our work."
+          description="Visit our second-hand Charity Shop in Nsambya or donate suitable items to support our work."
         />
 
         {/* About Section */}

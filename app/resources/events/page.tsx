@@ -56,13 +56,13 @@ export default function EventsPage() {
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
         <PageHeader
-          title="Upcoming Events"
+          title="Events"
           breadcrumbs={[
-            { label: "HOME", href: "/" },
-            { label: "RESOURCES", href: "/resources" },
-            { label: "UPCOMING EVENTS" },
+            { label: "Home", href: "/" },
+            { label: "Resources", href: "/resources/news" },
+            { label: "Events" },
           ]}
-          description="Join us at our upcoming events as we work together to bring hope and dignity to those in need."
+          description="See upcoming meetings, gatherings, and opportunities to engage with our work."
         />
 
         {/* Introduction Section */}

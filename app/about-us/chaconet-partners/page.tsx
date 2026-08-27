@@ -79,13 +79,13 @@ export default function ChaconetPartnersPage() {
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
         <PageHeader
-          title="Chaconet Partners"
+          title="Chaconet Network"
           breadcrumbs={[
-            { label: "HOME", href: "/" },
-            { label: "ABOUT US", href: "/about-us" },
-            { label: "CHACONET PARTNERS" },
+            { label: "Home", href: "/" },
+            { label: "About Us", href: "/about-us" },
+            { label: "Chaconet Network" },
           ]}
-          description="Working together in faith and solidarity to serve the most vulnerable in our communities."
+          description="Discover the network of charity homes and institutions working together across the Archdiocese of Kampala."
         />
 
         {/* What is Chaconet? */}

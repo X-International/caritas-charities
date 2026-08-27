@@ -19,12 +19,13 @@ export default function VolunteerPage() {
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
         <PageHeader
-          title="Volunteer"
+          title="Volunteer With Us"
           breadcrumbs={[
-            { label: "HOME", href: "/" },
-            { label: "GET INVOLVED", href: "/get-involved" },
-            { label: "VOLUNTEER" },
+            { label: "Home", href: "/" },
+            { label: "Get Involved", href: "/get-involved" },
+            { label: "Volunteer" },
           ]}
+          description="Offer your time, skills, and experience to support the work of the Charities Office."
         />
 
         {/* Content Section */}

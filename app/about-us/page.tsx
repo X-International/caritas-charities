@@ -25,12 +25,12 @@ export default function AboutUsPage() {
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
         <PageHeader 
-          title="About Caritas Kampala"
+          title="Who We Are"
           breadcrumbs={[
-            { label: "HOME", href: "/" },
-            { label: "ABOUT US" }
+            { label: "Home", href: "/" },
+            { label: "About Us" }
           ]}
-          description="Serving the Kampala Archdiocese through compassion, dignity, and practical support for those who need it most."
+          description="Learn about the Charities Office, its mission, values, and place under Caritas Kampala."
         />
 
         {/* Content Section */}

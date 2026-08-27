@@ -23,11 +23,11 @@ export default function AnnualReportsPage() {
         <PageHeader
           title="Annual Reports"
           breadcrumbs={[
-            { label: "HOME", href: "/" },
-            { label: "RESOURCES", href: "/resources" },
-            { label: "ANNUAL REPORTS" },
+            { label: "Home", href: "/" },
+            { label: "Resources", href: "/resources/news" },
+            { label: "Annual Reports" },
           ]}
-          description="Transparent financial auditing and yearly impact reviews for our supporters and partners."
+          description="View reports on our work, progress, and organisational activities."
         />
 
         {/* Reports Archive */}

@@ -22,11 +22,11 @@ export default function SuccessStoriesPage() {
         <PageHeader
           title="Success Stories"
           breadcrumbs={[
-            { label: "HOME", href: "/" },
-            { label: "RESOURCES", href: "/resources" },
-            { label: "SUCCESS STORIES" },
+            { label: "Home", href: "/" },
+            { label: "Resources", href: "/resources/news" },
+            { label: "Success Stories" },
           ]}
-          description="Inspiring stories of transformation and hope from the lives we have impacted together."
+          description="Read real stories that show the impact of our work in people's lives and communities."
         />
 
         {/* Content placeholder */}

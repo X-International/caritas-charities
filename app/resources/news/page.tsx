@@ -2,8 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Breadcrumb from "@/components/Breadcrumb";
-import NewsHero from "@/components/NewsHero";
+import PageHeader from "@/components/PageHeader";
 import { newsArticles } from "@/lib/content/news";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 import { Card } from "@/components/ui/Card";
@@ -45,14 +44,15 @@ export default async function NewsPage({
       <Navbar />
 
       <main id="main-content" className="flex-1">
-        <div className="site-container pt-4 sm:pt-6 lg:pt-8 pb-2">
-          <Breadcrumb items={[
-            { label: "HOME", href: "/" },
-            { label: "NEWS & UPDATES" }
-          ]} />
-        </div>
-
-        <NewsHero />
+        <PageHeader
+          title="News & Updates"
+          breadcrumbs={[
+            { label: "Home", href: "/" },
+            { label: "Resources", href: "/resources/news" },
+            { label: "News & Updates" },
+          ]}
+          description="Read the latest news, announcements, and updates from the work of the Charities Office."
+        />
 
         {/* Search Results Banner (Make a Gift style) */}
         {query && (
