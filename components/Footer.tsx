@@ -144,7 +144,7 @@ const MobileAccordion = ({
 }) => {
   const contentId = `footer-accordion-panel-${index}`;
   return (
-    <div className="border-b border-white/20 text-left">
+    <div className="border-b border-white/20 text-left last:border-b-0">
       <button
         type="button"
         onClick={onToggle}
@@ -210,26 +210,28 @@ export default function Footer() {
       <div className="site-container">
         {/* Top Identity / Social Section */}
         {/* Desktop (1024px+) */}
-        <div className="hidden lg:grid grid-cols-[160px_minmax(480px,540px)_320px] items-center justify-between gap-8 xl:gap-12 pb-14 lg:pb-16 pt-16 lg:pt-[72px]">
-          <Link
-            href="/"
-            aria-label="Caritas Kampala Homepage"
-            className="shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[#262626] rounded-lg"
-          >
-            <Image
-              src="/images/logos/Caritas_Kampala_Footer.png"
-              alt="Caritas Kampala logo"
-              width={320}
-              height={112}
-              className="h-28 w-auto object-contain"
-            />
-          </Link>
+        <div className="hidden lg:flex items-center justify-between gap-8 pb-14 lg:pb-16 pt-16 lg:pt-[72px]">
+          <div className="flex items-center gap-12 xl:gap-16 min-w-0">
+            <Link
+              href="/"
+              aria-label="Caritas Kampala Homepage"
+              className="shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[#262626] rounded-lg"
+            >
+              <Image
+                src="/images/logos/Caritas_Kampala_Footer.png"
+                alt="Caritas Kampala logo"
+                width={320}
+                height={112}
+                className="h-28 w-auto object-contain"
+              />
+            </Link>
 
-          <p className="text-sm sm:text-base text-gray-300 font-normal leading-[1.6] max-w-[540px]">
-            The Charities Office operates under Caritas Kampala, providing compassionate and practical support to vulnerable people and communities across the Archdiocese of Kampala.
-          </p>
+            <p className="text-sm sm:text-base text-gray-300 font-normal leading-[1.6] max-w-[540px]">
+              The Charities Office operates under Caritas Kampala, providing compassionate and practical support to vulnerable people and communities across the Archdiocese of Kampala.
+            </p>
+          </div>
 
-          <div className="space-y-4 text-right">
+          <div className="space-y-4 text-right shrink-0">
             <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-gray-200 block">
               FOLLOW US ON SOCIAL MEDIA
             </span>
@@ -253,7 +255,7 @@ export default function Footer() {
 
         {/* Tablet (640px–1023px) */}
         <div className="hidden sm:flex lg:hidden flex-col pt-12 sm:pt-14 pb-12 sm:pb-14">
-          <div className="flex items-center justify-between gap-8 max-w-3xl mx-auto w-full">
+          <div className="flex items-center gap-6 sm:gap-8 max-w-3xl mx-auto w-full">
             <Link
               href="/"
               aria-label="Caritas Kampala Homepage"
