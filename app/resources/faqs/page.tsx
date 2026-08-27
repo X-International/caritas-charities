@@ -1,43 +1,25 @@
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Card from "@/components/ui/Card";
+import Button from "@/components/ui/Button";
 import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 import PageHeader from "@/components/PageHeader";
+import { FAQAccordion } from "@/components/FAQAccordion";
+import { faqs, getAnswerText } from "@/lib/faq-data";
 
 export const metadata = buildPageMetadata({
   title: "FAQs | Caritas Kampala Charities Office",
-  description: "Answers to common questions about donation drop-offs, volunteering, and supporting the Charities Office of Caritas Kampala.",
+  description:
+    "Find answers to common questions about the Charities Office, including donations, volunteering, services, partnerships, transparency, and how to get involved.",
   path: "/resources/faqs",
 });
 
-const faqs = [
-  {
-    q: "Where is the collection point for donation items?",
-    a: "All physical items (food, clothing, household goods) can be dropped off directly at the Caritas Kampala Office on Old Ggaba Road, Nsambya (next to the American Embassy), Kampala, Uganda.",
-  },
-  {
-    q: "Does Caritas assist people regardless of religion?",
-    a: "Yes. Caritas Kampala serves everyone in need without discrimination based on religion, ethnicity, gender, or political affiliation.",
-  },
-  {
-    q: "How can I make a financial contribution?",
-    a: "You can make a direct bank transfer or mobile money donation. Contact our offices or visit our Contact Us page for direct lines.",
-  },
-  {
-    q: "Can I volunteer with Caritas Kampala?",
-    a: "Yes! We welcome volunteers across our parish networks, youth initiatives, and emergency relief distribution teams.",
-  },
-];
-
 export default function FAQsPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-white text-gray-900 font-sans">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
 
       <main id="main-content" className="flex-1">
-        {/* Hero Banner */}
         <PageHeader
           title="Frequently Asked Questions"
           breadcrumbs={[
@@ -45,21 +27,51 @@ export default function FAQsPage() {
             { label: "RESOURCES", href: "/resources" },
             { label: "FAQS" },
           ]}
-          description="Clear answers to help you get involved, contribute, and support our mission."
+          description="Answers to common questions about the Charities Office and how to support our work."
         />
 
-        {/* FAQs Accordion/List */}
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 section-md space-y-6">
-          {faqs.map((faq, i) => (
-            <Card key={i} variant="content" className="space-y-2">
-              <Heading level={2} variant="card" color="red">{faq.q}</Heading>
-              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{faq.a}</p>
-            </Card>
-          ))}
+        {/* Intro Section */}
+        <section className="site-container py-16 sm:py-20 text-center">
+            <div className="max-w-2xl mx-auto space-y-4">
+                <Heading level={2} className="text-3xl font-bold font-serif text-gray-900">
+                    How Can We Help?
+                </Heading>
+                <div className="w-16 h-1 bg-[#b10017] mx-auto" />
+                <p className="text-lg text-gray-700">
+                    Below are some of the questions we are most often asked about the Charities Office under Caritas Kampala.
+                </p>
+            </div>
         </section>
+
+        {/* FAQs Accordion */}
+        <section className="site-container pb-20">
+            <div className="max-w-3xl mx-auto">
+                <FAQAccordion />
+            </div>
+        </section>
+
       </main>
 
       <Footer />
+      
+      {/* FAQ Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: getAnswerText(faq.a),
+              },
+            })),
+          }),
+        }}
+      />
     </div>
   );
 }
