@@ -14,15 +14,15 @@ export type NavLink = {
 };
 
 export const navLinks: NavLink[] = [
-  { name: "Home", href: "/" },
+  { name: "HOME", href: "/" },
   {
-    name: "About Us",
+    name: "ABOUT US",
     href: "/about-us",
     megaMenu: {
       links: [
-        { name: "Who We Are", href: "/about-us", desc: "Learn about the Charities Office, its mission, values, and place under Caritas Kampala." },
-        { name: "Our Team", href: "/about-us/our-team", desc: "Meet the people leading and carrying out the work of the Charities Office." },
-        { name: "Chaconet Network", href: "/about-us/chaconet-partners", desc: "Discover the network of charity homes and institutions working together across the Archdiocese of Kampala." },
+        { name: "WHO WE ARE", href: "/about-us", desc: "Learn about the Charities Office, its mission, values, and place under Caritas Kampala." },
+        { name: "OUR TEAM", href: "/about-us/our-team", desc: "Meet the people leading and carrying out the work of the Charities Office." },
+        { name: "CHACONET NETWORK", href: "/about-us/chaconet-partners", desc: "Discover the network of charity homes and institutions working together across the Kampala Archdiocese." },
       ],
       card: {
         title: "About Caritas Kampala",
@@ -33,17 +33,17 @@ export const navLinks: NavLink[] = [
     },
   },
   {
-    name: "Our Programmes",
+    name: "OUR PROGRAMMES",
     href: "/our-programmes",
   },
   {
-    name: "Get Involved",
+    name: "GET INVOLVED",
     href: "/get-involved",
     megaMenu: {
       links: [
-        { name: "Volunteer", href: "/get-involved/volunteer", desc: "Give your time and skills to support practical work across our communities." },
-        { name: "Partnerships", href: "/get-involved/partnerships", desc: "Explore ways your organisation can work with the Charities Office to support vulnerable communities." },
-        { name: "Charity Shop", href: "/get-involved/charity-shop", desc: "Visit our second-hand Charity Shop or donate suitable items to support our work." },
+        { name: "VOLUNTEER", href: "/get-involved/volunteer", desc: "Give your time and skills to support practical work across our communities." },
+        { name: "PARTNERSHIPS", href: "/get-involved/partnerships", desc: "Explore ways your organisation can work with the Charities Office to support vulnerable communities." },
+        { name: "CHARITY SHOP", href: "/get-involved/charity-shop", desc: "Visit our second-hand Charity Shop or donate suitable items to support our work." },
       ],
       card: {
         title: "Get Involved with Caritas Kampala",
@@ -54,15 +54,15 @@ export const navLinks: NavLink[] = [
     },
   },
   {
-    name: "Resources",
+    name: "RESOURCES",
     href: "/resources/news",
     megaMenu: {
       links: [
-        { name: "News & Updates", href: "/resources/news", desc: "Read the latest news, announcements, and updates from the Charities Office." },
-        { name: "Events", href: "/resources/events", desc: "See upcoming events, meetings, and opportunities to take part." },
-        { name: "Success Stories", href: "/resources/success-stories", desc: "Read real stories that show the impact of our work in people's lives and communities." },
-        { name: "Gallery", href: "/resources/gallery", desc: "Explore photos from our programmes, events, and community activities." },
-        { name: "Annual Reports", href: "/resources/annual-reports", desc: "View reports on our work, progress, and organisational activities." },
+        { name: "NEWS & UPDATES", href: "/resources/news", desc: "Read the latest news, announcements, and updates from the Charities Office." },
+        { name: "EVENTS", href: "/resources/events", desc: "See upcoming events, meetings, and opportunities to take part." },
+        { name: "SUCCESS STORIES", href: "/resources/success-stories", desc: "Read real stories that show the impact of our work in people's lives and communities." },
+        { name: "GALLERY", href: "/resources/gallery", desc: "Explore photos from our programmes, events, and community activities." },
+        { name: "ANNUAL REPORTS", href: "/resources/annual-reports", desc: "View reports on our work, progress, and organisational activities." },
         { name: "FAQs", href: "/resources/faqs", desc: "Find clear answers to common questions about our work and how to get involved." },
       ],
       card: {
@@ -73,5 +73,5 @@ export const navLinks: NavLink[] = [
       },
     },
   },
-  { name: "Contact Us", href: "/contact-us" },
+  { name: "CONTACT US", href: "/contact-us" },
 ];
