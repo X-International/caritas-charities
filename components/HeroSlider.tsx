@@ -22,7 +22,7 @@ const slides: Slide[] = [
       "Supporting vulnerable children, families, and communities across the Kampala Archdiocese through faith, dignity, and love.",
     buttonText: "Donate Today",
     buttonLink: "/donate",
-    image: "/images/Main Slider/Caritas_Kampala_87.jpg",
+    image: "/images/Miscellany/Caritas_Kampala_39.jpg",
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ const slides: Slide[] = [
       "Providing emergency relief, community support, and lasting hope for people facing hardship every day.",
     buttonText: "Our Programmes",
     buttonLink: "/our-programmes",
-    image: "/images/Main Slider/Caritas_Kampala_07.jpg",
+    image: "/images/Miscellany/Caritas_Kampala_43.jpg",
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ const slides: Slide[] = [
       "Together we can bring care, opportunity, and hope to those who need it most.",
     buttonText: "Learn More",
     buttonLink: "/about-us",
-    image: "/images/Main Slider/Caritas_Kampala_70.jpg",
+    image: "/images/Event 06/Caritas_Kampala_47.jpg",
   },
 ];
 

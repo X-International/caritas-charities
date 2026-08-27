@@ -2,60 +2,47 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Card from "@/components/ui/Card";
+import Button from "@/components/ui/Button";
 import { Heading, Lead } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
 export const metadata = buildPageMetadata({
   title: "Our Programmes | Caritas Kampala Charities Office",
   description:
-    "Explore the programmes run by Caritas Kampala's Charities Office, supporting families, the elderly, refugees and people with disabilities across Kampala, Wakiso and Mpigi.",
+    "Explore the programmes of the Caritas Kampala Charities Office, supporting families, children, elderly people, refugees, people with disabilities, and communities facing poverty across the Archdiocese of Kampala.",
   path: "/our-programmes",
 });
 
-import { Heart, Users, AlertTriangle, TrendingUp, Globe, Accessibility, LucideIcon } from "lucide-react";
-
-const programmes: { id: string; title: string; desc: string; serves: string; icon: LucideIcon }[] = [
+const programmes = [
   {
-    id: "emergency-disaster-response",
+    number: "01",
     title: "Emergency & Disaster Response",
-    desc: "Provides immediate assistance to families and communities affected by disasters, fires, and other emergencies.",
-    serves: "FAMILIES & COMMUNITIES AFFECTED BY EMERGENCIES",
-    icon: AlertTriangle,
+    desc: "Provides immediate assistance to families and communities affected by disasters, fires, and other emergencies, including emergency supplies, medical assistance, rescue and evacuation support, and other essential services. The programme also promotes Anticipatory Action through early warning systems, risk assessment, and community preparedness to help communities reduce vulnerability and build resilience before crises occur.",
   },
   {
-    id: "support-for-the-elderly",
+    number: "02",
     title: "Support for the Elderly",
-    desc: "Provides ongoing practical support to elderly people across the Archdiocese.",
-    serves: "ELDERLY PEOPLE ACROSS THE ARCHDIOCESE",
-    icon: Heart,
+    desc: "Provides continuous and meaningful support to elderly members of the community through visits, companionship, essential supplies, health and wellness activities, medical check-ups, health education, and social activities that promote dignity, inclusion, and quality of life.",
   },
   {
-    id: "family-child-support",
+    number: "03",
     title: "Family & Child Support",
-    desc: "Supports families and children facing hardship, helping stabilise households in need.",
-    serves: "FAMILIES & CHILDREN FACING HARDSHIP",
-    icon: Users,
+    desc: "Supports families and children facing hardship through assistance with food, education, shelter, medical care, and psychosocial support while promoting long-term resilience and self-sufficiency. The Charities Office also supports child safeguarding through protection awareness, safe reporting mechanisms, staff and volunteer screening, and psychosocial support for vulnerable children.",
   },
   {
-    id: "refugee-asylum-seeker-support",
+    number: "04",
     title: "Refugee & Asylum Seeker Support",
-    desc: "Provides practical assistance to urban refugees and asylum seekers.",
-    serves: "URBAN REFUGEES & ASYLUM SEEKERS",
-    icon: Globe,
+    desc: "Provides practical assistance to urban refugees and asylum seekers, including support with safe housing, food, medical care, vocational training, skills development, legal assistance, and protection services while promoting dignity, safety, and long-term resilience.",
   },
   {
-    id: "disability-special-needs-support",
+    number: "05",
     title: "Disability & Special Needs Support",
-    desc: "Supports people living with disabilities and special medical needs.",
-    serves: "PEOPLE WITH DISABILITIES & SPECIAL NEEDS",
-    icon: Accessibility,
+    desc: "In collaboration with Chaconet partners, provides personalized care, therapeutic services, accessible facilities, skills development, advocacy, emotional support, community integration, and awareness activities that promote independence, dignity, inclusion, and a better quality of life.",
   },
   {
-    id: "poverty-alleviation-livelihoods",
+    number: "06",
     title: "Poverty Alleviation & Livelihoods",
-    desc: "Works with individuals and families to help build sustainable livelihoods.",
-    serves: "INDIVIDUALS & FAMILIES FACING POVERTY",
-    icon: TrendingUp,
+    desc: "Works with individuals and families to develop sustainable livelihood opportunities through skills training, microfinance initiatives, income-generating activities, and community empowerment programmes that promote economic independence and help break the cycle of poverty.",
   },
 ];
 
@@ -66,66 +53,76 @@ export default function OurProgrammesPage() {
 
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
-        <section className="bg-[#b10017] text-white section-lg">
-          <div className="site-container">
+        <section className="bg-[#b10017] text-white py-16 sm:py-20 lg:py-24">
+          <div className="site-container space-y-4">
             <nav
               aria-label="Breadcrumb"
               className="text-[10px] xs:text-xs uppercase tracking-wide font-semibold text-red-200"
             >
-              <ol className="flex flex-wrap items-center gap-x-1 gap-y-1">
+              <ol className="flex items-center gap-2">
                 <li>
-                  <Link
-                    href="/"
-                    className="hover:underline text-white focus-visible:underline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
-                  >
-                    HOME
-                  </Link>
+                  <Link href="/" className="hover:underline">HOME</Link>
                 </li>
-                <li className="px-1 text-red-200" aria-hidden>
-                  /
-                </li>
-                <li aria-current="page" className="text-red-200">
-                  OUR PROGRAMMES
-                </li>
+                <li>→</li>
+                <li aria-current="page">OUR PROGRAMMES</li>
               </ol>
             </nav>
-
-            <div className="mt-4 md:mt-6 max-w-3xl">
-              <Heading level={1} variant="page" color="white">
-                Our Programmes
-              </Heading>
-
-              <div aria-hidden className="w-12 sm:w-16 h-px bg-white/20 mt-3 sm:mt-4 mb-3 sm:mb-4 rounded" />
-
-              <Lead variant="hero">
-                Transforming lives through structured humanitarian, pastoral, and community development initiatives.
-              </Lead>
-            </div>
+            <Heading level={1} className="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-white">
+              Our Programmes
+            </Heading>
+            <Lead className="text-lg sm:text-xl text-white/90 max-w-2xl">
+              We serve with compassion through programmes that respond to need, promote dignity, and help communities build a better future.
+            </Lead>
           </div>
         </section>
 
-        {/* Grid */}
-        <section className="site-container section-md space-y-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {programmes.map((prog) => (
-              <Card id={prog.id} key={prog.id} variant="content" className="scroll-mt-32 border-t-4 border-t-[#b10017] p-8 flex flex-col">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-14 h-14 rounded-full bg-[#f4efe6] flex items-center justify-center">
-                    <prog.icon className="w-7 h-7 text-[#b10017]" />
-                  </div>
-                  <span className="text-[10px] font-normal text-gray-400 bg-gray-100 px-2 py-0.5 rounded-md">
-                    Details coming soon
-                  </span>
-                </div>
-                <div className="space-y-3 flex-1">
-                  <Heading level={2} variant="card" color="red">{prog.title}</Heading>
-                  <p className="text-sm text-gray-700 leading-relaxed">{prog.desc}</p>
-                </div>
-                <div className="pt-4 mt-6 border-t border-gray-100">
-                  <p className="text-[11px] font-semibold text-gray-400 uppercase tracking-widest">{prog.serves}</p>
-                </div>
-              </Card>
-            ))}
+        {/* Intro */}
+        <section className="site-container py-16 sm:py-20 text-center">
+            <Heading level={2} className="text-3xl sm:text-4xl font-bold font-serif text-gray-900">
+              Making a Difference in Our Community
+            </Heading>
+            <div aria-hidden className="w-16 h-px bg-[#b10017] mx-auto mt-6 mb-8 rounded" />
+            <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+              Through a range of impactful programmes, Caritas Kampala Charities Office works alongside communities to respond to needs, promote dignity, and build a better future for all.
+            </p>
+        </section>
+
+        {/* Programme List */}
+        <section className="site-container py-16 sm:py-20 space-y-10">
+          {programmes.map((prog) => (
+            <Card key={prog.number} variant="content" className="flex flex-col md:flex-row gap-6 p-6 sm:p-8">
+              {/* Image */}
+              <div className="w-full md:w-1/3 lg:w-1/4 h-64 md:h-auto bg-gray-100 rounded-lg flex items-center justify-center">
+                  <span className="text-gray-400 text-sm font-medium">Programme Image</span>
+              </div>
+              
+              {/* Content */}
+              <div className="flex-1 space-y-4">
+                <Heading level={3} className="text-lg font-bold text-[#b10017] font-serif">
+                  {prog.title}
+                </Heading>
+                <p className="text-gray-700 leading-relaxed">
+                  {prog.desc}
+                </p>
+              </div>
+            </Card>
+          ))}
+        </section>
+
+        {/* CTA */}
+        <section className="bg-[#b10017] text-white py-16 sm:py-20">
+          <div className="site-container text-center space-y-6 max-w-3xl mx-auto">
+            <Heading level={2} className="text-3xl sm:text-4xl font-bold font-serif text-white">
+              Together, We Can Make a Difference
+            </Heading>
+            <p className="text-lg text-white/90 leading-relaxed">
+              Your support helps us reach people facing hardship and build stronger, more resilient communities across the Archdiocese of Kampala.
+            </p>
+            <div className="pt-4">
+              <Button href="/donate" variant="secondary" size="lg">
+                SUPPORT OUR WORK
+              </Button>
+            </div>
           </div>
         </section>
       </main>
