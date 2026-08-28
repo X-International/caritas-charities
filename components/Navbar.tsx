@@ -151,6 +151,7 @@ export default function Navbar() {
 
   const isRouteActive = (href: string) => {
     const route = href.split("#")[0];
+    if (route === "" || route === "#") return false;
     if (route === "/") return pathname === "/";
     return pathname.startsWith(route);
   };
