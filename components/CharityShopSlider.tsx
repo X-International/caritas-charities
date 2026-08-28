@@ -93,7 +93,7 @@ export default function CharityShopSlider() {
             alt={slide.alt}
             fill
             sizes="(max-width: 1024px) 100vw, 45vw"
-            className="object-cover"
+            className="object-cover object-top"
           />
         </div>
       ))}
