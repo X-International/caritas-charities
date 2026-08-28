@@ -44,13 +44,13 @@ function readGalleryFiles(): GalleryImage[] {
 
   const FOLDER_TO_CATEGORY_MAP: Record<string, { id: string; label: string; shortLabel: string }> = {
     "Event 01": { id: "events", label: "Events", shortLabel: "Events" },
-    "Event 02": { id: "events", label: "Events", shortLabel: "Events" },
+    "Event 02": { id: "chaconet-partners", label: "Chaconet & Partners", shortLabel: "Chaconet & Partners" },
     "Event 03": { id: "programmes", label: "Programmes", shortLabel: "Programmes" },
-    "Event 04": { id: "chaconet-partners", label: "Chaconet & Partners", shortLabel: "Chaconet & Partners" },
+    "Event 04": { id: "events", label: "Events", shortLabel: "Events" },
     "Event 05": { id: "events", label: "Events", shortLabel: "Events" },
     "Event 06": { id: "workshops-training", label: "Workshops & Training", shortLabel: "Workshops & Training" },
     "Charity Shop": { id: "charity-shop", label: "Charity Shop", shortLabel: "Charity Shop" },
-    "Charities": { id: "chaconet-partners", label: "Chaconet & Partners", shortLabel: "Chaconet & Partners" },
+    "Charities": { id: "events", label: "Events", shortLabel: "Events" },
   };
 
   const folders = Object.keys(FOLDER_TO_CATEGORY_MAP);
