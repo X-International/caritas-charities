@@ -22,7 +22,7 @@ export default function PartnershipsPage() {
         <SplitPageHeader
           breadcrumbs={[
             { label: "Home", href: "/" },
-            { label: "Get Involved", href: "/get-involved" },
+            { label: "Get Involved", href: "#" },
             { label: "Partnerships" },
           ]}
           eyebrow="WORK WITH US"

@@ -90,7 +90,7 @@ export const newsArticles: NewsArticle[] = [
       body: "Learn more about the work of the Charities Office, explore our programmes, or find a practical way to get involved.",
       links: [
         { text: "Our Programmes →", link: "/our-programmes" },
-        { text: "Get Involved →", link: "/get-involved" },
+        { text: "Get Involved →", link: "#" },
         { text: "Contact Us →", link: "/contact-us" },
       ],
     },

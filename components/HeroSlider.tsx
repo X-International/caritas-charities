@@ -39,7 +39,7 @@ const slides: Slide[] = [
     subtitle:
       "Volunteer your time, offer your skills, partner with us, or support the work in other practical ways.",
     buttonText: "GET INVOLVED",
-    buttonLink: "/get-involved",
+    buttonLink: "#",
     image: "/images/Main Slider/Caritas_Kampala_70.jpg",
   },
 ];

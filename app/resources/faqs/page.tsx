@@ -25,7 +25,7 @@ export default function FAQsPage() {
           title="Frequently Asked Questions"
           breadcrumbs={[
             { label: "Home", href: "/" },
-            { label: "Resources", href: "/resources" },
+            { label: "Resources", href: "#" },
             { label: "FAQs" },
           ]}
           description="Find clear answers to common questions about our work and how to get involved."

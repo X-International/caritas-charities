@@ -38,7 +38,7 @@ export const navLinks: NavLink[] = [
   },
   {
     name: "GET INVOLVED",
-    href: "/get-involved",
+    href: "#",
     megaMenu: {
       links: [
         { name: "VOLUNTEER", href: "/get-involved/volunteer", desc: "Give your time and skills to support practical work across our communities." },
@@ -49,7 +49,7 @@ export const navLinks: NavLink[] = [
         title: "Ways to Get Involved",
         description: "Give your time, skills, resources, or partnership to support practical work with vulnerable people and communities.",
         image: "/images/menu/Caritas_Kampala_92.jpg",
-        cta: { label: "Explore Ways to Help", href: "/get-involved" },
+        cta: { label: "Explore Ways to Help", href: "#" },
       },
     },
   },
@@ -69,7 +69,7 @@ export const navLinks: NavLink[] = [
         title: "Explore Our Resources",
         description: "Find news, events, success stories, photos, reports, and practical information from the work of the Charities Office.",
         image: "/images/Miscellany/Caritas_Kampala_23.jpg",
-        cta: { label: "View All Resources", href: "/resources" },
+        cta: { label: "View All Resources", href: "#" },
       },
     },
   },

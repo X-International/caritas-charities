@@ -23,7 +23,7 @@ export default function EventsPage() {
           title="Events"
           breadcrumbs={[
             { label: "Home", href: "/" },
-            { label: "Resources", href: "/resources" },
+            { label: "Resources", href: "#" },
             { label: "Events" },
           ]}
           description="See upcoming meetings, gatherings, and activities connected with the work of the Charities Office."

@@ -4,7 +4,7 @@ const config = {
   generateRobotsTxt: true,
   autoLastmod: false,
   changefreq: "weekly",
-  exclude: ["/api/*", "/resources", "/_not-found", "/apple-icon.png", "/icon.png"],
+  exclude: ["/api/*", "/get-involved", "/resources", "/_not-found", "/apple-icon.png", "/icon.png"],
   robotsTxtOptions: {
     policies: [
       {

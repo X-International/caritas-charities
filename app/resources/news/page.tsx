@@ -48,7 +48,7 @@ export default async function NewsPage({
           title="News & Updates"
           breadcrumbs={[
             { label: "Home", href: "/" },
-            { label: "Resources", href: "/resources" },
+            { label: "Resources", href: "#" },
             { label: "News & Updates" },
           ]}
           description="Read the latest news, announcements, and updates from the work of the Charities Office."

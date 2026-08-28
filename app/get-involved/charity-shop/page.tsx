@@ -22,7 +22,7 @@ export default function CharityShopPage() {
         <SplitPageHeader
           breadcrumbs={[
             { label: "Home", href: "/" },
-            { label: "Get Involved", href: "/get-involved" },
+            { label: "Get Involved", href: "#" },
             { label: "Charity Shop" },
           ]}
           eyebrow="GIVE • SHOP • SUPPORT"

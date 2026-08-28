@@ -22,7 +22,7 @@ export default function VolunteerPage() {
         <SplitPageHeader
           breadcrumbs={[
             { label: "Home", href: "/" },
-            { label: "Get Involved", href: "/get-involved" },
+            { label: "Get Involved", href: "#" },
             { label: "Volunteer" },
           ]}
           eyebrow="GIVE YOUR TIME"

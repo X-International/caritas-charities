@@ -21,7 +21,7 @@ export default function SuccessStoriesPage() {
         <SplitPageHeader
           breadcrumbs={[
             { label: "Home", href: "/" },
-            { label: "Resources", href: "/resources" },
+            { label: "Resources", href: "#" },
             { label: "Success Stories" },
           ]}
           eyebrow="STORIES FROM OUR WORK"

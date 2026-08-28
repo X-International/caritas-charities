@@ -23,7 +23,7 @@ export default function AnnualReportsPage() {
           title="Annual Reports"
           breadcrumbs={[
             { label: "Home", href: "/" },
-            { label: "Resources", href: "/resources" },
+            { label: "Resources", href: "#" },
             { label: "Annual Reports" },
           ]}
           description="View reports on our work, progress, and organisational activities."

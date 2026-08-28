@@ -55,7 +55,14 @@ export default function SplitPageHeader({
                 <li key={item.label} className="flex items-center">
                   {index > 0 && <span className="text-gray-400 mr-2">/</span>}
                   {item.href ? (
-                    <Link href={item.href} className="text-[#b10017] hover:underline">
+                    <Link
+                      href={item.href === "#" ? "#" : item.href}
+                      aria-disabled={item.href === "#" ? "true" : undefined}
+                      tabIndex={item.href === "#" ? -1 : undefined}
+                      className={`text-[#b10017] ${
+                        item.href === "#" ? "cursor-default pointer-events-none select-none" : "hover:underline"
+                      }`}
+                    >
                       {item.label}
                     </Link>
                   ) : (

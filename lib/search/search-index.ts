@@ -146,15 +146,6 @@ const staticSiteItems: SearchIndexItem[] = [
     keywords: ["chaconet", "charity homes", "orphanages", "elderly homes", "disability centers", "network", "partners", "care institutions"]
   },
   {
-    id: "page-get-involved",
-    title: "Get Involved",
-    url: "/get-involved",
-    category: "Page",
-    snippet: "Discover how you can support our work through giving, volunteering, parish involvement, or partnership.",
-    content: "Get Involved with Caritas Kampala Charities Office. Opportunities to contribute: donate funds, drop off relief items, volunteer your time, visit our charity shop, or partner with us through your parish or organization.",
-    keywords: ["get involved", "participate", "ways to help", "volunteering", "giving", "parish network", "partnerships"]
-  },
-  {
     id: "page-partnerships",
     title: "Partnerships",
     url: "/get-involved/partnerships",
@@ -180,15 +171,6 @@ const staticSiteItems: SearchIndexItem[] = [
     snippet: "Donate gently-used clothing, household items, or goods to support our charity shop initiatives.",
     content: "Caritas Kampala Charity Shop. Donate clothing, shoes, household goods, books, and items to support vulnerable families. Every donation helps generate support for those in need.",
     keywords: ["charity shop", "shop", "clothes donation", "household items", "used items", "donate goods", "thrift"]
-  },
-  {
-    id: "page-resources",
-    title: "Resources & Publications",
-    url: "/resources",
-    category: "Resource",
-    snippet: "Access news, annual reports, photo galleries, and answers to frequently asked questions.",
-    content: "Resources and Publications hub for Caritas Kampala Charities Office. Access latest news updates, annual impact reports, financial audits, photo galleries, and FAQs.",
-    keywords: ["resources", "publications", "reports", "news", "faqs", "gallery", "documents"]
   },
   {
     id: "page-gallery",
