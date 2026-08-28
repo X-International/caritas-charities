@@ -134,7 +134,7 @@ export default function TermsOfUsePage() {
           </p>
 
           <p className="text-sm text-gray-500 pt-4 border-t border-gray-100">
-            Last updated: August 2026
+            Last updated: August 28th, 2026
           </p>
         </section>
       </main>
