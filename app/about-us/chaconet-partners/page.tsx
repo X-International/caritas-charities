@@ -1,72 +1,86 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 import PageHeader from "@/components/PageHeader";
-import DonateOnlineCard from "@/components/DonateOnlineCard";
+import Image from "next/image";
+import { ExternalLink } from "lucide-react";
 
 export const metadata = buildPageMetadata({
-  title: "Chaconet Partners | Caritas Kampala Charities Office",
+  title: "Chaconet Network | Caritas Kampala Charities Office",
   description:
-    "Meet the Chaconet partners working together to support children, families, older people and vulnerable communities across the Kampala Archdiocese.",
+    "A network of Catholic charity homes and institutions working together across the Archdiocese of Kampala.",
   path: "/about-us/chaconet-partners",
 });
 
-const partners = [
+type Partner = {
+  name: string;
+  description: string;
+  url?: string;
+  urlLabel?: string;
+  image: string;
+  includes?: { name: string; desc?: string; url?: string }[];
+};
+
+const partners: Partner[] = [
   {
-    name: "Good Samaritans & Prisons Fraternity",
+    name: "Good Samaritan Kampala Archdiocese",
     description:
-      "Serving people in need with compassion and care, the Good Samaritans & Prisons Fraternity supports vulnerable communities through charitable and social services.",
+      "A Catholic ministry of the Kampala Archdiocese supporting people in need through practical works of charity, including food assistance, care for sick and older people, support for people with disabilities, shelter, clothing, and outreach to prisoners.",
     url: "https://www.africa2trust.com/B2BAfrica/uganda/non-government-organization-ngo/ngos-charities-and-non-profits-general/good-samaritan-kampala-archdiocese/Profile/AboutUs/1/1/24617/3",
+    urlLabel: "Learn More ↗",
     image: "/images/logos/good-samaritan-placeholder.png",
   },
   {
     name: "Child Welfare and Adoption Society (CWAS)",
     description:
-      "Supporting the welfare and protection of children and families through care, protection, advocacy and community support.",
+      "A charitable organisation providing care and protection for children through a network of specialised homes, while working to help children grow toward safe, responsible and independent adulthood.",
     url: "https://cwasug.org/",
+    urlLabel: "Visit CWAS ↗",
     image: "/images/logos/cwas-placeholder.png",
     includes: [
-      { name: "Nsambya Babies Home", url: "https://www.cwasug.org/nbh/home-nsambya.php" },
-      { name: "Kankobe Children’s Home", url: "https://www.cwasug.org/kch/home-kankobe.php" },
-      { name: "Nateete Family Group", url: "https://cwasug.org/nfg/home-nateete.php" },
+      { name: "Nsambya Babies Home", desc: "Care for babies and young children aged 0–5 years.", url: "https://www.cwasug.org/nbh/home-nsambya.php" },
+      { name: "Kankobe Children’s Home", desc: "Care for children aged 6–14 years.", url: "https://www.cwasug.org/kch/home-kankobe.php" },
+      { name: "Nateete Family Group", desc: "Care and support for young people aged 15–18 years.", url: "https://cwasug.org/nfg/home-nateete.php" },
     ],
   },
   {
-    name: "Mapeera Bakateyamba Home",
+    name: "Mapeera Bakateyamba’s Home",
     description:
-      "A home providing care, support and a safe environment for people in need, with a commitment to dignity, compassion and community.",
+      "A residential charity home in Nalukolongo providing care, shelter and practical support for vulnerable older people and people with disabilities.",
     url: "https://www.facebook.com/p/Mapeera-Bakateyambas-Home-100080494298138/",
+    urlLabel: "Visit Page ↗",
     image: "/images/logos/mapeera-placeholder.png",
   },
   {
     name: "Missionaries of the Poor",
     description:
-      "Serving people living in poverty and those most in need through compassionate care, service and solidarity.",
+      "A Catholic religious community dedicated to serving people experiencing severe poverty and vulnerability through compassionate, faith-based care and practical service.",
     url: "https://missionariesofthepoor.org/",
+    urlLabel: "Visit Website ↗",
     image: "/images/logos/ministries-poor-placeholder.png",
   },
   {
-    name: "Teresa Ministries",
+    name: "Teresa Ministries Uganda",
     description:
-      "Continuing a mission of compassionate service to people who are poor, vulnerable, sick and in need of care.",
+      "A charitable ministry providing residential care and protection for vulnerable infants and children, alongside counselling, education support and community outreach for people and families experiencing hardship.",
     url: "https://www.teresaministriesug.org/",
+    urlLabel: "Visit Website ↗",
     image: "/images/logos/teresa-ministries-placeholder.png",
   },
   {
     name: "Kyasira Home of Hope",
     description:
-      "A place of care, hope and support for vulnerable children and families.",
+      "A children’s home within the Kampala Archdiocese providing residential care, protection and practical support for vulnerable children who need a safe and supportive home environment.",
     url: "https://www.facebook.com/Kyasirahomeofhope/",
+    urlLabel: "Visit Page ↗",
     image: "/images/logos/kyasira-home-placeholder.png",
   },
   {
     name: "Mulago School for the Deaf",
     description:
-      "Providing specialised education and support for children with hearing impairments to help them thrive and reach their potential.",
-    url: "#",
+      "Provides specialised education and support for deaf and hard-of-hearing children, helping learners participate in education and develop their abilities.",
     image: "/images/logos/mulago-deaf-placeholder.png",
   },
 ];
@@ -85,105 +99,154 @@ export default function ChaconetPartnersPage() {
             { label: "About Us", href: "/about-us" },
             { label: "Chaconet Network" },
           ]}
-          description="Discover the network of charity homes and institutions working together across the Archdiocese of Kampala."
+          description="A network of Catholic charity homes and institutions working together across the Archdiocese of Kampala."
         />
 
-        {/* What is Chaconet? */}
+        {/* Introduction */}
         <section className="site-container py-16 sm:py-20">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
-            <Heading level={2} className="text-3xl sm:text-4xl font-bold font-serif text-gray-900">
-              What is Chaconet?
-            </Heading>
-            <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
-              <p>
-                Chaconet (Catholic Charity Homes Network) is an initiative under Caritas Kampala that brings together registered Catholic charity homes, disability centres, elderly homes and rehabilitation facilities across the Kampala Archdiocese.
-              </p>
-              <p>
-                By coordinating resources, promoting policy compliance and strengthening fundraising support, Chaconet helps participating homes uphold high standards of care and protection while promoting dignity, wellbeing and hope for every person they serve.
-              </p>
-            </div>
-
-            <div className="pt-8 space-y-6">
-              <Heading level={2} className="text-2xl sm:text-3xl font-bold font-serif text-gray-900">
-                Working Together for Better Care
+          <div className="max-w-[780px] mx-auto text-center space-y-8 sm:space-y-10">
+            <div className="space-y-4">
+              <Heading level={2} className="text-3xl sm:text-4xl font-bold font-serif text-gray-900">
+                Working Together Through Chaconet
               </Heading>
-              <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
-                <p>
-                  Through CHACONET, the Charities Office works with Catholic charity homes and institutions across the Kampala Archdiocese to strengthen services for vulnerable people.
-                </p>
-                <p>
-                  The network provides a platform for members to share resources, strengthen collaboration and improve the quality of care provided to the people and communities they serve.
-                </p>
-                <p className="font-medium">
-                  Established in 2024, CHACONET strengthens cooperation between the Charities Office and participating charity homes and institutions across the Kampala Archdiocese.
-                </p>
-              </div>
+              <div
+                aria-hidden="true"
+                className="mx-auto h-0.5 w-16 bg-caritas-red/80 rounded-full"
+              />
+            </div>
+            <div className="space-y-5 text-gray-700 text-base sm:text-lg leading-[1.7]">
+              <p>
+                Chaconet — the Catholic Charity Homes Network — brings together charity homes and institutions connected with the Archdiocese of Kampala to strengthen coordination, share experience, and support the care of vulnerable people.
+              </p>
+              <p>
+                Through the network, participating homes can collaborate on common needs, learn from one another, strengthen standards of care and safeguarding, and build stronger relationships with the Charities Office and other partners.
+              </p>
+              <p>
+                The network includes organisations serving children, older people, people with disabilities, families in difficulty, and others who need residential, pastoral, social, or practical support.
+              </p>
             </div>
           </div>
         </section>
 
         {/* Partners Grid */}
-        <section className="site-container py-16 sm:py-20 bg-gray-50">
-          <div className="space-y-12">
+        <section className="py-16 sm:py-20 bg-gray-50/70">
+          <div className="site-container space-y-12 sm:space-y-14">
             <div className="text-center space-y-4">
               <Heading level={2} className="text-3xl sm:text-4xl font-bold font-serif text-gray-900">
                 Our Chaconet Partners
               </Heading>
-              <p className="text-lg text-gray-600 max-w-xl mx-auto">
-                Chaconet brings together organisations and homes serving children, families, older people and people living with disabilities across the Kampala Archdiocese.
+              <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Meet the charity homes and organisations that form part of the Chaconet network across the Archdiocese of Kampala.
               </p>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
               {partners.map((partner) => (
-                <Card key={partner.name} variant="content" className="flex flex-col space-y-4">
-                  <div className="flex-1 space-y-4">
-                    {/* Placeholder for partner logo */}
-                    <div className="w-full h-40 bg-gray-100 rounded-lg flex items-center justify-center mb-6">
-                      <span className="text-gray-400 text-sm font-medium">Logo Placeholder</span>
-                    </div>
-                    <Heading level={3} className="text-base font-bold text-gray-900 font-serif">
-                      {partner.name}
-                    </Heading>
-                    <p className="text-gray-700 leading-relaxed text-sm">
-                      {partner.description}
-                    </p>
-                    {partner.includes && (
-                      <div className="text-sm space-y-2">
-                        <span className="font-bold text-gray-900">Includes:</span>
-                        <ul className="list-disc pl-5 space-y-1 text-gray-700">
-                          {partner.includes.map((item) => (
-                            <li key={item.name}>
-                              <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-[#b10017] hover:underline">
-                                {item.name}
+                <article
+                  key={partner.name}
+                  className="group flex flex-col h-full bg-white border border-gray-200 rounded-2xl p-6 sm:p-7 transition-colors duration-150 hover:border-[#b10017]/60 focus-within:border-[#b10017]/60"
+                >
+                  {/* Logo placeholder / approved logo */}
+                  <div
+                    aria-hidden="true"
+                    className="w-full h-28 sm:h-32 bg-gray-100 rounded-xl flex items-center justify-center overflow-hidden transition-transform duration-200 group-hover:[&>*:first-child]:scale-[1.01]"
+                  >
+                    <Image
+                      src={partner.image}
+                      alt={`${partner.name} logo placeholder`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-contain p-4"
+                    />
+                  </div>
+
+                  <Heading
+                    level={3}
+                    className="mt-5 sm:mt-6 text-[22px] sm:text-[26px] lg:text-[27px] font-serif font-bold text-gray-900 leading-snug"
+                  >
+                    {partner.name}
+                  </Heading>
+
+                  <p className="mt-3 sm:mt-4 text-[15px] sm:text-base text-gray-700 leading-[1.62]">
+                    {partner.description}
+                  </p>
+
+                  {partner.includes && (
+                    <div className="mt-5 sm:mt-6 space-y-3">
+                      <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-[#b10017] font-sans">
+                        Includes
+                      </p>
+                      <ul className="space-y-3 text-[14px] sm:text-[15px]">
+                        {partner.includes.map((item) => (
+                          <li key={item.name} className="space-y-0.5 leading-relaxed">
+                            {item.url ? (
+                              <a
+                                href={item.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="font-semibold text-[#b10017] hover:text-[#8e0a20] hover:underline underline-offset-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 inline-flex items-center gap-1"
+                                aria-label={`${item.name} — opens external site in a new tab`}
+                              >
+                                <span>{item.name} ↗</span>
                               </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                  <div className="pt-4">
-                    <Button
-                      href={partner.url}
-                      variant="primary"
-                      size="sm"
-                      className="w-full justify-center"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      MORE INFO
-                    </Button>
-                  </div>
-                </Card>
+                            ) : (
+                              <span className="font-semibold text-gray-900">{item.name}</span>
+                            )}
+                            {item.desc && (
+                              <p className="text-gray-600">{item.desc}</p>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {partner.url && partner.urlLabel && (
+                    <div className="mt-auto pt-5 sm:pt-6">
+                      <a
+                        href={partner.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#b10017] hover:text-[#8e0a20] hover:underline underline-offset-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2"
+                        aria-label={`${partner.urlLabel.replace(" ↗", "")} for ${partner.name} — opens external site in a new tab`}
+                      >
+                        <span>{partner.urlLabel}</span>
+                        <ExternalLink
+                          className="w-3.5 h-3.5 relative -top-[1px]"
+                          aria-hidden="true"
+                        />
+                      </a>
+                    </div>
+                  )}
+                </article>
               ))}
             </div>
           </div>
         </section>
 
-        <div className="site-container py-4 sm:py-6">
-          <DonateOnlineCard />
-        </div>
+        {/* Support Our Work CTA */}
+        <section className="site-container py-10 sm:py-12">
+          <div className="bg-[#fbf8f3] rounded-subcard p-6 sm:p-8 md:p-10 lg:p-12 border border-[#efe7d6] flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-10">
+            <div className="space-y-3 lg:max-w-2xl">
+              <Heading level={2} className="text-2xl sm:text-3xl font-serif font-bold text-[#b10017]">
+                Support Our Work
+              </Heading>
+              <p className="text-[15px] sm:text-base text-gray-700 leading-relaxed">
+                Your gift helps the Charities Office provide practical support to vulnerable individuals, families, and communities across the Archdiocese of Kampala.
+              </p>
+            </div>
+            <div className="lg:flex-shrink-0">
+              <Button
+                href="/donate"
+                variant="primary"
+                size="lg"
+                className="min-w-[150px] w-full sm:w-auto justify-center"
+              >
+                DONATE
+              </Button>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />
