@@ -10,7 +10,7 @@ import DonateOnlineCard from "@/components/DonateOnlineCard";
 export const metadata = buildPageMetadata({
   title: "Events | Caritas Kampala Charities Office",
   description:
-    "See upcoming meetings, gatherings, and opportunities to engage with our work.",
+    "Follow recent meetings, gatherings, and activities connected with the work of the Charities Office.",
   path: "/resources/events",
 });
 
@@ -30,7 +30,7 @@ const events: EventItem[] = [
     title: "Breakfast Meeting",
     category: "Meeting",
     description:
-      "A morning meeting to share updates, strengthen collaboration, and discuss priorities for the work ahead.",
+      "A morning gathering to share updates, strengthen collaboration, and discuss priorities for the work ahead.",
     date: new Date("2025-11-13T08:00:00"),
     timeString: "8:00 AM – 10:00 AM",
     location: "Caritas Kampala Offices",
@@ -50,20 +50,41 @@ const events: EventItem[] = [
   },
 ];
 
-const formatDate = (date: Date) => ({
+const formatDateBadge = (date: Date) => ({
   dayOfWeek: date.toLocaleDateString("en-US", { weekday: "short" }).toUpperCase(),
   day: date.getDate(),
   month: date.toLocaleDateString("en-US", { month: "short" }).toUpperCase(),
   year: date.getFullYear(),
 });
 
+const formatFullDate = (date: Date) => {
+  const day = date.getDate();
+  const month = date.toLocaleDateString("en-US", { month: "long" });
+  const year = date.getFullYear();
+  return `${day} ${month} ${year}`;
+};
+
 export default function EventsPage() {
   const now = new Date();
-  const hasUpcomingEvents = events.some((e) => e.date >= now);
-  const sectionHeading = hasUpcomingEvents ? "Our Upcoming Events" : "Recent Events";
+  
+  // Sort events: future events (soonest first), past events (most recent past first)
+  const sortedEvents = [...events].sort((a, b) => {
+    const aFuture = a.date >= now;
+    const bFuture = b.date >= now;
+    if (aFuture && bFuture) {
+      return a.date.getTime() - b.date.getTime();
+    }
+    if (!aFuture && !bFuture) {
+      return b.date.getTime() - a.date.getTime();
+    }
+    return aFuture ? -1 : 1;
+  });
+
+  const hasUpcomingEvents = sortedEvents.some((e) => e.date >= now);
+  const sectionHeading = hasUpcomingEvents ? "Upcoming Events" : "Recent Events";
   const sectionDescription = hasUpcomingEvents
-    ? "Find upcoming meetings and gatherings connected with the work of the Charities Office."
-    : "Review recent meetings and gatherings connected with the work of the Charities Office.";
+    ? "See upcoming meetings, gatherings, and activities connected with the work of the Charities Office."
+    : "A look at recent meetings and gatherings that brought together staff, partners, and communities connected with our work.";
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-gray-900 font-sans">
@@ -78,30 +99,31 @@ export default function EventsPage() {
             { label: "Resources", href: "/resources" },
             { label: "Events" },
           ]}
-          description="See upcoming meetings, gatherings, and opportunities to engage with our work."
+          description="Follow recent meetings, gatherings, and activities connected with the work of the Charities Office."
         />
 
         {/* Introduction Section */}
         <section className="pt-10 sm:pt-12 pb-8 sm:pb-10 lg:pb-12 bg-white text-center">
-          <div className="site-container max-w-3xl space-y-4">
+          <div className="site-container max-w-[720px] space-y-4">
             <Heading level={2} variant="section" color="red">
-              {events.length === 0 ? "No Upcoming Events" : sectionHeading}
+              {sortedEvents.length === 0 ? "No Events to Display" : sectionHeading}
             </Heading>
             <div className="mx-auto w-16 h-1 bg-[#b10017]" aria-hidden="true" />
             <Text size="lg" color="muted" className="leading-relaxed">
-              {events.length === 0
-                ? "There are no upcoming events listed at the moment. Please check back for future updates."
+              {sortedEvents.length === 0
+                ? "There are no events listed at the moment. Please check back for future updates."
                 : sectionDescription}
             </Text>
           </div>
         </section>
 
         {/* Event List */}
-        {events.length > 0 && (
+        {sortedEvents.length > 0 && (
           <section className="site-container max-w-[1120px] pb-[72px] sm:pb-[80px] lg:pb-[88px]">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-7 lg:gap-8">
-              {events.map((event, i) => {
-                const date = formatDate(event.date);
+              {sortedEvents.map((event, i) => {
+                const badge = formatDateBadge(event.date);
+                const fullDateStr = formatFullDate(event.date);
                 return (
                   <div
                     key={i}
@@ -117,10 +139,10 @@ export default function EventsPage() {
                       />
                       {/* Date Badge */}
                       <div className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-[#b10017] text-white py-2 px-3 sm:py-2.5 sm:px-3.5 rounded-md text-center shadow-none w-[68px] sm:w-[76px]">
-                        <div className="text-[10px] sm:text-xs font-bold tracking-wider">{date.dayOfWeek}</div>
-                        <div className="text-xl sm:text-2xl font-extrabold leading-none my-0.5">{date.day}</div>
-                        <div className="text-[10px] sm:text-xs font-bold tracking-wider">{date.month}</div>
-                        <div className="text-[10px] sm:text-xs tracking-tight">{date.year}</div>
+                        <div className="text-[10px] sm:text-xs font-bold tracking-wider">{badge.dayOfWeek}</div>
+                        <div className="text-xl sm:text-2xl font-extrabold leading-none my-0.5">{badge.day}</div>
+                        <div className="text-[10px] sm:text-xs font-bold tracking-wider">{badge.month}</div>
+                        <div className="text-[10px] sm:text-xs tracking-tight">{badge.year}</div>
                       </div>
                     </div>
 
@@ -142,9 +164,7 @@ export default function EventsPage() {
                       <div className="space-y-2 pt-3 border-t border-gray-100">
                         <div className="flex items-center text-gray-600 text-xs sm:text-sm">
                           <Calendar className="h-4 w-4 mr-2 text-gray-400 shrink-0" aria-hidden="true" />
-                          <span>
-                            {event.date.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
-                          </span>
+                          <span>{fullDateStr}</span>
                         </div>
                         <div className="flex items-center text-gray-600 text-xs sm:text-sm">
                           <Clock className="h-4 w-4 mr-2 text-gray-400 shrink-0" aria-hidden="true" />
