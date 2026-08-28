@@ -7,7 +7,7 @@ export default function ContactHero() {
       {/* Left Column: Image */}
       <div className="contact-hero-image order-1 relative h-75 sm:h-100 md:h-120 lg:h-full rounded-t-2xl sm:rounded-t-4xl lg:rounded-none lg:rounded-r-4xl overflow-hidden lg:absolute lg:inset-y-0 lg:left-0 lg:w-[calc(50%-0.5rem)]">
         <Image
-          src="/images/Event 01/Caritas_Kampala_72.jpg"
+          src="/images/Miscellany/Caritas_Kampala_44.jpg"
           alt="Caritas Kampala community outreach"
           fill
           priority

@@ -30,7 +30,7 @@ export default function ContactUsPage() {
           eyebrow="WE'D LIKE TO HEAR FROM YOU"
           title="Contact Us"
           description="Whether you have a question, want to support our work, or would like to get involved, we're here to help."
-          image="/images/Event 01/Caritas_Kampala_72.jpg"
+          image="/images/Miscellany/Caritas_Kampala_44.jpg"
           imageAlt="Caritas Kampala community outreach"
         />
 
