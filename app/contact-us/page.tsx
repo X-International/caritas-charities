@@ -47,14 +47,14 @@ export default function ContactUsPage() {
                   </p>
                 </div>
 
-                <div className="bg-[#ebe3d7] p-6 sm:p-8 rounded-3xl shadow-sm shadow-gray-200/60 flex items-start gap-5 sm:gap-6">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#b10017] rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                    <svg className="w-7 h-7 sm:w-9 sm:h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <div className="bg-[#ebe3d7] p-5 sm:p-8 rounded-3xl shadow-sm shadow-gray-200/60 flex items-start gap-4 sm:gap-6">
+                  <div className="w-14 h-14 sm:w-20 sm:h-20 bg-[#b10017] rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                    <svg className="w-6 h-6 sm:w-9 sm:h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
-                  <div className="min-w-0">
+                  <div className="min-w-0 flex-1">
                     <p className="font-serif font-bold text-[#b10017] text-xl sm:text-2xl mb-2">
                       Caritas Kampala Main Office
                     </p>
@@ -74,48 +74,48 @@ export default function ContactUsPage() {
                   </div>
                 </div>
 
-                <div className="bg-[#ebe3d7] p-6 sm:p-8 rounded-3xl shadow-sm shadow-gray-200/60 flex items-start gap-5 sm:gap-6">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#b10017] rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                    <svg className="w-7 h-7 sm:w-9 sm:h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <div className="bg-[#ebe3d7] p-5 sm:p-8 rounded-3xl shadow-sm shadow-gray-200/60 flex items-start gap-4 sm:gap-6">
+                  <div className="w-14 h-14 sm:w-20 sm:h-20 bg-[#b10017] rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                    <svg className="w-6 h-6 sm:w-9 sm:h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.68l1.52 4.56a1 1 0 01-.54 1.21l-2.2.92a11.042 11.042 0 005.52 5.52l.92-2.2a1 1 0 011.21-.54l4.56 1.52a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C10.82 21 3 13.18 3 4V5z" />
                     </svg>
                   </div>
-                  <div className="min-w-0 w-full">
-                    <p className="font-serif font-bold text-[#b10017] text-xl sm:text-2xl mb-2">
+                  <div className="min-w-0 flex-1">
+                    <p className="font-serif font-bold text-[#b10017] text-xl sm:text-2xl mb-4">
                       Direct Contact Lines
                     </p>
-                    <div className="space-y-2">
+                    <div className="space-y-3 min-w-0">
                       <a
                         href="tel:+256762506906"
                         aria-label="Call the Appeal Line"
-                        className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-4 rounded-xl bg-white/40 hover:bg-white/70 px-3.5 py-2.5 transition-colors"
+                        className="block bg-[#f9f5f0] rounded-2xl p-4 sm:p-4.5 border border-[#dfd4c5]/80 shadow-sm hover:border-[#b10017] hover:bg-white transition-all group"
                       >
-                        <span className="text-sm font-semibold text-black">Appeal Line</span>
-                        <span className="font-mono text-sm font-bold text-black shrink-0">+256 762 506 906</span>
+                        <span className="block text-sm font-medium text-gray-600 mb-0.5">Appeal Line</span>
+                        <span className="font-sans sm:font-mono text-base sm:text-lg font-bold text-gray-900 group-hover:text-[#b10017] transition-colors">+256 762 506 906</span>
                       </a>
                       <a
                         href="tel:+256792176443"
                         aria-label="Call the Appeal Line (Alternate)"
-                        className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-4 rounded-xl bg-white/40 hover:bg-white/70 px-3.5 py-2.5 transition-colors"
+                        className="block bg-[#f9f5f0] rounded-2xl p-4 sm:p-4.5 border border-[#dfd4c5]/80 shadow-sm hover:border-[#b10017] hover:bg-white transition-all group"
                       >
-                        <span className="text-sm font-semibold text-black">Appeal Line (Alternate)</span>
-                        <span className="font-mono text-sm font-bold text-black shrink-0">+256 792 176 443</span>
+                        <span className="block text-sm font-medium text-gray-600 mb-0.5">Appeal Line (Alternate)</span>
+                        <span className="font-sans sm:font-mono text-base sm:text-lg font-bold text-gray-900 group-hover:text-[#b10017] transition-colors">+256 792 176 443</span>
                       </a>
                       <a
                         href="tel:+256392176443"
                         aria-label="Call the Main Office"
-                        className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-4 rounded-xl bg-white/40 hover:bg-white/70 px-3.5 py-2.5 transition-colors"
+                        className="block bg-[#f9f5f0] rounded-2xl p-4 sm:p-4.5 border border-[#dfd4c5]/80 shadow-sm hover:border-[#b10017] hover:bg-white transition-all group"
                       >
-                        <span className="text-sm font-semibold text-black">Main Office</span>
-                        <span className="font-mono text-sm font-bold text-black shrink-0">+256 392 176 443</span>
+                        <span className="block text-sm font-medium text-gray-600 mb-0.5">Main Office</span>
+                        <span className="font-sans sm:font-mono text-base sm:text-lg font-bold text-gray-900 group-hover:text-[#b10017] transition-colors">+256 392 176 443</span>
                       </a>
                       <a
                         href={`mailto:${siteConfig.office.email}`}
                         aria-label="Email the Charities Office"
-                        className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-4 rounded-xl bg-white/40 hover:bg-white/70 px-3.5 py-2.5 transition-colors"
+                        className="block bg-[#f9f5f0] rounded-2xl p-4 sm:p-4.5 border border-[#dfd4c5]/80 shadow-sm hover:border-[#b10017] hover:bg-white transition-all group min-w-0"
                       >
-                        <span className="text-sm font-semibold text-black">Email</span>
-                        <span className="font-mono text-sm font-bold text-black shrink-0">{siteConfig.office.email}</span>
+                        <span className="block text-sm font-medium text-gray-600 mb-0.5">Email</span>
+                        <span className="font-sans sm:font-mono text-sm sm:text-base font-bold text-gray-900 group-hover:text-[#b10017] transition-colors break-all overflow-wrap-anywhere">{siteConfig.office.email}</span>
                       </a>
                     </div>
                   </div>

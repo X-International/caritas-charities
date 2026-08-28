@@ -101,7 +101,7 @@ export default function ContactForm() {
           variant="primary"
           size="lg"
           isLoading={submission.status === "loading"}
-          className="w-full sm:w-auto"
+          className="w-full min-[380px]:w-auto"
         >
           SEND MESSAGE
         </Button>
