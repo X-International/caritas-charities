@@ -31,23 +31,38 @@ export default function FAQsPage() {
         />
 
         {/* Intro Section */}
-        <section className="site-container py-16 sm:py-20 text-center">
+        <section className="site-container pt-16 sm:pt-20 pb-12 sm:pb-14 lg:pb-16 text-center">
             <div className="max-w-2xl mx-auto space-y-4">
-                <Heading level={2} className="text-3xl font-bold font-serif text-gray-900">
+                <Heading level={2} className="text-3xl sm:text-4xl font-bold font-serif text-gray-900">
                     How Can We Help?
                 </Heading>
                 <div className="w-16 h-1 bg-[#b10017] mx-auto" />
-                <p className="text-lg text-gray-700">
-                    Below are some of the questions we are most often asked about the Charities Office under Caritas Kampala.
+                <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+                    Find answers to some of the questions we are most often asked about the Charities Office, our work, and the ways you can get involved.
                 </p>
             </div>
         </section>
 
         {/* FAQs Accordion */}
+        <section className="site-container pb-16 sm:pb-20">
+            <FAQAccordion />
+        </section>
+
+        {/* Optional Final Help CTA */}
         <section className="site-container pb-20">
-            <div className="max-w-3xl mx-auto">
-                <FAQAccordion />
+          <div className="max-w-[940px] mx-auto bg-gray-50 border border-gray-200 rounded-2xl p-8 sm:p-12 text-center space-y-4">
+            <Heading level={2} className="text-2xl sm:text-3xl font-serif font-bold text-gray-900">
+              Still Have a Question?
+            </Heading>
+            <p className="text-gray-700 max-w-xl mx-auto text-base sm:text-lg leading-relaxed">
+              If you cannot find the answer you need, contact the Charities Office and our team will be glad to help.
+            </p>
+            <div className="pt-2">
+              <Button href="/contact-us" variant="primary">
+                Contact Us
+              </Button>
             </div>
+          </div>
         </section>
 
       </main>

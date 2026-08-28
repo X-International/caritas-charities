@@ -4,21 +4,37 @@ import Link from "next/link";
 export const faqs = [
   {
     q: "What is Caritas Kampala?",
-    a: "Caritas Kampala is the social service and charitable arm of the Catholic Church in Kampala, Uganda. It provides humanitarian aid, social services, and development programmes to improve the lives of vulnerable communities. Caritas Kampala works through a network of pastoral agents in the 75 parishes of the Catholic Kampala Archdiocese, covering Kampala, Wakiso, Mpigi, and Butambala districts.",
+    a: "Caritas Kampala is the social service and charitable arm of the Catholic Church in the Archdiocese of Kampala. It supports humanitarian response, social services, and development work across communities within the Archdiocese.",
+  },
+  {
+    q: "What is the Charities Office?",
+    a: "The Charities Office operates under Caritas Kampala and coordinates practical charitable support for vulnerable individuals, families, and communities across the Archdiocese of Kampala.",
+  },
+  {
+    q: "Who can benefit from the Charities Office's services?",
+    a: "Our work supports vulnerable and marginalised people, including children and families in hardship, elderly people, refugees and asylum seekers, people with disabilities and special needs, and communities affected by emergencies and disasters. Support is provided without discrimination based on faith, nationality, tribe, or other background.",
+  },
+  {
+    q: "What types of support does the Charities Office provide?",
+    a: (
+      <>
+        Our programmes include emergency and disaster response, support for elderly people, family and child support, refugee and asylum seeker assistance, disability and special needs support, and poverty alleviation and livelihoods activities. <Link href="/our-programmes" className="text-[#b10017] hover:underline font-medium">Explore our programmes</Link>.
+      </>
+    ),
   },
   {
     q: "How can I donate to the Charities Office?",
     a: (
       <>
-        You can support the Charities Office through the approved donation methods available on our website, including bank transfer, Mobile Money, or by visiting our office directly. For the latest donation methods and account information, please visit the <Link href="/donate" className="text-[#b10017] hover:underline font-medium">Donate page</Link> or contact us.
+        You can support the work of the Charities Office through the approved giving methods listed on our Donate page. Please use only the official payment details published or confirmed by the Charities Office before sending money. <Link href="/donate" className="text-[#b10017] hover:underline font-medium">View donation options</Link>.
       </>
     ),
   },
   {
-    q: "What types of aid does the Charities Office provide?",
+    q: "Can I donate clothes or other items?",
     a: (
       <>
-        The Charities Office provides assistance including food support, healthcare, education, shelter assistance, disaster response, and programmes that support vulnerable and marginalized groups. <Link href="/our-programmes" className="text-[#b10017] hover:underline font-medium">Learn more about our programmes</Link>.
+        Yes. The Charity Shop receives suitable donated clothes and other items in good condition. These donations help support the work of the Charities Office through the second-hand Charity Shop in Nsambya. <Link href="/get-involved/charity-shop" className="text-[#b10017] hover:underline font-medium">Learn about the Charity Shop</Link>.
       </>
     ),
   },
@@ -26,51 +42,59 @@ export const faqs = [
     q: "How can I volunteer with the Charities Office?",
     a: (
       <>
-        To volunteer, you can complete the volunteer registration process through our website or contact the Charities Office directly. Volunteers support different programmes and activities according to current needs. <Link href="/get-involved/volunteer" className="text-[#b10017] hover:underline font-medium">Visit our volunteer page to learn more</Link>.
+        We welcome people who would like to offer their time, professional skills, or practical support where current needs and opportunities allow. Visit our Volunteer page to learn more about the process and available ways to help. <Link href="/get-involved/volunteer" className="text-[#b10017] hover:underline font-medium">Volunteer with us</Link>.
       </>
     ),
   },
   {
-    q: "Who can benefit from the services of the Charities Office?",
-    a: "Our services are open to vulnerable and marginalized people, including orphans and children in need, elderly people, persons with disabilities, refugees, and communities affected by disasters. Support is provided without discrimination based on faith, sex, gender, nationality, tribe, or ethnicity.",
+    q: "Can my organisation partner with the Charities Office?",
+    a: (
+      <>
+        Yes. We welcome appropriate partnerships with organisations, institutions, faith communities, and other groups that share an interest in supporting vulnerable communities. Partnership opportunities depend on current programmes, needs, and areas of collaboration. <Link href="/get-involved/partnerships" className="text-[#b10017] hover:underline font-medium">Explore partnerships</Link>.
+      </>
+    ),
+  },
+  {
+    q: "What is Chaconet?",
+    a: (
+      <>
+        Chaconet, the Catholic Charity Homes Network, brings together Catholic charity homes and care institutions across the Archdiocese of Kampala. The network supports coordination, collaboration, standards of care, and shared learning among participating homes. <Link href="/about-us/chaconet-partners" className="text-[#b10017] hover:underline font-medium">Learn about the Chaconet Network</Link>.
+      </>
+    ),
+  },
+  {
+    q: "How does the Charities Office safeguard children and vulnerable people?",
+    a: "Safeguarding is an important part of our work. The Charities Office follows child safeguarding procedures under Caritas Kampala and promotes safe reporting, staff and volunteer awareness, appropriate screening, and responsible handling of concerns involving children and vulnerable people.",
   },
   {
     q: "How does the Charities Office ensure transparency and accountability?",
     a: (
       <>
-        The Charities Office operates under established governance policies, carries out regular audits, and is committed to responsible management of resources. Transparency and accountability are among the core values guiding its work. <Link href="/resources/annual-reports" className="text-[#b10017] hover:underline font-medium">View our Annual Reports</Link>.
+        The Charities Office operates within the governance and accountability structures of Caritas Kampala. Financial management, reporting, internal controls, and audit processes help support the responsible use of resources. <Link href="/resources/annual-reports" className="text-[#b10017] hover:underline font-medium">View Annual Reports</Link>.
       </>
     ),
   },
   {
-    q: "Can I organize a fundraising event on behalf of the Charities Office?",
+    q: "Can I organise a fundraising activity on behalf of the Charities Office?",
     a: (
       <>
-        Yes. We welcome individuals, groups, parishes, and organizations that would like to support fundraising initiatives. Please <Link href="/contact-us" className="text-[#b10017] hover:underline font-medium">contact the Charities Office</Link> before organizing an event so that the activity can be discussed and the necessary approval or guidance provided.
+        Please contact the Charities Office before organising or promoting a fundraising activity in its name. This allows us to confirm the proposed activity, provide appropriate guidance, and ensure that the Caritas name and official giving information are used correctly. <Link href="/contact-us" className="text-[#b10017] hover:underline font-medium">Contact us</Link>.
       </>
     ),
   },
   {
-    q: "How can I get involved in the work of the Charities Office?",
+    q: "Where is the Charities Office located?",
     a: (
       <>
-        You can get involved by volunteering, donating, supporting specific initiatives, or partnering with us. Visit our <Link href="/get-involved" className="text-[#b10017] hover:underline font-medium">Get Involved page</Link> or contact us to learn more about current opportunities.
+        The Charities Office is based in Nsambya, Kampala. Visit our Contact Us page for the current office address, telephone details, directions, and other ways to reach the team. <Link href="/contact-us" className="text-[#b10017] hover:underline font-medium">View contact details</Link>.
       </>
     ),
   },
   {
-    q: "Does the Charities Office work with other organizations?",
+    q: "How can I keep up with the work of the Charities Office?",
     a: (
       <>
-        Yes. The Charities Office works with government agencies, NGOs, faith-based organizations, community groups, and partners including the <Link href="/about-us/chaconet-partners" className="text-[#b10017] hover:underline font-medium">Chaconet network</Link> to strengthen coordination and extend support to vulnerable communities.
-      </>
-    ),
-  },
-  {
-    q: "How do I contact the Charities Office?",
-    a: (
-      <>
-        You can contact the Charities Office by phone, email, or by visiting the office. For the current verified contact details and location, please visit our <Link href="/contact-us" className="text-[#b10017] hover:underline font-medium">Contact Us page</Link>.
+        You can follow our <Link href="/resources/news" className="text-[#b10017] hover:underline font-medium">News & Updates</Link>, upcoming <Link href="/resources/events" className="text-[#b10017] hover:underline font-medium">Events</Link>, <Link href="/resources/success-stories" className="text-[#b10017] hover:underline font-medium">Success Stories</Link>, and <Link href="/resources/gallery" className="text-[#b10017] hover:underline font-medium">Photo Gallery</Link> to see recent activities and developments from our work.
       </>
     ),
   },
@@ -78,7 +102,6 @@ export const faqs = [
 
 export const getAnswerText = (answer: string | JSX.Element): string => {
   if (typeof answer === "string") return answer;
-  // If it's a JSX element (like with links), we need to extract the text
-  // For simplicity here, we'll try to find the text content if possible or just use a placeholder
+  // For structured data fallback or simple strings
   return "Please visit our website for more information.";
 };
