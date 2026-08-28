@@ -191,7 +191,7 @@ export default async function NewsPage({
                           alt={news.alt}
                           fill
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.02]"
+                          className="object-cover"
                         />
                       </div>
                       <div className="flex flex-1 flex-col px-6 py-6 sm:px-7 sm:py-7">

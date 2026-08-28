@@ -38,7 +38,7 @@ export default function RelatedNewsCarousel({ currentArticleSlug, allArticles }:
                             alt={article.alt}
                             fill
                             sizes="(max-width: 768px) 100vw, 33vw"
-                            className="object-cover transition-transform duration-300 ease-out group-hover/card:scale-[1.02]"
+                            className="object-cover"
                         />
                     </div>
                     <div className="px-5 py-5 sm:px-6 sm:py-6">

@@ -70,7 +70,7 @@ const ROUTE_META: Record<string, { title: string; description: string }> = {
   },
   "/resources/news/charities-office-launches-new-website": {
     title: "The Charities Office Launches Its New Website | Caritas Kampala Charities Office",
-    description: "A new online home for the Charities Office, sharing our work, our network, and how you can help.",
+    description: "A dedicated online home for the Charities Office, bringing together our work, programmes, network, news, and ways to get involved.",
   },
   "/resources/news/breakfast-meeting-world-day-of-poor": {
     title: "Charities Office Marks World Day of the Poor with First Breakfast Meeting | Caritas Kampala Charities Office",

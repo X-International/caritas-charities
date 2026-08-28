@@ -5,6 +5,12 @@ export type HelpSection = {
   buttonLink: string;
 };
 
+export type ExploreSection = {
+  title: string;
+  body: string;
+  links: { text: string; link: string }[];
+};
+
 export type ClosingPrompt = {
   body: string;
   buttons: { text: string; link: string }[];
@@ -23,6 +29,7 @@ export type NewsArticle = {
   body: string[];
   helpSection?: HelpSection;
   closingPrompt?: ClosingPrompt;
+  exploreSection?: ExploreSection;
 };
 
 export const newsArticles: NewsArticle[] = [
@@ -68,20 +75,21 @@ export const newsArticles: NewsArticle[] = [
     date: "28 Aug 2026",
     category: "Announcement",
     snippet:
-      "A new online home for the Charities Office, sharing our work, our network, and how you can help.",
+      "A dedicated online home for the Charities Office, bringing together our work, programmes, network, news, and ways to get involved.",
     image: "/images/Event 02/Caritas_Kampala_98.jpg",
-    alt: "The Charities Office Lead speaking at a gathering. Credit: Caritas Kampala.",
+    alt: "Speaker addressing participants during a Charities Office gathering in Kampala",
     body: [
-      "The Caritas Kampala Charities Office now has its own website, a dedicated space to share the work of the office with donors, partners, and the wider community across the Kampala Archdiocese.",
-      "The new site brings together information that was previously scattered or difficult to find: our mission and values, the programmes we run, our place within the Chaconet network of charity homes, and the many ways people can support this work, whether through giving, volunteering, or partnership.",
-      "Visitors can also find our latest news and appeals in one place, including our current relief drive for families affected by famine in Kotido and Moroto, alongside stories from the people and communities we work alongside.",
-      "This website is part of Caritas Kampala and sits alongside the Archdiocese's main site, reflecting the Charities Office's own identity while remaining clearly connected to the wider Caritas Kampala family.",
-      "We'll continue to add to this site over time, including more stories, programme details, and updates from our work. If there's something you'd like to see here, or a way you'd like to get involved, we'd love to hear from you.",
+      "The Charities Office under Caritas Kampala has launched its dedicated website, creating a central place for people to learn about the office’s work across the Archdiocese of Kampala.",
+      "The website brings together information about the office’s programmes, the Chaconet network of Catholic charity homes, current appeals, news and events, volunteering, partnerships, the Charity Shop, and other ways people can support the work.",
+      "Visitors can also learn more about the people behind the Charities Office, explore photographs from programmes and community activities, and find practical information about donating or contacting the team.",
+      "The website is part of Caritas Kampala’s wider digital presence. It gives the Charities Office a dedicated space while maintaining a clear connection to Caritas Kampala and the wider mission of the Church across the Archdiocese.",
+      "The site will continue to grow as new stories, programme updates, reports, events, and other resources become available.",
     ],
-    closingPrompt: {
-      body: "Explore the site, and get in touch if you have any questions.",
-      buttons: [
-        { text: "About Us →", link: "/about-us" },
+    exploreSection: {
+      title: "Explore the Website",
+      body: "Learn more about the work of the Charities Office, explore our programmes, or find a practical way to get involved.",
+      links: [
+        { text: "Our Programmes →", link: "/our-programmes" },
         { text: "Get Involved →", link: "/get-involved" },
         { text: "Contact Us →", link: "/contact-us" },
       ],

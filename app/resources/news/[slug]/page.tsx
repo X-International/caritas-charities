@@ -196,24 +196,26 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
                   </Card>
                 )}
 
-                {article.closingPrompt && (
-                  <Card variant="info" className="space-y-6 mt-8 p-6 sm:p-8 rounded-2xl shadow-none border border-gray-200">
-                    <p className="text-[17px] sm:text-[18px] leading-[1.7] text-[#4f4f4f]">
-                      {article.closingPrompt.body}
+                {article.exploreSection && (
+                  <div className="bg-[#f5efe6] p-6 sm:p-8 rounded-2xl border border-gray-200 space-y-4 mt-8">
+                    <Heading level={2} variant="card" color="red">
+                      {article.exploreSection.title}
+                    </Heading>
+                    <p className="text-[17px] leading-relaxed text-[#4f4f4f]">
+                      {article.exploreSection.body}
                     </p>
-                    <div className="flex flex-wrap gap-4">
-                      {article.closingPrompt.buttons.map((button) => (
-                        <Button
-                          key={button.text}
-                          href={button.link}
-                          variant="primary"
-                          size="md"
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 pt-2">
+                      {article.exploreSection.links.map((link) => (
+                        <Link
+                          key={link.text}
+                          href={link.link}
+                          className="text-[#b10017] hover:underline font-semibold text-base inline-flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] rounded"
                         >
-                          {button.text}
-                        </Button>
+                          {link.text}
+                        </Link>
                       ))}
                     </div>
-                  </Card>
+                  </div>
                 )}
 
                 {/* End-of-Article Navigation */}
