@@ -6,13 +6,28 @@ import Image from "next/image";
 const slides = [
   {
     id: 1,
-    image: "/images/Charity Shop/Caritas_Kampala_41.jpg",
-    alt: "Caritas Kampala Charity Shop",
+    image: "/images/Charity Shop/Caritas_Kampala_22.jpg",
+    alt: "Clothing displayed on racks inside the Caritas Kampala Charity Shop in Nsambya",
   },
   {
     id: 2,
+    image: "/images/Charity Shop/Caritas_Kampala_41.jpg",
+    alt: "Inside the Second Hand Charity Shop in Nsambya",
+  },
+  {
+    id: 3,
+    image: "/images/Charity Shop/Caritas_Kampala_57.jpg",
+    alt: "Donated items and clothing arranged at the Charity Shop",
+  },
+  {
+    id: 4,
     image: "/images/Charity Shop/Caritas_Kampala_58.jpg",
-    alt: "Items and activities at the Caritas Kampala Charity Shop",
+    alt: "Shop interior and arrangement at the Caritas Kampala Charity Shop in Nsambya",
+  },
+  {
+    id: 5,
+    image: "/images/Charity Shop/Caritas_Kampala_59.jpg",
+    alt: "Displayed goods and pre-loved items at the Caritas Kampala Charity Shop",
   },
 ];
 
@@ -57,7 +72,7 @@ export default function CharityShopSlider() {
 
   return (
     <div
-      className="relative w-full h-[400px] sm:h-[450px] lg:h-[500px] overflow-hidden rounded-2xl sm:rounded-3xl shadow-lg bg-black group"
+      className="relative w-full h-[320px] sm:h-[380px] lg:h-[420px] overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 shadow-none group"
       onMouseEnter={() => setIsFocused(true)}
       onMouseLeave={() => setIsFocused(false)}
       onFocus={() => setIsFocused(true)}
@@ -77,7 +92,7 @@ export default function CharityShopSlider() {
             src={slide.image}
             alt={slide.alt}
             fill
-            sizes="(max-width: 768px) 100vw, 55vw"
+            sizes="(max-width: 1024px) 100vw, 45vw"
             className="object-cover"
           />
         </div>
@@ -86,28 +101,28 @@ export default function CharityShopSlider() {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/40 flex items-center justify-center transition opacity-0 group-hover:opacity-100"
-        aria-label="Previous"
+        className="absolute left-3 top-1/2 -translate-y-1/2 z-30 w-9 h-9 rounded-full bg-black/40 backdrop-blur-sm text-white hover:bg-black/60 flex items-center justify-center transition opacity-0 group-hover:opacity-100 focus:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+        aria-label="Previous slide"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/40 flex items-center justify-center transition opacity-0 group-hover:opacity-100"
-        aria-label="Next"
+        className="absolute right-3 top-1/2 -translate-y-1/2 z-30 w-9 h-9 rounded-full bg-black/40 backdrop-blur-sm text-white hover:bg-black/60 flex items-center justify-center transition opacity-0 group-hover:opacity-100 focus:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+        aria-label="Next slide"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
       </button>
 
       {/* Pagination */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex space-x-2">
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-30 flex space-x-1.5">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`h-2 rounded-full transition-all ${index === currentIndex ? "w-6 bg-white" : "w-2 bg-white/50"}`}
-            aria-label={`Slide ${index + 1}`}
+            className={`h-1.5 rounded-full transition-all ${index === currentIndex ? "w-5 bg-white shadow-sm" : "w-1.5 bg-white/60 hover:bg-white"}`}
+            aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
