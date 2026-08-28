@@ -6,6 +6,7 @@ import { buildPageMetadata } from "@/lib/metadata-utils";
 import PageHeader from "@/components/PageHeader";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { faqs, getAnswerText } from "@/lib/faq-data";
+import { Card } from "@/components/ui/Card";
 
 export const metadata = buildPageMetadata({
   title: "FAQs | Caritas Kampala Charities Office",
@@ -50,11 +51,11 @@ export default function FAQsPage() {
 
         {/* Optional Final Help CTA */}
         <section className="site-container pb-20">
-          <div className="max-w-[940px] mx-auto bg-gray-50 border border-gray-200 rounded-2xl p-8 sm:p-12 text-center space-y-4">
-            <Heading level={2} className="text-2xl sm:text-3xl font-serif font-bold text-gray-900">
+          <Card variant="info" className="max-w-[940px] mx-auto p-8 sm:p-12 text-center space-y-4">
+            <Heading level={2} variant="subsection" color="red">
               Still Have a Question?
             </Heading>
-            <p className="text-gray-700 max-w-xl mx-auto text-base sm:text-lg leading-relaxed">
+            <p className="text-gray-700 max-w-xl mx-auto text-base sm:text-lg leading-relaxed font-sans">
               If you cannot find the answer you need, contact the Charities Office and our team will be glad to help.
             </p>
             <div className="pt-2">
@@ -62,7 +63,7 @@ export default function FAQsPage() {
                 Contact Us
               </Button>
             </div>
-          </div>
+          </Card>
         </section>
 
       </main>
