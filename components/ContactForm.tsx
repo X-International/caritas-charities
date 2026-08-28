@@ -1,7 +1,8 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useEffect } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
 import Button from "@/components/ui/Button";
 import { FormLabel, TextInput, Select, TextArea, FormHelperText, FormError } from "@/components/ui/Form";
@@ -14,6 +15,15 @@ type SubmissionState =
 
 export default function ContactForm() {
   const [submission, setSubmission] = useState<SubmissionState>({ status: "idle" });
+  const searchParams = useSearchParams();
+  const urlSubject = searchParams.get("subject");
+  const [subject, setSubject] = useState(urlSubject || "");
+
+  useEffect(() => {
+    if (urlSubject) {
+      setSubject(urlSubject);
+    }
+  }, [urlSubject]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -72,7 +82,7 @@ export default function ContactForm() {
 
       <div>
         <FormLabel htmlFor="subject" required>Subject</FormLabel>
-        <Select id="subject" name="subject" required defaultValue="" aria-required="true">
+        <Select id="subject" name="subject" required value={subject} onChange={(e) => setSubject(e.target.value)} aria-required="true">
           <option value="" disabled>Select a subject...</option>
           <option value="General Enquiry">General Enquiry</option>
           <option value="Donations & Giving">Donations &amp; Giving</option>
