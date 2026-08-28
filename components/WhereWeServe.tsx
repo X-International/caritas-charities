@@ -21,18 +21,18 @@ const IMPACT_AREAS: ImpactArea[] = [
     title: "Emergency & Disaster Response",
     category: "RELIEF & CRISIS",
     description:
-      "Provides immediate assistance to families and communities affected by disasters, fires, and other emergencies.",
+      "Provides practical assistance to people and communities affected by disasters, displacement, food insecurity, and other emergencies.",
     serves: "FAMILIES & COMMUNITIES AFFECTED BY EMERGENCIES",
     locations: ["KAMPALA", "WAKISO", "MPIGI"],
     image: "/images/Event 01/Caritas_Kampala_75.jpg",
   },
   {
-    id: "elderly",
-    title: "Support for the Elderly",
+    id: "older-persons",
+    title: "Support for Older Persons",
     category: "SENIOR CARE",
     description:
-      "Provides ongoing practical support to elderly people across the Archdiocese.",
-    serves: "ELDERLY PEOPLE ACROSS THE ARCHDIOCESE",
+      "Provides visits, essential supplies, wellbeing support, and practical care for older people experiencing hardship, isolation, or limited family support.",
+    serves: "OLDER PERSONS ACROSS THE ARCHDIOCESE",
     locations: ["ARCHDIOCESE"],
     image: "/images/Charities/Caritas_Kampala_84.jpg",
   },
@@ -41,7 +41,7 @@ const IMPACT_AREAS: ImpactArea[] = [
     title: "Family & Child Support",
     category: "HOUSEHOLD CARE",
     description:
-      "Supports families and children facing hardship, helping stabilise households in need.",
+      "Supports vulnerable children and families through practical assistance, education support, safeguarding, psychosocial care, and referrals.",
     serves: "FAMILIES & CHILDREN FACING HARDSHIP",
     locations: ["ARCHDIOCESE"],
     image: "/images/Event 01/Caritas_Kampala_03.jpg",
@@ -51,8 +51,8 @@ const IMPACT_AREAS: ImpactArea[] = [
     title: "Refugee & Asylum Seeker Support",
     category: "HUMANITARIAN AID",
     description:
-      "Provides practical assistance to urban refugees and asylum seekers.",
-    serves: "URBAN REFUGEES & ASYLUM SEEKERS",
+      "Provides practical assistance, referrals, and support to refugees and asylum seekers as they navigate displacement and rebuild greater stability.",
+    serves: "REFUGEES & ASYLUM SEEKERS",
     locations: ["KAMPALA"],
     image: "/images/Event 02/Caritas_Kampala_05.jpg",
   },
@@ -61,18 +61,18 @@ const IMPACT_AREAS: ImpactArea[] = [
     title: "Disability & Special Needs Support",
     category: "INCLUSION & CARE",
     description:
-      "Supports people living with disabilities and special medical needs.",
+      "Supports people with disabilities through practical assistance, accessibility, inclusion, referrals, advocacy, and collaboration with specialist services.",
     serves: "PEOPLE WITH DISABILITIES & SPECIAL NEEDS",
     locations: ["ARCHDIOCESE"],
     image: "/images/Charities/Caritas_Kampala_87.jpg",
   },
   {
     id: "livelihoods",
-    title: "Poverty Alleviation & Livelihoods",
+    title: "Livelihoods & Poverty Reduction",
     category: "ECONOMIC EMPOWERMENT",
     description:
-      "Works with individuals and families to help build sustainable livelihoods.",
-    serves: "INDIVIDUALS & FAMILIES FACING POVERTY",
+      "Supports individuals and families to strengthen livelihoods through skills development, savings initiatives, income-generating activities, and practical guidance.",
+    serves: "INDIVIDUALS & FAMILIES FACING ECONOMIC HARDSHIP",
     locations: ["KAMPALA", "WAKISO", "MPIGI"],
     image: "/images/Event 01/Caritas_Kampala_71.jpg",
   },
@@ -138,16 +138,8 @@ function WhiteCard({ area }: { area: ImpactArea }) {
           </p>
         </div>
 
-        <div className="relative z-10 pt-3 sm:pt-4 flex items-center justify-center">
-          <Button
-            href="/donate"
-            variant="secondary"
-            size="sm"
-            rightIcon={<ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" aria-hidden="true" />}
-            aria-label={`Support ${area.title}`}
-          >
-            SUPPORT
-          </Button>
+        <div className="relative z-10 pt-3 sm:pt-4 flex items-center justify-between text-[11px] sm:text-xs font-bold uppercase tracking-wider text-amber-300">
+          <span className="truncate">{area.serves}</span>
         </div>
       </div>
     </Card>
@@ -199,13 +191,13 @@ function FeaturedCard({ area }: { area: ImpactArea }) {
           {area.serves}
         </span>
         <Button
-          href="/donate"
+          href="/our-programmes"
           variant="secondary"
           size="md"
           rightIcon={<ArrowUpRight className="w-4 h-4" aria-hidden="true" />}
-          aria-label={`Support ${area.title}`}
+          aria-label={`Explore ${area.title}`}
         >
-          SUPPORT THIS CAUSE
+          EXPLORE THIS PROGRAMME
         </Button>
       </div>
     </article>
@@ -223,15 +215,20 @@ export default function WhereWeServe() {
     >
       <div className="site-container relative">
         {/* Section Title */}
-        <Heading
-          level={2}
-          variant="section"
-          color="red"
-          id="core-pillars-title"
-          className="mb-6 sm:mb-10 text-balance"
-        >
-          Our Core Pillars of Support
-        </Heading>
+        <div className="mb-6 sm:mb-10 text-balance">
+          <Heading
+            level={2}
+            variant="section"
+            color="red"
+            id="core-pillars-title"
+            className="mb-4"
+          >
+            Our Core Pillars of Support
+          </Heading>
+          <p className="text-base sm:text-lg text-gray-700 max-w-3xl leading-relaxed">
+            Our programmes respond to urgent needs while helping individuals, families, and communities build greater stability, dignity, and resilience.
+          </p>
+        </div>
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-7">
