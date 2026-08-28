@@ -28,12 +28,15 @@ export default function VolunteerPage() {
           eyebrow="GIVE YOUR TIME"
           title="Volunteer With Us"
           description="Offer your time, skills, and experience to support the work of the Charities Office."
-          image="/images/Event 01/Caritas_Kampala_01.jpg"
-          imageAlt="Volunteers supporting Caritas Kampala community activities"
+          image="/images/Event 06/Caritas_Kampala_52.jpg"
+          imageAlt="Volunteers participating in Caritas Kampala community outreach and programme activities"
+          imagePositionDesktop="center 40%"
+          imagePositionMobile="center 30%"
         />
 
-        <section className="site-container py-16 sm:py-20 lg:py-24 space-y-16 sm:space-y-20 lg:space-y-24">
-          <div className="max-w-[820px] mx-auto space-y-6">
+        <section className="site-container py-12 sm:py-16 lg:py-20 space-y-14 sm:space-y-18 lg:space-y-20">
+          {/* Main Introduction */}
+          <div className="max-w-[800px] mx-auto space-y-6">
             <Heading level={2} variant="section" color="red" className="text-3xl sm:text-4xl font-serif">
               Volunteer With Purpose
             </Heading>
@@ -44,11 +47,67 @@ export default function VolunteerPage() {
               <p>
                 Some opportunities may require specific experience, availability, safeguarding requirements, or prior orientation. Our team will help determine where your time and skills can be most useful.
               </p>
-              <p>
-                Volunteer opportunities vary according to current programmes and activities. Programme and community support involves helping with approved programme activities, community outreach, distributions, events, or other practical tasks where volunteer support is needed. Professional skills involve offering relevant experience in areas such as healthcare, communications, administration, technology, training, finance, legal support, or other professional services. Events and activities support the preparation and delivery of meetings, workshops, community activities, campaigns, or special events. Office support assists with appropriate administrative, organisational, documentation, or coordination tasks where additional support is useful.
+            </div>
+          </div>
+
+          {/* Ways You Can Help */}
+          <div className="max-w-[800px] mx-auto space-y-8 sm:space-y-10">
+            <div className="space-y-3">
+              <Heading level={2} variant="section" color="red" className="text-2xl sm:text-3xl font-serif">
+                Ways You Can Help
+              </Heading>
+              <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
+                Volunteer opportunities vary according to current programmes and activities.
               </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+              <div className="space-y-2.5">
+                <h3 className="text-lg sm:text-xl font-serif font-bold text-[#b10017]">
+                  PROGRAMME &amp; COMMUNITY SUPPORT
+                </h3>
+                <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
+                  Help with approved programme activities, community outreach, distributions, events, or other practical tasks where volunteer support is needed.
+                </p>
+              </div>
+
+              <div className="space-y-2.5">
+                <h3 className="text-lg sm:text-xl font-serif font-bold text-[#b10017]">
+                  PROFESSIONAL SKILLS
+                </h3>
+                <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
+                  Offer relevant experience in areas such as healthcare, communications, administration, technology, training, finance, legal support, or other professional services.
+                </p>
+              </div>
+
+              <div className="space-y-2.5">
+                <h3 className="text-lg sm:text-xl font-serif font-bold text-[#b10017]">
+                  EVENTS &amp; ACTIVITIES
+                </h3>
+                <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
+                  Support the preparation and delivery of meetings, workshops, community activities, campaigns, and special events.
+                </p>
+              </div>
+
+              <div className="space-y-2.5">
+                <h3 className="text-lg sm:text-xl font-serif font-bold text-[#b10017]">
+                  OFFICE SUPPORT
+                </h3>
+                <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
+                  Assist with appropriate administrative, organisational, documentation, or coordination tasks where additional help is useful.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Before You Volunteer */}
+          <div className="max-w-[800px] mx-auto space-y-6">
+            <Heading level={2} variant="section" color="red" className="text-2xl sm:text-3xl font-serif">
+              Before You Volunteer
+            </Heading>
+            <div className="space-y-5 text-gray-700 leading-relaxed text-base sm:text-lg lg:text-[18px]">
               <p>
-                Volunteer roles depend on current needs and may require an initial conversation with the Charities Office. Some activities may also require orientation, safeguarding checks, or other appropriate requirements before participation.
+                Volunteer roles depend on current needs and may begin with a conversation with the Charities Office. Some activities may require orientation, safeguarding checks, specific skills, or other appropriate requirements before participation.
               </p>
               <p>
                 Volunteers are expected to respect the dignity, privacy, safety, and wellbeing of the people and communities involved in our work.
@@ -57,7 +116,7 @@ export default function VolunteerPage() {
           </div>
 
           {/* Final Volunteer CTA */}
-          <div className="max-w-4xl mx-auto bg-[#f4efe6] p-8 sm:p-12 rounded-2xl text-center space-y-6">
+          <div className="max-w-[800px] mx-auto bg-[#f4efe6] px-8 sm:px-12 py-10 sm:py-12 rounded-2xl text-center space-y-6">
             <div className="space-y-3 max-w-2xl mx-auto">
               <Heading level={2} variant="section" color="red" className="text-2xl sm:text-3xl font-serif">
                 Interested in Volunteering?
