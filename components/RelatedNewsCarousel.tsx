@@ -18,11 +18,7 @@ export default function RelatedNewsCarousel({ currentArticleSlug, allArticles }:
     const next = useCallback(() => setCurrentIndex(prev => (prev + 1) % relatedArticles.length), [relatedArticles.length]);
     const prev = useCallback(() => setCurrentIndex(prev => (prev - 1 + relatedArticles.length) % relatedArticles.length), [relatedArticles.length]);
 
-    useEffect(() => {
-        if (relatedArticles.length <= 1) return;
-        const interval = setInterval(next, 5000);
-        return () => clearInterval(interval);
-    }, [next, relatedArticles.length]);
+    // Autoplay removed per editorial requirements (no autoplay / aggressive animation)
 
     if (relatedArticles.length === 0) return null;
 
@@ -34,32 +30,28 @@ export default function RelatedNewsCarousel({ currentArticleSlug, allArticles }:
               Related Content
             </Heading>
             <div className="relative group">
-                <Card variant="content" className="overflow-hidden p-0 sm:p-0">
-                    <Link href={`/resources/news/${article.slug}`} className="block">
-                    <div className="relative aspect-video w-full overflow-hidden bg-[#f5efe6]">
+                <Card variant="content" className="overflow-hidden p-0 sm:p-0 shadow-none bg-white border border-gray-200 rounded-xl">
+                    <Link href={`/resources/news/${article.slug}`} className="block group/card">
+                    <div className="relative aspect-video w-full overflow-hidden bg-[#f5efe6] rounded-t-xl">
                         <Image
                             src={article.image}
                             alt={article.alt}
                             fill
                             sizes="(max-width: 768px) 100vw, 33vw"
-                            className="object-cover"
+                            className="object-cover transition-transform duration-300 ease-out group-hover/card:scale-[1.02]"
                         />
                     </div>
                     <div className="px-5 py-5 sm:px-6 sm:py-6">
                         <div className="flex justify-between items-center text-[10px] sm:text-xs uppercase tracking-widest text-[#585858]">
-                            <Eyebrow color="muted">{article.category}</Eyebrow>
-                            <span className="font-mono text-[#7b7b7b] tracking-normal">{article.date}</span>
+                            <span className="text-[#b10017] font-semibold">{article.category}</span>
+                            <span className="font-mono text-[#7b7b7b] tracking-normal">{article.date.toUpperCase()}</span>
                         </div>
-                        <Heading level={3} variant="card" color="red" className="mt-4 text-[18px] sm:text-[20px] leading-[1.2] line-clamp-2">
+                        <Heading level={3} variant="card" color="red" className="mt-3 text-[18px] sm:text-[20px] leading-[1.2] line-clamp-2 transition-colors duration-200 group-hover/card:text-[#8e0a20] group-hover/card:underline">
                             {article.title}
                         </Heading>
                         <p className="mt-3 text-[14px] leading-relaxed text-[#4f4f4f] line-clamp-2">
                             {article.snippet}
                         </p>
-                        <div className="mt-4 flex justify-between items-center text-[10px] sm:text-xs uppercase tracking-widest text-[#585858]">
-                            <Eyebrow color="muted">{article.category}</Eyebrow>
-                            <span>{article.region || ''}</span>
-                        </div>
                     </div>
                     </Link>
                 </Card>
