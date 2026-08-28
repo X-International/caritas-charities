@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SplitPageHeader from "@/components/SplitPageHeader";
 import OtherWaysToSupport from "@/components/OtherWaysToSupport";
-import DonateCalloutBanner from "@/components/DonateCalloutBanner";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
 export const metadata = buildPageMetadata({
@@ -31,10 +30,6 @@ export default function DonatePage() {
         />
 
         <OtherWaysToSupport />
-
-        <div className="site-container">
-          <DonateCalloutBanner />
-        </div>
       </main>
 
       <Footer />
