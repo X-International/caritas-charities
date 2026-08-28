@@ -31,7 +31,7 @@ export default function DonateOnlineCard() {
             Support Our Work
           </Heading>
           <p className="text-sm sm:text-base text-gray-900 leading-relaxed max-w-2xl font-sans">
-            Your gift helps the Charities Office provide practical support to vulnerable individuals and families across the Kampala Archdiocese.
+            Your gift helps the Charities Office provide practical support to vulnerable individuals, families, and communities across the Archdiocese of Kampala.
           </p>
         </div>
 
