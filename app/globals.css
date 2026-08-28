@@ -171,18 +171,21 @@ body {
     background-repeat: no-repeat;
     will-change: transform, opacity;
     backface-visibility: hidden;
-    animation: contact-hero-panel-slide-mobile 1200ms cubic-bezier(0.22, 1, 0.36, 1) 100ms both;
+    animation: split-header-panel-slide-mobile 550ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
   .contact-hero-image {
     overflow: hidden;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    animation: split-header-image-reveal-mobile 550ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
 @media (max-width: 1023px) {
-  @keyframes contact-hero-panel-slide-mobile {
+  @keyframes split-header-panel-slide-mobile {
     from {
       opacity: 0;
-      transform: translate3d(0, 16px, 0);
+      transform: translate3d(0, 14px, 0);
     }
     to {
       opacity: 1;
@@ -190,8 +193,23 @@ body {
     }
   }
 
+  @keyframes split-header-image-reveal-mobile {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -10px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .contact-hero-image {
+    animation-name: split-header-image-reveal-mobile;
+  }
+
   .contact-hero-panel {
-    animation-name: contact-hero-panel-slide-mobile;
+    animation-name: split-header-panel-slide-mobile;
   }
 
   .contact-hero-image-media {
@@ -205,10 +223,10 @@ body {
   }
 }
 
-@keyframes contact-hero-panel-slide {
+@keyframes split-header-panel-slide {
   from {
     opacity: 0;
-    transform: translate3d(24px, 0, 0);
+    transform: translate3d(28px, 0, 0);
   }
   to {
     opacity: 1;
@@ -218,10 +236,10 @@ body {
 
 @media (min-width: 1024px) {
   .contact-hero-panel {
-    animation-name: contact-hero-panel-slide;
-    animation-duration: 1200ms;
+    animation-name: split-header-panel-slide;
+    animation-duration: 700ms;
     animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-    animation-delay: 100ms;
+    animation-delay: 50ms;
     animation-fill-mode: both;
   }
 
@@ -230,9 +248,9 @@ body {
   }
 }
 
-@keyframes contact-hero-content-fade {
+@keyframes split-header-content-fade {
   from {
-    opacity: 0.88;
+    opacity: 0.85;
     transform: translate3d(12px, 0, 0);
   }
   to {
@@ -244,13 +262,13 @@ body {
 .contact-hero-panel-content {
   will-change: transform, opacity;
   backface-visibility: hidden;
-  animation: contact-hero-content-fade 1200ms cubic-bezier(0.22, 1, 0.36, 1) 100ms both;
+  animation: split-header-content-fade 650ms cubic-bezier(0.22, 1, 0.36, 1) 100ms both;
 }
 
-@keyframes contact-hero-image-reveal {
+@keyframes split-header-image-reveal {
   from {
     opacity: 0;
-    transform: scale3d(1.08, 1.08, 1);
+    transform: scale3d(1.03, 1.03, 1);
   }
   to {
     opacity: 1;
@@ -258,10 +276,12 @@ body {
   }
 }
 
-.contact-hero-image-media {
-  will-change: transform, opacity;
-  backface-visibility: hidden;
-  animation: contact-hero-image-reveal 1400ms cubic-bezier(0.22, 1, 0.36, 1) 100ms both;
+@media (min-width: 1024px) {
+  .contact-hero-image {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    animation: split-header-image-reveal 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
