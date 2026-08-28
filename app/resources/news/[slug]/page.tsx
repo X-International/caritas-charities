@@ -162,9 +162,29 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
                       {article.helpSection.title}
                     </Heading>
                     <div className="space-y-2 text-[#4f4f4f] text-[16px] leading-relaxed">
-                      {article.helpSection.content.map((line, index) => (
-                        <p key={index}>{line}</p>
-                      ))}
+                      {article.helpSection.content.map((line, index) => {
+                        const phoneMatch = line.match(/(\+256[\d\s]+)/);
+                        if (phoneMatch) {
+                          const rawNum = phoneMatch[1].replace(/\s+/g, "");
+                          const displayNum = phoneMatch[1];
+                          const prefix = line.replace(phoneMatch[1], "").trim();
+                          return (
+                            <p key={index} className="text-[#4f4f4f]">
+                              {prefix && <span className="font-semibold text-gray-800">{prefix} </span>}
+                              <a href={`tel:${rawNum}`} className="text-[#b10017] hover:underline font-mono font-medium">
+                                {displayNum}
+                              </a>
+                            </p>
+                          );
+                        }
+                        if (index === 0) {
+                          return <p key={index} className="text-[#4f4f4f] font-medium">{line}</p>;
+                        }
+                        if (["Caritas Kampala Office", "Old Ggaba Road, Nsambya", "(next to the American Embassy)", "Kampala, Uganda"].includes(line)) {
+                          return <p key={index} className={line === "Caritas Kampala Office" ? "font-semibold text-gray-900 pt-1" : "text-[#4f4f4f]"}>{line}</p>;
+                        }
+                        return <p key={index} className="text-[#4f4f4f]">{line}</p>;
+                      })}
                     </div>
                     <Button
                       href={article.helpSection.buttonLink}
