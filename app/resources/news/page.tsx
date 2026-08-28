@@ -109,8 +109,21 @@ export default async function NewsPage({
           </section>
         )}
 
+        {/* Latest News Section Intro */}
+        <section className="pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-10 lg:pb-12 bg-white text-center">
+          <div className="site-container max-w-[760px] space-y-4">
+            <Heading level={2} variant="section" color="red">
+              Latest News
+            </Heading>
+            <div className="mx-auto w-16 h-1 bg-[#b10017]" aria-hidden="true" />
+            <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-[700px] mx-auto">
+              Updates from our programmes, events, partnerships, and community work.
+            </p>
+          </div>
+        </section>
+
         {/* News Grid */}
-        <section className="site-container section-md space-y-10">
+        <section className="site-container pb-[72px] sm:pb-[80px] lg:pb-[88px]">
           {query && filteredArticles.length === 0 ? (
             <Card
               variant="info"
@@ -162,39 +175,47 @@ export default async function NewsPage({
             </Card>
           ) : (
             filteredArticles.length > 0 && (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7 lg:gap-8">
-                {filteredArticles.map((news) => (
-                  <Card key={news.slug} as="article" variant="content" className="flex h-full flex-col overflow-hidden p-0">
-                    <div className="relative aspect-video w-full overflow-hidden bg-caritas-beige">
-                      <Image
-                        src={news.image}
-                        alt={news.alt}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="flex flex-1 flex-col px-5 py-5 sm:px-6 sm:py-6 lg:px-7 lg:py-7">
-                      <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
-                        <span className={labelTextClasses}>{news.category}</span>
-                        <span className="whitespace-nowrap text-[#7b7b7b] font-mono tracking-normal uppercase">{news.date}</span>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8">
+                {filteredArticles.map((news) => {
+                  const dateObj = new Date(news.date);
+                  const datetimeStr = !isNaN(dateObj.getTime()) ? dateObj.toISOString().split("T")[0] : news.date;
+                  return (
+                    <Link
+                      key={news.slug}
+                      href={`/resources/news/${news.slug}`}
+                      className="flex flex-col h-full rounded-xl border border-gray-200 bg-white overflow-hidden shadow-none transition-all duration-200 ease-out group hover:border-[#b10017]/30 hover:bg-[#fcfbf9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2"
+                    >
+                      <div className="relative aspect-video w-full overflow-hidden bg-caritas-beige rounded-t-xl">
+                        <Image
+                          src={news.image}
+                          alt={news.alt}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.02]"
+                        />
                       </div>
-                      <h2 className="mt-6">
-                        <Link href={`/resources/news/${news.slug}`} className={headlineLinkClasses}>
+                      <div className="flex flex-1 flex-col px-6 py-6 sm:px-7 sm:py-7">
+                        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
+                          <span className="text-[#585858] uppercase tracking-[0.18em] text-[11px] sm:text-xs font-semibold">{news.category}</span>
+                          <time dateTime={datetimeStr} className="whitespace-nowrap text-[#7b7b7b] font-mono tracking-normal uppercase text-[11px] sm:text-xs">
+                            {news.date.toUpperCase()}
+                          </time>
+                        </div>
+                        <h2 className="mt-5 font-serif text-[24px] sm:text-[26px] lg:text-[28px] leading-[1.2] text-[#b10017] transition-colors duration-200 group-hover:text-[#8e0a20] group-hover:underline">
                           {news.title}
-                        </Link>
-                      </h2>
-                      <p className="mt-4 text-[15px] sm:text-[16px] leading-[1.72] text-[#4f4f4f]">
-                        {news.snippet}
-                      </p>
-                    </div>
-                  </Card>
-                ))}
+                        </h2>
+                        <p className="mt-4 text-[15px] sm:text-[16px] lg:text-[17px] leading-[1.6] text-[#4f4f4f]">
+                          {news.snippet}
+                        </p>
+                      </div>
+                    </Link>
+                  );
+                })}
               </div>
             )
           )}
         </section>
-        <div className="site-container py-4 sm:py-6">
+        <div className="site-container pt-12 sm:pt-16 lg:pt-20 pb-4 sm:pb-6">
           <DonateOnlineCard />
         </div>
       </main>
