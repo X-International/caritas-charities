@@ -9,9 +9,9 @@ export default function CurrentCrises() {
   }
 
   return (
-    <section 
+    <section
       aria-labelledby="appeal-title"
-      className="w-full bg-[#b10017] text-white section-lg relative overflow-hidden mt-8 sm:mt-12 lg:mt-16"
+      className="w-full bg-[#b10017] text-white section-lg relative overflow-hidden"
     >
       <div className="site-container">
         {/* Header */}

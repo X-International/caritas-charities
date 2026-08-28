@@ -19,7 +19,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
-      <main id="main-content" className="flex-1 space-y-4 tab-index-[-1] focus:outline-none">
+      <main id="main-content" className="flex-1 tab-index-[-1] focus:outline-none">
         <HeroSlider />
         <CurrentCrises />
         <HumanitarianAppeal />
