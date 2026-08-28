@@ -35,15 +35,15 @@ export default function ContactUsPage() {
         />
 
         {/* Main Container for the rest of the page */}
-        <div className="site-container">
+        <div className="site-container pt-12 sm:pt-16 lg:pt-20 pb-12 sm:pb-16 lg:pb-20">
           {/* Contact Info & Directions */}
-          <section className="section-md">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+          <section>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
               <div className="lg:col-span-6 space-y-6">
                 <div>
                   <Heading level={2} variant="subsection" color="red">Visit &amp; Call Us</Heading>
                   <p className="text-sm text-gray-600 mt-2">
-                    Our main office location and direct phone lines.
+                    Find our office, call the team, or use the contact form to send us a message.
                   </p>
                 </div>
 
@@ -69,10 +69,7 @@ export default function ContactUsPage() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 mt-3 text-sm font-semibold text-[#b10017] hover:underline"
                     >
-                      Get directions
-                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
+                      Get Directions ↗
                     </a>
                   </div>
                 </div>
@@ -90,36 +87,34 @@ export default function ContactUsPage() {
                     <div className="space-y-2">
                       <a
                         href="tel:+256762506906"
-                        aria-label="Call Appeal Line at +256 762 506 906"
-                        className="flex items-center justify-between gap-4 rounded-xl bg-white/40 hover:bg-white/70 px-3 py-2.5 transition-colors"
+                        aria-label="Call the Appeal Line"
+                        className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-4 rounded-xl bg-white/40 hover:bg-white/70 px-3.5 py-2.5 transition-colors"
                       >
-                        <span className="text-sm font-semibold text-black">Appeal Line:</span>
+                        <span className="text-sm font-semibold text-black">Appeal Line</span>
                         <span className="font-mono text-sm font-bold text-black shrink-0">+256 762 506 906</span>
                       </a>
                       <a
-                        href="https://wa.me/256792176443"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Message Appeal Line (Alt) on WhatsApp at +256 792 176 443"
-                        className="flex items-center justify-between gap-4 rounded-xl bg-white/40 hover:bg-white/70 px-3 py-2.5 transition-colors"
+                        href="tel:+256792176443"
+                        aria-label="Call the Appeal Line (Alternate)"
+                        className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-4 rounded-xl bg-white/40 hover:bg-white/70 px-3.5 py-2.5 transition-colors"
                       >
-                        <span className="text-sm font-semibold text-black">Appeal Line (Alt):</span>
+                        <span className="text-sm font-semibold text-black">Appeal Line (Alternate)</span>
                         <span className="font-mono text-sm font-bold text-black shrink-0">+256 792 176 443</span>
                       </a>
                       <a
                         href="tel:+256392176443"
-                        aria-label="Call Main Office at +256 392 176 443"
-                        className="flex items-center justify-between gap-4 rounded-xl bg-white/40 hover:bg-white/70 px-3 py-2.5 transition-colors"
+                        aria-label="Call the Main Office"
+                        className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-4 rounded-xl bg-white/40 hover:bg-white/70 px-3.5 py-2.5 transition-colors"
                       >
-                        <span className="text-sm font-semibold text-black">Main Office:</span>
+                        <span className="text-sm font-semibold text-black">Main Office</span>
                         <span className="font-mono text-sm font-bold text-black shrink-0">+256 392 176 443</span>
                       </a>
                       <a
                         href={`mailto:${siteConfig.office.email}`}
-                        aria-label={`Email us at ${siteConfig.office.email}`}
-                        className="flex items-center justify-between gap-4 rounded-xl bg-white/40 hover:bg-white/70 px-3 py-2.5 transition-colors"
+                        aria-label="Email the Charities Office"
+                        className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-4 rounded-xl bg-white/40 hover:bg-white/70 px-3.5 py-2.5 transition-colors"
                       >
-                        <span className="text-sm font-semibold text-black">Email:</span>
+                        <span className="text-sm font-semibold text-black">Email</span>
                         <span className="font-mono text-sm font-bold text-black shrink-0">{siteConfig.office.email}</span>
                       </a>
                     </div>
@@ -127,14 +122,14 @@ export default function ContactUsPage() {
                 </div>
               </div>
 
-            {/* Quick Form */}
-            <div className="lg:col-span-6 bg-white p-6 sm:p-8 md:p-10 rounded-3xl border border-gray-200 space-y-6">
-              <div>
-                <Heading level={2} variant="subsection" color="red">Send Us a Message</Heading>
-                <p className="text-sm text-gray-600 mt-2">Fill out the form below and we&apos;ll get back to you as soon as possible.</p>
+              {/* Quick Form */}
+              <div className="lg:col-span-6 bg-white p-6 sm:p-8 md:p-10 rounded-3xl border border-gray-200 space-y-6">
+                <div>
+                  <Heading level={2} variant="subsection" color="red">Send Us a Message</Heading>
+                  <p className="text-sm text-gray-600 mt-2">Send us your enquiry and a member of the team will respond as soon as reasonably possible.</p>
+                </div>
+                <ContactForm />
               </div>
-              <ContactForm />
-            </div>
             </div>
           </section>
         </div>
@@ -143,7 +138,7 @@ export default function ContactUsPage() {
       {/* Google Map Roadmap View */}
       <section
         aria-label="Caritas Kampala Office Location Map"
-        className="rounded-3xl mx-4 my-4 sm:mx-6 sm:my-6 lg:mx-8 lg:my-8 overflow-hidden bg-gray-100 shadow-lg shadow-gray-200/80 h-56 sm:h-72 lg:h-80"
+        className="rounded-3xl mx-4 mt-8 mb-16 sm:mx-6 sm:mt-10 sm:mb-20 lg:mx-8 lg:mt-12 lg:mb-24 overflow-hidden bg-gray-100 shadow-lg shadow-gray-200/80 h-60 sm:h-72 lg:h-80"
       >
         <DeferredLocationMap />
       </section>

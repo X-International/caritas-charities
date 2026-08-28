@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Link from "next/link";
 import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
 import Button from "@/components/ui/Button";
 import { FormLabel, TextInput, Select, TextArea, FormHelperText, FormError } from "@/components/ui/Form";
@@ -35,7 +36,7 @@ export default function ContactForm() {
         if (response.status === 429 || result?.code === "RATE_LIMITED") {
           throw new Error("We have received several requests from this connection. Please wait a few minutes and try again.");
         }
-        throw new Error("Our message service is temporarily unavailable. Please try again or use one of the direct contact lines.");
+        throw new Error("We couldn't send your message. Please try again, or contact the Charities Office using the phone or email details on this page.");
       }
       form.reset();
       setSubmission({ status: "success" });
@@ -43,7 +44,7 @@ export default function ContactForm() {
     } catch (error) {
       const message = error instanceof Error && error.name === "AbortError"
         ? "The request took too long. Please check your connection and try again."
-        : error instanceof Error ? error.message : "We could not send your message. Please try again.";
+        : error instanceof Error ? error.message : "We couldn't send your message. Please try again, or contact the Charities Office using the phone or email details on this page.";
       setSubmission({ status: "error", message });
       trackEvent(ANALYTICS_EVENTS.contactFormResult, { form: "contact", result: "error" });
     } finally {
@@ -52,7 +53,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
           <FormLabel htmlFor="name" required>Name</FormLabel>
@@ -60,7 +61,7 @@ export default function ContactForm() {
         </div>
         <div>
           <FormLabel htmlFor="email" required>Email Address</FormLabel>
-          <TextInput type="email" id="email" name="email" autoComplete="email" spellCheck={false} required maxLength={254} placeholder="e.g. jane@example.com…" aria-required="true" />
+          <TextInput type="email" id="email" name="email" autoComplete="email" spellCheck={false} required maxLength={254} placeholder="e.g. jane@example.com" aria-required="true" />
         </div>
       </div>
 
@@ -73,17 +74,23 @@ export default function ContactForm() {
         <FormLabel htmlFor="subject" required>Subject</FormLabel>
         <Select id="subject" name="subject" required defaultValue="" aria-required="true">
           <option value="" disabled>Select a subject...</option>
-          <option value="general">General Enquiry</option>
-          <option value="donations">Donations &amp; Giving</option>
-          <option value="partnerships">Partnerships</option>
-          <option value="media">Media &amp; Press</option>
-          <option value="other">Something Else</option>
+          <option value="General Enquiry">General Enquiry</option>
+          <option value="Donations & Giving">Donations &amp; Giving</option>
+          <option value="Current Appeal">Current Appeal</option>
+          <option value="Volunteer Enquiry">Volunteer Enquiry</option>
+          <option value="Partnership Enquiry">Partnership Enquiry</option>
+          <option value="Charity Shop">Charity Shop</option>
+          <option value="Chaconet Network">Chaconet Network</option>
+          <option value="Programmes & Services">Programmes &amp; Services</option>
+          <option value="Media & Communications">Media &amp; Communications</option>
+          <option value="Website Feedback">Website Feedback</option>
+          <option value="Other">Other</option>
         </Select>
       </div>
 
       <div>
         <FormLabel htmlFor="message" required>Message</FormLabel>
-        <TextArea id="message" name="message" rows={5} required maxLength={4000} placeholder="How can we help you?…" aria-required="true" />
+        <TextArea id="message" name="message" rows={5} required maxLength={4000} placeholder="How can we help?" aria-required="true" />
       </div>
 
       <input className="hidden" tabIndex={-1} autoComplete="off" name="website" aria-hidden="true" />
@@ -96,15 +103,17 @@ export default function ContactForm() {
           isLoading={submission.status === "loading"}
           className="w-full sm:w-auto"
         >
-          Send Message
+          SEND MESSAGE
         </Button>
-        <FormHelperText>By submitting this form, you agree to be contacted about your enquiry.</FormHelperText>
+        <FormHelperText>
+          By submitting this form, you agree that the Charities Office may use the information you provide to respond to your enquiry. <Link href="/privacy-policy" className="text-[#b10017] underline hover:no-underline">Privacy Policy</Link>.
+        </FormHelperText>
         {submission.status === "error" && (
-          <FormError id="contact-form-error">{submission.message}</FormError>
+          <FormError id="contact-form-error" role="alert" aria-live="assertive">{submission.message}</FormError>
         )}
         {submission.status === "success" && (
           <p role="status" aria-live="polite" className="text-sm font-medium text-[#006b5d]">
-            Your message was sent successfully.
+            Thank you for contacting us. Your message has been received and a member of the team will respond as soon as reasonably possible.
           </p>
         )}
       </div>
