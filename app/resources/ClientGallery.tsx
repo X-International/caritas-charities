@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo, useRef, useEffect, useCallback } from "react";
+import { useState, useMemo, useRef, useEffect, useCallback, Suspense } from "react";
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
 import Counter from "yet-another-react-lightbox/plugins/counter";
@@ -33,14 +34,68 @@ const BTN_PRIMARY =
 const LABEL_CLASSES =
   "text-[#585858] uppercase tracking-[0.18em] text-[10px] xs:text-[11px] sm:text-xs";
 
+function getPageNumbers(current: number, total: number): (number | string)[] {
+  if (total <= 7) {
+    return Array.from({ length: total }, (_, i) => i + 1);
+  }
+  if (current <= 4) {
+    return [1, 2, 3, 4, 5, "...", total];
+  }
+  if (current >= total - 3) {
+    return [1, "...", total - 4, total - 3, total - 2, total - 1, total];
+  }
+  return [1, "...", current - 1, current, current + 1, "...", total];
+}
+
 export default function ClientGallery({ images }: Props) {
-  const [categoryFilter, setCategoryFilter] = useState(ALL_CATEGORY_ID);
-  const [page, setPage] = useState(1);
+  return (
+    <Suspense fallback={<div className="py-12 text-center text-gray-500">Loading gallery...</div>}>
+      <ClientGalleryInner images={images} />
+    </Suspense>
+  );
+}
+
+function ClientGalleryInner({ images }: Props) {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const categoryFromUrl = searchParams.get("category") || ALL_CATEGORY_ID;
+  const pageFromUrl = parseInt(searchParams.get("page") || "1", 10);
+
+  const [categoryFilter, setCategoryFilter] = useState(categoryFromUrl);
+  const [page, setPage] = useState(pageFromUrl);
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
   const lastFocusRef = useRef<HTMLElement | null>(null);
   const filterScrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const cat = searchParams.get("category") || ALL_CATEGORY_ID;
+    const p = parseInt(searchParams.get("page") || "1", 10);
+    setCategoryFilter(cat);
+    setPage(isNaN(p) || p < 1 ? 1 : p);
+  }, [searchParams]);
+
+  const updateUrl = useCallback(
+    (newCat: string, newPage: number) => {
+      const params = new URLSearchParams(searchParams.toString());
+      if (newCat === ALL_CATEGORY_ID) {
+        params.delete("category");
+      } else {
+        params.set("category", newCat);
+      }
+      if (newPage <= 1) {
+        params.delete("page");
+      } else {
+        params.set("page", newPage.toString());
+      }
+      const query = params.toString();
+      router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
+    },
+    [searchParams, router, pathname]
+  );
 
   const filteredImages = useMemo(() => {
     if (categoryFilter === ALL_CATEGORY_ID) return images;
@@ -59,8 +114,8 @@ export default function ClientGallery({ images }: Props) {
       filteredImages.map((img) => ({
         src: img.src,
         alt: img.alt,
-        title: img.categoryLabel,
-        description: img.caption,
+        title: "Photo Gallery",
+        description: `${img.caption} — ${img.categoryLabel}`,
       })),
     [filteredImages]
   );
@@ -88,7 +143,14 @@ export default function ClientGallery({ images }: Props) {
   const handleCategoryChange = (categoryId: string) => {
     setCategoryFilter(categoryId);
     setPage(1);
+    updateUrl(categoryId, 1);
     filterScrollRef.current?.scrollTo({ left: 0, behavior: "smooth" });
+  };
+
+  const handlePageChange = (newPage: number) => {
+    setPage(newPage);
+    updateUrl(categoryFilter, newPage);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   if (images.length === 0) {
@@ -118,12 +180,12 @@ export default function ClientGallery({ images }: Props) {
             count={categoryCounts[ALL_CATEGORY_ID]}
             onClick={() => handleCategoryChange(ALL_CATEGORY_ID)}
           />
-          {GALLERY_CATEGORIES.filter((cat) => categoryCounts[cat.id] > 0).map((cat) => (
+          {GALLERY_CATEGORIES.filter((cat) => (categoryCounts[cat.id] || 0) > 0).map((cat) => (
             <FilterPill
               key={cat.id}
               active={categoryFilter === cat.id}
-              label={cat.shortLabel}
-              count={categoryCounts[cat.id]}
+              label={cat.label}
+              count={categoryCounts[cat.id] || 0}
               onClick={() => handleCategoryChange(cat.id)}
             />
           ))}
@@ -160,83 +222,108 @@ export default function ClientGallery({ images }: Props) {
       ) : (
         <>
           {/* Responsive grid: 1 → 2 → 3 columns */}
-          <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-7">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-7">
             {pageImages.map((img, i) => {
               const globalIndex = (page - 1) * IMAGES_PER_PAGE + i;
               return (
-                <Card
+                <article
                   key={img.src}
-                  as="article"
-                  variant="content"
-                  className="group flex flex-col overflow-hidden p-0"
+                  className="group relative overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow"
                 >
                   <button
                     type="button"
                     onClick={(e) => openAt(globalIndex, e)}
-                    className={`relative w-full aspect-[4/3] overflow-hidden bg-caritas-beige ${THUMB_FOCUS_CLASSES}`}
+                    className={`relative w-full aspect-[4/3] overflow-hidden bg-caritas-beige block ${THUMB_FOCUS_CLASSES}`}
                     aria-label={`View photo: ${img.alt}`}
                   >
                     <Image
                       src={img.src}
                       alt={img.alt}
                       fill
+                      priority={globalIndex < 3}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:scale-105"
+                      className="object-cover motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:scale-[1.02]"
                     />
 
-                    {/* Hover overlay */}
-                    <span className="absolute inset-0 bg-black/0 motion-safe:transition-colors motion-safe:duration-300 group-hover:bg-black/20 group-focus-visible:bg-black/20" />
+                    {/* Subtle hover overlay */}
+                    <span className="absolute inset-0 bg-black/0 motion-safe:transition-colors motion-safe:duration-200 group-hover:bg-black/10 group-focus-visible:bg-black/10" />
 
-                    <span className="absolute inset-0 flex items-center justify-center opacity-0 motion-safe:transition-opacity motion-safe:duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
-                      <span className="flex items-center gap-2 rounded-xl bg-caritas-red px-4 py-2 text-xs sm:text-sm font-semibold text-white shadow-lg">
-                        <ZoomIn className="h-4 w-4 shrink-0" aria-hidden />
+                    <span className="absolute inset-0 flex items-center justify-center opacity-0 motion-safe:transition-opacity motion-safe:duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
+                      <span className="flex items-center gap-1.5 rounded-lg bg-[#b10017] px-3 py-1.5 text-xs font-semibold text-white shadow-md">
+                        <ZoomIn className="h-3.5 w-3.5 shrink-0" aria-hidden />
                         View Photo
                       </span>
                     </span>
 
                     <span
-                      className={`absolute left-2 top-2 sm:left-3 sm:top-3 ${LABEL_CLASSES} text-white bg-black/50 px-2 py-1 rounded backdrop-blur-sm max-w-[calc(100%-1rem)] truncate`}
+                      className={`absolute left-2.5 top-2.5 ${LABEL_CLASSES} text-white bg-black/60 px-2 py-0.5 rounded backdrop-blur-sm max-w-[calc(100%-1.25rem)] truncate font-semibold`}
                     >
-                      {img.caption}
+                      {img.categoryLabel}
                     </span>
                   </button>
-                </Card>
+                </article>
               );
             })}
           </div>
 
-          {/* Pagination — compact and touch-friendly on all breakpoints */}
+          {/* Pagination */}
           {totalPages > 1 && (
             <nav
-              className="flex flex-col xs:flex-row items-stretch xs:items-center justify-center gap-3 sm:gap-4 pt-2"
+              className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-4"
               aria-label="Gallery pagination"
             >
               <button
                 type="button"
-                onClick={() => setPage((p) => Math.max(1, p - 1))}
+                onClick={() => handlePageChange(Math.max(1, page - 1))}
                 disabled={page === 1}
                 aria-disabled={page === 1}
-                className={`${BTN_BASE} xs:order-1`}
+                className={BTN_BASE}
               >
                 Previous
               </button>
 
-              <p
-                className="flex items-center justify-center px-2 text-sm text-[#585858] xs:order-2"
-                aria-current="page"
-              >
-                Page{" "}
-                <span className="mx-1 font-semibold text-gray-900">{page}</span>
-                of{" "}
-                <span className="ml-1 font-semibold text-gray-900">{totalPages}</span>
+              {/* Mobile page info */}
+              <p className="sm:hidden text-sm text-[#585858]" aria-current="page">
+                Page <span className="font-semibold text-gray-900">{page}</span> of{" "}
+                <span className="font-semibold text-gray-900">{totalPages}</span>
               </p>
+
+              {/* Desktop page numbers with ellipsis */}
+              <div className="hidden sm:flex items-center gap-1.5">
+                {getPageNumbers(page, totalPages).map((p, idx) => {
+                  if (p === "...") {
+                    return (
+                      <span key={`ellipsis-${idx}`} className="px-2 text-gray-400">
+                        ...
+                      </span>
+                    );
+                  }
+                  const pageNum = p as number;
+                  const isCurrent = pageNum === page;
+                  return (
+                    <button
+                      key={pageNum}
+                      type="button"
+                      onClick={() => handlePageChange(pageNum)}
+                      aria-current={isCurrent ? "page" : undefined}
+                      className={`min-w-10 min-h-10 px-3 py-2 text-sm font-semibold rounded-lg transition-colors ${
+                        isCurrent
+                          ? "bg-[#b10017] text-white shadow-sm"
+                          : "bg-white text-gray-800 border border-[#eadfce] hover:bg-[#faf7f2]"
+                      }`}
+                    >
+                      {pageNum}
+                    </button>
+                  );
+                })}
+              </div>
 
               <button
                 type="button"
-                onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                onClick={() => handlePageChange(Math.min(totalPages, page + 1))}
                 disabled={page === totalPages}
                 aria-disabled={page === totalPages}
-                className={`${BTN_BASE} xs:order-3`}
+                className={BTN_BASE}
               >
                 Next
               </button>
@@ -251,14 +338,28 @@ export default function ClientGallery({ images }: Props) {
         close={() => setOpen(false)}
         slides={lightboxSlides}
         plugins={[Counter, Captions, Zoom]}
-        counter={{ container: { style: { top: "unset", bottom: "1rem", left: "50%", transform: "translateX(-50%)" } } }}
+        counter={{
+          container: {
+            style: {
+              top: "unset",
+              bottom: "1rem",
+              left: "1.5rem",
+              transform: "none",
+              backgroundColor: "rgba(0, 0, 0, 0.75)",
+              color: "#fff",
+              padding: "0.25rem 0.75rem",
+              borderRadius: "0.375rem",
+              fontSize: "0.875rem",
+            },
+          },
+        }}
         captions={{ descriptionTextAlign: "center" }}
-        zoom={{ maxZoomPixelRatio: 3 }}
+        zoom={{ maxZoomPixelRatio: 3, scrollToZoom: true }}
         on={{
           view: ({ index: i }) => setIndex(i),
         }}
         styles={{
-          container: { backgroundColor: "rgba(0, 0, 0, 0.92)" },
+          container: { backgroundColor: "rgba(0, 0, 0, 0.94)" },
         }}
         controller={{ closeOnBackdropClick: true }}
       />

@@ -9,22 +9,28 @@ export type GalleryCategory = {
 
 export const GALLERY_CATEGORIES: GalleryCategory[] = [
   {
-    id: "event-01",
+    id: "events",
     folder: "Event 01",
-    label: "Community Events",
+    label: "Events",
     shortLabel: "Events",
   },
   {
-    id: "charities",
-    folder: "Charities",
-    label: "Partner Charities",
-    shortLabel: "Charities",
+    id: "programmes",
+    folder: "Event 03",
+    label: "Programmes",
+    shortLabel: "Programmes",
   },
   {
-    id: "workshops",
+    id: "chaconet-partners",
+    folder: "Charities",
+    label: "Chaconet & Partners",
+    shortLabel: "Chaconet & Partners",
+  },
+  {
+    id: "workshops-training",
     folder: "Event 06",
-    label: "Workshops",
-    shortLabel: "Workshops",
+    label: "Workshops & Training",
+    shortLabel: "Workshops & Training",
   },
   {
     id: "charity-shop",

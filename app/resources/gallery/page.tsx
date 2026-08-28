@@ -4,7 +4,6 @@ import ClientGallery from "../ClientGallery";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
-import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 import PageHeader from "@/components/PageHeader";
 import {
@@ -16,23 +15,42 @@ import {
 export const metadata = buildPageMetadata({
   title: "Gallery | Caritas Kampala Charities Office",
   description:
-    "Photos from the Charities Office's programmes, events and community work across the Kampala Archdiocese.",
+    "Explore photos from our programmes, events, and community activities across the Archdiocese of Kampala.",
   path: "/resources/gallery",
 });
+
+function getFactualCaption(folder: string): string {
+  if (folder === "Charity Shop") {
+    return "Charity Shop in Nsambya";
+  }
+  if (folder === "Event 02") {
+    return "Emergency relief supplies preparation";
+  }
+  if (folder === "Event 06") {
+    return "Skills training workshop session";
+  }
+  if (folder === "Charities" || folder === "Event 04") {
+    return "Partner charity institution gathering";
+  }
+  if (folder === "Event 03") {
+    return "Community empowerment programme activity";
+  }
+  return "Community outreach and programme activity";
+}
 
 function readGalleryFiles(): GalleryImage[] {
   const publicDir = path.join(process.cwd(), "public", "images");
   const results: GalleryImage[] = [];
 
   const FOLDER_TO_CATEGORY_MAP: Record<string, { id: string; label: string; shortLabel: string }> = {
-    "Event 01": { id: "event-01", label: "Community Events", shortLabel: "Events" },
-    "Event 02": { id: "event-01", label: "Emergency Relief Events", shortLabel: "Events" },
-    "Event 03": { id: "charities", label: "Community Empowerment", shortLabel: "Charities" },
-    "Event 04": { id: "charities", label: "Annual Celebrations", shortLabel: "Charities" },
-    "Event 05": { id: "event-01", label: "Community Events", shortLabel: "Events" },
-    "Event 06": { id: "workshops", label: "Workshops", shortLabel: "Workshops" },
+    "Event 01": { id: "events", label: "Events", shortLabel: "Events" },
+    "Event 02": { id: "events", label: "Events", shortLabel: "Events" },
+    "Event 03": { id: "programmes", label: "Programmes", shortLabel: "Programmes" },
+    "Event 04": { id: "chaconet-partners", label: "Chaconet & Partners", shortLabel: "Chaconet & Partners" },
+    "Event 05": { id: "events", label: "Events", shortLabel: "Events" },
+    "Event 06": { id: "workshops-training", label: "Workshops & Training", shortLabel: "Workshops & Training" },
     "Charity Shop": { id: "charity-shop", label: "Charity Shop", shortLabel: "Charity Shop" },
-    "Charities": { id: "charities", label: "Partner Charities", shortLabel: "Charities" },
+    "Charities": { id: "chaconet-partners", label: "Chaconet & Partners", shortLabel: "Chaconet & Partners" },
   };
 
   const folders = Object.keys(FOLDER_TO_CATEGORY_MAP);
@@ -59,7 +77,7 @@ function readGalleryFiles(): GalleryImage[] {
         categoryId: category.id,
         categoryLabel: category.label,
         alt: filenameToAlt(file, category.label),
-        caption: category.shortLabel,
+        caption: getFactualCaption(folder),
       });
     }
   }
