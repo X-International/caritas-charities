@@ -59,9 +59,9 @@ const staticSiteItems: SearchIndexItem[] = [
     title: "Our Programmes",
     url: "/our-programmes",
     category: "Programme",
-    snippet: "Explore the core programmes run by Caritas Kampala Charities Office, supporting families, the elderly, refugees and people with disabilities.",
-    content: "Caritas Kampala core programmes: Emergency & Disaster Response, Support for the Elderly, Family & Child Support, Refugee & Asylum Seeker Support, Disability & Special Needs Support, Poverty Alleviation & Livelihoods across Kampala, Wakiso, and Mpigi.",
-    keywords: ["programmes", "programs", "initiatives", "elderly", "disability", "refugees", "poverty", "emergency response", "child support", "livelihoods"]
+    snippet: "Explore the practical programmes supporting vulnerable people and communities across the Archdiocese of Kampala.",
+    content: "Caritas Kampala core programmes: Emergency & Disaster Response, Support for Older Persons, Family & Child Support, Refugee & Asylum Seeker Support, Disability & Special Needs Support, Livelihoods & Poverty Reduction across Kampala, Wakiso, and Mpigi.",
+    keywords: ["programmes", "programs", "initiatives", "older persons", "elderly", "disability", "refugees", "poverty", "emergency response", "child support", "livelihoods"]
   },
   // Individual programmes for granular search matching
   {
@@ -69,26 +69,26 @@ const staticSiteItems: SearchIndexItem[] = [
     title: "Emergency & Disaster Response Programme",
     url: "/our-programmes#emergency-disaster-response",
     category: "Programme",
-    snippet: "Immediate assistance to families and communities affected by disasters, fires, floods, and emergencies.",
-    content: "Emergency and Disaster Response: providing immediate relief items, food, shelter, and financial assistance to families and communities facing sudden tragedy, fire, or climate emergency across the Archdiocese.",
+    snippet: "Provides emergency relief, preparedness, recovery support, and practical assistance to people and communities affected by disasters, displacement, and other emergencies.",
+    content: "Emergency & Disaster Response: provides emergency relief, preparedness, recovery support, and practical assistance to people and communities affected by disasters, displacement, and other emergencies.",
     keywords: ["emergency", "disaster", "relief", "floods", "fire", "crisis", "assistance"]
   },
   {
-    id: "programme-elderly-support",
-    title: "Support for the Elderly Programme",
-    url: "/our-programmes#support-for-the-elderly",
+    id: "programme-older-persons-support",
+    title: "Support for Older Persons Programme",
+    url: "/our-programmes#support-for-older-persons",
     category: "Programme",
-    snippet: "Ongoing practical support, medical care, and food assistance to elderly people across the Archdiocese.",
-    content: "Support for the Elderly: providing medical care, dignity, monthly rations, family-style shelter, and ongoing practical aid to senior citizens and vulnerable elderly people.",
-    keywords: ["elderly", "seniors", "old age", "aging", "grandparents", "geriatric care"]
+    snippet: "Provides visits, essential supplies, health and wellbeing support, and practical care for older people who may be living with hardship, isolation, or limited family support.",
+    content: "Support for Older Persons: provides visits, essential supplies, health and wellbeing support, and practical care for older people who may be living with hardship, isolation, or limited family support.",
+    keywords: ["older persons", "elderly", "seniors", "old age", "aging", "grandparents", "geriatric care"]
   },
   {
     id: "programme-family-child-support",
     title: "Family & Child Support Programme",
     url: "/our-programmes#family-child-support",
     category: "Programme",
-    snippet: "Supporting families and children facing hardship, helping stabilise households in need.",
-    content: "Family and Child Support: helping low-income households, orphans, vulnerable children, single parents, educational support, food security, and family stabilization.",
+    snippet: "Supports vulnerable children and families through practical assistance, education support, safeguarding, psychosocial care, and referrals to appropriate services.",
+    content: "Family & Child Support: supports vulnerable children and families through practical assistance, education support, safeguarding, psychosocial care, and referrals to appropriate services.",
     keywords: ["family", "child", "children", "orphans", "hardship", "households", "parenting", "youth"]
   },
   {
@@ -96,8 +96,8 @@ const staticSiteItems: SearchIndexItem[] = [
     title: "Refugee & Asylum Seeker Support Programme",
     url: "/our-programmes#refugee-asylum-seeker-support",
     category: "Programme",
-    snippet: "Practical assistance, medical aid, and community integration for urban refugees and asylum seekers.",
-    content: "Refugee and Asylum Seeker Support: practical assistance, shelter support, emergency food, legal guidance, and community integration for urban refugees fleeing conflict in neighbouring countries.",
+    snippet: "Provides practical assistance, referrals, and other forms of support to refugees and asylum seekers as they navigate displacement and rebuild stability in their lives.",
+    content: "Refugee & Asylum Seeker Support: provides practical assistance, referrals, and other forms of support to refugees and asylum seekers as they navigate displacement and rebuild stability in their lives.",
     keywords: ["refugee", "refugees", "asylum seeker", "asylum", "displaced persons", "migration", "urban refugees"]
   },
   {
@@ -105,18 +105,18 @@ const staticSiteItems: SearchIndexItem[] = [
     title: "Disability & Special Needs Support Programme",
     url: "/our-programmes#disability-special-needs-support",
     category: "Programme",
-    snippet: "Supports people living with disabilities and special medical needs through care facilities and aid.",
-    content: "Disability and Special Needs Support: supporting persons living with severe physical or mental disabilities, special medical needs, mobility equipment, and specialized rehabilitation care homes.",
+    snippet: "Works with people with disabilities and partner institutions to support accessibility, inclusion, care, skills development, advocacy, and greater participation in community life.",
+    content: "Disability & Special Needs Support: works with people with disabilities and partner institutions to support accessibility, inclusion, care, skills development, advocacy, and greater participation in community life.",
     keywords: ["disability", "disabled", "special needs", "handicap", "wheelchair", "rehabilitation", "medical care"]
   },
   {
-    id: "programme-poverty-livelihoods",
-    title: "Poverty Alleviation & Livelihoods Programme",
-    url: "/our-programmes#poverty-alleviation-livelihoods",
+    id: "programme-livelihoods-reduction",
+    title: "Livelihoods & Poverty Reduction Programme",
+    url: "/our-programmes#livelihoods-poverty-reduction",
     category: "Programme",
-    snippet: "Works with individuals and families facing poverty to build sustainable livelihoods and income.",
-    content: "Poverty Alleviation and Livelihoods: vocational skills, agricultural tools, micro-grants, self-help groups, and income generation initiatives to break cycles of poverty.",
-    keywords: ["poverty", "alleviation", "livelihoods", "income", "empowerment", "employment", "vocational", "self-reliance"]
+    snippet: "Supports individuals and families to strengthen their livelihoods through skills development, income-generating activities, savings initiatives, and other practical pathways toward greater self-reliance.",
+    content: "Livelihoods & Poverty Reduction: supports individuals and families to strengthen their livelihoods through skills development, income-generating activities, savings initiatives, and other practical pathways toward greater self-reliance.",
+    keywords: ["poverty", "reduction", "livelihoods", "income", "empowerment", "employment", "vocational", "self-reliance"]
   },
   {
     id: "page-about-us",

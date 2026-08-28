@@ -11,40 +11,46 @@ import DonateOnlineCard from "@/components/DonateOnlineCard";
 export const metadata = buildPageMetadata({
   title: "Our Programmes | Caritas Kampala Charities Office",
   description:
-    "Explore the programmes of the Caritas Kampala Charities Office, supporting families, children, elderly people, refugees, people with disabilities, and communities facing poverty across the Kampala Archdiocese.",
+    "Explore the practical programmes supporting vulnerable people and communities across the Archdiocese of Kampala.",
   path: "/our-programmes",
 });
 
 const programmes = [
   {
     number: "01",
+    id: "emergency-disaster-response",
     title: "Emergency & Disaster Response",
-    desc: "Provides immediate assistance to families and communities affected by disasters, fires, and other emergencies, including emergency supplies, medical assistance, rescue and evacuation support, and other essential services. The programme also promotes Anticipatory Action through early warning systems, risk assessment, and community preparedness to help communities reduce vulnerability and build resilience before crises occur.",
+    desc: "Provides emergency relief, preparedness, recovery support, and practical assistance to people and communities affected by disasters, displacement, and other emergencies.",
   },
   {
     number: "02",
-    title: "Support for the Elderly",
-    desc: "Provides continuous and meaningful support to elderly members of the community through visits, companionship, essential supplies, health and wellness activities, medical check-ups, health education, and social activities that promote dignity, inclusion, and quality of life.",
+    id: "support-for-older-persons",
+    title: "Support for Older Persons",
+    desc: "Provides visits, essential supplies, health and wellbeing support, and practical care for older people who may be living with hardship, isolation, or limited family support.",
   },
   {
     number: "03",
+    id: "family-child-support",
     title: "Family & Child Support",
-    desc: "Supports families and children facing hardship through assistance with food, education, shelter, medical care, and psychosocial support while promoting long-term resilience and self-sufficiency. The Charities Office also supports child safeguarding through protection awareness, safe reporting mechanisms, staff and volunteer screening, and psychosocial support for vulnerable children.",
+    desc: "Supports vulnerable children and families through practical assistance, education support, safeguarding, psychosocial care, and referrals to appropriate services.",
   },
   {
     number: "04",
+    id: "refugee-asylum-seeker-support",
     title: "Refugee & Asylum Seeker Support",
-    desc: "Provides practical assistance to urban refugees and asylum seekers, including support with safe housing, food, medical care, vocational training, skills development, legal assistance, and protection services while promoting dignity, safety, and long-term resilience.",
+    desc: "Provides practical assistance, referrals, and other forms of support to refugees and asylum seekers as they navigate displacement and rebuild stability in their lives.",
   },
   {
     number: "05",
+    id: "disability-special-needs-support",
     title: "Disability & Special Needs Support",
-    desc: "In collaboration with Chaconet partners, provides personalized care, therapeutic services, accessible facilities, skills development, advocacy, emotional support, community integration, and awareness activities that promote independence, dignity, inclusion, and a better quality of life.",
+    desc: "Works with people with disabilities and partner institutions to support accessibility, inclusion, care, skills development, advocacy, and greater participation in community life.",
   },
   {
     number: "06",
-    title: "Poverty Alleviation & Livelihoods",
-    desc: "Works with individuals and families to develop sustainable livelihood opportunities through skills training, microfinance initiatives, income-generating activities, and community empowerment programmes that promote economic independence and help break the cycle of poverty.",
+    id: "livelihoods-poverty-reduction",
+    title: "Livelihoods & Poverty Reduction",
+    desc: "Supports individuals and families to strengthen their livelihoods through skills development, income-generating activities, savings initiatives, and other practical pathways toward greater self-reliance.",
   },
 ];
 
@@ -61,7 +67,7 @@ export default function OurProgrammesPage() {
             { label: "Home", href: "/" },
             { label: "Our Programmes" }
           ]}
-          description="Explore the practical programmes serving vulnerable people and communities across the Archdiocese of Kampala."
+          description="Explore the practical programmes supporting vulnerable people and communities across the Archdiocese of Kampala."
         />
 
         {/* Intro */}
@@ -71,14 +77,14 @@ export default function OurProgrammesPage() {
             </Heading>
             <div aria-hidden className="w-16 h-px bg-[#b10017] mx-auto mt-6 mb-8 rounded" />
             <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Our programmes respond to immediate needs while also helping individuals, families and communities build greater stability for the future. From emergency assistance and essential services to livelihoods, inclusion and community support, our work is shaped by the needs of the people we serve.
+              Our programmes respond to immediate needs while helping individuals, families, and communities build greater stability, dignity, and resilience across Kampala, Wakiso, and Mpigi.
             </p>
         </section>
 
         {/* Programme List */}
         <section className="site-container py-16 sm:py-20 space-y-10">
           {programmes.map((prog) => (
-            <Card key={prog.number} variant="content" className="flex flex-col md:flex-row gap-6 p-6 sm:p-8">
+            <Card key={prog.number} id={prog.id} variant="content" className="flex flex-col md:flex-row gap-6 p-6 sm:p-8">
               {/* Image */}
               <div className="w-full md:w-1/3 lg:w-1/4 h-64 md:h-auto bg-gray-100 rounded-lg flex items-center justify-center">
                   <span className="text-gray-400 text-sm font-medium">Programme Image</span>
@@ -97,23 +103,7 @@ export default function OurProgrammesPage() {
           ))}
         </section>
 
-        {/* CTA */}
-        <section className="bg-[#b10017] text-white py-16 sm:py-20">
-          <div className="site-container text-center space-y-6 max-w-3xl mx-auto">
-            <Heading level={2} className="text-3xl sm:text-4xl font-bold font-serif text-white">
-              Together, We Can Make a Difference
-            </Heading>
-            <p className="text-lg text-white/90 leading-relaxed">
-              Your support helps us reach people facing hardship and build stronger, more resilient communities across the Kampala Archdiocese.
-            </p>
-            <div className="pt-4">
-              <Button href="/donate" variant="secondary" size="lg">
-                SUPPORT OUR WORK
-              </Button>
-            </div>
-          </div>
-        </section>
-        <div className="site-container py-4 sm:py-6">
+        <div className="site-container py-6 sm:py-8">
           <DonateOnlineCard />
         </div>
       </main>
