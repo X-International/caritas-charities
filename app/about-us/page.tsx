@@ -122,41 +122,6 @@ export default function AboutUsPage() {
             </p>
           </section>
 
-          {/* Faith Put Into Practice Card */}
-          <section className="bg-[#f4efe6] p-6 sm:p-8 rounded-subcard space-y-3">
-            <Heading level={3} className="text-xl font-serif font-bold text-[#b10017]">
-              Faith Put Into Practice
-            </Heading>
-            <p className="text-gray-700 leading-relaxed text-base font-sans">
-              Our work is rooted in practical service, responding to real needs with compassion, dignity, and responsibility.
-            </p>
-            <div>
-              <Link href="/our-programmes" className="text-[#b10017] font-semibold hover:underline inline-flex items-center gap-1 text-sm sm:text-base font-sans">
-                See Our Programmes &rarr;
-              </Link>
-            </div>
-          </section>
-
-          {/* Our Team / Chaconet Links */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-gray-200">
-            <Link href="/about-us/our-team" className="group block space-y-1 p-4 rounded-lg hover:bg-gray-50 transition-colors">
-              <span className="text-lg font-serif font-bold text-[#b10017] group-hover:underline block">
-                Our Team &rarr;
-              </span>
-              <span className="text-sm text-gray-600 block font-sans">
-                Meet the people serving through the Charities Office.
-              </span>
-            </Link>
-            <Link href="/about-us/chaconet-partners" className="group block space-y-1 p-4 rounded-lg hover:bg-gray-50 transition-colors">
-              <span className="text-lg font-serif font-bold text-[#b10017] group-hover:underline block">
-                Chaconet Network &rarr;
-              </span>
-              <span className="text-sm text-gray-600 block font-sans">
-                Learn about the network of charity homes working across the Archdiocese.
-              </span>
-            </Link>
-          </div>
-
           {/* Support Our Work CTA */}
           <DonateOnlineCard />
         </article>

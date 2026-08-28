@@ -19,10 +19,10 @@ export default function SidebarCard() {
           Faith Put Into Practice
         </Heading>
         <p className="text-sm text-white/90 leading-relaxed mb-8 font-sans">
-          Our story is one of showing up, again and again, for the people who need it most. Every programme we run is one more way that story continues.
+          Our work is rooted in practical service, responding to real needs with compassion, dignity, and responsibility.
         </p>
         <Button href="/our-programmes" variant="secondary" size="md">
-          See What We Do
+          See Our Programmes
         </Button>
       </div>
     </div>
