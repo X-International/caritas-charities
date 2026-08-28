@@ -14,6 +14,10 @@ interface SplitPageHeaderProps {
   description?: string;
   image: string;
   imageAlt: string;
+  imagePosition?: string;
+  imagePositionDesktop?: string;
+  imagePositionTablet?: string;
+  imagePositionMobile?: string;
 }
 
 export default function SplitPageHeader({
@@ -23,11 +27,25 @@ export default function SplitPageHeader({
   description,
   image,
   imageAlt,
+  imagePosition,
+  imagePositionDesktop,
+  imagePositionTablet,
+  imagePositionMobile,
 }: SplitPageHeaderProps) {
+  const desktopPos = imagePositionDesktop || imagePosition || "center center";
+  const tabletPos = imagePositionTablet || imagePosition || desktopPos;
+  const mobilePos = imagePositionMobile || tabletPos || desktopPos;
+
+  const imagePosStyle = {
+    "--image-pos-mobile": mobilePos,
+    "--image-pos-tablet": tabletPos,
+    "--image-pos-desktop": desktopPos,
+  } as React.CSSProperties;
+
   return (
     <>
       {breadcrumbs && breadcrumbs.length > 0 && (
-        <div className="site-container pt-4 sm:pt-6 lg:pt-8 pb-2">
+        <div className="site-container pt-4 sm:pt-6 lg:pt-8 pb-3 sm:pb-4">
           <nav
             aria-label="Breadcrumb"
             className="text-xs uppercase tracking-wider font-semibold"
@@ -51,10 +69,13 @@ export default function SplitPageHeader({
           </nav>
         </div>
       )}
-      <div className="site-container">
-        <div className="contact-hero w-full grid grid-cols-1 mb-8 sm:mb-12 relative overflow-hidden lg:h-125">
+      <div className="site-container mb-12 sm:mb-16 lg:mb-20">
+        <div className="contact-hero w-full grid grid-cols-1 lg:grid-cols-2 gap-4 lg:items-stretch lg:h-[clamp(460px,32vw,520px)] relative overflow-x-clip">
           {/* Left Column: Image */}
-          <div className="contact-hero-image order-1 relative h-75 sm:h-100 md:h-120 lg:h-full rounded-t-2xl sm:rounded-t-4xl lg:rounded-none lg:rounded-r-4xl overflow-hidden lg:absolute lg:inset-y-0 lg:left-0 lg:w-[calc(50%-0.5rem)]">
+          <div
+            className="contact-hero-image relative overflow-hidden rounded-t-3xl sm:rounded-t-4xl lg:rounded-tr-none lg:rounded-l-4xl h-[clamp(280px,82vw,340px)] sm:h-[clamp(340px,45vw,400px)] lg:h-full"
+            style={imagePosStyle}
+          >
             <Image
               src={image}
               alt={imageAlt}
@@ -66,16 +87,16 @@ export default function SplitPageHeader({
           </div>
 
           {/* Right Column: Red Content Panel */}
-          <div className="contact-hero-panel order-2 relative h-75 sm:h-100 md:h-120 lg:h-full bg-[#b10017] text-white rounded-b-2xl sm:rounded-b-4xl lg:rounded-none lg:rounded-l-4xl overflow-hidden flex flex-col justify-center px-8 sm:px-12 md:px-16 lg:px-24">
-            <div className="contact-hero-panel-content max-w-lg space-y-4">
+          <div className="contact-hero-panel relative bg-[#b10017] text-white rounded-b-3xl sm:rounded-b-4xl lg:rounded-bl-none lg:rounded-r-4xl overflow-hidden flex flex-col justify-center px-6 sm:px-12 md:px-16 lg:px-20 py-10 sm:py-12 lg:py-0">
+            <div className="contact-hero-panel-content max-w-lg space-y-3 sm:space-y-4">
               <Eyebrow color="white">
                 {eyebrow}
               </Eyebrow>
-              <Heading level={1} variant="hero" color="white">
+              <Heading level={1} variant="hero" color="white" className="text-3xl sm:text-4xl lg:text-5xl">
                 {title}
               </Heading>
               {description && (
-                <Lead variant="article" className="text-white">
+                <Lead variant="article" className="text-white text-base sm:text-lg lg:text-xl leading-relaxed">
                   {description}
                 </Lead>
               )}
