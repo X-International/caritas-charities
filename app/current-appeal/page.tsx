@@ -64,7 +64,7 @@ export default function CurrentAppealPage() {
                 </Heading>
                 <div className="space-y-4 text-gray-700 text-[15px] sm:text-base lg:text-lg leading-relaxed font-normal">
                   <p>
-                    Climate change has brought drought to the Karamoja region, and that drought has now become famine in the Kotido and Moroto dioceses. Families across the region are struggling to find enough food, and the need is urgent.
+                    Climate change has brought drought to the Karamoja region, and that drought has now become famine in Kotido and Moroto dioceses. Families across the region are struggling to find enough food, and the need is urgent.
                   </p>
                   <p>
                     The government has put aside some funding to help those affected. We acknowledge and appreciate that support. But it is not enough on its own. As a Church, we believe we have a responsibility to stand alongside the government, not replace it, in responding to the needs of our people.

@@ -51,7 +51,7 @@ export default function CurrentCrises() {
                 Famine in Kotido and Moroto
               </Heading>
               <p className="text-gray-700 text-sm sm:text-base xl:text-lg leading-relaxed max-w-prose mx-auto lg:mx-0">
-                Climate change has driven drought and famine across the Kotido and Moroto dioceses. The government has provided some relief, but it isn&apos;t enough. From July through September, the Archdiocese is collecting food such as posho, maize flour, rice, beans, and cooking oil to send to families in Karamoja. Every contribution counts, whatever its size.
+                Climate change has driven drought and famine across Kotido and Moroto dioceses. The government has provided some relief, but it isn&apos;t enough. From July through September, the Archdiocese is collecting food such as posho, maize flour, rice, beans, and cooking oil to send to families in Karamoja. Every contribution counts, whatever its size.
               </p>
               <div className="pt-1 sm:pt-2 flex justify-center lg:justify-start">
                 <Button

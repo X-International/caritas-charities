@@ -46,7 +46,7 @@ export const newsArticles: NewsArticle[] = [
     image: "/images/current appeal/Caritas_Kampala_Current_Appeal_details.jpg",
     alt: "Community members in Karamoja affected by the ongoing drought. Credit: Caritas Kampala.",
     body: [
-      "Drought driven by climate change has brought famine to the Kotido and Moroto dioceses in the Karamoja region. The government has provided some emergency relief, but it has not been enough to meet the scale of the need.",
+      "Drought driven by climate change has brought famine to Kotido and Moroto dioceses in the Karamoja region. The government has provided some emergency relief, but it has not been enough to meet the scale of the need.",
       "In response, Kampala Archdiocese is calling on parishes across Kampala Archdiocese to come together for the people of Karamoja. The collection drive began in July and will continue through September.",
       "In July, the first batch of support, including money and household items, was sent to Caritas Uganda, who delivered it to families in Kotido and Moroto. Collection continues now, with parishes gathering food and essential relief items to send in the coming months.",
       "The drive is focused on staple food items, including posho, maize flour, maize, rice, beans, sugar, and cooking oil. Contributions of money and household items are also welcome.",
