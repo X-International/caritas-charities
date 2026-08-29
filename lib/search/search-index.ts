@@ -23,8 +23,8 @@ const staticSiteItems: SearchIndexItem[] = [
     title: "Caritas Kampala Charities Office",
     url: "/",
     category: "Page",
-    snippet: "The Charities Office of Caritas Kampala supports the poor, vulnerable and marginalized across the Kampala Archdiocese.",
-    content: "Caritas Kampala Charities Office home. Serving Kampala, Wakiso & Mpigi. Supporting the poor, vulnerable, elderly, orphans, refugees, persons with disabilities, and families facing hardship across the Kampala Archdiocese. Humanitarian appeals, emergency relief, community development.",
+    snippet: "The Charities Office of Caritas Kampala supports the poor, vulnerable and marginalized across Kampala Archdiocese.",
+    content: "Caritas Kampala Charities Office home. Serving Kampala, Wakiso & Mpigi. Supporting the poor, vulnerable, elderly, orphans, refugees, persons with disabilities, and families facing hardship across Kampala Archdiocese. Humanitarian appeals, emergency relief, community development.",
     keywords: ["home", "homepage", "caritas kampala", "charities office", "Kampala Archdiocese", "wakiso", "mpigi", "humanitarian", "relief"]
   },
   {
@@ -59,7 +59,7 @@ const staticSiteItems: SearchIndexItem[] = [
     title: "Our Programmes",
     url: "/our-programmes",
     category: "Programme",
-    snippet: "Explore the practical programmes supporting vulnerable people and communities across the Kampala Archdiocese.",
+    snippet: "Explore the practical programmes supporting vulnerable people and communities across Kampala Archdiocese.",
     content: "Caritas Kampala core programmes: Emergency & Disaster Response, Support for Older Persons, Family & Child Support, Refugee & Asylum Seeker Support, Disability & Special Needs Support, Livelihoods & Poverty Reduction across Kampala, Wakiso, and Mpigi.",
     keywords: ["programmes", "programs", "initiatives", "older persons", "elderly", "disability", "refugees", "poverty", "emergency response", "child support", "livelihoods"]
   },
@@ -124,7 +124,7 @@ const staticSiteItems: SearchIndexItem[] = [
     url: "/about-us",
     category: "Page",
     snippet: "Learn about the mission, vision and values of the Charities Office, part of Caritas Kampala.",
-    content: "About Caritas Kampala Charities Office. Socio-pastoral ministry of the Catholic Church in the Kampala Archdiocese. Putting gospel message of love into action without discrimination based on religion, ethnicity, or politics. Dignity, Solidarity and Shared Responsibility: charity is more than responding to immediate need. Recognising the dignity of every person, listening to people's experiences and responding through practical action. Bring people together — communities, charity homes, volunteers, partners and supporters — around a shared responsibility to care for those experiencing hardship.",
+    content: "About Caritas Kampala Charities Office. Socio-pastoral ministry of the Catholic Church in Kampala Archdiocese. Putting gospel message of love into action without discrimination based on religion, ethnicity, or politics. Dignity, Solidarity and Shared Responsibility: charity is more than responding to immediate need. Recognising the dignity of every person, listening to people's experiences and responding through practical action. Bring people together — communities, charity homes, volunteers, partners and supporters — around a shared responsibility to care for those experiencing hardship.",
     keywords: ["about us", "who we are", "caritas kampala", "catholic church", "Kampala Archdiocese", "mission", "values"]
   },
   {
@@ -133,7 +133,7 @@ const staticSiteItems: SearchIndexItem[] = [
     url: "/about-us/our-team",
     category: "Page",
     snippet: "Meet the leadership, staff, and parish coordinators behind the Charities Office of Caritas Kampala.",
-    content: "Our Team and Leadership. Dedicated team of coordinators, social workers, administrative staff, and parish volunteers carrying out charity operations across the Kampala Archdiocese under the leadership of Caritas Kampala.",
+    content: "Our Team and Leadership. Dedicated team of coordinators, social workers, administrative staff, and parish volunteers carrying out charity operations across Kampala Archdiocese under the leadership of Caritas Kampala.",
     keywords: ["our team", "team", "staff", "leadership", "coordinators", "directors", "social workers"]
   },
   {
@@ -142,7 +142,7 @@ const staticSiteItems: SearchIndexItem[] = [
     url: "/about-us/chaconet-partners",
     category: "Page",
     snippet: "Chaconet is a network of nine registered Catholic charity homes working together across Kampala Archdiocese.",
-    content: "Chaconet (Catholic Charity Homes Network) is an initiative under Caritas Kampala bringing together registered Catholic orphanages, disability centers, elderly homes, and rehabilitation facilities across the Kampala Archdiocese. Resource coordination, policy compliance, standards of care.",
+    content: "Chaconet (Catholic Charity Homes Network) is an initiative under Caritas Kampala bringing together registered Catholic orphanages, disability centers, elderly homes, and rehabilitation facilities across Kampala Archdiocese. Resource coordination, policy compliance, standards of care.",
     keywords: ["chaconet", "charity homes", "orphanages", "elderly homes", "disability centers", "network", "partners", "care institutions"]
   },
   {
@@ -150,7 +150,7 @@ const staticSiteItems: SearchIndexItem[] = [
     title: "Partnerships",
     url: "/get-involved/partnerships",
     category: "Page",
-    snippet: "Partner with us to support vulnerable communities in the Kampala Archdiocese through expertise, resources, and collaboration.",
+    snippet: "Partner with us to support vulnerable communities in Kampala Archdiocese through expertise, resources, and collaboration.",
     content: "Partnerships with businesses, healthcare institutions, professional volunteers, organisations and institutions. Opportunities for financial/in-kind support, professional expertise, healthcare and education initiatives, skills development, event support and other practical forms of collaboration.",
     keywords: ["partnerships", "partner with us", "collaboration", "business", "institution", "support", "vulnerable", "community"]
   },

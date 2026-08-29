@@ -6,7 +6,7 @@ This document serves as the official design style guide and system documentation
 
 ## 1. BRAND OVERVIEW & CONFIRMED DOMAIN
 
-The visual identity of the Caritas Kampala Charities Office website is **warm, dignified, editorial, and faith-grounded**. As a Catholic charitable organization operating under Caritas Kampala within the Kampala Archdiocese, the design reflects compassion, transparency, and respect for the people and communities served. 
+The visual identity of the Caritas Kampala Charities Office website is **warm, dignified, editorial, and faith-grounded**. As a Catholic charitable organization operating under Caritas Kampala within Kampala Archdiocese, the design reflects compassion, transparency, and respect for the people and communities served. 
 
 The visual language balances high-contrast primary red (`#b10017`) with warm off-white and cream background tones (`#f4efe6`), dark editorial text, traditional serif display typography (Athelas / Georgia), and clean, modern sans-serif body text (Inter). Every interface element prioritizes accessibility, clear typography, generous spacing, and non-paternalistic visual representations of humanitarian work.
 
@@ -274,7 +274,7 @@ The website uses a modular form component suite ([`components/ui/Form.tsx`](file
 |:---|:---|:---|:---|
 | **Official Domain** | Confirmed domain: **`https://www.caritaskampalacharities.org/`** | `http://caritaskampala.org/charities` | `https://www.caritaskampalacharities.org/` |
 | **Organizational Name** | Use **"Caritas Kampala Charities Office"** or **"Charities Office"**. Never "Charities Department". | *"Caritas Kampala Charities Department"* | *"Caritas Kampala Charities Office"* |
-| **Parent Relation** | The Charities Office operates **under** Caritas Kampala, serving the Kampala Archdiocese. | *"Caritas Kampala is a subsidiary of our department."* | *"The Charities Office operates under Caritas Kampala."* |
+| **Parent Relation** | The Charities Office operates **under** Caritas Kampala, serving Kampala Archdiocese. | *"Caritas Kampala is a subsidiary of our department."* | *"The Charities Office operates under Caritas Kampala."* |
 | **Tone & Voice** | Warm, dignified, respectful, and faith-grounded. Avoid pitying or sensationalist language. | *"Pity the poor helpless victims..."* | *"Standing alongside families facing hardship with dignity and compassion."* |
 | **Cliché Avoidance** | Avoid generic brochure phrases. | *"Empowering the voiceless / Transforming lives."* | *"Restoring dignity and providing practical community support."* |
 | **Punctuation Rule** | Do not use em dashes (`—`) in body text; use commas or spaced hyphens. | *"Our mission—serving families—is ongoing."* | *"Our mission, serving families, is ongoing."* |

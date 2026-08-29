@@ -22,7 +22,7 @@ export const navLinks: NavLink[] = [
       links: [
         { name: "WHO WE ARE", href: "/about-us", desc: "Learn about the Charities Office, its mission, values, and place under Caritas Kampala." },
         { name: "OUR TEAM", href: "/about-us/our-team", desc: "Meet the people leading and carrying out the work of the Charities Office." },
-        { name: "CHACONET NETWORK", href: "/about-us/chaconet-partners", desc: "Discover the network of charity homes and institutions working together across the Kampala Archdiocese." },
+        { name: "CHACONET NETWORK", href: "/about-us/chaconet-partners", desc: "Discover the network of charity homes and institutions working together across Kampala Archdiocese." },
       ],
       card: {
         title: "About the Charities Office",

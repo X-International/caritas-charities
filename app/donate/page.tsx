@@ -24,7 +24,7 @@ export default function DonatePage() {
           ]}
           eyebrow="SUPPORT THE WORK"
           title="Donate"
-          description="Your gift supports practical care for vulnerable individuals, families, and communities across the Kampala Archdiocese."
+          description="Your gift supports practical care for vulnerable individuals, families, and communities across Kampala Archdiocese."
           image="/images/Event 04/Caritas_Kampala_18.jpg"
           imageAlt="Caritas Kampala community support and care"
         />

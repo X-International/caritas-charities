@@ -8,7 +8,7 @@ import PageHeader from "@/components/PageHeader";
 export const metadata = buildPageMetadata({
   title: "Our Team | Caritas Kampala Charities Office",
   description:
-    "Meet the people behind the Charities Office, under Caritas Kampala, serving vulnerable people and communities across the Kampala Archdiocese.",
+    "Meet the people behind the Charities Office, under Caritas Kampala, serving vulnerable people and communities across Kampala Archdiocese.",
   path: "/about-us/our-team",
 });
 

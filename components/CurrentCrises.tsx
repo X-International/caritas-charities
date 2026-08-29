@@ -26,7 +26,7 @@ export default function CurrentCrises() {
             Current Appeal
           </Heading>
           <p className="text-sm sm:text-base xl:text-lg text-white/90 font-normal leading-relaxed">
-            Drought has brought famine to Karamoja. The Kampala Archdiocese is rallying the Church in Uganda to respond, and the call is open to everyone, Catholic and non-Catholic alike.
+            Drought has brought famine to Karamoja. Kampala Archdiocese is rallying the Church in Uganda to respond, and the call is open to everyone, Catholic and non-Catholic alike.
           </p>
         </div>
 

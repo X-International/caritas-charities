@@ -10,7 +10,7 @@ import { ExternalLink } from "lucide-react";
 export const metadata = buildPageMetadata({
   title: "Chaconet Network | Caritas Kampala Charities Office",
   description:
-    "A network of Catholic charity homes and institutions working together across the Kampala Archdiocese.",
+    "A network of Catholic charity homes and institutions working together across Kampala Archdiocese.",
   path: "/about-us/chaconet-partners",
 });
 
@@ -27,7 +27,7 @@ const partners: Partner[] = [
   {
     name: "Good Samaritan Kampala Archdiocese",
     description:
-      "A Catholic ministry of the Kampala Archdiocese supporting people in need through practical works of charity, including food assistance, care for sick and older people, support for people with disabilities, shelter, clothing, and outreach to prisoners.",
+      "A Catholic ministry of Kampala Archdiocese supporting people in need through practical works of charity, including food assistance, care for sick and older people, support for people with disabilities, shelter, clothing, and outreach to prisoners.",
     url: "https://www.africa2trust.com/B2BAfrica/uganda/non-government-organization-ngo/ngos-charities-and-non-profits-general/good-samaritan-kampala-archdiocese/Profile/AboutUs/1/1/24617/3",
     urlLabel: "Learn More ↗",
     image: "/images/logos/good-samaritan-placeholder.png",
@@ -72,7 +72,7 @@ const partners: Partner[] = [
   {
     name: "Kyasira Home of Hope",
     description:
-      "A children’s home within the Kampala Archdiocese providing residential care, protection and practical support for vulnerable children who need a safe and supportive home environment.",
+      "A children’s home within Kampala Archdiocese providing residential care, protection and practical support for vulnerable children who need a safe and supportive home environment.",
     url: "https://www.facebook.com/Kyasirahomeofhope/",
     urlLabel: "Visit Page ↗",
     image: "/images/logos/kyasira-home-placeholder.png",
@@ -99,7 +99,7 @@ export default function ChaconetPartnersPage() {
             { label: "About Us", href: "/about-us" },
             { label: "Chaconet Network" },
           ]}
-          description="A network of Catholic charity homes and institutions working together across the Kampala Archdiocese."
+          description="A network of Catholic charity homes and institutions working together across Kampala Archdiocese."
         />
 
         {/* Introduction */}
@@ -116,7 +116,7 @@ export default function ChaconetPartnersPage() {
             </div>
             <div className="space-y-5 text-gray-700 text-base sm:text-lg leading-[1.7]">
               <p>
-                Chaconet — the Catholic Charity Homes Network — brings together charity homes and institutions connected with the Kampala Archdiocese to strengthen coordination, share experience, and support the care of vulnerable people.
+                Chaconet — the Catholic Charity Homes Network — brings together charity homes and institutions connected with Kampala Archdiocese to strengthen coordination, share experience, and support the care of vulnerable people.
               </p>
               <p>
                 Through the network, participating homes can collaborate on common needs, learn from one another, strengthen standards of care and safeguarding, and build stronger relationships with the Charities Office and other partners.
@@ -136,7 +136,7 @@ export default function ChaconetPartnersPage() {
                 Our Chaconet Partners
               </Heading>
               <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                Meet the charity homes and organisations that form part of the Chaconet network across the Kampala Archdiocese.
+                Meet the charity homes and organisations that form part of the Chaconet network across Kampala Archdiocese.
               </p>
             </div>
 
@@ -232,7 +232,7 @@ export default function ChaconetPartnersPage() {
                 Support Our Work
               </Heading>
               <p className="text-[15px] sm:text-base text-gray-700 leading-relaxed">
-                Your gift helps the Charities Office provide practical support to vulnerable individuals, families, and communities across the Kampala Archdiocese.
+                Your gift helps the Charities Office provide practical support to vulnerable individuals, families, and communities across Kampala Archdiocese.
               </p>
             </div>
             <div className="lg:flex-shrink-0">

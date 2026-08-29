@@ -14,7 +14,7 @@ const FALLBACK_DESCRIPTION =
 const ROUTE_META: Record<string, { title: string; description: string }> = {
   "/": {
     title: "Caritas Kampala Charities Office | Serving Kampala, Wakiso & Mpigi",
-    description: "The Charities Office of Caritas Kampala supports the poor, vulnerable and marginalized across the Kampala Archdiocese. Learn about our work and donate today.",
+    description: "The Charities Office of Caritas Kampala supports the poor, vulnerable and marginalized across Kampala Archdiocese. Learn about our work and donate today.",
   },
   "/our-programmes": {
     title: "Our Programmes | Caritas Kampala Charities Office",
@@ -30,7 +30,7 @@ const ROUTE_META: Record<string, { title: string; description: string }> = {
   },
   "/get-involved/volunteer": {
     title: "Volunteer With Us | Caritas Kampala Charities Office",
-    description: "See how you can offer your time and skills to support the Charities Office's work across the Kampala Archdiocese.",
+    description: "See how you can offer your time and skills to support the Charities Office's work across Kampala Archdiocese.",
   },
   "/get-involved/charity-shop": {
     title: "Charity Shop | Caritas Kampala Charities Office",
@@ -38,7 +38,7 @@ const ROUTE_META: Record<string, { title: string; description: string }> = {
   },
   "/get-involved/partnerships": {
     title: "Partnerships | Caritas Kampala Charities Office",
-    description: "Partner with us to support vulnerable communities in the Kampala Archdiocese through expertise, resources, and collaboration.",
+    description: "Partner with us to support vulnerable communities in Kampala Archdiocese through expertise, resources, and collaboration.",
   },
   "/donate": {
     title: "Donate | Caritas Kampala Charities Office",
@@ -46,7 +46,7 @@ const ROUTE_META: Record<string, { title: string; description: string }> = {
   },
   "/about-us": {
     title: "About Us | Caritas Kampala Charities Office",
-    description: "Learn about the mission, vision and values of the Charities Office, part of Caritas Kampala, serving the Kampala Archdiocese.",
+    description: "Learn about the mission, vision and values of the Charities Office, part of Caritas Kampala, serving Kampala Archdiocese.",
   },
   "/about-us/our-team": {
     title: "Our Team | Caritas Kampala Charities Office",
@@ -54,7 +54,7 @@ const ROUTE_META: Record<string, { title: string; description: string }> = {
   },
   "/about-us/chaconet-partners": {
     title: "Chaconet Partners | Caritas Kampala Charities Office",
-    description: "The Charities Office works within Chaconet, a network of nine charity homes across the Kampala Archdiocese.",
+    description: "The Charities Office works within Chaconet, a network of nine charity homes across Kampala Archdiocese.",
   },
   "/resources": {
     title: "Resources | Caritas Kampala Charities Office",
@@ -62,11 +62,11 @@ const ROUTE_META: Record<string, { title: string; description: string }> = {
   },
   "/resources/news": {
     title: "News & Updates | Caritas Kampala Charities Office",
-    description: "The latest updates and stories from the work of the Charities Office across the Kampala Archdiocese.",
+    description: "The latest updates and stories from the work of the Charities Office across Kampala Archdiocese.",
   },
   "/resources/news/kotido-moroto-famine-relief-drive": {
     title: "Kotido & Moroto Famine Relief Drive Mobilizes Parishes | Caritas Kampala Charities Office",
-    description: "Parishes across the Kampala Archdiocese are collecting food and relief items for families facing famine in Kotido and Moroto.",
+    description: "Parishes across Kampala Archdiocese are collecting food and relief items for families facing famine in Kotido and Moroto.",
   },
   "/resources/news/charities-office-launches-new-website": {
     title: "The Charities Office Launches Its New Website | Caritas Kampala Charities Office",
@@ -78,7 +78,7 @@ const ROUTE_META: Record<string, { title: string; description: string }> = {
   },
   "/resources/gallery": {
     title: "Gallery | Caritas Kampala Charities Office",
-    description: "Photos from the Charities Office's programmes, events and community work across the Kampala Archdiocese.",
+    description: "Photos from the Charities Office's programmes, events and community work across Kampala Archdiocese.",
   },
   "/resources/annual-reports": {
     title: "Annual Reports | Caritas Kampala Charities Office",

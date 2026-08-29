@@ -11,7 +11,7 @@ import { buildPageMetadata } from "@/lib/metadata-utils";
 export const metadata: Metadata = buildPageMetadata({
   title: "Caritas Kampala Charities Office | Serving Kampala, Wakiso & Mpigi",
   description:
-    "The Charities Office of Caritas Kampala supports the poor, vulnerable and marginalized across the Kampala Archdiocese. Learn about our work and donate today.",
+    "The Charities Office of Caritas Kampala supports the poor, vulnerable and marginalized across Kampala Archdiocese. Learn about our work and donate today.",
   path: "/",
 });
 

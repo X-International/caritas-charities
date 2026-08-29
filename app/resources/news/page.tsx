@@ -14,7 +14,7 @@ import DonateOnlineCard from "@/components/DonateOnlineCard";
 export const metadata = buildPageMetadata({
   title: "News & Updates | Caritas Kampala Charities Office",
   description:
-    "The latest updates and stories from the work of the Charities Office across the Kampala Archdiocese.",
+    "The latest updates and stories from the work of the Charities Office across Kampala Archdiocese.",
   path: "/resources/news",
 });
 
