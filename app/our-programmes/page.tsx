@@ -34,7 +34,7 @@ const programmes: Programme[] = [
     ],
     serves: "FAMILIES & COMMUNITIES AFFECTED BY EMERGENCIES",
     locations: ["KAMPALA", "WAKISO", "MPIGI"],
-    image: "/images/Headers/caritas_kampala-split-header.jpg",
+    image: "/images/Headers/header_Caritas_Kampala.png",
   },
   {
     id: "support-for-the-elderly",
@@ -45,7 +45,7 @@ const programmes: Programme[] = [
     ],
     serves: "OLDER PERSONS ACROSS THE ARCHDIOCESE",
     locations: ["ARCHDIOCESE"],
-    image: "/images/Headers/caritas_kampala-split-header.jpg",
+    image: "/images/Headers/header_Caritas_Kampala.png",
   },
   {
     id: "family-child-support",
@@ -57,7 +57,7 @@ const programmes: Programme[] = [
     ],
     serves: "FAMILIES & CHILDREN FACING HARDSHIP",
     locations: ["ARCHDIOCESE"],
-    image: "/images/Headers/caritas_kampala-split-header.jpg",
+    image: "/images/Headers/header_Caritas_Kampala.png",
   },
   {
     id: "refugee-asylum-seeker-support",
@@ -68,7 +68,7 @@ const programmes: Programme[] = [
     ],
     serves: "REFUGEES & ASYLUM SEEKERS",
     locations: ["KAMPALA"],
-    image: "/images/Headers/caritas_kampala-split-header.jpg",
+    image: "/images/Headers/header_Caritas_Kampala.png",
   },
   {
     id: "disability-special-needs-support",
@@ -79,7 +79,7 @@ const programmes: Programme[] = [
     ],
     serves: "PEOPLE WITH DISABILITIES & SPECIAL NEEDS",
     locations: ["ARCHDIOCESE"],
-    image: "/images/Headers/caritas_kampala-split-header.jpg",
+    image: "/images/Headers/header_Caritas_Kampala.png",
   },
   {
     id: "poverty-alleviation-livelihoods",
@@ -90,7 +90,7 @@ const programmes: Programme[] = [
     ],
     serves: "INDIVIDUALS & FAMILIES FACING POVERTY",
     locations: ["KAMPALA", "WAKISO", "MPIGI"],
-    image: "/images/Headers/caritas_kampala-split-header.jpg",
+    image: "/images/Headers/header_Caritas_Kampala.png",
   },
 ];
 
@@ -140,8 +140,9 @@ function ProgrammeCard({ programme }: { programme: Programme }) {
           alt=""
           fill
           sizes="(max-width: 1200px) 100vw, 1200px"
-          className="object-cover object-center"
+          className="object-cover object-left"
         />
+        <div aria-hidden="true" className="absolute inset-0 bg-black/30" />
 
         <div aria-hidden="true" className="relative z-10 flex flex-wrap items-center justify-between text-[11px] sm:text-xs font-bold text-white uppercase tracking-widest gap-2">
           <span>{programme.category}</span>
@@ -183,20 +184,19 @@ export default function OurProgrammesPage() {
           description="Explore the practical programmes supporting vulnerable people and communities across Kampala Archdiocese."
         />
 
-        {/* Intro */}
-        <section className="site-container py-16 sm:py-20 text-center">
-            <Heading level={2} className="text-3xl sm:text-4xl font-bold font-serif text-gray-900">
-              Practical Support. Longer-Term Resilience.
-            </Heading>
-            <div aria-hidden className="w-16 h-px bg-[#b10017] mx-auto mt-6 mb-8 rounded" />
-            <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Our programmes respond to immediate needs while helping individuals, families, and communities build greater stability, dignity, and resilience across Kampala, Wakiso, and Mpigi.
-            </p>
-        </section>
-
-        {/* Programme List Section - Matching Core Pillars Background */}
+        {/* Intro & Programme List Section - Matching Core Pillars Background */}
         <section className="py-16 sm:py-20 bg-[#f4efe6] relative overflow-hidden">
           <div className="site-container">
+            <div className="text-center mb-12 sm:mb-16">
+              <Heading level={2} variant="section" color="red">
+                Practical Support. Longer-Term Resilience.
+              </Heading>
+              <div aria-hidden className="w-16 h-px bg-[#b10017] mx-auto mt-6 mb-8 rounded" />
+              <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                Our programmes respond to immediate needs while helping individuals, families, and communities build greater stability, dignity, and resilience across Kampala, Wakiso, and Mpigi.
+              </p>
+            </div>
+
             <div className="flex flex-col gap-6 sm:gap-8">
               {programmes.map((prog) => (
                 <ProgrammeCard key={prog.id} programme={prog} />
