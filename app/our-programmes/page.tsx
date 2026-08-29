@@ -105,13 +105,13 @@ function ProgrammeCard({ programme }: { programme: Programme }) {
       className="group relative flex flex-col justify-between overflow-hidden h-auto w-full p-6 sm:p-8 md:p-10 focus-within:ring-2 focus-within:ring-caritas-red focus-within:ring-offset-2 transition-shadow duration-300"
     >
       {/* DEFAULT UNHOVERED STATE */}
-      <div className="flex flex-col justify-between h-full w-full z-0">
-        <div className="flex flex-wrap items-center justify-between text-[11px] sm:text-xs font-bold text-gray-600 uppercase tracking-widest gap-2">
+      <div className="flex flex-col justify-between w-full z-0">
+        <div className="flex items-center justify-between text-[11px] sm:text-xs font-bold text-gray-600 uppercase tracking-widest gap-2">
           <span>{programme.category}</span>
           <span className="hidden sm:inline-block text-gray-500 font-semibold">{programme.serves}</span>
         </div>
 
-        <div className="my-4 sm:my-5 flex-1 max-w-4xl">
+        <div className="my-4 sm:my-5 max-w-4xl">
           <Heading
             level={3}
             variant="subsection"
@@ -128,8 +128,8 @@ function ProgrammeCard({ programme }: { programme: Programme }) {
           </div>
         </div>
 
-        <div className="pt-4 border-t border-gray-200 flex sm:hidden items-center justify-between text-[11px] font-bold text-gray-600 uppercase tracking-widest">
-          <span className="truncate">{programme.serves}</span>
+        <div className="pt-4 border-t border-gray-200 flex sm:hidden items-center justify-start text-[11px] font-bold text-gray-600 uppercase tracking-widest">
+          <span>{programme.serves}</span>
         </div>
       </div>
 
@@ -144,12 +144,12 @@ function ProgrammeCard({ programme }: { programme: Programme }) {
         />
         <div aria-hidden="true" className="absolute inset-0 bg-black/30" />
 
-        <div aria-hidden="true" className="relative z-10 flex flex-wrap items-center justify-between text-[11px] sm:text-xs font-bold text-white uppercase tracking-widest gap-2">
+        <div aria-hidden="true" className="relative z-10 flex items-center justify-between text-[11px] sm:text-xs font-bold text-white uppercase tracking-widest gap-2">
           <span>{programme.category}</span>
           <span className="hidden sm:inline-block text-amber-300 font-bold tracking-wider">{programme.serves}</span>
         </div>
 
-        <div aria-hidden="true" className="relative z-10 my-4 sm:my-5 flex-1 max-w-4xl space-y-3 sm:space-y-4">
+        <div aria-hidden="true" className="relative z-10 my-4 sm:my-5 max-w-4xl space-y-3 sm:space-y-4">
           <Heading level={3} variant="subsection" color="white" className="text-xl sm:text-2xl lg:text-[26px] leading-snug">
             {programme.title}
           </Heading>
@@ -160,8 +160,8 @@ function ProgrammeCard({ programme }: { programme: Programme }) {
           </div>
         </div>
 
-        <div aria-hidden="true" className="relative z-10 pt-4 border-t border-white/20 flex sm:hidden items-center justify-between text-[11px] font-bold uppercase tracking-wider text-amber-300">
-          <span className="truncate">{programme.serves}</span>
+        <div aria-hidden="true" className="relative z-10 pt-4 border-t border-white/20 flex sm:hidden items-center justify-start text-[11px] font-bold uppercase tracking-wider text-amber-300">
+          <span>{programme.serves}</span>
         </div>
       </div>
     </Card>
@@ -185,14 +185,13 @@ export default function OurProgrammesPage() {
         />
 
         {/* Intro & Programme List Section - Matching Core Pillars Background */}
-        <section className="py-16 sm:py-20 bg-[#f4efe6] relative overflow-hidden">
+        <section className="py-14 sm:py-16 lg:py-20 bg-[#f4efe6] relative overflow-hidden">
           <div className="site-container">
-            <div className="text-center mb-12 sm:mb-16">
+            <div className="text-center mb-10 sm:mb-12 max-w-3xl mx-auto space-y-4">
               <Heading level={2} variant="section" color="red">
                 Practical Support. Longer-Term Resilience.
               </Heading>
-              <div aria-hidden className="w-16 h-px bg-[#b10017] mx-auto mt-6 mb-8 rounded" />
-              <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed">
                 Our programmes respond to immediate needs while helping individuals, families, and communities build greater stability, dignity, and resilience across Kampala, Wakiso, and Mpigi.
               </p>
             </div>
