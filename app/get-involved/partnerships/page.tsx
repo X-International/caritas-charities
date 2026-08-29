@@ -9,7 +9,7 @@ import { buildPageMetadata } from "@/lib/metadata-utils";
 export const metadata = buildPageMetadata({
   title: "Partnerships | Caritas Kampala Charities Office",
   description:
-    "Work with the Charities Office to support practical, coordinated responses to the needs of vulnerable communities across the Archdiocese of Kampala.",
+    "Work with the Charities Office to support practical, coordinated responses to the needs of vulnerable communities across the Kampala Archdiocese.",
   path: "/get-involved/partnerships",
 });
 
@@ -27,7 +27,7 @@ export default function PartnershipsPage() {
           ]}
           eyebrow="WORK WITH US"
           title="Partnerships"
-          description="Work with the Charities Office to support practical, coordinated responses to the needs of vulnerable communities across the Archdiocese of Kampala."
+          description="Work with the Charities Office to support practical, coordinated responses to the needs of vulnerable communities across the Kampala Archdiocese."
           image="/images/Event 02/Caritas_Kampala_01.jpg"
           imageAlt="Partners and community representatives working together with Caritas Kampala"
         />

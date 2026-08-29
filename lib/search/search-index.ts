@@ -59,7 +59,7 @@ const staticSiteItems: SearchIndexItem[] = [
     title: "Our Programmes",
     url: "/our-programmes",
     category: "Programme",
-    snippet: "Explore the practical programmes supporting vulnerable people and communities across the Archdiocese of Kampala.",
+    snippet: "Explore the practical programmes supporting vulnerable people and communities across the Kampala Archdiocese.",
     content: "Caritas Kampala core programmes: Emergency & Disaster Response, Support for Older Persons, Family & Child Support, Refugee & Asylum Seeker Support, Disability & Special Needs Support, Livelihoods & Poverty Reduction across Kampala, Wakiso, and Mpigi.",
     keywords: ["programmes", "programs", "initiatives", "older persons", "elderly", "disability", "refugees", "poverty", "emergency response", "child support", "livelihoods"]
   },

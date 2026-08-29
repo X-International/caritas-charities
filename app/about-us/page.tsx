@@ -38,7 +38,7 @@ export default function AboutUsPage() {
             </Heading>
             <div className="space-y-4 text-gray-700 leading-relaxed text-base sm:text-lg">
               <p>
-                The Charities Office operates under Caritas Kampala and serves people and communities facing poverty, vulnerability, displacement, disability, illness, and other forms of hardship across the Archdiocese of Kampala.
+                The Charities Office operates under Caritas Kampala and serves people and communities facing poverty, vulnerability, displacement, disability, illness, and other forms of hardship across the Kampala Archdiocese.
               </p>
               <p>
                 Our work combines practical support with compassionate accompaniment. We respond to immediate needs while also helping individuals, families, and communities strengthen their ability to cope, recover, and move forward with dignity.
@@ -53,7 +53,7 @@ export default function AboutUsPage() {
             </Heading>
             <div className="space-y-4 text-gray-700 leading-relaxed text-base sm:text-lg">
               <p>
-                Caritas Kampala is the socio-pastoral ministry of the Catholic Church in the Archdiocese of Kampala. Through the Charities Office, this mission is expressed in practical service to people in need, regardless of religion, sex, nationality, or background.
+                Caritas Kampala is the socio-pastoral ministry of the Catholic Church in the Kampala Archdiocese. Through the Charities Office, this mission is expressed in practical service to people in need, regardless of religion, sex, nationality, or background.
               </p>
               <p>
                 The Charities Office works with communities, parishes, charity homes, institutions, volunteers, and partners to provide assistance where it is most needed.
@@ -101,7 +101,7 @@ export default function AboutUsPage() {
             </Heading>
             <div className="space-y-4 text-gray-700 leading-relaxed text-base sm:text-lg">
               <p>
-                The Charities Office is part of Caritas Kampala and does not operate as a separate organisation. Its work forms part of the wider social and pastoral mission of the Archdiocese of Kampala.
+                The Charities Office is part of Caritas Kampala and does not operate as a separate organisation. Its work forms part of the wider social and pastoral mission of the Kampala Archdiocese.
               </p>
               <p>
                 Through Caritas Kampala, the Charities Office is also connected to the wider Caritas family, including Caritas Uganda and Caritas Internationalis.

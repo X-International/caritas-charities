@@ -47,7 +47,7 @@ export const newsArticles: NewsArticle[] = [
     alt: "Community members in Karamoja affected by the ongoing drought. Credit: Caritas Kampala.",
     body: [
       "Drought driven by climate change has brought famine to the Kotido and Moroto dioceses in the Karamoja region. The government has provided some emergency relief, but it has not been enough to meet the scale of the need.",
-      "In response, the Kampala Archdiocese is calling on parishes across the Archdiocese to come together for the people of Karamoja. The collection drive began in July and will continue through September.",
+      "In response, the Kampala Archdiocese is calling on parishes across the Kampala Archdiocese to come together for the people of Karamoja. The collection drive began in July and will continue through September.",
       "In July, the first batch of support, including money and household items, was sent to Caritas Uganda, who delivered it to families in Kotido and Moroto. Collection continues now, with parishes gathering food and essential relief items to send in the coming months.",
       "The drive is focused on staple food items, including posho, maize flour, maize, rice, beans, sugar, and cooking oil. Contributions of money and household items are also welcome.",
       "This appeal is open to everyone, not only Catholics. Caritas does not discriminate based on religion, because hunger affects everyone the same way, regardless of their faith. While the Catholic Church is leading this initiative, the help itself is for anyone in Kotido and Moroto who needs it.",
@@ -79,10 +79,10 @@ export const newsArticles: NewsArticle[] = [
     image: "/images/Event 02/Caritas_Kampala_98.jpg",
     alt: "Speaker addressing participants during a Charities Office gathering in Kampala",
     body: [
-      "The Charities Office under Caritas Kampala has launched its dedicated website, creating a central place for people to learn about the office’s work across the Archdiocese of Kampala.",
+      "The Charities Office under Caritas Kampala has launched its dedicated website, creating a central place for people to learn about the office’s work across the Kampala Archdiocese.",
       "The website brings together information about the office’s programmes, the Chaconet network of Catholic charity homes, current appeals, news and events, volunteering, partnerships, the Charity Shop, and other ways people can support the work.",
       "Visitors can also learn more about the people behind the Charities Office, explore photographs from programmes and community activities, and find practical information about donating or contacting the team.",
-      "The website is part of Caritas Kampala’s wider digital presence. It gives the Charities Office a dedicated space while maintaining a clear connection to Caritas Kampala and the wider mission of the Church across the Archdiocese.",
+      "The website is part of Caritas Kampala’s wider digital presence. It gives the Charities Office a dedicated space while maintaining a clear connection to Caritas Kampala and the wider mission of the Church across the Kampala Archdiocese.",
       "The site will continue to grow as new stories, programme updates, reports, events, and other resources become available.",
     ],
     exploreSection: {

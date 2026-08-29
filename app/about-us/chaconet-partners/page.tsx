@@ -10,7 +10,7 @@ import { ExternalLink } from "lucide-react";
 export const metadata = buildPageMetadata({
   title: "Chaconet Network | Caritas Kampala Charities Office",
   description:
-    "A network of Catholic charity homes and institutions working together across the Archdiocese of Kampala.",
+    "A network of Catholic charity homes and institutions working together across the Kampala Archdiocese.",
   path: "/about-us/chaconet-partners",
 });
 
@@ -99,7 +99,7 @@ export default function ChaconetPartnersPage() {
             { label: "About Us", href: "/about-us" },
             { label: "Chaconet Network" },
           ]}
-          description="A network of Catholic charity homes and institutions working together across the Archdiocese of Kampala."
+          description="A network of Catholic charity homes and institutions working together across the Kampala Archdiocese."
         />
 
         {/* Introduction */}
@@ -116,7 +116,7 @@ export default function ChaconetPartnersPage() {
             </div>
             <div className="space-y-5 text-gray-700 text-base sm:text-lg leading-[1.7]">
               <p>
-                Chaconet — the Catholic Charity Homes Network — brings together charity homes and institutions connected with the Archdiocese of Kampala to strengthen coordination, share experience, and support the care of vulnerable people.
+                Chaconet — the Catholic Charity Homes Network — brings together charity homes and institutions connected with the Kampala Archdiocese to strengthen coordination, share experience, and support the care of vulnerable people.
               </p>
               <p>
                 Through the network, participating homes can collaborate on common needs, learn from one another, strengthen standards of care and safeguarding, and build stronger relationships with the Charities Office and other partners.
@@ -136,7 +136,7 @@ export default function ChaconetPartnersPage() {
                 Our Chaconet Partners
               </Heading>
               <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                Meet the charity homes and organisations that form part of the Chaconet network across the Archdiocese of Kampala.
+                Meet the charity homes and organisations that form part of the Chaconet network across the Kampala Archdiocese.
               </p>
             </div>
 
@@ -232,7 +232,7 @@ export default function ChaconetPartnersPage() {
                 Support Our Work
               </Heading>
               <p className="text-[15px] sm:text-base text-gray-700 leading-relaxed">
-                Your gift helps the Charities Office provide practical support to vulnerable individuals, families, and communities across the Archdiocese of Kampala.
+                Your gift helps the Charities Office provide practical support to vulnerable individuals, families, and communities across the Kampala Archdiocese.
               </p>
             </div>
             <div className="lg:flex-shrink-0">

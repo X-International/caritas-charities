@@ -4,11 +4,11 @@ import Link from "next/link";
 export const faqs = [
   {
     q: "What is Caritas Kampala?",
-    a: "Caritas Kampala is the social service and charitable arm of the Catholic Church in the Archdiocese of Kampala. It supports humanitarian response, social services, and development work across communities within the Archdiocese.",
+    a: "Caritas Kampala is the social service and charitable arm of the Catholic Church in the Kampala Archdiocese. It supports humanitarian response, social services, and development work across communities within the Kampala Archdiocese.",
   },
   {
     q: "What is the Charities Office?",
-    a: "The Charities Office operates under Caritas Kampala and coordinates practical charitable support for vulnerable individuals, families, and communities across the Archdiocese of Kampala.",
+    a: "The Charities Office operates under Caritas Kampala and coordinates practical charitable support for vulnerable individuals, families, and communities across the Kampala Archdiocese.",
   },
   {
     q: "Who can benefit from the Charities Office's services?",
@@ -58,7 +58,7 @@ export const faqs = [
     q: "What is Chaconet?",
     a: (
       <>
-        Chaconet, the Catholic Charity Homes Network, brings together Catholic charity homes and care institutions across the Archdiocese of Kampala. The network supports coordination, collaboration, standards of care, and shared learning among participating homes. <Link href="/about-us/chaconet-partners" className="text-[#b10017] hover:underline font-medium">Learn about the Chaconet Network</Link>.
+        Chaconet, the Catholic Charity Homes Network, brings together Catholic charity homes and care institutions across the Kampala Archdiocese. The network supports coordination, collaboration, standards of care, and shared learning among participating homes. <Link href="/about-us/chaconet-partners" className="text-[#b10017] hover:underline font-medium">Learn about the Chaconet Network</Link>.
       </>
     ),
   },

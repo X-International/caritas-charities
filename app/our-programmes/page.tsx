@@ -12,7 +12,7 @@ import { ArrowUpRight } from "lucide-react";
 export const metadata = buildPageMetadata({
   title: "Our Programmes | Caritas Kampala Charities Office",
   description:
-    "Explore the practical programmes supporting vulnerable people and communities across the Archdiocese of Kampala.",
+    "Explore the practical programmes supporting vulnerable people and communities across the Kampala Archdiocese.",
   path: "/our-programmes",
 });
 
@@ -172,7 +172,7 @@ export default function OurProgrammesPage() {
             { label: "Home", href: "/" },
             { label: "Our Programmes" }
           ]}
-          description="Explore the practical programmes supporting vulnerable people and communities across the Archdiocese of Kampala."
+          description="Explore the practical programmes supporting vulnerable people and communities across the Kampala Archdiocese."
         />
 
         {/* Intro */}
