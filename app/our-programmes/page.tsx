@@ -104,37 +104,11 @@ function ProgrammeCard({ programme }: { programme: Programme }) {
       aria-labelledby={`programme-title-${programme.id}`}
       className="group relative flex flex-col justify-between overflow-hidden h-auto w-full p-6 sm:p-8 md:p-10 focus-within:ring-2 focus-within:ring-caritas-red focus-within:ring-offset-2 transition-shadow duration-300"
     >
-      {/* DEFAULT UNHOVERED STATE */}
-      <div className="flex flex-col justify-between w-full z-0">
-        <div className="flex items-center justify-between text-[11px] sm:text-xs font-bold text-gray-600 uppercase tracking-widest gap-2">
-          <span>{programme.category}</span>
-          <span className="hidden sm:inline-block text-gray-500 font-semibold">{programme.serves}</span>
-        </div>
-
-        <div className="my-4 sm:my-5 max-w-4xl">
-          <Heading
-            level={3}
-            variant="subsection"
-            color="red"
-            id={`programme-title-${programme.id}`}
-            className="mb-3 sm:mb-4 text-xl sm:text-2xl lg:text-[26px] leading-snug"
-          >
-            {programme.title}
-          </Heading>
-          <div className="space-y-3 sm:space-y-4 text-[15px] sm:text-base text-gray-800 leading-relaxed font-sans">
-            {programme.description.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
-          </div>
-        </div>
-
-        <div className="pt-4 border-t border-gray-200 flex sm:hidden items-center justify-start text-[11px] font-bold text-gray-600 uppercase tracking-widest">
-          <span>{programme.serves}</span>
-        </div>
-      </div>
-
-      {/* DESKTOP HOVER / KEYBOARD FOCUS OVERLAY (Only active on hover-capable devices) */}
-      <div className="absolute inset-0 z-10 p-6 sm:p-8 md:p-10 flex flex-col justify-between bg-gray-900 opacity-0 [@media(hover:hover)_and_(pointer:fine)]:group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 motion-reduce:transition-none pointer-events-none [@media(hover:hover)_and_(pointer:fine)]:group-hover:pointer-events-auto group-focus-within:pointer-events-auto">
+      {/* DESKTOP HOVER BACKGROUND & OVERLAY */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 z-0 opacity-0 [@media(hover:hover)_and_(pointer:fine)]:group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 motion-reduce:transition-none pointer-events-none"
+      >
         <Image
           src={programme.image}
           alt=""
@@ -142,26 +116,41 @@ function ProgrammeCard({ programme }: { programme: Programme }) {
           sizes="(max-width: 1200px) 100vw, 1200px"
           className="object-cover object-left"
         />
-        <div aria-hidden="true" className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
 
-        <div aria-hidden="true" className="relative z-10 flex items-center justify-between text-[11px] sm:text-xs font-bold text-white uppercase tracking-widest gap-2">
-          <span>{programme.category}</span>
-          <span className="hidden sm:inline-block text-amber-300 font-bold tracking-wider">{programme.serves}</span>
+      {/* SINGLE CONTENT LAYER (Guarantees identical text position before and after hover) */}
+      <div className="relative z-10 flex flex-col justify-between w-full">
+        <div className="flex items-center justify-between text-[11px] sm:text-xs font-bold uppercase tracking-widest gap-2">
+          <span className="text-gray-600 [@media(hover:hover)_and_(pointer:fine)]:group-hover:text-white group-focus-within:text-white transition-colors duration-300">
+            {programme.category}
+          </span>
+          <span className="hidden sm:inline-block font-semibold text-gray-500 [@media(hover:hover)_and_(pointer:fine)]:group-hover:text-amber-300 group-focus-within:text-amber-300 transition-colors duration-300">
+            {programme.serves}
+          </span>
         </div>
 
-        <div aria-hidden="true" className="relative z-10 my-4 sm:my-5 max-w-4xl space-y-3 sm:space-y-4">
-          <Heading level={3} variant="subsection" color="white" className="text-xl sm:text-2xl lg:text-[26px] leading-snug">
+        <div className="my-4 sm:my-5 max-w-4xl">
+          <Heading
+            level={3}
+            variant="subsection"
+            color="inherit"
+            id={`programme-title-${programme.id}`}
+            className="mb-3 sm:mb-4 text-xl sm:text-2xl lg:text-[26px] leading-snug text-[#b10017] [@media(hover:hover)_and_(pointer:fine)]:group-hover:text-white group-focus-within:text-white transition-colors duration-300"
+          >
             {programme.title}
           </Heading>
-          <div className="space-y-3 sm:space-y-4 text-[15px] sm:text-base text-white/95 leading-relaxed font-sans">
+          <div className="space-y-3 sm:space-y-4 text-[15px] sm:text-base text-gray-800 [@media(hover:hover)_and_(pointer:fine)]:group-hover:text-white/95 group-focus-within:text-white/95 transition-colors duration-300 leading-relaxed font-sans">
             {programme.description.map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}
           </div>
         </div>
 
-        <div aria-hidden="true" className="relative z-10 pt-4 border-t border-white/20 flex sm:hidden items-center justify-start text-[11px] font-bold uppercase tracking-wider text-amber-300">
-          <span>{programme.serves}</span>
+        <div className="pt-4 border-t border-gray-200 [@media(hover:hover)_and_(pointer:fine)]:group-hover:border-white/20 group-focus-within:border-white/20 flex sm:hidden items-center justify-start text-[11px] font-bold uppercase tracking-widest transition-colors duration-300">
+          <span className="text-gray-600 [@media(hover:hover)_and_(pointer:fine)]:group-hover:text-amber-300 group-focus-within:text-amber-300 transition-colors duration-300">
+            {programme.serves}
+          </span>
         </div>
       </div>
     </Card>
