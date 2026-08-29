@@ -20,10 +20,11 @@ interface Programme {
   id: string;
   title: string;
   category: string;
-  description: string;
+  description: string[];
   serves: string;
   locations: string[];
   image: string;
+  className?: string;
 }
 
 const programmes: Programme[] = [
@@ -31,55 +32,74 @@ const programmes: Programme[] = [
     id: "emergency-disaster-response",
     title: "Emergency & Disaster Response",
     category: "RELIEF & CRISIS",
-    description: "We provide practical assistance to people and communities affected by disasters, displacement, food insecurity, and other emergencies. Support may include essential relief items, referrals, community preparedness, recovery assistance, and coordination with local partners to help people respond to urgent needs and begin rebuilding stability.",
+    description: [
+      "Provides immediate assistance to families and communities affected by disasters, fires, and other emergencies, including the rapid deployment of emergency supplies such as food, water, and medical aid, urgent rescue and evacuation operations, and essential support services to address urgent needs and stabilize the affected populations, while also integrating Anticipatory Action strategies to prepare for and mitigate the impact of future crises in Kampala Archdiocese. This activity involves proactive measures such as early warning systems, risk assessment, and community preparedness initiatives to reduce vulnerability and enhance resilience before disasters occur.",
+    ],
     serves: "FAMILIES & COMMUNITIES AFFECTED BY EMERGENCIES",
     locations: ["KAMPALA", "WAKISO", "MPIGI"],
     image: "/images/Event 01/Caritas_Kampala_75.jpg",
+    className: "md:col-span-1 lg:col-span-2",
   },
   {
-    id: "support-for-older-persons",
-    title: "Support for Older Persons",
+    id: "support-for-the-elderly",
+    title: "Support for the Elderly",
     category: "SENIOR CARE",
-    description: "We support older people who may be experiencing poverty, isolation, illness, or limited family support. Our work may include home visits, essential supplies, wellbeing support, referrals, companionship, and practical assistance that helps older people live with greater dignity, security, and connection to their communities.",
+    description: [
+      "Charity Caritas Kampala Office is dedicated to offering continuous and meaningful support to the elderly members of the community within the Archdiocese. Their practical activities include visiting elderly homes to provide companionship and emotional support, distributing essential items such as food, clothing, and hygiene supplies to ensure they meet their basic needs, and organizing health and wellness programs, including medical check-ups and health education. Additionally, the organization facilitates social gatherings and recreational activities to promote social inclusion and mental well-being. Through these ongoing efforts, Caritas Kampala aims to uphold the dignity and improve the quality of life for the elderly, ensuring they feel cared for and valued in their later years.",
+    ],
     serves: "OLDER PERSONS ACROSS THE ARCHDIOCESE",
     locations: ["ARCHDIOCESE"],
     image: "/images/Charities/Caritas_Kampala_84.jpg",
+    className: "md:col-span-1 lg:col-span-1",
   },
   {
     id: "family-child-support",
     title: "Family & Child Support",
     category: "HOUSEHOLD CARE",
-    description: "We support vulnerable children and families facing hardship through practical assistance, education support, safeguarding, psychosocial care, referrals, and other forms of family support. Our approach seeks to protect children, strengthen families, and respond to needs in ways that respect dignity, safety, and wellbeing.",
+    description: [
+      "We are dedicated to supporting families and children facing hardship by providing essential assistance to help stabilize households in need. Our programs focus on addressing immediate needs such as food, education, shelter, medical and psychosocial support, while also promoting long-term resilience and self-sufficiency.",
+      "As part of our commitment to safeguarding vulnerable children, we hold a Child Safeguarding role under Caritas Kampala. In this capacity, we implement strict safeguarding policies and conduct regular training to ensure the safety and well-being of all children involved in our programs. Activities include child protection awareness campaigns, establishing safe reporting mechanisms, conducting thorough background checks on staff and volunteers, and offering psychosocial support to children who have experienced abuse or neglect. Our goal is to create a secure environment where children can thrive, free from harm and exploitation.",
+    ],
     serves: "FAMILIES & CHILDREN FACING HARDSHIP",
     locations: ["ARCHDIOCESE"],
     image: "/images/Event 01/Caritas_Kampala_03.jpg",
+    className: "md:col-span-2 lg:col-span-2",
   },
   {
     id: "refugee-asylum-seeker-support",
     title: "Refugee & Asylum Seeker Support",
     category: "HUMANITARIAN AID",
-    description: "We provide practical assistance, referrals, and other forms of support to refugees and asylum seekers experiencing displacement and uncertainty. Depending on current needs, this may include help accessing essential services, basic support, guidance, and connections that can help individuals and families rebuild greater stability in their lives.",
+    description: [
+      "Provides comprehensive practical assistance to both urban refugees and asylum seekers. This includes support to access to safe housing and shelter, nutritious food, medical support, vocational training and skills development, as well as protection services such as legal aid and advocacy. These efforts aim to address their immediate needs while promoting their dignity, safety, and long-term resilience within both host and urban refugee communities.",
+    ],
     serves: "REFUGEES & ASYLUM SEEKERS",
     locations: ["KAMPALA"],
     image: "/images/Event 02/Caritas_Kampala_05.jpg",
+    className: "md:col-span-1 lg:col-span-1",
   },
   {
     id: "disability-special-needs-support",
     title: "Disability & Special Needs Support",
     category: "INCLUSION & CARE",
-    description: "We work with people with disabilities, families, institutions, and partner organisations to strengthen inclusion, care, accessibility, and participation in community life. Support may include referrals, practical assistance, skills development, advocacy, and collaboration with specialised services where appropriate.",
+    description: [
+      "In close collaboration with our Chaconet partners, providing comprehensive assistance through a variety of activities such as personalized care, therapeutic services, accessible facilities, skill development programs, advocacy, emotional support, community integration, and awareness campaigns to empower individuals living with disabilities and special medical needs. Our goal is to foster independence, enhance quality of life, and promote inclusivity for all.",
+    ],
     serves: "PEOPLE WITH DISABILITIES & SPECIAL NEEDS",
     locations: ["ARCHDIOCESE"],
     image: "/images/Charities/Caritas_Kampala_87.jpg",
+    className: "md:col-span-1 lg:col-span-1",
   },
   {
-    id: "livelihoods-poverty-reduction",
-    title: "Livelihoods & Poverty Reduction",
+    id: "poverty-alleviation-livelihoods",
+    title: "Poverty Alleviation & Livelihoods",
     category: "ECONOMIC EMPOWERMENT",
-    description: "We support individuals and families facing economic hardship to strengthen their livelihoods and build greater self-reliance. This may include skills development, savings initiatives, income-generating activities, practical guidance, and other opportunities that help households improve stability and reduce vulnerability over time.",
+    description: [
+      "Caritas Kampala Charity Office plays a vital role in collaborating with individuals and families to develop and implement sustainable livelihood strategies. Through comprehensive support such as skills training, microfinance initiatives, income-generating activities, and community empowerment programs, we aim to uplift vulnerable populations, foster economic independence, and create lasting positive change. Our dedicated efforts are focused on breaking the cycle of poverty and promoting social and economic resilience within communities.",
+    ],
     serves: "INDIVIDUALS & FAMILIES FACING POVERTY",
     locations: ["KAMPALA", "WAKISO", "MPIGI"],
     image: "/images/Event 01/Caritas_Kampala_71.jpg",
+    className: "md:col-span-2 lg:col-span-2",
   },
 ];
 
@@ -87,15 +107,16 @@ const programmes: Programme[] = [
 function ProgrammeCard({ programme }: { programme: Programme }) {
   return (
     <Card
+      id={programme.id}
       as="article"
       variant="content"
       aria-labelledby={`programme-title-${programme.id}`}
-      className="group relative flex flex-col justify-between overflow-hidden h-full min-h-[300px] sm:min-h-[360px] p-5 sm:p-7 md:p-8 focus-within:ring-2 focus-within:ring-caritas-red focus-within:ring-offset-2"
+      className={`group relative flex flex-col justify-between overflow-hidden h-full min-h-[300px] sm:min-h-[360px] p-5 sm:p-7 md:p-8 focus-within:ring-2 focus-within:ring-caritas-red focus-within:ring-offset-2 ${programme.className || ""}`}
     >
       {/* DEFAULT UNHOVERED STATE */}
       <div className="flex flex-col justify-between h-full w-full z-0">
         <div className="flex items-center justify-between text-[11px] sm:text-xs font-bold text-gray-600 uppercase tracking-widest gap-2">
-          <span className="truncate">{programme.category}</span>
+          <span>{programme.category}</span>
         </div>
 
         <div className="my-3 sm:mt-4 sm:mb-5 flex-1">
@@ -108,9 +129,11 @@ function ProgrammeCard({ programme }: { programme: Programme }) {
           >
             {programme.title}
           </Heading>
-          <p className="text-sm sm:text-base text-gray-800 leading-relaxed font-sans">
-            {programme.description}
-          </p>
+          <div className="space-y-3 text-sm sm:text-base text-gray-800 leading-relaxed font-sans">
+            {programme.description.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </div>
         </div>
 
         <div className="pt-3.5 sm:pt-4 border-t border-gray-200 flex items-center justify-between text-[11px] sm:text-xs font-bold text-gray-600 uppercase tracking-widest">
@@ -138,9 +161,11 @@ function ProgrammeCard({ programme }: { programme: Programme }) {
           <Heading level={3} variant="subsection" color="white" className="leading-tight">
             {programme.title}
           </Heading>
-          <p className="text-xs sm:text-sm text-white/95 leading-relaxed font-sans">
-            {programme.description}
-          </p>
+          <div className="space-y-2 text-xs sm:text-sm text-white/95 leading-relaxed font-sans">
+            {programme.description.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </div>
         </div>
 
         <div className="relative z-10 pt-3 sm:pt-4 flex items-center justify-center">
@@ -187,8 +212,8 @@ export default function OurProgrammesPage() {
         </section>
 
         {/* Programme List */}
-        <section className="site-container py-16 sm:py-20">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <section className="site-container pb-16 sm:pb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {programmes.map((prog) => (
               <ProgrammeCard key={prog.id} programme={prog} />
             ))}
