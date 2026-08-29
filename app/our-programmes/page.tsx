@@ -34,7 +34,7 @@ const programmes: Programme[] = [
     ],
     serves: "FAMILIES & COMMUNITIES AFFECTED BY EMERGENCIES",
     locations: ["KAMPALA", "WAKISO", "MPIGI"],
-    image: "/images/Headers/header_Caritas_Kampala.png",
+    image: "/images/Headers/caritas_kampala-split-header.jpg",
   },
   {
     id: "support-for-the-elderly",
@@ -45,7 +45,7 @@ const programmes: Programme[] = [
     ],
     serves: "OLDER PERSONS ACROSS THE ARCHDIOCESE",
     locations: ["ARCHDIOCESE"],
-    image: "/images/Headers/header_Caritas_Kampala.png",
+    image: "/images/Headers/caritas_kampala-split-header.jpg",
   },
   {
     id: "family-child-support",
@@ -57,7 +57,7 @@ const programmes: Programme[] = [
     ],
     serves: "FAMILIES & CHILDREN FACING HARDSHIP",
     locations: ["ARCHDIOCESE"],
-    image: "/images/Headers/header_Caritas_Kampala.png",
+    image: "/images/Headers/caritas_kampala-split-header.jpg",
   },
   {
     id: "refugee-asylum-seeker-support",
@@ -68,7 +68,7 @@ const programmes: Programme[] = [
     ],
     serves: "REFUGEES & ASYLUM SEEKERS",
     locations: ["KAMPALA"],
-    image: "/images/Headers/header_Caritas_Kampala.png",
+    image: "/images/Headers/caritas_kampala-split-header.jpg",
   },
   {
     id: "disability-special-needs-support",
@@ -79,7 +79,7 @@ const programmes: Programme[] = [
     ],
     serves: "PEOPLE WITH DISABILITIES & SPECIAL NEEDS",
     locations: ["ARCHDIOCESE"],
-    image: "/images/Headers/header_Caritas_Kampala.png",
+    image: "/images/Headers/caritas_kampala-split-header.jpg",
   },
   {
     id: "poverty-alleviation-livelihoods",
@@ -90,7 +90,7 @@ const programmes: Programme[] = [
     ],
     serves: "INDIVIDUALS & FAMILIES FACING POVERTY",
     locations: ["KAMPALA", "WAKISO", "MPIGI"],
-    image: "/images/Headers/header_Caritas_Kampala.png",
+    image: "/images/Headers/caritas_kampala-split-header.jpg",
   },
 ];
 
