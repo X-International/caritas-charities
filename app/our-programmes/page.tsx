@@ -34,7 +34,7 @@ const programmes: Programme[] = [
     ],
     serves: "FAMILIES & COMMUNITIES AFFECTED BY EMERGENCIES",
     locations: ["KAMPALA", "WAKISO", "MPIGI"],
-    image: "/images/Event 01/Caritas_Kampala_75.jpg",
+    image: "/images/Headers/caritas_kampala-split-header.jpg",
   },
   {
     id: "support-for-the-elderly",
@@ -45,7 +45,7 @@ const programmes: Programme[] = [
     ],
     serves: "OLDER PERSONS ACROSS THE ARCHDIOCESE",
     locations: ["ARCHDIOCESE"],
-    image: "/images/Charities/Caritas_Kampala_84.jpg",
+    image: "/images/Headers/caritas_kampala-split-header.jpg",
   },
   {
     id: "family-child-support",
@@ -57,7 +57,7 @@ const programmes: Programme[] = [
     ],
     serves: "FAMILIES & CHILDREN FACING HARDSHIP",
     locations: ["ARCHDIOCESE"],
-    image: "/images/Event 01/Caritas_Kampala_03.jpg",
+    image: "/images/Headers/caritas_kampala-split-header.jpg",
   },
   {
     id: "refugee-asylum-seeker-support",
@@ -68,7 +68,7 @@ const programmes: Programme[] = [
     ],
     serves: "REFUGEES & ASYLUM SEEKERS",
     locations: ["KAMPALA"],
-    image: "/images/Event 02/Caritas_Kampala_05.jpg",
+    image: "/images/Headers/caritas_kampala-split-header.jpg",
   },
   {
     id: "disability-special-needs-support",
@@ -79,7 +79,7 @@ const programmes: Programme[] = [
     ],
     serves: "PEOPLE WITH DISABILITIES & SPECIAL NEEDS",
     locations: ["ARCHDIOCESE"],
-    image: "/images/Charities/Caritas_Kampala_87.jpg",
+    image: "/images/Headers/caritas_kampala-split-header.jpg",
   },
   {
     id: "poverty-alleviation-livelihoods",
@@ -90,7 +90,7 @@ const programmes: Programme[] = [
     ],
     serves: "INDIVIDUALS & FAMILIES FACING POVERTY",
     locations: ["KAMPALA", "WAKISO", "MPIGI"],
-    image: "/images/Event 01/Caritas_Kampala_71.jpg",
+    image: "/images/Headers/caritas_kampala-split-header.jpg",
   },
 ];
 
@@ -140,10 +140,8 @@ function ProgrammeCard({ programme }: { programme: Programme }) {
           alt=""
           fill
           sizes="(max-width: 1200px) 100vw, 1200px"
-          className="object-cover"
+          className="object-cover object-center"
         />
-        <div aria-hidden="true" className="absolute inset-0 bg-[#b10017]/90 mix-blend-multiply" />
-        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20" />
 
         <div aria-hidden="true" className="relative z-10 flex flex-wrap items-center justify-between text-[11px] sm:text-xs font-bold text-white uppercase tracking-widest gap-2">
           <span>{programme.category}</span>
