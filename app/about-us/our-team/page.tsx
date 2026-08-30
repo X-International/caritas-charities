@@ -39,13 +39,13 @@ const teamMembers = [
   },
   {
     name: "Ms. Penina Nawajje",
-    role: "Social Worker",
+    role: "Charity Shop Coordinator",
     image: "/images/Team/Penina_Nawajje_Caritas_Kampala_Charities_Office.jpg",
     alt: "Portrait of Ms. Penina Nawajje"
   },
   {
     name: "Ms. Kobutungi Proscovia",
-    role: "Social Worker",
+    role: "Charity Office Administrator",
     image: "/images/Team/Kobutungi_Proscovia_Caritas_Kampala_Charities_Office.jpg",
     alt: "Portrait of Ms. Kobutungi Proscovia"
   },
