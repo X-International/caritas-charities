@@ -24,7 +24,7 @@ export default function CharityShopSection() {
           
           <div className="space-y-4 text-[#4f4f4f] text-base sm:text-lg leading-relaxed">
             <p>
-              Our Charity Shop offers quality pre-loved items, handmade crafts, books and more — all at affordable prices. Every purchase helps us support vulnerable people and communities in need.
+              Our Charity Shop offers quality pre-loved items, handmade crafts, books and more, all at affordable prices. Every purchase helps us support vulnerable people and communities in need.
             </p>
             <p>
               Visit our Charity Shop and be part of work that brings hope and dignity.

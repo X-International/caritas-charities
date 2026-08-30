@@ -372,7 +372,7 @@ export default function Footer() {
         {/* Bottom Copyright & Visit Main Website */}
         <div className="flex w-full flex-col sm:flex-row justify-between items-start sm:items-center text-xs sm:text-sm text-gray-400 font-normal gap-4 py-8 sm:py-9 text-left">
           <div>
-            {`© ${currentYear} Caritas Kampala — Charity Office. All Rights Reserved.`}
+            {`© ${currentYear} Caritas Kampala | Charity Office. All Rights Reserved.`}
           </div>
           <div>
             <a

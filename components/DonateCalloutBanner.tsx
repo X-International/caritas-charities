@@ -12,7 +12,7 @@ export default function DonateCalloutBanner() {
                 &ldquo;Whatever you did for one of the least of these brothers and sisters of mine, you did for me.&rdquo;
               </Heading>
               <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-white/95 max-w-md">
-                &mdash; Matthew 25:40.
+                Matthew 25:40.
               </p>
             </div>
           </div>

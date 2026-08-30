@@ -83,7 +83,7 @@ export default function GoogleMap() {
         const marker = new window.google.maps.Marker({
           position: center,
           map,
-          title: "Caritas Kampala — Click to get directions",
+          title: "Caritas Kampala: Click to get directions",
           optimized: false,
           cursor: "pointer",
           icon: {
@@ -140,7 +140,7 @@ export default function GoogleMap() {
         ref={mapRef}
         className="w-full h-full"
         role="application"
-        aria-label="Caritas Kampala Office Location Map — click the pin to get directions"
+        aria-label="Caritas Kampala Office Location Map, click the pin to get directions"
       />
     </div>
   );

@@ -33,7 +33,7 @@ export default function HumanitarianAppeal() {
                 &ldquo;Truly I tell you, whatever you did for one of the least of these brothers and sisters of mine, you did for me.&rdquo;
               </Heading>
               <p className="text-sm sm:text-base text-red-100 font-semibold uppercase tracking-widest opacity-90">
-                — Matthew 25:40
+                Matthew 25:40
               </p>
             </div>
             <div className="pt-2">
