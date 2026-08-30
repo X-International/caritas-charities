@@ -1,34 +1,35 @@
-import { JSX } from "react";
+import { ReactNode } from "react";
 import Link from "next/link";
 
-export const faqs = [
+export interface FAQItem {
+  q: string;
+  a: ReactNode;
+}
+
+export const faqs: FAQItem[] = [
   {
     q: "What is Caritas Kampala?",
-    a: "Caritas Kampala is the social service and charitable arm of the Catholic Church in Kampala Archdiocese. It supports humanitarian response, social services, and development work across communities within Kampala Archdiocese.",
+    a: "Caritas Kampala is the social service and charitable arm of the Catholic Church in Kampala, Uganda. We provide humanitarian aid, social services, and development programs to improve the lives of vulnerable communities.We have a network of pastoral agents in the 75 parishes of the Catholic Archdiocese of Kampala which is comprised of Kampala, Wakiso, Mpigi and Butambala civic districts.",
   },
   {
     q: "What is the Charities Office?",
     a: "The Charities Office operates under Caritas Kampala and coordinates practical charitable support for vulnerable individuals, families, and communities across Kampala Archdiocese.",
   },
   {
-    q: "Who can benefit from the Charities Office's services?",
-    a: "Our work supports vulnerable and marginalised people, including children and families in hardship, elderly people, refugees and asylum seekers, people with disabilities and special needs, and communities affected by emergencies and disasters. Support is provided without discrimination based on faith, nationality, tribe, or other background.",
+    q: "Who can benefit from Caritas Kampala’s Charity Office services?",
+    a: "Our services are open to all vulnerable and marginalized groups, including orphans, the elderly, persons with disabilities, refugees, and communities affected by disasters, regardless of faith, sex, gender, nationality or tribe.",
   },
   {
-    q: "What types of support does the Charities Office provide?",
-    a: (
-      <>
-        Our programmes include emergency and disaster response, support for elderly people, family and child support, refugee and asylum seeker assistance, disability and special needs support, and poverty alleviation and livelihoods activities. <Link href="/our-programmes" className="text-[#b10017] hover:underline font-medium">Explore our programmes</Link>.
-      </>
-    ),
+    q: "What types of aid does Caritas Kampala Charity Office provide?",
+    a: "We provide food assistance, healthcare support, education programs, shelter for the homeless, disaster relief, and empowerment initiatives for marginalized groups.",
   },
   {
-    q: "How can I donate to the Charities Office?",
-    a: (
-      <>
-        You can support the work of the Charities Office through the approved giving methods listed on our Donate page. Please use only the official payment details published or confirmed by the Charities Office before sending money. <Link href="/donate" className="text-[#b10017] hover:underline font-medium">View donation options</Link>.
-      </>
-    ),
+    q: "How does the Charities Office safeguard children and vulnerable people?",
+    a: "Safeguarding is an important part of our work. The Charities Office follows child safeguarding procedures under Caritas Kampala and promotes safe reporting, staff and volunteer awareness, appropriate screening, and responsible handling of concerns involving children and vulnerable people.",
+  },
+  {
+    q: "How can I donate to Charity Office, Caritas Kampala?",
+    a: "You can donate through our bank account, mobile money platforms, or visit our office to contribute. Please visit our website or contact us for detailed donation methods and account information.",
   },
   {
     q: "Can I donate clothes or other items?",
@@ -39,12 +40,12 @@ export const faqs = [
     ),
   },
   {
-    q: "How can I volunteer with the Charities Office?",
-    a: (
-      <>
-        We welcome people who would like to offer their time, professional skills, or practical support where current needs and opportunities allow. Visit our Volunteer page to learn more about the process and available ways to help. <Link href="/get-involved/volunteer" className="text-[#b10017] hover:underline font-medium">Volunteer with us</Link>.
-      </>
-    ),
+    q: "How can I volunteer with Caritas Kampala Charity Office?",
+    a: "To volunteer, please fill out the volunteer registration form available on our website or contact our office directly. We welcome volunteers for various programs and activities.",
+  },
+  {
+    q: "How can I get involved in Caritas Kampala’s Charity Office projects?",
+    a: "You can volunteer, donate, or partner with us on specific projects. Visit our website or contact us for more information on ongoing initiatives.",
   },
   {
     q: "Can my organisation partner with the Charities Office?",
@@ -55,6 +56,10 @@ export const faqs = [
     ),
   },
   {
+    q: "Does Caritas Kampala Charity Office work with other organizations?",
+    a: "Yes, we collaborate with government agencies, NGOs, faith-based organizations, and community groups to maximize impact and reach more vulnerable populations.",
+  },
+  {
     q: "What is Chaconet?",
     a: (
       <>
@@ -63,32 +68,16 @@ export const faqs = [
     ),
   },
   {
-    q: "How does the Charities Office safeguard children and vulnerable people?",
-    a: "Safeguarding is an important part of our work. The Charities Office follows child safeguarding procedures under Caritas Kampala and promotes safe reporting, staff and volunteer awareness, appropriate screening, and responsible handling of concerns involving children and vulnerable people.",
+    q: "How does Caritas Kampala Charity Office ensure transparency and accountability?",
+    a: "We operate under strict governance policies, conduct regular audits, and publish annual reports. Transparency is a core value, and we are committed to responsible management of resources.",
   },
   {
-    q: "How does the Charities Office ensure transparency and accountability?",
-    a: (
-      <>
-        The Charities Office operates within the governance and accountability structures of Caritas Kampala. Financial management, reporting, internal controls, and audit processes help support the responsible use of resources. <Link href="/resources/annual-reports" className="text-[#b10017] hover:underline font-medium">View Annual Reports</Link>.
-      </>
-    ),
+    q: "Can I organize a fundraising event on behalf of Caritas Kampala Charity Office?",
+    a: "Yes, we welcome partnership and support for fundraising initiatives. Please contact our office to discuss your event and obtain necessary approvals.",
   },
   {
-    q: "Can I organise a fundraising activity on behalf of the Charities Office?",
-    a: (
-      <>
-        Please contact the Charities Office before organising or promoting a fundraising activity in its name. This allows us to confirm the proposed activity, provide appropriate guidance, and ensure that the Caritas name and official giving information are used correctly. <Link href="/contact-us" className="text-[#b10017] hover:underline font-medium">Contact us</Link>.
-      </>
-    ),
-  },
-  {
-    q: "Where is the Charities Office located?",
-    a: (
-      <>
-        The Charities Office is based in Nsambya, Kampala. Visit our Contact Us page for the current office address, telephone details, directions, and other ways to reach the team. <Link href="/contact-us" className="text-[#b10017] hover:underline font-medium">View contact details</Link>.
-      </>
-    ),
+    q: "How do I contact the Charity Office at Caritas Kampala?",
+    a: "You can reach us via phone at [insert phone number], email us at [insert email], or visit our office at [insert address]. Details are available on our website.",
   },
   {
     q: "How can I keep up with the work of the Charities Office?",
@@ -100,7 +89,7 @@ export const faqs = [
   },
 ];
 
-export const getAnswerText = (answer: string | JSX.Element): string => {
+export const getAnswerText = (answer: ReactNode): string => {
   if (typeof answer === "string") return answer;
   // For structured data fallback or simple strings
   return "Please visit our website for more information.";
