@@ -19,7 +19,7 @@ const slides: Slide[] = [
     id: 1,
     title: "Serving with Compassion",
     subtitle:
-      "The Charities Office serves vulnerable people and communities across Kampala Archdiocese with practical support, dignity, and care.",
+      "The Charity Office serves vulnerable people and communities across Kampala Archdiocese with practical support, dignity, and care.",
     buttonText: "OUR PROGRAMMES",
     buttonLink: "/our-programmes",
     image: "/images/Miscellany/Caritas_Kampala_39.jpg",

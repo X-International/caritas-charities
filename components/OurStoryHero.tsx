@@ -20,13 +20,13 @@ export default function OurStoryHero() {
       <div className="contact-hero-panel order-2 relative h-75 sm:h-100 md:h-120 lg:h-full bg-caritas-red text-white rounded-b-2xl sm:rounded-b-4xl lg:rounded-none lg:rounded-l-4xl overflow-hidden flex flex-col justify-center px-8 sm:px-12 md:px-16 lg:px-24">
         <div className="contact-hero-panel-content max-w-lg space-y-4">
           <Eyebrow color="white">
-            THE CHARITIES OFFICE
+            THE CHARITY OFFICE
           </Eyebrow>
           <Heading level={1} variant="hero" color="white">
             About Us
           </Heading>
           <Lead variant="article" className="text-white">
-            The Charities Office operates under Caritas Kampala, serving Kampala Archdiocese through compassion, dignity, and practical support for those who need it most.
+            The Charity Office operates under Caritas Kampala, serving Kampala Archdiocese through compassion, dignity, and practical support for those who need it most.
           </Lead>
         </div>
       </div>

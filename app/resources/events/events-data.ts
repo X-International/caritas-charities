@@ -21,7 +21,7 @@ export const initialEvents: EventItem[] = [
     timeString: "8:00 AM – 10:00 AM",
     location: "Caritas Kampala Offices",
     image: "/images/Event 06/Caritas_Kampala_54.jpg",
-    imageAlt: "Participants gathered around a meeting table during the Charities Office breakfast meeting",
+    imageAlt: "Participants gathered around a meeting table during the Charity Office breakfast meeting",
   },
   {
     id: "chaconet-meeting-2026",

@@ -8,9 +8,9 @@ import { siteConfig } from "@/lib/site-config";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
 export const metadata = buildPageMetadata({
-  title: "Contact Us | Caritas Kampala Charities Office",
+  title: "Contact Us | Caritas Kampala’s Charity Office",
   description:
-    "Get in touch with the Charities Office of Caritas Kampala. Find our address, phone number, and location in Nsambya, Kampala.",
+    "Get in touch with the Charity Office of Caritas Kampala. Find our address, phone number, and location in Nsambya, Kampala.",
   path: "/contact-us",
 });
 
@@ -111,7 +111,7 @@ export default function ContactUsPage() {
                       </a>
                       <a
                         href={`mailto:${siteConfig.office.email}`}
-                        aria-label="Email the Charities Office"
+                        aria-label="Email the Charity Office"
                         className="block bg-[#f9f5f0] rounded-2xl p-4 sm:p-4.5 border border-[#dfd4c5]/80 shadow-sm hover:border-[#b10017] hover:bg-white transition-all group min-w-0"
                       >
                         <span className="block text-sm font-medium text-gray-600 mb-0.5">Email</span>

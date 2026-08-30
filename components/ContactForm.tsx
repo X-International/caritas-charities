@@ -46,7 +46,7 @@ export default function ContactForm() {
         if (response.status === 429 || result?.code === "RATE_LIMITED") {
           throw new Error("We have received several requests from this connection. Please wait a few minutes and try again.");
         }
-        throw new Error("We couldn't send your message. Please try again, or contact the Charities Office using the phone or email details on this page.");
+        throw new Error("We couldn't send your message. Please try again, or contact the Charity Office using the phone or email details on this page.");
       }
       form.reset();
       setSubmission({ status: "success" });
@@ -54,7 +54,7 @@ export default function ContactForm() {
     } catch (error) {
       const message = error instanceof Error && error.name === "AbortError"
         ? "The request took too long. Please check your connection and try again."
-        : error instanceof Error ? error.message : "We couldn't send your message. Please try again, or contact the Charities Office using the phone or email details on this page.";
+        : error instanceof Error ? error.message : "We couldn't send your message. Please try again, or contact the Charity Office using the phone or email details on this page.";
       setSubmission({ status: "error", message });
       trackEvent(ANALYTICS_EVENTS.contactFormResult, { form: "contact", result: "error" });
     } finally {
@@ -116,7 +116,7 @@ export default function ContactForm() {
           SEND MESSAGE
         </Button>
         <FormHelperText>
-          By submitting this form, you agree that the Charities Office may use the information you provide to respond to your enquiry. <Link href="/privacy-policy" className="text-[#b10017] underline hover:no-underline">Privacy Policy</Link>.
+          By submitting this form, you agree that the Charity Office may use the information you provide to respond to your enquiry. <Link href="/privacy-policy" className="text-[#b10017] underline hover:no-underline">Privacy Policy</Link>.
         </FormHelperText>
         {submission.status === "error" && (
           <FormError id="contact-form-error" role="alert" aria-live="assertive">{submission.message}</FormError>

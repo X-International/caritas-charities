@@ -6,7 +6,7 @@ import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
 export const metadata = buildPageMetadata({
-  title: "Privacy Policy | Caritas Kampala Charities Office",
+  title: "Privacy Policy | Caritas Kampala’s Charity Office",
   description:
     "How we collect, use, protect, and manage information provided through this website.",
   path: "/privacy-policy",
@@ -31,7 +31,7 @@ export default function PrivacyPolicyPage() {
         {/* Content */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 section-md space-y-6 text-gray-700 leading-relaxed text-sm sm:text-base">
           <p>
-            The Charities Office under Caritas Kampala respects your privacy and is committed to handling personal information responsibly and in accordance with applicable data protection laws in Uganda.
+            The Charity Office under Caritas Kampala respects your privacy and is committed to handling personal information responsibly and in accordance with applicable data protection laws in Uganda.
           </p>
           <p>
             This Privacy Policy explains what information we may collect through this website, why we collect it, how it may be used and shared, how we protect it, and the choices and rights available to you.
@@ -68,7 +68,7 @@ export default function PrivacyPolicyPage() {
 
           <Heading level={2} variant="card" color="red">How We Collect Information</Heading>
           <p>
-            Most personal information is collected directly from you when you submit a form, send us a message, contact the Charities Office, or otherwise choose to provide information through this website.
+            Most personal information is collected directly from you when you submit a form, send us a message, contact the Charity Office, or otherwise choose to provide information through this website.
           </p>
 
           <Heading level={2} variant="card" color="red">Legal Basis for Processing</Heading>
@@ -78,7 +78,7 @@ export default function PrivacyPolicyPage() {
 
           <Heading level={2} variant="card" color="red">How We Use and Share Information</Heading>
           <p>
-            Personal information is used only for legitimate purposes connected with the work and administration of the Charities Office.
+            Personal information is used only for legitimate purposes connected with the work and administration of the Charity Office.
           </p>
           <p>
             We do not sell personal information.
@@ -98,7 +98,7 @@ export default function PrivacyPolicyPage() {
             Where this website directs visitors to official donation or payment channels, payment information may be processed by the relevant bank, mobile money provider, payment platform, or other authorised service provider.
           </p>
           <p>
-            The Charities Office should not receive or store sensitive payment credentials such as card PINs or mobile money PINs through ordinary website forms.
+            The Charity Office should not receive or store sensitive payment credentials such as card PINs or mobile money PINs through ordinary website forms.
           </p>
           <p>
             The privacy practices of third-party payment providers are governed by their own terms and privacy policies.
@@ -134,12 +134,12 @@ export default function PrivacyPolicyPage() {
             <li>raise a concern about the way your personal information has been handled.</li>
           </ul>
           <p>
-            To exercise any of these rights, please contact the Charities Office using the details provided on our <Link href="/contact-us" className="text-[#b10017] hover:underline font-medium">Contact Us</Link> page.
+            To exercise any of these rights, please contact the Charity Office using the details provided on our <Link href="/contact-us" className="text-[#b10017] hover:underline font-medium">Contact Us</Link> page.
           </p>
 
           <Heading level={2} variant="card" color="red">Children&apos;s Privacy</Heading>
           <p>
-            The Charities Office works with children and other vulnerable persons in some of its programmes and takes safeguarding and privacy seriously.
+            The Charity Office works with children and other vulnerable persons in some of its programmes and takes safeguarding and privacy seriously.
           </p>
           <p>
             This website is not intended to collect unnecessary personal information from children. Where information relating to a child is required for a legitimate programme, safeguarding, administrative, or legal purpose, it should be handled with appropriate care and in accordance with applicable law and safeguarding procedures.
@@ -164,7 +164,7 @@ export default function PrivacyPolicyPage() {
             This website may contain links to external websites operated by third parties.
           </p>
           <p>
-            The Charities Office and Caritas Kampala are not responsible for the privacy practices, security, or content of those external websites. We encourage visitors to review the privacy policies of any third-party website they choose to visit.
+            The Charity Office and Caritas Kampala are not responsible for the privacy practices, security, or content of those external websites. We encourage visitors to review the privacy policies of any third-party website they choose to visit.
           </p>
 
           <Heading level={2} variant="card" color="red">Data Breaches</Heading>
@@ -182,7 +182,7 @@ export default function PrivacyPolicyPage() {
 
           <Heading level={2} variant="card" color="red">Contact Us About Privacy</Heading>
           <p>
-            If you have questions, concerns, or requests relating to privacy or the way your personal information is handled, please contact the Charities Office through the details provided on our <Link href="/contact-us" className="text-[#b10017] hover:underline font-medium">Contact Us</Link> page.
+            If you have questions, concerns, or requests relating to privacy or the way your personal information is handled, please contact the Charity Office through the details provided on our <Link href="/contact-us" className="text-[#b10017] hover:underline font-medium">Contact Us</Link> page.
           </p>
 
           <Heading level={2} variant="card" color="red">Data Protection Authority</Heading>

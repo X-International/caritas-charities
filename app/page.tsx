@@ -9,9 +9,9 @@ import Footer from "@/components/Footer";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Caritas Kampala Charities Office | Serving Kampala, Wakiso & Mpigi",
+  title: "Caritas Kampala’s Charity Office | Serving Kampala, Wakiso & Mpigi",
   description:
-    "The Charities Office of Caritas Kampala supports the poor, vulnerable and marginalized across Kampala Archdiocese. Learn about our work and donate today.",
+    "The Charity Office of Caritas Kampala supports the poor, vulnerable and marginalized across Kampala Archdiocese. Learn about our work and donate today.",
   path: "/",
 });
 

@@ -31,7 +31,7 @@ export default function DonateOnlineCard() {
             Support Our Work
           </Heading>
           <p className="text-sm sm:text-base text-gray-900 leading-relaxed max-w-2xl font-sans">
-            Your gift helps the Charities Office provide practical support to vulnerable individuals, families, and communities across Kampala Archdiocese.
+            Your gift helps the Charity Office provide practical support to vulnerable individuals, families, and communities across Kampala Archdiocese.
           </p>
         </div>
 
@@ -39,7 +39,7 @@ export default function DonateOnlineCard() {
           <Button
             href="/donate"
             onClick={() => trackEvent(ANALYTICS_EVENTS.ctaClick, { placement: "gift_card", destination: "/donate" })}
-            aria-label="Donate to support the work of the Charities Office"
+            aria-label="Donate to support the work of the Charity Office"
             variant="primary"
             size="lg"
             rightIcon={<ArrowRight className="w-4 h-4" aria-hidden="true" />}

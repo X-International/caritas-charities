@@ -6,8 +6,8 @@ import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
 export const metadata = buildPageMetadata({
-  title: "Terms of Use | Caritas Kampala Charities Office",
-  description: "Please read these terms carefully before using the Charities Office website.",
+  title: "Terms of Use | Caritas Kampala’s Charity Office",
+  description: "Please read these terms carefully before using the Charity Office website.",
   path: "/terms-of-use",
 });
 
@@ -20,7 +20,7 @@ export default function TermsOfUsePage() {
         {/* Hero Banner */}
         <PageHeader 
           title="Terms of Use"
-          description="Please read these terms carefully before using the Charities Office website."
+          description="Please read these terms carefully before using the Charity Office website."
           breadcrumbs={[
             { label: "HOME", href: "/" },
             { label: "TERMS OF USE" }
@@ -30,17 +30,17 @@ export default function TermsOfUsePage() {
         {/* Content */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 section-md space-y-6 text-gray-700 leading-relaxed text-sm sm:text-base">
           <p>
-            Welcome to the official website of the Charities Office under Caritas Kampala. By accessing or using this website, you agree to these Terms of Use. If you do not agree with these terms, please do not use the website.
+            Welcome to the official website of the Charity Office under Caritas Kampala. By accessing or using this website, you agree to these Terms of Use. If you do not agree with these terms, please do not use the website.
           </p>
 
           <Heading level={2} variant="card" color="red">About This Website</Heading>
           <p>
-            This website provides information about the work, programmes, activities, resources, and ways to support the Charities Office under Caritas Kampala. We aim to keep the information on this website accurate and up to date, but we cannot guarantee that all content will always be complete, current, or free from errors.
+            This website provides information about the work, programmes, activities, resources, and ways to support the Charity Office under Caritas Kampala. We aim to keep the information on this website accurate and up to date, but we cannot guarantee that all content will always be complete, current, or free from errors.
           </p>
 
           <Heading level={2} variant="card" color="red">Use of Website Content</Heading>
           <p>
-            Unless otherwise stated, the text, photographs, graphics, logos, documents, and other materials on this website are owned by or used with permission by Caritas Kampala and the Charities Office.
+            Unless otherwise stated, the text, photographs, graphics, logos, documents, and other materials on this website are owned by or used with permission by Caritas Kampala and the Charity Office.
           </p>
           <p>
             You may view, download, print, or share website content for personal, educational, charitable, or other non-commercial purposes, provided that the content is not altered in a misleading way and appropriate credit is given where required.
@@ -67,15 +67,15 @@ export default function TermsOfUsePage() {
             This website may contain links to websites and services operated by third parties. These links are provided for convenience and information only.
           </p>
           <p>
-            The Charities Office and Caritas Kampala do not control third-party websites and are not responsible for their content, availability, security, or privacy practices. Visiting an external website is at your own discretion and subject to that website&apos;s own terms and policies.
+            The Charity Office and Caritas Kampala do not control third-party websites and are not responsible for their content, availability, security, or privacy practices. Visiting an external website is at your own discretion and subject to that website&apos;s own terms and policies.
           </p>
 
           <Heading level={2} variant="card" color="red">Donations and Payments</Heading>
           <p>
-            Any donation or payment information published on this website should be used only through the official giving channels provided by the Charities Office.
+            Any donation or payment information published on this website should be used only through the official giving channels provided by the Charity Office.
           </p>
           <p>
-            Before sending funds, users should confirm that the payment details are current and official. The Charities Office is not responsible for payments made to unauthorized or fraudulent accounts, contacts, or platforms that are not officially published or confirmed by us.
+            Before sending funds, users should confirm that the payment details are current and official. The Charity Office is not responsible for payments made to unauthorized or fraudulent accounts, contacts, or platforms that are not officially published or confirmed by us.
           </p>
 
           <Heading level={2} variant="card" color="red">Forms and Information You Submit</Heading>
@@ -104,7 +104,7 @@ export default function TermsOfUsePage() {
 
           <Heading level={2} variant="card" color="red">Limitation of Liability</Heading>
           <p>
-            To the extent permitted by applicable law, the Charities Office and Caritas Kampala will not be liable for loss or damage arising from the use of, or inability to use, this website or from reliance on information contained on it.
+            To the extent permitted by applicable law, the Charity Office and Caritas Kampala will not be liable for loss or damage arising from the use of, or inability to use, this website or from reliance on information contained on it.
           </p>
           <p>
             Nothing in these Terms of Use is intended to exclude any responsibility that cannot lawfully be excluded.
@@ -130,7 +130,7 @@ export default function TermsOfUsePage() {
 
           <Heading level={2} variant="card" color="red">Contact Us</Heading>
           <p>
-            If you have questions about these Terms of Use or the use of this website, please contact the Charities Office through the details provided on our <Link href="/contact-us" className="text-[#b10017] hover:underline font-medium">Contact Us</Link> page.
+            If you have questions about these Terms of Use or the use of this website, please contact the Charity Office through the details provided on our <Link href="/contact-us" className="text-[#b10017] hover:underline font-medium">Contact Us</Link> page.
           </p>
 
           <p className="text-sm text-gray-500 pt-4 border-t border-gray-100">

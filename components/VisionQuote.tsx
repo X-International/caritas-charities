@@ -12,7 +12,7 @@ export default function VisionQuote() {
           &quot;A self-sustaining family of God built on love, solidarity, and reconciliation.&quot;
         </blockquote>
         <p className="text-gray-600 font-medium">
-          Charities Office, Caritas Kampala
+          Charity Office, Caritas Kampala
         </p>
       </div>
     </section>

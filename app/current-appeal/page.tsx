@@ -139,7 +139,7 @@ export default function CurrentAppealPage() {
                   </p>
                 </div>
                 <p className="text-gray-700 text-[15px] sm:text-base lg:text-lg leading-relaxed font-normal">
-                  This is the same passage that guides the wider mission of the Charities Office, and it is why we see responding to hunger, wherever we find it, as central to who we are.
+                  This is the same passage that guides the wider mission of the Charity Office, and it is why we see responding to hunger, wherever we find it, as central to who we are.
                 </p>
               </section>
             </div>

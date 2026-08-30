@@ -67,7 +67,7 @@ export default function ClientEvents() {
 
   const hasUpcoming = visibleEvents.length > 0;
   const sectionHeading = "Upcoming Events";
-  const sectionDescription = "See upcoming meetings and gatherings connected with the work of the Charities Office.";
+  const sectionDescription = "See upcoming meetings and gatherings connected with the work of the Charity Office.";
 
   return (
     <>

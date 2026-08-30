@@ -9,8 +9,8 @@ import { searchSite } from "@/lib/search/search-engine";
 import { SITE_DOMAIN } from "@/lib/search/search-index";
 
 export const metadata = buildPageMetadata({
-  title: "Search Results | Caritas Kampala Charities Office",
-  description: "Search results across all programmes, news, resources, and services of the Caritas Kampala Charities Office.",
+  title: "Search Results | Caritas Kampala’s Charity Office",
+  description: "Search results across all programmes, news, resources, and services of the Charity Office of Caritas Kampala.",
   path: "/search",
   robots: { index: false, follow: true },
 });
@@ -48,7 +48,7 @@ export default async function SearchPage({
             </Heading>
             <Lead variant="hero">
               {query
-                ? `Showing results for "${query}" across the Charities Office website.`
+                ? `Showing results for "${query}" across the Charity Office website.`
                 : "Search across programmes, news articles, resources, and services."}
             </Lead>
           </div>

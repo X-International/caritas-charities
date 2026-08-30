@@ -3,7 +3,7 @@ import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
 export const metadata = buildPageMetadata({
-  title: "Page Not Found | Caritas Kampala Charities Office",
+  title: "Page Not Found | Caritas Kampala’s Charity Office",
   description: "The page you are looking for may have moved or no longer exists.",
   path: "/404",
   robots: { index: false, follow: true },

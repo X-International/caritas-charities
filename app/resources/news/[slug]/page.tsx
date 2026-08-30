@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   return buildPageMetadata({
-    title: `${article.title} | Caritas Kampala Charities Office`,
+    title: `${article.title} | Caritas Kampala’s Charity Office`,
     description: article.snippet,
     path: `/resources/news/${article.slug}`,
     image: article.image,
@@ -55,12 +55,12 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
     "datePublished": article.date,
     "author": {
       "@type": "Organization",
-      "name": "Caritas Kampala Charities Office",
+      "name": "Caritas Kampala’s Charity Office",
       "url": siteConfig.domain
     },
     "publisher": {
       "@type": "NGO",
-      "name": "Caritas Kampala Charities Office",
+      "name": "Caritas Kampala’s Charity Office",
       "url": siteConfig.domain
     },
     "mainEntityOfPage": {
