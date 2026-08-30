@@ -41,7 +41,7 @@ export default function CharityShopPage() {
               </Heading>
               <div className="space-y-4 text-gray-700 text-base sm:text-lg leading-relaxed">
                 <p>
-                  Discover the Second Hand Charity Shop at Caritas Kampala in Nsambya — a heartfelt initiative to support those in need. Operated by the Charity Office, our shop raises vital funds for charity work by selling donated clothes and items at affordable prices. These donations from parish communities across Kampala Archdiocese help us empower the vulnerable and make a lasting impact in our community. Your support and donations of materials in good condition make this possible
+                  Discover the Second Hand Charity Shop at Caritas Kampala in Nsambya, a heartfelt initiative to support those in need. Operated by the Charity Office, our shop raises vital funds for charity work by selling donated clothes and items at affordable prices. These donations from parish communities across Kampala Archdiocese help us empower the vulnerable and make a lasting impact in our community. Your support and donations of materials in good condition make this possible
                 </p>
               </div>
 

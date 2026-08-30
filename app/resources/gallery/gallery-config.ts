@@ -62,7 +62,7 @@ export function filenameToAlt(filename: string, categoryLabel: string): string {
     .replace(/[-_]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
-  return `${categoryLabel} — ${base}`;
+  return `${categoryLabel}, ${base}`;
 }
 
 export const GALLERY_IMAGE_EXTENSIONS = [".jpg", ".jpeg", ".png", ".webp", ".gif"];

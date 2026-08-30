@@ -115,7 +115,7 @@ function ClientGalleryInner({ images }: Props) {
         src: img.src,
         alt: img.alt,
         title: "Photo Gallery",
-        description: `${img.caption} — ${img.categoryLabel}`,
+        description: `${img.caption} | ${img.categoryLabel}`,
       })),
     [filteredImages]
   );

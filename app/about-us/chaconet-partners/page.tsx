@@ -116,7 +116,7 @@ export default function ChaconetPartnersPage() {
             </div>
             <div className="space-y-5 text-gray-700 text-base sm:text-lg leading-[1.7]">
               <p>
-                Chaconet — the Catholic Charity Homes Network — brings together charity homes and institutions connected with Kampala Archdiocese to strengthen coordination, share experience, and support the care of vulnerable people.
+                Chaconet (the Catholic Charity Homes Network) brings together charity homes and institutions connected with Kampala Archdiocese to strengthen coordination, share experience, and support the care of vulnerable people.
               </p>
               <p>
                 Through the network, participating homes can collaborate on common needs, learn from one another, strengthen standards of care and safeguarding, and build stronger relationships with the Charity Office and other partners.
@@ -185,7 +185,7 @@ export default function ChaconetPartnersPage() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="font-semibold text-[#b10017] hover:text-[#8e0a20] hover:underline underline-offset-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 inline-flex items-center gap-1"
-                                aria-label={`${item.name} — opens external site in a new tab`}
+                                aria-label={`${item.name}, opens external site in a new tab`}
                               >
                                 <span>{item.name} ↗</span>
                               </a>
@@ -208,7 +208,7 @@ export default function ChaconetPartnersPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#b10017] hover:text-[#8e0a20] hover:underline underline-offset-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2"
-                        aria-label={`${partner.urlLabel.replace(" ↗", "")} for ${partner.name} — opens external site in a new tab`}
+                        aria-label={`${partner.urlLabel.replace(" ↗", "")} for ${partner.name}, opens external site in a new tab`}
                       >
                         <span>{partner.urlLabel}</span>
                         <ExternalLink
