@@ -156,10 +156,21 @@ export default function Navbar() {
     return pathname.startsWith(route);
   };
 
-  const isSubRouteActive = (href: string) => {
+  /* A child link is active only for its own route, or for a nested page that no
+     more specific sibling route already claims. */
+  const isSubRouteActive = (href: string, siblingHrefs: (string | undefined)[] = []) => {
     const [route, hash] = href.split("#");
     if (hash) return pathname.startsWith(route) && currentHash === `#${hash}`;
-    return isRouteActive(href);
+    if (!route || route === "#") return false;
+    if (route === "/") return pathname === "/";
+    if (pathname === route) return true;
+    if (!pathname.startsWith(`${route}/`)) return false;
+
+    return !siblingHrefs.some((sibling) => {
+      const siblingRoute = sibling?.split("#")[0];
+      if (!siblingRoute || siblingRoute.length <= route.length) return false;
+      return pathname === siblingRoute || pathname.startsWith(`${siblingRoute}/`);
+    });
   };
 
   const getMegaMenuHref = (link: NavLink) => link.href ?? link.megaMenu?.links[0]?.href;
@@ -496,8 +507,10 @@ export default function Navbar() {
                               {link.name} Overview
                             </p>
                             <ul className="space-y-1.5">
-                              {link.megaMenu.links.map((sub) => {
-                                const isSubActive = sub.href ? isSubRouteActive(sub.href) : false;
+                              {link.megaMenu.links.map((sub, _index, siblings) => {
+                                const isSubActive = sub.href
+                                  ? isSubRouteActive(sub.href, siblings.map((s) => s.href))
+                                  : false;
                                 return (
                                   <li key={sub.name}>
                                     {sub.href ? (
@@ -766,8 +779,10 @@ export default function Navbar() {
 
                       {openMobileSubmenu === link.name && (
                         <div id={`mobile-submenu-${link.name.toLowerCase().replace(/\s+/g, "-")}`} className="py-2.5 pl-3 pr-2 space-y-1 bg-gray-50/70 border border-gray-200/60 rounded-xl my-2 animate-in fade-in duration-150">
-                          {link.megaMenu.links.map((sub) => {
-                            const isSubActive = sub.href ? isSubRouteActive(sub.href) : false;
+                          {link.megaMenu.links.map((sub, _index, siblings) => {
+                            const isSubActive = sub.href
+                              ? isSubRouteActive(sub.href, siblings.map((s) => s.href))
+                              : false;
                             return sub.href ? (
                               <Link
                                 key={sub.name}

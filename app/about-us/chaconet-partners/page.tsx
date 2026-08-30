@@ -5,6 +5,7 @@ import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 import PageHeader from "@/components/PageHeader";
 import Image from "next/image";
+import ImageSlider, { type SliderSlide } from "@/components/ImageSlider";
 import { ExternalLink } from "lucide-react";
 
 export const metadata = buildPageMetadata({
@@ -29,7 +30,7 @@ const partners: Partner[] = [
     description:
       "A Catholic ministry of Kampala Archdiocese supporting people in need through practical works of charity, including food assistance, care for sick and older people, support for people with disabilities, shelter, clothing, and outreach to prisoners.",
     url: "https://www.africa2trust.com/B2BAfrica/uganda/non-government-organization-ngo/ngos-charities-and-non-profits-general/good-samaritan-kampala-archdiocese/Profile/AboutUs/1/1/24617/3",
-    urlLabel: "Learn More ↗",
+    urlLabel: "Learn More",
     image: "/images/logos/good-samaritan-placeholder.png",
   },
   {
@@ -37,7 +38,7 @@ const partners: Partner[] = [
     description:
       "A charitable organisation providing care and protection for children through a network of specialised homes, while working to help children grow toward safe, responsible and independent adulthood.",
     url: "https://cwasug.org/",
-    urlLabel: "Visit CWAS ↗",
+    urlLabel: "Visit CWAS",
     image: "/images/logos/cwas-placeholder.png",
     includes: [
       { name: "Nsambya Babies Home", desc: "Care for babies and young children aged 0–5 years.", url: "https://www.cwasug.org/nbh/home-nsambya.php" },
@@ -50,7 +51,7 @@ const partners: Partner[] = [
     description:
       "A residential charity home in Nalukolongo providing care, shelter and practical support for vulnerable older people and people with disabilities.",
     url: "https://www.facebook.com/p/Mapeera-Bakateyambas-Home-100080494298138/",
-    urlLabel: "Visit Page ↗",
+    urlLabel: "Visit Page",
     image: "/images/logos/mapeera-placeholder.png",
   },
   {
@@ -58,7 +59,7 @@ const partners: Partner[] = [
     description:
       "A Catholic religious community dedicated to serving people experiencing severe poverty and vulnerability through compassionate, faith-based care and practical service.",
     url: "https://missionariesofthepoor.org/",
-    urlLabel: "Visit Website ↗",
+    urlLabel: "Visit Website",
     image: "/images/logos/ministries-poor-placeholder.png",
   },
   {
@@ -66,7 +67,7 @@ const partners: Partner[] = [
     description:
       "A charitable ministry providing residential care and protection for vulnerable infants and children, alongside counselling, education support and community outreach for people and families experiencing hardship.",
     url: "https://www.teresaministriesug.org/",
-    urlLabel: "Visit Website ↗",
+    urlLabel: "Visit Website",
     image: "/images/logos/teresa-ministries-placeholder.png",
   },
   {
@@ -74,14 +75,39 @@ const partners: Partner[] = [
     description:
       "A children’s home within Kampala Archdiocese providing residential care, protection and practical support for vulnerable children who need a safe and supportive home environment.",
     url: "https://www.facebook.com/Kyasirahomeofhope/",
-    urlLabel: "Visit Page ↗",
+    urlLabel: "Visit Page",
     image: "/images/logos/kyasira-home-placeholder.png",
   },
   {
     name: "Mulago School for the Deaf",
     description:
       "Provides specialised education and support for deaf and hard-of-hearing children, helping learners participate in education and develop their abilities.",
+    url: "https://ugandanspiritans.org/mulago-school-for-the-deaf/",
+    urlLabel: "Visit Website",
     image: "/images/logos/mulago-deaf-placeholder.png",
+  },
+];
+
+const introSlides: SliderSlide[] = [
+  {
+    id: "kankobe-welcome",
+    image: "/images/Charities/Caritas_Kampala_82.jpg",
+    alt: "Children, staff and Charity Office visitors gathered under the welcome sign at Kankobe Children’s Home",
+  },
+  {
+    id: "chaconet-gathering",
+    image: "/images/Charities/Caritas_Kampala_84.jpg",
+    alt: "Children and caregivers seated under a tent for a gathering at a Chaconet charity home",
+  },
+  {
+    id: "cwas-community",
+    image: "/images/Charities/Caritas_Kampala_87.jpg",
+    alt: "Children, sisters and staff of a Catholic children’s home with the Archbishop during a pastoral visit",
+  },
+  {
+    id: "supplies-delivery",
+    image: "/images/Charities/Caritas_Kampala_86.jpg",
+    alt: "Children receiving donated food and household supplies delivered to a charity home",
   },
 ];
 
@@ -104,27 +130,29 @@ export default function ChaconetPartnersPage() {
 
         {/* Introduction */}
         <section className="site-container py-16 sm:py-20">
-          <div className="max-w-[780px] mx-auto text-center space-y-8 sm:space-y-10">
-            <div className="space-y-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 lg:items-center">
+            <div className="text-left space-y-6 sm:space-y-8 max-w-[620px]">
               <Heading level={2} className="text-3xl sm:text-4xl font-bold font-serif text-gray-900">
                 Working Together Through Chaconet
               </Heading>
-              <div
-                aria-hidden="true"
-                className="mx-auto h-0.5 w-16 bg-caritas-red/80 rounded-full"
-              />
+              <div className="space-y-5 text-gray-700 text-base sm:text-lg leading-[1.7]">
+                <p>
+                  Chaconet (the Catholic Charity Homes Network) brings together charity homes and institutions connected with Kampala Archdiocese to strengthen coordination, share experience, and support the care of vulnerable people.
+                </p>
+                <p>
+                  Through the network, participating homes can collaborate on common needs, learn from one another, strengthen standards of care and safeguarding, and build stronger relationships with the Charity Office and other partners.
+                </p>
+                <p>
+                  The network includes organisations serving children, older people, people with disabilities, families in difficulty, and others who need residential, pastoral, social, or practical support.
+                </p>
+              </div>
             </div>
-            <div className="space-y-5 text-gray-700 text-base sm:text-lg leading-[1.7]">
-              <p>
-                Chaconet (the Catholic Charity Homes Network) brings together charity homes and institutions connected with Kampala Archdiocese to strengthen coordination, share experience, and support the care of vulnerable people.
-              </p>
-              <p>
-                Through the network, participating homes can collaborate on common needs, learn from one another, strengthen standards of care and safeguarding, and build stronger relationships with the Charity Office and other partners.
-              </p>
-              <p>
-                The network includes organisations serving children, older people, people with disabilities, families in difficulty, and others who need residential, pastoral, social, or practical support.
-              </p>
-            </div>
+
+            <ImageSlider
+              slides={introSlides}
+              label="Photos from Chaconet charity homes and activities"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </div>
         </section>
 
@@ -144,12 +172,12 @@ export default function ChaconetPartnersPage() {
               {partners.map((partner) => (
                 <article
                   key={partner.name}
-                  className="group flex flex-col h-full bg-white border border-gray-200 rounded-2xl p-6 sm:p-7 transition-colors duration-150 hover:border-[#b10017]/60 focus-within:border-[#b10017]/60"
+                  className="group flex flex-col h-full bg-[#ebe3d7] border border-[#d8cbb6] rounded-2xl p-6 sm:p-7 transition-colors duration-150 hover:border-[#b10017]/60 focus-within:border-[#b10017]/60"
                 >
                   {/* Logo placeholder / approved logo */}
                   <div
                     aria-hidden="true"
-                    className="w-full h-28 sm:h-32 bg-gray-100 rounded-xl flex items-center justify-center overflow-hidden transition-transform duration-200 group-hover:[&>*:first-child]:scale-[1.01]"
+                    className="relative w-full h-28 sm:h-32 bg-white rounded-xl flex items-center justify-center overflow-hidden transition-transform duration-200 group-hover:[&>*:first-child]:scale-[1.01]"
                   >
                     <Image
                       src={partner.image}
@@ -162,7 +190,7 @@ export default function ChaconetPartnersPage() {
 
                   <Heading
                     level={3}
-                    className="mt-5 sm:mt-6 text-[22px] sm:text-[26px] lg:text-[27px] font-serif font-bold text-gray-900 leading-snug"
+                    className="mt-5 sm:mt-6 text-[22px] sm:text-[26px] lg:text-[27px] font-serif font-bold text-[#b10017] leading-snug"
                   >
                     {partner.name}
                   </Heading>
@@ -187,13 +215,17 @@ export default function ChaconetPartnersPage() {
                                 className="font-semibold text-[#b10017] hover:text-[#8e0a20] hover:underline underline-offset-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 inline-flex items-center gap-1"
                                 aria-label={`${item.name}, opens external site in a new tab`}
                               >
-                                <span>{item.name} ↗</span>
+                                <span>{item.name}</span>
+                                <ExternalLink
+                                  className="w-3.5 h-3.5 relative -top-[1px] shrink-0"
+                                  aria-hidden="true"
+                                />
                               </a>
                             ) : (
                               <span className="font-semibold text-gray-900">{item.name}</span>
                             )}
                             {item.desc && (
-                              <p className="text-gray-600">{item.desc}</p>
+                              <p className="text-gray-700">{item.desc}</p>
                             )}
                           </li>
                         ))}
@@ -208,7 +240,7 @@ export default function ChaconetPartnersPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#b10017] hover:text-[#8e0a20] hover:underline underline-offset-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2"
-                        aria-label={`${partner.urlLabel.replace(" ↗", "")} for ${partner.name}, opens external site in a new tab`}
+                        aria-label={`${partner.urlLabel} for ${partner.name}, opens external site in a new tab`}
                       >
                         <span>{partner.urlLabel}</span>
                         <ExternalLink
