@@ -8,12 +8,12 @@ const isVercelDeployment = process.env.VERCEL === "1";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.caritaskampalacharities.org"),
   title: {
-    default: "Caritas Kampala Charities Office | Serving Kampala, Wakiso & Mpigi",
+    default: "Caritas Kampala’s Charity Office | Serving Kampala, Wakiso & Mpigi",
     // Route metadata already uses the public-facing "| Caritas Kampala" suffix.
     template: "%s",
   },
   description:
-    "The Charities Office of Caritas Kampala supports the poor, vulnerable and marginalized across Kampala Archdiocese. Learn about our work and donate today.",
+    "The Charity Office of Caritas Kampala supports the poor, vulnerable and marginalized across Kampala Archdiocese. Learn about our work and donate today.",
   applicationName: "Caritas Kampala",
   authors: [{ name: "Caritas Kampala" }],
   creator: "Caritas Kampala",
@@ -22,10 +22,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_UG",
     url: "/",
-    siteName: "Caritas Kampala Charities Office",
-    title: "Caritas Kampala Charities Office | Serving Kampala, Wakiso & Mpigi",
+    siteName: "Caritas Kampala’s Charity Office",
+    title: "Caritas Kampala’s Charity Office | Serving Kampala, Wakiso & Mpigi",
     description:
-      "The Charities Office of Caritas Kampala supports the poor, vulnerable and marginalized across Kampala Archdiocese. Learn about our work and donate today.",
+      "The Charity Office of Caritas Kampala supports the poor, vulnerable and marginalized across Kampala Archdiocese. Learn about our work and donate today.",
     images: [
       {
         url: "/images/current%20appeal/Caritas_Kampala_Current_Appeal.jpg",
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Caritas Kampala Charities Office | Serving Kampala, Wakiso & Mpigi",
+    title: "Caritas Kampala’s Charity Office | Serving Kampala, Wakiso & Mpigi",
     description:
-      "The Charities Office of Caritas Kampala supports the poor, vulnerable and marginalized across Kampala Archdiocese. Learn about our work and donate today.",
+      "The Charity Office of Caritas Kampala supports the poor, vulnerable and marginalized across Kampala Archdiocese. Learn about our work and donate today.",
     images: ["/images/current%20appeal/Caritas_Kampala_Current_Appeal.jpg"],
   },
   robots: {
@@ -68,7 +68,7 @@ const jsonLd = {
     {
       "@type": "NGO",
       "@id": "https://www.caritaskampalacharities.org/#organization",
-      "name": "Caritas Kampala Charities Office",
+      "name": "Caritas Kampala’s Charity Office",
       "alternateName": "Caritas Kampala",
       "url": "https://www.caritaskampalacharities.org/",
       "parentOrganization": {
@@ -88,7 +88,7 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": "https://www.caritaskampalacharities.org/#website",
       "url": "https://www.caritaskampalacharities.org/",
-      "name": "Caritas Kampala Charities Office",
+      "name": "Caritas Kampala’s Charity Office",
       "publisher": {
         "@id": "https://www.caritaskampalacharities.org/#organization"
       }

@@ -6,7 +6,7 @@ import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
 export const metadata = buildPageMetadata({
-  title: "Success Stories | Caritas Kampala Charities Office",
+  title: "Success Stories | Caritas Kampala’s Charity Office",
   description:
     "Read real stories that show how practical support has affected the lives of people and communities we work alongside.",
   path: "/resources/success-stories",

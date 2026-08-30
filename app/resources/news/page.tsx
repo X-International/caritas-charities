@@ -12,9 +12,9 @@ import { ArrowRight, Search as SearchIcon } from "lucide-react";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
 
 export const metadata = buildPageMetadata({
-  title: "News & Updates | Caritas Kampala Charities Office",
+  title: "News & Updates | Caritas Kampala’s Charity Office",
   description:
-    "The latest updates and stories from the work of the Charities Office across Kampala Archdiocese.",
+    "The latest updates and stories from the work of the Charity Office across Kampala Archdiocese.",
   path: "/resources/news",
 });
 
@@ -51,7 +51,7 @@ export default async function NewsPage({
             { label: "Resources", href: "#" },
             { label: "News & Updates" },
           ]}
-          description="Read the latest news, announcements, and updates from the work of the Charities Office."
+          description="Read the latest news, announcements, and updates from the work of the Charity Office."
         />
 
         {/* Search Results Banner (Make a Gift style) */}

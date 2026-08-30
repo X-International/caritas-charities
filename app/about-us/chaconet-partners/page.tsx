@@ -8,7 +8,7 @@ import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 
 export const metadata = buildPageMetadata({
-  title: "Chaconet Network | Caritas Kampala Charities Office",
+  title: "Chaconet Network | Caritas Kampala’s Charity Office",
   description:
     "A network of Catholic charity homes and institutions working together across Kampala Archdiocese.",
   path: "/about-us/chaconet-partners",
@@ -119,7 +119,7 @@ export default function ChaconetPartnersPage() {
                 Chaconet — the Catholic Charity Homes Network — brings together charity homes and institutions connected with Kampala Archdiocese to strengthen coordination, share experience, and support the care of vulnerable people.
               </p>
               <p>
-                Through the network, participating homes can collaborate on common needs, learn from one another, strengthen standards of care and safeguarding, and build stronger relationships with the Charities Office and other partners.
+                Through the network, participating homes can collaborate on common needs, learn from one another, strengthen standards of care and safeguarding, and build stronger relationships with the Charity Office and other partners.
               </p>
               <p>
                 The network includes organisations serving children, older people, people with disabilities, families in difficulty, and others who need residential, pastoral, social, or practical support.
@@ -232,7 +232,7 @@ export default function ChaconetPartnersPage() {
                 Support Our Work
               </Heading>
               <p className="text-[15px] sm:text-base text-gray-700 leading-relaxed">
-                Your gift helps the Charities Office provide practical support to vulnerable individuals, families, and communities across Kampala Archdiocese.
+                Your gift helps the Charity Office provide practical support to vulnerable individuals, families, and communities across Kampala Archdiocese.
               </p>
             </div>
             <div className="lg:flex-shrink-0">

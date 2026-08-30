@@ -37,7 +37,7 @@ export default function ContactInteractiveSection() {
               General Enquiries
             </h3>
             <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-              For general questions about the Charities Office, our programmes, events, or how to get involved, use the contact form or reach us through the main office details above.
+              For general questions about the Charity Office, our programmes, events, or how to get involved, use the contact form or reach us through the main office details above.
             </p>
           </div>
           <div className="mt-6 pt-4 border-t border-black/5">
@@ -59,7 +59,7 @@ export default function ContactInteractiveSection() {
               Safeguarding &amp; Complaints
             </h3>
             <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-              If you need to raise a safeguarding concern, complaint, or concern about the conduct of a staff member, volunteer, partner, or activity connected with the Charities Office, please contact us so the matter can be handled appropriately and confidentially.
+              If you need to raise a safeguarding concern, complaint, or concern about the conduct of a staff member, volunteer, partner, or activity connected with the Charity Office, please contact us so the matter can be handled appropriately and confidentially.
             </p>
           </div>
           <div className="mt-6 pt-4 border-t border-black/5">

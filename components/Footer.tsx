@@ -227,7 +227,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-sm sm:text-base text-gray-300 font-normal leading-[1.6] max-w-[540px]">
-              The Charities Office operates under Caritas Kampala, providing compassionate and practical support to vulnerable people and communities across Kampala Archdiocese.
+              The Charity Office operates under Caritas Kampala, providing compassionate and practical support to vulnerable people and communities across Kampala Archdiocese.
             </p>
           </div>
 
@@ -270,7 +270,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm sm:text-base text-gray-300 font-normal leading-[1.6] max-w-[480px]">
-              The Charities Office operates under Caritas Kampala, providing compassionate and practical support to vulnerable people and communities across Kampala Archdiocese.
+              The Charity Office operates under Caritas Kampala, providing compassionate and practical support to vulnerable people and communities across Kampala Archdiocese.
             </p>
           </div>
 
@@ -313,7 +313,7 @@ export default function Footer() {
           </Link>
 
           <p className="text-[15px] sm:text-base text-gray-300 font-normal leading-[1.6] max-w-[330px] px-4 mx-auto mb-9">
-            The Charities Office operates under Caritas Kampala, providing compassionate and practical support to vulnerable people and communities across Kampala Archdiocese.
+            The Charity Office operates under Caritas Kampala, providing compassionate and practical support to vulnerable people and communities across Kampala Archdiocese.
           </p>
 
           <div className="w-full">
@@ -372,7 +372,7 @@ export default function Footer() {
         {/* Bottom Copyright & Visit Main Website */}
         <div className="flex w-full flex-col sm:flex-row justify-between items-start sm:items-center text-xs sm:text-sm text-gray-400 font-normal gap-4 py-8 sm:py-9 text-left">
           <div>
-            {`© ${currentYear} Caritas Kampala — Charities Office. All Rights Reserved.`}
+            {`© ${currentYear} Caritas Kampala — Charity Office. All Rights Reserved.`}
           </div>
           <div>
             <a

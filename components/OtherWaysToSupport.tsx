@@ -56,7 +56,7 @@ export default function OtherWaysToSupport() {
             Ways to Give
           </Heading>
           <p className="text-base sm:text-lg leading-relaxed text-[#4d4338] max-w-2xl mx-auto">
-            Choose the giving method that is most convenient for you. Please use only the official payment details shown or confirmed by the Charities Office.
+            Choose the giving method that is most convenient for you. Please use only the official payment details shown or confirmed by the Charity Office.
           </p>
         </div>
 
@@ -128,7 +128,7 @@ export default function OtherWaysToSupport() {
                   Bank Transfer
                 </Heading>
                 <p className="text-[#2c2c2c] text-base sm:text-[17px] md:text-[18px] leading-relaxed max-w-md mx-auto">
-                  Send your gift directly to the official Charities Office bank account.
+                  Send your gift directly to the official Charity Office bank account.
                 </p>
                 <div className="text-[#2c2c2c] text-sm sm:text-base space-y-1 font-medium pt-1">
                   <p>{siteConfig.giving.bank.name}</p>
@@ -165,7 +165,7 @@ export default function OtherWaysToSupport() {
                   Give Online
                 </Heading>
                 <p className="text-[#2c2c2c] text-base sm:text-[17px] md:text-[18px] leading-relaxed max-w-md mx-auto">
-                  For secure online giving instructions, contact the Charities Office to confirm the current approved payment route.
+                  For secure online giving instructions, contact the Charity Office to confirm the current approved payment route.
                 </p>
               </div>
             </div>
@@ -187,7 +187,7 @@ export default function OtherWaysToSupport() {
         {/* Payment Safety Note */}
         <div className="mt-8 sm:mt-10 text-center max-w-2xl mx-auto">
           <p className="text-sm text-gray-600 leading-relaxed">
-            For your security, please use only the payment details published on this page or confirmed directly by the Charities Office.
+            For your security, please use only the payment details published on this page or confirmed directly by the Charity Office.
           </p>
         </div>
       </div>

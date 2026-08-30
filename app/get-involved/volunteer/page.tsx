@@ -7,9 +7,9 @@ import Link from "next/link";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
 export const metadata = buildPageMetadata({
-  title: "Volunteer With Us | Caritas Kampala Charities Office",
+  title: "Volunteer With Us | Caritas Kampala’s Charity Office",
   description:
-    "Offer your time, skills, and experience to support the work of the Charities Office.",
+    "Offer your time, skills, and experience to support the work of the Charity Office.",
   path: "/get-involved/volunteer",
 });
 
@@ -27,7 +27,7 @@ export default function VolunteerPage() {
           ]}
           eyebrow="GIVE YOUR TIME"
           title="Volunteer With Us"
-          description="Offer your time, skills, and experience to support the work of the Charities Office."
+          description="Offer your time, skills, and experience to support the work of the Charity Office."
           image="/images/Event 06/Caritas_Kampala_52.jpg"
           imageAlt="Volunteers participating in Caritas Kampala community outreach and programme activities"
           imagePositionDesktop="center 40%"
@@ -42,7 +42,7 @@ export default function VolunteerPage() {
             </Heading>
             <div className="space-y-5 text-gray-700 leading-relaxed text-base sm:text-lg lg:text-[18px]">
               <p>
-                Volunteers can strengthen the work of the Charities Office in practical ways. Depending on current needs, opportunities may involve programme activities, community outreach, events, administration, communications, professional support, or other areas of service.
+                Volunteers can strengthen the work of the Charity Office in practical ways. Depending on current needs, opportunities may involve programme activities, community outreach, events, administration, communications, professional support, or other areas of service.
               </p>
               <p>
                 Some opportunities may require specific experience, availability, safeguarding requirements, or prior orientation. Our team will help determine where your time and skills can be most useful.
@@ -107,7 +107,7 @@ export default function VolunteerPage() {
             </Heading>
             <div className="space-y-5 text-gray-700 leading-relaxed text-base sm:text-lg lg:text-[18px]">
               <p>
-                Volunteer roles depend on current needs and may begin with a conversation with the Charities Office. Some activities may require orientation, safeguarding checks, specific skills, or other appropriate requirements before participation.
+                Volunteer roles depend on current needs and may begin with a conversation with the Charity Office. Some activities may require orientation, safeguarding checks, specific skills, or other appropriate requirements before participation.
               </p>
               <p>
                 Volunteers are expected to respect the dignity, privacy, safety, and wellbeing of the people and communities involved in our work.
@@ -122,7 +122,7 @@ export default function VolunteerPage() {
                 Interested in Volunteering?
               </Heading>
               <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-                Contact the Charities Office and tell us a little about your availability, experience, and the kind of support you would like to offer.
+                Contact the Charity Office and tell us a little about your availability, experience, and the kind of support you would like to offer.
               </p>
             </div>
 

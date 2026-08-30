@@ -6,9 +6,9 @@ import { buildPageMetadata } from "@/lib/metadata-utils";
 import PageHeader from "@/components/PageHeader";
 
 export const metadata = buildPageMetadata({
-  title: "Our Team | Caritas Kampala Charities Office",
+  title: "Our Team | Caritas Kampala’s Charity Office",
   description:
-    "Meet the people behind the Charities Office, under Caritas Kampala, serving vulnerable people and communities across Kampala Archdiocese.",
+    "Meet the people behind the Charity Office, under Caritas Kampala, serving vulnerable people and communities across Kampala Archdiocese.",
   path: "/about-us/our-team",
 });
 
@@ -21,7 +21,7 @@ const teamMembers = [
   },
   {
     name: "Mr. Patrick Njala",
-    role: "Charities Office Coordinator",
+    role: "Charity Office Coordinator",
     image: "/images/Team/Njala_Patrick_Caritas_Kampala_Charities_Office.jpg",
     alt: "Portrait of Mr. Patrick Njala"
   },
@@ -71,7 +71,7 @@ export default function OurTeamPage() {
             { label: "About Us", href: "/about-us" },
             { label: "Our Team" },
           ]}
-          description="Meet the people leading and carrying out the work of the Charities Office."
+          description="Meet the people leading and carrying out the work of the Charity Office."
         />
 
         {/* Introduction Section */}
@@ -81,7 +81,7 @@ export default function OurTeamPage() {
               Dedicated to Serving With Compassion
             </Heading>
             <Text size="lg" color="muted" className="leading-relaxed">
-              Our team is committed to supporting vulnerable people, strengthening communities, and advancing the mission of the Charities Office.
+              Our team is committed to supporting vulnerable people, strengthening communities, and advancing the mission of the Charity Office.
             </Text>
           </div>
         </section>

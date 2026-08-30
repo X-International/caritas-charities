@@ -9,9 +9,9 @@ import { faqs, getAnswerText } from "@/lib/faq-data";
 import { Card } from "@/components/ui/Card";
 
 export const metadata = buildPageMetadata({
-  title: "FAQs | Caritas Kampala Charities Office",
+  title: "FAQs | Caritas Kampala’s Charity Office",
   description:
-    "Find answers to common questions about the Charities Office, including donations, volunteering, services, partnerships, transparency, and how to get involved.",
+    "Find answers to common questions about the Charity Office, including donations, volunteering, services, partnerships, transparency, and how to get involved.",
   path: "/resources/faqs",
 });
 
@@ -39,7 +39,7 @@ export default function FAQsPage() {
                 </Heading>
                 <div className="w-16 h-1 bg-[#b10017] mx-auto" />
                 <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                    Find answers to some of the questions we are most often asked about the Charities Office, our work, and the ways you can get involved.
+                    Find answers to some of the questions we are most often asked about the Charity Office, our work, and the ways you can get involved.
                 </p>
             </div>
         </section>
@@ -56,7 +56,7 @@ export default function FAQsPage() {
               Still Have a Question?
             </Heading>
             <p className="text-gray-700 max-w-xl mx-auto text-base sm:text-lg leading-relaxed font-sans">
-              If you cannot find the answer you need, contact the Charities Office and our team will be glad to help.
+              If you cannot find the answer you need, contact the Charity Office and our team will be glad to help.
             </p>
             <div className="pt-2">
               <Button href="/contact-us" variant="primary">

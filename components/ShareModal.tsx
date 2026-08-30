@@ -261,7 +261,7 @@ export default function ShareModal({ onClose }: ShareModalProps) {
               Share This Page
             </Heading>
             <Text id={descriptionId} size="xs" color="muted" className="mt-1.5 leading-relaxed sm:text-sm">
-              Share the work of the Charities Office and help more people discover our mission.
+              Share the work of the Charity Office and help more people discover our mission.
             </Text>
           </div>
         </div>

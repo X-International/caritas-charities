@@ -7,9 +7,9 @@ import Link from "next/link";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
 export const metadata = buildPageMetadata({
-  title: "Partnerships | Caritas Kampala Charities Office",
+  title: "Partnerships | Caritas Kampala’s Charity Office",
   description:
-    "Work with the Charities Office to support practical, coordinated responses to the needs of vulnerable communities across Kampala Archdiocese.",
+    "Work with the Charity Office to support practical, coordinated responses to the needs of vulnerable communities across Kampala Archdiocese.",
   path: "/get-involved/partnerships",
 });
 
@@ -27,7 +27,7 @@ export default function PartnershipsPage() {
           ]}
           eyebrow="WORK WITH US"
           title="Partnerships"
-          description="Work with the Charities Office to support practical, coordinated responses to the needs of vulnerable communities across Kampala Archdiocese."
+          description="Work with the Charity Office to support practical, coordinated responses to the needs of vulnerable communities across Kampala Archdiocese."
           image="/images/Event 02/Caritas_Kampala_01.jpg"
           imageAlt="Partners and community representatives working together with Caritas Kampala"
         />
@@ -40,7 +40,7 @@ export default function PartnershipsPage() {
             </Heading>
             <div className="w-16 h-1 bg-[#b10017]" aria-hidden="true" />
             <p className="text-gray-700 text-base sm:text-lg lg:text-[18px] leading-relaxed">
-              The Charities Office, under Caritas Kampala, works with organisations, institutions, professionals, parish communities, and other partners who share a commitment to serving people facing hardship.
+              The Charity Office, under Caritas Kampala, works with organisations, institutions, professionals, parish communities, and other partners who share a commitment to serving people facing hardship.
             </p>
             <p className="text-gray-700 text-base sm:text-lg lg:text-[18px] leading-relaxed">
               Partnerships may support areas such as emergency response, family and child support, care for older people, refugee assistance, disability support, livelihoods, safeguarding, training, and community outreach.

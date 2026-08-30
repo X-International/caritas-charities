@@ -1,4 +1,4 @@
-# Caritas Kampala (Charities Office Website)
+# Caritas Kampala (Charity Office Website)
 
 The official public web platform for **Caritas Kampala, Charity Office** — the socio-pastoral arm of the Roman Catholic Kampala Archdiocese. The website presents the organization's mission, emergency appeals, development programmes, news updates, photo galleries, annual reports, contact details, and guidance for donor support and volunteering.
 

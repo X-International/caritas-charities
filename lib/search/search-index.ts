@@ -20,20 +20,20 @@ export function getAbsoluteUrl(path: string): string {
 const staticSiteItems: SearchIndexItem[] = [
   {
     id: "page-home",
-    title: "Caritas Kampala Charities Office",
+    title: "Caritas Kampala’s Charity Office",
     url: "/",
     category: "Page",
-    snippet: "The Charities Office of Caritas Kampala supports the poor, vulnerable and marginalized across Kampala Archdiocese.",
-    content: "Caritas Kampala Charities Office home. Serving Kampala, Wakiso & Mpigi. Supporting the poor, vulnerable, elderly, orphans, refugees, persons with disabilities, and families facing hardship across Kampala Archdiocese. Humanitarian appeals, emergency relief, community development.",
-    keywords: ["home", "homepage", "caritas kampala", "charities office", "Kampala Archdiocese", "wakiso", "mpigi", "humanitarian", "relief"]
+    snippet: "The Charity Office of Caritas Kampala supports the poor, vulnerable and marginalized across Kampala Archdiocese.",
+    content: "Caritas Kampala’s Charity Office home. Serving Kampala, Wakiso & Mpigi. Supporting the poor, vulnerable, elderly, orphans, refugees, persons with disabilities, and families facing hardship across Kampala Archdiocese. Humanitarian appeals, emergency relief, community development.",
+    keywords: ["home", "homepage", "caritas kampala", "charity office", "Kampala Archdiocese", "wakiso", "mpigi", "humanitarian", "relief"]
   },
   {
     id: "page-donate",
     title: "Donate & Support Our Mission",
     url: "/donate",
     category: "Page",
-    snippet: "Support families across Kampala, Wakiso and Mpigi. Give online, by bank transfer, or Mobile Money to the Charities Office.",
-    content: "Donate to Caritas Kampala Charities Office. Ways to give: online donation, direct bank transfer, MTN Mobile Money, Airtel Money, physical item drop-offs at Old Ggaba Road Nsambya. Support emergency response, child support, elderly care, and poverty alleviation.",
+    snippet: "Support families across Kampala, Wakiso and Mpigi. Give online, by bank transfer, or Mobile Money to the Charity Office.",
+    content: "Donate to Caritas Kampala’s Charity Office. Ways to give: online donation, direct bank transfer, MTN Mobile Money, Airtel Money, physical item drop-offs at Old Ggaba Road Nsambya. Support emergency response, child support, elderly care, and poverty alleviation.",
     keywords: ["donate", "donation", "give", "support", "mobile money", "bank transfer", "nsambya", "contribute", "financial support", "charity"]
   },
   {
@@ -41,7 +41,7 @@ const staticSiteItems: SearchIndexItem[] = [
     title: "Contact Us",
     url: "/contact-us",
     category: "Page",
-    snippet: "Get in touch with the Charities Office of Caritas Kampala. Find our address, phone numbers, and location in Nsambya, Kampala.",
+    snippet: "Get in touch with the Charity Office of Caritas Kampala. Find our address, phone numbers, and location in Nsambya, Kampala.",
     content: "Contact Caritas Kampala Main Office located on Old Ggaba Road, Nsambya (next to the American Embassy), Kampala, Uganda. Direct lines: Appeal Line +256 762 506 906, WhatsApp +256 792 176 443, Main Office +256 392 176 443. Directions, maps, contact form, inquiry.",
     keywords: ["contact", "address", "phone number", "location", "nsambya", "american embassy", "ggaba road", "kampala", "email", "office", "call"]
   },
@@ -123,8 +123,8 @@ const staticSiteItems: SearchIndexItem[] = [
     title: "About Us",
     url: "/about-us",
     category: "Page",
-    snippet: "Learn about the mission, vision and values of the Charities Office, part of Caritas Kampala.",
-    content: "About Caritas Kampala Charities Office. Socio-pastoral ministry of the Catholic Church in Kampala Archdiocese. Putting gospel message of love into action without discrimination based on religion, ethnicity, or politics. Dignity, Solidarity and Shared Responsibility: charity is more than responding to immediate need. Recognising the dignity of every person, listening to people's experiences and responding through practical action. Bring people together — communities, charity homes, volunteers, partners and supporters — around a shared responsibility to care for those experiencing hardship.",
+    snippet: "Learn about the mission, vision and values of the Charity Office, part of Caritas Kampala.",
+    content: "About Caritas Kampala’s Charity Office. Socio-pastoral ministry of the Catholic Church in Kampala Archdiocese. Putting gospel message of love into action without discrimination based on religion, ethnicity, or politics. Dignity, Solidarity and Shared Responsibility: charity is more than responding to immediate need. Recognising the dignity of every person, listening to people's experiences and responding through practical action. Bring people together — communities, charity homes, volunteers, partners and supporters — around a shared responsibility to care for those experiencing hardship.",
     keywords: ["about us", "who we are", "caritas kampala", "catholic church", "Kampala Archdiocese", "mission", "values"]
   },
   {
@@ -132,7 +132,7 @@ const staticSiteItems: SearchIndexItem[] = [
     title: "Our Team & Leadership",
     url: "/about-us/our-team",
     category: "Page",
-    snippet: "Meet the leadership, staff, and parish coordinators behind the Charities Office of Caritas Kampala.",
+    snippet: "Meet the leadership, staff, and parish coordinators behind the Charity Office of Caritas Kampala.",
     content: "Our Team and Leadership. Dedicated team of coordinators, social workers, administrative staff, and parish volunteers carrying out charity operations across Kampala Archdiocese under the leadership of Caritas Kampala.",
     keywords: ["our team", "team", "staff", "leadership", "coordinators", "directors", "social workers"]
   },
@@ -159,8 +159,8 @@ const staticSiteItems: SearchIndexItem[] = [
     title: "Volunteer With Us",
     url: "/get-involved/volunteer",
     category: "Page",
-    snippet: "Offer your time, skills, and experience to support the work of the Charities Office.",
-    content: "Volunteer with Caritas Kampala Charities Office. Volunteer With Purpose: Volunteers can strengthen the work of the Charities Office in practical ways. How You Can Help: Programme & Community Support, Professional Skills, Events & Activities, Office Support. Before You Volunteer: Initial conversation, safeguarding checks, respect dignity and privacy. Interested in Volunteering? Contact the Charities Office.",
+    snippet: "Offer your time, skills, and experience to support the work of the Charity Office.",
+    content: "Volunteer with Caritas Kampala’s Charity Office. Volunteer With Purpose: Volunteers can strengthen the work of the Charity Office in practical ways. How You Can Help: Programme & Community Support, Professional Skills, Events & Activities, Office Support. Before You Volunteer: Initial conversation, safeguarding checks, respect dignity and privacy. Interested in Volunteering? Contact the Charity Office.",
     keywords: ["volunteer", "volunteering", "volunteer with us", "offer time", "skills", "professional skills", "programme support", "community outreach", "office support"]
   },
   {
@@ -186,8 +186,8 @@ const staticSiteItems: SearchIndexItem[] = [
     title: "Annual Reports & Financial Audits",
     url: "/resources/annual-reports",
     category: "Annual Report",
-    snippet: "Annual impact reviews and transparent financial accountability reports from the Charities Office.",
-    content: "Annual Impact & Financial Accountability Reports for Caritas Kampala Charities Office. Transparent financial auditing, yearly impact reviews, accountability to donors and partners.",
+    snippet: "Annual impact reviews and transparent financial accountability reports from the Charity Office.",
+    content: "Annual Impact & Financial Accountability Reports for Caritas Kampala’s Charity Office. Transparent financial auditing, yearly impact reviews, accountability to donors and partners.",
     keywords: ["annual reports", "annual report", "financial report", "audit", "accountability", "impact report", "transparency", "publications archive"]
   },
   {

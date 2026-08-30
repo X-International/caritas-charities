@@ -48,7 +48,7 @@ export function buildPageMetadata({
       type,
       locale: "en_UG",
       url: canonicalUrl,
-      siteName: "Caritas Kampala Charities Office",
+      siteName: "Caritas Kampala’s Charity Office",
       title,
       description,
       images: [ogImageObj],

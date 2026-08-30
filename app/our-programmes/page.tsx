@@ -8,7 +8,7 @@ import PageHeader from "@/components/PageHeader";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
 
 export const metadata = buildPageMetadata({
-  title: "Our Programmes | Caritas Kampala Charities Office",
+  title: "Our Programmes | Caritas Kampala’s Charity Office",
   description:
     "Explore the practical programmes supporting vulnerable people and communities across Kampala Archdiocese.",
   path: "/our-programmes",
@@ -41,7 +41,7 @@ const programmes: Programme[] = [
     title: "Support for the Elderly",
     category: "SENIOR CARE",
     description: [
-      "Charity Caritas Kampala Office is dedicated to offering continuous and meaningful support to the elderly members of the community within the Archdiocese. Their practical activities include visiting elderly homes to provide companionship and emotional support, distributing essential items such as food, clothing, and hygiene supplies to ensure they meet their basic needs, and organizing health and wellness programs, including medical check-ups and health education. Additionally, the organization facilitates social gatherings and recreational activities to promote social inclusion and mental well-being. Through these ongoing efforts, Caritas Kampala aims to uphold the dignity and improve the quality of life for the elderly, ensuring they feel cared for and valued in their later years.",
+      "The Charity Office of Caritas Kampala is dedicated to offering continuous and meaningful support to the elderly members of the community within the Archdiocese. Their practical activities include visiting elderly homes to provide companionship and emotional support, distributing essential items such as food, clothing, and hygiene supplies to ensure they meet their basic needs, and organizing health and wellness programs, including medical check-ups and health education. Additionally, the organization facilitates social gatherings and recreational activities to promote social inclusion and mental well-being. Through these ongoing efforts, Caritas Kampala aims to uphold the dignity and improve the quality of life for the elderly, ensuring they feel cared for and valued in their later years.",
     ],
     serves: "OLDER PERSONS ACROSS THE ARCHDIOCESE",
     locations: ["ARCHDIOCESE"],
@@ -86,7 +86,7 @@ const programmes: Programme[] = [
     title: "Poverty Alleviation & Livelihoods",
     category: "ECONOMIC EMPOWERMENT",
     description: [
-      "Caritas Kampala Charity Office plays a vital role in collaborating with individuals and families to develop and implement sustainable livelihood strategies. Through comprehensive support such as skills training, microfinance initiatives, income-generating activities, and community empowerment programs, we aim to uplift vulnerable populations, foster economic independence, and create lasting positive change. Our dedicated efforts are focused on breaking the cycle of poverty and promoting social and economic resilience within communities.",
+      "Caritas Kampala’s Charity Office plays a vital role in collaborating with individuals and families to develop and implement sustainable livelihood strategies. Through comprehensive support such as skills training, microfinance initiatives, income-generating activities, and community empowerment programs, we aim to uplift vulnerable populations, foster economic independence, and create lasting positive change. Our dedicated efforts are focused on breaking the cycle of poverty and promoting social and economic resilience within communities.",
     ],
     serves: "INDIVIDUALS & FAMILIES FACING POVERTY",
     locations: ["KAMPALA", "WAKISO", "MPIGI"],

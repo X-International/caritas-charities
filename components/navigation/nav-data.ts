@@ -20,13 +20,13 @@ export const navLinks: NavLink[] = [
     href: "/about-us",
     megaMenu: {
       links: [
-        { name: "WHO WE ARE", href: "/about-us", desc: "Learn about the Charities Office, its mission, values, and place under Caritas Kampala." },
-        { name: "OUR TEAM", href: "/about-us/our-team", desc: "Meet the people leading and carrying out the work of the Charities Office." },
+        { name: "WHO WE ARE", href: "/about-us", desc: "Learn about the Charity Office, its mission, values, and place under Caritas Kampala." },
+        { name: "OUR TEAM", href: "/about-us/our-team", desc: "Meet the people leading and carrying out the work of the Charity Office." },
         { name: "CHACONET NETWORK", href: "/about-us/chaconet-partners", desc: "Discover the network of charity homes and institutions working together across Kampala Archdiocese." },
       ],
       card: {
-        title: "About the Charities Office",
-        description: "Learn who we are, what guides our work, and how the Charities Office serves communities under Caritas Kampala.",
+        title: "About the Charity Office",
+        description: "Learn who we are, what guides our work, and how the Charity Office serves communities under Caritas Kampala.",
         image: "/images/Miscellany/Caritas_Kampala_42.jpg",
         cta: { label: "Learn About Us", href: "/about-us" },
       },
@@ -42,7 +42,7 @@ export const navLinks: NavLink[] = [
     megaMenu: {
       links: [
         { name: "VOLUNTEER", href: "/get-involved/volunteer", desc: "Give your time and skills to support practical work across our communities." },
-        { name: "PARTNERSHIPS", href: "/get-involved/partnerships", desc: "Explore ways your organisation can work with the Charities Office to support vulnerable communities." },
+        { name: "PARTNERSHIPS", href: "/get-involved/partnerships", desc: "Explore ways your organisation can work with the Charity Office to support vulnerable communities." },
         { name: "CHARITY SHOP", href: "/get-involved/charity-shop", desc: "Visit our second-hand Charity Shop or donate suitable items to support our work." },
       ],
       card: {
@@ -58,7 +58,7 @@ export const navLinks: NavLink[] = [
     href: "/resources/news",
     megaMenu: {
       links: [
-        { name: "NEWS & UPDATES", href: "/resources/news", desc: "Read the latest news, announcements, and updates from the Charities Office." },
+        { name: "NEWS & UPDATES", href: "/resources/news", desc: "Read the latest news, announcements, and updates from the Charity Office." },
         { name: "EVENTS", href: "/resources/events", desc: "See upcoming events, meetings, and opportunities to take part." },
         { name: "SUCCESS STORIES", href: "/resources/success-stories", desc: "Read real stories that show the impact of our work in people's lives and communities." },
         { name: "GALLERY", href: "/resources/gallery", desc: "Explore photos from our programmes, events, and community activities." },
@@ -67,7 +67,7 @@ export const navLinks: NavLink[] = [
       ],
       card: {
         title: "Explore Our Resources",
-        description: "Find news, events, success stories, photos, reports, and practical information from the work of the Charities Office.",
+        description: "Find news, events, success stories, photos, reports, and practical information from the work of the Charity Office.",
         image: "/images/Miscellany/Caritas_Kampala_23.jpg",
         cta: { label: "View All Resources", href: "#" },
       },

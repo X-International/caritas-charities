@@ -6,9 +6,9 @@ import DonateOnlineCard from "@/components/DonateOnlineCard";
 import ClientEvents from "./ClientEvents";
 
 export const metadata = buildPageMetadata({
-  title: "Events | Caritas Kampala Charities Office",
+  title: "Events | Caritas Kampala’s Charity Office",
   description:
-    "See upcoming meetings, gatherings, and activities connected with the work of the Charities Office.",
+    "See upcoming meetings, gatherings, and activities connected with the work of the Charity Office.",
   path: "/resources/events",
 });
 
@@ -26,7 +26,7 @@ export default function EventsPage() {
             { label: "Resources", href: "#" },
             { label: "Events" },
           ]}
-          description="See upcoming meetings, gatherings, and activities connected with the work of the Charities Office."
+          description="See upcoming meetings, gatherings, and activities connected with the work of the Charity Office."
         />
 
         <ClientEvents />

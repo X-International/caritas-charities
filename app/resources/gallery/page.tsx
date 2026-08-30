@@ -13,7 +13,7 @@ import {
 } from "./gallery-config";
 
 export const metadata = buildPageMetadata({
-  title: "Gallery | Caritas Kampala Charities Office",
+  title: "Gallery | Caritas Kampala’s Charity Office",
   description:
     "Explore photos from our programmes, events, and community activities across Kampala Archdiocese.",
   path: "/resources/gallery",
