@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AppealCalloutBanner from "@/components/AppealCalloutBanner";
 import AppealPageHero from "@/components/AppealPageHero";
+import AppealVideo from "@/components/AppealVideo";
 import { Heading, Eyebrow } from "@/components/ui/Typography";
 import Button from "@/components/ui/Button";
 import { buildPageMetadata } from "@/lib/metadata-utils";
@@ -72,6 +73,20 @@ export default function CurrentAppealPage() {
                 </div>
               </section>
 
+              {/* The Appeal Begins (campaign launch video) */}
+              <section aria-labelledby="appeal-begins-heading" className="space-y-4 pt-1 sm:pt-2">
+                <Heading level={2} variant="card" color="red" id="appeal-begins-heading" className="text-balance">
+                  The Appeal Begins
+                </Heading>
+                <p className="text-gray-700 text-[15px] sm:text-base lg:text-lg leading-relaxed font-normal">
+                  Watch the launch of the emergency appeal for families affected by famine in Kotido and Moroto.
+                </p>
+                <AppealVideo
+                  videoId="VzuIYOEmBwc"
+                  title="Emergency Appeal for Kotido and Moroto campaign launch"
+                />
+              </section>
+
               {/* Our Response */}
               <section aria-labelledby="response-heading" className="space-y-4 pt-1 sm:pt-2">
                 <Heading level={2} variant="card" color="red" id="response-heading" className="text-balance">
@@ -84,6 +99,20 @@ export default function CurrentAppealPage() {
                   <p>
                     In July, we sent the first batch of support, money and household items, to Caritas Uganda, who then delivered it to families in Kotido and Moroto. Collection continues now through August and September, and we are asking parishes, communities, and individuals across the Archdiocese to take part.
                   </p>
+                </div>
+
+                {/* Food Support in Action (consignment video) */}
+                <div className="space-y-4 pt-1 sm:pt-2">
+                  <Heading level={3} variant="card" color="red" className="text-balance">
+                    Food Support in Action
+                  </Heading>
+                  <p className="text-gray-700 text-[15px] sm:text-base lg:text-lg leading-relaxed font-normal">
+                    Watch the Charity Office flag off a food consignment for communities affected by the emergency in Karamoja.
+                  </p>
+                  <AppealVideo
+                    videoId="7OwjO4ZO3v4"
+                    title="Flagging off the second consignment of food for Karamoja"
+                  />
                 </div>
 
                 {/* Food Items Card (Beige style) */}
