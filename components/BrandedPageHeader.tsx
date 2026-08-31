@@ -17,7 +17,7 @@ export default function BrandedPageHeader({ title, breadcrumbs, description }: B
   return (
     <section className="relative w-full bg-[#8c1d2c] sm:bg-gray-900 min-h-[250px] sm:min-h-[280px] lg:min-h-[330px] flex items-center py-12 sm:py-16 lg:py-20 overflow-hidden">
       <Image
-        src="/images/Headers/header_Caritas_Kampala.png"
+        src="/images/Headers/header_Caritas_Kampala_optimized.png"
         alt=""
         fill
         className="object-cover object-[68%_center] sm:object-[center_right]"
