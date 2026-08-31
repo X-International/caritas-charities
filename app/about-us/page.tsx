@@ -34,7 +34,7 @@ export default function AboutUsPage() {
           <div className="mx-auto w-full max-w-[46rem] space-y-10 sm:space-y-12">
             {/* Section 1: Our Role */}
             <section className="space-y-4">
-              <Heading level={2} className="text-xl sm:text-2xl font-bold font-serif text-[#b10017]">
+              <Heading level={2} variant="card" className="sm:text-2xl">
                 Our Role
               </Heading>
               <div className="space-y-4 text-gray-700 leading-[1.75] text-base sm:text-[17px]">
@@ -49,7 +49,7 @@ export default function AboutUsPage() {
 
             {/* Section 2: Who We Are */}
             <section className="space-y-4">
-              <Heading level={2} className="text-xl sm:text-2xl font-bold font-serif text-[#b10017]">
+              <Heading level={2} variant="card" className="sm:text-2xl">
                 Who We Are
               </Heading>
               <div className="space-y-4 text-gray-700 leading-[1.75] text-base sm:text-[17px]">
@@ -64,7 +64,7 @@ export default function AboutUsPage() {
 
             {/* Section 3: Our Mission in Practice */}
             <section className="space-y-4">
-              <Heading level={2} className="text-xl sm:text-2xl font-bold font-serif text-[#b10017]">
+              <Heading level={2} variant="card" className="sm:text-2xl">
                 Our Mission in Practice
               </Heading>
               <div className="space-y-4 text-gray-700 leading-[1.75] text-base sm:text-[17px]">
@@ -82,7 +82,7 @@ export default function AboutUsPage() {
 
             {/* Section 4: Dignity, Solidarity and Shared Responsibility */}
             <section className="space-y-4">
-              <Heading level={2} className="text-xl sm:text-2xl font-bold font-serif text-[#b10017]">
+              <Heading level={2} variant="card" className="sm:text-2xl">
                 Dignity, Solidarity and Shared Responsibility
               </Heading>
               <div className="space-y-4 text-gray-700 leading-[1.75] text-base sm:text-[17px]">
@@ -97,7 +97,7 @@ export default function AboutUsPage() {
 
             {/* Section 5: Our Place Within Caritas Kampala */}
             <section className="space-y-4">
-              <Heading level={2} className="text-xl sm:text-2xl font-bold font-serif text-[#b10017]">
+              <Heading level={2} variant="card" className="sm:text-2xl">
                 Our Place Within Caritas Kampala
               </Heading>
               <div className="space-y-4 text-gray-700 leading-[1.75] text-base sm:text-[17px]">
