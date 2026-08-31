@@ -74,9 +74,9 @@ export default function OurTeamPage() {
           description="Meet the people leading and carrying out the work of the Charity Office."
         />
 
-        {/* Introduction Section */}
-        <section className="py-16 sm:py-20 lg:py-24 bg-white text-center">
-          <div className="site-container max-w-3xl space-y-6">
+        {/* Team Content Section */}
+        <section className="bg-[#ebe3d7] py-16 sm:py-20 lg:py-24">
+          <div className="site-container max-w-3xl space-y-6 text-center">
             <Heading level={2} variant="section" color="red">
               Dedicated to Serving With Compassion
             </Heading>
@@ -84,26 +84,25 @@ export default function OurTeamPage() {
               Our team is committed to supporting vulnerable people, strengthening communities, and advancing the mission of the Charity Office.
             </Text>
           </div>
-        </section>
 
-        {/* Team Grid */}
-        <section className="site-container pb-20 sm:pb-24 lg:pb-28">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, i) => (
-              <div key={i} className="flex flex-col rounded-lg border border-gray-100 bg-white p-4">
-                <div className="relative aspect-square w-full overflow-hidden rounded-md bg-gray-100 mb-4">
-                  <Image
-                    src={member.image}
-                    alt={member.alt}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover"
-                  />
+          <div className="site-container mt-16 sm:mt-20 lg:mt-24">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {teamMembers.map((member, i) => (
+                <div key={i} className="flex flex-col rounded-lg border border-gray-100 bg-white p-4">
+                  <div className="relative aspect-square w-full overflow-hidden rounded-md bg-gray-100 mb-4">
+                    <Image
+                      src={member.image}
+                      alt={member.alt}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <Heading level={3} variant="card" color="red" className="text-center">{member.name}</Heading>
+                  <Text size="sm" color="default" className="text-center mt-1">{member.role}</Text>
                 </div>
-                <Heading level={3} variant="card" color="dark" className="text-center">{member.name}</Heading>
-                <Text size="sm" color="default" className="text-center mt-1">{member.role}</Text>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 

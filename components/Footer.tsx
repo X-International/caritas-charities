@@ -202,7 +202,7 @@ export default function Footer() {
     <footer
       role="contentinfo"
       aria-label="Site Footer"
-      className="text-white pt-16 sm:pt-20 pb-12 sm:pb-16 border-t border-white/20 w-full overflow-hidden mt-8 lg:mt-12"
+      className="text-white pt-16 sm:pt-20 pb-12 sm:pb-16 border-t border-white/20 w-full overflow-hidden"
       style={{
         background: "linear-gradient(to bottom, #262626 0px, #262626 240px, #141414 100%)",
       }}
