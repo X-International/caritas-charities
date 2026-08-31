@@ -73,7 +73,7 @@ const ROUTE_META: Record<string, { title: string; description: string }> = {
     description: "A dedicated online home for the Charity Office, bringing together our work, programmes, network, news, and ways to get involved.",
   },
   "/resources/news/breakfast-meeting-world-day-of-poor": {
-    title: "Charity Office Marks World Day of the Poor with First Breakfast Meeting | Caritas Kampala’s Charity Office",
+    title: "Charity Office Marks World Day of the Poor with Breakfast Meeting | Caritas Kampala’s Charity Office",
     description: "The Charity Office, under Caritas Kampala, brought together charity homes, partners, beneficiaries and members of the wider community for its first Breakfast Meeting in commemoration of the World Day of the Poor.",
   },
   "/resources/gallery": {

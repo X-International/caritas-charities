@@ -168,7 +168,7 @@ export default function ChaconetPartnersPage() {
               {partners.map((partner) => (
                 <article
                   key={partner.name}
-                  className="group flex flex-col h-full bg-white border border-[#e2d9c8] rounded-2xl p-6 sm:p-7 shadow-[0_1px_2px_rgba(17,17,17,0.04)] transition-[border-color,box-shadow] duration-150 hover:border-[#b10017]/60 hover:shadow-[0_4px_14px_rgba(17,17,17,0.08)] focus-within:border-[#b10017]/60"
+                  className="group flex flex-col h-full bg-white border border-[#e2d9c8] rounded-2xl p-6 sm:p-7 transition-[border-color,background-color] duration-150 hover:border-[#b10017]/60 hover:bg-[#fdfbf8] focus-within:border-[#b10017]/60"
                 >
                   <Heading
                     level={3}

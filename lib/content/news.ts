@@ -97,7 +97,7 @@ export const newsArticles: NewsArticle[] = [
   },
   {
     slug: "breakfast-meeting-world-day-of-poor",
-    title: "Charity Office Marks World Day of the Poor with First Breakfast Meeting",
+    title: "Charity Office Marks World Day of the Poor with Breakfast Meeting",
     date: "14 Nov 2025",
     category: "Event",
     snippet:

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Calendar, Clock, MapPin, Users } from "lucide-react";
+import { Calendar, Clock, MapPin } from "lucide-react";
 import { Heading, Text } from "@/components/ui/Typography";
 import { initialEvents, EventItem } from "./events-data";
 
@@ -124,8 +124,7 @@ export default function ClientEvents() {
                   {/* Event Details */}
                   <div className="p-6 sm:p-7 flex flex-col justify-between flex-1 space-y-4">
                     <div className="space-y-3">
-                      <div className="flex items-center text-[#b10017] space-x-1.5 font-semibold text-[11px] sm:text-xs tracking-widest uppercase">
-                        <Users className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                      <div className="flex items-center text-[#b10017] font-semibold text-[11px] sm:text-xs tracking-widest uppercase">
                         <span>{event.category}</span>
                       </div>
                       <h3 className="font-serif text-[26px] sm:text-[28px] lg:text-[30px] font-bold text-gray-900 leading-tight">

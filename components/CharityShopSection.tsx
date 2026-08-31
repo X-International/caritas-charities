@@ -14,10 +14,7 @@ export default function CharityShopSection() {
         {/* Right: Content */}
         <div className="lg:col-span-5 space-y-6">
           <div className="space-y-2">
-            <p className="text-[#b10017] font-bold text-xs uppercase tracking-widest">
-              CHARITY SHOP
-            </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-gray-900 leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#b10017] leading-tight">
               Shop with Purpose, Change Lives.
             </h2>
           </div>
