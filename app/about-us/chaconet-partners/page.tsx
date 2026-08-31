@@ -5,6 +5,7 @@ import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 import PageHeader from "@/components/PageHeader";
 import ImageSlider, { type SliderSlide } from "@/components/ImageSlider";
+import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 
 export const metadata = buildPageMetadata({
@@ -16,6 +17,8 @@ export const metadata = buildPageMetadata({
 
 type Partner = {
   name: string;
+  image: string;
+  imageAlt: string;
   description: string;
   extraDescription?: string;
   url?: string;
@@ -26,15 +29,21 @@ type Partner = {
 const partners: Partner[] = [
   {
     name: "Good Samaritan Kampala Archdiocese",
+    image: "/images/Chaconet/Good_Samaritan_Chaconet_Partner.jpg",
+    imageAlt:
+      "Good Samaritan Kampala Archdiocese members in ceremonial robes gathered outside a parish church",
     description:
       "A Catholic ministry of Kampala Archdiocese supporting people in need through practical works of charity, including food assistance, care for sick and older people, support for people with disabilities, shelter, clothing, and outreach to prisoners.",
     extraDescription:
       "The ministry was introduced across the Archdiocese in 2007, following the resolutions of the 2005 AMECEA assembly, and is organised parish by parish so that support reaches people close to where they live. Its work is sustained largely by parishioners through donations, gifts in kind, and small parish income projects.",
-    url: "https://www.africa2trust.com/B2BAfrica/uganda/non-government-organization-ngo/ngos-charities-and-non-profits-general/good-samaritan-kampala-archdiocese/Profile/AboutUs/1/1/24617/3",
-    urlLabel: "Learn More",
+    url: "https://www.facebook.com/goodsamaritankampala/",
+    urlLabel: "Visit Facebook",
   },
   {
     name: "Child Welfare and Adoption Society (CWAS)",
+    image: "/images/Chaconet/Child Welfare and Adoption Society.jpg",
+    imageAlt:
+      "Children standing outside the office of Kankobe Children’s Home, part of the Child Welfare and Adoption Society (CWAS)",
     description:
       "A charitable organisation providing care and protection for children through a network of specialised homes, while working to help children grow toward safe, responsible and independent adulthood.",
     url: "https://cwasug.org/",
@@ -47,6 +56,9 @@ const partners: Partner[] = [
   },
   {
     name: "Mapeera Bakateyamba’s Home",
+    image: "/images/Chaconet/Mapeera_Bakateyamba.jpg",
+    imageAlt:
+      "Young people in wheelchairs holding certificates at an event supported by Mapeera Bakateyamba’s Home",
     description:
       "A residential charity home in Nalukolongo providing care, shelter and practical support for vulnerable older people and people with disabilities.",
     extraDescription:
@@ -56,6 +68,9 @@ const partners: Partner[] = [
   },
   {
     name: "Missionaries of the Poor",
+    image: "/images/Chaconet/missionaries of the poor(1).jpg",
+    imageAlt:
+      "Brothers of the Missionaries of the Poor in white habits gathered for a group photograph",
     description:
       "A Catholic religious community dedicated to serving people experiencing severe poverty and vulnerability through compassionate, faith-based care and practical service.",
     url: "https://missionariesofthepoor.org/",
@@ -63,6 +78,9 @@ const partners: Partner[] = [
   },
   {
     name: "Teresa Ministries Uganda",
+    image: "/images/Chaconet/teresa.jpeg",
+    imageAlt:
+      "Children with gift hampers at a Teresa Ministries Uganda event beneath the ministry’s banners",
     description:
       "A charitable ministry providing residential care and protection for vulnerable infants and children, alongside counselling, education support and community outreach for people and families experiencing hardship.",
     url: "https://www.teresaministriesug.org/",
@@ -70,6 +88,9 @@ const partners: Partner[] = [
   },
   {
     name: "Kyasira Home of Hope",
+    image: "/images/Chaconet/kyasila.jpg",
+    imageAlt:
+      "A religious sister, a visitor and a young resident together in a classroom at Kyasira Home of Hope",
     description:
       "A children’s home within Kampala Archdiocese providing residential care, protection and practical support for vulnerable children who need a safe and supportive home environment.",
     url: "https://www.facebook.com/Kyasirahomeofhope/",
@@ -77,6 +98,9 @@ const partners: Partner[] = [
   },
   {
     name: "Mulago School for the Deaf",
+    image: "/images/Chaconet/mulago.png",
+    imageAlt:
+      "Pupils, staff and visitors outside the entrance of Mulago School for the Deaf",
     description:
       "Provides specialised education and support for deaf and hard-of-hearing children, helping learners participate in education and develop their abilities.",
     url: "https://ugandanspiritans.org/mulago-school-for-the-deaf/",
@@ -168,76 +192,89 @@ export default function ChaconetPartnersPage() {
               {partners.map((partner) => (
                 <article
                   key={partner.name}
-                  className="group flex flex-col h-full bg-white border border-[#e2d9c8] rounded-2xl p-6 sm:p-7 transition-[border-color,background-color] duration-150 hover:border-[#b10017]/60 hover:bg-[#fdfbf8] focus-within:border-[#b10017]/60"
+                  className="group flex flex-col h-full bg-white border border-[#e2d9c8] rounded-2xl overflow-hidden transition-[border-color,background-color] duration-150 hover:border-[#b10017]/60 hover:bg-[#fdfbf8] focus-within:border-[#b10017]/60"
                 >
-                  <Heading
-                    level={3}
-                    className="text-[22px] sm:text-[26px] lg:text-[27px] font-serif font-bold text-[#b10017] leading-snug"
-                  >
-                    {partner.name}
-                  </Heading>
+                  <div className="relative w-full aspect-[16/9] bg-[#f5efe6]">
+                    <Image
+                      src={partner.image}
+                      alt={partner.imageAlt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      loading="lazy"
+                      className="object-cover object-center"
+                    />
+                  </div>
 
-                  <p className="mt-3 sm:mt-4 text-[15px] sm:text-base text-gray-700 leading-[1.62]">
-                    {partner.description}
-                  </p>
+                  <div className="flex flex-col flex-1 p-6 sm:p-7">
+                    <Heading
+                      level={3}
+                      className="text-[22px] sm:text-[26px] lg:text-[27px] font-serif font-bold text-[#b10017] leading-snug"
+                    >
+                      {partner.name}
+                    </Heading>
 
-                  {partner.extraDescription && (
-                    <p className="mt-3 text-[15px] sm:text-base text-gray-700 leading-[1.62]">
-                      {partner.extraDescription}
+                    <p className="mt-3 sm:mt-4 text-[15px] sm:text-base text-gray-700 leading-[1.62]">
+                      {partner.description}
                     </p>
-                  )}
 
-                  {partner.includes && (
-                    <div className="mt-5 sm:mt-6 space-y-3">
-                      <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-[#b10017] font-sans">
-                        Includes
+                    {partner.extraDescription && (
+                      <p className="mt-3 text-[15px] sm:text-base text-gray-700 leading-[1.62]">
+                        {partner.extraDescription}
                       </p>
-                      <ul className="space-y-3 text-[14px] sm:text-[15px]">
-                        {partner.includes.map((item) => (
-                          <li key={item.name} className="space-y-0.5 leading-relaxed">
-                            {item.url ? (
-                              <a
-                                href={item.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="font-semibold text-[#b10017] hover:text-[#8e0a20] hover:underline underline-offset-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 inline-flex items-center gap-1"
-                                aria-label={`${item.name}, opens external site in a new tab`}
-                              >
-                                <span>{item.name}</span>
-                                <ExternalLink
-                                  className="w-3.5 h-3.5 relative -top-[1px] shrink-0"
-                                  aria-hidden="true"
-                                />
-                              </a>
-                            ) : (
-                              <span className="font-semibold text-gray-900">{item.name}</span>
-                            )}
-                            {item.desc && (
-                              <p className="text-gray-700">{item.desc}</p>
-                            )}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+                    )}
 
-                  {partner.url && partner.urlLabel && (
-                    <div className="mt-auto pt-5 sm:pt-6">
-                      <a
-                        href={partner.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#b10017] hover:text-[#8e0a20] hover:underline underline-offset-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2"
-                        aria-label={`${partner.urlLabel} for ${partner.name}, opens external site in a new tab`}
-                      >
-                        <span>{partner.urlLabel}</span>
-                        <ExternalLink
-                          className="w-3.5 h-3.5 relative -top-[1px]"
-                          aria-hidden="true"
-                        />
-                      </a>
-                    </div>
-                  )}
+                    {partner.includes && (
+                      <div className="mt-5 sm:mt-6 space-y-3">
+                        <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-[#b10017] font-sans">
+                          Includes
+                        </p>
+                        <ul className="space-y-3 text-[14px] sm:text-[15px]">
+                          {partner.includes.map((item) => (
+                            <li key={item.name} className="space-y-0.5 leading-relaxed">
+                              {item.url ? (
+                                <a
+                                  href={item.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="font-semibold text-[#b10017] hover:text-[#8e0a20] hover:underline underline-offset-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 inline-flex items-center gap-1"
+                                  aria-label={`${item.name}, opens external site in a new tab`}
+                                >
+                                  <span>{item.name}</span>
+                                  <ExternalLink
+                                    className="w-3.5 h-3.5 relative -top-[1px] shrink-0"
+                                    aria-hidden="true"
+                                  />
+                                </a>
+                              ) : (
+                                <span className="font-semibold text-gray-900">{item.name}</span>
+                              )}
+                              {item.desc && (
+                                <p className="text-gray-700">{item.desc}</p>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {partner.url && partner.urlLabel && (
+                      <div className="mt-auto pt-5 sm:pt-6">
+                        <a
+                          href={partner.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#b10017] hover:text-[#8e0a20] hover:underline underline-offset-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2"
+                          aria-label={`${partner.urlLabel} for ${partner.name}, opens external site in a new tab`}
+                        >
+                          <span>{partner.urlLabel}</span>
+                          <ExternalLink
+                            className="w-3.5 h-3.5 relative -top-[1px]"
+                            aria-hidden="true"
+                          />
+                        </a>
+                      </div>
+                    )}
+                  </div>
                 </article>
               ))}
             </div>
