@@ -73,7 +73,7 @@ const teamMembers: TeamMember[] = [
   {
     name: "Ms. Margaux Gilbert",
     role: "Charity Office Representative – Europe",
-    category: "INTERNATIONAL LIAISON",
+    category: "EUROPE REPRESENTATION",
     image: "/images/Team/gilbert.png",
     alt: "Portrait of Ms. Margaux Gilbert",
   },
@@ -106,9 +106,9 @@ export default function OurTeamPage() {
         {/* Team Content Section */}
         <section
           aria-labelledby="team-section-title"
-          className="bg-[#f9f6f3] py-14 sm:py-18 lg:py-22"
+          className="bg-[#f9f6f3] pt-12 sm:pt-16 lg:pt-18 pb-16 sm:pb-20 lg:pb-24"
         >
-          <div className="site-container max-w-3xl space-y-4 sm:space-y-5 text-center">
+          <div className="site-container max-w-3xl space-y-4 text-center">
             <Heading id="team-section-title" level={2} variant="section" color="red">
               Dedicated to Serving With Compassion
             </Heading>
@@ -117,16 +117,16 @@ export default function OurTeamPage() {
             </Text>
           </div>
 
-          <div className="site-container mt-10 sm:mt-14 lg:mt-16">
+          <div className="site-container mt-10 sm:mt-12">
             <ul
               role="list"
               aria-label="Caritas Kampala Team Members"
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-7 lg:gap-8"
+              className="flex flex-wrap justify-center gap-6 sm:gap-7 lg:gap-8"
             >
               {teamMembers.map((member, i) => (
                 <li
                   key={i}
-                  className="flex flex-col bg-white rounded-[20px] border-2 border-[#dfd3c4] overflow-hidden"
+                  className="w-full sm:w-[calc(50%-14px)] lg:w-[calc(33.333%-19px)] xl:w-[calc(25%-21px)] max-w-sm flex flex-col bg-white rounded-[20px] border-2 border-[#dfd3c4] overflow-hidden"
                 >
                   {/* Portrait Image Area (1:1 Square matching 800x800 images) */}
                   <div className="relative aspect-square w-full overflow-hidden bg-[#ebe4d9]">
