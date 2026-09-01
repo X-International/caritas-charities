@@ -32,27 +32,60 @@ export async function updateSession(request: NextRequest) {
     },
   });
 
-  // IMPORTANT: Use getUser() to securely validate the JWT on the server side
+  // Verify server-side user identity securely
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
   const pathname = request.nextUrl.pathname;
 
-  // Protect /admin routes (except /admin/login) from unauthenticated access
-  if (pathname.startsWith("/admin") && pathname !== "/admin/login") {
+  // Protected admin routes: require both valid Supabase Auth AND active staff_profile (owner / editor)
+  // /admin/login, /admin/unauthorized, /admin/reset-password are publicly reachable
+  if (
+    pathname.startsWith("/admin") &&
+    pathname !== "/admin/login" &&
+    pathname !== "/admin/unauthorized" &&
+    pathname !== "/admin/reset-password"
+  ) {
     if (!user) {
       const url = request.nextUrl.clone();
       url.pathname = "/admin/login";
       return NextResponse.redirect(url);
     }
+
+    const { data: profile } = await supabase
+      .from("staff_profiles")
+      .select("id, role, is_active")
+      .eq("id", user.id)
+      .maybeSingle();
+
+    if (
+      !profile ||
+      !profile.is_active ||
+      (profile.role !== "owner" && profile.role !== "editor")
+    ) {
+      const url = request.nextUrl.clone();
+      url.pathname = "/admin/unauthorized";
+      return NextResponse.redirect(url);
+    }
   }
 
-  // Redirect authenticated users away from /admin/login to /admin
+  // Handle /admin/login for already authenticated users
   if (pathname === "/admin/login") {
     if (user) {
+      const { data: profile } = await supabase
+        .from("staff_profiles")
+        .select("id, role, is_active")
+        .eq("id", user.id)
+        .maybeSingle();
+
+      const isAuthorized =
+        profile &&
+        profile.is_active &&
+        (profile.role === "owner" || profile.role === "editor");
+
       const url = request.nextUrl.clone();
-      url.pathname = "/admin";
+      url.pathname = isAuthorized ? "/admin" : "/admin/unauthorized";
       return NextResponse.redirect(url);
     }
   }

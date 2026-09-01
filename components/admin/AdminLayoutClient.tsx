@@ -13,8 +13,12 @@ export default function AdminLayoutClient({
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // If on login page, render full screen without dashboard shell
-  if (pathname === "/admin/login") {
+  // If on login, unauthorized, or reset-password page, render full screen without dashboard shell
+  if (
+    pathname === "/admin/login" ||
+    pathname === "/admin/unauthorized" ||
+    pathname === "/admin/reset-password"
+  ) {
     return <div className="min-h-screen bg-[#f9f6f0]">{children}</div>;
   }
 

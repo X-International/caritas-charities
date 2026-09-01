@@ -4,8 +4,14 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Menu, X, User, LogOut } from "lucide-react";
+import { Menu, X, User, LogOut, ShieldCheck } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
+
+interface StaffInfo {
+  email: string;
+  displayName: string | null;
+  role: "owner" | "editor" | null;
+}
 
 interface AdminTopBarProps {
   mobileMenuOpen: boolean;
@@ -17,24 +23,35 @@ export default function AdminTopBar({
   onToggleMobileMenu,
 }: AdminTopBarProps) {
   const router = useRouter();
-  const [userEmail, setUserEmail] = useState<string | null>(null);
+  const [staffInfo, setStaffInfo] = useState<StaffInfo | null>(null);
   const [loggingOut, setLoggingOut] = useState(false);
 
   useEffect(() => {
-    const fetchUser = async () => {
+    const fetchStaff = async () => {
       try {
         const supabase = createClient();
         const {
           data: { user },
         } = await supabase.auth.getUser();
-        if (user?.email) {
-          setUserEmail(user.email);
+
+        if (user) {
+          const { data: profile } = await supabase
+            .from("staff_profiles")
+            .select("display_name, role")
+            .eq("id", user.id)
+            .maybeSingle();
+
+          setStaffInfo({
+            email: user.email || "",
+            displayName: profile?.display_name || null,
+            role: profile?.role || null,
+          });
         }
       } catch {
-        // Fallback for offline or client init delay
+        // Fallback
       }
     };
-    fetchUser();
+    fetchStaff();
   }, []);
 
   const handleSignOut = async () => {
@@ -48,6 +65,14 @@ export default function AdminTopBar({
       router.push("/admin/login");
     }
   };
+
+  const displayNameToShow = staffInfo?.displayName || staffInfo?.email || null;
+  const roleLabel =
+    staffInfo?.role === "owner"
+      ? "Owner"
+      : staffInfo?.role === "editor"
+      ? "Editor"
+      : null;
 
   return (
     <header className="sticky top-0 z-40 w-full bg-white border-b border-gray-200 h-16 flex items-center px-4 sm:px-6 justify-between">
@@ -82,11 +107,17 @@ export default function AdminTopBar({
       </div>
 
       {/* Right: Authenticated Account & Sign Out */}
-      <div className="flex items-center gap-3">
-        {userEmail && (
-          <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 border border-gray-200 text-xs font-medium text-gray-700">
-            <User className="w-3.5 h-3.5 text-gray-500" />
-            <span className="max-w-[160px] truncate">{userEmail}</span>
+      <div className="flex items-center gap-2.5 sm:gap-3">
+        {displayNameToShow && (
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 border border-gray-200 text-xs font-medium text-gray-700">
+            <User className="w-3.5 h-3.5 text-gray-500 shrink-0" />
+            <span className="max-w-[120px] sm:max-w-[180px] truncate">{displayNameToShow}</span>
+            {roleLabel && (
+              <span className="hidden sm:inline-flex items-center gap-1 bg-[#b10017]/10 text-[#b10017] text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
+                <ShieldCheck className="w-3 h-3" />
+                {roleLabel}
+              </span>
+            )}
           </div>
         )}
 

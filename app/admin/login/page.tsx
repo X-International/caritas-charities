@@ -14,6 +14,8 @@ export default function AdminLoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [resetSent, setResetSent] = useState(false);
+  const [resetLoading, setResetLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -44,6 +46,39 @@ export default function AdminLoginPage() {
     } catch {
       setError("An unexpected error occurred during sign in. Please try again.");
       setLoading(false);
+    }
+  };
+
+  const handleForgotPassword = async () => {
+    setError(null);
+    setResetSent(false);
+
+    if (!email) {
+      setError("Please enter your email address first, then click Forgot your password.");
+      return;
+    }
+
+    setResetLoading(true);
+
+    try {
+      const supabase = createClient();
+      const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || window.location.origin;
+
+      const { error: resetError } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: `${siteUrl}/admin/reset-password`,
+      });
+
+      if (resetError) {
+        setError("Unable to send the password reset email. Please try again later.");
+        setResetLoading(false);
+        return;
+      }
+
+      setResetSent(true);
+    } catch {
+      setError("An unexpected error occurred. Please try again.");
+    } finally {
+      setResetLoading(false);
     }
   };
 
@@ -88,6 +123,20 @@ export default function AdminLoginPage() {
           </div>
         )}
 
+        {/* Password Reset Confirmation */}
+        {resetSent && (
+          <div
+            role="status"
+            aria-live="polite"
+            className="bg-green-50 border border-green-200 text-green-800 text-xs p-3.5 rounded-xl text-center font-medium space-y-1"
+          >
+            <p className="font-bold">Reset Link Sent</p>
+            <p className="font-normal">
+              If an account exists for that email, a password reset link has been sent. Check your inbox.
+            </p>
+          </div>
+        )}
+
         {/* Login Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-1.5 text-left">
@@ -122,6 +171,18 @@ export default function AdminLoginPage() {
               placeholder="••••••••••••"
               className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#b10017] focus:border-transparent text-sm bg-gray-50 focus:bg-white transition-colors disabled:opacity-60"
             />
+          </div>
+
+          {/* Forgot Password Link */}
+          <div className="text-right">
+            <button
+              type="button"
+              onClick={handleForgotPassword}
+              disabled={resetLoading || loading}
+              className="text-xs font-semibold text-gray-500 hover:text-[#b10017] transition-colors disabled:opacity-60"
+            >
+              {resetLoading ? "Sending reset link..." : "Forgot your password?"}
+            </button>
           </div>
 
           <div className="pt-2">
