@@ -59,6 +59,7 @@ export const navLinks: NavLink[] = [
     megaMenu: {
       links: [
         { name: "NEWS & UPDATES", href: "/resources/news", desc: "Read the latest news, announcements, and updates from the Charity Office." },
+        { name: "EMERGENCY APPEALS", href: "/appeals", desc: "View urgent appeals and documented emergency responses from the Charity Office." },
         { name: "EVENTS", href: "/resources/events", desc: "See upcoming events, meetings, and opportunities to take part." },
         { name: "SUCCESS STORIES", href: "/resources/success-stories", desc: "Read real stories that show the impact of our work in people's lives and communities." },
         { name: "GALLERY", href: "/resources/gallery", desc: "Explore photos from our programmes, events, and community activities." },

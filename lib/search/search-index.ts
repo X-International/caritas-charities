@@ -47,12 +47,21 @@ const staticSiteItems: SearchIndexItem[] = [
   },
   {
     id: "appeal-kotido-moroto",
-    title: "Current Emergency Appeal: Famine in Kotido & Moroto",
+    title: "Emergency Appeal: Famine in Kotido & Moroto",
     url: "/current-appeal",
     category: "Emergency Appeal",
-    snippet: "Drought has brought famine to Karamoja. Support our emergency relief drive collecting food and supplies for families in Kotido and Moroto.",
+    snippet: "Emergency relief drive and response supporting families affected by famine in Kotido and Moroto.",
     content: "Emergency appeal for Kotido and Moroto dioceses in Karamoja region. Drought and climate change have driven severe famine. Kampala Archdiocese collection drive for posho, maize flour, rice, beans, sugar, cooking oil, household items, and financial donations. Drop off items at Caritas Kampala office in Nsambya.",
     keywords: ["kotido", "moroto", "famine", "karamoja", "drought", "emergency appeal", "relief drive", "food collection", "posho", "beans", "starvation", "parishes"]
+  },
+  {
+    id: "page-appeals",
+    title: "Emergency Appeals",
+    url: "/appeals",
+    category: "Page",
+    snippet: "View current and past emergency appeals from the Charity Office, including documented responses supporting communities facing crisis.",
+    content: "Emergency appeals page listing current emergency relief drives and past appeal responses of Caritas Kampala Charity Office. Kotido and Moroto famine relief drive.",
+    keywords: ["appeals", "emergency appeals", "past appeals", "crisis response", "disaster relief", "karamoja", "kotido", "moroto", "humanitarian"]
   },
   {
     id: "page-our-programmes",
