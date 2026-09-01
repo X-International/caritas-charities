@@ -126,7 +126,7 @@ export default function OurTeamPage() {
               {teamMembers.map((member, i) => (
                 <li
                   key={i}
-                  className="w-full sm:w-[calc(50%-14px)] lg:w-[calc(33.333%-19px)] xl:w-[calc(25%-21px)] max-w-sm flex flex-col bg-white rounded-[20px] border-2 border-[#dfd3c4] overflow-hidden"
+                  className="w-full sm:w-[calc(50%-14px)] lg:w-[calc(33.333%-19px)] xl:w-[calc(25%-21px)] max-w-sm flex flex-col bg-white rounded-[20px] border-[3px] border-[#dfd3c4] overflow-hidden"
                 >
                   {/* Portrait Image Area (1:1 Square matching 800x800 images) */}
                   <div className="relative aspect-square w-full overflow-hidden bg-[#ebe4d9]">
@@ -142,14 +142,14 @@ export default function OurTeamPage() {
                   {/* Content Area */}
                   <div className="p-5 sm:p-6 pb-6 sm:pb-7 flex flex-col flex-1 text-left bg-white justify-between">
                     <div>
-                      <span className="text-[11px] font-semibold uppercase tracking-wider text-gray-700 mb-2 font-sans block">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-gray-700 mb-2 font-sans block">
                         {member.category}
                       </span>
-                      <h3 className="font-serif font-bold text-[#b10017] text-lg sm:text-xl leading-snug mb-1.5 text-left">
+                      <h3 className="font-serif font-bold text-[#b10017] text-[22px] sm:text-[21px] leading-tight mb-1.5 text-left">
                         {member.name}
                       </h3>
                     </div>
-                    <p className="font-sans text-xs sm:text-sm text-gray-600 leading-relaxed text-left mt-1">
+                    <p className="font-sans text-[14px] sm:text-sm text-gray-600 leading-normal text-left mt-0.5">
                       {member.role}
                     </p>
                   </div>
