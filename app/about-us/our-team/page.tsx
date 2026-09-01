@@ -28,8 +28,8 @@ const teamMembers = [
   {
     name: "Ms. Rose Salaama",
     role: "Technical Advisor",
-    image: "/images/Team/placeholder_Caritas_Kampala_Charities_OfficeNjala_Patrick_Caritas_Kampala_Charities_Office.jpg",
-    alt: "Photograph not currently available for Ms. Rose Salaama"
+    image: "/images/Team/rose.png",
+    alt: "Portrait of Ms. Rose Salaama"
   },
   {
     name: "Ms. Margaret Kisakye",
@@ -54,6 +54,18 @@ const teamMembers = [
     role: "Digital Communications Officer",
     image: "/images/Team/Bridget_Atuhairwe_Caritas Kampala.jpg",
     alt: "Portrait of Ms. Bridget Atuhairwe"
+  },
+  {
+    name: "Ms. Margaux Gilbert",
+    role: "Caritas Kampala Charity Office Representative – Europe",
+    image: "/images/Team/gilbert.png",
+    alt: "Portrait of Ms. Margaux Gilbert"
+  },
+  {
+    name: "Ms. Nansubuga Catherine Kevin",
+    role: "Social Worker",
+    image: "/images/Team/kevin.png",
+    alt: "Portrait of Ms. Nansubuga Catherine Kevin"
   },
 ];
 
