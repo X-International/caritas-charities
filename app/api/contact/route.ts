@@ -113,7 +113,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const recipientEmail = process.env.CONTACT_EMAIL_TO || "charityofficecaritaskampala@gmail.com";
+  const recipientEmail = process.env.CONTACT_EMAIL_TO || "info@caritaskampalacharities.org";
   const configuredSender = process.env.CONTACT_EMAIL_FROM || "Caritas Kampala | Charity Office <website@contact.caritaskampalacharities.org>";
   const defaultSender = "Caritas Kampala | Charity Office <website@contact.caritaskampalacharities.org>";
 
@@ -126,7 +126,6 @@ export async function POST(request: NextRequest) {
   const safeMessage = escapeHtml(submission.message);
 
   const kampalaTimestamp = formatKampalaTimestamp();
-  const logoUrl = `${siteConfig.domain}/images/logos/Caritas_Kampala_logo.png`;
 
   const htmlContent = `<!DOCTYPE html>
 <html lang="en">
@@ -150,8 +149,7 @@ export async function POST(request: NextRequest) {
           <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="width: 100%;">
             <tr>
               <td>
-                <img src="${logoUrl}" alt="Caritas Kampala" width="60" style="width: 60px; max-width: 60px; height: auto; display: block; border: 0; outline: none; text-decoration: none;" />
-                <h1 style="margin: 12px 0 2px 0; font-family: Georgia, 'Times New Roman', serif; font-size: 22px; font-weight: bold; color: #b10017; line-height: 1.2;">
+                <h1 style="margin: 0 0 2px 0; font-family: Georgia, 'Times New Roman', serif; font-size: 22px; font-weight: bold; color: #b10017; line-height: 1.2;">
                   Caritas Kampala
                 </h1>
                 <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold; color: #444444; letter-spacing: 0.5px; text-transform: uppercase;">
