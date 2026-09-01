@@ -3,24 +3,48 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Heading } from "@/components/ui/Typography";
 import Button from "@/components/ui/Button";
+import { createClient } from "@/lib/supabase/client";
 
 export default function AdminLoginPage() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [notice, setNotice] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    /**
-     * PHASE 1 SECURITY NOTE:
-     * Real authentication will be connected in Phase 2 via Supabase Auth (signInWithPassword).
-     * We explicitly prevent fake client-side auth or hardcoded credentials.
-     */
-    setNotice(
-      "Phase 1 UI Shell: Real authentication with Supabase will be connected in Phase 2."
-    );
+    setError(null);
+
+    if (!email || !password) {
+      setError("Please enter both your email address and password.");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const supabase = createClient();
+      const { error: signInError } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      if (signInError) {
+        setError("Unable to sign in. Check your email address and password and try again.");
+        setLoading(false);
+        return;
+      }
+
+      router.push("/admin");
+      router.refresh();
+    } catch {
+      setError("An unexpected error occurred during sign in. Please try again.");
+      setLoading(false);
+    }
   };
 
   return (
@@ -52,10 +76,15 @@ export default function AdminLoginPage() {
           </p>
         </div>
 
-        {/* Notice Message */}
-        {notice && (
-          <div className="bg-amber-50 border border-amber-200 text-amber-900 text-xs p-3.5 rounded-xl text-center font-medium">
-            {notice}
+        {/* Error Feedback Region */}
+        {error && (
+          <div
+            role="alert"
+            aria-live="polite"
+            className="bg-red-50 border border-red-200 text-[#b10017] text-xs p-3.5 rounded-xl text-center font-medium space-y-1"
+          >
+            <p className="font-bold">Sign In Failed</p>
+            <p className="text-red-700 font-normal">{error}</p>
           </div>
         )}
 
@@ -69,11 +98,12 @@ export default function AdminLoginPage() {
               id="admin-email"
               type="email"
               required
+              disabled={loading}
               autoComplete="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="staff@caritaskampala.org"
-              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#b10017] focus:border-transparent text-sm bg-gray-50 focus:bg-white transition-colors"
+              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#b10017] focus:border-transparent text-sm bg-gray-50 focus:bg-white transition-colors disabled:opacity-60"
             />
           </div>
 
@@ -85,17 +115,24 @@ export default function AdminLoginPage() {
               id="admin-password"
               type="password"
               required
+              disabled={loading}
               autoComplete="current-password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••••••"
-              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#b10017] focus:border-transparent text-sm bg-gray-50 focus:bg-white transition-colors"
+              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#b10017] focus:border-transparent text-sm bg-gray-50 focus:bg-white transition-colors disabled:opacity-60"
             />
           </div>
 
           <div className="pt-2">
-            <Button type="submit" variant="primary" size="lg" className="w-full justify-center">
-              SIGN IN
+            <Button
+              type="submit"
+              variant="primary"
+              size="lg"
+              disabled={loading}
+              className="w-full justify-center"
+            >
+              {loading ? "SIGNING IN..." : "SIGN IN"}
             </Button>
           </div>
         </form>

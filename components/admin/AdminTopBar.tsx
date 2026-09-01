@@ -1,8 +1,11 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, User } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Menu, X, User, LogOut } from "lucide-react";
+import { createClient } from "@/lib/supabase/client";
 
 interface AdminTopBarProps {
   mobileMenuOpen: boolean;
@@ -13,6 +16,39 @@ export default function AdminTopBar({
   mobileMenuOpen,
   onToggleMobileMenu,
 }: AdminTopBarProps) {
+  const router = useRouter();
+  const [userEmail, setUserEmail] = useState<string | null>(null);
+  const [loggingOut, setLoggingOut] = useState(false);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const supabase = createClient();
+        const {
+          data: { user },
+        } = await supabase.auth.getUser();
+        if (user?.email) {
+          setUserEmail(user.email);
+        }
+      } catch {
+        // Fallback for offline or client init delay
+      }
+    };
+    fetchUser();
+  }, []);
+
+  const handleSignOut = async () => {
+    setLoggingOut(true);
+    try {
+      const supabase = createClient();
+      await supabase.auth.signOut();
+      router.push("/admin/login");
+      router.refresh();
+    } catch {
+      router.push("/admin/login");
+    }
+  };
+
   return (
     <header className="sticky top-0 z-40 w-full bg-white border-b border-gray-200 h-16 flex items-center px-4 sm:px-6 justify-between">
       {/* Left: Mobile Menu Toggle & Brand */}
@@ -45,12 +81,25 @@ export default function AdminTopBar({
         </Link>
       </div>
 
-      {/* Right: Account Placeholder (Will connect to Supabase Auth in Phase 2) */}
+      {/* Right: Authenticated Account & Sign Out */}
       <div className="flex items-center gap-3">
-        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 border border-gray-200 text-xs font-medium text-gray-700">
-          <User className="w-4 h-4 text-gray-500" />
-          <span>Staff Portal (Phase 1)</span>
-        </div>
+        {userEmail && (
+          <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 border border-gray-200 text-xs font-medium text-gray-700">
+            <User className="w-3.5 h-3.5 text-gray-500" />
+            <span className="max-w-[160px] truncate">{userEmail}</span>
+          </div>
+        )}
+
+        <button
+          type="button"
+          onClick={handleSignOut}
+          disabled={loggingOut}
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-gray-200 text-xs font-bold text-gray-700 hover:text-[#b10017] hover:bg-red-50 transition-colors disabled:opacity-60"
+          title="Sign Out"
+        >
+          <LogOut className="w-3.5 h-3.5" />
+          <span className="hidden sm:inline">{loggingOut ? "Signing Out..." : "Sign Out"}</span>
+        </button>
       </div>
     </header>
   );

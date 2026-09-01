@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import AdminLayoutClient from "@/components/admin/AdminLayoutClient";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Website Dashboard | Caritas Kampala Charity Office",
   description: "Private management dashboard for the Charity Office of Caritas Kampala.",
