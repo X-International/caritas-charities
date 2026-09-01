@@ -140,16 +140,16 @@ export default function OurTeamPage() {
                   </div>
 
                   {/* Content Area */}
-                  <div className="p-5 sm:p-6 flex flex-col flex-1 text-left bg-white justify-between">
+                  <div className="p-5 sm:p-6 pb-6 sm:pb-7 flex flex-col flex-1 text-left bg-white justify-between">
                     <div>
-                      <span className="text-[11px] font-semibold uppercase tracking-wider text-gray-600 mb-1.5 font-sans block">
+                      <span className="text-[11px] font-semibold uppercase tracking-wider text-gray-700 mb-2 font-sans block">
                         {member.category}
                       </span>
-                      <h3 className="font-serif font-bold text-[#b10017] text-lg sm:text-xl leading-snug mb-1 text-left">
+                      <h3 className="font-serif font-bold text-[#b10017] text-lg sm:text-xl leading-snug mb-1.5 text-left">
                         {member.name}
                       </h3>
                     </div>
-                    <p className="font-sans text-xs sm:text-sm text-gray-600 leading-normal text-left mt-0.5">
+                    <p className="font-sans text-xs sm:text-sm text-gray-600 leading-relaxed text-left mt-1">
                       {member.role}
                     </p>
                   </div>
