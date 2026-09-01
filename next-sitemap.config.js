@@ -4,13 +4,13 @@ const config = {
   generateRobotsTxt: true,
   autoLastmod: false,
   changefreq: "weekly",
-  exclude: ["/api/*", "/admin*", "/admin/*", "/get-involved", "/resources", "/_not-found", "/apple-icon.png", "/icon.png"],
+  exclude: ["/api/*", "/get-involved", "/resources", "/_not-found", "/apple-icon.png", "/icon.png"],
   robotsTxtOptions: {
     policies: [
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/admin/", "/_not-found"],
+        disallow: ["/api/", "/_not-found"],
       },
     ],
   },
