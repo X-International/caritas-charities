@@ -125,8 +125,8 @@ export default function SplitPageHeader({
 
         {/* ── Desktop (≥ 1024px): full-bleed viewport-width split ── */}
         <div className="hidden lg:block split-hero-full-bleed overflow-x-clip">
-          <div className="contact-hero w-full grid grid-cols-2 gap-[10px] items-stretch min-h-[clamp(540px,42vw,620px)]">
-            {/* Left Column: Image — flush to left viewport edge */}
+          <div className="contact-hero w-full grid grid-cols-[55fr_45fr] gap-[10px] items-stretch min-h-[clamp(540px,42vw,620px)]">
+            {/* Left Column: Image (55% width) — flush to left viewport edge */}
             <div
               className="contact-hero-image relative overflow-hidden rounded-r-[20px] h-full"
               style={imagePosStyle}
@@ -136,7 +136,7 @@ export default function SplitPageHeader({
                 alt={imageAlt}
                 fill
                 priority
-                sizes="50vw"
+                sizes="55vw"
                 className="contact-hero-image-media object-cover"
               />
             </div>
