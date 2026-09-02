@@ -168,6 +168,17 @@ body {
      CARITAS.ORG INSPIRED SPLIT HERO SYSTEM
      ========================================================================== */
 
+  /* ── Full-bleed utility: escapes any max-width ancestor ── */
+  .split-hero-full-bleed {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+
+  /* ── Red panel branded background (shared by mobile + desktop) ── */
   .contact-hero-panel {
     background-image: url('/images/Headers/caritas_kampala-split-header.jpg');
     background-size: cover;
@@ -183,7 +194,27 @@ body {
     backface-visibility: hidden;
   }
 
-/* Mobile & Tablet Animations (< 1024px) */
+  /* ── Mobile panel padding (responsive) ── */
+  .split-hero-mobile-padding {
+    padding: 36px 24px 38px;
+  }
+  @media (min-width: 360px) {
+    .split-hero-mobile-padding {
+      padding: 38px 26px 40px;
+    }
+  }
+  @media (min-width: 640px) {
+    .split-hero-mobile-padding {
+      padding: 42px 40px 44px;
+    }
+  }
+  @media (min-width: 768px) {
+    .split-hero-mobile-padding {
+      padding: 44px 44px 48px;
+    }
+  }
+
+/* ── Mobile & Tablet Animations (< 1024px) ── */
 @media (max-width: 1023px) {
   @keyframes split-header-panel-slide-mobile {
     0% {
@@ -211,11 +242,11 @@ body {
   }
 }
 
-/* Desktop Animations (>= 1024px) — Red Panel slides LEFT → RIGHT to reveal image underneath */
+/* ── Desktop Animations (≥ 1024px) — Red Panel slides LEFT → RIGHT ── */
 @media (min-width: 1024px) {
   @keyframes split-header-panel-reveal-desktop {
     0% {
-      transform: translate3d(calc(-100% - 1.5rem), 0, 0);
+      transform: translate3d(calc(-100% - 10px), 0, 0);
     }
     100% {
       transform: translate3d(0, 0, 0);
@@ -241,6 +272,7 @@ body {
   }
 }
 
+/* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
   .contact-hero-image,
   .contact-hero-panel,

@@ -44,6 +44,7 @@ export default function SplitPageHeader({
 
   return (
     <>
+      {/* Breadcrumbs — remain inside the normal site-container */}
       {breadcrumbs && breadcrumbs.length > 0 && (
         <div className="site-container pt-4 sm:pt-6 lg:pt-8 pb-3 sm:pb-4">
           <nav
@@ -76,12 +77,16 @@ export default function SplitPageHeader({
           </nav>
         </div>
       )}
-      <div className="site-container mb-14 sm:mb-18 lg:mb-22">
-        <div className="split-hero-outer relative w-full overflow-hidden rounded-[24px] sm:rounded-[28px] lg:rounded-[32px]">
-          <div className="contact-hero w-full grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 items-stretch min-h-[440px] sm:min-h-[500px] lg:min-h-[clamp(540px,42vw,620px)] relative">
-            {/* Left Column: Image */}
+
+      {/* Split Hero — mobile: contained with overlap; desktop: full-bleed viewport-width */}
+      <div className="split-hero-bleed-wrapper mb-12 sm:mb-16 lg:mb-20">
+
+        {/* ── Mobile & Tablet (< 1024px): stacked, overlapping, contained ── */}
+        <div className="lg:hidden site-container">
+          <div className="contact-hero relative">
+            {/* Image */}
             <div
-              className="contact-hero-image relative overflow-hidden rounded-[24px] sm:rounded-[28px] lg:rounded-[32px] h-[clamp(380px,95vw,520px)] sm:h-[clamp(420px,55vw,540px)] lg:h-full z-0"
+              className="contact-hero-image relative overflow-hidden rounded-[22px] sm:rounded-[24px] h-[clamp(380px,95vw,520px)] sm:h-[clamp(420px,55vw,540px)]"
               style={imagePosStyle}
             >
               <Image
@@ -89,23 +94,23 @@ export default function SplitPageHeader({
                 alt={imageAlt}
                 fill
                 priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                sizes="100vw"
                 className="contact-hero-image-media object-cover"
               />
             </div>
 
-            {/* Right Column: Sliding Red Content Panel */}
-            <div className="contact-hero-panel-wrap relative z-10 -mt-16 sm:-mt-20 lg:mt-0 px-3 sm:px-6 lg:px-0">
-              <div className="contact-hero-panel relative bg-[#b10017] text-white rounded-[24px] sm:rounded-[28px] lg:rounded-[32px] overflow-hidden flex flex-col justify-center px-6 sm:px-12 lg:px-14 xl:px-18 py-10 sm:py-14 lg:py-16 h-full min-h-[280px]">
-                <div className="contact-hero-panel-content max-w-lg space-y-3 sm:space-y-4">
-                  <Eyebrow color="white">
+            {/* Overlapping Red Panel */}
+            <div className="contact-hero-panel-wrap relative z-10 -mt-[60px] sm:-mt-[72px] mx-auto w-[calc(100%-32px)] sm:w-[calc(100%-40px)]">
+              <div className="contact-hero-panel relative bg-[#b10017] text-white rounded-[22px] sm:rounded-[24px] overflow-hidden flex flex-col justify-center split-hero-mobile-padding">
+                <div className="contact-hero-panel-content space-y-[12px] sm:space-y-[16px]">
+                  <Eyebrow color="white" className="!text-[11px] !tracking-[0.12em] !leading-[1.4]">
                     {eyebrow}
                   </Eyebrow>
-                  <Heading level={1} variant="hero" color="white" className="text-3xl sm:text-4xl lg:text-[46px] xl:text-[54px] leading-[1.12]">
+                  <Heading level={1} variant="hero" color="white" className="!text-[clamp(2.25rem,9.5vw,2.625rem)] sm:!text-[clamp(2.75rem,6vw,3.25rem)] !leading-[1.1]">
                     {title}
                   </Heading>
                   {description && (
-                    <Lead variant="article" className="text-white/95 text-base sm:text-lg lg:text-xl leading-relaxed font-normal">
+                    <Lead variant="article" className="!text-white/95 !text-[clamp(1.0625rem,4.5vw,1.1875rem)] sm:!text-[clamp(1.1875rem,2.5vw,1.375rem)] !leading-[1.5] !font-normal">
                       {description}
                     </Lead>
                   )}
@@ -114,6 +119,44 @@ export default function SplitPageHeader({
             </div>
           </div>
         </div>
+
+        {/* ── Desktop (≥ 1024px): full-bleed viewport-width split ── */}
+        <div className="hidden lg:block split-hero-full-bleed overflow-x-clip">
+          <div className="contact-hero w-full grid grid-cols-2 gap-[10px] items-stretch min-h-[clamp(540px,42vw,620px)]">
+            {/* Left Column: Image — flush to left viewport edge */}
+            <div
+              className="contact-hero-image relative overflow-hidden rounded-r-[20px] h-full"
+              style={imagePosStyle}
+            >
+              <Image
+                src={image}
+                alt={imageAlt}
+                fill
+                priority
+                sizes="50vw"
+                className="contact-hero-image-media object-cover"
+              />
+            </div>
+
+            {/* Right Column: Red Panel — flush to right viewport edge */}
+            <div className="contact-hero-panel relative bg-[#b10017] text-white rounded-l-[20px] overflow-hidden flex flex-col justify-center px-14 xl:px-18 2xl:px-22 py-16">
+              <div className="contact-hero-panel-content max-w-[560px] space-y-4">
+                <Eyebrow color="white">
+                  {eyebrow}
+                </Eyebrow>
+                <Heading level={1} variant="hero" color="white" className="text-[46px] xl:text-[54px] leading-[1.12]">
+                  {title}
+                </Heading>
+                {description && (
+                  <Lead variant="article" className="text-white/95 text-xl leading-relaxed font-normal">
+                    {description}
+                  </Lead>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </>
   );
