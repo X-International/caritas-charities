@@ -76,37 +76,41 @@ export default function SplitPageHeader({
           </nav>
         </div>
       )}
-      <div className="site-container mb-12 sm:mb-16 lg:mb-20">
-        <div className="contact-hero w-full grid grid-cols-1 lg:grid-cols-2 gap-4 lg:items-stretch lg:h-[clamp(460px,32vw,520px)] relative overflow-x-clip">
-          {/* Left Column: Image */}
-          <div
-            className="contact-hero-image relative overflow-hidden rounded-t-3xl sm:rounded-t-4xl lg:rounded-tr-none lg:rounded-l-4xl h-[clamp(280px,82vw,340px)] sm:h-[clamp(340px,45vw,400px)] lg:h-full"
-            style={imagePosStyle}
-          >
-            <Image
-              src={image}
-              alt={imageAlt}
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="contact-hero-image-media object-cover"
-            />
-          </div>
+      <div className="site-container mb-14 sm:mb-18 lg:mb-22">
+        <div className="split-hero-outer relative w-full overflow-hidden rounded-[24px] sm:rounded-[28px] lg:rounded-[32px]">
+          <div className="contact-hero w-full grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 items-stretch min-h-[440px] sm:min-h-[500px] lg:min-h-[clamp(540px,42vw,620px)] relative">
+            {/* Left Column: Image */}
+            <div
+              className="contact-hero-image relative overflow-hidden rounded-[24px] sm:rounded-[28px] lg:rounded-[32px] h-[clamp(380px,95vw,520px)] sm:h-[clamp(420px,55vw,540px)] lg:h-full z-0"
+              style={imagePosStyle}
+            >
+              <Image
+                src={image}
+                alt={imageAlt}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="contact-hero-image-media object-cover"
+              />
+            </div>
 
-          {/* Right Column: Red Content Panel */}
-          <div className="contact-hero-panel relative bg-[#b10017] text-white rounded-b-3xl sm:rounded-b-4xl lg:rounded-bl-none lg:rounded-r-4xl overflow-hidden flex flex-col justify-center px-6 sm:px-12 md:px-16 lg:px-20 py-10 sm:py-12 lg:py-0">
-            <div className="contact-hero-panel-content max-w-lg space-y-3 sm:space-y-4">
-              <Eyebrow color="white">
-                {eyebrow}
-              </Eyebrow>
-              <Heading level={1} variant="hero" color="white" className="text-3xl sm:text-4xl lg:text-5xl">
-                {title}
-              </Heading>
-              {description && (
-                <Lead variant="article" className="text-white text-base sm:text-lg lg:text-xl leading-relaxed">
-                  {description}
-                </Lead>
-              )}
+            {/* Right Column: Sliding Red Content Panel */}
+            <div className="contact-hero-panel-wrap relative z-10 -mt-16 sm:-mt-20 lg:mt-0 px-3 sm:px-6 lg:px-0">
+              <div className="contact-hero-panel relative bg-[#b10017] text-white rounded-[24px] sm:rounded-[28px] lg:rounded-[32px] overflow-hidden flex flex-col justify-center px-6 sm:px-12 lg:px-14 xl:px-18 py-10 sm:py-14 lg:py-16 h-full min-h-[280px]">
+                <div className="contact-hero-panel-content max-w-lg space-y-3 sm:space-y-4">
+                  <Eyebrow color="white">
+                    {eyebrow}
+                  </Eyebrow>
+                  <Heading level={1} variant="hero" color="white" className="text-3xl sm:text-4xl lg:text-[46px] xl:text-[54px] leading-[1.12]">
+                    {title}
+                  </Heading>
+                  {description && (
+                    <Lead variant="article" className="text-white/95 text-base sm:text-lg lg:text-xl leading-relaxed font-normal">
+                      {description}
+                    </Lead>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         </div>
