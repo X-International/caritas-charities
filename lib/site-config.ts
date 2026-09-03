@@ -21,7 +21,7 @@ export const siteConfig = {
       name: "Centenary Bank",
       branch: "Kabalagala Branch",
       accountNumber: "3100127591",
-      accountName: "Caritas Kampala",
+      accountName: "Caritas Kampala Charity Office Collection Account",
     },
     onlineStatus: "contact-required" as const,
   },
