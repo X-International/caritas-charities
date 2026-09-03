@@ -19,8 +19,8 @@ export const siteConfig = {
   giving: {
     bank: {
       name: "Centenary Bank",
-      branch: "Entebbe Road Branch",
-      accountNumber: "3010309657",
+      branch: "Kabalagala Branch",
+      accountNumber: "3100127591",
       accountName: "Caritas Kampala",
     },
     onlineStatus: "contact-required" as const,
