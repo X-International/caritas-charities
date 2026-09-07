@@ -2,6 +2,7 @@ export interface EventItem {
   id: string;
   title: string;
   category: string;
+  theme?: string;
   description: string;
   dateStr: string; // "YYYY-MM-DD"
   timeString: string;
@@ -15,6 +16,7 @@ export const initialEvents: EventItem[] = [
     id: "breakfast-meeting-2026",
     title: "Breakfast Meeting",
     category: "MEETING",
+    theme: "The Lord is the refuge of the poor..Psalm 14:6",
     description:
       "A morning gathering to share updates, strengthen collaboration, and discuss priorities for the work ahead.",
     dateStr: "2026-11-13",

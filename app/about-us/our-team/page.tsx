@@ -23,7 +23,7 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     name: "Rev. Fr. Peter Musumba",
-    role: "Director, Caritas Kampala",
+    role: "Director & Team Leader, Caritas Kampala",
     category: "LEADERSHIP",
     image: "/images/Team/Fr_Peter_Musumba_Caritas_Kampala_Charities_Office.jpg",
     alt: "Portrait of Rev. Fr. Peter Musumba",
@@ -51,7 +51,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Ms. Penina Nawajje",
-    role: "Charity Shop Coordinator",
+    role: "Charity Shop Admin",
     category: "CHARITY SHOP",
     image: "/images/Team/Penina_Nawajje_Caritas_Kampala_Charities_Office.jpg",
     alt: "Portrait of Ms. Penina Nawajje",
@@ -79,7 +79,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Ms. Nansubuga Catherine Kevin",
-    role: "Social Worker",
+    role: "Counselor and Social Worker",
     category: "SOCIAL CARE TEAM",
     image: "/images/Team/kevin.png",
     alt: "Portrait of Ms. Nansubuga Catherine Kevin",

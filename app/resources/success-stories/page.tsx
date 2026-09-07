@@ -1,9 +1,9 @@
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SplitPageHeader from "@/components/SplitPageHeader";
 import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
+import AppealVideo from "@/components/AppealVideo";
 
 export const metadata = buildPageMetadata({
   title: "Success Stories | Caritas Kampala’s Charity Office",
@@ -32,31 +32,32 @@ export default function SuccessStoriesPage() {
           imagePosition="center 20%"
         />
 
-        {/* Empty State Section */}
-        <section className="pt-[72px] sm:pt-20 lg:pt-[88px] pb-16 sm:pb-20 lg:pb-[88px] bg-white text-center">
-          <div className="site-container max-w-[720px] mx-auto space-y-4">
-            <Heading level={2} variant="section" color="red">
-              Stories Coming Soon
-            </Heading>
-            <div className="text-gray-700 max-w-2xl mx-auto space-y-3 text-base sm:text-lg leading-relaxed">
-              <p>
-                We are preparing stories that reflect the experiences, progress, and dignity of the people and communities we work alongside.
-              </p>
-              <p>
-                New stories will be published here as they become available.
+        {/* Video Stories Section */}
+        <section className="py-12 sm:py-16 lg:py-20 bg-white">
+          <div className="site-container max-w-[1200px] mx-auto px-4 sm:px-6">
+            <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12 space-y-3">
+              <Heading level={2} variant="section" color="red">
+                Watch Our Stories
+              </Heading>
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+                Discover the real impact of Caritas Kampala’s charity initiatives through the voices and experiences of the communities we serve.
               </p>
             </div>
-            <p className="text-xs sm:text-sm text-gray-500 pt-5 max-w-xl mx-auto leading-relaxed">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
+              <AppealVideo
+                videoId="jivgMtRzjJU"
+                title="Caritas Kampala Impact Story 1"
+              />
+              <AppealVideo
+                videoId="S-vIJGVgk9A"
+                title="Caritas Kampala Impact Story 2"
+              />
+            </div>
+
+            <p className="text-xs sm:text-sm text-gray-500 text-center pt-10 max-w-xl mx-auto leading-relaxed">
               Stories are shared with care and with appropriate attention to consent, privacy, and safeguarding.
             </p>
-            <div className="pt-4">
-              <Link
-                href="/our-programmes"
-                className="text-[#b10017] hover:underline font-semibold text-sm sm:text-base inline-flex items-center gap-1.5"
-              >
-                Explore Our Programmes →
-              </Link>
-            </div>
           </div>
         </section>
       </main>

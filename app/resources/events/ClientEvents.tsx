@@ -130,6 +130,14 @@ export default function ClientEvents() {
                       <h3 className="font-serif text-[26px] sm:text-[28px] lg:text-[30px] font-bold text-gray-900 leading-tight">
                         {event.title}
                       </h3>
+                      {event.theme && (
+                        <div className="bg-[#b10017]/5 border-l-4 border-[#b10017] px-3.5 py-2.5 rounded-r-md my-2">
+                          <p className="text-xs sm:text-sm font-medium text-gray-800">
+                            <span className="font-semibold text-[#b10017]">Theme: </span>
+                            <span className="italic">"{event.theme}"</span>
+                          </p>
+                        </div>
+                      )}
                       <p className="text-sm text-gray-600 leading-relaxed">
                         {event.description}
                       </p>
