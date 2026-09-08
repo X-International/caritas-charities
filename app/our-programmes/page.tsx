@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import Card from "@/components/ui/Card";
 import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
-import PageHeader from "@/components/PageHeader";
+import SplitPageHeader from "@/components/SplitPageHeader";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
 
 export const metadata = buildPageMetadata({
@@ -165,13 +165,19 @@ export default function OurProgrammesPage() {
 
       <main id="main-content" className="flex-1">
         {/* Hero Banner */}
-        <PageHeader 
-          title="Our Programmes"
+        <SplitPageHeader
           breadcrumbs={[
             { label: "Home", href: "/" },
             { label: "Our Programmes" }
           ]}
-          description="Explore the practical programmes supporting vulnerable people and communities across Kampala Archdiocese."
+          eyebrow="HOW WE SERVE"
+          title="Our Programmes"
+          description="Practical support for individuals, families and communities across Kampala, Wakiso and Mpigi."
+          image="/images/Miscellany/Caritas_Kampala_42.jpg"
+          imageAlt="Caritas Kampala programmes serving communities in Kampala, Wakiso and Mpigi"
+          imagePositionDesktop="center 40%"
+          imagePositionTablet="center 35%"
+          imagePositionMobile="center 40%"
         />
 
         {/* Intro & Programme List Section - Matching Core Pillars Background */}
