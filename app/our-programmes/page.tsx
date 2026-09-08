@@ -112,23 +112,23 @@ function ProgrammeCard({ programme, index }: { programme: Programme; index: numb
     <article
       id={programme.id}
       aria-labelledby={`programme-title-${programme.id}`}
-      className={`bg-white rounded-[16px] sm:rounded-[20px] lg:rounded-[24px] border border-[#efe3d2] shadow-sm overflow-hidden flex flex-col ${
+      className={`bg-white rounded-[20px] sm:rounded-[24px] lg:rounded-[28px] border border-[#ded3c2] shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden flex flex-col ${
         isEven ? "lg:flex-row" : "lg:flex-row-reverse"
       }`}
     >
       {/* ── Image Column ── */}
-      <div className="w-full lg:w-[43%] relative aspect-[16/9] lg:aspect-auto min-h-0 lg:min-h-[350px] overflow-hidden shrink-0">
+      <div className="w-full lg:w-[42%] xl:w-[40%] relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto min-h-[220px] sm:min-h-[280px] lg:min-h-[360px] overflow-hidden shrink-0">
         <Image
           src={programme.image}
           alt={programme.imageAlt}
           fill
-          sizes="(max-width: 1024px) 100vw, 43vw"
+          sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 42vw, 40vw"
           className="object-cover object-center"
         />
       </div>
 
       {/* ── Content Column ── */}
-      <div className="w-full lg:w-[57%] px-5 py-6 sm:p-7 lg:px-[42px] lg:py-[38px] flex flex-col justify-between flex-1">
+      <div className="w-full lg:w-[58%] xl:w-[60%] p-6 sm:p-8 lg:p-10 xl:p-11 flex flex-col justify-between flex-1">
         <div className="flex-1">
           {/* Programme Title */}
           <Heading
@@ -136,13 +136,13 @@ function ProgrammeCard({ programme, index }: { programme: Programme; index: numb
             variant="subsection"
             color="red"
             id={`programme-title-${programme.id}`}
-            className="text-2xl sm:text-[26px] lg:text-[28px] xl:text-[30px] font-serif font-bold text-[#b10017] leading-tight mb-3.5 lg:mb-4"
+            className="text-xl sm:text-2xl lg:text-[26px] xl:text-[28px] font-serif font-bold text-[#b10017] leading-snug sm:leading-tight mb-3 sm:mb-4"
           >
             {programme.title}
           </Heading>
 
           {/* Text Content */}
-          <div className="space-y-3 sm:space-y-[14px] text-[15px] sm:text-[15.5px] lg:text-[16px] text-[#38332c] leading-[1.6] sm:leading-[1.6] lg:leading-[1.62] font-sans">
+          <div className="space-y-3 sm:space-y-3.5 text-sm sm:text-base lg:text-[16px] text-gray-700 leading-relaxed font-sans font-normal">
             {programme.description.map((paragraph, idx) => (
               <p key={idx}>{paragraph}</p>
             ))}
@@ -150,7 +150,7 @@ function ProgrammeCard({ programme, index }: { programme: Programme; index: numb
         </div>
 
         {/* Footer Action anchored at bottom */}
-        <div className="mt-auto pt-6 border-t border-[#efe3d2] flex items-center justify-end">
+        <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-[#efe3d2] flex items-center justify-end">
           <Link
             href={programme.linkHref || "/resources/success-stories"}
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#b10017] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b10017] rounded"

@@ -202,194 +202,199 @@ export default function Footer() {
     <footer
       role="contentinfo"
       aria-label="Site Footer"
-      className="text-white pt-16 sm:pt-20 pb-12 sm:pb-16 border-t border-white/20 w-full overflow-hidden"
-      style={{
-        background: "linear-gradient(to bottom, #262626 0px, #262626 240px, #141414 100%)",
-      }}
+      className="w-full pt-3 sm:pt-4 lg:pt-5 pb-1.5 sm:pb-2 lg:pb-2.5 bg-white overflow-hidden"
     >
-      <div className="site-container">
-        {/* Top Identity / Social Section */}
-        {/* Desktop (1024px+) */}
-        <div className="hidden lg:flex items-center justify-between gap-8 pb-14 lg:pb-16 pt-16 lg:pt-[72px]">
-          <div className="flex items-center gap-12 xl:gap-16 min-w-0">
+      <div className="w-full px-2.5 sm:px-4 md:px-5 lg:px-5 xl:px-6 2xl:px-6 mx-auto">
+        <div
+          className="text-white rounded-[20px] sm:rounded-[28px] lg:rounded-[32px] px-6 sm:px-10 lg:px-14 overflow-hidden border border-white/10 shadow-md"
+          style={{
+            background: "linear-gradient(to bottom, #262626 0px, #262626 240px, #141414 100%)",
+          }}
+        >
+          {/* Top Identity / Social Section */}
+          {/* Desktop (1024px+) */}
+          <div className="hidden lg:flex items-center justify-between gap-8 pb-14 lg:pb-16 pt-16 lg:pt-[72px]">
+            <div className="flex items-center gap-12 xl:gap-16 min-w-0">
+              <Link
+                href="/"
+                aria-label="Caritas Kampala Homepage"
+                className="shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[#262626] rounded-lg"
+              >
+                <Image
+                  src="/images/logos/Caritas_Kampala_Footer.png"
+                  alt="Caritas Kampala logo"
+                  width={320}
+                  height={112}
+                  className="h-28 w-auto object-contain"
+                />
+              </Link>
+
+              <p className="text-sm sm:text-base text-gray-300 font-normal leading-[1.6] max-w-[540px]">
+                The Charity Office operates under Caritas Kampala, providing compassionate and practical support to vulnerable people and communities across Kampala Archdiocese.
+              </p>
+            </div>
+
+            <div className="space-y-4 text-right shrink-0">
+              <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-gray-200 block">
+                FOLLOW US ON SOCIAL MEDIA
+              </span>
+              <div className="flex items-center justify-end gap-2.5" aria-label="Social channels">
+                {socialLinks.map((s) => (
+                  <a
+                    key={s.name}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                    title={s.name}
+                    className="group relative flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full text-white/85 transition-all duration-200 ease-out hover:text-white hover:border-[#b10017] hover:bg-[#b10017]/20 border border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#262626]"
+                  >
+                    {s.svg}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Tablet (640px–1023px) */}
+          <div className="hidden sm:flex lg:hidden flex-col pt-12 sm:pt-14 pb-12 sm:pb-14">
+            <div className="flex items-center gap-6 sm:gap-8 max-w-3xl mx-auto w-full">
+              <Link
+                href="/"
+                aria-label="Caritas Kampala Homepage"
+                className="shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[#262626] rounded-lg"
+              >
+                <Image
+                  src="/images/logos/Caritas_Kampala_Footer.png"
+                  alt="Caritas Kampala logo"
+                  width={280}
+                  height={100}
+                  className="h-24 w-auto object-contain"
+                />
+              </Link>
+              <p className="text-sm sm:text-base text-gray-300 font-normal leading-[1.6] max-w-[480px]">
+                The Charity Office operates under Caritas Kampala, providing compassionate and practical support to vulnerable people and communities across Kampala Archdiocese.
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center mt-10 sm:mt-12 text-center">
+              <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-gray-200 block mb-4">
+                FOLLOW US ON SOCIAL MEDIA
+              </span>
+              <div className="flex items-center justify-center gap-2.5" aria-label="Social channels">
+                {socialLinks.map((s) => (
+                  <a
+                    key={s.name}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                    title={s.name}
+                    className="group relative flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full text-white/85 transition-all duration-200 ease-out hover:text-white hover:border-[#b10017] hover:bg-[#b10017]/20 border border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#262626]"
+                  >
+                    {s.svg}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile (< 640px) */}
+          <div className="sm:hidden flex flex-col items-center text-center pt-10 sm:pt-12 pb-12 sm:pb-14">
             <Link
               href="/"
               aria-label="Caritas Kampala Homepage"
-              className="shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[#262626] rounded-lg"
+              className="shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[#262626] rounded-lg mb-7"
             >
               <Image
                 src="/images/logos/Caritas_Kampala_Footer.png"
                 alt="Caritas Kampala logo"
-                width={320}
-                height={112}
-                className="h-28 w-auto object-contain"
+                width={240}
+                height={88}
+                className="h-22 w-auto object-contain mx-auto"
               />
             </Link>
 
-            <p className="text-sm sm:text-base text-gray-300 font-normal leading-[1.6] max-w-[540px]">
+            <p className="text-[15px] sm:text-base text-gray-300 font-normal leading-[1.6] max-w-[330px] px-4 mx-auto mb-9">
               The Charity Office operates under Caritas Kampala, providing compassionate and practical support to vulnerable people and communities across Kampala Archdiocese.
             </p>
-          </div>
 
-          <div className="space-y-4 text-right shrink-0">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-gray-200 block">
-              FOLLOW US ON SOCIAL MEDIA
-            </span>
-            <div className="flex items-center justify-end gap-2.5" aria-label="Social channels">
-              {socialLinks.map((s) => (
-                <a
-                  key={s.name}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.label}
-                  title={s.name}
-                  className="group relative flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full text-white/85 transition-all duration-200 ease-out hover:text-white hover:border-[#b10017] hover:bg-[#b10017]/20 border border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#262626]"
-                >
-                  {s.svg}
-                </a>
-              ))}
+            <div className="w-full">
+              <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-gray-200 block mb-4">
+                FOLLOW US ON SOCIAL MEDIA
+              </span>
+              <div className="flex items-center justify-center gap-2" aria-label="Social channels">
+                {socialLinks.map((s) => (
+                  <a
+                    key={s.name}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                    title={s.name}
+                    className="group relative flex h-11 w-11 items-center justify-center rounded-full text-white/85 transition-all duration-200 ease-out hover:text-white hover:border-[#b10017] hover:bg-[#b10017]/20 border border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#262626]"
+                  >
+                    {s.svg}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Tablet (640px–1023px) */}
-        <div className="hidden sm:flex lg:hidden flex-col pt-12 sm:pt-14 pb-12 sm:pb-14">
-          <div className="flex items-center gap-6 sm:gap-8 max-w-3xl mx-auto w-full">
-            <Link
-              href="/"
-              aria-label="Caritas Kampala Homepage"
-              className="shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[#262626] rounded-lg"
-            >
-              <Image
-                src="/images/logos/Caritas_Kampala_Footer.png"
-                alt="Caritas Kampala logo"
-                width={280}
-                height={100}
-                className="h-24 w-auto object-contain"
+          <hr className="border-white/20 my-0" />
+
+          {/* Desktop Navigation Columns (1024px+) */}
+          <div className="hidden lg:grid grid-cols-4 gap-x-12 xl:gap-x-16 pt-10 lg:pt-11 pb-12 lg:pb-14">
+            {footerColumns.map((col) => (
+              <DesktopColumn key={col.title} column={col} />
+            ))}
+          </div>
+
+          {/* Tablet Navigation Grid (640px–1023px, 2x2) */}
+          <div className="hidden sm:grid lg:hidden grid-cols-2 gap-x-14 gap-y-10 sm:gap-x-16 sm:gap-y-12 pt-10 pb-12">
+            {footerColumns.map((col) => (
+              <DesktopColumn key={col.title} column={col} />
+            ))}
+          </div>
+
+          {/* Mobile Accordion Navigation (< 640px) */}
+          <div className="sm:hidden pb-2">
+            {footerColumns.map((col, i) => (
+              <MobileAccordion
+                key={col.title}
+                column={col}
+                index={i}
+                isOpen={openAccordion === i}
+                onToggle={() => toggleAccordion(i)}
               />
-            </Link>
-            <p className="text-sm sm:text-base text-gray-300 font-normal leading-[1.6] max-w-[480px]">
-              The Charity Office operates under Caritas Kampala, providing compassionate and practical support to vulnerable people and communities across Kampala Archdiocese.
-            </p>
+            ))}
           </div>
 
-          <div className="flex flex-col items-center mt-10 sm:mt-12 text-center">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-gray-200 block mb-4">
-              FOLLOW US ON SOCIAL MEDIA
-            </span>
-            <div className="flex items-center justify-center gap-2.5" aria-label="Social channels">
-              {socialLinks.map((s) => (
-                <a
-                  key={s.name}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.label}
-                  title={s.name}
-                  className="group relative flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full text-white/85 transition-all duration-200 ease-out hover:text-white hover:border-[#b10017] hover:bg-[#b10017]/20 border border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#262626]"
-                >
-                  {s.svg}
-                </a>
-              ))}
+          <hr className="border-white/20 my-0" />
+
+          {/* Bottom Copyright & Visit Main Website */}
+          <div className="flex w-full flex-col sm:flex-row justify-between items-start sm:items-center text-xs sm:text-sm text-gray-400 font-normal gap-4 py-8 sm:py-9 text-left">
+            <div>
+              {`© ${currentYear} Caritas Kampala | Charity Office. All Rights Reserved.`}
             </div>
-          </div>
-        </div>
-
-        {/* Mobile (< 640px) */}
-        <div className="sm:hidden flex flex-col items-center text-center pt-10 sm:pt-12 pb-12 sm:pb-14">
-          <Link
-            href="/"
-            aria-label="Caritas Kampala Homepage"
-            className="shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[#262626] rounded-lg mb-7"
-          >
-            <Image
-              src="/images/logos/Caritas_Kampala_Footer.png"
-              alt="Caritas Kampala logo"
-              width={240}
-              height={88}
-              className="h-22 w-auto object-contain mx-auto"
-            />
-          </Link>
-
-          <p className="text-[15px] sm:text-base text-gray-300 font-normal leading-[1.6] max-w-[330px] px-4 mx-auto mb-9">
-            The Charity Office operates under Caritas Kampala, providing compassionate and practical support to vulnerable people and communities across Kampala Archdiocese.
-          </p>
-
-          <div className="w-full">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-gray-200 block mb-4">
-              FOLLOW US ON SOCIAL MEDIA
-            </span>
-            <div className="flex items-center justify-center gap-2" aria-label="Social channels">
-              {socialLinks.map((s) => (
-                <a
-                  key={s.name}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.label}
-                  title={s.name}
-                  className="group relative flex h-11 w-11 items-center justify-center rounded-full text-white/85 transition-all duration-200 ease-out hover:text-white hover:border-[#b10017] hover:bg-[#b10017]/20 border border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#262626]"
-                >
-                  {s.svg}
-                </a>
-              ))}
+            <div>
+              <a
+                href="https://www.caritaskampala.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Main Website (opens in a new tab)"
+                className="hover:text-white inline-flex items-center gap-1.5 font-bold text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#141414] rounded group"
+              >
+                <span>Visit Main Website</span>
+                <svg className="w-4 h-4 fill-none stroke-current group-hover:translate-x-1 transition-transform duration-200" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
             </div>
-          </div>
-        </div>
-
-        <hr className="border-white/20 my-0" />
-
-        {/* Desktop Navigation Columns (1024px+) */}
-        <div className="hidden lg:grid grid-cols-4 gap-x-12 xl:gap-x-16 pt-10 lg:pt-11 pb-12 lg:pb-14">
-          {footerColumns.map((col) => (
-            <DesktopColumn key={col.title} column={col} />
-          ))}
-        </div>
-
-        {/* Tablet Navigation Grid (640px–1023px, 2x2) */}
-        <div className="hidden sm:grid lg:hidden grid-cols-2 gap-x-14 gap-y-10 sm:gap-x-16 sm:gap-y-12 pt-10 pb-12">
-          {footerColumns.map((col) => (
-            <DesktopColumn key={col.title} column={col} />
-          ))}
-        </div>
-
-        {/* Mobile Accordion Navigation (< 640px) */}
-        <div className="sm:hidden pb-2">
-          {footerColumns.map((col, i) => (
-            <MobileAccordion
-              key={col.title}
-              column={col}
-              index={i}
-              isOpen={openAccordion === i}
-              onToggle={() => toggleAccordion(i)}
-            />
-          ))}
-        </div>
-
-        <hr className="border-white/20 my-0" />
-
-        {/* Bottom Copyright & Visit Main Website */}
-        <div className="flex w-full flex-col sm:flex-row justify-between items-start sm:items-center text-xs sm:text-sm text-gray-400 font-normal gap-4 py-8 sm:py-9 text-left">
-          <div>
-            {`© ${currentYear} Caritas Kampala | Charity Office. All Rights Reserved.`}
-          </div>
-          <div>
-            <a
-              href="https://www.caritaskampala.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit Main Website (opens in a new tab)"
-              className="hover:text-white inline-flex items-center gap-1.5 font-bold text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#141414] rounded group"
-            >
-              <span>Visit Main Website</span>
-              <svg className="w-4 h-4 fill-none stroke-current group-hover:translate-x-1 transition-transform duration-200" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
           </div>
         </div>
       </div>
     </footer>
   );
 }
+
