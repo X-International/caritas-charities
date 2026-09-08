@@ -175,7 +175,7 @@ export default function OurProgrammesPage() {
           description="Practical support for individuals, families and communities across Kampala, Wakiso and Mpigi."
           image="/images/Miscellany/Caritas_Kampala_42.jpg"
           imageAlt="Caritas Kampala programmes serving communities in Kampala, Wakiso and Mpigi"
-          imagePositionDesktop="center 40%"
+          imagePositionDesktop="left 35%"
           imagePositionTablet="center 35%"
           imagePositionMobile="center 40%"
         />
