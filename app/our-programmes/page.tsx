@@ -112,7 +112,7 @@ function ProgrammeCard({ programme, index }: { programme: Programme; index: numb
     <article
       id={programme.id}
       aria-labelledby={`programme-title-${programme.id}`}
-      className={`bg-white rounded-[20px] sm:rounded-[24px] lg:rounded-[28px] border border-[#ded3c2] shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden flex flex-col ${
+      className={`bg-white rounded-[20px] sm:rounded-[24px] lg:rounded-[28px] border border-[#ded3c2] overflow-hidden flex flex-col ${
         isEven ? "lg:flex-row" : "lg:flex-row-reverse"
       }`}
     >
@@ -153,7 +153,7 @@ function ProgrammeCard({ programme, index }: { programme: Programme; index: numb
         <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-[#efe3d2] flex items-center justify-end">
           <Link
             href={programme.linkHref || "/resources/success-stories"}
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#b10017] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b10017] rounded"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#b10017] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b10017] rounded"
           >
             <span>See Impact Stories</span>
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -191,10 +191,10 @@ export default function OurProgrammesPage() {
           <div className="site-container">
             {/* Section Header */}
             <div className="text-center mb-9 sm:mb-10 lg:mb-11 max-w-[840px] mx-auto">
-              <Heading level={2} variant="section" color="red" id="programmes-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.625rem] leading-tight max-w-none mx-auto whitespace-normal lg:whitespace-nowrap">
+              <Heading level={2} variant="section" color="red" id="programmes-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.625rem] leading-tight max-w-none mx-auto whitespace-normal lg:whitespace-nowrap text-[#b10017]">
                 Empowering Families, Building Lasting Hope
               </Heading>
-              <p className="mt-3.5 sm:mt-4 lg:mt-5 text-base sm:text-lg text-[#4d4338] leading-relaxed font-normal max-w-[760px] mx-auto">
+              <p className="mt-3.5 sm:mt-4 lg:mt-5 text-base sm:text-lg text-black leading-relaxed font-normal max-w-[760px] mx-auto">
                 We respond to immediate needs while supporting individuals, families and communities across Kampala, Wakiso and Mpigi to build greater stability and dignity.
               </p>
             </div>
