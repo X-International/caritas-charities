@@ -179,10 +179,10 @@ export default async function NewsPage({
                     <Link
                       key={news.slug}
                       href={`/resources/news/${news.slug}`}
-                      className="flex flex-col h-full bg-white rounded-[20px] border-[3px] border-[#dfd3c4] overflow-hidden transition-all duration-200 ease-out group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2"
+                      className="flex flex-col h-full bg-white rounded-[20px] border-[2px] border-[#e2d8ca] overflow-hidden group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2"
                     >
-                      {/* Image Area matching Team card background and frame */}
-                      <div className="relative aspect-video w-full overflow-hidden bg-[#ebe4d9]">
+                      {/* Image Area with 16:10 aspect ratio */}
+                      <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#ebe4d9]">
                         <Image
                           src={news.image}
                           alt={news.alt}
@@ -192,24 +192,42 @@ export default async function NewsPage({
                         />
                       </div>
 
-                      {/* Content Area matching Team card padding, background, and typography */}
-                      <div className="p-5 sm:p-6 pb-6 sm:pb-7 flex flex-col flex-1 text-left bg-white justify-between">
-                        <div>
-                          <div className="flex items-center justify-between gap-3 mb-2">
-                            <span className="text-xs font-semibold uppercase tracking-wider text-gray-700 font-sans block">
-                              {news.category}
-                            </span>
-                            <time dateTime={datetimeStr} className="text-xs font-semibold uppercase tracking-wider text-gray-500 font-sans">
-                              {news.date.toUpperCase()}
-                            </time>
-                          </div>
-                          <h2 className="font-serif font-bold text-[#b10017] text-[22px] sm:text-[21px] leading-tight mb-1.5 text-left group-hover:underline">
-                            {news.title}
-                          </h2>
+                      {/* Content Area */}
+                      <div className="px-4.5 pb-4.5 pt-5 sm:px-5 sm:pb-5 sm:pt-6 lg:px-[22px] lg:pb-[22px] lg:pt-6 flex flex-col flex-1 text-left bg-white">
+                        {/* Metadata Row: Category ... Date */}
+                        <div className="flex items-center justify-between gap-3 mb-2.5 text-[11px] font-semibold uppercase tracking-[0.06em] font-sans">
+                          <span className="text-gray-500 truncate">
+                            {news.category.toUpperCase()}
+                          </span>
+                          <time dateTime={datetimeStr} className="text-gray-400 font-medium shrink-0 whitespace-nowrap">
+                            {(() => {
+                              const d = new Date(news.date);
+                              if (isNaN(d.getTime())) return news.date.toUpperCase();
+                              const day = d.getDate();
+                              const month = d.toLocaleString('en-GB', { month: 'short' }).toUpperCase();
+                              const year = d.getFullYear();
+                              return `${day} ${month} ${year}`;
+                            })()}
+                          </time>
                         </div>
-                        <p className="font-sans text-[14px] sm:text-sm text-gray-600 leading-normal text-left mt-0.5">
+
+                        {/* Headline */}
+                        <h2 className="font-serif font-bold text-[#b10017] text-[19px] sm:text-[20.5px] leading-[1.25] mb-2.5 sm:mb-3 group-hover:underline line-clamp-2">
+                          {news.title}
+                        </h2>
+
+                        {/* Summary */}
+                        <p className="font-sans text-[13.5px] sm:text-[14px] text-gray-600 leading-[1.55] font-normal line-clamp-3">
                           {news.snippet}
                         </p>
+
+                        {/* Bottom Row: READ ARTICLE → (anchored to bottom) */}
+                        <div className="mt-auto pt-5 border-t border-gray-200/60 flex items-center justify-end text-[11px] font-bold uppercase tracking-[0.06em] font-sans">
+                          <span className="text-[#b10017] font-semibold flex items-center gap-1 shrink-0">
+                            <span className="group-hover:underline">READ ARTICLE</span>
+                            <span aria-hidden="true">&rarr;</span>
+                          </span>
+                        </div>
                       </div>
                     </Link>
                   );

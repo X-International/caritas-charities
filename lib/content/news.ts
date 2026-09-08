@@ -35,14 +35,14 @@ export type NewsArticle = {
 export const newsArticles: NewsArticle[] = [
   {
     slug: "kotido-moroto-famine-relief-drive",
-    title: "Kotido & Moroto Famine Relief Drive Mobilizes Parishes",
+    title: "Kotido & Moroto Famine Relief Drive Mobilises Parishes",
     subtitle:
-      "Parishes across Kampala Archdiocese are collecting food and relief items for families facing famine in Kotido and Moroto.",
+      "Parishes across Kampala Archdiocese are collecting food and relief items for families affected by severe food insecurity.",
     date: "28 Jul 2026",
     category: "Emergency Appeal",
     region: "Karamoja",
     snippet:
-      "Parishes across Kampala Archdiocese are collecting food and relief items for families facing famine in Kotido and Moroto.",
+      "Parishes across Kampala Archdiocese are collecting food and relief items for families affected by severe food insecurity.",
     image: "/images/current appeal/Caritas_Kampala_Current_Appeal_details.jpg",
     alt: "Community members in Karamoja affected by the ongoing drought. Credit: Caritas Kampala.",
     body: [
@@ -71,11 +71,11 @@ export const newsArticles: NewsArticle[] = [
   },
   {
     slug: "charities-office-launches-new-website",
-    title: "The Charity Office Launches Its New Website",
+    title: "Charity Office Launches New Website",
     date: "28 Aug 2026",
     category: "Announcement",
     snippet:
-      "A dedicated online home for the Charity Office, bringing together our work, programmes, network, news, and ways to get involved.",
+      "A dedicated website now brings together the Charity Office\u2019s programmes, news, resources and ways to get involved.",
     image: "/images/Event 02/Caritas_Kampala_98.jpg",
     alt: "Speaker addressing participants during a Charity Office gathering in Kampala",
     body: [
@@ -97,11 +97,11 @@ export const newsArticles: NewsArticle[] = [
   },
   {
     slug: "breakfast-meeting-world-day-of-poor",
-    title: "Charity Office Marks World Day of the Poor with Breakfast Meeting",
+    title: "Charity Office Marks World Day of the Poor",
     date: "14 Nov 2025",
     category: "Event",
     snippet:
-      "The Charity Office, under Caritas Kampala, brought together charity homes, partners, beneficiaries and members of the wider community for its first Breakfast Meeting in commemoration of the World Day of the Poor.",
+      "The Charity Office brought together charity homes, partners and community members for a breakfast meeting marking World Day of the Poor.",
     image: "/images/Event 02/Caritas_Kampala_12.jpg",
     alt: "Participants at the Charity Office Breakfast Meeting commemorating World Day of the Poor.",
     body: [

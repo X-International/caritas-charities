@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { NewsArticle } from '@/lib/content/news';
-import Card from '@/components/ui/Card';
 import { Heading } from '@/components/ui/Typography';
 
 export default function RelatedNewsCarousel({ currentArticleSlug, allArticles }: { currentArticleSlug: string, allArticles: NewsArticle[] }) {
@@ -30,31 +29,46 @@ export default function RelatedNewsCarousel({ currentArticleSlug, allArticles }:
               Related Content
             </Heading>
             <div className="relative group">
-                <Card variant="content" className="overflow-hidden p-0 sm:p-0 shadow-none bg-white border border-gray-200 rounded-xl">
-                    <Link href={`/resources/news/${article.slug}`} className="block group/card">
-                    <div className="relative aspect-video w-full overflow-hidden bg-[#f5efe6] rounded-t-xl">
+                <div className="overflow-hidden bg-white border-[2px] border-[#e2d8ca] rounded-[20px]">
+                    <Link href={`/resources/news/${article.slug}`} className="flex flex-col h-full group/card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2">
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#ebe4d9]">
                         <Image
                             src={article.image}
                             alt={article.alt}
                             fill
                             sizes="(max-width: 768px) 100vw, 33vw"
-                            className="object-cover"
+                            className="object-cover object-center"
                         />
                     </div>
-                    <div className="px-5 py-5 sm:px-6 sm:py-6">
-                        <div className="flex justify-between items-center text-[10px] sm:text-xs uppercase tracking-widest text-[#585858]">
-                            <span className="text-[#b10017] font-semibold">{article.category}</span>
-                            <span className="font-mono text-[#7b7b7b] tracking-normal">{article.date.toUpperCase()}</span>
+                    <div className="px-4.5 pb-4.5 pt-5 sm:px-5 sm:pb-5 sm:pt-6 lg:px-[22px] lg:pb-[22px] lg:pt-6 flex flex-col flex-1 text-left bg-white">
+                        <div className="flex items-center justify-between gap-3 mb-2.5 text-[11px] font-semibold uppercase tracking-[0.06em] font-sans">
+                            <span className="text-gray-500 truncate">{article.category.toUpperCase()}</span>
+                            <span className="text-gray-400 font-medium shrink-0 whitespace-nowrap">
+                              {(() => {
+                                const d = new Date(article.date);
+                                if (isNaN(d.getTime())) return article.date.toUpperCase();
+                                const day = d.getDate();
+                                const month = d.toLocaleString('en-GB', { month: 'short' }).toUpperCase();
+                                const year = d.getFullYear();
+                                return `${day} ${month} ${year}`;
+                              })()}
+                            </span>
                         </div>
-                        <Heading level={3} variant="card" color="red" className="mt-3 text-[18px] sm:text-[20px] leading-[1.2] line-clamp-2 transition-colors duration-200 group-hover/card:text-[#8e0a20] group-hover/card:underline">
+                        <Heading level={3} variant="card" color="red" className="font-serif font-bold text-[#b10017] text-[19px] sm:text-[20.5px] leading-[1.25] mb-2.5 sm:mb-3 line-clamp-2 group-hover/card:underline">
                             {article.title}
                         </Heading>
-                        <p className="mt-3 text-[14px] leading-relaxed text-[#4f4f4f] line-clamp-2">
+                        <p className="font-sans text-[13.5px] sm:text-[14px] text-gray-600 leading-[1.55] font-normal line-clamp-3">
                             {article.snippet}
                         </p>
+                        <div className="mt-auto pt-5 border-t border-gray-200/60 flex items-center justify-end text-[11px] font-bold uppercase tracking-[0.06em] font-sans">
+                            <span className="text-[#b10017] font-semibold flex items-center gap-1 shrink-0">
+                                <span className="group-hover/card:underline">READ ARTICLE</span>
+                                <span aria-hidden="true">&rarr;</span>
+                            </span>
+                        </div>
                     </div>
                     </Link>
-                </Card>
+                </div>
 
                 {relatedArticles.length > 1 && (
                     <>
