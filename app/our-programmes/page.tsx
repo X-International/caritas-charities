@@ -170,9 +170,9 @@ export default function OurProgrammesPage() {
             { label: "Home", href: "/" },
             { label: "Our Programmes" }
           ]}
-          eyebrow="HOW WE SERVE"
+          eyebrow="OUR WORK"
           title="Our Programmes"
-          description="Practical support for individuals, families and communities across Kampala, Wakiso and Mpigi."
+          description="Practical programmes supporting families, older persons, refugees, people with disabilities and communities across Kampala, Wakiso and Mpigi."
           image="/images/Miscellany/Caritas_Kampala_42.jpg"
           imageAlt="Caritas Kampala programmes serving communities in Kampala, Wakiso and Mpigi"
           imagePositionDesktop="left 35%"
