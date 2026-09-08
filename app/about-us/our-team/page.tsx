@@ -43,6 +43,13 @@ const teamMembers: TeamMember[] = [
     alt: "Portrait of Ms. Rose Salaama",
   },
   {
+    name: "Ms. Juliet Nassuna",
+    role: "Monitoring & Evaluation Officer",
+    category: "MONITORING & EVALUATION",
+    image: "/images/Team/Julie.jpeg",
+    alt: "Portrait of Ms. Juliet Nassuna",
+  },
+  {
     name: "Ms. Margaret Kisakye",
     role: "Social Worker",
     category: "SOCIAL CARE TEAM",
