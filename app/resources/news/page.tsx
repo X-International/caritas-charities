@@ -18,9 +18,6 @@ export const metadata = buildPageMetadata({
   path: "/resources/news",
 });
 
-const labelTextClasses = "text-[#585858] uppercase tracking-[0.18em] text-[11px] sm:text-xs";
-const headlineLinkClasses =
-  "inline-block font-serif text-[22px] sm:text-[24px] lg:text-[26px] leading-[1.15] text-[#b10017] transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 focus-visible:ring-offset-white";
 
 export default async function NewsPage({
   searchParams,
@@ -183,28 +180,35 @@ export default async function NewsPage({
                     <Link
                       key={news.slug}
                       href={`/resources/news/${news.slug}`}
-                      className="flex flex-col h-full rounded-xl border border-gray-200 bg-white overflow-hidden shadow-none transition-all duration-200 ease-out group hover:border-[#b10017]/30 hover:bg-[#fcfbf9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2"
+                      className="flex flex-col h-full bg-white rounded-[20px] border-[3px] border-[#dfd3c4] overflow-hidden transition-all duration-200 ease-out group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2"
                     >
-                      <div className="relative aspect-video w-full overflow-hidden bg-caritas-beige rounded-t-xl">
+                      {/* Image Area matching Team card background and frame */}
+                      <div className="relative aspect-video w-full overflow-hidden bg-[#ebe4d9]">
                         <Image
                           src={news.image}
                           alt={news.alt}
                           fill
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          className="object-cover"
+                          className="object-cover object-center"
                         />
                       </div>
-                      <div className="flex flex-1 flex-col px-6 py-6 sm:px-7 sm:py-7">
-                        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
-                          <span className="text-[#585858] uppercase tracking-[0.18em] text-[11px] sm:text-xs font-semibold">{news.category}</span>
-                          <time dateTime={datetimeStr} className="whitespace-nowrap text-[#7b7b7b] font-mono tracking-normal uppercase text-[11px] sm:text-xs">
-                            {news.date.toUpperCase()}
-                          </time>
+
+                      {/* Content Area matching Team card padding, background, and typography */}
+                      <div className="p-5 sm:p-6 pb-6 sm:pb-7 flex flex-col flex-1 text-left bg-white justify-between">
+                        <div>
+                          <div className="flex items-center justify-between gap-3 mb-2">
+                            <span className="text-xs font-semibold uppercase tracking-wider text-gray-700 font-sans block">
+                              {news.category}
+                            </span>
+                            <time dateTime={datetimeStr} className="text-xs font-semibold uppercase tracking-wider text-gray-500 font-sans">
+                              {news.date.toUpperCase()}
+                            </time>
+                          </div>
+                          <h2 className="font-serif font-bold text-[#b10017] text-[22px] sm:text-[21px] leading-tight mb-1.5 text-left group-hover:underline">
+                            {news.title}
+                          </h2>
                         </div>
-                        <h2 className="mt-5 font-serif text-[24px] sm:text-[26px] lg:text-[28px] leading-[1.2] text-[#b10017] transition-colors duration-200 group-hover:text-[#8e0a20] group-hover:underline">
-                          {news.title}
-                        </h2>
-                        <p className="mt-4 text-[15px] sm:text-[16px] lg:text-[17px] leading-[1.6] text-[#4f4f4f]">
+                        <p className="font-sans text-[14px] sm:text-sm text-gray-600 leading-normal text-left mt-0.5">
                           {news.snippet}
                         </p>
                       </div>
