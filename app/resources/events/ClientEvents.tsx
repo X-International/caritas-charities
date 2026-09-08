@@ -77,7 +77,6 @@ export default function ClientEvents() {
           <Heading level={2} variant="section" color="red">
             {sectionHeading}
           </Heading>
-          <div className="mx-auto w-16 h-1 bg-[#b10017]" aria-hidden="true" />
           <Text size="lg" color="muted" className="leading-relaxed">
             {sectionDescription}
           </Text>

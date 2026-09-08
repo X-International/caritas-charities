@@ -440,7 +440,7 @@ export default function Navbar() {
                           openMenu(link.name);
                         }
                       }}
-                      className={`relative inline-flex items-center gap-1.5 text-[11.5px] xl:text-[12.5px] 2xl:text-[13px] font-semibold tracking-wide transition-colors uppercase whitespace-nowrap py-2 px-1 rounded-xs ${linkTextColor} focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-4`}
+                      className={`relative inline-flex items-center gap-1.5 text-[11.5px] xl:text-[12.5px] 2xl:text-[13px] font-semibold tracking-wide transition-colors uppercase whitespace-nowrap py-2 px-1 rounded-xs ${active ? "text-[#b10017]" : linkTextColor} focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-4`}
                     >
                       <span>{link.name}</span>
                       <svg
@@ -463,29 +463,17 @@ export default function Navbar() {
                           d="M19 9l-7 7-7-7"
                         />
                       </svg>
-                      {active && (
-                        <span
-                          className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#b10017] rounded-full animate-in fade-in duration-200"
-                          aria-hidden="true"
-                        />
-                      )}
                     </button>
                   ) : (
                     <Link
                       id={linkId}
                       href={link.href!}
                       aria-current={active ? "page" : undefined}
-                      className={`relative inline-flex items-center gap-1.5 text-[11.5px] xl:text-[12.5px] 2xl:text-[13px] font-semibold tracking-wide transition-colors uppercase whitespace-nowrap py-2 px-1 rounded-xs focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-4 ${linkTextColor}`}
+                      className={`relative inline-flex items-center gap-1.5 text-[11.5px] xl:text-[12.5px] 2xl:text-[13px] font-semibold tracking-wide transition-colors uppercase whitespace-nowrap py-2 px-1 rounded-xs focus-visible:outline-2 focus-visible:outline-[#b10017] focus-visible:outline-offset-4 ${active ? "text-[#b10017]" : linkTextColor}`}
                     >
                       <span>{link.name}</span>
 
 
-                      {active && (
-                        <span
-                          className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#b10017] rounded-full animate-in fade-in duration-200"
-                          aria-hidden="true"
-                        />
-                      )}
                     </Link>
                   )}
 
@@ -749,7 +737,7 @@ export default function Navbar() {
                           )
                         }
                         className={`flex items-center justify-between w-full text-base font-bold min-h-16 py-4 px-4 uppercase transition-all focus-visible:outline-2 focus-visible:outline-[#b10017] rounded-xl ${
-                          active ? "bg-[#f8f8f8] text-gray-900" : "text-gray-900 hover:bg-[#f8f8f8] hover:text-[#b10017]"
+                          active ? "text-[#b10017]" : "text-gray-900 hover:bg-[#f8f8f8] hover:text-[#b10017]"
                         }`}
                         aria-expanded={openMobileSubmenu === link.name}
                         aria-controls={`mobile-submenu-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
@@ -876,7 +864,7 @@ export default function Navbar() {
                         aria-current={active ? "page" : undefined}
                         onClick={closeMobileMenu}
                         className={`flex items-center w-full text-base font-bold min-h-16 py-4 px-4 uppercase transition-all focus-visible:outline-2 focus-visible:outline-[#b10017] rounded-xl ${
-                          active ? "bg-[#f8f8f8] text-gray-900" : "text-gray-900 hover:bg-[#f8f8f8] hover:text-[#b10017]"
+                          active ? "text-[#b10017]" : "text-gray-900 hover:bg-[#f8f8f8] hover:text-[#b10017]"
                         }`}
                       >
                         <div className="flex items-center space-x-3">

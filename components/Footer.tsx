@@ -110,7 +110,6 @@ const DesktopColumn = ({ column }: { column: FooterColumnData }) => (
     <h3 className="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-200 font-sans">
       {column.title}
     </h3>
-    <div className="w-10 h-0.5 bg-[#b10017]" />
     <ul className="space-y-3.5 text-xs sm:text-sm font-light text-gray-400">
       {column.links.map((link) => (
         <li key={link.label}>

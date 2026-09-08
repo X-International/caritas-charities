@@ -47,7 +47,7 @@ export default function ContactUsPage() {
                   </p>
                 </div>
 
-                <div className="bg-[#ebe3d7] p-5 sm:p-8 rounded-3xl shadow-sm shadow-gray-200/60 flex items-start gap-4 sm:gap-6">
+                <div className="bg-[#ebe3d7] p-5 sm:p-8 rounded-3xl flex items-start gap-4 sm:gap-6">
                   <div className="w-14 h-14 sm:w-20 sm:h-20 bg-[#b10017] rounded-full flex items-center justify-center shrink-0 mt-0.5">
                     <svg className="w-6 h-6 sm:w-9 sm:h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -88,7 +88,7 @@ export default function ContactUsPage() {
                       <a
                         href="tel:+256762506906"
                         aria-label="Call the Appeal Line"
-                        className="block bg-[#f9f5f0] rounded-2xl p-4 sm:p-4.5 border border-[#dfd4c5]/80 shadow-sm hover:border-[#b10017] hover:bg-white transition-all group"
+                        className="block bg-[#f9f5f0] rounded-2xl p-4 sm:p-4.5 border border-[#dfd4c5]/80 hover:border-[#b10017] hover:bg-white transition-all group"
                       >
                         <span className="block text-sm font-medium text-gray-600 mb-0.5">Appeal Line</span>
                         <span className="font-sans sm:font-mono text-base sm:text-lg font-bold text-gray-900 group-hover:text-[#b10017] transition-colors">+256 762 506 906</span>
@@ -96,7 +96,7 @@ export default function ContactUsPage() {
                       <a
                         href="tel:+256792176443"
                         aria-label="Call the Appeal Line (Alternate)"
-                        className="block bg-[#f9f5f0] rounded-2xl p-4 sm:p-4.5 border border-[#dfd4c5]/80 shadow-sm hover:border-[#b10017] hover:bg-white transition-all group"
+                        className="block bg-[#f9f5f0] rounded-2xl p-4 sm:p-4.5 border border-[#dfd4c5]/80 hover:border-[#b10017] hover:bg-white transition-all group"
                       >
                         <span className="block text-sm font-medium text-gray-600 mb-0.5">Appeal Line (Alternate)</span>
                         <span className="font-sans sm:font-mono text-base sm:text-lg font-bold text-gray-900 group-hover:text-[#b10017] transition-colors">+256 792 176 443</span>
@@ -104,7 +104,7 @@ export default function ContactUsPage() {
                       <a
                         href="tel:+256392176443"
                         aria-label="Call the Main Office"
-                        className="block bg-[#f9f5f0] rounded-2xl p-4 sm:p-4.5 border border-[#dfd4c5]/80 shadow-sm hover:border-[#b10017] hover:bg-white transition-all group"
+                        className="block bg-[#f9f5f0] rounded-2xl p-4 sm:p-4.5 border border-[#dfd4c5]/80 hover:border-[#b10017] hover:bg-white transition-all group"
                       >
                         <span className="block text-sm font-medium text-gray-600 mb-0.5">Main Office</span>
                         <span className="font-sans sm:font-mono text-base sm:text-lg font-bold text-gray-900 group-hover:text-[#b10017] transition-colors">+256 392 176 443</span>
@@ -112,7 +112,7 @@ export default function ContactUsPage() {
                       <a
                         href={`mailto:${siteConfig.office.email}`}
                         aria-label="Email the Charity Office"
-                        className="block bg-[#f9f5f0] rounded-2xl p-4 sm:p-4.5 border border-[#dfd4c5]/80 shadow-sm hover:border-[#b10017] hover:bg-white transition-all group min-w-0"
+                        className="block bg-[#f9f5f0] rounded-2xl p-4 sm:p-4.5 border border-[#dfd4c5]/80 hover:border-[#b10017] hover:bg-white transition-all group min-w-0"
                       >
                         <span className="block text-sm font-medium text-gray-600 mb-0.5">Email</span>
                         <span className="font-sans sm:font-mono text-sm sm:text-base font-bold text-gray-900 group-hover:text-[#b10017] transition-colors break-all overflow-wrap-anywhere">{siteConfig.office.email}</span>
@@ -138,7 +138,7 @@ export default function ContactUsPage() {
       {/* Google Map Roadmap View */}
       <section
         aria-label="Caritas Kampala Office Location Map"
-        className="rounded-3xl mx-4 mt-8 mb-16 sm:mx-6 sm:mt-10 sm:mb-20 lg:mx-8 lg:mt-12 lg:mb-24 overflow-hidden bg-gray-100 shadow-lg shadow-gray-200/80 h-60 sm:h-72 lg:h-80"
+        className="rounded-3xl mx-4 mt-8 mb-16 sm:mx-6 sm:mt-10 sm:mb-20 lg:mx-8 lg:mt-12 lg:mb-24 overflow-hidden bg-gray-100 h-60 sm:h-72 lg:h-80"
       >
         <DeferredLocationMap />
       </section>

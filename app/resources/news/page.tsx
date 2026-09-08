@@ -112,7 +112,6 @@ export default async function NewsPage({
             <Heading level={2} variant="section" color="red">
               Latest News
             </Heading>
-            <div className="mx-auto w-16 h-1 bg-[#b10017]" aria-hidden="true" />
             <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-[700px] mx-auto">
               Updates from our programmes, events, partnerships, and community work.
             </p>

@@ -37,7 +37,6 @@ export default function PartnershipsPage() {
             <Heading level={2} variant="section" color="red">
               Working Together in Service
             </Heading>
-            <div className="w-16 h-1 bg-[#b10017]" aria-hidden="true" />
             <p className="text-gray-700 text-base sm:text-lg lg:text-[18px] leading-relaxed">
               The Charity Office, under Caritas Kampala, works with organisations, institutions, professionals, parish communities, and other partners who share a commitment to serving people facing hardship.
             </p>
