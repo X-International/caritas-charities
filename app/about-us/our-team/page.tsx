@@ -50,6 +50,13 @@ const teamMembers: TeamMember[] = [
     alt: "Portrait of Ms. Juliet Nassuna",
   },
   {
+    name: "Ms. Kobutungi Proscovia",
+    role: "Charity Office Administrator",
+    category: "ADMINISTRATION",
+    image: "/images/Team/Kobutungi_Proscovia_Caritas_Kampala_Charities_Office.jpg",
+    alt: "Portrait of Ms. Kobutungi Proscovia",
+  },
+  {
     name: "Ms. Margaret Kisakye",
     role: "Social Worker",
     category: "SOCIAL CARE TEAM",
@@ -57,18 +64,11 @@ const teamMembers: TeamMember[] = [
     alt: "Portrait of Ms. Margaret Kisakye",
   },
   {
-    name: "Ms. Penina Nawajje",
-    role: "Charity Shop Admin",
-    category: "CHARITY SHOP",
-    image: "/images/Team/Penina_Nawajje_Caritas_Kampala_Charities_Office.jpg",
-    alt: "Portrait of Ms. Penina Nawajje",
-  },
-  {
-    name: "Ms. Kobutungi Proscovia",
-    role: "Charity Office Administrator",
-    category: "ADMINISTRATION",
-    image: "/images/Team/Kobutungi_Proscovia_Caritas_Kampala_Charities_Office.jpg",
-    alt: "Portrait of Ms. Kobutungi Proscovia",
+    name: "Ms. Nansubuga Catherine Kevin",
+    role: "Counselor and Social Worker",
+    category: "SOCIAL CARE TEAM",
+    image: "/images/Team/kevin.png",
+    alt: "Portrait of Ms. Nansubuga Catherine Kevin",
   },
   {
     name: "Ms. Bridget Atuhairwe",
@@ -85,11 +85,11 @@ const teamMembers: TeamMember[] = [
     alt: "Portrait of Ms. Margaux Gilbert",
   },
   {
-    name: "Ms. Nansubuga Catherine Kevin",
-    role: "Counselor and Social Worker",
-    category: "SOCIAL CARE TEAM",
-    image: "/images/Team/kevin.png",
-    alt: "Portrait of Ms. Nansubuga Catherine Kevin",
+    name: "Ms. Penina Nawajje",
+    role: "Charity Shop Admin",
+    category: "CHARITY SHOP",
+    image: "/images/Team/Penina_Nawajje_Caritas_Kampala_Charities_Office.jpg",
+    alt: "Portrait of Ms. Penina Nawajje",
   },
 ];
 
