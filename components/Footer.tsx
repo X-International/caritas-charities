@@ -206,13 +206,13 @@ export default function Footer() {
     >
       <div className="w-full px-2.5 sm:px-4 md:px-5 lg:px-5 xl:px-6 2xl:px-6 mx-auto">
         <div
-          className="text-white rounded-[20px] sm:rounded-[28px] lg:rounded-[32px] overflow-hidden border border-white/10 shadow-md"
+          className="text-white rounded-[14px] sm:rounded-[16px] lg:rounded-[20px] overflow-hidden border border-white/10 shadow-md"
           style={{
             background: "linear-gradient(to bottom, #262626 0px, #262626 240px, #141414 100%)",
           }}
         >
-          {/* Internal Content Container - Aligned with site-container on large desktops */}
-          <div className="max-w-[1240px] xl:max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-10">
+          {/* Internal Content Container - Comfortable spacing on mobile/tablet/desktop with site-container max-width */}
+          <div className="site-container px-6 sm:px-8 lg:px-10 xl:px-12">
             {/* Top Identity / Social Section */}
             {/* Desktop (1024px+) */}
             <div className="hidden lg:flex items-center justify-between gap-8 pb-12 lg:pb-14 pt-12 lg:pt-14">
