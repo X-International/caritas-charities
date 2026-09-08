@@ -26,8 +26,9 @@ export function parseContactSubmission(value: unknown): ContactSubmission | null
   if (!value || typeof value !== "object") return null;
   const body = value as Record<string, unknown>;
 
-  // Honeypot check: if 'website' or 'b_name' is populated, reject submission
+  // Honeypot check: if 'website', 'b_website', or 'b_name' is populated, reject submission
   if (body.website && String(body.website).trim() !== "") return null;
+  if (body.b_website && String(body.b_website).trim() !== "") return null;
   if (body.b_name && String(body.b_name).trim() !== "") return null;
 
   const required = ["name", "email", "subject", "message"] as const;

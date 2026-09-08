@@ -57,7 +57,7 @@ export default function ContactForm() {
 
     const data = Object.fromEntries(formData.entries());
     const controller = new AbortController();
-    const timeout = window.setTimeout(() => controller.abort(), 12_000);
+    const timeout = window.setTimeout(() => controller.abort(), 25_000);
 
     try {
       const response = await fetch("/api/contact", {
@@ -187,7 +187,7 @@ export default function ContactForm() {
       {/* Invisible Honeypot Field for Spam Protection */}
       <input
         type="text"
-        name="website"
+        name="b_website"
         tabIndex={-1}
         autoComplete="off"
         aria-hidden="true"

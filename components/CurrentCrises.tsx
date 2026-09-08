@@ -38,7 +38,7 @@ export default function CurrentCrises() {
           </div>
 
           {/* Inner Crisis Featured Card Container */}
-          <div className="bg-white text-gray-900 p-5 sm:p-8 lg:p-10 xl:p-12 2xl:p-14 rounded-2xl shadow-xl">
+          <div className="bg-white text-gray-900 p-5 sm:p-8 lg:p-10 xl:p-12 2xl:p-14 rounded-2xl">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 xl:gap-10 items-center">
               {/* Left Image - Responsive aspect ratios */}
               <div className="lg:col-span-6 relative w-full aspect-[4/3] sm:aspect-video lg:aspect-[5/4] max-h-[280px] sm:max-h-[320px] lg:max-h-[400px] xl:max-h-[460px] overflow-hidden rounded-xl">
@@ -107,7 +107,7 @@ export default function CurrentCrises() {
         </div>
 
         {/* Inner Concluded Featured Card Container */}
-        <div className="bg-white text-gray-900 p-5 sm:p-8 lg:p-10 xl:p-12 2xl:p-14 rounded-2xl shadow-xl border border-gray-200/80">
+        <div className="bg-white text-gray-900 p-5 sm:p-8 lg:p-10 xl:p-12 2xl:p-14 rounded-2xl border border-gray-200/80">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 xl:gap-10 items-center">
             {/* Left Image */}
             <div className="lg:col-span-6 relative w-full aspect-[4/3] sm:aspect-video lg:aspect-[5/4] max-h-[280px] sm:max-h-[320px] lg:max-h-[400px] xl:max-h-[460px] overflow-hidden rounded-xl">

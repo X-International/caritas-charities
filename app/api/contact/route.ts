@@ -4,7 +4,7 @@ import { parseContactSubmission, escapeHtml } from "@/lib/contact/contract";
 import { logger, requestIdFrom } from "@/lib/observability/logger";
 
 const WINDOW_MS = 10 * 60 * 1000;
-const MAX_REQUESTS = 5;
+const MAX_REQUESTS = 10;
 const MAX_BODY_BYTES = 16_000;
 const requests = new Map<string, { count: number; resetAt: number }>();
 
@@ -15,7 +15,9 @@ function pruneRateLimitEntries(now: number) {
 }
 
 function clientKey(request: NextRequest) {
-  return request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+  const forwarded = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
+  const realIp = request.headers.get("x-real-ip")?.trim();
+  return forwarded || realIp || "unknown_client";
 }
 
 function formatKampalaTimestamp(date: Date = new Date()): string {
@@ -48,12 +50,31 @@ export async function POST(request: NextRequest) {
       },
     });
 
-  // Origin check
+  // Flexible origin check for apex, www, local, and host headers
   const origin = request.headers.get("origin");
-  const siteOrigin = new URL(request.url).origin;
-  if (origin && origin !== siteOrigin) {
-    logger.warn("contact.request.rejected", { requestId, reason: "invalid_origin" });
-    return respond({ error: "Invalid request origin", code: "INVALID_ORIGIN" }, 403);
+  if (origin) {
+    try {
+      const originHost = new URL(origin).host.toLowerCase().replace(/^www\./, "").replace(/:\d+$/, "");
+      const reqHost = (request.headers.get("x-forwarded-host") || request.headers.get("host") || new URL(request.url).host)
+        .toLowerCase()
+        .replace(/^www\./, "")
+        .replace(/:\d+$/, "");
+
+      const allowedHosts = new Set([
+        reqHost,
+        "caritaskampalacharities.org",
+        "localhost",
+        "127.0.0.1",
+      ]);
+
+      if (!allowedHosts.has(originHost)) {
+        logger.warn("contact.request.rejected", { requestId, reason: "invalid_origin", origin, reqHost });
+        return respond({ error: "Invalid request origin", code: "INVALID_ORIGIN" }, 403);
+      }
+    } catch {
+      logger.warn("contact.request.rejected", { requestId, reason: "malformed_origin" });
+      return respond({ error: "Invalid request origin", code: "INVALID_ORIGIN" }, 403);
+    }
   }
 
   // Content-Type check
