@@ -6,9 +6,9 @@ import { buildPageMetadata } from "@/lib/metadata-utils";
 import PageHeader from "@/components/PageHeader";
 
 export const metadata = buildPageMetadata({
-  title: "Our Team | Caritas Kampala’s Charity Office",
+  title: "Our Team | Caritas Kampala Charity Office",
   description:
-    "Meet the people behind the Charity Office, under Caritas Kampala, serving vulnerable people and communities across Kampala Archdiocese.",
+    "Meet the team serving through the Charity Office of Caritas Kampala and supporting communities across the Archdiocese of Kampala.",
   path: "/about-us/our-team",
 });
 
@@ -126,7 +126,6 @@ export default function OurTeamPage() {
 
           <div className="site-container mt-10 sm:mt-12">
             <ul
-              role="list"
               aria-label="Caritas Kampala Team Members"
               className="flex flex-wrap justify-center gap-6 sm:gap-7 lg:gap-8"
             >

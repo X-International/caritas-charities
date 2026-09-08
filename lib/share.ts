@@ -13,91 +13,91 @@ const FALLBACK_DESCRIPTION =
 
 const ROUTE_META: Record<string, { title: string; description: string }> = {
   "/": {
-    title: "Caritas Kampala’s Charity Office | Serving Kampala, Wakiso & Mpigi",
+    title: "Caritas Kampala Charity Office | Serving Kampala, Wakiso & Mpigi",
     description: "The Charity Office of Caritas Kampala supports the poor, vulnerable and marginalized across Kampala Archdiocese. Learn about our work and donate today.",
   },
   "/our-programmes": {
-    title: "Our Programmes | Caritas Kampala’s Charity Office",
-    description: "Explore the programmes run by Caritas Kampala's Charity Office, supporting families, the elderly, refugees and people with disabilities across Kampala, Wakiso and Mpigi.",
+    title: "Our Programmes | Caritas Kampala Charity Office",
+    description: "Explore the programmes run by the Charity Office of Caritas Kampala, supporting families, the elderly, refugees and people with disabilities across Kampala, Wakiso and Mpigi.",
   },
   "/current-appeal": {
-    title: "Current Appeal: Famine in Kotido & Moroto | Caritas Kampala",
+    title: "Current Appeal: Famine in Kotido & Moroto | Caritas Kampala Charity Office",
     description: "Drought has brought famine to Karamoja. Learn how to support our emergency relief drive for families in Kotido and Moroto.",
   },
   "/get-involved": {
-    title: "Get Involved | Caritas Kampala’s Charity Office",
+    title: "Get Involved | Caritas Kampala Charity Office",
     description: "Volunteer or shop our Charity Shop. Discover the ways you can support the Charity Office's work in Kampala, Wakiso and Mpigi.",
   },
   "/get-involved/volunteer": {
-    title: "Volunteer With Us | Caritas Kampala’s Charity Office",
+    title: "Volunteer With Us | Caritas Kampala Charity Office",
     description: "See how you can offer your time and skills to support the Charity Office's work across Kampala Archdiocese.",
   },
   "/get-involved/charity-shop": {
-    title: "Charity Shop | Caritas Kampala’s Charity Office",
+    title: "Charity Shop | Caritas Kampala Charity Office",
     description: "Shop or donate goods to support the work of the Charity Office. Every purchase helps families across the Archdiocese.",
   },
   "/get-involved/partnerships": {
-    title: "Partnerships | Caritas Kampala’s Charity Office",
+    title: "Partnerships | Caritas Kampala Charity Office",
     description: "Partner with us to support vulnerable communities in Kampala Archdiocese through expertise, resources, and collaboration.",
   },
   "/donate": {
-    title: "Donate | Caritas Kampala’s Charity Office",
+    title: "Donate | Caritas Kampala Charity Office",
     description: "Support families across Kampala, Wakiso and Mpigi. Give online, by bank transfer, or Mobile Money to the Charity Office of Caritas Kampala.",
   },
   "/about-us": {
-    title: "About Us | Caritas Kampala’s Charity Office",
+    title: "About Us | Caritas Kampala Charity Office",
     description: "Learn about the mission, vision and values of the Charity Office, part of Caritas Kampala, serving Kampala Archdiocese.",
   },
   "/about-us/our-team": {
-    title: "Our Team | Caritas Kampala’s Charity Office",
+    title: "Our Team | Caritas Kampala Charity Office",
     description: "Meet the leadership and team behind the Charity Office at Caritas Kampala.",
   },
   "/about-us/chaconet-partners": {
-    title: "Chaconet Partners | Caritas Kampala’s Charity Office",
+    title: "Chaconet Partners | Caritas Kampala Charity Office",
     description: "The Charity Office works within Chaconet, a network of nine charity homes across Kampala Archdiocese.",
   },
   "/resources": {
-    title: "Resources | Caritas Kampala’s Charity Office",
+    title: "Resources | Caritas Kampala Charity Office",
     description: "Explore news, photo gallery, publications, and FAQs from the Charity Office of Caritas Kampala.",
   },
   "/resources/news": {
-    title: "News & Updates | Caritas Kampala’s Charity Office",
+    title: "News & Updates | Caritas Kampala Charity Office",
     description: "The latest updates and stories from the work of the Charity Office across Kampala Archdiocese.",
   },
   "/resources/news/kotido-moroto-famine-relief-drive": {
-    title: "Kotido & Moroto Famine Relief Drive Mobilizes Parishes | Caritas Kampala’s Charity Office",
+    title: "Kotido & Moroto Famine Relief Drive Mobilizes Parishes | Caritas Kampala Charity Office",
     description: "Parishes across Kampala Archdiocese are collecting food and relief items for families facing famine in Kotido and Moroto.",
   },
   "/resources/news/charities-office-launches-new-website": {
-    title: "The Charity Office Launches Its New Website | Caritas Kampala’s Charity Office",
+    title: "The Charity Office Launches Its New Website | Caritas Kampala Charity Office",
     description: "A dedicated online home for the Charity Office, bringing together our work, programmes, network, news, and ways to get involved.",
   },
   "/resources/news/breakfast-meeting-world-day-of-poor": {
-    title: "Charity Office Marks World Day of the Poor with Breakfast Meeting | Caritas Kampala’s Charity Office",
+    title: "Charity Office Marks World Day of the Poor with Breakfast Meeting | Caritas Kampala Charity Office",
     description: "The Charity Office, under Caritas Kampala, brought together charity homes, partners, beneficiaries and members of the wider community for its first Breakfast Meeting in commemoration of the World Day of the Poor.",
   },
   "/resources/gallery": {
-    title: "Gallery | Caritas Kampala’s Charity Office",
+    title: "Gallery | Caritas Kampala Charity Office",
     description: "Photos from the Charity Office's programmes, events and community work across Kampala Archdiocese.",
   },
   "/resources/annual-reports": {
-    title: "Annual Reports | Caritas Kampala’s Charity Office",
+    title: "Annual Reports | Caritas Kampala Charity Office",
     description: "Annual impact reviews and financial accountability reports from the Charity Office of Caritas Kampala.",
   },
   "/resources/faqs": {
-    title: "FAQs | Caritas Kampala’s Charity Office",
+    title: "FAQs | Caritas Kampala Charity Office",
     description: "Answers to common questions about donation drop-offs, volunteering, and supporting the Charity Office of Caritas Kampala.",
   },
   "/contact-us": {
-    title: "Contact Us | Caritas Kampala’s Charity Office",
+    title: "Contact Us | Caritas Kampala Charity Office",
     description: "Get in touch with the Charity Office of Caritas Kampala. Find our address, phone number, and location in Nsambya, Kampala.",
   },
   "/privacy-policy": {
-    title: "Privacy Policy | Caritas Kampala’s Charity Office",
+    title: "Privacy Policy | Caritas Kampala Charity Office",
     description: "How the Charity Office collects, uses, and protects your information.",
   },
   "/terms-of-use": {
-    title: "Terms of Use | Caritas Kampala’s Charity Office",
+    title: "Terms of Use | Caritas Kampala Charity Office",
     description: "The terms governing use of this website.",
   },
 };
@@ -117,13 +117,15 @@ function absoluteUrl(value: string): string {
 }
 
 export function getCleanTitle(title: string): string {
-  let cleaned = title
-    .replace(/\s*\|\s*Caritas Kampala’s Charity Office/gi, "")
+  const cleaned = title
+    .replace(/\s*\|\s*Caritas Kampala['’]s Charity Office/gi, "")
+    .replace(/\s*\|\s*Caritas Kampala Charity Office/gi, "")
     .replace(/\s*\|\s*Caritas Kampala/gi, "")
-    .replace(/^Caritas Kampala’s Charity Office\s*\|\s*/gi, "")
+    .replace(/^Caritas Kampala['’]s Charity Office\s*\|\s*/gi, "")
+    .replace(/^Caritas Kampala Charity Office\s*\|\s*/gi, "")
     .trim();
 
-  return cleaned || "Caritas Kampala’s Charity Office";
+  return cleaned || "Caritas Kampala Charity Office";
 }
 
 function resolveCanonicalUrl(pathname: string): string {
@@ -154,7 +156,7 @@ export function getPageSharePayload(): PageSharePayload {
   if (typeof window === "undefined") {
     return {
       url: `${CANONICAL_ORIGIN}/`,
-      title: "Caritas Kampala’s Charity Office",
+      title: "Caritas Kampala Charity Office",
       description: FALLBACK_DESCRIPTION,
       image: null,
     };
@@ -167,7 +169,7 @@ export function getPageSharePayload(): PageSharePayload {
   const docTitle = document.title.trim();
   const rawTitle = metaTitle || (docTitle && docTitle !== "Caritas Kampala" ? docTitle : null);
 
-  const title = rawTitle || routeFallback?.title || "Caritas Kampala’s Charity Office";
+  const title = rawTitle || routeFallback?.title || "Caritas Kampala Charity Office";
 
   const metaDesc =
     metaContent('meta[property="og:description"]') ||
@@ -192,7 +194,7 @@ export function buildWhatsAppShareText(payload: PageSharePayload): string {
 
 export function buildEmailShare(payload: PageSharePayload): { subject: string; body: string } {
   const cleanTitle = getCleanTitle(payload.title);
-  const subject = `Discover: ${cleanTitle} | Caritas Kampala’s Charity Office`;
+  const subject = `Discover: ${cleanTitle} | Caritas Kampala Charity Office`;
   const body = `I thought you might be interested in this page from the Charity Office of Caritas Kampala:\n\n${payload.title}\n${payload.url}`;
   return { subject, body };
 }

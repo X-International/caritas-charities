@@ -20,11 +20,11 @@ export function getAbsoluteUrl(path: string): string {
 const staticSiteItems: SearchIndexItem[] = [
   {
     id: "page-home",
-    title: "Caritas Kampala’s Charity Office",
+    title: "Caritas Kampala Charity Office",
     url: "/",
     category: "Page",
     snippet: "The Charity Office of Caritas Kampala supports the poor, vulnerable and marginalized across Kampala Archdiocese.",
-    content: "Caritas Kampala’s Charity Office home. Serving Kampala, Wakiso & Mpigi. Supporting the poor, vulnerable, elderly, orphans, refugees, persons with disabilities, and families facing hardship across Kampala Archdiocese. Humanitarian appeals, emergency relief, community development.",
+    content: "Caritas Kampala Charity Office home. Serving Kampala, Wakiso & Mpigi. Supporting the poor, vulnerable, elderly, orphans, refugees, persons with disabilities, and families facing hardship across Kampala Archdiocese. Humanitarian appeals, emergency relief, community development.",
     keywords: ["home", "homepage", "caritas kampala", "charity office", "Kampala Archdiocese", "wakiso", "mpigi", "humanitarian", "relief"]
   },
   {
@@ -33,7 +33,7 @@ const staticSiteItems: SearchIndexItem[] = [
     url: "/donate",
     category: "Page",
     snippet: "Support families across Kampala, Wakiso and Mpigi. Give online, by bank transfer, or Mobile Money to the Charity Office.",
-    content: "Donate to Caritas Kampala’s Charity Office. Ways to give: online donation, direct bank transfer, MTN Mobile Money, Airtel Money, physical item drop-offs at Old Ggaba Road Nsambya. Support emergency response, child support, elderly care, and poverty alleviation.",
+    content: "Donate to Caritas Kampala Charity Office. Ways to give: online donation, direct bank transfer, MTN Mobile Money, Airtel Money, physical item drop-offs at Old Ggaba Road Nsambya. Support emergency response, child support, elderly care, and poverty alleviation.",
     keywords: ["donate", "donation", "give", "support", "mobile money", "bank transfer", "nsambya", "contribute", "financial support", "charity"]
   },
   {
@@ -133,7 +133,7 @@ const staticSiteItems: SearchIndexItem[] = [
     url: "/about-us",
     category: "Page",
     snippet: "Learn about the mission, vision and values of the Charity Office, part of Caritas Kampala.",
-    content: "About Caritas Kampala’s Charity Office. Socio-pastoral ministry of the Catholic Church in Kampala Archdiocese. Putting gospel message of love into action without discrimination based on religion, ethnicity, or politics. Dignity, Solidarity and Shared Responsibility: charity is more than responding to immediate need. Recognising the dignity of every person, listening to people's experiences and responding through practical action. Bring people together (communities, charity homes, volunteers, partners and supporters) around a shared responsibility to care for those experiencing hardship.",
+    content: "About Caritas Kampala Charity Office. Socio-pastoral ministry of the Catholic Church in Kampala Archdiocese. Putting gospel message of love into action without discrimination based on religion, ethnicity, or politics. Dignity, Solidarity and Shared Responsibility: charity is more than responding to immediate need. Recognising the dignity of every person, listening to people's experiences and responding through practical action. Bring people together (communities, charity homes, volunteers, partners and supporters) around a shared responsibility to care for those experiencing hardship.",
     keywords: ["about us", "who we are", "caritas kampala", "catholic church", "Kampala Archdiocese", "mission", "values"]
   },
   {
@@ -169,7 +169,7 @@ const staticSiteItems: SearchIndexItem[] = [
     url: "/get-involved/volunteer",
     category: "Page",
     snippet: "Offer your time, skills, and experience to support the work of the Charity Office.",
-    content: "Volunteer with Caritas Kampala’s Charity Office. Volunteer With Purpose: Volunteers can strengthen the work of the Charity Office in practical ways. How You Can Help: Programme & Community Support, Professional Skills, Events & Activities, Office Support. Before You Volunteer: Initial conversation, safeguarding checks, respect dignity and privacy. Interested in Volunteering? Contact the Charity Office.",
+    content: "Volunteer with Caritas Kampala Charity Office. Volunteer With Purpose: Volunteers can strengthen the work of the Charity Office in practical ways. How You Can Help: Programme & Community Support, Professional Skills, Events & Activities, Office Support. Before You Volunteer: Initial conversation, safeguarding checks, respect dignity and privacy. Interested in Volunteering? Contact the Charity Office.",
     keywords: ["volunteer", "volunteering", "volunteer with us", "offer time", "skills", "professional skills", "programme support", "community outreach", "office support"]
   },
   {
@@ -196,7 +196,7 @@ const staticSiteItems: SearchIndexItem[] = [
     url: "/resources/annual-reports",
     category: "Annual Report",
     snippet: "Annual impact reviews and transparent financial accountability reports from the Charity Office.",
-    content: "Annual Impact & Financial Accountability Reports for Caritas Kampala’s Charity Office. Transparent financial auditing, yearly impact reviews, accountability to donors and partners.",
+    content: "Annual Impact & Financial Accountability Reports for Caritas Kampala Charity Office. Transparent financial auditing, yearly impact reviews, accountability to donors and partners.",
     keywords: ["annual reports", "annual report", "financial report", "audit", "accountability", "impact report", "transparency", "publications archive"]
   },
   {

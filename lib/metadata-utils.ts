@@ -11,7 +11,7 @@ export type BuildMetadataOptions = {
   robots?: Metadata["robots"];
 };
 
-export const DEFAULT_OG_IMAGE = "/images/current%20appeal/Caritas_Kampala_Current_Appeal.jpg";
+export const DEFAULT_OG_IMAGE = "/images/og/caritas_kampala_og_fallback.png";
 
 /**
  * Helper to build complete, consistent, robust page metadata for Next.js App Router.
@@ -32,8 +32,8 @@ export function buildPageMetadata({
 
   const ogImageObj = {
     url: image.startsWith("http") ? image : `${siteConfig.domain}${image.startsWith("/") ? image : `/${image}`}`,
-    width: 1280,
-    height: 932,
+    width: 1200,
+    height: 630,
     alt: title,
   };
 
@@ -48,7 +48,7 @@ export function buildPageMetadata({
       type,
       locale: "en_UG",
       url: canonicalUrl,
-      siteName: "Caritas Kampala’s Charity Office",
+      siteName: "Caritas Kampala Charity Office",
       title,
       description,
       images: [ogImageObj],

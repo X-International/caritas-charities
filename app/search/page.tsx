@@ -9,7 +9,7 @@ import { searchSite } from "@/lib/search/search-engine";
 import { SITE_DOMAIN } from "@/lib/search/search-index";
 
 export const metadata = buildPageMetadata({
-  title: "Search Results | Caritas Kampala’s Charity Office",
+  title: "Search Results | Caritas Kampala Charity Office",
   description: "Search results across all programmes, news, resources, and services of the Charity Office of Caritas Kampala.",
   path: "/search",
   robots: { index: false, follow: true },

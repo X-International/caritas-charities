@@ -6,10 +6,10 @@ import { buildPageMetadata } from "@/lib/metadata-utils";
 import PageHeader from "@/components/PageHeader";
 
 export const metadata = buildPageMetadata({
-  title: "Annual Reports | Caritas Kampala’s Charity Office",
-  description: "View reports on our work, progress, and organisational activities.",
+  title: "Annual Reports | Caritas Kampala Charity Office",
+  description: "Annual reports and organisational publications from the Charity Office of Caritas Kampala will be available here as they are published.",
   path: "/resources/annual-reports",
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: true },
 });
 
 export default function AnnualReportsPage() {

@@ -1,12 +1,12 @@
 'use client';
 
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { NewsArticle } from '@/lib/content/news';
 import Card from '@/components/ui/Card';
-import { Heading, Eyebrow } from '@/components/ui/Typography';
+import { Heading } from '@/components/ui/Typography';
 
 export default function RelatedNewsCarousel({ currentArticleSlug, allArticles }: { currentArticleSlug: string, allArticles: NewsArticle[] }) {
     const relatedArticles = useMemo(() => allArticles

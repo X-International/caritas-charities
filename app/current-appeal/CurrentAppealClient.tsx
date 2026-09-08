@@ -10,6 +10,8 @@ import Button from "@/components/ui/Button";
 import { useAppealsState } from "@/lib/useAppealsState";
 import { emergencyAppeals } from "@/lib/content/appeals";
 
+import { getBreadcrumbListSchema } from "@/lib/seo/breadcrumbs";
+
 export default function CurrentAppealClient() {
   const { getAppealStatus } = useAppealsState();
   const karamojaAppeal = emergencyAppeals.find(
@@ -19,8 +21,27 @@ export default function CurrentAppealClient() {
   const status = getAppealStatus(karamojaAppeal);
   const isConcluded = status === "concluded";
 
+  const breadcrumbs = isConcluded
+    ? [
+        { label: "Home", href: "/" },
+        { label: "Emergency Appeals", href: "/appeals" },
+        { label: "Kotido & Moroto" },
+      ]
+    : [
+        { label: "Home", href: "/" },
+        { label: "Current Appeal" },
+      ];
+
+  const breadcrumbSchema = getBreadcrumbListSchema(breadcrumbs);
+
   return (
     <div className="site-container section-sm">
+      {breadcrumbSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+      )}
       {/* Dynamic Breadcrumb */}
       <nav aria-label="Breadcrumb" className="mb-6">
         <ol className="flex items-center space-x-2 text-xs uppercase tracking-wider font-semibold">
@@ -132,6 +153,9 @@ export default function CurrentAppealClient() {
                   </p>
                 </>
               )}
+              <p className="pt-2 text-sm text-gray-600">
+                Read our news coverage on the campaign: <Link href="/resources/news/kotido-moroto-famine-relief-drive" className="text-[#b10017] hover:underline font-semibold">Kotido &amp; Moroto Famine Relief Drive Mobilizes Parishes</Link>.
+              </p>
             </div>
 
             {/* Food Support in Action (consignment video) */}

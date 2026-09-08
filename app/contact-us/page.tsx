@@ -8,9 +8,9 @@ import { siteConfig } from "@/lib/site-config";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
 export const metadata = buildPageMetadata({
-  title: "Contact Us | Caritas Kampala’s Charity Office",
+  title: "Contact Caritas Kampala Charity Office | Nsambya, Kampala",
   description:
-    "Get in touch with the Charity Office of Caritas Kampala. Find our address, phone number, and location in Nsambya, Kampala.",
+    "Contact the Charity Office of Caritas Kampala in Nsambya, Kampala. Find our address, telephone numbers, email and directions to our office.",
   path: "/contact-us",
 });
 
@@ -42,8 +42,8 @@ export default function ContactUsPage() {
               <div className="lg:col-span-6 space-y-6">
                 <div>
                   <Heading level={2} variant="subsection" color="red">Visit &amp; Call Us</Heading>
-                  <p className="text-sm text-gray-600 mt-2">
-                    Find our office, call the team, or use the contact form to send us a message.
+                  <p className="text-sm sm:text-base text-gray-600 mt-2 leading-relaxed">
+                    Our office is located on Old Ggaba Road in Nsambya, Kampala, next to the American Embassy. The Charity Office serves communities across Kampala, Wakiso and Mpigi.
                   </p>
                 </div>
 

@@ -1,4 +1,4 @@
-import { getSearchIndex, SearchIndexItem } from "./search-index";
+import { getSearchIndex } from "./search-index";
 
 export interface SearchResult {
   id: string;

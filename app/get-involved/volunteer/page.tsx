@@ -7,9 +7,9 @@ import Link from "next/link";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
 export const metadata = buildPageMetadata({
-  title: "Volunteer With Us | Caritas Kampala’s Charity Office",
+  title: "Volunteer With Caritas Kampala Charity Office | Uganda",
   description:
-    "Offer your time, skills, and experience to support the work of the Charity Office.",
+    "Volunteer your time, skills or experience with the Charity Office of Caritas Kampala and support practical work across the Archdiocese of Kampala.",
   path: "/get-involved/volunteer",
 });
 

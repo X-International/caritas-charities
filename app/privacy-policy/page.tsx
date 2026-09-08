@@ -6,7 +6,7 @@ import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
 export const metadata = buildPageMetadata({
-  title: "Privacy Policy | Caritas Kampala’s Charity Office",
+  title: "Privacy Policy | Caritas Kampala Charity Office",
   description:
     "How we collect, use, protect, and manage information provided through this website.",
   path: "/privacy-policy",

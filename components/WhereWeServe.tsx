@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Heading } from "@/components/ui/Typography";
 import Button from "@/components/ui/Button";
@@ -226,7 +225,7 @@ export default function WhereWeServe() {
             Our Core Pillars of Support
           </Heading>
           <p className="text-base sm:text-lg text-gray-700 max-w-3xl leading-relaxed">
-            Our programmes respond to urgent needs while helping individuals, families, and communities build greater stability, dignity, and resilience.
+            The Charity Office of Caritas Kampala serves individuals, families and communities across the Archdiocese of Kampala, including Kampala, Wakiso and Mpigi. Our programmes respond to practical needs through relief, social support, referrals and longer-term assistance.
           </p>
         </div>
 

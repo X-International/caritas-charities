@@ -6,7 +6,7 @@ import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
 export const metadata = buildPageMetadata({
-  title: "Terms of Use | Caritas Kampala’s Charity Office",
+  title: "Terms of Use | Caritas Kampala Charity Office",
   description: "Please read these terms carefully before using the Charity Office website.",
   path: "/terms-of-use",
 });

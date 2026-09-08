@@ -9,9 +9,9 @@ import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 
 export const metadata = buildPageMetadata({
-  title: "Chaconet Network | Caritas Kampala’s Charity Office",
+  title: "Chaconet Network | Catholic Charity Homes in Kampala",
   description:
-    "A network of Catholic charity homes and institutions working together across Kampala Archdiocese.",
+    "Learn about Chaconet, the Catholic Charity Homes Network bringing together charity homes and institutions across the Archdiocese of Kampala.",
   path: "/about-us/chaconet-partners",
 });
 
@@ -163,7 +163,7 @@ export default function ChaconetPartnersPage() {
                   Through the network, participating homes can collaborate on common needs, learn from one another, strengthen standards of care and safeguarding, and build stronger relationships with the Charity Office and other partners.
                 </p>
                 <p>
-                  The network includes organisations serving children, older people, people with disabilities, families in difficulty, and others who need residential, pastoral, social, or practical support.
+                  The network includes organisations serving children, older people, people with disabilities, families in difficulty, and others who need residential, pastoral, social, or practical support. Learn more about our wider <a href="/our-programmes" className="text-[#b10017] hover:underline font-semibold">charity programmes</a> across the Archdiocese.
                 </p>
               </div>
             </div>

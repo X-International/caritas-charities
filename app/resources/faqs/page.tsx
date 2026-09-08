@@ -9,7 +9,7 @@ import { faqs, getAnswerText } from "@/lib/faq-data";
 import { Card } from "@/components/ui/Card";
 
 export const metadata = buildPageMetadata({
-  title: "FAQs | Caritas Kampala’s Charity Office",
+  title: "FAQs | Caritas Kampala Charity Office",
   description:
     "Find answers to common questions about the Charity Office, including donations, volunteering, services, partnerships, transparency, and how to get involved.",
   path: "/resources/faqs",

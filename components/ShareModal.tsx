@@ -124,7 +124,7 @@ export default function ShareModal({ onClose }: ShareModalProps) {
   const closeRef = useRef<HTMLButtonElement | null>(null);
   const copyRef = useRef<HTMLButtonElement | null>(null);
   const nativeRef = useRef<HTMLButtonElement | null>(null);
-  const [payload, setPayload] = useState<PageSharePayload | null>(() =>
+  const [payload] = useState<PageSharePayload | null>(() =>
     typeof window !== "undefined" ? getPageSharePayload() : null
   );
   const [nativeAvailable] = useState<boolean>(() =>
@@ -134,7 +134,6 @@ export default function ShareModal({ onClose }: ShareModalProps) {
   const [copyError, setCopyError] = useState(false);
 
   useEffect(() => {
-    setPayload(getPageSharePayload());
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
@@ -210,14 +209,16 @@ export default function ShareModal({ onClose }: ShareModalProps) {
   const statusMessage = copied ? "Link copied" : copyError ? "Could not copy the link" : "";
 
   return (
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
     <div
       className="fixed inset-0 z-100 flex items-center justify-center bg-black/70 backdrop-blur-xs p-4"
-      role="presentation"
       onClick={onClose}
     >
+      {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
       <div
         ref={dialogRef}
         onClick={(e) => e.stopPropagation()}
+        onKeyDown={(e) => { if (e.key === "Escape") onClose(); }}
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}

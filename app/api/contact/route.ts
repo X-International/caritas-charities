@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { parseContactSubmission, escapeHtml } from "@/lib/contact/contract";
 import { logger, requestIdFrom } from "@/lib/observability/logger";
-import { siteConfig } from "@/lib/site-config";
 
 const WINDOW_MS = 10 * 60 * 1000;
 const MAX_REQUESTS = 5;

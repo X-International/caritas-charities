@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState, useEffect } from "react";
+import { useState, FormEvent } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
@@ -18,12 +18,12 @@ export default function ContactForm() {
   const searchParams = useSearchParams();
   const urlSubject = searchParams.get("subject");
   const [subject, setSubject] = useState(urlSubject || "");
+  const [prevUrlSubject, setPrevUrlSubject] = useState(urlSubject);
 
-  useEffect(() => {
-    if (urlSubject) {
-      setSubject(urlSubject);
-    }
-  }, [urlSubject]);
+  if (urlSubject !== prevUrlSubject) {
+    setPrevUrlSubject(urlSubject);
+    setSubject(urlSubject || "");
+  }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();

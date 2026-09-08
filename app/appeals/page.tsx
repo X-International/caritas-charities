@@ -7,7 +7,7 @@ import { buildPageMetadata } from "@/lib/metadata-utils";
 export const metadata = buildPageMetadata({
   title: "Emergency Appeals | Caritas Kampala Charity Office",
   description:
-    "View current and past emergency appeals from the Charity Office, including documented responses supporting communities facing crisis.",
+    "View current and past emergency appeals coordinated by the Charity Office of Caritas Kampala, including relief responses and documented updates.",
   path: "/appeals",
 });
 

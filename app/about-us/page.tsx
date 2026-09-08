@@ -7,9 +7,9 @@ import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
 export const metadata = buildPageMetadata({
-  title: "About Us | Caritas Kampala’s Charity Office",
+  title: "About Caritas Kampala Charity Office | Mission & Work",
   description:
-    "Learn about the Charity Office, its mission, values, and place under Caritas Kampala.",
+    "Learn about the mission, values and work of the Charity Office of Caritas Kampala, serving vulnerable people across Kampala, Wakiso and Mpigi.",
   path: "/about-us",
 });
 
@@ -26,7 +26,7 @@ export default function AboutUsPage() {
             { label: "Home", href: "/" },
             { label: "About Us" }
           ]}
-          description="Learn about the Charity Office, its mission, values, and place under Caritas Kampala."
+          description="Learn about the Charity Office of Caritas Kampala, its mission, values, and work."
         />
 
         {/* Centered Reading Column */}
@@ -39,7 +39,7 @@ export default function AboutUsPage() {
               </Heading>
               <div className="space-y-4 text-gray-700 leading-[1.75] text-base sm:text-[17px]">
                 <p>
-                  The Charity Office operates under Caritas Kampala and serves people and communities facing poverty, vulnerability, displacement, disability, illness, and other forms of hardship across Kampala Archdiocese.
+                  The Charity Office operates under Caritas Kampala and serves communities across Kampala, Wakiso and Mpigi within the Archdiocese of Kampala.
                 </p>
                 <p>
                   Our work combines practical support with compassionate accompaniment. We respond to immediate needs while also helping individuals, families, and communities strengthen their ability to cope, recover, and move forward with dignity.
@@ -59,6 +59,9 @@ export default function AboutUsPage() {
                 <p>
                   The Charity Office works with communities, parishes, charity homes, institutions, volunteers, and partners to provide assistance where it is most needed.
                 </p>
+                <p className="pt-1">
+                  Learn more about <Link href="/about-us/our-team" className="text-[#b10017] hover:underline font-semibold">our team</Link> serving across the Archdiocese.
+                </p>
               </div>
             </section>
 
@@ -72,10 +75,10 @@ export default function AboutUsPage() {
                   Our work is guided by the call to recognise the dignity of every person and to respond to hardship with compassion, solidarity, and practical action.
                 </p>
                 <p>
-                  This includes support for families and children, older persons, refugees and asylum seekers, people with disabilities, communities affected by emergencies, and individuals working to rebuild stable livelihoods.
+                  This includes support for families and children, older persons, refugees and asylum seekers, people with disabilities, communities affected by emergencies, and individuals working to rebuild stable livelihoods through our <Link href="/our-programmes" className="text-[#b10017] hover:underline font-semibold">charity programmes</Link>.
                 </p>
                 <p>
-                  We also work through the Chaconet network and other partnerships to strengthen coordination, extend practical support, and respond more effectively to the needs of vulnerable communities.
+                  We also work through the <Link href="/about-us/chaconet-partners" className="text-[#b10017] hover:underline font-semibold">Chaconet network</Link> and other <Link href="/get-involved/partnerships" className="text-[#b10017] hover:underline font-semibold">partnerships</Link> to strengthen coordination, extend practical support, and respond more effectively to the needs of vulnerable communities.
                 </p>
               </div>
             </section>
@@ -105,7 +108,7 @@ export default function AboutUsPage() {
                   The Charity Office is part of Caritas Kampala and does not operate as a separate organisation. Its work forms part of the wider social and pastoral mission of Kampala Archdiocese.
                 </p>
                 <p>
-                  Through Caritas Kampala, the Charity Office is also connected to the wider Caritas family, including Caritas Uganda and Caritas Internationalis.
+                  Through Caritas Kampala, the Charity Office is also connected to the wider Caritas family, including Caritas Uganda and Caritas Internationalis. Learn more on the main <a href="https://www.caritaskampala.org/" target="_blank" rel="noopener noreferrer" className="text-[#b10017] hover:underline font-semibold">Caritas Kampala</a> website.
                 </p>
               </div>
             </section>

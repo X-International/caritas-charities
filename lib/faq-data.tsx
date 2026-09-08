@@ -16,11 +16,11 @@ export const faqs: FAQItem[] = [
     a: "The Charity Office operates under Caritas Kampala and coordinates practical charitable support for vulnerable individuals, families, and communities across Kampala Archdiocese.",
   },
   {
-    q: "Who can benefit from Caritas Kampala’s Charity Office services?",
+    q: "Who can benefit from Caritas Kampala Charity Office services?",
     a: "Our services are open to all vulnerable and marginalized groups, including orphans, the elderly, persons with disabilities, refugees, and communities affected by disasters, regardless of faith, sex, gender, nationality or tribe.",
   },
   {
-    q: "What types of aid does Caritas Kampala’s Charity Office provide?",
+    q: "What types of aid does Caritas Kampala Charity Office provide?",
     a: "We provide food assistance, healthcare support, education programs, shelter for the homeless, disaster relief, and empowerment initiatives for marginalized groups.",
   },
   {
@@ -40,11 +40,11 @@ export const faqs: FAQItem[] = [
     ),
   },
   {
-    q: "How can I volunteer with Caritas Kampala’s Charity Office?",
+    q: "How can I volunteer with Caritas Kampala Charity Office?",
     a: "To volunteer, please fill out the volunteer registration form available on our website or contact our office directly. We welcome volunteers for various programs and activities.",
   },
   {
-    q: "How can I get involved in Caritas Kampala’s Charity Office projects?",
+    q: "How can I get involved in Caritas Kampala Charity Office projects?",
     a: "You can volunteer, donate, or partner with us on specific projects. Visit our website or contact us for more information on ongoing initiatives.",
   },
   {
@@ -56,7 +56,7 @@ export const faqs: FAQItem[] = [
     ),
   },
   {
-    q: "Does Caritas Kampala’s Charity Office work with other organizations?",
+    q: "Does Caritas Kampala Charity Office work with other organizations?",
     a: "Yes, we collaborate with government agencies, NGOs, faith-based organizations, and community groups to maximize impact and reach more vulnerable populations.",
   },
   {
@@ -68,11 +68,11 @@ export const faqs: FAQItem[] = [
     ),
   },
   {
-    q: "How does Caritas Kampala’s Charity Office ensure transparency and accountability?",
+    q: "How does Caritas Kampala Charity Office ensure transparency and accountability?",
     a: "We operate under strict governance policies, conduct regular audits, and publish annual reports. Transparency is a core value, and we are committed to responsible management of resources.",
   },
   {
-    q: "Can I organize a fundraising event on behalf of Caritas Kampala’s Charity Office?",
+    q: "Can I organize a fundraising event on behalf of Caritas Kampala Charity Office?",
     a: "Yes, we welcome partnership and support for fundraising initiatives. Please contact our office to discuss your event and obtain necessary approvals.",
   },
   {

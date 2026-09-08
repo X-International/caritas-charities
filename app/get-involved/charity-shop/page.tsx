@@ -7,9 +7,9 @@ import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
 export const metadata = buildPageMetadata({
-  title: "Charity Shop | Caritas Kampala’s Charity Office",
+  title: "Charity Shop in Nsambya | Caritas Kampala Charity Office",
   description:
-    "Visit our second-hand Charity Shop in Nsambya or donate suitable items to support the work of the Charity Office.",
+    "Visit the Caritas Kampala Charity Shop in Nsambya or donate clean, usable items to help support the practical work of the Charity Office.",
   path: "/get-involved/charity-shop",
 });
 

@@ -5,9 +5,9 @@ import OtherWaysToSupport from "@/components/OtherWaysToSupport";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
 export const metadata = buildPageMetadata({
-  title: "Donate | Caritas Kampala’s Charity Office",
+  title: "Donate to Caritas Kampala Charity Office | Uganda",
   description:
-    "Support families across Kampala, Wakiso and Mpigi. Give online, by bank transfer, or Mobile Money to the Charity Office of Caritas Kampala.",
+    "Support the Charity Office of Caritas Kampala with a one-time or recurring gift for practical programmes serving communities in Kampala, Wakiso and Mpigi.",
   path: "/donate",
 });
 

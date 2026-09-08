@@ -7,8 +7,7 @@
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
-    "test:e2e": "playwright test",
-    "postbuild": "next-sitemap"
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
@@ -33,7 +32,6 @@
     "eslint": "^9",
     "eslint-config-next": "^16.3.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "next-sitemap": "^4.2.3",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

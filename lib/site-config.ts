@@ -13,7 +13,7 @@ export const siteConfig = {
       appealAlternate: "+256 792 176 443",
       main: "+256 392 176 443",
     },
-    email: "charityofficecaritaskampala@gmail.com",
+    email: "info@caritaskampalacharities.org",
     coordinates: { latitude: 0.299230886593831 as number, longitude: 32.593433862503 as number },
   },
   giving: {

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Heading, Eyebrow, Lead } from "@/components/ui/Typography";
+import { getBreadcrumbListSchema } from "@/lib/seo/breadcrumbs";
 
 interface BreadcrumbItem {
   label: string;
@@ -42,8 +43,16 @@ export default function SplitPageHeader({
     "--image-pos-desktop": desktopPos,
   } as React.CSSProperties;
 
+  const breadcrumbSchema = getBreadcrumbListSchema(breadcrumbs);
+
   return (
     <section aria-label={`${title} Header`} className="w-full">
+      {breadcrumbSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+      )}
       {/* Breadcrumbs — remain inside normal site-container with keyboard focus styles */}
       {breadcrumbs && breadcrumbs.length > 0 && (
         <div className="site-container pt-4 sm:pt-6 lg:pt-8 pb-3 sm:pb-4">
@@ -150,9 +159,9 @@ export default function SplitPageHeader({
                 <Eyebrow color="white">
                   {eyebrow}
                 </Eyebrow>
-                <Heading level={1} variant="hero" color="white" className="text-[46px] xl:text-[54px] leading-[1.12]">
+                <div className="font-serif font-extrabold text-[46px] xl:text-[54px] leading-[1.12] text-white tracking-tight">
                   {title}
-                </Heading>
+                </div>
                 {description && (
                   <Lead variant="article" className="text-white/95 text-xl leading-relaxed font-normal">
                     {description}

@@ -1,15 +1,14 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SplitPageHeader from "@/components/SplitPageHeader";
-import { Heading, Text } from "@/components/ui/Typography";
+import { Heading } from "@/components/ui/Typography";
 import Button from "@/components/ui/Button";
-import Link from "next/link";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 
 export const metadata = buildPageMetadata({
-  title: "Partnerships | Caritas Kampala’s Charity Office",
+  title: "Partner With Caritas Kampala Charity Office",
   description:
-    "Work with the Charity Office to support practical, coordinated responses to the needs of vulnerable communities across Kampala Archdiocese.",
+    "Explore partnership opportunities with the Charity Office of Caritas Kampala supporting coordinated programmes across Kampala, Wakiso and Mpigi.",
   path: "/get-involved/partnerships",
 });
 

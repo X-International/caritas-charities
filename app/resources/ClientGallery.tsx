@@ -16,7 +16,6 @@ import {
   GALLERY_CATEGORIES,
   type GalleryImage,
 } from "./gallery/gallery-config";
-import { Card } from "@/components/ui/Card";
 
 type Props = { images: GalleryImage[] };
 
@@ -60,23 +59,15 @@ function ClientGalleryInner({ images }: Props) {
   const router = useRouter();
   const pathname = usePathname();
 
-  const categoryFromUrl = searchParams.get("category") || ALL_CATEGORY_ID;
-  const pageFromUrl = parseInt(searchParams.get("page") || "1", 10);
+  const categoryFilter = searchParams.get("category") || ALL_CATEGORY_ID;
+  const rawPage = parseInt(searchParams.get("page") || "1", 10);
+  const page = isNaN(rawPage) || rawPage < 1 ? 1 : rawPage;
 
-  const [categoryFilter, setCategoryFilter] = useState(categoryFromUrl);
-  const [page, setPage] = useState(pageFromUrl);
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
   const lastFocusRef = useRef<HTMLElement | null>(null);
   const filterScrollRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const cat = searchParams.get("category") || ALL_CATEGORY_ID;
-    const p = parseInt(searchParams.get("page") || "1", 10);
-    setCategoryFilter(cat);
-    setPage(isNaN(p) || p < 1 ? 1 : p);
-  }, [searchParams]);
 
   const updateUrl = useCallback(
     (newCat: string, newPage: number) => {
@@ -141,14 +132,11 @@ function ClientGalleryInner({ images }: Props) {
   }, []);
 
   const handleCategoryChange = (categoryId: string) => {
-    setCategoryFilter(categoryId);
-    setPage(1);
     updateUrl(categoryId, 1);
     filterScrollRef.current?.scrollTo({ left: 0, behavior: "smooth" });
   };
 
   const handlePageChange = (newPage: number) => {
-    setPage(newPage);
     updateUrl(categoryFilter, newPage);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };

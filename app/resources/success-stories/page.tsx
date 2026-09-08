@@ -4,17 +4,39 @@ import SplitPageHeader from "@/components/SplitPageHeader";
 import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 import AppealVideo from "@/components/AppealVideo";
+import { getVideoObjectSchema } from "@/lib/seo/schemas";
 
 export const metadata = buildPageMetadata({
-  title: "Success Stories | Caritas Kampala’s Charity Office",
+  title: "Success Stories | Caritas Kampala Charity Office",
   description:
-    "Read real stories that show how practical support has affected the lives of people and communities we work alongside.",
+    "Read real stories and watch video impact accounts that show how practical support from the Charity Office affects community lives.",
   path: "/resources/success-stories",
 });
 
 export default function SuccessStoriesPage() {
+  const videoSchemas = [
+    getVideoObjectSchema({
+      videoId: "jivgMtRzjJU",
+      name: "From Senior Six to Makerere University | Caritas Kampala Success Story",
+      description:
+        "When school fees became difficult to afford during her daughter's final year of secondary school, a mother living in Kabowa came to Caritas Kampala Charity Office for support.",
+      uploadDate: "2026-09-07",
+    }),
+    getVideoObjectSchema({
+      videoId: "S-vIJGVgk9A",
+      name: "Supporting a P7 Student Towards His Final Exams | Caritas Kampala Success Story",
+      description:
+        "Perepetwa Nakaliisa and her son, Sebalanzi Mark, came to the Charity Office of Caritas Kampala seeking help with school fees.",
+      uploadDate: "2026-09-07",
+    }),
+  ];
+
   return (
     <div className="min-h-screen flex flex-col bg-white text-gray-900 font-sans">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchemas) }}
+      />
       <Navbar />
 
       <main id="main-content" className="flex-1">

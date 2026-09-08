@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Card from "@/components/ui/Card";
@@ -8,9 +9,9 @@ import PageHeader from "@/components/PageHeader";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
 
 export const metadata = buildPageMetadata({
-  title: "Our Programmes | Caritas Kampala’s Charity Office",
+  title: "Charity Programmes in Kampala | Caritas Kampala Charity Office",
   description:
-    "Explore the practical programmes supporting vulnerable people and communities across Kampala Archdiocese.",
+    "Explore Caritas Kampala Charity Office programmes supporting families, older persons, refugees, people with disabilities and communities across Kampala, Wakiso and Mpigi.",
   path: "/our-programmes",
 });
 
@@ -86,7 +87,7 @@ const programmes: Programme[] = [
     title: "Poverty Alleviation & Livelihoods",
     category: "ECONOMIC EMPOWERMENT",
     description: [
-      "Caritas Kampala’s Charity Office plays a vital role in collaborating with individuals and families to develop and implement sustainable livelihood strategies. Through comprehensive support such as skills training, microfinance initiatives, income-generating activities, and community empowerment programs, we aim to uplift vulnerable populations, foster economic independence, and create lasting positive change. Our dedicated efforts are focused on breaking the cycle of poverty and promoting social and economic resilience within communities.",
+      "Caritas Kampala Charity Office plays a vital role in collaborating with individuals and families to develop and implement sustainable livelihood strategies. Through comprehensive support such as skills training, microfinance initiatives, income-generating activities, and community empowerment programs, we aim to uplift vulnerable populations, foster economic independence, and create lasting positive change. Our dedicated efforts are focused on breaking the cycle of poverty and promoting social and economic resilience within communities.",
     ],
     serves: "INDIVIDUALS & FAMILIES FACING POVERTY",
     locations: ["KAMPALA", "WAKISO", "MPIGI"],
@@ -181,7 +182,7 @@ export default function OurProgrammesPage() {
                 Practical Support. Longer-Term Resilience.
               </Heading>
               <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed">
-                Our programmes respond to immediate needs while helping individuals, families, and communities build greater stability, dignity, and resilience across Kampala, Wakiso, and Mpigi.
+                Our programmes serve people and communities across Kampala, Wakiso and Mpigi within the Archdiocese of Kampala. We respond to immediate needs while helping individuals, families, and communities build greater stability, dignity, and resilience.
               </p>
             </div>
 
@@ -190,6 +191,26 @@ export default function OurProgrammesPage() {
                 <ProgrammeCard key={prog.id} programme={prog} />
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="py-8 bg-white border-t border-gray-100">
+          <div className="site-container text-center max-w-2xl mx-auto space-y-2">
+            <p className="text-sm sm:text-base text-gray-700 font-medium">
+              Want to see these programmes in action? Read real accounts in our{" "}
+              <Link href="/resources/success-stories" className="text-[#b10017] hover:underline font-semibold">
+                Success Stories
+              </Link>
+              , or learn how to{" "}
+              <Link href="/get-involved/volunteer" className="text-[#b10017] hover:underline font-semibold">
+                volunteer
+              </Link>{" "}
+              and explore{" "}
+              <Link href="/get-involved/partnerships" className="text-[#b10017] hover:underline font-semibold">
+                partnerships
+              </Link>
+              .
+            </p>
           </div>
         </section>
 

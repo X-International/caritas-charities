@@ -12,7 +12,7 @@ import { ArrowRight, Search as SearchIcon } from "lucide-react";
 import DonateOnlineCard from "@/components/DonateOnlineCard";
 
 export const metadata = buildPageMetadata({
-  title: "News & Updates | Caritas Kampala’s Charity Office",
+  title: "News & Updates | Caritas Kampala Charity Office",
   description:
     "The latest updates and stories from the work of the Charity Office across Kampala Archdiocese.",
   path: "/resources/news",

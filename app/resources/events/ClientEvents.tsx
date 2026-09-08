@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Calendar, Clock, MapPin } from "lucide-react";
 import { Heading, Text } from "@/components/ui/Typography";
-import { initialEvents, EventItem } from "./events-data";
+import { initialEvents } from "./events-data";
 
 const getKampalaDateString = (date: Date = new Date()): string => {
   const formatter = new Intl.DateTimeFormat("en-CA", {
@@ -134,7 +134,7 @@ export default function ClientEvents() {
                         <div className="bg-[#b10017]/5 border-l-4 border-[#b10017] px-3.5 py-2.5 rounded-r-md my-2">
                           <p className="text-xs sm:text-sm font-medium text-gray-800">
                             <span className="font-semibold text-[#b10017]">Theme: </span>
-                            <span className="italic">"{event.theme}"</span>
+                            <span className="italic">&ldquo;{event.theme}&rdquo;</span>
                           </p>
                         </div>
                       )}

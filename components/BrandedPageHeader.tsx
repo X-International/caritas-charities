@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Heading } from "@/components/ui/Typography";
+import { getBreadcrumbListSchema } from "@/lib/seo/breadcrumbs";
 
 interface BreadcrumbItem {
   label: string;
@@ -14,8 +15,16 @@ interface BrandedPageHeaderProps {
 }
 
 export default function BrandedPageHeader({ title, breadcrumbs, description }: BrandedPageHeaderProps) {
+  const breadcrumbSchema = getBreadcrumbListSchema(breadcrumbs);
+
   return (
     <section className="relative w-full bg-[#8c1d2c] sm:bg-gray-900 min-h-[250px] sm:min-h-[280px] lg:min-h-[330px] flex items-center py-12 sm:py-16 lg:py-20 overflow-hidden">
+      {breadcrumbSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+      )}
       <Image
         src="/images/Headers/header_Caritas_Kampala_optimized.png"
         alt=""
