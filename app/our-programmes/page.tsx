@@ -22,6 +22,9 @@ interface Programme {
   image: string;
   imageAlt: string;
   linkHref?: string;
+  objectPositionDesktop?: string;
+  objectPositionTablet?: string;
+  objectPositionMobile?: string;
 }
 
 /* ── Reordered Programmes Array (Humanitarian Relief → Family → Elderly → Refugees → Disability → Livelihoods → Charity Shop) ── */
@@ -34,26 +37,29 @@ const programmes: Programme[] = [
       "This activity involves proactive measures such as early warning systems, risk assessment, and community preparedness initiatives to reduce vulnerability and enhance resilience before disasters occur.",
       "This approach combines immediate relief with practical preparedness, helping communities respond more effectively when emergencies occur."
     ],
-    image: "/images/Miscellany/Caritas_Kampala_42.jpg",
+    image: "/images/programmes/emmergency.png",
     imageAlt: "Caritas emergency food and relief distribution in Kampala",
+    objectPositionDesktop: "left center",
+    objectPositionTablet: "center center",
+    objectPositionMobile: "center center",
   },
   {
     id: "family-child-support",
     title: "Family & Child Support",
     description: [
-      "We are dedicated to supporting families and children facing hardship by providing essential assistance to help stabilize households in need. Our programs focus on addressing immediate needs such as food, education, shelter, medical and psychosocial support, while also promoting long-term resilience and self-sufficiency.",
-      "As part of our commitment to safeguarding vulnerable children, we hold a Child Safeguarding role under Caritas Kampala. In this capacity, we implement strict safeguarding policies and conduct regular training to ensure the safety and well-being of all children involved in our programs. Activities include child protection awareness campaigns, establishing safe reporting mechanisms, conducting thorough background checks on staff and volunteers, and offering psychosocial support to children who have experienced abuse or neglect. Our goal is to create a secure environment where children can thrive, free from harm and exploitation."
+      "We are dedicated to supporting families and children facing hardship by providing essential assistance to help stabilise households in need. Our programmes focus on addressing immediate needs such as food, education, shelter, medical and psychosocial support, while also promoting long-term resilience and self-sufficiency.",
+      "As part of our commitment to safeguarding vulnerable children, we hold a Child Safeguarding role under Caritas Kampala. In this capacity, we implement strict safeguarding policies and conduct regular training to ensure the safety and well-being of all children involved in our programmes. Activities include child protection awareness campaigns, establishing safe reporting mechanisms, conducting thorough background checks on staff and volunteers, and offering psychosocial support to children who have experienced abuse or neglect. Our goal is to create a secure environment where children can thrive, free from harm and exploitation."
     ],
-    image: "/images/Miscellany/Caritas_Kampala_22.jpg",
+    image: "/images/programmes/children.png",
     imageAlt: "Support and empowerment for families and children",
   },
   {
     id: "support-for-the-elderly",
     title: "Support for the Elderly",
     description: [
-      "Charity Caritas Kampala Office is dedicated to offering continuous and meaningful support to the elderly members of the community within the Archdiocese. Their practical activities include visiting elderly homes to provide companionship and emotional support, distributing essential items such as food, clothing, and hygiene supplies to ensure they meet their basic needs, and organizing health and wellness programs, including medical check-ups and health education.",
-      "Additionally, the organization facilitates social gatherings and recreational activities to promote social inclusion and mental well-being. Through these ongoing efforts, Caritas Kampala aims to uphold the dignity and improve the quality of life for the elderly, ensuring they feel cared for and valued in their later years.",
-      "The focus throughout is on dignity, wellbeing and helping older persons remain connected to the people and communities around them."
+      "The Charity Office is dedicated to offering continuous and meaningful support to the elderly members of the community within the Archdiocese. Its practical activities include visiting elderly homes to provide companionship and emotional support, distributing essential items such as food, clothing, and hygiene supplies to ensure they meet their basic needs, and organising health and wellness programmes, including medical check-ups and health education.",
+      "Additionally, the office facilitates social gatherings and recreational activities to promote social inclusion and mental well-being. Through these ongoing efforts, the Charity Office aims to uphold the dignity and improve the quality of life for the elderly, ensuring they feel cared for and valued in their later years.",
+      "The focus throughout is on dignity, well-being and helping older persons remain connected to the people and communities around them."
     ],
     image: "/images/Event 02/Caritas_Kampala_89.jpg",
     imageAlt: "Care and companionship for elderly residents at Nalukolongo home",
@@ -62,8 +68,8 @@ const programmes: Programme[] = [
     id: "refugee-asylum-seeker-support",
     title: "Refugee & Asylum Seeker Support",
     description: [
-      "Provides comprehensive practical assistance to both urban refugees and asylum seekers. This includes support to access to safe housing and shelter, nutritious food, medical support, vocational training and skills development, as well as protection services such as legal aid and advocacy.",
-      "These efforts aim to address their immediate needs while promoting their dignity, safety, and long-term resilience within both host and urban refugee communities.",
+      "Provides comprehensive practical assistance to both urban refugees and asylum seekers. This includes support to access safe housing and shelter, nutritious food, medical support, vocational training and skills development, as well as protection services such as legal aid and advocacy.",
+      "These efforts aim to address their immediate needs while promoting their dignity, safety and long-term resilience within both host and urban refugee communities.",
       "Support addresses immediate needs while helping individuals and families work towards greater stability, dignity and self-reliance."
     ],
     image: "/images/Miscellany/Caritas_Kampala_24.jpg",
@@ -73,8 +79,8 @@ const programmes: Programme[] = [
     id: "disability-special-needs-support",
     title: "Disability & Special Needs Support",
     description: [
-      "In close collaboration with our Chaconet partners, providing comprehensive assistance through a variety of activities such as personalized care, therapeutic services, accessible facilities, skill development programs, advocacy, emotional support, community integration, and awareness campaigns to empower individuals living with disabilities and special medical needs.",
-      "Our goal is to foster independence, enhance quality of life, and promote inclusivity for all.",
+      "In close collaboration with our Chaconet partners, providing comprehensive assistance through a variety of activities such as personalised care, therapeutic services, accessible facilities, skill development programmes, advocacy, emotional support, community integration and awareness campaigns to empower individuals living with disabilities and special medical needs.",
+      "Our goal is to foster independence, enhance quality of life and promote inclusivity for all.",
       "This work promotes greater independence, dignity and meaningful participation in family and community life."
     ],
     image: "/images/Miscellany/Caritas_Kampala_39.jpg",
@@ -84,7 +90,7 @@ const programmes: Programme[] = [
     id: "poverty-alleviation-livelihoods",
     title: "Poverty Alleviation & Livelihoods",
     description: [
-      "Caritas Kampala Charity Office plays a vital role in collaborating with individuals and families to develop and implement sustainable livelihood strategies. Through comprehensive support such as skills training, microfinance initiatives, income-generating activities, and community empowerment programs, we aim to uplift vulnerable populations, foster economic independence, and create lasting positive change.",
+      "The Charity Office plays a vital role in collaborating with individuals and families to develop and implement sustainable livelihood strategies. Through comprehensive support such as skills training, microfinance initiatives, income-generating activities and community empowerment programmes, we aim to uplift vulnerable populations, foster economic independence and create lasting positive change.",
       "Our dedicated efforts are focused on breaking the cycle of poverty and promoting social and economic resilience within communities.",
       "The aim is to strengthen household resilience and create practical pathways towards greater economic stability and self-reliance."
     ],
@@ -95,8 +101,8 @@ const programmes: Programme[] = [
     id: "second-hand-charity-shop",
     title: "Second Hand Charity Shop",
     description: [
-      "Discover the Second Hand Charity Shop at Caritas Kampala in Nsambya - a heartfelt initiative to support those in need. Operated by the Charity Office, our shop raises vital funds for charity work by selling donated clothes and items at affordable prices.",
-      "These donations from parish communities across Kampala Archdiocese help us empower the vulnerable and make a lasting impact in our community. Your support and donations of materials in good condition make this possible!"
+      "Discover the Second Hand Charity Shop at Caritas Kampala in Nsambya. It is a practical initiative to support those in need. Operated by the Charity Office, the shop raises vital funds for the charity's work by selling donated clothes and items at affordable prices.",
+      "These donations from parish communities across Kampala Archdiocese help us empower the vulnerable and make a lasting impact in the community. Your support and donations of materials in good condition make this possible."
     ],
     image: "/images/Miscellany/Caritas_Kampala_84.jpg",
     imageAlt: "Second Hand Charity Shop at Caritas Kampala in Nsambya",
@@ -107,6 +113,15 @@ const programmes: Programme[] = [
 /* ── Refined Editorial Programme Card ── */
 function ProgrammeCard({ programme, index }: { programme: Programme; index: number }) {
   const isEven = index % 2 === 0;
+  const desktopPos = programme.objectPositionDesktop || "center center";
+  const tabletPos = programme.objectPositionTablet || programme.objectPositionDesktop || "center center";
+  const mobilePos = programme.objectPositionMobile || tabletPos || desktopPos;
+
+  const imagePosStyle = {
+    "--img-pos-mobile": mobilePos,
+    "--img-pos-tablet": tabletPos,
+    "--img-pos-desktop": desktopPos,
+  } as React.CSSProperties;
 
   return (
     <article
@@ -117,13 +132,16 @@ function ProgrammeCard({ programme, index }: { programme: Programme; index: numb
       }`}
     >
       {/* ── Image Column ── */}
-      <div className="w-full lg:w-[42%] xl:w-[40%] relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto min-h-[220px] sm:min-h-[280px] lg:min-h-[360px] overflow-hidden shrink-0">
+      <div
+        className="w-full lg:w-[42%] xl:w-[40%] relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto min-h-[220px] sm:min-h-[280px] lg:min-h-[360px] overflow-hidden shrink-0"
+        style={imagePosStyle}
+      >
         <Image
           src={programme.image}
           alt={programme.imageAlt}
           fill
           sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 42vw, 40vw"
-          className="object-cover object-center"
+          className="object-cover [object-position:var(--img-pos-mobile)] sm:[object-position:var(--img-pos-tablet)] lg:[object-position:var(--img-pos-desktop)]"
         />
       </div>
 
