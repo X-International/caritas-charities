@@ -56,6 +56,11 @@ const programmes: Programme[] = [
     ],
     image: "/images/programmes/children.png",
     imageAlt: "Support and empowerment for families and children",
+    ctaText: "SEE HOW SUPPORT HELPED",
+    ctaHref: "/resources/success-stories",
+    objectPositionDesktop: "center center",
+    objectPositionTablet: "center 20%",
+    objectPositionMobile: "center top",
   },
   {
     id: "support-for-the-elderly",
@@ -67,6 +72,11 @@ const programmes: Programme[] = [
     ],
     image: "/images/Event 02/Caritas_Kampala_89.jpg",
     imageAlt: "Care and companionship for elderly residents at Nalukolongo home",
+    ctaText: "ASK ABOUT THIS SUPPORT",
+    ctaHref: "/contact-us",
+    objectPositionDesktop: "right center",
+    objectPositionTablet: "center center",
+    objectPositionMobile: "center center",
   },
   {
     id: "refugee-asylum-seeker-support",
@@ -76,8 +86,13 @@ const programmes: Programme[] = [
       "These efforts aim to address their immediate needs while promoting their dignity, safety and long-term resilience within both host and urban refugee communities.",
       "Support addresses immediate needs while helping individuals and families work towards greater stability, dignity and self-reliance."
     ],
-    image: "/images/Miscellany/Caritas_Kampala_24.jpg",
+    image: "/images/Event 03/Caritas_Kampala_16.jpg",
     imageAlt: "Community outreach and support for urban refugees in Kampala",
+    ctaText: "EXPLORE STORIES OF SUPPORT",
+    ctaHref: "/resources/success-stories",
+    objectPositionDesktop: "center center",
+    objectPositionTablet: "center center",
+    objectPositionMobile: "center center",
   },
   {
     id: "disability-special-needs-support",
@@ -87,8 +102,13 @@ const programmes: Programme[] = [
       "Our goal is to foster independence, enhance quality of life and promote inclusivity for all.",
       "This work promotes greater independence, dignity and meaningful participation in family and community life."
     ],
-    image: "/images/Miscellany/Caritas_Kampala_39.jpg",
+    image: "/images/Event 02/Caritas_Kampala_91.jpg",
     imageAlt: "Specialized care and mobility support for persons with disabilities",
+    ctaText: "ASK ABOUT THIS SUPPORT",
+    ctaHref: "/contact-us",
+    objectPositionDesktop: "45% center",
+    objectPositionTablet: "center center",
+    objectPositionMobile: "center center",
   },
   {
     id: "poverty-alleviation-livelihoods",
@@ -108,8 +128,9 @@ const programmes: Programme[] = [
       "Discover the Second Hand Charity Shop at Caritas Kampala in Nsambya. It is a practical initiative to support those in need. Operated by the Charity Office, the shop raises vital funds for the charity's work by selling donated clothes and items at affordable prices.",
       "These donations from parish communities across Kampala Archdiocese help us empower the vulnerable and make a lasting impact in the community. Your support and donations of materials in good condition make this possible."
     ],
-    image: "/images/Miscellany/Caritas_Kampala_84.jpg",
+    image: "/images/Charity Shop/Caritas_Kampala_58.jpg",
     imageAlt: "Second Hand Charity Shop at Caritas Kampala in Nsambya",
+    ctaText: "VISIT THE CHARITY SHOP",
     linkHref: "/get-involved/charity-shop",
   },
 ];
@@ -234,7 +255,7 @@ export default function OurProgrammesPage() {
         <section className="py-10 bg-white border-t border-gray-100">
           <div className="site-container text-center max-w-2xl mx-auto space-y-2">
             <p className="text-sm sm:text-base text-gray-700 font-medium">
-              Want to see these programmes in action? Read real accounts in our{" "}
+              Want to see these programmes in action? Watch videos and discover real stories in our{" "}
               <Link href="/resources/success-stories" className="text-[#b10017] hover:underline font-semibold">
                 Success Stories
               </Link>
