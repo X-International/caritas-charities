@@ -30,9 +30,6 @@ const BTN_BASE =
 const BTN_PRIMARY =
   "inline-flex items-center justify-center min-h-11 min-w-11 px-4 py-2 text-sm font-semibold rounded-lg bg-[#b10017] text-white transition-colors hover:bg-[#8f0012] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2";
 
-const LABEL_CLASSES =
-  "text-[#585858] uppercase tracking-[0.18em] text-[10px] xs:text-[11px] sm:text-xs";
-
 function getPageNumbers(current: number, total: number): (number | string)[] {
   if (total <= 7) {
     return Array.from({ length: total }, (_, i) => i + 1);
@@ -243,11 +240,6 @@ function ClientGalleryInner({ images }: Props) {
                       </span>
                     </span>
 
-                    <span
-                      className={`absolute left-2.5 top-2.5 ${LABEL_CLASSES} text-white bg-black/60 px-2 py-0.5 rounded backdrop-blur-sm max-w-[calc(100%-1.25rem)] truncate font-semibold`}
-                    >
-                      {img.categoryLabel}
-                    </span>
                   </button>
                 </article>
               );
