@@ -22,6 +22,8 @@ interface Programme {
   image: string;
   imageAlt: string;
   linkHref?: string;
+  ctaText?: string;
+  ctaHref?: string;
   objectPositionDesktop?: string;
   objectPositionTablet?: string;
   objectPositionMobile?: string;
@@ -39,6 +41,8 @@ const programmes: Programme[] = [
     ],
     image: "/images/programmes/emmergency.png",
     imageAlt: "Caritas emergency food and relief distribution in Kampala",
+    ctaText: "VIEW RECENT RESPONSE",
+    ctaHref: "/current-appeal",
     objectPositionDesktop: "left center",
     objectPositionTablet: "center center",
     objectPositionMobile: "center center",
@@ -170,10 +174,10 @@ function ProgrammeCard({ programme, index }: { programme: Programme; index: numb
         {/* Footer Action anchored at bottom */}
         <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-[#efe3d2] flex items-center justify-end">
           <Link
-            href={programme.linkHref || "/resources/success-stories"}
+            href={programme.ctaHref || programme.linkHref || "/resources/success-stories"}
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#b10017] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b10017] rounded"
           >
-            <span>See Impact Stories</span>
+            <span>{programme.ctaText || "See Impact Stories"}</span>
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
         </div>
