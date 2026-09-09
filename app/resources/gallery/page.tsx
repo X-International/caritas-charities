@@ -9,6 +9,7 @@ import PageHeader from "@/components/PageHeader";
 import {
   filenameToAlt,
   GALLERY_IMAGE_EXTENSIONS,
+  GALLERY_CATEGORIES,
   type GalleryImage,
 } from "./gallery-config";
 
@@ -33,33 +34,57 @@ function getFactualCaption(folder: string): string {
     return "Partner charity institution gathering";
   }
   if (folder === "Event 03") {
-    return "Community empowerment programme activity";
+    return "Community support and donation activity";
   }
   return "Community outreach and programme activity";
 }
+
+const FOLDER_TO_CATEGORIES: Record<string, string[]> = {
+  "Event 01": ["events-visits"],
+  "Event 02": ["events-visits"],
+  "Event 03": ["support-donations"],
+  "Event 04": ["support-donations"],
+  "Event 05": ["chaconet-network"],
+  "Event 06": ["workshops-training"],
+  "Charity Shop": ["charity-shop"],
+  Charities: ["chaconet-network"],
+};
+
+const MISCELLANY_CATEGORIES: Record<string, string[]> = {
+  "Caritas_Kampala_23.jpg": ["events-visits"],
+  "Caritas_Kampala_24.jpg": ["chaconet-network"],
+  "Caritas_Kampala_25.jpg": ["chaconet-network"],
+  "Caritas_Kampala_26.jpg": ["workshops-training"],
+  "Caritas_Kampala_39.jpg": ["support-donations"],
+  "Caritas_Kampala_40.jpg": ["events-visits"],
+  "Caritas_Kampala_42.jpg": ["support-donations"],
+  "Caritas_Kampala_43.jpg": ["events-visits"],
+  "Caritas_Kampala_44.jpg": ["workshops-training"],
+  "Caritas_Kampala_82.jpg": ["chaconet-network"],
+  "Caritas_Kampala_83.jpg": ["support-donations"],
+  "Caritas_Kampala_84.jpg": ["chaconet-network"],
+  "Caritas_Kampala_85.jpg": ["chaconet-network"],
+  "Caritas_Kampala_86.jpg": ["support-donations"],
+  "Caritas_Kampala_87.jpg": ["chaconet-network"],
+  "Caritas_Kampala_88.jpg": ["chaconet-network"],
+};
+
+const CATEGORY_BY_ID = Object.fromEntries(
+  GALLERY_CATEGORIES.map((category) => [category.id, category])
+);
 
 function readGalleryFiles(): GalleryImage[] {
   const publicDir = path.join(process.cwd(), "public", "images");
   const results: GalleryImage[] = [];
 
-  const FOLDER_TO_CATEGORY_MAP: Record<string, { id: string; label: string; shortLabel: string }> = {
-    "Event 01": { id: "events", label: "Events", shortLabel: "Events" },
-    "Event 02": { id: "chaconet-partners", label: "Chaconet & Partners", shortLabel: "Chaconet & Partners" },
-    "Event 03": { id: "programmes", label: "Programmes", shortLabel: "Programmes" },
-    "Event 04": { id: "events", label: "Events", shortLabel: "Events" },
-    "Event 05": { id: "events", label: "Events", shortLabel: "Events" },
-    "Event 06": { id: "workshops-training", label: "Workshops & Training", shortLabel: "Workshops & Training" },
-    "Charity Shop": { id: "charity-shop", label: "Charity Shop", shortLabel: "Charity Shop" },
-    "Charities": { id: "events", label: "Events", shortLabel: "Events" },
-  };
-
-  const folders = Object.keys(FOLDER_TO_CATEGORY_MAP);
+  const folders = Object.keys(FOLDER_TO_CATEGORIES);
 
   for (const folder of folders) {
     const dir = path.join(publicDir, folder);
     if (!fs.existsSync(dir)) continue;
 
-    const category = FOLDER_TO_CATEGORY_MAP[folder];
+    const categories = FOLDER_TO_CATEGORIES[folder];
+    const categoryLabel = CATEGORY_BY_ID[categories[0]].label;
 
     const files = fs
       .readdirSync(dir)
@@ -74,10 +99,25 @@ function readGalleryFiles(): GalleryImage[] {
     for (const file of files) {
       results.push({
         src: `/images/${folder}/${file}`,
-        categoryId: category.id,
-        categoryLabel: category.label,
-        alt: filenameToAlt(file, category.label),
+        categories,
+        categoryLabel,
+        alt: filenameToAlt(file, categoryLabel),
         caption: getFactualCaption(folder),
+      });
+    }
+  }
+
+  const miscellanyDir = path.join(publicDir, "Miscellany");
+  if (fs.existsSync(miscellanyDir)) {
+    for (const [file, categories] of Object.entries(MISCELLANY_CATEGORIES)) {
+      if (!fs.existsSync(path.join(miscellanyDir, file))) continue;
+      const categoryLabel = CATEGORY_BY_ID[categories[0]].label;
+      results.push({
+        src: `/images/Miscellany/${file}`,
+        categories,
+        categoryLabel,
+        alt: filenameToAlt(file, categoryLabel),
+        caption: "Community outreach and programme activity",
       });
     }
   }

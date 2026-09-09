@@ -90,7 +90,7 @@ function ClientGalleryInner({ images }: Props) {
 
   const filteredImages = useMemo(() => {
     if (categoryFilter === ALL_CATEGORY_ID) return images;
-    return images.filter((img) => img.categoryId === categoryFilter);
+    return images.filter((img) => img.categories.includes(categoryFilter));
   }, [images, categoryFilter]);
 
   const totalPages = Math.max(1, Math.ceil(filteredImages.length / IMAGES_PER_PAGE));
@@ -114,7 +114,7 @@ function ClientGalleryInner({ images }: Props) {
   const categoryCounts = useMemo(() => {
     const counts: Record<string, number> = { [ALL_CATEGORY_ID]: images.length };
     for (const cat of GALLERY_CATEGORIES) {
-      counts[cat.id] = images.filter((img) => img.categoryId === cat.id).length;
+      counts[cat.id] = images.filter((img) => img.categories.includes(cat.id)).length;
     }
     return counts;
   }, [images]);
@@ -164,11 +164,11 @@ function ClientGalleryInner({ images }: Props) {
         <div className="flex w-max sm:w-auto sm:flex-wrap gap-2 sm:gap-2.5 pb-1 sm:pb-0">
           <FilterPill
             active={categoryFilter === ALL_CATEGORY_ID}
-            label="All"
+            label="All photos"
             count={categoryCounts[ALL_CATEGORY_ID]}
             onClick={() => handleCategoryChange(ALL_CATEGORY_ID)}
           />
-          {GALLERY_CATEGORIES.filter((cat) => (categoryCounts[cat.id] || 0) > 0).map((cat) => (
+          {GALLERY_CATEGORIES.map((cat) => (
             <FilterPill
               key={cat.id}
               active={categoryFilter === cat.id}
