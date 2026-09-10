@@ -20,6 +20,7 @@ import {
 type Props = { images: GalleryImage[] };
 
 const IMAGES_PER_PAGE = 9;
+const ALL_FILTER_LABEL = "All photos";
 
 const THUMB_FOCUS_CLASSES =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b10017] focus-visible:ring-offset-2 focus-visible:ring-offset-white";
@@ -161,7 +162,7 @@ function ClientGalleryInner({ images }: Props) {
         <div className="flex w-max sm:w-auto sm:flex-wrap gap-2 sm:gap-2.5 pb-1 sm:pb-0">
           <FilterPill
             active={categoryFilter === ALL_CATEGORY_ID}
-            label="All photos"
+            label={ALL_FILTER_LABEL}
             count={categoryCounts[ALL_CATEGORY_ID]}
             onClick={() => handleCategoryChange(ALL_CATEGORY_ID)}
           />
@@ -201,7 +202,7 @@ function ClientGalleryInner({ images }: Props) {
             onClick={() => handleCategoryChange(ALL_CATEGORY_ID)}
             className={`mt-4 ${BTN_PRIMARY}`}
           >
-            View all photos
+            View {ALL_FILTER_LABEL.toLowerCase()}
           </button>
         </div>
       ) : (
