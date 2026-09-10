@@ -11,7 +11,7 @@ import { ArrowRight } from "lucide-react";
 export const metadata = buildPageMetadata({
   title: "Charity Programmes in Kampala | Caritas Kampala Charity Office",
   description:
-    "Explore Caritas Kampala Charity Office programmes supporting families, older persons, refugees, people with disabilities and communities across Kampala, Wakiso and Mpigi.",
+    "Explore Caritas Kampala Charity Office programmes supporting families, older persons, refugees, people with disabilities and communities across Kampala, Wakiso and Butambala.",
   path: "/our-programmes",
 });
 
@@ -51,8 +51,8 @@ const programmes: Programme[] = [
     id: "family-child-support",
     title: "Family & Child Support",
     description: [
-      "We are dedicated to supporting families and children facing hardship by providing essential assistance to help stabilise households in need. Our programmes focus on addressing immediate needs such as food, education, shelter, medical and psychosocial support, while also promoting long-term resilience and self-sufficiency.",
-      "As part of our commitment to safeguarding vulnerable children, we hold a Child Safeguarding role under Caritas Kampala. In this capacity, we implement strict safeguarding policies and conduct regular training to ensure the safety and well-being of all children involved in our programmes. Activities include child protection awareness campaigns, establishing safe reporting mechanisms, conducting thorough background checks on staff and volunteers, and offering psychosocial support to children who have experienced abuse or neglect. Our goal is to create a secure environment where children can thrive, free from harm and exploitation."
+      "We are dedicated to supporting families and children facing hardship by providing essential assistance to help stabilise households in need. Our programmes focus on addressing needs such as food, education, shelter, medical and psychosocial support, while also promoting long-term resilience and self-sufficiency.",
+      "As part of our commitment to safeguarding vulnerable children, we hold a Child Safeguarding role under Caritas Kampala. In this capacity, we implement strict safeguarding policies and conduct regular training to ensure the safety and well-being of all children involved in our programmes. Activities include establishing safe reporting mechanisms, conducting thorough background checks on staff and volunteers, and offering psychosocial support to children who have experienced abuse or neglect. Our goal is to create a secure environment where children can thrive, free from harm and exploitation."
     ],
     image: "/images/programmes/children.png",
     imageAlt: "Support and empowerment for families and children",
@@ -66,8 +66,8 @@ const programmes: Programme[] = [
     id: "support-for-the-elderly",
     title: "Support for the Elderly",
     description: [
-      "The Charity Office is dedicated to offering continuous and meaningful support to the elderly members of the community within the Archdiocese. Its practical activities include visiting elderly homes to provide companionship and emotional support, distributing essential items such as food, clothing, and hygiene supplies to ensure they meet their basic needs, and organising health and wellness programmes, including medical check-ups and health education.",
-      "Additionally, the office facilitates social gatherings and recreational activities to promote social inclusion and mental well-being. Through these ongoing efforts, the Charity Office aims to uphold the dignity and improve the quality of life for the elderly, ensuring they feel cared for and valued in their later years.",
+      "The Charity Office is dedicated to offering continuous and meaningful support to the elderly members of the community within the Archdiocese. It’s practical activities include visiting charity homes that take care of the elderly to provide companionship and emotional support, distributing essential items such as food, clothing, and hygiene supplies to ensure they meet their basic needs, and organising health and wellness programmes.",
+      "Through these ongoing efforts, the Charity Office aims to uphold the dignity and improve the quality of life for the elderly, ensuring they feel cared for and valued in their later years.",
       "The focus throughout is on dignity, well-being and helping older persons remain connected to the people and communities around them."
     ],
     image: "/images/Event 02/Caritas_Kampala_89.jpg",
@@ -83,8 +83,8 @@ const programmes: Programme[] = [
     title: "Refugee & Asylum Seeker Support",
     description: [
       "Provides comprehensive practical assistance to both urban refugees and asylum seekers. This includes support to access safe housing and shelter, nutritious food, medical support, vocational training and skills development, as well as protection services such as legal aid and advocacy.",
-      "These efforts aim to address their immediate needs while promoting their dignity, safety and long-term resilience within both host and urban refugee communities.",
-      "Support addresses immediate needs while helping individuals and families work towards greater stability, dignity and self-reliance."
+      "These efforts aim to address their needs while promoting their dignity, safety and long-term resilience within both host and urban refugee communities.",
+      "Support addresses needs while helping individuals and families work towards greater stability, dignity and self-reliance."
     ],
     image: "/images/Event 03/Caritas_Kampala_16.jpg",
     imageAlt: "Community outreach and support for urban refugees in Kampala",
@@ -219,11 +219,10 @@ export default function OurProgrammesPage() {
             { label: "Home", href: "/" },
             { label: "Our Programmes" }
           ]}
-          eyebrow="OUR WORK"
           title="Our Programmes"
-          description="Practical programmes supporting families, older persons, refugees, people with disabilities and communities across Kampala, Wakiso and Mpigi."
+          description="Practical programmes supporting families, older persons, refugees, people with disabilities and communities across Kampala, Wakiso and Butambala."
           image="/images/Miscellany/Caritas_Kampala_42.jpg"
-          imageAlt="Caritas Kampala programmes serving communities in Kampala, Wakiso and Mpigi"
+          imageAlt="Caritas Kampala programmes serving communities in Kampala, Wakiso and Butambala"
           imagePositionDesktop="left 35%"
           imagePositionTablet="center 35%"
           imagePositionMobile="center 40%"
@@ -238,7 +237,7 @@ export default function OurProgrammesPage() {
                 Empowering Families, Building Lasting Hope
               </Heading>
               <p className="mt-3.5 sm:mt-4 lg:mt-5 text-base sm:text-lg text-black leading-relaxed font-normal max-w-[760px] mx-auto">
-                We respond to immediate needs while supporting individuals, families and communities across Kampala, Wakiso and Mpigi to build greater stability and dignity.
+                We respond to needs while supporting people with disabilities, the most vulnerable across Kampala, Wakiso and Butambala districts to build a greater stability and dignity.
               </p>
             </div>
 

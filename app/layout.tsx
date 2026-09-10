@@ -14,11 +14,11 @@ const bingVerification = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION;
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.caritaskampalacharities.org"),
   title: {
-    default: "Caritas Kampala Charity Office | Kampala, Wakiso & Mpigi",
+    default: "Caritas Kampala Charity Office | Kampala, Wakiso & Butambala",
     template: "%s",
   },
   description:
-    "The Charity Office of Caritas Kampala provides practical support to vulnerable individuals, families and communities across Kampala, Wakiso and Mpigi, Uganda.",
+    "The Charity Office of Caritas Kampala provides practical support to vulnerable individuals, families and communities across Kampala, Wakiso and Butambala, Uganda.",
   applicationName: "Caritas Kampala Charity Office",
   authors: [{ name: "Caritas Kampala Charity Office" }],
   creator: "Caritas Kampala",
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     locale: "en_UG",
     url: "/",
     siteName: "Caritas Kampala Charity Office",
-    title: "Caritas Kampala Charity Office | Kampala, Wakiso & Mpigi",
+    title: "Caritas Kampala Charity Office | Kampala, Wakiso & Butambala",
     description:
-      "The Charity Office of Caritas Kampala provides practical support to vulnerable individuals, families and communities across Kampala, Wakiso and Mpigi, Uganda.",
+      "The Charity Office of Caritas Kampala provides practical support to vulnerable individuals, families and communities across Kampala, Wakiso and Butambala, Uganda.",
     images: [
       {
         url: "/images/og/caritas_kampala_og_fallback.png",
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Caritas Kampala Charity Office | Kampala, Wakiso & Mpigi",
+    title: "Caritas Kampala Charity Office | Kampala, Wakiso & Butambala",
     description:
-      "The Charity Office of Caritas Kampala provides practical support to vulnerable individuals, families and communities across Kampala, Wakiso and Mpigi, Uganda.",
+      "The Charity Office of Caritas Kampala provides practical support to vulnerable individuals, families and communities across Kampala, Wakiso and Butambala, Uganda.",
     images: ["/images/og/caritas_kampala_og_fallback.png"],
   },
   robots: {

@@ -8,7 +8,7 @@ import { buildPageMetadata } from "@/lib/metadata-utils";
 export const metadata = buildPageMetadata({
   title: "Partner With Caritas Kampala Charity Office",
   description:
-    "Explore partnership opportunities with the Charity Office of Caritas Kampala supporting coordinated programmes across Kampala, Wakiso and Mpigi.",
+    "Explore partnership opportunities with the Charity Office of Caritas Kampala supporting coordinated programmes across Kampala, Wakiso and Butambala.",
   path: "/get-involved/partnerships",
 });
 

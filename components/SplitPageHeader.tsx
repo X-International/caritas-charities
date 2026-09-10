@@ -10,7 +10,7 @@ interface BreadcrumbItem {
 
 interface SplitPageHeaderProps {
   breadcrumbs: BreadcrumbItem[];
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   description?: string;
   image: string;
@@ -115,9 +115,11 @@ export default function SplitPageHeader({
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-black/20 pointer-events-none" aria-hidden="true" />
 
                 <div className="contact-hero-panel-content relative z-10 space-y-[12px] sm:space-y-[16px]">
-                  <Eyebrow color="white" className="!text-[11px] !tracking-[0.12em] !leading-[1.4]">
-                    {eyebrow}
-                  </Eyebrow>
+                  {eyebrow && (
+                    <Eyebrow color="white" className="!text-[11px] !tracking-[0.12em] !leading-[1.4]">
+                      {eyebrow}
+                    </Eyebrow>
+                  )}
                   <Heading level={1} variant="hero" color="white" className="!text-[clamp(2.25rem,9.5vw,2.625rem)] sm:!text-[clamp(2.75rem,6vw,3.25rem)] !leading-[1.1]">
                     {title}
                   </Heading>
@@ -156,9 +158,11 @@ export default function SplitPageHeader({
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-black/20 pointer-events-none" aria-hidden="true" />
 
               <div className="contact-hero-panel-content relative z-10 max-w-[560px] space-y-4">
-                <Eyebrow color="white">
-                  {eyebrow}
-                </Eyebrow>
+                {eyebrow && (
+                  <Eyebrow color="white">
+                    {eyebrow}
+                  </Eyebrow>
+                )}
                 <div className="font-serif font-extrabold text-[46px] xl:text-[54px] leading-[1.12] text-white tracking-tight">
                   {title}
                 </div>

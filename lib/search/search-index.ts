@@ -24,15 +24,15 @@ const staticSiteItems: SearchIndexItem[] = [
     url: "/",
     category: "Page",
     snippet: "The Charity Office of Caritas Kampala supports the poor, vulnerable and marginalized across Kampala Archdiocese.",
-    content: "Caritas Kampala Charity Office home. Serving Kampala, Wakiso & Mpigi. Supporting the poor, vulnerable, elderly, orphans, refugees, persons with disabilities, and families facing hardship across Kampala Archdiocese. Humanitarian appeals, emergency relief, community development.",
-    keywords: ["home", "homepage", "caritas kampala", "charity office", "Kampala Archdiocese", "wakiso", "mpigi", "humanitarian", "relief"]
+    content: "Caritas Kampala Charity Office home. Serving Kampala, Wakiso & Butambala. Supporting the poor, vulnerable, elderly, orphans, refugees, persons with disabilities, and families facing hardship across Kampala Archdiocese. Humanitarian appeals, emergency relief, community development.",
+    keywords: ["home", "homepage", "caritas kampala", "charity office", "Kampala Archdiocese", "wakiso", "butambala", "humanitarian", "relief"]
   },
   {
     id: "page-donate",
     title: "Donate & Support Our Mission",
     url: "/donate",
     category: "Page",
-    snippet: "Support families across Kampala, Wakiso and Mpigi. Give online, by bank transfer, or Mobile Money to the Charity Office.",
+    snippet: "Support families across Kampala, Wakiso and Butambala. Give online, by bank transfer, or Mobile Money to the Charity Office.",
     content: "Donate to Caritas Kampala Charity Office. Ways to give: online donation, direct bank transfer, MTN Mobile Money, Airtel Money, physical item drop-offs at Old Ggaba Road Nsambya. Support emergency response, child support, elderly care, and poverty alleviation.",
     keywords: ["donate", "donation", "give", "support", "mobile money", "bank transfer", "nsambya", "contribute", "financial support", "charity"]
   },
@@ -69,7 +69,7 @@ const staticSiteItems: SearchIndexItem[] = [
     url: "/our-programmes",
     category: "Programme",
     snippet: "Explore the practical programmes supporting vulnerable people and communities across Kampala Archdiocese.",
-    content: "Caritas Kampala core programmes: Emergency & Disaster Response, Support for Older Persons, Family & Child Support, Refugee & Asylum Seeker Support, Disability & Special Needs Support, Livelihoods & Poverty Reduction across Kampala, Wakiso, and Mpigi.",
+    content: "Caritas Kampala core programmes: Emergency & Disaster Response, Support for Older Persons, Family & Child Support, Refugee & Asylum Seeker Support, Disability & Special Needs Support, Livelihoods & Poverty Reduction across Kampala, Wakiso, and Butambala.",
     keywords: ["programmes", "programs", "initiatives", "older persons", "elderly", "disability", "refugees", "poverty", "emergency response", "child support", "livelihoods"]
   },
   // Individual programmes for granular search matching

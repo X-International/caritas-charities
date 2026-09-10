@@ -43,7 +43,7 @@ export default function ContactUsPage() {
                 <div>
                   <Heading level={2} variant="subsection" color="red">Visit &amp; Call Us</Heading>
                   <p className="text-sm sm:text-base text-gray-600 mt-2 leading-relaxed">
-                    Our office is located on Old Ggaba Road in Nsambya, Kampala, next to the American Embassy. The Charity Office serves communities across Kampala, Wakiso and Mpigi.
+                    Our office is located on Old Ggaba Road in Nsambya, Kampala, next to the American Embassy. The Charity Office serves communities across Kampala, Wakiso and Butambala.
                   </p>
                 </div>
 

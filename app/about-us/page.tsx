@@ -9,7 +9,7 @@ import { buildPageMetadata } from "@/lib/metadata-utils";
 export const metadata = buildPageMetadata({
   title: "About Caritas Kampala Charity Office | Mission & Work",
   description:
-    "Learn about the mission, values and work of the Charity Office of Caritas Kampala, serving vulnerable people across Kampala, Wakiso and Mpigi.",
+    "Learn about the mission, values and work of the Charity Office of Caritas Kampala, serving vulnerable people across Kampala, Wakiso and Butambala.",
   path: "/about-us",
 });
 
@@ -39,7 +39,7 @@ export default function AboutUsPage() {
               </Heading>
               <div className="space-y-4 text-gray-700 leading-[1.75] text-base sm:text-[17px]">
                 <p>
-                  The Charity Office operates under Caritas Kampala and serves communities across Kampala, Wakiso and Mpigi within the Archdiocese of Kampala.
+                  The Charity Office operates under Caritas Kampala and serves communities across Kampala, Wakiso and Butambala within the Archdiocese of Kampala.
                 </p>
                 <p>
                   Our work combines practical support with compassionate accompaniment. We respond to immediate needs while also helping individuals, families, and communities strengthen their ability to cope, recover, and move forward with dignity.

@@ -72,7 +72,7 @@ export function getOrganizationSchema() {
       },
       {
         "@type": "AdministrativeArea",
-        "name": "Mpigi"
+        "name": "Butambala"
       }
     ],
     "sameAs": [

@@ -22,7 +22,7 @@ const IMPACT_AREAS: ImpactArea[] = [
     description:
       "Provides practical assistance to people and communities affected by disasters, displacement, food insecurity, and other emergencies.",
     serves: "FAMILIES & COMMUNITIES AFFECTED BY EMERGENCIES",
-    locations: ["KAMPALA", "WAKISO", "MPIGI"],
+    locations: ["KAMPALA", "WAKISO", "BUTAMBALA"],
     image: "/images/Event 01/Caritas_Kampala_75.jpg",
   },
   {
@@ -72,7 +72,7 @@ const IMPACT_AREAS: ImpactArea[] = [
     description:
       "Supports individuals and families to strengthen livelihoods through skills development, savings initiatives, income-generating activities, and practical guidance.",
     serves: "INDIVIDUALS & FAMILIES FACING ECONOMIC HARDSHIP",
-    locations: ["KAMPALA", "WAKISO", "MPIGI"],
+    locations: ["KAMPALA", "WAKISO", "BUTAMBALA"],
     image: "/images/Event 01/Caritas_Kampala_71.jpg",
   },
 ];
@@ -225,7 +225,7 @@ export default function WhereWeServe() {
             Our Core Pillars of Support
           </Heading>
           <p className="text-base sm:text-lg text-gray-700 max-w-3xl leading-relaxed">
-            The Charity Office of Caritas Kampala serves individuals, families and communities across the Archdiocese of Kampala, including Kampala, Wakiso and Mpigi. Our programmes respond to practical needs through relief, social support, referrals and longer-term assistance.
+            The Charity Office of Caritas Kampala serves individuals, families and communities across the Archdiocese of Kampala, including Kampala, Wakiso and Butambala. Our programmes respond to practical needs through relief, social support, referrals and longer-term assistance.
           </p>
         </div>
 

@@ -13,12 +13,12 @@ const FALLBACK_DESCRIPTION =
 
 const ROUTE_META: Record<string, { title: string; description: string }> = {
   "/": {
-    title: "Caritas Kampala Charity Office | Serving Kampala, Wakiso & Mpigi",
+    title: "Caritas Kampala Charity Office | Serving Kampala, Wakiso & Butambala",
     description: "The Charity Office of Caritas Kampala supports the poor, vulnerable and marginalized across Kampala Archdiocese. Learn about our work and donate today.",
   },
   "/our-programmes": {
     title: "Our Programmes | Caritas Kampala Charity Office",
-    description: "Explore the programmes run by the Charity Office of Caritas Kampala, supporting families, the elderly, refugees and people with disabilities across Kampala, Wakiso and Mpigi.",
+    description: "Explore the programmes run by the Charity Office of Caritas Kampala, supporting families, the elderly, refugees and people with disabilities across Kampala, Wakiso and Butambala.",
   },
   "/current-appeal": {
     title: "Current Appeal: Famine in Kotido & Moroto | Caritas Kampala Charity Office",
@@ -26,7 +26,7 @@ const ROUTE_META: Record<string, { title: string; description: string }> = {
   },
   "/get-involved": {
     title: "Get Involved | Caritas Kampala Charity Office",
-    description: "Volunteer or shop our Charity Shop. Discover the ways you can support the Charity Office's work in Kampala, Wakiso and Mpigi.",
+    description: "Volunteer or shop our Charity Shop. Discover the ways you can support the Charity Office's work in Kampala, Wakiso and Butambala.",
   },
   "/get-involved/volunteer": {
     title: "Volunteer With Us | Caritas Kampala Charity Office",
@@ -42,7 +42,7 @@ const ROUTE_META: Record<string, { title: string; description: string }> = {
   },
   "/donate": {
     title: "Donate | Caritas Kampala Charity Office",
-    description: "Support families across Kampala, Wakiso and Mpigi. Give online, by bank transfer, or Mobile Money to the Charity Office of Caritas Kampala.",
+    description: "Support families across Kampala, Wakiso and Butambala. Give online, by bank transfer, or Mobile Money to the Charity Office of Caritas Kampala.",
   },
   "/about-us": {
     title: "About Us | Caritas Kampala Charity Office",
