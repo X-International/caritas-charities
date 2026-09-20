@@ -9,6 +9,7 @@ import { getNewsArticle, newsArticles } from "@/lib/content/news";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import { Heading } from "@/components/ui/Typography";
+import SidebarAdvert from "@/components/SidebarAdvert";
 import { buildPageMetadata } from "@/lib/metadata-utils";
 import { siteConfig } from "@/lib/site-config";
 
@@ -276,6 +277,9 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
                   )}
                 </div>
               </div>
+
+              {/* Advertisement */}
+              <SidebarAdvert />
 
               {/* Related Content */}
               <RelatedNewsCarousel currentArticleSlug={article.slug} allArticles={newsArticles} />

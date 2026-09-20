@@ -57,6 +57,13 @@ const teamMembers: TeamMember[] = [
     alt: "Portrait of Ms. Kobutungi Proscovia",
   },
   {
+    name: "Ms. Justine Nantumbwe",
+    role: "Accounting Officer",
+    category: "FINANCE & ACCOUNTING",
+    image: "/images/Team/Justine Nantumbwe.png",
+    alt: "Portrait of Ms. Justine Nantumbwe",
+  },
+  {
     name: "Ms. Margaret Kisakye",
     role: "Social Worker",
     category: "SOCIAL CARE TEAM",
