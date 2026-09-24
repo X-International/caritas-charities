@@ -36,6 +36,7 @@ const footerColumns: FooterColumnData[] = [
       { label: "Success Stories", href: "/resources/success-stories" },
       { label: "Events", href: "/resources/events" },
       { label: "Gallery", href: "/resources/gallery" },
+      { label: "Annual Needs & Priorities", href: "/resources/annual-needs" },
       { label: "Annual Reports", href: "/resources/annual-reports" },
       { label: "FAQs", href: "/resources/faqs" },
     ],

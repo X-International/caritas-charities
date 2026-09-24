@@ -191,6 +191,15 @@ const staticSiteItems: SearchIndexItem[] = [
     keywords: ["gallery", "photos", "images", "pictures", "events", "outreach photos"]
   },
   {
+    id: "page-annual-needs",
+    title: "Annual Needs & Priorities",
+    url: "/resources/annual-needs",
+    category: "Resource",
+    snippet: "Explore annual priority needs, programme targets, and resource requirements identified by the Charity Office.",
+    content: "2027 Needs List & Needs-Based Budget for Caritas Kampala Charity Office. Priority needs across 78 parishes, 46,091 estimated direct beneficiaries, UGX 4.699 billion estimated requirement. Humanitarian assistance, education, livelihoods, community delivery, capacity building, and operational support.",
+    keywords: ["annual needs", "priorities", "needs list", "budget", "needs-based budget", "2027 needs", "programme targets", "resource requirements", "planning", "beneficiaries"]
+  },
+  {
     id: "page-annual-reports",
     title: "Annual Reports & Financial Audits",
     url: "/resources/annual-reports",

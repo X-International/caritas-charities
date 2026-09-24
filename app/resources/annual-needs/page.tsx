@@ -1,0 +1,297 @@
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import SplitPageHeader from "@/components/SplitPageHeader";
+import { Heading, Eyebrow } from "@/components/ui/Typography";
+import Button from "@/components/ui/Button";
+import DocumentActions from "@/components/documents/DocumentActions";
+import { ANNUAL_NEEDS_2027 } from "@/lib/content/documents";
+import { buildPageMetadata } from "@/lib/metadata-utils";
+
+export const metadata = buildPageMetadata({
+  title: "Annual Needs & Priorities | Caritas Kampala Charity Office",
+  description:
+    "Explore the annual priority needs, programme targets and resource requirements identified by the Charity Office of Caritas Kampala.",
+  path: "/resources/annual-needs",
+  robots: { index: true, follow: true },
+});
+
+const priorityAreas = [
+  { number: "01", title: "Humanitarian Assistance, Health & Psychosocial Support" },
+  { number: "02", title: "Education, Skills Development & Youth Empowerment" },
+  { number: "03", title: "Livelihoods, Economic Empowerment & Self-Reliance" },
+  { number: "04", title: "Community Engagement & Programme Delivery" },
+  { number: "05", title: "Capacity Building, Training & Community Awareness" },
+  { number: "06", title: "Monitoring, Evaluation, Accountability & Learning" },
+  { number: "07", title: "Safeguarding & Protection" },
+  { number: "08", title: "Programme Staff & Volunteer Support" },
+  { number: "09", title: "Transport & Field Operations" },
+  { number: "10", title: "Communication & Visibility" },
+  { number: "11", title: "Office Equipment & ICT" },
+  { number: "12", title: "Furniture & Office Fittings" },
+  { number: "13", title: "Administration & Office Operations" },
+  { number: "14", title: "Utilities" },
+  { number: "15", title: "Insurance" },
+  { number: "16", title: "Contingency & Emergency Reserve" },
+];
+
+export default function AnnualNeedsPage() {
+  return (
+    <div className="min-h-screen flex flex-col bg-white text-gray-900 font-sans">
+      <Navbar />
+
+      <main id="main-content" className="flex-1">
+        {/* Split Page Header */}
+        <SplitPageHeader
+          breadcrumbs={[
+            { label: "Home", href: "/" },
+            { label: "Resources", href: "#" },
+            { label: "Annual Needs & Priorities" },
+          ]}
+          eyebrow="PLANNING & PRIORITIES"
+          title="Annual Needs & Priorities"
+          description="Explore the priority needs, programme targets and resources identified for the Charity Office’s work."
+          image="/images/Event 06/Caritas_Kampala_48.jpg"
+          imageAlt="Caritas Kampala programme team gathered around a table planning priority needs and targets"
+          imagePosition="center 35%"
+          imagePositionDesktop="center 35%"
+          imagePositionTablet="center 30%"
+          imagePositionMobile="center 25%"
+        />
+
+        {/* Section: Editorial Introduction */}
+        <section aria-labelledby="intro-heading" className="pt-[48px] pb-10 sm:pt-16 sm:pb-12 lg:pt-20 lg:pb-14 bg-white">
+          <div className="site-container">
+            <div className="mx-auto text-center">
+              <Heading
+                level={2}
+                variant="section"
+                color="red"
+                id="intro-heading"
+                className="text-[30px] leading-[1.18] sm:text-[34px] lg:text-[42px] font-serif font-extrabold tracking-tight max-w-[620px] mx-auto"
+              >
+                Responding to Identified Needs
+              </Heading>
+              <p className="mt-[16px] sm:mt-[20px] lg:mt-[20px] text-gray-700 text-base sm:text-lg lg:text-[18px] leading-[1.7] max-w-[740px] mx-auto font-sans">
+                The Charity Office’s annual needs planning identifies priority areas for support, programme targets and the resources required to respond to those needs. The 2027 Needs List &amp; Needs-Based Budget supports planning, collaboration and resource mobilisation.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Section: Key 2027 Figures (Compact Horizontal Band) */}
+        <section aria-label="Key 2027 Planning Figures" className="border-y border-[#e8dfd1] bg-white py-0 sm:py-0 lg:py-[40px]">
+          <div className="site-container">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-center">
+              {/* Figure 1: Parishes */}
+              <div className="py-6 sm:py-8 lg:py-0 px-4 sm:px-6 flex flex-col justify-center items-center">
+                <span className="font-serif font-bold text-[40px] leading-none sm:text-[44px] lg:text-[46px] text-[#b10017] tracking-tight mb-1.5">
+                  78
+                </span>
+                <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-gray-700 font-sans">
+                  PARISHES
+                </span>
+              </div>
+
+              {/* Figure 2: Beneficiaries */}
+              <div className="py-6 sm:py-8 lg:py-0 px-4 sm:px-6 flex flex-col justify-center items-center border-t sm:border-t-0 sm:border-l border-[#e8dfd1]">
+                <span className="font-serif font-bold text-[34px] leading-none sm:text-[40px] lg:text-[44px] text-[#b10017] tracking-tight mb-1.5">
+                  46,091
+                </span>
+                <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-gray-700 font-sans">
+                  ESTIMATED DIRECT BENEFICIARIES
+                </span>
+              </div>
+
+              {/* Figure 3: Programme Period */}
+              <div className="py-6 sm:py-8 lg:py-0 px-4 sm:px-6 flex flex-col justify-center items-center border-t sm:col-span-2 lg:col-span-1 lg:border-t-0 lg:border-l border-[#e8dfd1]">
+                <span className="font-serif font-bold text-[26px] leading-tight sm:text-[30px] lg:text-[34px] text-[#b10017] tracking-tight mb-1.5">
+                  JAN–DEC 2027
+                </span>
+                <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-gray-700 font-sans">
+                  PROGRAMME PERIOD
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section: Featured Document Presentation */}
+        <section aria-labelledby="featured-document-heading" className="pt-10 pb-6 sm:pt-12 sm:pb-8 lg:pt-16 lg:pb-8 bg-[#faf8f5]">
+          <div className="site-container">
+            <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,36fr)_minmax(0,64fr)] gap-10 sm:gap-12 lg:gap-16 items-start">
+              {/* Document Preview Placeholder — mobile/tablet first (grid order naturally places cover first on mobile since it's the first column) */}
+              <div className="w-full flex justify-center md:justify-start">
+                <div
+                  className="relative w-[68%] sm:w-[62%] md:w-full max-w-[280px] sm:max-w-[320px] md:max-w-[340px] aspect-[1/1.36] rounded-2xl bg-gradient-to-br from-[#faf6ee] via-[#f5ede0] to-[#eae0cd] p-6 sm:p-7 md:p-8 flex flex-col justify-between border border-[#ded4c0] shadow-[0_14px_30px_rgba(0,0,0,0.06),0_3px_8px_rgba(0,0,0,0.03)] select-none overflow-hidden"
+                  aria-label="Publication preview placeholder — cover image is a design mock-up; final PDF not yet issued."
+                >
+                  <div className="absolute left-0 top-0 bottom-0 w-2.5 sm:w-3 bg-gradient-to-r from-[#8e0a20] to-[#b10017] opacity-90" aria-hidden="true" />
+                  <div className="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-[#b10017]/[0.03] border border-[#b10017]/[0.06] pointer-events-none" aria-hidden="true" />
+
+                  <div className="relative z-10 pl-2">
+                    <span className="block font-serif font-extrabold text-3xl sm:text-4xl text-[#b10017] tracking-tight">
+                      2027
+                    </span>
+                    <div className="w-10 h-0.5 bg-[#b10017] mt-2 mb-4" aria-hidden="true" />
+                    <span className="block text-[11px] sm:text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 mb-1 font-sans">
+                      NEEDS LIST &amp;
+                    </span>
+                    <span className="block font-serif font-extrabold text-xl sm:text-2xl text-gray-900 tracking-tight leading-snug">
+                      NEEDS-BASED BUDGET
+                    </span>
+                  </div>
+
+                  <div className="relative z-10 pl-2 my-auto py-4">
+                    <span className="inline-block px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-wider bg-stone-200/90 text-stone-700 border border-stone-300 font-sans">
+                      PDF COMING SOON
+                    </span>
+                  </div>
+
+                  <div className="relative z-10 pl-2 pt-4 border-t border-[#d8cdb8]">
+                    <span className="block font-serif font-bold text-sm text-gray-900 leading-tight">
+                      Caritas Kampala
+                    </span>
+                    <span className="block text-[11px] font-sans uppercase tracking-[0.16em] text-[#b10017] font-semibold mt-0.5">
+                      Charity Office
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Featured Document Content & Actions */}
+              <div className="space-y-5 sm:space-y-6">
+                <div className="space-y-3">
+                  <Eyebrow color="red">ANNUAL NEEDS DOCUMENT</Eyebrow>
+                  <Heading
+                    level={2}
+                    variant="section"
+                    color="dark"
+                    id="featured-document-heading"
+                    className="text-[28px] leading-[1.2] sm:text-[30px] lg:text-[34px] font-serif font-extrabold tracking-tight"
+                  >
+                    2027 Needs List &amp; Needs-Based Budget
+                  </Heading>
+                </div>
+
+                <div className="space-y-4 text-gray-700 text-base sm:text-[17px] leading-[1.7] font-sans">
+                  <p>{ANNUAL_NEEDS_2027.description}</p>
+                  <p>{ANNUAL_NEEDS_2027.secondaryDescription}</p>
+                </div>
+
+                {/* Document Details Row: Period + Full Resource Requirement */}
+                <div className="pt-5 mt-1 border-t border-[#e6dccb] grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5">
+                  <div>
+                    <span className="block text-gray-500 uppercase tracking-[0.16em] text-[10.5px] font-bold font-sans mb-1.5">
+                      PROGRAMME PERIOD
+                    </span>
+                    <span className="font-serif font-semibold text-gray-900 text-lg sm:text-xl tracking-tight">
+                      {ANNUAL_NEEDS_2027.period}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="block text-gray-500 uppercase tracking-[0.16em] text-[10.5px] font-bold font-sans mb-1.5">
+                      ESTIMATED RESOURCE REQUIREMENT
+                    </span>
+                    <span className="font-serif font-semibold text-gray-900 text-lg sm:text-xl tracking-tight">
+                      UGX 4,699,256,995
+                    </span>
+                  </div>
+                </div>
+
+                <div className="pt-1">
+                  <DocumentActions
+                    pdfUrl={ANNUAL_NEEDS_2027.pdfUrl}
+                    viewLabel="VIEW ONLINE →"
+                    downloadLabel="DOWNLOAD PDF"
+                    comingSoonLabel="PDF COMING SOON"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section: Priority Areas */}
+        <section aria-labelledby="priority-areas-heading" className="pt-8 pb-16 sm:pt-12 sm:pb-20 lg:pt-12 lg:pb-24 bg-white border-t border-[#e8dfd1]">
+          <div className="site-container max-w-[1040px] mx-auto">
+            <div className="max-w-[700px] mb-10 sm:mb-12 lg:mb-14 space-y-3">
+              <Heading
+                level={2}
+                variant="section"
+                color="red"
+                id="priority-areas-heading"
+                className="text-[30px] leading-[1.18] sm:text-[32px] lg:text-[38px] font-serif font-extrabold tracking-tight"
+              >
+                2027 Priority Areas
+              </Heading>
+              <p className="text-gray-700 text-base sm:text-[17px] leading-[1.7] font-sans">
+                The Needs List groups identified requirements across programme delivery, direct support and the operational resources needed to carry out the work.
+              </p>
+            </div>
+
+            {/* Sequential 2-col: LEFT = 01..08, RIGHT = 09..16; 1-col on mobile/tablet-narrow */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-0">
+              <ol className="border-t border-[#e8dfd1]">
+                {priorityAreas.slice(0, 8).map((item) => (
+                  <li
+                    key={item.number}
+                    className="flex items-baseline gap-4 py-[15px] sm:py-[16px] lg:py-[16px] border-b border-[#e8dfd1]/80"
+                  >
+                    <span className="font-mono text-sm sm:text-base font-bold text-[#b10017] shrink-0 select-none tracking-wide">
+                      {item.number}
+                    </span>
+                    <span className="text-gray-900 font-sans font-medium text-sm sm:text-[15px] lg:text-base leading-snug">
+                      {item.title}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+              <ol className="border-t border-[#e8dfd1] md:border-t">
+                {priorityAreas.slice(8, 16).map((item) => (
+                  <li
+                    key={item.number}
+                    className="flex items-baseline gap-4 py-[15px] sm:py-[16px] lg:py-[16px] border-b border-[#e8dfd1]/80"
+                  >
+                    <span className="font-mono text-sm sm:text-base font-bold text-[#b10017] shrink-0 select-none tracking-wide">
+                      {item.number}
+                    </span>
+                    <span className="text-gray-900 font-sans font-medium text-sm sm:text-[15px] lg:text-base leading-snug">
+                      {item.title}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        {/* Section: Closing Contact Strip */}
+        <section aria-labelledby="contact-strip-heading" className="bg-[#f4efe6] pt-12 pb-12 sm:pt-14 sm:pb-14 lg:pt-16 lg:pb-16 border-t border-[#e8dfd1]">
+          <div className="site-container max-w-[760px] mx-auto text-center space-y-3.5 sm:space-y-4">
+            <Eyebrow color="red">PARTNERSHIP &amp; SUPPORT</Eyebrow>
+            <Heading
+              level={2}
+              variant="section"
+              color="dark"
+              id="contact-strip-heading"
+              className="text-[26px] leading-[1.2] sm:text-[30px] lg:text-[36px] font-serif font-extrabold tracking-tight"
+            >
+              Questions About the 2027 Needs?
+            </Heading>
+            <p className="text-gray-700 text-base sm:text-[17px] leading-[1.7] max-w-[640px] mx-auto font-sans">
+              For information about the Needs List, partnership opportunities or supporting identified priorities, please contact the Charity Office.
+            </p>
+            <div className="pt-3 sm:pt-4">
+              <Button href="/contact-us" variant="primary" size="md">
+                CONTACT US →
+              </Button>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <Footer />
+    </div>
+  );
+}

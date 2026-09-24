@@ -80,6 +80,10 @@ const ROUTE_META: Record<string, { title: string; description: string }> = {
     title: "Gallery | Caritas Kampala Charity Office",
     description: "Photos from the Charity Office's programmes, events and community work across Kampala Archdiocese.",
   },
+  "/resources/annual-needs": {
+    title: "Annual Needs & Priorities | Caritas Kampala Charity Office",
+    description: "Explore the annual priority needs, programme targets and resource requirements identified by the Charity Office of Caritas Kampala.",
+  },
   "/resources/annual-reports": {
     title: "Annual Reports | Caritas Kampala Charity Office",
     description: "Annual impact reviews and financial accountability reports from the Charity Office of Caritas Kampala.",

@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Heading } from "@/components/ui/Typography";
 import { buildPageMetadata } from "@/lib/metadata-utils";
-import PageHeader from "@/components/PageHeader";
+import SplitPageHeader from "@/components/SplitPageHeader";
 
 export const metadata = buildPageMetadata({
   title: "Annual Reports | Caritas Kampala Charity Office",
@@ -18,15 +18,21 @@ export default function AnnualReportsPage() {
       <Navbar />
 
       <main id="main-content" className="flex-1">
-        {/* Hero Banner */}
-        <PageHeader
-          title="Annual Reports"
+        {/* Reusable Split Hero Banner */}
+        <SplitPageHeader
           breadcrumbs={[
             { label: "Home", href: "/" },
             { label: "Resources", href: "#" },
             { label: "Annual Reports" },
           ]}
-          description="View reports on our work, progress, and organisational activities."
+          eyebrow="DOCUMENTS & ACCOUNTABILITY"
+          title="Annual Reports"
+          description="Read reports on the Charity Office’s work, progress and organisational accountability."
+          image="/images/Event 06/Caritas_Kampala_47.jpg"
+          imageAlt="Caritas Kampala presentation and review on community priorities and risk ratings"
+          imagePosition="center 30%"
+          imagePositionDesktop="center 30%"
+          imagePositionMobile="center 25%"
         />
 
         {/* Coming Soon Panel */}

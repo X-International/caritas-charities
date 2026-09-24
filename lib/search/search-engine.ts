@@ -210,6 +210,11 @@ function applySubjectBoosts(query: string, url: string, id: string): number {
     if (url === "/get-involved/charity-shop") boost += 450;
   }
 
+  // Annual Needs & Priorities
+  if (query.includes("annual need") || query.includes("needs list") || query.includes("priorities") || query.includes("budget") || query.includes("programme target")) {
+    if (url === "/resources/annual-needs") boost += 450;
+  }
+
   // Annual Reports
   if (query.includes("annual report") || query.includes("report") || query.includes("audits") || query.includes("audit")) {
     if (url === "/resources/annual-reports") boost += 450;

@@ -14,8 +14,8 @@ export default function SidebarAdvert() {
   useEffect(() => {
     const now = new Date();
     if (now >= AD_EXPIRATION_DATE) {
-      setIsVisible(false);
-      return;
+      const timer = setTimeout(() => setIsVisible(false), 0);
+      return () => clearTimeout(timer);
     }
 
     const msUntilExpiration = AD_EXPIRATION_DATE.getTime() - now.getTime();

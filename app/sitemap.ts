@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/get-involved/partnerships`, priority: 0.8, changeFrequency: "monthly" as const },
     { url: `${baseUrl}/get-involved/volunteer`, priority: 0.8, changeFrequency: "monthly" as const },
     { url: `${baseUrl}/our-programmes`, priority: 0.8, changeFrequency: "monthly" as const },
+    { url: `${baseUrl}/resources/annual-needs`, priority: 0.8, changeFrequency: "monthly" as const },
     { url: `${baseUrl}/resources/events`, priority: 0.7, changeFrequency: "weekly" as const },
     { url: `${baseUrl}/resources/faqs`, priority: 0.7, changeFrequency: "monthly" as const },
     { url: `${baseUrl}/resources/gallery`, priority: 0.7, changeFrequency: "monthly" as const },
