@@ -103,15 +103,29 @@ test.describe("Annual Needs & Priorities and Annual Reports Header", () => {
     // 4. Featured Document Section & Preview Placeholder
     const docSection = page.locator("section[aria-labelledby='featured-document-heading']");
     await expect(docSection).toBeVisible();
-    await expect(docSection.getByAltText("2027 Needs List and Needs-Based Budget document cover")).toBeVisible();
+    await expect(docSection.getByAltText("Cover of the Caritas Kampala Charity Office 2027 Needs List and Needs-Based Budget")).toBeVisible();
+    const pdfUrl = "/Caritas_Kampala_2027_Needs_List.pdf";
+    const coverLink = docSection.getByRole("link", { name: /View the 2027 Needs List and Needs-Based Budget PDF in a new tab/i }).first();
+    await expect(coverLink).toHaveAttribute("href", pdfUrl);
+    await expect(coverLink).toHaveAttribute("target", "_blank");
+    await expect(coverLink).toHaveAttribute("rel", "noopener noreferrer");
     await expect(docSection.getByText("2027").first()).toBeVisible();
-    await expect(docSection.getByText("FINAL PDF COMING SOON")).toHaveCount(0);
+    await expect(docSection.getByText("PDF COMING SOON")).toHaveCount(0);
     await expect(docSection.getByText("ANNUAL NEEDS DOCUMENT")).toBeVisible();
     await expect(docSection.getByRole("heading", { name: "2027 Needs List & Needs-Based Budget" })).toBeVisible();
     await expect(docSection.getByText(/The 2027 document sets out priority needs and proposed support packages/i)).toBeVisible();
-    await expect(docSection.getByText(/It is intended to support planning, collaboration/i)).toBeVisible();
-    await expect(docSection.getByText("UGX 4,699,256,995")).toBeVisible();
-    await expect(docSection.getByText("PDF COMING SOON")).toHaveCount(1);
+    await expect(docSection.getByText(/It supports planning, collaboration, resource mobilisation and targeted assistance/i)).toBeVisible();
+    await expect(docSection.getByText("UGX 4,699,256,995")).toHaveCount(0);
+    await expect(docSection.getByText("PROGRAMME PERIOD")).toBeVisible();
+    await expect(docSection.getByText("DOCUMENT FORMAT")).toBeVisible();
+    await expect(docSection.getByText("PDF", { exact: true })).toBeVisible();
+    const viewLink = docSection.getByRole("link", { name: /View the 2027 Needs List and Needs-Based Budget PDF in a new tab/i }).last();
+    await expect(viewLink).toHaveAttribute("href", pdfUrl);
+    await expect(viewLink).toHaveAttribute("target", "_blank");
+    await expect(viewLink).toHaveAttribute("rel", "noopener noreferrer");
+    const downloadLink = docSection.getByRole("link", { name: /Download the 2027 Needs List and Needs-Based Budget PDF/i });
+    await expect(downloadLink).toHaveAttribute("href", pdfUrl);
+    await expect(downloadLink).toHaveAttribute("download", "Caritas_Kampala_2027_Needs_List.pdf");
 
     // 5. Priority Areas Section (16 items)
     const prioritySection = page.locator("section[aria-labelledby='priority-areas-heading']");

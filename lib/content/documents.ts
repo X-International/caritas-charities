@@ -14,12 +14,10 @@ export interface PublicationDocument {
 /**
  * 2027 Annual Needs & Priorities Document Definition
  *
- * Future PDF Location:
- *   public/documents/annual-needs/2027-needs-list-and-needs-based-budget.pdf
+ * Published PDF Location:
+ *   public/Caritas_Kampala_2027_Needs_List.pdf
  * Public URL:
- *   /documents/annual-needs/2027-needs-list-and-needs-based-budget.pdf
- * Optional future summary PDF:
- *   /documents/annual-needs/2027-needs-list-summary.pdf
+ *   /Caritas_Kampala_2027_Needs_List.pdf
  */
 export const ANNUAL_NEEDS_2027: PublicationDocument = {
   id: "2027-needs-list-and-needs-based-budget",
@@ -27,13 +25,12 @@ export const ANNUAL_NEEDS_2027: PublicationDocument = {
   year: 2027,
   period: "January–December 2027",
   category: "annual-needs",
-  // Final PDF will be placed at /documents/annual-needs/2027-needs-list-and-needs-based-budget.pdf
-  pdfUrl: null,
+  pdfUrl: "/Caritas_Kampala_2027_Needs_List.pdf",
   summaryPdfUrl: null,
   description:
-    "The 2027 document sets out priority needs and proposed support packages identified across the Charity Office programme, together with the estimated resources required for the January–December 2027 period.",
+    "The 2027 document sets out priority needs and proposed support packages identified across the Charity Office programme for the January–December 2027 period.",
   secondaryDescription:
-    "It is intended to support planning, collaboration, resource mobilisation and targeted assistance towards identified needs.",
+    "It supports planning, collaboration, resource mobilisation and targeted assistance towards identified needs.",
 };
 
 /**

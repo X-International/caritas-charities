@@ -122,14 +122,22 @@ export default function AnnualNeedsPage() {
             <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,36fr)_minmax(0,64fr)] gap-10 sm:gap-12 lg:gap-16 items-start">
               {/* Document Preview — mobile/tablet first */}
               <div className="w-full flex justify-center md:justify-start">
-                <Image
-                  src="/images/Miscellany/needs list.png"
-                  alt="2027 Needs List and Needs-Based Budget document cover"
-                  width={445}
-                  height={462}
-                  sizes="(max-width: 639px) 68vw, (max-width: 1023px) 62vw, 340px"
-                  className="w-[68%] sm:w-[62%] md:w-full max-w-[280px] sm:max-w-[320px] md:max-w-[340px] h-auto rounded-2xl border border-[#ded4c0] shadow-[0_14px_30px_rgba(0,0,0,0.06),0_3px_8px_rgba(0,0,0,0.03)]"
-                />
+                <a
+                  href={ANNUAL_NEEDS_2027.pdfUrl ?? "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View the 2027 Needs List and Needs-Based Budget PDF in a new tab"
+                  className="w-[68%] sm:w-[62%] md:w-full max-w-[280px] sm:max-w-[320px] md:max-w-[340px] rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#b10017]"
+                >
+                  <Image
+                    src="/images/Miscellany/needs list.png"
+                    alt="Cover of the Caritas Kampala Charity Office 2027 Needs List and Needs-Based Budget"
+                    width={445}
+                    height={462}
+                    sizes="(max-width: 639px) 68vw, (max-width: 1023px) 62vw, 340px"
+                    className="h-auto w-full rounded-2xl border border-[#ded4c0] shadow-[0_14px_30px_rgba(0,0,0,0.06),0_3px_8px_rgba(0,0,0,0.03)] transition-opacity hover:opacity-90"
+                  />
+                </a>
               </div>
 
               {/* Right Column: Featured Document Content & Actions */}
@@ -152,7 +160,7 @@ export default function AnnualNeedsPage() {
                   <p>{ANNUAL_NEEDS_2027.secondaryDescription}</p>
                 </div>
 
-                {/* Document Details Row: Period + Full Resource Requirement */}
+                {/* Document Details Row */}
                 <div className="pt-5 mt-1 border-t border-[#e6dccb] grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5">
                   <div>
                     <span className="block text-gray-500 uppercase tracking-[0.16em] text-[10.5px] font-bold font-sans mb-1.5">
@@ -164,20 +172,22 @@ export default function AnnualNeedsPage() {
                   </div>
                   <div>
                     <span className="block text-gray-500 uppercase tracking-[0.16em] text-[10.5px] font-bold font-sans mb-1.5">
-                      ESTIMATED RESOURCE REQUIREMENT
+                      DOCUMENT FORMAT
                     </span>
                     <span className="font-serif font-semibold text-gray-900 text-lg sm:text-xl tracking-tight">
-                      UGX 4,699,256,995
+                      PDF
                     </span>
                   </div>
                 </div>
 
                 <div className="pt-1">
                   <DocumentActions
-                    pdfUrl={ANNUAL_NEEDS_2027.pdfUrl}
+                    pdfUrl={ANNUAL_NEEDS_2027.pdfUrl ?? ""}
                     viewLabel="VIEW ONLINE →"
                     downloadLabel="DOWNLOAD PDF"
-                    comingSoonLabel="PDF COMING SOON"
+                    viewAriaLabel="View the 2027 Needs List and Needs-Based Budget PDF in a new tab"
+                    downloadAriaLabel="Download the 2027 Needs List and Needs-Based Budget PDF"
+                    downloadFileName="Caritas_Kampala_2027_Needs_List.pdf"
                   />
                 </div>
               </div>
