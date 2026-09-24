@@ -103,6 +103,7 @@ test.describe("Annual Needs & Priorities and Annual Reports Header", () => {
     // 4. Featured Document Section & Preview Placeholder
     const docSection = page.locator("section[aria-labelledby='featured-document-heading']");
     await expect(docSection).toBeVisible();
+    await expect(docSection.getByAltText("2027 Needs List and Needs-Based Budget document cover")).toBeVisible();
     await expect(docSection.getByText("2027").first()).toBeVisible();
     await expect(docSection.getByText("FINAL PDF COMING SOON")).toHaveCount(0);
     await expect(docSection.getByText("ANNUAL NEEDS DOCUMENT")).toBeVisible();
@@ -110,7 +111,7 @@ test.describe("Annual Needs & Priorities and Annual Reports Header", () => {
     await expect(docSection.getByText(/The 2027 document sets out priority needs and proposed support packages/i)).toBeVisible();
     await expect(docSection.getByText(/It is intended to support planning, collaboration/i)).toBeVisible();
     await expect(docSection.getByText("UGX 4,699,256,995")).toBeVisible();
-    await expect(docSection.getByText("PDF COMING SOON")).toHaveCount(2);
+    await expect(docSection.getByText("PDF COMING SOON")).toHaveCount(1);
 
     // 5. Priority Areas Section (16 items)
     const prioritySection = page.locator("section[aria-labelledby='priority-areas-heading']");

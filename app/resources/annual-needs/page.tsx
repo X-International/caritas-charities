@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SplitPageHeader from "@/components/SplitPageHeader";
+import Image from "next/image";
 import { Heading, Eyebrow } from "@/components/ui/Typography";
 import Button from "@/components/ui/Button";
 import DocumentActions from "@/components/documents/DocumentActions";
@@ -119,43 +120,16 @@ export default function AnnualNeedsPage() {
         <section aria-labelledby="featured-document-heading" className="pt-10 pb-6 sm:pt-12 sm:pb-8 lg:pt-16 lg:pb-8 bg-[#faf8f5]">
           <div className="site-container">
             <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,36fr)_minmax(0,64fr)] gap-10 sm:gap-12 lg:gap-16 items-start">
-              {/* Document Preview Placeholder — mobile/tablet first (grid order naturally places cover first on mobile since it's the first column) */}
+              {/* Document Preview — mobile/tablet first */}
               <div className="w-full flex justify-center md:justify-start">
-                <div
-                  className="relative w-[68%] sm:w-[62%] md:w-full max-w-[280px] sm:max-w-[320px] md:max-w-[340px] aspect-[1/1.36] rounded-2xl bg-gradient-to-br from-[#faf6ee] via-[#f5ede0] to-[#eae0cd] p-6 sm:p-7 md:p-8 flex flex-col justify-between border border-[#ded4c0] shadow-[0_14px_30px_rgba(0,0,0,0.06),0_3px_8px_rgba(0,0,0,0.03)] select-none overflow-hidden"
-                  aria-label="Publication preview placeholder — cover image is a design mock-up; final PDF not yet issued."
-                >
-                  <div className="absolute left-0 top-0 bottom-0 w-2.5 sm:w-3 bg-gradient-to-r from-[#8e0a20] to-[#b10017] opacity-90" aria-hidden="true" />
-                  <div className="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-[#b10017]/[0.03] border border-[#b10017]/[0.06] pointer-events-none" aria-hidden="true" />
-
-                  <div className="relative z-10 pl-2">
-                    <span className="block font-serif font-extrabold text-3xl sm:text-4xl text-[#b10017] tracking-tight">
-                      2027
-                    </span>
-                    <div className="w-10 h-0.5 bg-[#b10017] mt-2 mb-4" aria-hidden="true" />
-                    <span className="block text-[11px] sm:text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 mb-1 font-sans">
-                      NEEDS LIST &amp;
-                    </span>
-                    <span className="block font-serif font-extrabold text-xl sm:text-2xl text-gray-900 tracking-tight leading-snug">
-                      NEEDS-BASED BUDGET
-                    </span>
-                  </div>
-
-                  <div className="relative z-10 pl-2 my-auto py-4">
-                    <span className="inline-block px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-wider bg-stone-200/90 text-stone-700 border border-stone-300 font-sans">
-                      PDF COMING SOON
-                    </span>
-                  </div>
-
-                  <div className="relative z-10 pl-2 pt-4 border-t border-[#d8cdb8]">
-                    <span className="block font-serif font-bold text-sm text-gray-900 leading-tight">
-                      Caritas Kampala
-                    </span>
-                    <span className="block text-[11px] font-sans uppercase tracking-[0.16em] text-[#b10017] font-semibold mt-0.5">
-                      Charity Office
-                    </span>
-                  </div>
-                </div>
+                <Image
+                  src="/images/Miscellany/needs list.png"
+                  alt="2027 Needs List and Needs-Based Budget document cover"
+                  width={445}
+                  height={462}
+                  sizes="(max-width: 639px) 68vw, (max-width: 1023px) 62vw, 340px"
+                  className="w-[68%] sm:w-[62%] md:w-full max-w-[280px] sm:max-w-[320px] md:max-w-[340px] h-auto rounded-2xl border border-[#ded4c0] shadow-[0_14px_30px_rgba(0,0,0,0.06),0_3px_8px_rgba(0,0,0,0.03)]"
+                />
               </div>
 
               {/* Right Column: Featured Document Content & Actions */}
