@@ -42,7 +42,7 @@ test.describe("Annual Needs & Priorities and Annual Reports Header", () => {
     const header = page.locator("section[aria-label='Annual Reports Header']");
     await expect(header).toBeVisible();
     await expect(header.getByText("DOCUMENTS & ACCOUNTABILITY").filter({ visible: true })).toBeVisible();
-    await expect(header.getByText("Annual Reports").filter({ visible: true })).toBeVisible();
+    await expect(header.getByText("Annual Reports").filter({ visible: true }).last()).toBeVisible();
     await expect(
       header.getByText("Read reports on the Charity Office’s work, progress and organisational accountability.").filter({ visible: true })
     ).toBeVisible();
@@ -104,7 +104,7 @@ test.describe("Annual Needs & Priorities and Annual Reports Header", () => {
     const docSection = page.locator("section[aria-labelledby='featured-document-heading']");
     await expect(docSection).toBeVisible();
     await expect(docSection.getByAltText("Cover of the Caritas Kampala Charity Office 2027 Needs List and Needs-Based Budget")).toBeVisible();
-    const pdfUrl = "/Caritas_Kampala_2027_Needs_List.pdf";
+    const pdfUrl = "/Caritas_Kampala_2027_Needs_List_REDESIGNED_v2.pdf";
     const coverLink = docSection.getByRole("link", { name: /View the 2027 Needs List and Needs-Based Budget PDF in a new tab/i }).first();
     await expect(coverLink).toHaveAttribute("href", pdfUrl);
     await expect(coverLink).toHaveAttribute("target", "_blank");
@@ -125,7 +125,7 @@ test.describe("Annual Needs & Priorities and Annual Reports Header", () => {
     await expect(viewLink).toHaveAttribute("rel", "noopener noreferrer");
     const downloadLink = docSection.getByRole("link", { name: /Download the 2027 Needs List and Needs-Based Budget PDF/i });
     await expect(downloadLink).toHaveAttribute("href", pdfUrl);
-    await expect(downloadLink).toHaveAttribute("download", "Caritas_Kampala_2027_Needs_List.pdf");
+    await expect(downloadLink).toHaveAttribute("download", "Caritas_Kampala_2027_Needs_List_REDESIGNED_v2.pdf");
 
     // 5. Priority Areas Section (16 items)
     const prioritySection = page.locator("section[aria-labelledby='priority-areas-heading']");

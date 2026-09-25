@@ -187,7 +187,7 @@ export default function AnnualNeedsPage() {
                     downloadLabel="DOWNLOAD PDF"
                     viewAriaLabel="View the 2027 Needs List and Needs-Based Budget PDF in a new tab"
                     downloadAriaLabel="Download the 2027 Needs List and Needs-Based Budget PDF"
-                    downloadFileName="Caritas_Kampala_2027_Needs_List.pdf"
+                    downloadFileName="Caritas_Kampala_2027_Needs_List_REDESIGNED_v2.pdf"
                   />
                 </div>
               </div>
