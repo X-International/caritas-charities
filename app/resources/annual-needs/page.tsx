@@ -130,7 +130,7 @@ export default function AnnualNeedsPage() {
                   className="w-[68%] sm:w-[62%] md:w-full max-w-[280px] sm:max-w-[320px] md:max-w-[340px] rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#b10017]"
                 >
                   <Image
-                    src="/images/Miscellany/needs list.png"
+                    src="/images/Miscellany/new_cover.png"
                     alt="Cover of the Caritas Kampala Charity Office 2027 Needs List and Needs-Based Budget"
                     width={445}
                     height={462}
